@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.KANDJI_POSTMAN_TO_OPENAPI_TOKEN }}
 
       - name: Download OpenAPI file from latest release
         env:
@@ -43,8 +45,6 @@ jobs:
           rm -rf "${{ env.openapi_file }}"
 
       - name: Commit and Push to GitHub
-        env:
-          GH_TOKEN: ${{ secrets.KANDJI_POSTMAN_TO_OPENAPI_TOKEN }}
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"

@@ -37,7 +37,7 @@ jobs:
           docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli:latest generate \
             -i /local/${{ env.openapi_file}} \
             -g "${{ env.LANGUAGE }}" \
-            -o "/local/${{ env.LANGUAGE }}"
+            -o "/local"
 
       - name: Delete OpenAPI file
         run: |

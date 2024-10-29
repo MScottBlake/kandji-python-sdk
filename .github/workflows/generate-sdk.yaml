@@ -31,14 +31,15 @@ jobs:
         uses: openapi-generators/openapitools-generator-action@v1
         with:
           # config-file: generator-config.yml
+          command-args:
+            git-host=github.com
+            git-repo-id=kandji-${{ env.language }}-sdk
+            git-user-id=MScottBlake
           generator: ${{ env.language }}
           generator-tag: latest-release
-          git-host: github.com
-          git-repo-id: kandji-${{ env.language }}-sdk
-          git-user-id: MScottBlake
           openapi-file: ${{ env.openapi_file }}
 
-      - name: Delete OpenAPI file
+      - name: Delete Kandji OpenAPI file
         run: |
           rm -rf "${{ env.openapi_file }}"
 
@@ -47,7 +48,7 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "Automated SDK update for latest OpenAPI release"
+          git commit -m "Automated SDK Update"
           git push
 
       - name: Create GitHub Release

@@ -35,6 +35,8 @@ jobs:
             --git-host=github.com
             --git-repo-id=kandji-${{ env.language }}-sdk
             --git-user-id=MScottBlake
+            --output=.
+            --package-name=kandji-${{ env.language }}-sdk
           generator: ${{ env.language }}
           generator-tag: latest-release
           openapi-file: ${{ env.openapi_file }}

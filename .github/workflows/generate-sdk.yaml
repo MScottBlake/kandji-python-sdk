@@ -37,7 +37,7 @@ jobs:
             --git-user-id=MScottBlake
             --output=.
             --package-name=kandji-${{ env.language }}-sdk
-            --remove-operation-id-prefix=api_v1_
+            --remove-operation-id-prefix
           generator: ${{ env.language }}
           generator-tag: latest-release
           openapi-file: ${{ env.openapi_file }}

@@ -32,9 +32,9 @@ jobs:
         with:
           # config-file: generator-config.yml
           command-args:
-            git-host=github.com
-            git-repo-id=kandji-${{ env.language }}-sdk
-            git-user-id=MScottBlake
+            --git-host=github.com
+            --git-repo-id=kandji-${{ env.language }}-sdk
+            --git-user-id=MScottBlake
           generator: ${{ env.language }}
           generator-tag: latest-release
           openapi-file: ${{ env.openapi_file }}

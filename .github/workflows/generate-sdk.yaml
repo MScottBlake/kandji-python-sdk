@@ -9,7 +9,8 @@ jobs:
   generate_sdk:
     runs-on: ubuntu-latest
     env:
-      LANGUAGE: python
+      language: python
+      openapi_file: kandji_openapi.yaml
 
     steps:
       - name: Checkout repository
@@ -17,28 +18,25 @@ jobs:
         with:
           token: ${{ secrets.KANDJI_POSTMAN_TO_OPENAPI_TOKEN }}
 
-      - name: Download OpenAPI file from latest release
+      - name: Download Kandji OpenAPI file
         env:
           GH_TOKEN: ${{ secrets.KANDJI_POSTMAN_TO_OPENAPI_TOKEN }}
         run: |
           gh release download \
             --repo "MScottBlake/kandji-postman-to-openapi" \
             --pattern "kandji_openapi\.yaml" \
-            --output "kandji_openapi.yaml"
-          echo "openapi_file=kandji_openapi.yaml" >> ${GITHUB_ENV}
+            --output "${{ env.openapi_file }}"
 
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v4
+      - name: Generate Client
+        uses: openapi-generators/openapitools-generator-action@v1
         with:
-          name: openapi_file
-          path: ${{ env.openapi_file }}
-
-      - name: Set up OpenAPI Generator
-        run: |
-          docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli:latest generate \
-            -i /local/${{ env.openapi_file}} \
-            -g "${{ env.LANGUAGE }}" \
-            -o "/local"
+          # config-file: generator-config.yml
+          generator: ${{ env.language }}
+          generator-tag: latest-release
+          git-host: github.com
+          git-repo-id: kandji-${{ env.language }}-sdk
+          git-user-id: MScottBlake
+          openapi-file: ${{ env.openapi_file }}
 
       - name: Delete OpenAPI file
         run: |

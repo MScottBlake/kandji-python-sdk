@@ -26834,7 +26834,7 @@ class DefaultApi:
 
 
     @validate_call
-    def post_url_post(
+    def url_post(
         self,
         post_url: Annotated[StrictStr, Field(description="Path parameter 'post_url'")],
         _request_timeout: Union[
@@ -26878,7 +26878,7 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._post_url_post_serialize(
+        _param = self._url_post_serialize(
             post_url=post_url,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -26901,7 +26901,7 @@ class DefaultApi:
 
 
     @validate_call
-    def post_url_post_with_http_info(
+    def url_post_with_http_info(
         self,
         post_url: Annotated[StrictStr, Field(description="Path parameter 'post_url'")],
         _request_timeout: Union[
@@ -26945,7 +26945,7 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._post_url_post_serialize(
+        _param = self._url_post_serialize(
             post_url=post_url,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -26968,7 +26968,7 @@ class DefaultApi:
 
 
     @validate_call
-    def post_url_post_without_preload_content(
+    def url_post_without_preload_content(
         self,
         post_url: Annotated[StrictStr, Field(description="Path parameter 'post_url'")],
         _request_timeout: Union[
@@ -27012,7 +27012,7 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._post_url_post_serialize(
+        _param = self._url_post_serialize(
             post_url=post_url,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -27030,7 +27030,7 @@ class DefaultApi:
         return response_data.response
 
 
-    def _post_url_post_serialize(
+    def _url_post_serialize(
         self,
         post_url,
         _request_auth,

@@ -109,7 +109,7 @@ Method | HTTP request | Description
 [**api_v1_threat_details_get**](DefaultApi.md#api_v1_threat_details_get) | **GET** /api/v1/threat-details | Get Threat Details
 [**api_v1_users_get**](DefaultApi.md#api_v1_users_get) | **GET** /api/v1/users | List Users
 [**api_v1_users_user_id_get**](DefaultApi.md#api_v1_users_user_id_get) | **GET** /api/v1/users/{user_id} | Get User
-[**post_url_post**](DefaultApi.md#post_url_post) | **POST** /{post_url} | Upload to S3
+[**url_post**](DefaultApi.md#url_post) | **POST** /{post_url} | Upload to S3
 
 
 # **api_v1_blueprints_blueprint_id_assign_library_item_post**
@@ -7003,8 +7003,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **post_url_post**
-> object post_url_post(post_url)
+# **url_post**
+> object url_post(post_url)
 
 Upload to S3
 
@@ -7033,11 +7033,11 @@ with kandji-python-sdk.ApiClient(configuration) as api_client:
 
     try:
         # Upload to S3
-        api_response = api_instance.post_url_post(post_url)
-        print("The response of DefaultApi->post_url_post:\n")
+        api_response = api_instance.url_post(post_url)
+        print("The response of DefaultApi->url_post:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DefaultApi->post_url_post: %s\n" % e)
+        print("Exception when calling DefaultApi->url_post: %s\n" % e)
 ```
 
 

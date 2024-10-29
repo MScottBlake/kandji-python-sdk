@@ -322,7 +322,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**api_v1_threat_details_get**](docs/DefaultApi.md#api_v1_threat_details_get) | **GET** /api/v1/threat-details | Get Threat Details
 *DefaultApi* | [**api_v1_users_get**](docs/DefaultApi.md#api_v1_users_get) | **GET** /api/v1/users | List Users
 *DefaultApi* | [**api_v1_users_user_id_get**](docs/DefaultApi.md#api_v1_users_user_id_get) | **GET** /api/v1/users/{user_id} | Get User
-*DefaultApi* | [**post_url_post**](docs/DefaultApi.md#post_url_post) | **POST** /{post_url} | Upload to S3
+*DefaultApi* | [**url_post**](docs/DefaultApi.md#url_post) | **POST** /{post_url} | Upload to S3
 
 
 ## Documentation For Models

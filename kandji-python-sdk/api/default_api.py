@@ -16,8 +16,8 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictStr
-from typing import Any, Dict
+from pydantic import Field, StrictBytes, StrictStr
+from typing import Any, Dict, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from kandji-python-sdk.api_client import ApiClient, RequestSerialized
@@ -41,7 +41,8 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_blueprint_id_assign_library_item_post(
         self,
-        blueprint_id: Annotated[StrictStr, Field(description="Path parameter 'blueprint_id'")],
+        blueprint_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -59,8 +60,10 @@ class DefaultApi:
 
         <p>This endpoint allows assigning a library item to a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=\"request-body\">Request Body</h3> <ul> <li><p><code>library_item_id</code> (string, required)</p> </li> <li><p><code>assignment_node_id</code> (string, required for maps)</p> <ul> <li>Note: To find the assignment_node_id, view the map in a browser. Then, on your keyboard, press and hold the Option ⌥ key. Each node ID remains fixed for the lifespan of the node on the map.</li> </ul> </li> </ul> <h3 id=\"error-responses\">Error responses</h3> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th><strong>Code</strong></th> <th><strong>Body</strong></th> </tr> </thead> <tbody> <tr> <td>400 - Bad Request</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>\"Library Item already exists on Blueprint\"</td> </tr> <tr> <td></td> <td>\"Library Item already exists in Assignment Node\"</td> </tr> <tr> <td></td> <td>\"assignment_node_id cannot be provided for Classic Blueprint\"</td> </tr> <tr> <td></td> <td>\"Must provide assignment_node_id for Assignment Map Blueprint\"</td> </tr> </tbody> </table> </div>
 
-        :param blueprint_id: Path parameter 'blueprint_id' (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -85,6 +88,7 @@ class DefaultApi:
 
         _param = self._api_v1_blueprints_blueprint_id_assign_library_item_post_serialize(
             blueprint_id=blueprint_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -108,7 +112,8 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_blueprint_id_assign_library_item_post_with_http_info(
         self,
-        blueprint_id: Annotated[StrictStr, Field(description="Path parameter 'blueprint_id'")],
+        blueprint_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -126,8 +131,10 @@ class DefaultApi:
 
         <p>This endpoint allows assigning a library item to a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=\"request-body\">Request Body</h3> <ul> <li><p><code>library_item_id</code> (string, required)</p> </li> <li><p><code>assignment_node_id</code> (string, required for maps)</p> <ul> <li>Note: To find the assignment_node_id, view the map in a browser. Then, on your keyboard, press and hold the Option ⌥ key. Each node ID remains fixed for the lifespan of the node on the map.</li> </ul> </li> </ul> <h3 id=\"error-responses\">Error responses</h3> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th><strong>Code</strong></th> <th><strong>Body</strong></th> </tr> </thead> <tbody> <tr> <td>400 - Bad Request</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>\"Library Item already exists on Blueprint\"</td> </tr> <tr> <td></td> <td>\"Library Item already exists in Assignment Node\"</td> </tr> <tr> <td></td> <td>\"assignment_node_id cannot be provided for Classic Blueprint\"</td> </tr> <tr> <td></td> <td>\"Must provide assignment_node_id for Assignment Map Blueprint\"</td> </tr> </tbody> </table> </div>
 
-        :param blueprint_id: Path parameter 'blueprint_id' (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -152,6 +159,7 @@ class DefaultApi:
 
         _param = self._api_v1_blueprints_blueprint_id_assign_library_item_post_serialize(
             blueprint_id=blueprint_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -175,7 +183,8 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_blueprint_id_assign_library_item_post_without_preload_content(
         self,
-        blueprint_id: Annotated[StrictStr, Field(description="Path parameter 'blueprint_id'")],
+        blueprint_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -193,8 +202,10 @@ class DefaultApi:
 
         <p>This endpoint allows assigning a library item to a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=\"request-body\">Request Body</h3> <ul> <li><p><code>library_item_id</code> (string, required)</p> </li> <li><p><code>assignment_node_id</code> (string, required for maps)</p> <ul> <li>Note: To find the assignment_node_id, view the map in a browser. Then, on your keyboard, press and hold the Option ⌥ key. Each node ID remains fixed for the lifespan of the node on the map.</li> </ul> </li> </ul> <h3 id=\"error-responses\">Error responses</h3> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th><strong>Code</strong></th> <th><strong>Body</strong></th> </tr> </thead> <tbody> <tr> <td>400 - Bad Request</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>\"Library Item already exists on Blueprint\"</td> </tr> <tr> <td></td> <td>\"Library Item already exists in Assignment Node\"</td> </tr> <tr> <td></td> <td>\"assignment_node_id cannot be provided for Classic Blueprint\"</td> </tr> <tr> <td></td> <td>\"Must provide assignment_node_id for Assignment Map Blueprint\"</td> </tr> </tbody> </table> </div>
 
-        :param blueprint_id: Path parameter 'blueprint_id' (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -219,6 +230,7 @@ class DefaultApi:
 
         _param = self._api_v1_blueprints_blueprint_id_assign_library_item_post_serialize(
             blueprint_id=blueprint_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -238,6 +250,7 @@ class DefaultApi:
     def _api_v1_blueprints_blueprint_id_assign_library_item_post_serialize(
         self,
         blueprint_id,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -265,6 +278,8 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if body is not None:
+            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -275,9 +290,23 @@ class DefaultApi:
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -301,7 +330,7 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_blueprint_id_delete(
         self,
-        blueprint_id: Annotated[StrictStr, Field(description="Path parameter 'blueprint_id'")],
+        blueprint_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -314,12 +343,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Delete Blueprint
 
         <h1 id=\"warning\"><strong>WARNING!</strong></h1> <p>This is a HIGHLY destructive action.</p> <p>Deleting a Blueprint will un-manage ALL devices assigned to the Blueprint.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> 
 
-        :param blueprint_id: Path parameter 'blueprint_id' (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -352,7 +381,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -368,7 +397,7 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_blueprint_id_delete_with_http_info(
         self,
-        blueprint_id: Annotated[StrictStr, Field(description="Path parameter 'blueprint_id'")],
+        blueprint_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -381,12 +410,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Delete Blueprint
 
         <h1 id=\"warning\"><strong>WARNING!</strong></h1> <p>This is a HIGHLY destructive action.</p> <p>Deleting a Blueprint will un-manage ALL devices assigned to the Blueprint.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> 
 
-        :param blueprint_id: Path parameter 'blueprint_id' (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -419,7 +448,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -435,7 +464,7 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_blueprint_id_delete_without_preload_content(
         self,
-        blueprint_id: Annotated[StrictStr, Field(description="Path parameter 'blueprint_id'")],
+        blueprint_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -453,7 +482,7 @@ class DefaultApi:
 
         <h1 id=\"warning\"><strong>WARNING!</strong></h1> <p>This is a HIGHLY destructive action.</p> <p>Deleting a Blueprint will un-manage ALL devices assigned to the Blueprint.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> 
 
-        :param blueprint_id: Path parameter 'blueprint_id' (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -486,7 +515,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -527,17 +556,11 @@ class DefaultApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -561,7 +584,7 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_blueprint_id_get(
         self,
-        blueprint_id: Annotated[StrictStr, Field(description="Path parameter 'blueprint_id'")],
+        blueprint_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -574,12 +597,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Get Blueprint
 
         <p>This request returns information about a specific blueprint based on blueprint ID.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> 
 
-        :param blueprint_id: Path parameter 'blueprint_id' (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -612,7 +635,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -628,7 +651,7 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_blueprint_id_get_with_http_info(
         self,
-        blueprint_id: Annotated[StrictStr, Field(description="Path parameter 'blueprint_id'")],
+        blueprint_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -641,12 +664,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Get Blueprint
 
         <p>This request returns information about a specific blueprint based on blueprint ID.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> 
 
-        :param blueprint_id: Path parameter 'blueprint_id' (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -679,7 +702,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -695,7 +718,7 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_blueprint_id_get_without_preload_content(
         self,
-        blueprint_id: Annotated[StrictStr, Field(description="Path parameter 'blueprint_id'")],
+        blueprint_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -713,7 +736,7 @@ class DefaultApi:
 
         <p>This request returns information about a specific blueprint based on blueprint ID.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> 
 
-        :param blueprint_id: Path parameter 'blueprint_id' (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -746,7 +769,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -787,17 +810,11 @@ class DefaultApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -821,7 +838,7 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_blueprint_id_list_library_items_get(
         self,
-        blueprint_id: Annotated[StrictStr, Field(description="Path parameter 'blueprint_id'")],
+        blueprint_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -839,7 +856,7 @@ class DefaultApi:
 
         <p>This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=\"response-fields\">Response fields</h3> <ul> <li><p><code>count</code> (int): The total count of library items.</p> </li> <li><p><code>next</code> (str): The URL for the next page of results, if available. If not available will value will be <code>null</code>.</p> </li> <li><p><code>previous</code> (str): The URL for the previous page of results, if available. If not available will value will be <code>null</code>.</p> </li> <li><p><code>results</code> (object): An array containing objects with the following fields:</p> <ul> <li><p><code>id</code> (str): The ID of the library item.</p> </li> <li><p><code>name</code> (str): The name of the library item.</p> </li> </ul> </li> </ul> 
 
-        :param blueprint_id: Path parameter 'blueprint_id' (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -888,7 +905,7 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_blueprint_id_list_library_items_get_with_http_info(
         self,
-        blueprint_id: Annotated[StrictStr, Field(description="Path parameter 'blueprint_id'")],
+        blueprint_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -906,7 +923,7 @@ class DefaultApi:
 
         <p>This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=\"response-fields\">Response fields</h3> <ul> <li><p><code>count</code> (int): The total count of library items.</p> </li> <li><p><code>next</code> (str): The URL for the next page of results, if available. If not available will value will be <code>null</code>.</p> </li> <li><p><code>previous</code> (str): The URL for the previous page of results, if available. If not available will value will be <code>null</code>.</p> </li> <li><p><code>results</code> (object): An array containing objects with the following fields:</p> <ul> <li><p><code>id</code> (str): The ID of the library item.</p> </li> <li><p><code>name</code> (str): The name of the library item.</p> </li> </ul> </li> </ul> 
 
-        :param blueprint_id: Path parameter 'blueprint_id' (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -955,7 +972,7 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_blueprint_id_list_library_items_get_without_preload_content(
         self,
-        blueprint_id: Annotated[StrictStr, Field(description="Path parameter 'blueprint_id'")],
+        blueprint_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -973,7 +990,7 @@ class DefaultApi:
 
         <p>This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=\"response-fields\">Response fields</h3> <ul> <li><p><code>count</code> (int): The total count of library items.</p> </li> <li><p><code>next</code> (str): The URL for the next page of results, if available. If not available will value will be <code>null</code>.</p> </li> <li><p><code>previous</code> (str): The URL for the previous page of results, if available. If not available will value will be <code>null</code>.</p> </li> <li><p><code>results</code> (object): An array containing objects with the following fields:</p> <ul> <li><p><code>id</code> (str): The ID of the library item.</p> </li> <li><p><code>name</code> (str): The name of the library item.</p> </li> </ul> </li> </ul> 
 
-        :param blueprint_id: Path parameter 'blueprint_id' (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1051,13 +1068,14 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json; charset=utf-8'
                 ]
             )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -1081,7 +1099,8 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_blueprint_id_ota_enrollment_profile_get(
         self,
-        blueprint_id: Annotated[StrictStr, Field(description="Path parameter 'blueprint_id'")],
+        blueprint_id: StrictStr,
+        sso: Annotated[Optional[StrictStr], Field(description="<p>Use the <code>sso</code> query parameter, set to <code>true</code>, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which \"Require Authentication\" is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile. </p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1094,13 +1113,15 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> str:
         """Get Manual Enrollment Profile
 
         <p>This request returns the manual enrollment profile (.mobileconfig file) for a specified Blueprint.</p> <p>This request will return the enrollment profile even if \"Require Authentication\" is configured for the Blueprint in Manual Enrollment.</p> <p>The enrollment profile will be returned in raw form with response headers:</p> <ul> <li><p><code>Content-Type</code> = <code>application/x-apple-aspen-config</code></p> </li> <li><p><code>Content-Disposition</code> = <code>attachment;filename=kandji-enroll.mobileconfig</code></p> </li> </ul> <p>An optional query parameter <code>sso=true</code> can be used to return a URL for SSO authentication instead. If this query parameter is used for a Blueprint that does not require authentication, then the enrollment profile will be returned.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> 
 
-        :param blueprint_id: Path parameter 'blueprint_id' (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
+        :param sso: <p>Use the <code>sso</code> query parameter, set to <code>true</code>, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which \"Require Authentication\" is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile. </p> 
+        :type sso: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1125,6 +1146,7 @@ class DefaultApi:
 
         _param = self._api_v1_blueprints_blueprint_id_ota_enrollment_profile_get_serialize(
             blueprint_id=blueprint_id,
+            sso=sso,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1132,7 +1154,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "str",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1148,7 +1170,8 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_blueprint_id_ota_enrollment_profile_get_with_http_info(
         self,
-        blueprint_id: Annotated[StrictStr, Field(description="Path parameter 'blueprint_id'")],
+        blueprint_id: StrictStr,
+        sso: Annotated[Optional[StrictStr], Field(description="<p>Use the <code>sso</code> query parameter, set to <code>true</code>, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which \"Require Authentication\" is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile. </p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1161,13 +1184,15 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[str]:
         """Get Manual Enrollment Profile
 
         <p>This request returns the manual enrollment profile (.mobileconfig file) for a specified Blueprint.</p> <p>This request will return the enrollment profile even if \"Require Authentication\" is configured for the Blueprint in Manual Enrollment.</p> <p>The enrollment profile will be returned in raw form with response headers:</p> <ul> <li><p><code>Content-Type</code> = <code>application/x-apple-aspen-config</code></p> </li> <li><p><code>Content-Disposition</code> = <code>attachment;filename=kandji-enroll.mobileconfig</code></p> </li> </ul> <p>An optional query parameter <code>sso=true</code> can be used to return a URL for SSO authentication instead. If this query parameter is used for a Blueprint that does not require authentication, then the enrollment profile will be returned.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> 
 
-        :param blueprint_id: Path parameter 'blueprint_id' (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
+        :param sso: <p>Use the <code>sso</code> query parameter, set to <code>true</code>, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which \"Require Authentication\" is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile. </p> 
+        :type sso: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1192,6 +1217,7 @@ class DefaultApi:
 
         _param = self._api_v1_blueprints_blueprint_id_ota_enrollment_profile_get_serialize(
             blueprint_id=blueprint_id,
+            sso=sso,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1199,7 +1225,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "str",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1215,7 +1241,8 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_blueprint_id_ota_enrollment_profile_get_without_preload_content(
         self,
-        blueprint_id: Annotated[StrictStr, Field(description="Path parameter 'blueprint_id'")],
+        blueprint_id: StrictStr,
+        sso: Annotated[Optional[StrictStr], Field(description="<p>Use the <code>sso</code> query parameter, set to <code>true</code>, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which \"Require Authentication\" is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile. </p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1233,8 +1260,10 @@ class DefaultApi:
 
         <p>This request returns the manual enrollment profile (.mobileconfig file) for a specified Blueprint.</p> <p>This request will return the enrollment profile even if \"Require Authentication\" is configured for the Blueprint in Manual Enrollment.</p> <p>The enrollment profile will be returned in raw form with response headers:</p> <ul> <li><p><code>Content-Type</code> = <code>application/x-apple-aspen-config</code></p> </li> <li><p><code>Content-Disposition</code> = <code>attachment;filename=kandji-enroll.mobileconfig</code></p> </li> </ul> <p>An optional query parameter <code>sso=true</code> can be used to return a URL for SSO authentication instead. If this query parameter is used for a Blueprint that does not require authentication, then the enrollment profile will be returned.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> 
 
-        :param blueprint_id: Path parameter 'blueprint_id' (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
+        :param sso: <p>Use the <code>sso</code> query parameter, set to <code>true</code>, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which \"Require Authentication\" is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile. </p> 
+        :type sso: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1259,6 +1288,7 @@ class DefaultApi:
 
         _param = self._api_v1_blueprints_blueprint_id_ota_enrollment_profile_get_serialize(
             blueprint_id=blueprint_id,
+            sso=sso,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1266,7 +1296,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "str",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1278,6 +1308,7 @@ class DefaultApi:
     def _api_v1_blueprints_blueprint_id_ota_enrollment_profile_get_serialize(
         self,
         blueprint_id,
+        sso,
         _request_auth,
         _content_type,
         _headers,
@@ -1302,6 +1333,10 @@ class DefaultApi:
         if blueprint_id is not None:
             _path_params['blueprint_id'] = blueprint_id
         # process the query parameters
+        if sso is not None:
+            
+            _query_params.append(('sso', sso))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -1311,13 +1346,14 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/x-apple-aspen-config'
                 ]
             )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -1341,7 +1377,11 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_blueprint_id_patch(
         self,
-        blueprint_id: Annotated[StrictStr, Field(description="Path parameter 'blueprint_id'")],
+        blueprint_id: StrictStr,
+        name: Annotated[StrictStr, Field(description="<p>Update the name of the Blueprint</p> ")],
+        description: Annotated[StrictStr, Field(description="<p>Update the description of the Blueprint </p> ")],
+        enrollment_code_code: Annotated[StrictStr, Field(description="<p>Update the enrollment code of the Blueprint </p> ")],
+        enrollment_code_is_active: Annotated[StrictStr, Field(description="<p>Disable the Blueprint for manual device enrollment from the enrollment portal.</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1359,8 +1399,16 @@ class DefaultApi:
 
         <p>This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> 
 
-        :param blueprint_id: Path parameter 'blueprint_id' (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
+        :param name: <p>Update the name of the Blueprint</p>  (required)
+        :type name: str
+        :param description: <p>Update the description of the Blueprint </p>  (required)
+        :type description: str
+        :param enrollment_code_code: <p>Update the enrollment code of the Blueprint </p>  (required)
+        :type enrollment_code_code: str
+        :param enrollment_code_is_active: <p>Disable the Blueprint for manual device enrollment from the enrollment portal.</p>  (required)
+        :type enrollment_code_is_active: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1385,6 +1433,10 @@ class DefaultApi:
 
         _param = self._api_v1_blueprints_blueprint_id_patch_serialize(
             blueprint_id=blueprint_id,
+            name=name,
+            description=description,
+            enrollment_code_code=enrollment_code_code,
+            enrollment_code_is_active=enrollment_code_is_active,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1408,7 +1460,11 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_blueprint_id_patch_with_http_info(
         self,
-        blueprint_id: Annotated[StrictStr, Field(description="Path parameter 'blueprint_id'")],
+        blueprint_id: StrictStr,
+        name: Annotated[StrictStr, Field(description="<p>Update the name of the Blueprint</p> ")],
+        description: Annotated[StrictStr, Field(description="<p>Update the description of the Blueprint </p> ")],
+        enrollment_code_code: Annotated[StrictStr, Field(description="<p>Update the enrollment code of the Blueprint </p> ")],
+        enrollment_code_is_active: Annotated[StrictStr, Field(description="<p>Disable the Blueprint for manual device enrollment from the enrollment portal.</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1426,8 +1482,16 @@ class DefaultApi:
 
         <p>This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> 
 
-        :param blueprint_id: Path parameter 'blueprint_id' (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
+        :param name: <p>Update the name of the Blueprint</p>  (required)
+        :type name: str
+        :param description: <p>Update the description of the Blueprint </p>  (required)
+        :type description: str
+        :param enrollment_code_code: <p>Update the enrollment code of the Blueprint </p>  (required)
+        :type enrollment_code_code: str
+        :param enrollment_code_is_active: <p>Disable the Blueprint for manual device enrollment from the enrollment portal.</p>  (required)
+        :type enrollment_code_is_active: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1452,6 +1516,10 @@ class DefaultApi:
 
         _param = self._api_v1_blueprints_blueprint_id_patch_serialize(
             blueprint_id=blueprint_id,
+            name=name,
+            description=description,
+            enrollment_code_code=enrollment_code_code,
+            enrollment_code_is_active=enrollment_code_is_active,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1475,7 +1543,11 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_blueprint_id_patch_without_preload_content(
         self,
-        blueprint_id: Annotated[StrictStr, Field(description="Path parameter 'blueprint_id'")],
+        blueprint_id: StrictStr,
+        name: Annotated[StrictStr, Field(description="<p>Update the name of the Blueprint</p> ")],
+        description: Annotated[StrictStr, Field(description="<p>Update the description of the Blueprint </p> ")],
+        enrollment_code_code: Annotated[StrictStr, Field(description="<p>Update the enrollment code of the Blueprint </p> ")],
+        enrollment_code_is_active: Annotated[StrictStr, Field(description="<p>Disable the Blueprint for manual device enrollment from the enrollment portal.</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1493,8 +1565,16 @@ class DefaultApi:
 
         <p>This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> 
 
-        :param blueprint_id: Path parameter 'blueprint_id' (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
+        :param name: <p>Update the name of the Blueprint</p>  (required)
+        :type name: str
+        :param description: <p>Update the description of the Blueprint </p>  (required)
+        :type description: str
+        :param enrollment_code_code: <p>Update the enrollment code of the Blueprint </p>  (required)
+        :type enrollment_code_code: str
+        :param enrollment_code_is_active: <p>Disable the Blueprint for manual device enrollment from the enrollment portal.</p>  (required)
+        :type enrollment_code_is_active: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1519,6 +1599,10 @@ class DefaultApi:
 
         _param = self._api_v1_blueprints_blueprint_id_patch_serialize(
             blueprint_id=blueprint_id,
+            name=name,
+            description=description,
+            enrollment_code_code=enrollment_code_code,
+            enrollment_code_is_active=enrollment_code_is_active,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1538,6 +1622,10 @@ class DefaultApi:
     def _api_v1_blueprints_blueprint_id_patch_serialize(
         self,
         blueprint_id,
+        name,
+        description,
+        enrollment_code_code,
+        enrollment_code_is_active,
         _request_auth,
         _content_type,
         _headers,
@@ -1564,6 +1652,14 @@ class DefaultApi:
         # process the query parameters
         # process the header parameters
         # process the form parameters
+        if name is not None:
+            _form_params.append(('name', name))
+        if description is not None:
+            _form_params.append(('description', description))
+        if enrollment_code_code is not None:
+            _form_params.append(('enrollment_code.code', enrollment_code_code))
+        if enrollment_code_is_active is not None:
+            _form_params.append(('enrollment_code.is_active', enrollment_code_is_active))
         # process the body parameter
 
 
@@ -1575,9 +1671,23 @@ class DefaultApi:
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/x-www-form-urlencoded'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -1601,7 +1711,8 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_blueprint_id_remove_library_item_post(
         self,
-        blueprint_id: Annotated[StrictStr, Field(description="Path parameter 'blueprint_id'")],
+        blueprint_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1619,8 +1730,10 @@ class DefaultApi:
 
         <p>This endpoint allows removing a library item from a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=\"request-body\">Request Body</h3> <ul> <li><p><code>library_item_id</code> (string, required)</p> </li> <li><p><code>assignment_node_id</code> (string, required for maps)</p> </li> </ul> <h3 id=\"error-responses\">Error responses</h3> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th><strong>Code</strong></th> <th><strong>Body</strong></th> </tr> </thead> <tbody> <tr> <td>400 - Bad Request</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>\"assignment_node_id cannot be provided for Classic Blueprint\"</td> </tr> <tr> <td></td> <td>\"Must provide assignment_node_id for Assignment Map Blueprint\"</td> </tr> <tr> <td></td> <td>\"Library Item does not exist on Blueprint\"</td> </tr> <tr> <td></td> <td>\"Library Item does not exist in Assignment Node\"</td> </tr> </tbody> </table> </div>
 
-        :param blueprint_id: Path parameter 'blueprint_id' (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1645,6 +1758,7 @@ class DefaultApi:
 
         _param = self._api_v1_blueprints_blueprint_id_remove_library_item_post_serialize(
             blueprint_id=blueprint_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1668,7 +1782,8 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_blueprint_id_remove_library_item_post_with_http_info(
         self,
-        blueprint_id: Annotated[StrictStr, Field(description="Path parameter 'blueprint_id'")],
+        blueprint_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1686,8 +1801,10 @@ class DefaultApi:
 
         <p>This endpoint allows removing a library item from a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=\"request-body\">Request Body</h3> <ul> <li><p><code>library_item_id</code> (string, required)</p> </li> <li><p><code>assignment_node_id</code> (string, required for maps)</p> </li> </ul> <h3 id=\"error-responses\">Error responses</h3> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th><strong>Code</strong></th> <th><strong>Body</strong></th> </tr> </thead> <tbody> <tr> <td>400 - Bad Request</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>\"assignment_node_id cannot be provided for Classic Blueprint\"</td> </tr> <tr> <td></td> <td>\"Must provide assignment_node_id for Assignment Map Blueprint\"</td> </tr> <tr> <td></td> <td>\"Library Item does not exist on Blueprint\"</td> </tr> <tr> <td></td> <td>\"Library Item does not exist in Assignment Node\"</td> </tr> </tbody> </table> </div>
 
-        :param blueprint_id: Path parameter 'blueprint_id' (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1712,6 +1829,7 @@ class DefaultApi:
 
         _param = self._api_v1_blueprints_blueprint_id_remove_library_item_post_serialize(
             blueprint_id=blueprint_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1735,7 +1853,8 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_blueprint_id_remove_library_item_post_without_preload_content(
         self,
-        blueprint_id: Annotated[StrictStr, Field(description="Path parameter 'blueprint_id'")],
+        blueprint_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1753,8 +1872,10 @@ class DefaultApi:
 
         <p>This endpoint allows removing a library item from a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=\"request-body\">Request Body</h3> <ul> <li><p><code>library_item_id</code> (string, required)</p> </li> <li><p><code>assignment_node_id</code> (string, required for maps)</p> </li> </ul> <h3 id=\"error-responses\">Error responses</h3> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th><strong>Code</strong></th> <th><strong>Body</strong></th> </tr> </thead> <tbody> <tr> <td>400 - Bad Request</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>\"assignment_node_id cannot be provided for Classic Blueprint\"</td> </tr> <tr> <td></td> <td>\"Must provide assignment_node_id for Assignment Map Blueprint\"</td> </tr> <tr> <td></td> <td>\"Library Item does not exist on Blueprint\"</td> </tr> <tr> <td></td> <td>\"Library Item does not exist in Assignment Node\"</td> </tr> </tbody> </table> </div>
 
-        :param blueprint_id: Path parameter 'blueprint_id' (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1779,6 +1900,7 @@ class DefaultApi:
 
         _param = self._api_v1_blueprints_blueprint_id_remove_library_item_post_serialize(
             blueprint_id=blueprint_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1798,6 +1920,7 @@ class DefaultApi:
     def _api_v1_blueprints_blueprint_id_remove_library_item_post_serialize(
         self,
         blueprint_id,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -1825,6 +1948,8 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if body is not None:
+            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -1835,9 +1960,23 @@ class DefaultApi:
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -1861,6 +2000,11 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_get(
         self,
+        id: Annotated[Optional[StrictStr], Field(description="<p>Look up a specific Blueprint by its ID</p> ")] = None,
+        id__in: Annotated[Optional[StrictStr], Field(description="<p>Specify a list of Blueprint IDs to limit the results to.  Multiple values may be separated by commas. There is a double underscore (<code>__</code>) between id and in</p> ")] = None,
+        name: Annotated[Optional[StrictStr], Field(description="<p>Return Blueprint names \"containing\" the specified search string.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>Number of results to return per page.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>The initial index from which to return the results.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1878,6 +2022,16 @@ class DefaultApi:
 
         <p>This request returns a list of a blueprint records in the Kandji tenant. Optional query parameters can be specified to filter the results.</p> 
 
+        :param id: <p>Look up a specific Blueprint by its ID</p> 
+        :type id: str
+        :param id__in: <p>Specify a list of Blueprint IDs to limit the results to.  Multiple values may be separated by commas. There is a double underscore (<code>__</code>) between id and in</p> 
+        :type id__in: str
+        :param name: <p>Return Blueprint names \"containing\" the specified search string.</p> 
+        :type name: str
+        :param limit: <p>Number of results to return per page.</p> 
+        :type limit: str
+        :param offset: <p>The initial index from which to return the results.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1901,6 +2055,11 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_blueprints_get_serialize(
+            id=id,
+            id__in=id__in,
+            name=name,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1924,6 +2083,11 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_get_with_http_info(
         self,
+        id: Annotated[Optional[StrictStr], Field(description="<p>Look up a specific Blueprint by its ID</p> ")] = None,
+        id__in: Annotated[Optional[StrictStr], Field(description="<p>Specify a list of Blueprint IDs to limit the results to.  Multiple values may be separated by commas. There is a double underscore (<code>__</code>) between id and in</p> ")] = None,
+        name: Annotated[Optional[StrictStr], Field(description="<p>Return Blueprint names \"containing\" the specified search string.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>Number of results to return per page.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>The initial index from which to return the results.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1941,6 +2105,16 @@ class DefaultApi:
 
         <p>This request returns a list of a blueprint records in the Kandji tenant. Optional query parameters can be specified to filter the results.</p> 
 
+        :param id: <p>Look up a specific Blueprint by its ID</p> 
+        :type id: str
+        :param id__in: <p>Specify a list of Blueprint IDs to limit the results to.  Multiple values may be separated by commas. There is a double underscore (<code>__</code>) between id and in</p> 
+        :type id__in: str
+        :param name: <p>Return Blueprint names \"containing\" the specified search string.</p> 
+        :type name: str
+        :param limit: <p>Number of results to return per page.</p> 
+        :type limit: str
+        :param offset: <p>The initial index from which to return the results.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1964,6 +2138,11 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_blueprints_get_serialize(
+            id=id,
+            id__in=id__in,
+            name=name,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1987,6 +2166,11 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_get_without_preload_content(
         self,
+        id: Annotated[Optional[StrictStr], Field(description="<p>Look up a specific Blueprint by its ID</p> ")] = None,
+        id__in: Annotated[Optional[StrictStr], Field(description="<p>Specify a list of Blueprint IDs to limit the results to.  Multiple values may be separated by commas. There is a double underscore (<code>__</code>) between id and in</p> ")] = None,
+        name: Annotated[Optional[StrictStr], Field(description="<p>Return Blueprint names \"containing\" the specified search string.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>Number of results to return per page.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>The initial index from which to return the results.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2004,6 +2188,16 @@ class DefaultApi:
 
         <p>This request returns a list of a blueprint records in the Kandji tenant. Optional query parameters can be specified to filter the results.</p> 
 
+        :param id: <p>Look up a specific Blueprint by its ID</p> 
+        :type id: str
+        :param id__in: <p>Specify a list of Blueprint IDs to limit the results to.  Multiple values may be separated by commas. There is a double underscore (<code>__</code>) between id and in</p> 
+        :type id__in: str
+        :param name: <p>Return Blueprint names \"containing\" the specified search string.</p> 
+        :type name: str
+        :param limit: <p>Number of results to return per page.</p> 
+        :type limit: str
+        :param offset: <p>The initial index from which to return the results.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2027,6 +2221,11 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_blueprints_get_serialize(
+            id=id,
+            id__in=id__in,
+            name=name,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2045,6 +2244,11 @@ class DefaultApi:
 
     def _api_v1_blueprints_get_serialize(
         self,
+        id,
+        id__in,
+        name,
+        limit,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -2067,6 +2271,26 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if id is not None:
+            
+            _query_params.append(('id', id))
+            
+        if id__in is not None:
+            
+            _query_params.append(('id__in', id__in))
+            
+        if name is not None:
+            
+            _query_params.append(('name', name))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -2083,6 +2307,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -2106,6 +2331,12 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_post(
         self,
+        name: Annotated[StrictStr, Field(description="<p>(required) Set the name of the Blueprint. The name provided must be unique.</p> ")],
+        enrollment_code_is_active: Annotated[StrictStr, Field(description="<p>(required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal</p> ")],
+        enrollment_code_code: Annotated[StrictStr, Field(description="<p>Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app.</p> ")],
+        source_type: Annotated[StrictStr, Field(description="<p>Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>.</p> ")],
+        source_id: Annotated[StrictStr, Field(description="<p>Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint.</p> ")],
+        type: Annotated[StrictStr, Field(description="<p>Choose the type of blueprint to create. Options: <code>classic</code> or <code>map</code></p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2123,6 +2354,18 @@ class DefaultApi:
 
         <p>This request creates a new empty Blueprint or a new Blueprint from a template. The keys <code>name</code> and <code>enrollment_code</code> <code>is_active</code> are required, and the blueprint name key must be unique from the existing blueprint names in the Kandji tenant.</p> <p>optionally, <code>type: map</code> can be used when creating a new Assignment Map blueprint.</p> <p>Note: If cloning an existing blueprint,`type` value and the type of sourced (`source.id`) blueprint must match and `source.type` value must be set to `blueprint`.</p> 
 
+        :param name: <p>(required) Set the name of the Blueprint. The name provided must be unique.</p>  (required)
+        :type name: str
+        :param enrollment_code_is_active: <p>(required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal</p>  (required)
+        :type enrollment_code_is_active: str
+        :param enrollment_code_code: <p>Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app.</p>  (required)
+        :type enrollment_code_code: str
+        :param source_type: <p>Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>.</p>  (required)
+        :type source_type: str
+        :param source_id: <p>Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint.</p>  (required)
+        :type source_id: str
+        :param type: <p>Choose the type of blueprint to create. Options: <code>classic</code> or <code>map</code></p>  (required)
+        :type type: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2146,6 +2389,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_blueprints_post_serialize(
+            name=name,
+            enrollment_code_is_active=enrollment_code_is_active,
+            enrollment_code_code=enrollment_code_code,
+            source_type=source_type,
+            source_id=source_id,
+            type=type,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2153,7 +2402,8 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '201': "object",
+            '400': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2169,6 +2419,12 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_post_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="<p>(required) Set the name of the Blueprint. The name provided must be unique.</p> ")],
+        enrollment_code_is_active: Annotated[StrictStr, Field(description="<p>(required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal</p> ")],
+        enrollment_code_code: Annotated[StrictStr, Field(description="<p>Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app.</p> ")],
+        source_type: Annotated[StrictStr, Field(description="<p>Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>.</p> ")],
+        source_id: Annotated[StrictStr, Field(description="<p>Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint.</p> ")],
+        type: Annotated[StrictStr, Field(description="<p>Choose the type of blueprint to create. Options: <code>classic</code> or <code>map</code></p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2186,6 +2442,18 @@ class DefaultApi:
 
         <p>This request creates a new empty Blueprint or a new Blueprint from a template. The keys <code>name</code> and <code>enrollment_code</code> <code>is_active</code> are required, and the blueprint name key must be unique from the existing blueprint names in the Kandji tenant.</p> <p>optionally, <code>type: map</code> can be used when creating a new Assignment Map blueprint.</p> <p>Note: If cloning an existing blueprint,`type` value and the type of sourced (`source.id`) blueprint must match and `source.type` value must be set to `blueprint`.</p> 
 
+        :param name: <p>(required) Set the name of the Blueprint. The name provided must be unique.</p>  (required)
+        :type name: str
+        :param enrollment_code_is_active: <p>(required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal</p>  (required)
+        :type enrollment_code_is_active: str
+        :param enrollment_code_code: <p>Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app.</p>  (required)
+        :type enrollment_code_code: str
+        :param source_type: <p>Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>.</p>  (required)
+        :type source_type: str
+        :param source_id: <p>Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint.</p>  (required)
+        :type source_id: str
+        :param type: <p>Choose the type of blueprint to create. Options: <code>classic</code> or <code>map</code></p>  (required)
+        :type type: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2209,6 +2477,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_blueprints_post_serialize(
+            name=name,
+            enrollment_code_is_active=enrollment_code_is_active,
+            enrollment_code_code=enrollment_code_code,
+            source_type=source_type,
+            source_id=source_id,
+            type=type,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2216,7 +2490,8 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '201': "object",
+            '400': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2232,6 +2507,12 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_post_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="<p>(required) Set the name of the Blueprint. The name provided must be unique.</p> ")],
+        enrollment_code_is_active: Annotated[StrictStr, Field(description="<p>(required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal</p> ")],
+        enrollment_code_code: Annotated[StrictStr, Field(description="<p>Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app.</p> ")],
+        source_type: Annotated[StrictStr, Field(description="<p>Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>.</p> ")],
+        source_id: Annotated[StrictStr, Field(description="<p>Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint.</p> ")],
+        type: Annotated[StrictStr, Field(description="<p>Choose the type of blueprint to create. Options: <code>classic</code> or <code>map</code></p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2249,6 +2530,18 @@ class DefaultApi:
 
         <p>This request creates a new empty Blueprint or a new Blueprint from a template. The keys <code>name</code> and <code>enrollment_code</code> <code>is_active</code> are required, and the blueprint name key must be unique from the existing blueprint names in the Kandji tenant.</p> <p>optionally, <code>type: map</code> can be used when creating a new Assignment Map blueprint.</p> <p>Note: If cloning an existing blueprint,`type` value and the type of sourced (`source.id`) blueprint must match and `source.type` value must be set to `blueprint`.</p> 
 
+        :param name: <p>(required) Set the name of the Blueprint. The name provided must be unique.</p>  (required)
+        :type name: str
+        :param enrollment_code_is_active: <p>(required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal</p>  (required)
+        :type enrollment_code_is_active: str
+        :param enrollment_code_code: <p>Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app.</p>  (required)
+        :type enrollment_code_code: str
+        :param source_type: <p>Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>.</p>  (required)
+        :type source_type: str
+        :param source_id: <p>Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint.</p>  (required)
+        :type source_id: str
+        :param type: <p>Choose the type of blueprint to create. Options: <code>classic</code> or <code>map</code></p>  (required)
+        :type type: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2272,6 +2565,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_blueprints_post_serialize(
+            name=name,
+            enrollment_code_is_active=enrollment_code_is_active,
+            enrollment_code_code=enrollment_code_code,
+            source_type=source_type,
+            source_id=source_id,
+            type=type,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2279,7 +2578,8 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '201': "object",
+            '400': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2290,6 +2590,12 @@ class DefaultApi:
 
     def _api_v1_blueprints_post_serialize(
         self,
+        name,
+        enrollment_code_is_active,
+        enrollment_code_code,
+        source_type,
+        source_id,
+        type,
         _request_auth,
         _content_type,
         _headers,
@@ -2314,6 +2620,18 @@ class DefaultApi:
         # process the query parameters
         # process the header parameters
         # process the form parameters
+        if name is not None:
+            _form_params.append(('name', name))
+        if enrollment_code_is_active is not None:
+            _form_params.append(('enrollment_code.is_active', enrollment_code_is_active))
+        if enrollment_code_code is not None:
+            _form_params.append(('enrollment_code.code', enrollment_code_code))
+        if source_type is not None:
+            _form_params.append(('source.type', source_type))
+        if source_id is not None:
+            _form_params.append(('source.id', source_id))
+        if type is not None:
+            _form_params.append(('type', type))
         # process the body parameter
 
 
@@ -2325,9 +2643,23 @@ class DefaultApi:
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/x-www-form-urlencoded'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -2351,6 +2683,8 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_templates_get(
         self,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>Number of results to return per page.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>The initial index from which to return the results.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2363,11 +2697,15 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Get Blueprint Templates
 
         
 
+        :param limit: <p>Number of results to return per page.</p> 
+        :type limit: str
+        :param offset: <p>The initial index from which to return the results.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2391,6 +2729,8 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_blueprints_templates_get_serialize(
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2398,7 +2738,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2414,6 +2754,8 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_templates_get_with_http_info(
         self,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>Number of results to return per page.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>The initial index from which to return the results.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2426,11 +2768,15 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Get Blueprint Templates
 
         
 
+        :param limit: <p>Number of results to return per page.</p> 
+        :type limit: str
+        :param offset: <p>The initial index from which to return the results.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2454,6 +2800,8 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_blueprints_templates_get_serialize(
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2461,7 +2809,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2477,6 +2825,8 @@ class DefaultApi:
     @validate_call
     def api_v1_blueprints_templates_get_without_preload_content(
         self,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>Number of results to return per page.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>The initial index from which to return the results.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2494,6 +2844,10 @@ class DefaultApi:
 
         
 
+        :param limit: <p>Number of results to return per page.</p> 
+        :type limit: str
+        :param offset: <p>The initial index from which to return the results.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2517,6 +2871,8 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_blueprints_templates_get_serialize(
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2524,7 +2880,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2535,6 +2891,8 @@ class DefaultApi:
 
     def _api_v1_blueprints_templates_get_serialize(
         self,
+        limit,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -2557,22 +2915,24 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -2596,7 +2956,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_blankpush_post(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2609,12 +2969,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Send Blankpush
 
         <p>This endpoint sends an MDM command to initiate a blank push.</p> <p><a href=\"https://support.kandji.io/what-is-a-blank-push\">Using the Blank Push command</a></p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2647,7 +3007,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2663,7 +3023,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_blankpush_post_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2676,12 +3036,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Send Blankpush
 
         <p>This endpoint sends an MDM command to initiate a blank push.</p> <p><a href=\"https://support.kandji.io/what-is-a-blank-push\">Using the Blank Push command</a></p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2714,7 +3074,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2730,7 +3090,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_blankpush_post_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2748,7 +3108,7 @@ class DefaultApi:
 
         <p>This endpoint sends an MDM command to initiate a blank push.</p> <p><a href=\"https://support.kandji.io/what-is-a-blank-push\">Using the Blank Push command</a></p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2781,7 +3141,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2822,17 +3182,11 @@ class DefaultApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -2856,7 +3210,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_clearpasscode_post(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2869,12 +3223,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Clear Passcode
 
         <p>This endpoint sends an MDM command to clear a device passcode. Available for iPhone and iPad.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2907,7 +3261,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2923,7 +3277,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_clearpasscode_post_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2936,12 +3290,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Clear Passcode
 
         <p>This endpoint sends an MDM command to clear a device passcode. Available for iPhone and iPad.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2974,7 +3328,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2990,7 +3344,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_clearpasscode_post_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3008,7 +3362,7 @@ class DefaultApi:
 
         <p>This endpoint sends an MDM command to clear a device passcode. Available for iPhone and iPad.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3041,7 +3395,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3082,17 +3436,11 @@ class DefaultApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -3116,7 +3464,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_deleteuser_post(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3129,13 +3478,15 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Delete User
 
         <p>This endpoint sends an MDM command to delete a local user account on macOS and Shared iPad (Device Supervision via Automated Device Enrollment is required).</p> <p><strong>Request Body Parameters</strong>: application/json</p> <hr /> <p><code>DeleteAllUsers</code> - <code>boolean</code></p> <p><code>ForceDeletion</code> - <code>boolean</code></p> <p><code>UserName</code> - <code>string</code></p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3160,6 +3511,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_deleteuser_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3167,7 +3519,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3183,7 +3535,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_deleteuser_post_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3196,13 +3549,15 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Delete User
 
         <p>This endpoint sends an MDM command to delete a local user account on macOS and Shared iPad (Device Supervision via Automated Device Enrollment is required).</p> <p><strong>Request Body Parameters</strong>: application/json</p> <hr /> <p><code>DeleteAllUsers</code> - <code>boolean</code></p> <p><code>ForceDeletion</code> - <code>boolean</code></p> <p><code>UserName</code> - <code>string</code></p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3227,6 +3582,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_deleteuser_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3234,7 +3590,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3250,7 +3606,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_deleteuser_post_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3268,8 +3625,10 @@ class DefaultApi:
 
         <p>This endpoint sends an MDM command to delete a local user account on macOS and Shared iPad (Device Supervision via Automated Device Enrollment is required).</p> <p><strong>Request Body Parameters</strong>: application/json</p> <hr /> <p><code>DeleteAllUsers</code> - <code>boolean</code></p> <p><code>ForceDeletion</code> - <code>boolean</code></p> <p><code>UserName</code> - <code>string</code></p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3294,6 +3653,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_deleteuser_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3301,7 +3661,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3313,6 +3673,7 @@ class DefaultApi:
     def _api_v1_devices_device_id_action_deleteuser_post_serialize(
         self,
         device_id,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -3340,19 +3701,28 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if body is not None:
+            _body_params = body
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
             )
-
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -3376,7 +3746,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_disablelostmode_post(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3389,12 +3759,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Disable Lost Mode
 
         <p>This command will send a request to turn off lost mode on iOS and iPadOS.</p> <p>If the command is already pending, the message \"<em>Disable lost mode is already pending for this device.</em>\" will be in the response.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3427,7 +3797,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3443,7 +3813,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_disablelostmode_post_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3456,12 +3826,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Disable Lost Mode
 
         <p>This command will send a request to turn off lost mode on iOS and iPadOS.</p> <p>If the command is already pending, the message \"<em>Disable lost mode is already pending for this device.</em>\" will be in the response.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3494,7 +3864,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3510,7 +3880,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_disablelostmode_post_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3528,7 +3898,7 @@ class DefaultApi:
 
         <p>This command will send a request to turn off lost mode on iOS and iPadOS.</p> <p>If the command is already pending, the message \"<em>Disable lost mode is already pending for this device.</em>\" will be in the response.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3561,7 +3931,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3602,17 +3972,11 @@ class DefaultApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -3636,7 +4000,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_enablelostmode_post(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3649,13 +4014,15 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Enable Lost Mode
 
         <p>This endpoint sends an MDM command to remotely turn on lost mode on iOS and iPadOS.</p> <p>Optionally, a JSON payload can be sent in the request to set a lock message, phone number, and footnote on the target device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3680,6 +4047,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_enablelostmode_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3687,7 +4055,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3703,7 +4071,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_enablelostmode_post_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3716,13 +4085,15 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Enable Lost Mode
 
         <p>This endpoint sends an MDM command to remotely turn on lost mode on iOS and iPadOS.</p> <p>Optionally, a JSON payload can be sent in the request to set a lock message, phone number, and footnote on the target device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3747,6 +4118,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_enablelostmode_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3754,7 +4126,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3770,7 +4142,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_enablelostmode_post_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3788,8 +4161,10 @@ class DefaultApi:
 
         <p>This endpoint sends an MDM command to remotely turn on lost mode on iOS and iPadOS.</p> <p>Optionally, a JSON payload can be sent in the request to set a lock message, phone number, and footnote on the target device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3814,6 +4189,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_enablelostmode_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3821,7 +4197,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3833,6 +4209,7 @@ class DefaultApi:
     def _api_v1_devices_device_id_action_enablelostmode_post_serialize(
         self,
         device_id,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -3860,19 +4237,28 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if body is not None:
+            _body_params = body
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
             )
-
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -3896,7 +4282,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_erase_post(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3909,13 +4296,15 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Erase Device
 
         <p>This endpoint sends an MDM command to erase the device.</p> <p>iOS 4.0+, iPadOS 4.0+, macOS 10.7+, tvOS 10.2+</p> <p><strong>Request Body Parameters: application/json</strong></p> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th>Key</th> <th>Type</th> <th>Description</th> </tr> </thead> <tbody> <tr> <td><code>PIN</code></td> <td><code>string</code></td> <td>The six-character PIN for Find My. This value is available in macOS 10.8 and later.</td> </tr> <tr> <td><code>PreserveDataPlan</code></td> <td><code>boolean</code></td> <td>If true, preserve the data plan on an iPhone or iPad with eSIM functionality, if one exists. This value is available in iOS 11 and later.  <br />  <br />Default: true</td> </tr> <tr> <td><code>DisallowProximitySetup</code></td> <td><code>boolean</code></td> <td>If true, disable Proximity Setup on the next reboot and skip the pane in Setup Assistant. This value is available in iOS 11 and later. Prior to iOS 14, don’t use this option with any other option.  <br />  <br />Default: false</td> </tr> <tr> <td><code>ReturnToService</code></td> <td><code>object</code></td> <td>(iOS 17 and later and iPadOS 17 and later and with Shared iPad ) When sending the erase device command to mobile devices, use this key to enable Return to Service. Include an optional Wi-Fi payload ProfileId to allow the device to connect to a Wi-Fi network automatically after being erased. If a Wi-Fi ProfileId is not provided and the mobile device is not tethered to a Mac to share the network connection, the end-user will be required to select a Wi-Fi network to complete the setup.  <br />  <br />If sent to any macOS computer or to mobile devices on iOS 16 or iPadOS 16 and below, the RTS keys will be ignored, and only the erase device command will be issued to the device.</td> </tr> <tr> <td>- <code>Enabled</code></td> <td><code>boolean</code></td> <td>(Required) If true, the device tries to re-enroll itself automatically after erasure. The user needs to deactivate all activation locks for this feature to work correctly.</td> </tr> <tr> <td>- <code>ProfileId</code></td> <td><code>string</code></td> <td>Profile ID value associated with a Wi-Fi profile payload. This is required when the device doesn’t have ethernet access.</td> </tr> </tbody> </table> </div>
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3940,6 +4329,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_erase_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3947,7 +4337,8 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
+            '400': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3963,7 +4354,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_erase_post_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3976,13 +4368,15 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Erase Device
 
         <p>This endpoint sends an MDM command to erase the device.</p> <p>iOS 4.0+, iPadOS 4.0+, macOS 10.7+, tvOS 10.2+</p> <p><strong>Request Body Parameters: application/json</strong></p> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th>Key</th> <th>Type</th> <th>Description</th> </tr> </thead> <tbody> <tr> <td><code>PIN</code></td> <td><code>string</code></td> <td>The six-character PIN for Find My. This value is available in macOS 10.8 and later.</td> </tr> <tr> <td><code>PreserveDataPlan</code></td> <td><code>boolean</code></td> <td>If true, preserve the data plan on an iPhone or iPad with eSIM functionality, if one exists. This value is available in iOS 11 and later.  <br />  <br />Default: true</td> </tr> <tr> <td><code>DisallowProximitySetup</code></td> <td><code>boolean</code></td> <td>If true, disable Proximity Setup on the next reboot and skip the pane in Setup Assistant. This value is available in iOS 11 and later. Prior to iOS 14, don’t use this option with any other option.  <br />  <br />Default: false</td> </tr> <tr> <td><code>ReturnToService</code></td> <td><code>object</code></td> <td>(iOS 17 and later and iPadOS 17 and later and with Shared iPad ) When sending the erase device command to mobile devices, use this key to enable Return to Service. Include an optional Wi-Fi payload ProfileId to allow the device to connect to a Wi-Fi network automatically after being erased. If a Wi-Fi ProfileId is not provided and the mobile device is not tethered to a Mac to share the network connection, the end-user will be required to select a Wi-Fi network to complete the setup.  <br />  <br />If sent to any macOS computer or to mobile devices on iOS 16 or iPadOS 16 and below, the RTS keys will be ignored, and only the erase device command will be issued to the device.</td> </tr> <tr> <td>- <code>Enabled</code></td> <td><code>boolean</code></td> <td>(Required) If true, the device tries to re-enroll itself automatically after erasure. The user needs to deactivate all activation locks for this feature to work correctly.</td> </tr> <tr> <td>- <code>ProfileId</code></td> <td><code>string</code></td> <td>Profile ID value associated with a Wi-Fi profile payload. This is required when the device doesn’t have ethernet access.</td> </tr> </tbody> </table> </div>
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4007,6 +4401,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_erase_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4014,7 +4409,8 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
+            '400': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4030,7 +4426,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_erase_post_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4048,8 +4445,10 @@ class DefaultApi:
 
         <p>This endpoint sends an MDM command to erase the device.</p> <p>iOS 4.0+, iPadOS 4.0+, macOS 10.7+, tvOS 10.2+</p> <p><strong>Request Body Parameters: application/json</strong></p> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th>Key</th> <th>Type</th> <th>Description</th> </tr> </thead> <tbody> <tr> <td><code>PIN</code></td> <td><code>string</code></td> <td>The six-character PIN for Find My. This value is available in macOS 10.8 and later.</td> </tr> <tr> <td><code>PreserveDataPlan</code></td> <td><code>boolean</code></td> <td>If true, preserve the data plan on an iPhone or iPad with eSIM functionality, if one exists. This value is available in iOS 11 and later.  <br />  <br />Default: true</td> </tr> <tr> <td><code>DisallowProximitySetup</code></td> <td><code>boolean</code></td> <td>If true, disable Proximity Setup on the next reboot and skip the pane in Setup Assistant. This value is available in iOS 11 and later. Prior to iOS 14, don’t use this option with any other option.  <br />  <br />Default: false</td> </tr> <tr> <td><code>ReturnToService</code></td> <td><code>object</code></td> <td>(iOS 17 and later and iPadOS 17 and later and with Shared iPad ) When sending the erase device command to mobile devices, use this key to enable Return to Service. Include an optional Wi-Fi payload ProfileId to allow the device to connect to a Wi-Fi network automatically after being erased. If a Wi-Fi ProfileId is not provided and the mobile device is not tethered to a Mac to share the network connection, the end-user will be required to select a Wi-Fi network to complete the setup.  <br />  <br />If sent to any macOS computer or to mobile devices on iOS 16 or iPadOS 16 and below, the RTS keys will be ignored, and only the erase device command will be issued to the device.</td> </tr> <tr> <td>- <code>Enabled</code></td> <td><code>boolean</code></td> <td>(Required) If true, the device tries to re-enroll itself automatically after erasure. The user needs to deactivate all activation locks for this feature to work correctly.</td> </tr> <tr> <td>- <code>ProfileId</code></td> <td><code>string</code></td> <td>Profile ID value associated with a Wi-Fi profile payload. This is required when the device doesn’t have ethernet access.</td> </tr> </tbody> </table> </div>
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4074,6 +4473,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_erase_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4081,7 +4481,8 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
+            '400': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4093,6 +4494,7 @@ class DefaultApi:
     def _api_v1_devices_device_id_action_erase_post_serialize(
         self,
         device_id,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -4120,6 +4522,8 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if body is not None:
+            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -4130,9 +4534,23 @@ class DefaultApi:
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -4156,7 +4574,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_lock_post(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4174,8 +4593,10 @@ class DefaultApi:
 
         <p>This endpoint sends an MDM command to remotely lock a device.</p> <p>For macOS clients, an unlock PIN will be created, and returned in the response.</p> <blockquote> <p><strong>Caution !!!</strong><br /><em>For a Mac with Apple silicon running a version of macOS before 11.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.</em></p> </blockquote> <p>Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target device.</p> <p><strong>Note:</strong> For macOS, although the lock message is displayed on all types of Mac computers, the phone number is displayed only on a Mac with Apple silicon.</p> <h4 id=\"response-properties\">Response properties</h4> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th>Property</th> <th>Description</th> <th>Type</th> </tr> </thead> <tbody> <tr> <td>PIN</td> <td>Six digit pin code used to unlock a Mac.</td> <td>String</td> </tr> </tbody> </table> </div>
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4200,6 +4621,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_lock_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4208,6 +4630,7 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
+            '400': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4223,7 +4646,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_lock_post_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4241,8 +4665,10 @@ class DefaultApi:
 
         <p>This endpoint sends an MDM command to remotely lock a device.</p> <p>For macOS clients, an unlock PIN will be created, and returned in the response.</p> <blockquote> <p><strong>Caution !!!</strong><br /><em>For a Mac with Apple silicon running a version of macOS before 11.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.</em></p> </blockquote> <p>Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target device.</p> <p><strong>Note:</strong> For macOS, although the lock message is displayed on all types of Mac computers, the phone number is displayed only on a Mac with Apple silicon.</p> <h4 id=\"response-properties\">Response properties</h4> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th>Property</th> <th>Description</th> <th>Type</th> </tr> </thead> <tbody> <tr> <td>PIN</td> <td>Six digit pin code used to unlock a Mac.</td> <td>String</td> </tr> </tbody> </table> </div>
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4267,6 +4693,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_lock_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4275,6 +4702,7 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
+            '400': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4290,7 +4718,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_lock_post_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4308,8 +4737,10 @@ class DefaultApi:
 
         <p>This endpoint sends an MDM command to remotely lock a device.</p> <p>For macOS clients, an unlock PIN will be created, and returned in the response.</p> <blockquote> <p><strong>Caution !!!</strong><br /><em>For a Mac with Apple silicon running a version of macOS before 11.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.</em></p> </blockquote> <p>Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target device.</p> <p><strong>Note:</strong> For macOS, although the lock message is displayed on all types of Mac computers, the phone number is displayed only on a Mac with Apple silicon.</p> <h4 id=\"response-properties\">Response properties</h4> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th>Property</th> <th>Description</th> <th>Type</th> </tr> </thead> <tbody> <tr> <td>PIN</td> <td>Six digit pin code used to unlock a Mac.</td> <td>String</td> </tr> </tbody> </table> </div>
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4334,6 +4765,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_lock_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4342,6 +4774,7 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
+            '400': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4353,6 +4786,7 @@ class DefaultApi:
     def _api_v1_devices_device_id_action_lock_post_serialize(
         self,
         device_id,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -4380,6 +4814,8 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if body is not None:
+            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -4390,9 +4826,23 @@ class DefaultApi:
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -4416,7 +4866,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_playlostmodesound_post(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4429,12 +4879,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Play Lost Mode Sound
 
         <p>This command will tell the target iOS or iPadOS device to play the lost mode sound.</p> <p><strong>Note</strong>: The Lost Mode sound will play for 2 minutes, even if the device is in silent mode. Anyone finding the device can silence the sound by pressing any of its side buttons.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -4467,7 +4917,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4483,7 +4933,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_playlostmodesound_post_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4496,12 +4946,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Play Lost Mode Sound
 
         <p>This command will tell the target iOS or iPadOS device to play the lost mode sound.</p> <p><strong>Note</strong>: The Lost Mode sound will play for 2 minutes, even if the device is in silent mode. Anyone finding the device can silence the sound by pressing any of its side buttons.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -4534,7 +4984,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4550,7 +5000,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_playlostmodesound_post_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4568,7 +5018,7 @@ class DefaultApi:
 
         <p>This command will tell the target iOS or iPadOS device to play the lost mode sound.</p> <p><strong>Note</strong>: The Lost Mode sound will play for 2 minutes, even if the device is in silent mode. Anyone finding the device can silence the sound by pressing any of its side buttons.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -4601,7 +5051,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4642,17 +5092,11 @@ class DefaultApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -4676,7 +5120,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_reinstallagent_post(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4689,12 +5133,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Reinstall Agent
 
         <p>This endpoint sends an MDM command reinstall the Kandji Agent. Available for macOS devices.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -4727,7 +5171,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4743,7 +5187,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_reinstallagent_post_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4756,12 +5200,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Reinstall Agent
 
         <p>This endpoint sends an MDM command reinstall the Kandji Agent. Available for macOS devices.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -4794,7 +5238,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4810,7 +5254,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_reinstallagent_post_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4828,7 +5272,7 @@ class DefaultApi:
 
         <p>This endpoint sends an MDM command reinstall the Kandji Agent. Available for macOS devices.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -4861,7 +5305,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4902,17 +5346,11 @@ class DefaultApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -4936,7 +5374,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_remotedesktop_post(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4949,13 +5388,15 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Remote Desktop
 
         <p>This endpoint sends an MDM command to control the Remote Management status on a Mac. This MDM command turns on (or turns off) Remote Management with <em>Observe</em> and <em>Control</em> permissions given to all users*.*</p> <p><strong>Request Body Parameters</strong>: application/json</p> <hr /> <p><code>EnableRemoteDesktop</code> - <code>boolean</code></p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4980,6 +5421,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_remotedesktop_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4987,7 +5429,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5003,7 +5445,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_remotedesktop_post_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5016,13 +5459,15 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Remote Desktop
 
         <p>This endpoint sends an MDM command to control the Remote Management status on a Mac. This MDM command turns on (or turns off) Remote Management with <em>Observe</em> and <em>Control</em> permissions given to all users*.*</p> <p><strong>Request Body Parameters</strong>: application/json</p> <hr /> <p><code>EnableRemoteDesktop</code> - <code>boolean</code></p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5047,6 +5492,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_remotedesktop_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5054,7 +5500,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5070,7 +5516,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_remotedesktop_post_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5088,8 +5535,10 @@ class DefaultApi:
 
         <p>This endpoint sends an MDM command to control the Remote Management status on a Mac. This MDM command turns on (or turns off) Remote Management with <em>Observe</em> and <em>Control</em> permissions given to all users*.*</p> <p><strong>Request Body Parameters</strong>: application/json</p> <hr /> <p><code>EnableRemoteDesktop</code> - <code>boolean</code></p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5114,6 +5563,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_remotedesktop_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5121,7 +5571,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5133,6 +5583,7 @@ class DefaultApi:
     def _api_v1_devices_device_id_action_remotedesktop_post_serialize(
         self,
         device_id,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -5160,19 +5611,28 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if body is not None:
+            _body_params = body
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
             )
-
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -5196,7 +5656,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_renewmdmprofile_post(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5209,12 +5669,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Renew MDM Profile
 
         <p>This endpoint sends an MDM command to re-install the existing root MDM profile for a given device ID. This command will not impact any existing configurations, apps, or profiles.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5247,7 +5707,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5263,7 +5723,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_renewmdmprofile_post_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5276,12 +5736,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Renew MDM Profile
 
         <p>This endpoint sends an MDM command to re-install the existing root MDM profile for a given device ID. This command will not impact any existing configurations, apps, or profiles.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5314,7 +5774,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5330,7 +5790,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_renewmdmprofile_post_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5348,7 +5808,7 @@ class DefaultApi:
 
         <p>This endpoint sends an MDM command to re-install the existing root MDM profile for a given device ID. This command will not impact any existing configurations, apps, or profiles.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5381,7 +5841,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5422,17 +5882,11 @@ class DefaultApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -5456,7 +5910,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_restart_post(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5469,13 +5924,15 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Restart Device
 
         <p>This endpoint sends an MDM command to remotely restart a device.</p> <ul> <li><p><code>RebuildKernelCache</code> - If <code>true</code>, the system rebuilds the kernel cache during a device restart. If <code>BootstrapTokenAllowedForAuthentication</code> is <code>true</code> inSecurityInfoResponse.SecurityInfo, the device requests the bootstrap token from MDM before executing this command. This value is available in macOS 11 and later. Default: false</p> </li> <li><p><code>NotifyUser</code> - If <code>true</code>, notifies the user to restart the device at their convenience. Forced restart if the device is at <code>loginwindow</code> with no logged-in users. The user can dismiss the notification and ignore the request. No further notifications display unless you resend the command. This value is available in macOS 11.3 and later. Default: false</p> </li> </ul> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5500,6 +5957,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_restart_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5507,7 +5965,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5523,7 +5981,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_restart_post_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5536,13 +5995,15 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Restart Device
 
         <p>This endpoint sends an MDM command to remotely restart a device.</p> <ul> <li><p><code>RebuildKernelCache</code> - If <code>true</code>, the system rebuilds the kernel cache during a device restart. If <code>BootstrapTokenAllowedForAuthentication</code> is <code>true</code> inSecurityInfoResponse.SecurityInfo, the device requests the bootstrap token from MDM before executing this command. This value is available in macOS 11 and later. Default: false</p> </li> <li><p><code>NotifyUser</code> - If <code>true</code>, notifies the user to restart the device at their convenience. Forced restart if the device is at <code>loginwindow</code> with no logged-in users. The user can dismiss the notification and ignore the request. No further notifications display unless you resend the command. This value is available in macOS 11.3 and later. Default: false</p> </li> </ul> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5567,6 +6028,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_restart_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5574,7 +6036,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5590,7 +6052,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_restart_post_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5608,8 +6071,10 @@ class DefaultApi:
 
         <p>This endpoint sends an MDM command to remotely restart a device.</p> <ul> <li><p><code>RebuildKernelCache</code> - If <code>true</code>, the system rebuilds the kernel cache during a device restart. If <code>BootstrapTokenAllowedForAuthentication</code> is <code>true</code> inSecurityInfoResponse.SecurityInfo, the device requests the bootstrap token from MDM before executing this command. This value is available in macOS 11 and later. Default: false</p> </li> <li><p><code>NotifyUser</code> - If <code>true</code>, notifies the user to restart the device at their convenience. Forced restart if the device is at <code>loginwindow</code> with no logged-in users. The user can dismiss the notification and ignore the request. No further notifications display unless you resend the command. This value is available in macOS 11.3 and later. Default: false</p> </li> </ul> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5634,6 +6099,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_restart_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5641,7 +6107,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5653,6 +6119,7 @@ class DefaultApi:
     def _api_v1_devices_device_id_action_restart_post_serialize(
         self,
         device_id,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -5680,19 +6147,28 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if body is not None:
+            _body_params = body
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
             )
-
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -5716,7 +6192,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_setname_post(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5729,13 +6206,15 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Set Name
 
         <p>This endpoint sends an MDM command to set the device name.</p> <p><strong>Request Body Parameters</strong>: application/json</p> <hr /> <p><code>DeviceName</code> - <code>string</code></p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5760,6 +6239,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_setname_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5767,7 +6247,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5783,7 +6263,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_setname_post_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5796,13 +6277,15 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Set Name
 
         <p>This endpoint sends an MDM command to set the device name.</p> <p><strong>Request Body Parameters</strong>: application/json</p> <hr /> <p><code>DeviceName</code> - <code>string</code></p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5827,6 +6310,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_setname_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5834,7 +6318,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5850,7 +6334,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_setname_post_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5868,8 +6353,10 @@ class DefaultApi:
 
         <p>This endpoint sends an MDM command to set the device name.</p> <p><strong>Request Body Parameters</strong>: application/json</p> <hr /> <p><code>DeviceName</code> - <code>string</code></p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5894,6 +6381,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_setname_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5901,7 +6389,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5913,6 +6401,7 @@ class DefaultApi:
     def _api_v1_devices_device_id_action_setname_post_serialize(
         self,
         device_id,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -5940,19 +6429,28 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if body is not None:
+            _body_params = body
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
             )
-
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -5976,7 +6474,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_shutdown_post(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5989,12 +6487,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Shutdown
 
         <p>This endpoint sends an MDM command to shutdown a device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -6027,7 +6525,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6043,7 +6541,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_shutdown_post_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6056,12 +6554,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Shutdown
 
         <p>This endpoint sends an MDM command to shutdown a device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -6094,7 +6592,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6110,7 +6608,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_shutdown_post_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6128,7 +6626,7 @@ class DefaultApi:
 
         <p>This endpoint sends an MDM command to shutdown a device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -6161,7 +6659,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6202,17 +6700,11 @@ class DefaultApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -6236,7 +6728,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_unlockaccount_post(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6249,13 +6742,15 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Unlock Account
 
         <p>This endpoint sends an MDM command to unlock a user account that locked by the system because of too many failed password attempts. Available for macOS.</p> <p><strong>Request Body Parameters</strong>: application/json</p> <hr /> <p><code>UserName</code> - <code>string</code></p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6280,6 +6775,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_unlockaccount_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6287,7 +6783,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6303,7 +6799,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_unlockaccount_post_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6316,13 +6813,15 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Unlock Account
 
         <p>This endpoint sends an MDM command to unlock a user account that locked by the system because of too many failed password attempts. Available for macOS.</p> <p><strong>Request Body Parameters</strong>: application/json</p> <hr /> <p><code>UserName</code> - <code>string</code></p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6347,6 +6846,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_unlockaccount_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6354,7 +6854,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6370,7 +6870,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_unlockaccount_post_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6388,8 +6889,10 @@ class DefaultApi:
 
         <p>This endpoint sends an MDM command to unlock a user account that locked by the system because of too many failed password attempts. Available for macOS.</p> <p><strong>Request Body Parameters</strong>: application/json</p> <hr /> <p><code>UserName</code> - <code>string</code></p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6414,6 +6917,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_action_unlockaccount_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6421,7 +6925,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6433,6 +6937,7 @@ class DefaultApi:
     def _api_v1_devices_device_id_action_unlockaccount_post_serialize(
         self,
         device_id,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -6460,19 +6965,28 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if body is not None:
+            _body_params = body
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
             )
-
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -6496,7 +7010,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_updateinventory_post(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6509,12 +7023,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Update Inventory
 
         <p>This endpoint sends an MDM command to start a check-in for a device, initiating the daily MDM commands and MDM logic.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -6547,7 +7061,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6563,7 +7077,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_updateinventory_post_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6576,12 +7090,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Update Inventory
 
         <p>This endpoint sends an MDM command to start a check-in for a device, initiating the daily MDM commands and MDM logic.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -6614,7 +7128,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6630,7 +7144,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_updateinventory_post_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6648,7 +7162,7 @@ class DefaultApi:
 
         <p>This endpoint sends an MDM command to start a check-in for a device, initiating the daily MDM commands and MDM logic.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -6681,7 +7195,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6722,17 +7236,11 @@ class DefaultApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -6756,7 +7264,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_updatelocation_post(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6769,12 +7277,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Update Location
 
         <p>This endpoint sends an MDM command to update the location data on iOS and iPadOS.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -6807,7 +7315,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6823,7 +7331,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_updatelocation_post_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6836,12 +7344,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Update Location
 
         <p>This endpoint sends an MDM command to update the location data on iOS and iPadOS.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -6874,7 +7382,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6890,7 +7398,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_action_updatelocation_post_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6908,7 +7416,7 @@ class DefaultApi:
 
         <p>This endpoint sends an MDM command to update the location data on iOS and iPadOS.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -6941,7 +7449,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6982,17 +7490,11 @@ class DefaultApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -7014,9 +7516,11 @@ class DefaultApi:
 
 
     @validate_call
-    def api_v1_devices_device_id_activitylimit300_get(
+    def api_v1_devices_device_id_activity_get(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        limit: Annotated[StrictStr, Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")],
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7034,8 +7538,12 @@ class DefaultApi:
 
         <p>This request returns the device activity for a specified Device ID.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (required)
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7058,8 +7566,10 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api_v1_devices_device_id_activitylimit300_get_serialize(
+        _param = self._api_v1_devices_device_id_activity_get_serialize(
             device_id=device_id,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7081,9 +7591,11 @@ class DefaultApi:
 
 
     @validate_call
-    def api_v1_devices_device_id_activitylimit300_get_with_http_info(
+    def api_v1_devices_device_id_activity_get_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        limit: Annotated[StrictStr, Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")],
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7101,8 +7613,12 @@ class DefaultApi:
 
         <p>This request returns the device activity for a specified Device ID.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (required)
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7125,8 +7641,10 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api_v1_devices_device_id_activitylimit300_get_serialize(
+        _param = self._api_v1_devices_device_id_activity_get_serialize(
             device_id=device_id,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7148,9 +7666,11 @@ class DefaultApi:
 
 
     @validate_call
-    def api_v1_devices_device_id_activitylimit300_get_without_preload_content(
+    def api_v1_devices_device_id_activity_get_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        limit: Annotated[StrictStr, Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")],
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7168,8 +7688,12 @@ class DefaultApi:
 
         <p>This request returns the device activity for a specified Device ID.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (required)
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7192,8 +7716,10 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api_v1_devices_device_id_activitylimit300_get_serialize(
+        _param = self._api_v1_devices_device_id_activity_get_serialize(
             device_id=device_id,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7210,9 +7736,11 @@ class DefaultApi:
         return response_data.response
 
 
-    def _api_v1_devices_device_id_activitylimit300_get_serialize(
+    def _api_v1_devices_device_id_activity_get_serialize(
         self,
         device_id,
+        limit,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -7237,6 +7765,14 @@ class DefaultApi:
         if device_id is not None:
             _path_params['device_id'] = device_id
         # process the query parameters
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -7253,11 +7789,12 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/v1/devices/{device_id}/activity?limit=300',
+            resource_path='/api/v1/devices/{device_id}/activity',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -7276,7 +7813,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_apps_get(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7294,7 +7831,7 @@ class DefaultApi:
 
         <p>This request returns a list of all installed apps for a specified Device ID.</p> <p>For iPhone and iPad, the preinstalled Apple apps are not reported.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -7343,7 +7880,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_apps_get_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7361,7 +7898,7 @@ class DefaultApi:
 
         <p>This request returns a list of all installed apps for a specified Device ID.</p> <p>For iPhone and iPad, the preinstalled Apple apps are not reported.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -7410,7 +7947,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_apps_get_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7428,7 +7965,7 @@ class DefaultApi:
 
         <p>This request returns a list of all installed apps for a specified Device ID.</p> <p>For iPhone and iPad, the preinstalled Apple apps are not reported.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -7513,6 +8050,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -7534,9 +8072,11 @@ class DefaultApi:
 
 
     @validate_call
-    def api_v1_devices_device_id_commandslimit300_get(
+    def api_v1_devices_device_id_commands_get(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        limit: Annotated[StrictStr, Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")],
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7549,13 +8089,17 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Get Device Commands
 
         <p>This endpoint sends a request to get information about the commands sent to a given device ID.</p> <h3 id=\"mdm-status-codes\">MDM Status Codes</h3> <ul> <li>1 : Command is Pending</li> <li>2 : Command is running</li> <li>3 : Command completed</li> <li>4 : Command failed</li> <li>5 : Command received \"Not Now\" response</li> </ul> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (required)
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7578,8 +8122,10 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api_v1_devices_device_id_commandslimit300_get_serialize(
+        _param = self._api_v1_devices_device_id_commands_get_serialize(
             device_id=device_id,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7587,7 +8133,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7601,9 +8147,11 @@ class DefaultApi:
 
 
     @validate_call
-    def api_v1_devices_device_id_commandslimit300_get_with_http_info(
+    def api_v1_devices_device_id_commands_get_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        limit: Annotated[StrictStr, Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")],
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7616,13 +8164,17 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Get Device Commands
 
         <p>This endpoint sends a request to get information about the commands sent to a given device ID.</p> <h3 id=\"mdm-status-codes\">MDM Status Codes</h3> <ul> <li>1 : Command is Pending</li> <li>2 : Command is running</li> <li>3 : Command completed</li> <li>4 : Command failed</li> <li>5 : Command received \"Not Now\" response</li> </ul> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (required)
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7645,8 +8197,10 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api_v1_devices_device_id_commandslimit300_get_serialize(
+        _param = self._api_v1_devices_device_id_commands_get_serialize(
             device_id=device_id,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7654,7 +8208,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7668,9 +8222,11 @@ class DefaultApi:
 
 
     @validate_call
-    def api_v1_devices_device_id_commandslimit300_get_without_preload_content(
+    def api_v1_devices_device_id_commands_get_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        limit: Annotated[StrictStr, Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")],
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7688,8 +8244,12 @@ class DefaultApi:
 
         <p>This endpoint sends a request to get information about the commands sent to a given device ID.</p> <h3 id=\"mdm-status-codes\">MDM Status Codes</h3> <ul> <li>1 : Command is Pending</li> <li>2 : Command is running</li> <li>3 : Command completed</li> <li>4 : Command failed</li> <li>5 : Command received \"Not Now\" response</li> </ul> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (required)
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7712,8 +8272,10 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api_v1_devices_device_id_commandslimit300_get_serialize(
+        _param = self._api_v1_devices_device_id_commands_get_serialize(
             device_id=device_id,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7721,7 +8283,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7730,9 +8292,11 @@ class DefaultApi:
         return response_data.response
 
 
-    def _api_v1_devices_device_id_commandslimit300_get_serialize(
+    def _api_v1_devices_device_id_commands_get_serialize(
         self,
         device_id,
+        limit,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -7757,27 +8321,29 @@ class DefaultApi:
         if device_id is not None:
             _path_params['device_id'] = device_id
         # process the query parameters
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/v1/devices/{device_id}/commands?limit=300',
+            resource_path='/api/v1/devices/{device_id}/commands',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -7796,7 +8362,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_delete(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7809,12 +8375,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Delete Device
 
         <p>This endpoint sends an MDM command to delete a device. This will remove the device record from Kandji and send a Remove Management command. For macOS devices, it will also send an uninstall command to the Kandji Agent at the next agent checkin.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -7847,7 +8413,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '204': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7863,7 +8429,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_delete_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7876,12 +8442,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Delete Device
 
         <p>This endpoint sends an MDM command to delete a device. This will remove the device record from Kandji and send a Remove Management command. For macOS devices, it will also send an uninstall command to the Kandji Agent at the next agent checkin.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -7914,7 +8480,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '204': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7930,7 +8496,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_delete_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7948,7 +8514,7 @@ class DefaultApi:
 
         <p>This endpoint sends an MDM command to delete a device. This will remove the device record from Kandji and send a Remove Management command. For macOS devices, it will also send an uninstall command to the Kandji Agent at the next agent checkin.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -7981,7 +8547,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '204': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -8022,17 +8588,11 @@ class DefaultApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -8056,7 +8616,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_details_get(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8074,7 +8634,7 @@ class DefaultApi:
 
         <p>This request returns the device details for a specified Device ID.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -8123,7 +8683,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_details_get_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8141,7 +8701,7 @@ class DefaultApi:
 
         <p>This request returns the device details for a specified Device ID.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -8190,7 +8750,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_details_get_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8208,7 +8768,7 @@ class DefaultApi:
 
         <p>This request returns the device details for a specified Device ID.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -8293,6 +8853,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -8316,7 +8877,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_details_lostmode_delete(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8334,7 +8895,7 @@ class DefaultApi:
 
         <p>This endpoint can be used to send a cancelation request if Lost Mode is in an error state for a given iOS or iPadOS device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -8367,6 +8928,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -8382,7 +8944,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_details_lostmode_delete_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8400,7 +8962,7 @@ class DefaultApi:
 
         <p>This endpoint can be used to send a cancelation request if Lost Mode is in an error state for a given iOS or iPadOS device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -8433,6 +8995,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -8448,7 +9011,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_details_lostmode_delete_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8466,7 +9029,7 @@ class DefaultApi:
 
         <p>This endpoint can be used to send a cancelation request if Lost Mode is in an error state for a given iOS or iPadOS device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -8499,6 +9062,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -8543,6 +9107,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -8566,7 +9131,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_details_lostmode_get(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8584,7 +9149,7 @@ class DefaultApi:
 
         <p>This request returns the device lost mode details for a specified Device ID.</p> <p><strong>Note</strong>: Lost Mode is is only available for iOS and iPadOS. For more information, please see this <a href=\"https://support.kandji.io/a/solutions/articles/72000573873\">Kandji support artilcle</a>.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -8618,6 +9183,7 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
+            '400': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -8633,7 +9199,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_details_lostmode_get_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8651,7 +9217,7 @@ class DefaultApi:
 
         <p>This request returns the device lost mode details for a specified Device ID.</p> <p><strong>Note</strong>: Lost Mode is is only available for iOS and iPadOS. For more information, please see this <a href=\"https://support.kandji.io/a/solutions/articles/72000573873\">Kandji support artilcle</a>.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -8685,6 +9251,7 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
+            '400': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -8700,7 +9267,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_details_lostmode_get_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8718,7 +9285,7 @@ class DefaultApi:
 
         <p>This request returns the device lost mode details for a specified Device ID.</p> <p><strong>Note</strong>: Lost Mode is is only available for iOS and iPadOS. For more information, please see this <a href=\"https://support.kandji.io/a/solutions/articles/72000573873\">Kandji support artilcle</a>.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -8752,6 +9319,7 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
+            '400': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -8803,6 +9371,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -8826,7 +9395,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_get(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8844,7 +9413,7 @@ class DefaultApi:
 
         <p>This request returns the high-level information for a specified Device ID.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -8893,7 +9462,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_get_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8911,7 +9480,7 @@ class DefaultApi:
 
         <p>This request returns the high-level information for a specified Device ID.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -8960,7 +9529,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_get_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8978,7 +9547,7 @@ class DefaultApi:
 
         <p>This request returns the high-level information for a specified Device ID.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -9063,6 +9632,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -9086,7 +9656,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_library_items_get(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9104,7 +9674,7 @@ class DefaultApi:
 
         <p>This request gets all library items and their statuses for a specified Device ID</p> <h4 id=\"possible-library-item-status-values\">Possible library item status values</h4> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>AVAILABLE</td> <td>string</td> <td>Library item available in Self Service</td> </tr> <tr> <td>CACHED</td> <td>string</td> <td>Library item downloaded for install but not yet installed</td> </tr> <tr> <td>CHANGE_PENDING</td> <td>string</td> <td>Recovery Password library item has changes that have not yet been applied</td> </tr> <tr> <td>DOWNLOADING</td> <td>string</td> <td>Library item downloading</td> </tr> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>EXCLUDED</td> <td>string</td> <td>Not in scope for assignment rule</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>INSTALLING</td> <td>string</td> <td>Library item installing</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device, not yet installed (All library items except for config profiles)</td> </tr> <tr> <td>failed</td> <td>string</td> <td>Configuration profile failed to install</td> </tr> <tr> <td>pending</td> <td>string</td> <td>Waiting on device, Configuration profile not yet installed</td> </tr> <tr> <td>success</td> <td>string</td> <td>Configuration profile installed</td> </tr> </tbody> </table> </div>
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -9153,7 +9723,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_library_items_get_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9171,7 +9741,7 @@ class DefaultApi:
 
         <p>This request gets all library items and their statuses for a specified Device ID</p> <h4 id=\"possible-library-item-status-values\">Possible library item status values</h4> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>AVAILABLE</td> <td>string</td> <td>Library item available in Self Service</td> </tr> <tr> <td>CACHED</td> <td>string</td> <td>Library item downloaded for install but not yet installed</td> </tr> <tr> <td>CHANGE_PENDING</td> <td>string</td> <td>Recovery Password library item has changes that have not yet been applied</td> </tr> <tr> <td>DOWNLOADING</td> <td>string</td> <td>Library item downloading</td> </tr> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>EXCLUDED</td> <td>string</td> <td>Not in scope for assignment rule</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>INSTALLING</td> <td>string</td> <td>Library item installing</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device, not yet installed (All library items except for config profiles)</td> </tr> <tr> <td>failed</td> <td>string</td> <td>Configuration profile failed to install</td> </tr> <tr> <td>pending</td> <td>string</td> <td>Waiting on device, Configuration profile not yet installed</td> </tr> <tr> <td>success</td> <td>string</td> <td>Configuration profile installed</td> </tr> </tbody> </table> </div>
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -9220,7 +9790,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_library_items_get_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9238,7 +9808,7 @@ class DefaultApi:
 
         <p>This request gets all library items and their statuses for a specified Device ID</p> <h4 id=\"possible-library-item-status-values\">Possible library item status values</h4> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>AVAILABLE</td> <td>string</td> <td>Library item available in Self Service</td> </tr> <tr> <td>CACHED</td> <td>string</td> <td>Library item downloaded for install but not yet installed</td> </tr> <tr> <td>CHANGE_PENDING</td> <td>string</td> <td>Recovery Password library item has changes that have not yet been applied</td> </tr> <tr> <td>DOWNLOADING</td> <td>string</td> <td>Library item downloading</td> </tr> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>EXCLUDED</td> <td>string</td> <td>Not in scope for assignment rule</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>INSTALLING</td> <td>string</td> <td>Library item installing</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device, not yet installed (All library items except for config profiles)</td> </tr> <tr> <td>failed</td> <td>string</td> <td>Configuration profile failed to install</td> </tr> <tr> <td>pending</td> <td>string</td> <td>Waiting on device, Configuration profile not yet installed</td> </tr> <tr> <td>success</td> <td>string</td> <td>Configuration profile installed</td> </tr> </tbody> </table> </div>
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -9323,6 +9893,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -9346,7 +9917,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_notes_get(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9364,7 +9935,7 @@ class DefaultApi:
 
         <p>This request gets all notes for the specified Device ID.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -9413,7 +9984,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_notes_get_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9431,7 +10002,7 @@ class DefaultApi:
 
         <p>This request gets all notes for the specified Device ID.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -9480,7 +10051,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_notes_get_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9498,7 +10069,7 @@ class DefaultApi:
 
         <p>This request gets all notes for the specified Device ID.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -9583,6 +10154,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -9606,8 +10178,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_notes_note_id_delete(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
-        note_id: Annotated[StrictStr, Field(description="Path parameter 'note_id'")],
+        device_id: StrictStr,
+        note_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9625,9 +10197,9 @@ class DefaultApi:
 
         <p>This request deletes a specified note (Note ID) for the specified Device ID.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
-        :param note_id: Path parameter 'note_id' (required)
+        :param note_id: (required)
         :type note_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -9677,8 +10249,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_notes_note_id_delete_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
-        note_id: Annotated[StrictStr, Field(description="Path parameter 'note_id'")],
+        device_id: StrictStr,
+        note_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9696,9 +10268,9 @@ class DefaultApi:
 
         <p>This request deletes a specified note (Note ID) for the specified Device ID.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
-        :param note_id: Path parameter 'note_id' (required)
+        :param note_id: (required)
         :type note_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -9748,8 +10320,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_notes_note_id_delete_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
-        note_id: Annotated[StrictStr, Field(description="Path parameter 'note_id'")],
+        device_id: StrictStr,
+        note_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9767,9 +10339,9 @@ class DefaultApi:
 
         <p>This request deletes a specified note (Note ID) for the specified Device ID.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
-        :param note_id: Path parameter 'note_id' (required)
+        :param note_id: (required)
         :type note_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -9858,6 +10430,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -9881,8 +10454,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_notes_note_id_get(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
-        note_id: Annotated[StrictStr, Field(description="Path parameter 'note_id'")],
+        device_id: StrictStr,
+        note_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9900,9 +10473,9 @@ class DefaultApi:
 
         <p>This request retrieves a specified note (Note ID) for the specified Device ID.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
-        :param note_id: Path parameter 'note_id' (required)
+        :param note_id: (required)
         :type note_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -9952,8 +10525,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_notes_note_id_get_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
-        note_id: Annotated[StrictStr, Field(description="Path parameter 'note_id'")],
+        device_id: StrictStr,
+        note_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9971,9 +10544,9 @@ class DefaultApi:
 
         <p>This request retrieves a specified note (Note ID) for the specified Device ID.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
-        :param note_id: Path parameter 'note_id' (required)
+        :param note_id: (required)
         :type note_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -10023,8 +10596,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_notes_note_id_get_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
-        note_id: Annotated[StrictStr, Field(description="Path parameter 'note_id'")],
+        device_id: StrictStr,
+        note_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10042,9 +10615,9 @@ class DefaultApi:
 
         <p>This request retrieves a specified note (Note ID) for the specified Device ID.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
-        :param note_id: Path parameter 'note_id' (required)
+        :param note_id: (required)
         :type note_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -10133,6 +10706,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -10156,10 +10730,11 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_notes_note_id_patch(
         self,
+        device_id: StrictStr,
+        note_id: StrictStr,
         authorization: StrictStr,
         content_type: StrictStr,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
-        note_id: Annotated[StrictStr, Field(description="Path parameter 'note_id'")],
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10177,14 +10752,16 @@ class DefaultApi:
 
         <p>This request patches a specified note (Note ID) for the specified Device ID.</p> 
 
+        :param device_id: (required)
+        :type device_id: str
+        :param note_id: (required)
+        :type note_id: str
         :param authorization:  (required)
         :type authorization: str
         :param content_type:  (required)
         :type content_type: str
-        :param device_id: Path parameter 'device_id' (required)
-        :type device_id: str
-        :param note_id: Path parameter 'note_id' (required)
-        :type note_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10208,10 +10785,11 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_devices_device_id_notes_note_id_patch_serialize(
-            authorization=authorization,
-            content_type=content_type,
             device_id=device_id,
             note_id=note_id,
+            authorization=authorization,
+            content_type=content_type,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10235,10 +10813,11 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_notes_note_id_patch_with_http_info(
         self,
+        device_id: StrictStr,
+        note_id: StrictStr,
         authorization: StrictStr,
         content_type: StrictStr,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
-        note_id: Annotated[StrictStr, Field(description="Path parameter 'note_id'")],
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10256,14 +10835,16 @@ class DefaultApi:
 
         <p>This request patches a specified note (Note ID) for the specified Device ID.</p> 
 
+        :param device_id: (required)
+        :type device_id: str
+        :param note_id: (required)
+        :type note_id: str
         :param authorization:  (required)
         :type authorization: str
         :param content_type:  (required)
         :type content_type: str
-        :param device_id: Path parameter 'device_id' (required)
-        :type device_id: str
-        :param note_id: Path parameter 'note_id' (required)
-        :type note_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10287,10 +10868,11 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_devices_device_id_notes_note_id_patch_serialize(
-            authorization=authorization,
-            content_type=content_type,
             device_id=device_id,
             note_id=note_id,
+            authorization=authorization,
+            content_type=content_type,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10314,10 +10896,11 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_notes_note_id_patch_without_preload_content(
         self,
+        device_id: StrictStr,
+        note_id: StrictStr,
         authorization: StrictStr,
         content_type: StrictStr,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
-        note_id: Annotated[StrictStr, Field(description="Path parameter 'note_id'")],
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10335,14 +10918,16 @@ class DefaultApi:
 
         <p>This request patches a specified note (Note ID) for the specified Device ID.</p> 
 
+        :param device_id: (required)
+        :type device_id: str
+        :param note_id: (required)
+        :type note_id: str
         :param authorization:  (required)
         :type authorization: str
         :param content_type:  (required)
         :type content_type: str
-        :param device_id: Path parameter 'device_id' (required)
-        :type device_id: str
-        :param note_id: Path parameter 'note_id' (required)
-        :type note_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10366,10 +10951,11 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_devices_device_id_notes_note_id_patch_serialize(
-            authorization=authorization,
-            content_type=content_type,
             device_id=device_id,
             note_id=note_id,
+            authorization=authorization,
+            content_type=content_type,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10388,10 +10974,11 @@ class DefaultApi:
 
     def _api_v1_devices_device_id_notes_note_id_patch_serialize(
         self,
-        authorization,
-        content_type,
         device_id,
         note_id,
+        authorization,
+        content_type,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -10425,6 +11012,8 @@ class DefaultApi:
             _header_params['Content-Type'] = content_type
         # process the form parameters
         # process the body parameter
+        if body is not None:
+            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -10435,9 +11024,23 @@ class DefaultApi:
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -10461,7 +11064,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_notes_post(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10479,8 +11083,10 @@ class DefaultApi:
 
         <p>This request creates a note for the specified device ID.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10505,6 +11111,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_notes_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10512,7 +11119,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '201': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -10528,7 +11135,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_notes_post_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10546,8 +11154,10 @@ class DefaultApi:
 
         <p>This request creates a note for the specified device ID.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10572,6 +11182,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_notes_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10579,7 +11190,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '201': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -10595,7 +11206,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_notes_post_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10613,8 +11225,10 @@ class DefaultApi:
 
         <p>This request creates a note for the specified device ID.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10639,6 +11253,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_notes_post_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10646,7 +11261,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '201': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -10658,6 +11273,7 @@ class DefaultApi:
     def _api_v1_devices_device_id_notes_post_serialize(
         self,
         device_id,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -10685,6 +11301,8 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if body is not None:
+            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -10695,9 +11313,23 @@ class DefaultApi:
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -10721,7 +11353,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_parameters_get(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10739,7 +11371,7 @@ class DefaultApi:
 
         <p>This request returns the parameters and their statuses for a specified Device ID</p> <p>This endpoint is only applicable to macOS clients.</p> <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=\"https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations\">https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p> <p><strong>Possible parameter status values</strong></p> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device. Not yet run.</td> </tr> <tr> <td>REMEDIATED</td> <td>string</td> <td>Parameter remediated</td> </tr> <tr> <td>WARNING</td> <td>string</td> <td>Muted alert</td> </tr> </tbody> </table> </div>
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -10788,7 +11420,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_parameters_get_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10806,7 +11438,7 @@ class DefaultApi:
 
         <p>This request returns the parameters and their statuses for a specified Device ID</p> <p>This endpoint is only applicable to macOS clients.</p> <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=\"https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations\">https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p> <p><strong>Possible parameter status values</strong></p> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device. Not yet run.</td> </tr> <tr> <td>REMEDIATED</td> <td>string</td> <td>Parameter remediated</td> </tr> <tr> <td>WARNING</td> <td>string</td> <td>Muted alert</td> </tr> </tbody> </table> </div>
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -10855,7 +11487,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_parameters_get_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10873,7 +11505,7 @@ class DefaultApi:
 
         <p>This request returns the parameters and their statuses for a specified Device ID</p> <p>This endpoint is only applicable to macOS clients.</p> <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=\"https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations\">https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p> <p><strong>Possible parameter status values</strong></p> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device. Not yet run.</td> </tr> <tr> <td>REMEDIATED</td> <td>string</td> <td>Parameter remediated</td> </tr> <tr> <td>WARNING</td> <td>string</td> <td>Muted alert</td> </tr> </tbody> </table> </div>
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -10958,6 +11590,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -10981,7 +11614,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_patch(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10999,8 +11633,10 @@ class DefaultApi:
 
         <p>This request allows you to update device information, such as the assigned blueprint, user, Asset Tag, and Tags. It is not required to use all attributes in a given request. For example if you only want to update the assigned blueprint, you only need to pass the <code>blueprint_id</code> in the request payload.</p> <p><strong>NOTE</strong>: With the introduction of a UUID value for user ID in the <a href=\"https://api-docs.kandji.io/#b107eb0a-b586-414f-bc4c-3d2b304cfd5f\">Users API</a>, the Device PATCH endpoint will support both the depricated user ID integer value and the new user ID UUID value when updating the user assignment for a device. The ability to update user assignment via the integer ID value will be removed starting January 2025.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> <h3 id=\"additional-information\">Additional information</h3> <p>User ID can be found using the <code>list users</code> API</p> <p>A Blueprint ID can be found using the <code>list blueprints</code> API or in the URL path while on a Blueprint overview page.</p> <p>For example, for this URL <a href=\"https://subdomain.kandji.io/blueprints/6391086e-85a1-4820-813c-f9c75025fff4\">https://subdomain.kandji.io/blueprints/6391086e-85a1-4820-813c-f9c75025fff4</a></p> <p>The Blueprint ID would be <code>6391086e-85a1-4820-813c-f9c75025fff4</code></p> <p>An example script that leverages this API can be found in the <a href=\"https://github.com/kandji-inc/support/tree/main/api-tools/update-device-record\">Kandji Support GitHub</a></p> <h4 id=\"clearing-the-device-asset-tag\">Clearing the device asset tag</h4> <p>To clear a device asset tag, set the <code>asset_tag</code> value to <code>null</code> in the JSON payload.</p> <pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code class=\"language-json\">{     \"asset_tag\": null }  </code></pre> <h4 id=\"clearing-the-assigned-user-attribute\">Clearing the assigned user attribute</h4> <p>To clear the assigned user for a given device, set the <code>user</code> value to <code>null</code> in the JSON payload.</p> <pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code class=\"language-json\">{     \"user\": null }  </code></pre> <h4 id=\"clearing-all-tags\">Clearing all tags</h4> <p>To clear the assigned tags for a given device, set the <code>tags</code> value to an empty list <code>[]</code> in the JSON payload.</p> <pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code class=\"language-json\">{     \"tags\": [] }  </code></pre> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11025,6 +11661,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_patch_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11048,7 +11685,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_patch_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11066,8 +11704,10 @@ class DefaultApi:
 
         <p>This request allows you to update device information, such as the assigned blueprint, user, Asset Tag, and Tags. It is not required to use all attributes in a given request. For example if you only want to update the assigned blueprint, you only need to pass the <code>blueprint_id</code> in the request payload.</p> <p><strong>NOTE</strong>: With the introduction of a UUID value for user ID in the <a href=\"https://api-docs.kandji.io/#b107eb0a-b586-414f-bc4c-3d2b304cfd5f\">Users API</a>, the Device PATCH endpoint will support both the depricated user ID integer value and the new user ID UUID value when updating the user assignment for a device. The ability to update user assignment via the integer ID value will be removed starting January 2025.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> <h3 id=\"additional-information\">Additional information</h3> <p>User ID can be found using the <code>list users</code> API</p> <p>A Blueprint ID can be found using the <code>list blueprints</code> API or in the URL path while on a Blueprint overview page.</p> <p>For example, for this URL <a href=\"https://subdomain.kandji.io/blueprints/6391086e-85a1-4820-813c-f9c75025fff4\">https://subdomain.kandji.io/blueprints/6391086e-85a1-4820-813c-f9c75025fff4</a></p> <p>The Blueprint ID would be <code>6391086e-85a1-4820-813c-f9c75025fff4</code></p> <p>An example script that leverages this API can be found in the <a href=\"https://github.com/kandji-inc/support/tree/main/api-tools/update-device-record\">Kandji Support GitHub</a></p> <h4 id=\"clearing-the-device-asset-tag\">Clearing the device asset tag</h4> <p>To clear a device asset tag, set the <code>asset_tag</code> value to <code>null</code> in the JSON payload.</p> <pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code class=\"language-json\">{     \"asset_tag\": null }  </code></pre> <h4 id=\"clearing-the-assigned-user-attribute\">Clearing the assigned user attribute</h4> <p>To clear the assigned user for a given device, set the <code>user</code> value to <code>null</code> in the JSON payload.</p> <pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code class=\"language-json\">{     \"user\": null }  </code></pre> <h4 id=\"clearing-all-tags\">Clearing all tags</h4> <p>To clear the assigned tags for a given device, set the <code>tags</code> value to an empty list <code>[]</code> in the JSON payload.</p> <pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code class=\"language-json\">{     \"tags\": [] }  </code></pre> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11092,6 +11732,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_patch_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11115,7 +11756,8 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_patch_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11133,8 +11775,10 @@ class DefaultApi:
 
         <p>This request allows you to update device information, such as the assigned blueprint, user, Asset Tag, and Tags. It is not required to use all attributes in a given request. For example if you only want to update the assigned blueprint, you only need to pass the <code>blueprint_id</code> in the request payload.</p> <p><strong>NOTE</strong>: With the introduction of a UUID value for user ID in the <a href=\"https://api-docs.kandji.io/#b107eb0a-b586-414f-bc4c-3d2b304cfd5f\">Users API</a>, the Device PATCH endpoint will support both the depricated user ID integer value and the new user ID UUID value when updating the user assignment for a device. The ability to update user assignment via the integer ID value will be removed starting January 2025.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> <h3 id=\"additional-information\">Additional information</h3> <p>User ID can be found using the <code>list users</code> API</p> <p>A Blueprint ID can be found using the <code>list blueprints</code> API or in the URL path while on a Blueprint overview page.</p> <p>For example, for this URL <a href=\"https://subdomain.kandji.io/blueprints/6391086e-85a1-4820-813c-f9c75025fff4\">https://subdomain.kandji.io/blueprints/6391086e-85a1-4820-813c-f9c75025fff4</a></p> <p>The Blueprint ID would be <code>6391086e-85a1-4820-813c-f9c75025fff4</code></p> <p>An example script that leverages this API can be found in the <a href=\"https://github.com/kandji-inc/support/tree/main/api-tools/update-device-record\">Kandji Support GitHub</a></p> <h4 id=\"clearing-the-device-asset-tag\">Clearing the device asset tag</h4> <p>To clear a device asset tag, set the <code>asset_tag</code> value to <code>null</code> in the JSON payload.</p> <pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code class=\"language-json\">{     \"asset_tag\": null }  </code></pre> <h4 id=\"clearing-the-assigned-user-attribute\">Clearing the assigned user attribute</h4> <p>To clear the assigned user for a given device, set the <code>user</code> value to <code>null</code> in the JSON payload.</p> <pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code class=\"language-json\">{     \"user\": null }  </code></pre> <h4 id=\"clearing-all-tags\">Clearing all tags</h4> <p>To clear the assigned tags for a given device, set the <code>tags</code> value to an empty list <code>[]</code> in the JSON payload.</p> <pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code class=\"language-json\">{     \"tags\": [] }  </code></pre> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11159,6 +11803,7 @@ class DefaultApi:
 
         _param = self._api_v1_devices_device_id_patch_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11178,6 +11823,7 @@ class DefaultApi:
     def _api_v1_devices_device_id_patch_serialize(
         self,
         device_id,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -11205,6 +11851,8 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if body is not None:
+            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -11215,9 +11863,23 @@ class DefaultApi:
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -11241,7 +11903,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_secrets_bypasscode_get(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11259,7 +11921,7 @@ class DefaultApi:
 
         <p>This request allows you to retrieve the Activation Lock Bypass code.</p> <p>user_based_albc is the user-based Activation Lock bypass code for when Activation Lock is enabled using an personal Apple ID and Find My.</p> <p>device_based_albc is the device-based Activation Lock bypass code for when Activation Lock is enabled by the MDM server.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -11308,7 +11970,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_secrets_bypasscode_get_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11326,7 +11988,7 @@ class DefaultApi:
 
         <p>This request allows you to retrieve the Activation Lock Bypass code.</p> <p>user_based_albc is the user-based Activation Lock bypass code for when Activation Lock is enabled using an personal Apple ID and Find My.</p> <p>device_based_albc is the device-based Activation Lock bypass code for when Activation Lock is enabled by the MDM server.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -11375,7 +12037,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_secrets_bypasscode_get_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11393,7 +12055,7 @@ class DefaultApi:
 
         <p>This request allows you to retrieve the Activation Lock Bypass code.</p> <p>user_based_albc is the user-based Activation Lock bypass code for when Activation Lock is enabled using an personal Apple ID and Find My.</p> <p>device_based_albc is the device-based Activation Lock bypass code for when Activation Lock is enabled by the MDM server.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -11478,6 +12140,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -11501,7 +12164,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_secrets_filevaultkey_get(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11519,7 +12182,7 @@ class DefaultApi:
 
         <p>This request allows you to retrieve the FileVault Recovery key for a macOS device.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -11568,7 +12231,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_secrets_filevaultkey_get_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11586,7 +12249,7 @@ class DefaultApi:
 
         <p>This request allows you to retrieve the FileVault Recovery key for a macOS device.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -11635,7 +12298,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_secrets_filevaultkey_get_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11653,7 +12316,7 @@ class DefaultApi:
 
         <p>This request allows you to retrieve the FileVault Recovery key for a macOS device.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -11738,6 +12401,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -11761,7 +12425,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_secrets_recoverypassword_get(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11779,7 +12443,7 @@ class DefaultApi:
 
         <p>This request returns the Recovery Lock password for a Mac with an Apple Silicon processor and the legacy EFI firmware password for a Mac with an Intel processor.</p> <p>For more details on setting and managing Recovery passwords, see this <a href=\"https://support.kandji.io/support/solutions/articles/72000560472-configure-the-recovery-password-library-item\">Kandji support article</a>.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -11828,7 +12492,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_secrets_recoverypassword_get_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11846,7 +12510,7 @@ class DefaultApi:
 
         <p>This request returns the Recovery Lock password for a Mac with an Apple Silicon processor and the legacy EFI firmware password for a Mac with an Intel processor.</p> <p>For more details on setting and managing Recovery passwords, see this <a href=\"https://support.kandji.io/support/solutions/articles/72000560472-configure-the-recovery-password-library-item\">Kandji support article</a>.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -11895,7 +12559,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_secrets_recoverypassword_get_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11913,7 +12577,7 @@ class DefaultApi:
 
         <p>This request returns the Recovery Lock password for a Mac with an Apple Silicon processor and the legacy EFI firmware password for a Mac with an Intel processor.</p> <p>For more details on setting and managing Recovery passwords, see this <a href=\"https://support.kandji.io/support/solutions/articles/72000560472-configure-the-recovery-password-library-item\">Kandji support article</a>.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -11998,6 +12662,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -12021,7 +12686,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_secrets_unlockpin_get(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12039,7 +12704,7 @@ class DefaultApi:
 
         <p>This request allows you to retrieve the device unlock pin for a macOS device.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -12088,7 +12753,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_secrets_unlockpin_get_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12106,7 +12771,7 @@ class DefaultApi:
 
         <p>This request allows you to retrieve the device unlock pin for a macOS device.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -12155,7 +12820,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_secrets_unlockpin_get_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12173,7 +12838,7 @@ class DefaultApi:
 
         <p>This request allows you to retrieve the device unlock pin for a macOS device.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -12258,6 +12923,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -12281,7 +12947,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_status_get(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12299,7 +12965,7 @@ class DefaultApi:
 
         <p>This request returns the full status (parameters and library items) for a specified Device ID.</p> <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=\"https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations\">https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p> <h4 id=\"possible-status-values\">Possible status values</h4> <p><strong>Library items</strong></p> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>AVAILABLE</td> <td>string</td> <td>Library item available in Self Service</td> </tr> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>EXCLUDED</td> <td>string</td> <td>Not in scope for assignment rule</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device, not yet installed (All library items except for config profiles)</td> </tr> <tr> <td>failed</td> <td>string</td> <td>Configuration profile failed to install</td> </tr> <tr> <td>pending</td> <td>string</td> <td>Waiting on device, Configuration profile not yet installed</td> </tr> <tr> <td>success</td> <td>string</td> <td>Configuration profile installed</td> </tr> </tbody> </table> </div><p><strong>Parameters</strong></p> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device. Not yet run.</td> </tr> <tr> <td>REMEDIATED</td> <td>string</td> <td>Parameter remediated</td> </tr> <tr> <td>WARNING</td> <td>string</td> <td>Muted alert</td> </tr> </tbody> </table> </div>
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -12348,7 +13014,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_status_get_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12366,7 +13032,7 @@ class DefaultApi:
 
         <p>This request returns the full status (parameters and library items) for a specified Device ID.</p> <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=\"https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations\">https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p> <h4 id=\"possible-status-values\">Possible status values</h4> <p><strong>Library items</strong></p> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>AVAILABLE</td> <td>string</td> <td>Library item available in Self Service</td> </tr> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>EXCLUDED</td> <td>string</td> <td>Not in scope for assignment rule</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device, not yet installed (All library items except for config profiles)</td> </tr> <tr> <td>failed</td> <td>string</td> <td>Configuration profile failed to install</td> </tr> <tr> <td>pending</td> <td>string</td> <td>Waiting on device, Configuration profile not yet installed</td> </tr> <tr> <td>success</td> <td>string</td> <td>Configuration profile installed</td> </tr> </tbody> </table> </div><p><strong>Parameters</strong></p> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device. Not yet run.</td> </tr> <tr> <td>REMEDIATED</td> <td>string</td> <td>Parameter remediated</td> </tr> <tr> <td>WARNING</td> <td>string</td> <td>Muted alert</td> </tr> </tbody> </table> </div>
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -12415,7 +13081,7 @@ class DefaultApi:
     @validate_call
     def api_v1_devices_device_id_status_get_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12433,7 +13099,7 @@ class DefaultApi:
 
         <p>This request returns the full status (parameters and library items) for a specified Device ID.</p> <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=\"https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations\">https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p> <h4 id=\"possible-status-values\">Possible status values</h4> <p><strong>Library items</strong></p> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>AVAILABLE</td> <td>string</td> <td>Library item available in Self Service</td> </tr> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>EXCLUDED</td> <td>string</td> <td>Not in scope for assignment rule</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device, not yet installed (All library items except for config profiles)</td> </tr> <tr> <td>failed</td> <td>string</td> <td>Configuration profile failed to install</td> </tr> <tr> <td>pending</td> <td>string</td> <td>Waiting on device, Configuration profile not yet installed</td> </tr> <tr> <td>success</td> <td>string</td> <td>Configuration profile installed</td> </tr> </tbody> </table> </div><p><strong>Parameters</strong></p> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device. Not yet run.</td> </tr> <tr> <td>REMEDIATED</td> <td>string</td> <td>Parameter remediated</td> </tr> <tr> <td>WARNING</td> <td>string</td> <td>Muted alert</td> </tr> </tbody> </table> </div>
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -12518,6 +13184,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -12539,8 +13206,29 @@ class DefaultApi:
 
 
     @validate_call
-    def api_v1_deviceslimit300_get(
+    def api_v1_devices_get(
         self,
+        limit: Annotated[StrictStr, Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")],
+        asset_tag: Optional[StrictStr] = None,
+        blueprint_id: Annotated[Optional[StrictStr], Field(description="<p>Return results \"containing\" the specified blueprint id</p> ")] = None,
+        device_id: Optional[StrictStr] = None,
+        device_name: Optional[StrictStr] = None,
+        filevault_enabled: Annotated[Optional[StrictStr], Field(description="<p>Query for devices that either have FileVault on (true) or off (false). This parameter only applies to macOS. </p> <p>An empty list <code>[]</code> will be returned if no devices are found with the given parameter value.</p> ")] = None,
+        mac_address: Annotated[Optional[StrictStr], Field(description="<p>Search for a specific device by MAC address </p> ")] = None,
+        model: Annotated[Optional[StrictStr], Field(description="<p>Return model results \"containing\" the specified model string.</p> ")] = None,
+        ordering: Annotated[Optional[StrictStr], Field(description="<p>The <code>ordering</code> parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p> <p><code>?ordering=-serial_number</code> will order the response by serial_number in descending order.</p> <p><strong>Possible values</strong></p> <ul> <li><code>asset_tag</code></li> <li><code>blueprint_id</code></li> <li><code>device_id</code></li> <li><code>device_name</code></li> <li><code>last_check_in</code> - agent checkin</li> <li><code>model</code></li> <li><code>platform</code></li> <li><code>os_version</code></li> <li><code>serial_number</code></li> <li><code>user</code></li> </ul> <p>Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.</p> <p><code>?ordering=serial_number,platform</code></p> ")] = None,
+        os_version: Annotated[Optional[StrictStr], Field(description="<p>Return all device records with the specified OS version</p> ")] = None,
+        platform: Annotated[Optional[StrictStr], Field(description="<p>Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code></p> ")] = None,
+        serial_number: Annotated[Optional[StrictStr], Field(description="<p>Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.</p> ")] = None,
+        tag_name: Annotated[Optional[StrictStr], Field(description="<p>Return results for given tag name. Case sensitive.</p> ")] = None,
+        tag_name_in: Annotated[Optional[StrictStr], Field(description="<p>Return results for given tag names separate by commas. Case sensitive.</p> ")] = None,
+        tag_id: Annotated[Optional[StrictStr], Field(description="<p>Search for a tag by its ID. Case sensitive.</p> ")] = None,
+        tag_id_in: Annotated[Optional[StrictStr], Field(description="<p>Return results for given tag IDs separated by commas. Case sensitive.</p> ")] = None,
+        user: Annotated[Optional[StrictStr], Field(description="<p>Return results \"containing\" the user name</p> ")] = None,
+        user_email: Annotated[Optional[StrictStr], Field(description="<p>Return results \"containing\" search on email address</p> ")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="<p>\"exact\" match on kandji user ID number</p> ")] = None,
+        user_name: Annotated[Optional[StrictStr], Field(description="<p>Return results \"containing\" the assigned user Display Name</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12558,6 +13246,48 @@ class DefaultApi:
 
         <p>This request returns a list of devices in a Kandji tenant. Optionally. query parameters can be used to filter results.</p> <p>There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Kandji support <a href=\"https://github.com/kandji-inc/support/tree/main/api-tools/code-examples\">GitHub</a>.</p> 
 
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (required)
+        :type limit: str
+        :param asset_tag: 
+        :type asset_tag: str
+        :param blueprint_id: <p>Return results \"containing\" the specified blueprint id</p> 
+        :type blueprint_id: str
+        :param device_id: 
+        :type device_id: str
+        :param device_name: 
+        :type device_name: str
+        :param filevault_enabled: <p>Query for devices that either have FileVault on (true) or off (false). This parameter only applies to macOS. </p> <p>An empty list <code>[]</code> will be returned if no devices are found with the given parameter value.</p> 
+        :type filevault_enabled: str
+        :param mac_address: <p>Search for a specific device by MAC address </p> 
+        :type mac_address: str
+        :param model: <p>Return model results \"containing\" the specified model string.</p> 
+        :type model: str
+        :param ordering: <p>The <code>ordering</code> parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p> <p><code>?ordering=-serial_number</code> will order the response by serial_number in descending order.</p> <p><strong>Possible values</strong></p> <ul> <li><code>asset_tag</code></li> <li><code>blueprint_id</code></li> <li><code>device_id</code></li> <li><code>device_name</code></li> <li><code>last_check_in</code> - agent checkin</li> <li><code>model</code></li> <li><code>platform</code></li> <li><code>os_version</code></li> <li><code>serial_number</code></li> <li><code>user</code></li> </ul> <p>Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.</p> <p><code>?ordering=serial_number,platform</code></p> 
+        :type ordering: str
+        :param os_version: <p>Return all device records with the specified OS version</p> 
+        :type os_version: str
+        :param platform: <p>Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code></p> 
+        :type platform: str
+        :param serial_number: <p>Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.</p> 
+        :type serial_number: str
+        :param tag_name: <p>Return results for given tag name. Case sensitive.</p> 
+        :type tag_name: str
+        :param tag_name_in: <p>Return results for given tag names separate by commas. Case sensitive.</p> 
+        :type tag_name_in: str
+        :param tag_id: <p>Search for a tag by its ID. Case sensitive.</p> 
+        :type tag_id: str
+        :param tag_id_in: <p>Return results for given tag IDs separated by commas. Case sensitive.</p> 
+        :type tag_id_in: str
+        :param user: <p>Return results \"containing\" the user name</p> 
+        :type user: str
+        :param user_email: <p>Return results \"containing\" search on email address</p> 
+        :type user_email: str
+        :param user_id: <p>\"exact\" match on kandji user ID number</p> 
+        :type user_id: str
+        :param user_name: <p>Return results \"containing\" the assigned user Display Name</p> 
+        :type user_name: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12580,7 +13310,28 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api_v1_deviceslimit300_get_serialize(
+        _param = self._api_v1_devices_get_serialize(
+            limit=limit,
+            asset_tag=asset_tag,
+            blueprint_id=blueprint_id,
+            device_id=device_id,
+            device_name=device_name,
+            filevault_enabled=filevault_enabled,
+            mac_address=mac_address,
+            model=model,
+            ordering=ordering,
+            os_version=os_version,
+            platform=platform,
+            serial_number=serial_number,
+            tag_name=tag_name,
+            tag_name_in=tag_name_in,
+            tag_id=tag_id,
+            tag_id_in=tag_id_in,
+            user=user,
+            user_email=user_email,
+            user_id=user_id,
+            user_name=user_name,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12602,8 +13353,29 @@ class DefaultApi:
 
 
     @validate_call
-    def api_v1_deviceslimit300_get_with_http_info(
+    def api_v1_devices_get_with_http_info(
         self,
+        limit: Annotated[StrictStr, Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")],
+        asset_tag: Optional[StrictStr] = None,
+        blueprint_id: Annotated[Optional[StrictStr], Field(description="<p>Return results \"containing\" the specified blueprint id</p> ")] = None,
+        device_id: Optional[StrictStr] = None,
+        device_name: Optional[StrictStr] = None,
+        filevault_enabled: Annotated[Optional[StrictStr], Field(description="<p>Query for devices that either have FileVault on (true) or off (false). This parameter only applies to macOS. </p> <p>An empty list <code>[]</code> will be returned if no devices are found with the given parameter value.</p> ")] = None,
+        mac_address: Annotated[Optional[StrictStr], Field(description="<p>Search for a specific device by MAC address </p> ")] = None,
+        model: Annotated[Optional[StrictStr], Field(description="<p>Return model results \"containing\" the specified model string.</p> ")] = None,
+        ordering: Annotated[Optional[StrictStr], Field(description="<p>The <code>ordering</code> parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p> <p><code>?ordering=-serial_number</code> will order the response by serial_number in descending order.</p> <p><strong>Possible values</strong></p> <ul> <li><code>asset_tag</code></li> <li><code>blueprint_id</code></li> <li><code>device_id</code></li> <li><code>device_name</code></li> <li><code>last_check_in</code> - agent checkin</li> <li><code>model</code></li> <li><code>platform</code></li> <li><code>os_version</code></li> <li><code>serial_number</code></li> <li><code>user</code></li> </ul> <p>Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.</p> <p><code>?ordering=serial_number,platform</code></p> ")] = None,
+        os_version: Annotated[Optional[StrictStr], Field(description="<p>Return all device records with the specified OS version</p> ")] = None,
+        platform: Annotated[Optional[StrictStr], Field(description="<p>Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code></p> ")] = None,
+        serial_number: Annotated[Optional[StrictStr], Field(description="<p>Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.</p> ")] = None,
+        tag_name: Annotated[Optional[StrictStr], Field(description="<p>Return results for given tag name. Case sensitive.</p> ")] = None,
+        tag_name_in: Annotated[Optional[StrictStr], Field(description="<p>Return results for given tag names separate by commas. Case sensitive.</p> ")] = None,
+        tag_id: Annotated[Optional[StrictStr], Field(description="<p>Search for a tag by its ID. Case sensitive.</p> ")] = None,
+        tag_id_in: Annotated[Optional[StrictStr], Field(description="<p>Return results for given tag IDs separated by commas. Case sensitive.</p> ")] = None,
+        user: Annotated[Optional[StrictStr], Field(description="<p>Return results \"containing\" the user name</p> ")] = None,
+        user_email: Annotated[Optional[StrictStr], Field(description="<p>Return results \"containing\" search on email address</p> ")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="<p>\"exact\" match on kandji user ID number</p> ")] = None,
+        user_name: Annotated[Optional[StrictStr], Field(description="<p>Return results \"containing\" the assigned user Display Name</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12621,6 +13393,48 @@ class DefaultApi:
 
         <p>This request returns a list of devices in a Kandji tenant. Optionally. query parameters can be used to filter results.</p> <p>There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Kandji support <a href=\"https://github.com/kandji-inc/support/tree/main/api-tools/code-examples\">GitHub</a>.</p> 
 
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (required)
+        :type limit: str
+        :param asset_tag: 
+        :type asset_tag: str
+        :param blueprint_id: <p>Return results \"containing\" the specified blueprint id</p> 
+        :type blueprint_id: str
+        :param device_id: 
+        :type device_id: str
+        :param device_name: 
+        :type device_name: str
+        :param filevault_enabled: <p>Query for devices that either have FileVault on (true) or off (false). This parameter only applies to macOS. </p> <p>An empty list <code>[]</code> will be returned if no devices are found with the given parameter value.</p> 
+        :type filevault_enabled: str
+        :param mac_address: <p>Search for a specific device by MAC address </p> 
+        :type mac_address: str
+        :param model: <p>Return model results \"containing\" the specified model string.</p> 
+        :type model: str
+        :param ordering: <p>The <code>ordering</code> parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p> <p><code>?ordering=-serial_number</code> will order the response by serial_number in descending order.</p> <p><strong>Possible values</strong></p> <ul> <li><code>asset_tag</code></li> <li><code>blueprint_id</code></li> <li><code>device_id</code></li> <li><code>device_name</code></li> <li><code>last_check_in</code> - agent checkin</li> <li><code>model</code></li> <li><code>platform</code></li> <li><code>os_version</code></li> <li><code>serial_number</code></li> <li><code>user</code></li> </ul> <p>Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.</p> <p><code>?ordering=serial_number,platform</code></p> 
+        :type ordering: str
+        :param os_version: <p>Return all device records with the specified OS version</p> 
+        :type os_version: str
+        :param platform: <p>Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code></p> 
+        :type platform: str
+        :param serial_number: <p>Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.</p> 
+        :type serial_number: str
+        :param tag_name: <p>Return results for given tag name. Case sensitive.</p> 
+        :type tag_name: str
+        :param tag_name_in: <p>Return results for given tag names separate by commas. Case sensitive.</p> 
+        :type tag_name_in: str
+        :param tag_id: <p>Search for a tag by its ID. Case sensitive.</p> 
+        :type tag_id: str
+        :param tag_id_in: <p>Return results for given tag IDs separated by commas. Case sensitive.</p> 
+        :type tag_id_in: str
+        :param user: <p>Return results \"containing\" the user name</p> 
+        :type user: str
+        :param user_email: <p>Return results \"containing\" search on email address</p> 
+        :type user_email: str
+        :param user_id: <p>\"exact\" match on kandji user ID number</p> 
+        :type user_id: str
+        :param user_name: <p>Return results \"containing\" the assigned user Display Name</p> 
+        :type user_name: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12643,7 +13457,28 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api_v1_deviceslimit300_get_serialize(
+        _param = self._api_v1_devices_get_serialize(
+            limit=limit,
+            asset_tag=asset_tag,
+            blueprint_id=blueprint_id,
+            device_id=device_id,
+            device_name=device_name,
+            filevault_enabled=filevault_enabled,
+            mac_address=mac_address,
+            model=model,
+            ordering=ordering,
+            os_version=os_version,
+            platform=platform,
+            serial_number=serial_number,
+            tag_name=tag_name,
+            tag_name_in=tag_name_in,
+            tag_id=tag_id,
+            tag_id_in=tag_id_in,
+            user=user,
+            user_email=user_email,
+            user_id=user_id,
+            user_name=user_name,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12665,8 +13500,29 @@ class DefaultApi:
 
 
     @validate_call
-    def api_v1_deviceslimit300_get_without_preload_content(
+    def api_v1_devices_get_without_preload_content(
         self,
+        limit: Annotated[StrictStr, Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")],
+        asset_tag: Optional[StrictStr] = None,
+        blueprint_id: Annotated[Optional[StrictStr], Field(description="<p>Return results \"containing\" the specified blueprint id</p> ")] = None,
+        device_id: Optional[StrictStr] = None,
+        device_name: Optional[StrictStr] = None,
+        filevault_enabled: Annotated[Optional[StrictStr], Field(description="<p>Query for devices that either have FileVault on (true) or off (false). This parameter only applies to macOS. </p> <p>An empty list <code>[]</code> will be returned if no devices are found with the given parameter value.</p> ")] = None,
+        mac_address: Annotated[Optional[StrictStr], Field(description="<p>Search for a specific device by MAC address </p> ")] = None,
+        model: Annotated[Optional[StrictStr], Field(description="<p>Return model results \"containing\" the specified model string.</p> ")] = None,
+        ordering: Annotated[Optional[StrictStr], Field(description="<p>The <code>ordering</code> parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p> <p><code>?ordering=-serial_number</code> will order the response by serial_number in descending order.</p> <p><strong>Possible values</strong></p> <ul> <li><code>asset_tag</code></li> <li><code>blueprint_id</code></li> <li><code>device_id</code></li> <li><code>device_name</code></li> <li><code>last_check_in</code> - agent checkin</li> <li><code>model</code></li> <li><code>platform</code></li> <li><code>os_version</code></li> <li><code>serial_number</code></li> <li><code>user</code></li> </ul> <p>Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.</p> <p><code>?ordering=serial_number,platform</code></p> ")] = None,
+        os_version: Annotated[Optional[StrictStr], Field(description="<p>Return all device records with the specified OS version</p> ")] = None,
+        platform: Annotated[Optional[StrictStr], Field(description="<p>Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code></p> ")] = None,
+        serial_number: Annotated[Optional[StrictStr], Field(description="<p>Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.</p> ")] = None,
+        tag_name: Annotated[Optional[StrictStr], Field(description="<p>Return results for given tag name. Case sensitive.</p> ")] = None,
+        tag_name_in: Annotated[Optional[StrictStr], Field(description="<p>Return results for given tag names separate by commas. Case sensitive.</p> ")] = None,
+        tag_id: Annotated[Optional[StrictStr], Field(description="<p>Search for a tag by its ID. Case sensitive.</p> ")] = None,
+        tag_id_in: Annotated[Optional[StrictStr], Field(description="<p>Return results for given tag IDs separated by commas. Case sensitive.</p> ")] = None,
+        user: Annotated[Optional[StrictStr], Field(description="<p>Return results \"containing\" the user name</p> ")] = None,
+        user_email: Annotated[Optional[StrictStr], Field(description="<p>Return results \"containing\" search on email address</p> ")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="<p>\"exact\" match on kandji user ID number</p> ")] = None,
+        user_name: Annotated[Optional[StrictStr], Field(description="<p>Return results \"containing\" the assigned user Display Name</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12684,6 +13540,48 @@ class DefaultApi:
 
         <p>This request returns a list of devices in a Kandji tenant. Optionally. query parameters can be used to filter results.</p> <p>There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Kandji support <a href=\"https://github.com/kandji-inc/support/tree/main/api-tools/code-examples\">GitHub</a>.</p> 
 
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (required)
+        :type limit: str
+        :param asset_tag: 
+        :type asset_tag: str
+        :param blueprint_id: <p>Return results \"containing\" the specified blueprint id</p> 
+        :type blueprint_id: str
+        :param device_id: 
+        :type device_id: str
+        :param device_name: 
+        :type device_name: str
+        :param filevault_enabled: <p>Query for devices that either have FileVault on (true) or off (false). This parameter only applies to macOS. </p> <p>An empty list <code>[]</code> will be returned if no devices are found with the given parameter value.</p> 
+        :type filevault_enabled: str
+        :param mac_address: <p>Search for a specific device by MAC address </p> 
+        :type mac_address: str
+        :param model: <p>Return model results \"containing\" the specified model string.</p> 
+        :type model: str
+        :param ordering: <p>The <code>ordering</code> parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p> <p><code>?ordering=-serial_number</code> will order the response by serial_number in descending order.</p> <p><strong>Possible values</strong></p> <ul> <li><code>asset_tag</code></li> <li><code>blueprint_id</code></li> <li><code>device_id</code></li> <li><code>device_name</code></li> <li><code>last_check_in</code> - agent checkin</li> <li><code>model</code></li> <li><code>platform</code></li> <li><code>os_version</code></li> <li><code>serial_number</code></li> <li><code>user</code></li> </ul> <p>Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.</p> <p><code>?ordering=serial_number,platform</code></p> 
+        :type ordering: str
+        :param os_version: <p>Return all device records with the specified OS version</p> 
+        :type os_version: str
+        :param platform: <p>Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code></p> 
+        :type platform: str
+        :param serial_number: <p>Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.</p> 
+        :type serial_number: str
+        :param tag_name: <p>Return results for given tag name. Case sensitive.</p> 
+        :type tag_name: str
+        :param tag_name_in: <p>Return results for given tag names separate by commas. Case sensitive.</p> 
+        :type tag_name_in: str
+        :param tag_id: <p>Search for a tag by its ID. Case sensitive.</p> 
+        :type tag_id: str
+        :param tag_id_in: <p>Return results for given tag IDs separated by commas. Case sensitive.</p> 
+        :type tag_id_in: str
+        :param user: <p>Return results \"containing\" the user name</p> 
+        :type user: str
+        :param user_email: <p>Return results \"containing\" search on email address</p> 
+        :type user_email: str
+        :param user_id: <p>\"exact\" match on kandji user ID number</p> 
+        :type user_id: str
+        :param user_name: <p>Return results \"containing\" the assigned user Display Name</p> 
+        :type user_name: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12706,7 +13604,28 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api_v1_deviceslimit300_get_serialize(
+        _param = self._api_v1_devices_get_serialize(
+            limit=limit,
+            asset_tag=asset_tag,
+            blueprint_id=blueprint_id,
+            device_id=device_id,
+            device_name=device_name,
+            filevault_enabled=filevault_enabled,
+            mac_address=mac_address,
+            model=model,
+            ordering=ordering,
+            os_version=os_version,
+            platform=platform,
+            serial_number=serial_number,
+            tag_name=tag_name,
+            tag_name_in=tag_name_in,
+            tag_id=tag_id,
+            tag_id_in=tag_id_in,
+            user=user,
+            user_email=user_email,
+            user_id=user_id,
+            user_name=user_name,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12723,8 +13642,29 @@ class DefaultApi:
         return response_data.response
 
 
-    def _api_v1_deviceslimit300_get_serialize(
+    def _api_v1_devices_get_serialize(
         self,
+        limit,
+        asset_tag,
+        blueprint_id,
+        device_id,
+        device_name,
+        filevault_enabled,
+        mac_address,
+        model,
+        ordering,
+        os_version,
+        platform,
+        serial_number,
+        tag_name,
+        tag_name_in,
+        tag_id,
+        tag_id_in,
+        user,
+        user_email,
+        user_id,
+        user_name,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -12747,6 +13687,90 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if asset_tag is not None:
+            
+            _query_params.append(('asset_tag', asset_tag))
+            
+        if blueprint_id is not None:
+            
+            _query_params.append(('blueprint_id', blueprint_id))
+            
+        if device_id is not None:
+            
+            _query_params.append(('device_id', device_id))
+            
+        if device_name is not None:
+            
+            _query_params.append(('device_name', device_name))
+            
+        if filevault_enabled is not None:
+            
+            _query_params.append(('filevault_enabled', filevault_enabled))
+            
+        if mac_address is not None:
+            
+            _query_params.append(('mac_address', mac_address))
+            
+        if model is not None:
+            
+            _query_params.append(('model', model))
+            
+        if ordering is not None:
+            
+            _query_params.append(('ordering', ordering))
+            
+        if os_version is not None:
+            
+            _query_params.append(('os_version', os_version))
+            
+        if platform is not None:
+            
+            _query_params.append(('platform', platform))
+            
+        if serial_number is not None:
+            
+            _query_params.append(('serial_number', serial_number))
+            
+        if tag_name is not None:
+            
+            _query_params.append(('tag_name', tag_name))
+            
+        if tag_name_in is not None:
+            
+            _query_params.append(('tag_name_in', tag_name_in))
+            
+        if tag_id is not None:
+            
+            _query_params.append(('tag_id', tag_id))
+            
+        if tag_id_in is not None:
+            
+            _query_params.append(('tag_id_in', tag_id_in))
+            
+        if user is not None:
+            
+            _query_params.append(('user', user))
+            
+        if user_email is not None:
+            
+            _query_params.append(('user_email', user_email))
+            
+        if user_id is not None:
+            
+            _query_params.append(('user_id', user_id))
+            
+        if user_name is not None:
+            
+            _query_params.append(('user_name', user_name))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -12763,11 +13787,12 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/v1/devices?limit=300',
+            resource_path='/api/v1/devices',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -12786,7 +13811,7 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_ade_token_id_delete(
         self,
-        ade_token_id: Annotated[StrictStr, Field(description="Path parameter 'ade_token_id'")],
+        ade_token_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12799,12 +13824,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Delete ADE integration
 
         <h1 id=\"warning\"><strong>WARNING!</strong></h1> <p>This is a HIGHLY destructive action.</p> <p>Deleting an ADE token will unassign the associated device records from Kandji. For currently enrolled devices that were assigned to Kandji via the delete ADE integration will not be impacted until they are wiped and reprovisioned. This action is essentially the same as removing an ADE token from MDM and then adding it back.</p> <p>If applicable, be sure to reassign the device records in ABM.</p> 
 
-        :param ade_token_id: Path parameter 'ade_token_id' (required)
+        :param ade_token_id: (required)
         :type ade_token_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -12837,7 +13862,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '204': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -12853,7 +13878,7 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_ade_token_id_delete_with_http_info(
         self,
-        ade_token_id: Annotated[StrictStr, Field(description="Path parameter 'ade_token_id'")],
+        ade_token_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12866,12 +13891,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Delete ADE integration
 
         <h1 id=\"warning\"><strong>WARNING!</strong></h1> <p>This is a HIGHLY destructive action.</p> <p>Deleting an ADE token will unassign the associated device records from Kandji. For currently enrolled devices that were assigned to Kandji via the delete ADE integration will not be impacted until they are wiped and reprovisioned. This action is essentially the same as removing an ADE token from MDM and then adding it back.</p> <p>If applicable, be sure to reassign the device records in ABM.</p> 
 
-        :param ade_token_id: Path parameter 'ade_token_id' (required)
+        :param ade_token_id: (required)
         :type ade_token_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -12904,7 +13929,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '204': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -12920,7 +13945,7 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_ade_token_id_delete_without_preload_content(
         self,
-        ade_token_id: Annotated[StrictStr, Field(description="Path parameter 'ade_token_id'")],
+        ade_token_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12938,7 +13963,7 @@ class DefaultApi:
 
         <h1 id=\"warning\"><strong>WARNING!</strong></h1> <p>This is a HIGHLY destructive action.</p> <p>Deleting an ADE token will unassign the associated device records from Kandji. For currently enrolled devices that were assigned to Kandji via the delete ADE integration will not be impacted until they are wiped and reprovisioned. This action is essentially the same as removing an ADE token from MDM and then adding it back.</p> <p>If applicable, be sure to reassign the device records in ABM.</p> 
 
-        :param ade_token_id: Path parameter 'ade_token_id' (required)
+        :param ade_token_id: (required)
         :type ade_token_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -12971,7 +13996,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '204': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -13012,17 +14037,24 @@ class DefaultApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'multipart/form-data'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -13046,7 +14078,8 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_ade_token_id_devices_get(
         self,
-        ade_token_id: Annotated[StrictStr, Field(description="Path parameter 'ade_token_id'")],
+        ade_token_id: StrictStr,
+        page: Annotated[Optional[StrictStr], Field(description="<p>Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13064,8 +14097,10 @@ class DefaultApi:
 
         <p>This request returns a list of devices associated with a specified <code>ade_token_id</code> as well as their enrollment status.</p> <p>When the <code>mdm_device</code> key value is <code>null</code>, this can be taken as an indication that the device is awaiting enrollment into Kandji.</p> <p>When data is present within the mdm_device dictionary, you can reference the <code>device_id</code> as the ID of the enrolled device record.</p> 
 
-        :param ade_token_id: Path parameter 'ade_token_id' (required)
+        :param ade_token_id: (required)
         :type ade_token_id: str
+        :param page: <p>Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.</p> 
+        :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13090,6 +14125,7 @@ class DefaultApi:
 
         _param = self._api_v1_integrations_apple_ade_ade_token_id_devices_get_serialize(
             ade_token_id=ade_token_id,
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13113,7 +14149,8 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_ade_token_id_devices_get_with_http_info(
         self,
-        ade_token_id: Annotated[StrictStr, Field(description="Path parameter 'ade_token_id'")],
+        ade_token_id: StrictStr,
+        page: Annotated[Optional[StrictStr], Field(description="<p>Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13131,8 +14168,10 @@ class DefaultApi:
 
         <p>This request returns a list of devices associated with a specified <code>ade_token_id</code> as well as their enrollment status.</p> <p>When the <code>mdm_device</code> key value is <code>null</code>, this can be taken as an indication that the device is awaiting enrollment into Kandji.</p> <p>When data is present within the mdm_device dictionary, you can reference the <code>device_id</code> as the ID of the enrolled device record.</p> 
 
-        :param ade_token_id: Path parameter 'ade_token_id' (required)
+        :param ade_token_id: (required)
         :type ade_token_id: str
+        :param page: <p>Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.</p> 
+        :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13157,6 +14196,7 @@ class DefaultApi:
 
         _param = self._api_v1_integrations_apple_ade_ade_token_id_devices_get_serialize(
             ade_token_id=ade_token_id,
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13180,7 +14220,8 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_ade_token_id_devices_get_without_preload_content(
         self,
-        ade_token_id: Annotated[StrictStr, Field(description="Path parameter 'ade_token_id'")],
+        ade_token_id: StrictStr,
+        page: Annotated[Optional[StrictStr], Field(description="<p>Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13198,8 +14239,10 @@ class DefaultApi:
 
         <p>This request returns a list of devices associated with a specified <code>ade_token_id</code> as well as their enrollment status.</p> <p>When the <code>mdm_device</code> key value is <code>null</code>, this can be taken as an indication that the device is awaiting enrollment into Kandji.</p> <p>When data is present within the mdm_device dictionary, you can reference the <code>device_id</code> as the ID of the enrolled device record.</p> 
 
-        :param ade_token_id: Path parameter 'ade_token_id' (required)
+        :param ade_token_id: (required)
         :type ade_token_id: str
+        :param page: <p>Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.</p> 
+        :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13224,6 +14267,7 @@ class DefaultApi:
 
         _param = self._api_v1_integrations_apple_ade_ade_token_id_devices_get_serialize(
             ade_token_id=ade_token_id,
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13243,6 +14287,7 @@ class DefaultApi:
     def _api_v1_integrations_apple_ade_ade_token_id_devices_get_serialize(
         self,
         ade_token_id,
+        page,
         _request_auth,
         _content_type,
         _headers,
@@ -13267,6 +14312,10 @@ class DefaultApi:
         if ade_token_id is not None:
             _path_params['ade_token_id'] = ade_token_id
         # process the query parameters
+        if page is not None:
+            
+            _query_params.append(('page', page))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -13283,6 +14332,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -13306,7 +14356,7 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_ade_token_id_get(
         self,
-        ade_token_id: Annotated[StrictStr, Field(description="Path parameter 'ade_token_id'")],
+        ade_token_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13319,12 +14369,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Get ADE integration
 
         <p>This request returns a specific ADE integration based on the <code>ade_token_id</code> passed.</p> 
 
-        :param ade_token_id: Path parameter 'ade_token_id' (required)
+        :param ade_token_id: (required)
         :type ade_token_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -13357,7 +14407,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -13373,7 +14423,7 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_ade_token_id_get_with_http_info(
         self,
-        ade_token_id: Annotated[StrictStr, Field(description="Path parameter 'ade_token_id'")],
+        ade_token_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13386,12 +14436,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Get ADE integration
 
         <p>This request returns a specific ADE integration based on the <code>ade_token_id</code> passed.</p> 
 
-        :param ade_token_id: Path parameter 'ade_token_id' (required)
+        :param ade_token_id: (required)
         :type ade_token_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -13424,7 +14474,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -13440,7 +14490,7 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_ade_token_id_get_without_preload_content(
         self,
-        ade_token_id: Annotated[StrictStr, Field(description="Path parameter 'ade_token_id'")],
+        ade_token_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13458,7 +14508,7 @@ class DefaultApi:
 
         <p>This request returns a specific ADE integration based on the <code>ade_token_id</code> passed.</p> 
 
-        :param ade_token_id: Path parameter 'ade_token_id' (required)
+        :param ade_token_id: (required)
         :type ade_token_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -13491,7 +14541,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -13532,17 +14582,11 @@ class DefaultApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -13566,7 +14610,8 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_ade_token_id_patch(
         self,
-        ade_token_id: Annotated[StrictStr, Field(description="Path parameter 'ade_token_id'")],
+        ade_token_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13579,13 +14624,15 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Update ADE integration
 
         <p>This request will update the default blueprint, phone number, and email address in an existing ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, and <code>email</code> address must be sent in the request.</p> 
 
-        :param ade_token_id: Path parameter 'ade_token_id' (required)
+        :param ade_token_id: (required)
         :type ade_token_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13610,6 +14657,7 @@ class DefaultApi:
 
         _param = self._api_v1_integrations_apple_ade_ade_token_id_patch_serialize(
             ade_token_id=ade_token_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13617,7 +14665,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -13633,7 +14681,8 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_ade_token_id_patch_with_http_info(
         self,
-        ade_token_id: Annotated[StrictStr, Field(description="Path parameter 'ade_token_id'")],
+        ade_token_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13646,13 +14695,15 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Update ADE integration
 
         <p>This request will update the default blueprint, phone number, and email address in an existing ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, and <code>email</code> address must be sent in the request.</p> 
 
-        :param ade_token_id: Path parameter 'ade_token_id' (required)
+        :param ade_token_id: (required)
         :type ade_token_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13677,6 +14728,7 @@ class DefaultApi:
 
         _param = self._api_v1_integrations_apple_ade_ade_token_id_patch_serialize(
             ade_token_id=ade_token_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13684,7 +14736,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -13700,7 +14752,8 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_ade_token_id_patch_without_preload_content(
         self,
-        ade_token_id: Annotated[StrictStr, Field(description="Path parameter 'ade_token_id'")],
+        ade_token_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13718,8 +14771,10 @@ class DefaultApi:
 
         <p>This request will update the default blueprint, phone number, and email address in an existing ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, and <code>email</code> address must be sent in the request.</p> 
 
-        :param ade_token_id: Path parameter 'ade_token_id' (required)
+        :param ade_token_id: (required)
         :type ade_token_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13744,6 +14799,7 @@ class DefaultApi:
 
         _param = self._api_v1_integrations_apple_ade_ade_token_id_patch_serialize(
             ade_token_id=ade_token_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13751,7 +14807,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -13763,6 +14819,7 @@ class DefaultApi:
     def _api_v1_integrations_apple_ade_ade_token_id_patch_serialize(
         self,
         ade_token_id,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -13790,19 +14847,28 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if body is not None:
+            _body_params = body
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
             )
-
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -13826,7 +14892,11 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_ade_token_id_renew_post(
         self,
-        ade_token_id: Annotated[StrictStr, Field(description="Path parameter 'ade_token_id'")],
+        ade_token_id: StrictStr,
+        blueprint_id: StrictStr,
+        phone: StrictStr,
+        email: StrictStr,
+        file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="<p>This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13839,13 +14909,21 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Renew ADE integration
 
         <p>This request will renew an existing ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> from the associated MDM server in ABM are required and must be sent in the request.</p> 
 
-        :param ade_token_id: Path parameter 'ade_token_id' (required)
+        :param ade_token_id: (required)
         :type ade_token_id: str
+        :param blueprint_id:  (required)
+        :type blueprint_id: str
+        :param phone:  (required)
+        :type phone: str
+        :param email:  (required)
+        :type email: str
+        :param file: <p>This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.</p>  (required)
+        :type file: bytearray
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13870,6 +14948,10 @@ class DefaultApi:
 
         _param = self._api_v1_integrations_apple_ade_ade_token_id_renew_post_serialize(
             ade_token_id=ade_token_id,
+            blueprint_id=blueprint_id,
+            phone=phone,
+            email=email,
+            file=file,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13877,7 +14959,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -13893,7 +14975,11 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_ade_token_id_renew_post_with_http_info(
         self,
-        ade_token_id: Annotated[StrictStr, Field(description="Path parameter 'ade_token_id'")],
+        ade_token_id: StrictStr,
+        blueprint_id: StrictStr,
+        phone: StrictStr,
+        email: StrictStr,
+        file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="<p>This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13906,13 +14992,21 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Renew ADE integration
 
         <p>This request will renew an existing ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> from the associated MDM server in ABM are required and must be sent in the request.</p> 
 
-        :param ade_token_id: Path parameter 'ade_token_id' (required)
+        :param ade_token_id: (required)
         :type ade_token_id: str
+        :param blueprint_id:  (required)
+        :type blueprint_id: str
+        :param phone:  (required)
+        :type phone: str
+        :param email:  (required)
+        :type email: str
+        :param file: <p>This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.</p>  (required)
+        :type file: bytearray
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13937,6 +15031,10 @@ class DefaultApi:
 
         _param = self._api_v1_integrations_apple_ade_ade_token_id_renew_post_serialize(
             ade_token_id=ade_token_id,
+            blueprint_id=blueprint_id,
+            phone=phone,
+            email=email,
+            file=file,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13944,7 +15042,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -13960,7 +15058,11 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_ade_token_id_renew_post_without_preload_content(
         self,
-        ade_token_id: Annotated[StrictStr, Field(description="Path parameter 'ade_token_id'")],
+        ade_token_id: StrictStr,
+        blueprint_id: StrictStr,
+        phone: StrictStr,
+        email: StrictStr,
+        file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="<p>This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13978,8 +15080,16 @@ class DefaultApi:
 
         <p>This request will renew an existing ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> from the associated MDM server in ABM are required and must be sent in the request.</p> 
 
-        :param ade_token_id: Path parameter 'ade_token_id' (required)
+        :param ade_token_id: (required)
         :type ade_token_id: str
+        :param blueprint_id:  (required)
+        :type blueprint_id: str
+        :param phone:  (required)
+        :type phone: str
+        :param email:  (required)
+        :type email: str
+        :param file: <p>This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.</p>  (required)
+        :type file: bytearray
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14004,6 +15114,10 @@ class DefaultApi:
 
         _param = self._api_v1_integrations_apple_ade_ade_token_id_renew_post_serialize(
             ade_token_id=ade_token_id,
+            blueprint_id=blueprint_id,
+            phone=phone,
+            email=email,
+            file=file,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14011,7 +15125,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -14023,6 +15137,10 @@ class DefaultApi:
     def _api_v1_integrations_apple_ade_ade_token_id_renew_post_serialize(
         self,
         ade_token_id,
+        blueprint_id,
+        phone,
+        email,
+        file,
         _request_auth,
         _content_type,
         _headers,
@@ -14049,20 +15167,35 @@ class DefaultApi:
         # process the query parameters
         # process the header parameters
         # process the form parameters
+        if blueprint_id is not None:
+            _form_params.append(('blueprint_id', blueprint_id))
+        if phone is not None:
+            _form_params.append(('phone', phone))
+        if email is not None:
+            _form_params.append(('email', email))
+        if file is not None:
+            _files['file'] = file
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'multipart/form-data'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -14086,7 +15219,7 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_devices_device_id_get(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14104,7 +15237,7 @@ class DefaultApi:
 
         <p>Get information about a specific Automated Device Enrollment device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -14153,7 +15286,7 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_devices_device_id_get_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14171,7 +15304,7 @@ class DefaultApi:
 
         <p>Get information about a specific Automated Device Enrollment device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -14220,7 +15353,7 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_devices_device_id_get_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14238,7 +15371,7 @@ class DefaultApi:
 
         <p>Get information about a specific Automated Device Enrollment device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -14323,6 +15456,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -14346,7 +15480,8 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_devices_device_id_patch(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14364,8 +15499,10 @@ class DefaultApi:
 
         <p>Update a specific Automated Device Enrollment device's blueprint assignment, user assignment, and asset tag.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14390,6 +15527,7 @@ class DefaultApi:
 
         _param = self._api_v1_integrations_apple_ade_devices_device_id_patch_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14413,7 +15551,8 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_devices_device_id_patch_with_http_info(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14431,8 +15570,10 @@ class DefaultApi:
 
         <p>Update a specific Automated Device Enrollment device's blueprint assignment, user assignment, and asset tag.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14457,6 +15598,7 @@ class DefaultApi:
 
         _param = self._api_v1_integrations_apple_ade_devices_device_id_patch_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14480,7 +15622,8 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_devices_device_id_patch_without_preload_content(
         self,
-        device_id: Annotated[StrictStr, Field(description="Path parameter 'device_id'")],
+        device_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14498,8 +15641,10 @@ class DefaultApi:
 
         <p>Update a specific Automated Device Enrollment device's blueprint assignment, user assignment, and asset tag.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> 
 
-        :param device_id: Path parameter 'device_id' (required)
+        :param device_id: (required)
         :type device_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14524,6 +15669,7 @@ class DefaultApi:
 
         _param = self._api_v1_integrations_apple_ade_devices_device_id_patch_serialize(
             device_id=device_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14543,6 +15689,7 @@ class DefaultApi:
     def _api_v1_integrations_apple_ade_devices_device_id_patch_serialize(
         self,
         device_id,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -14570,6 +15717,8 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if body is not None:
+            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -14580,9 +15729,23 @@ class DefaultApi:
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -14606,6 +15769,15 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_devices_get(
         self,
+        blueprint_id: Annotated[Optional[StrictStr], Field(description="<p>Return results \"containing\" the specified blueprint id</p> ")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="<p>\"exact\" match on kandji user ID number</p> ")] = None,
+        dep_account: Annotated[Optional[StrictStr], Field(description="<p>The ADE token UUID</p> ")] = None,
+        device_family: Annotated[Optional[StrictStr], Field(description="<p>Mac, iPhone, iPad, AppleTV, iPod</p> ")] = None,
+        model: Annotated[Optional[StrictStr], Field(description="<p>Return model results \"containing\" the specified model string. - \"iPad (8th Generation)\", \"MacBook Air\"</p> ")] = None,
+        os: Annotated[Optional[StrictStr], Field(description="<p>OSX, iOS, tvOS</p> ")] = None,
+        profile_status: Annotated[Optional[StrictStr], Field(description="<p>The automated device enrollment profile assignment status - assigned, empty, pushed, removed</p> ")] = None,
+        serial_number: Annotated[Optional[StrictStr], Field(description="<p>Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.</p> ")] = None,
+        page: Annotated[Optional[StrictStr], Field(description="<p>Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14623,6 +15795,24 @@ class DefaultApi:
 
         <p>Get a list of Automated Device Enrollment devices.</p> 
 
+        :param blueprint_id: <p>Return results \"containing\" the specified blueprint id</p> 
+        :type blueprint_id: str
+        :param user_id: <p>\"exact\" match on kandji user ID number</p> 
+        :type user_id: str
+        :param dep_account: <p>The ADE token UUID</p> 
+        :type dep_account: str
+        :param device_family: <p>Mac, iPhone, iPad, AppleTV, iPod</p> 
+        :type device_family: str
+        :param model: <p>Return model results \"containing\" the specified model string. - \"iPad (8th Generation)\", \"MacBook Air\"</p> 
+        :type model: str
+        :param os: <p>OSX, iOS, tvOS</p> 
+        :type os: str
+        :param profile_status: <p>The automated device enrollment profile assignment status - assigned, empty, pushed, removed</p> 
+        :type profile_status: str
+        :param serial_number: <p>Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.</p> 
+        :type serial_number: str
+        :param page: <p>Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.</p> 
+        :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14646,6 +15836,15 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_integrations_apple_ade_devices_get_serialize(
+            blueprint_id=blueprint_id,
+            user_id=user_id,
+            dep_account=dep_account,
+            device_family=device_family,
+            model=model,
+            os=os,
+            profile_status=profile_status,
+            serial_number=serial_number,
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14654,6 +15853,7 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
+            '400': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -14669,6 +15869,15 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_devices_get_with_http_info(
         self,
+        blueprint_id: Annotated[Optional[StrictStr], Field(description="<p>Return results \"containing\" the specified blueprint id</p> ")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="<p>\"exact\" match on kandji user ID number</p> ")] = None,
+        dep_account: Annotated[Optional[StrictStr], Field(description="<p>The ADE token UUID</p> ")] = None,
+        device_family: Annotated[Optional[StrictStr], Field(description="<p>Mac, iPhone, iPad, AppleTV, iPod</p> ")] = None,
+        model: Annotated[Optional[StrictStr], Field(description="<p>Return model results \"containing\" the specified model string. - \"iPad (8th Generation)\", \"MacBook Air\"</p> ")] = None,
+        os: Annotated[Optional[StrictStr], Field(description="<p>OSX, iOS, tvOS</p> ")] = None,
+        profile_status: Annotated[Optional[StrictStr], Field(description="<p>The automated device enrollment profile assignment status - assigned, empty, pushed, removed</p> ")] = None,
+        serial_number: Annotated[Optional[StrictStr], Field(description="<p>Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.</p> ")] = None,
+        page: Annotated[Optional[StrictStr], Field(description="<p>Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14686,6 +15895,24 @@ class DefaultApi:
 
         <p>Get a list of Automated Device Enrollment devices.</p> 
 
+        :param blueprint_id: <p>Return results \"containing\" the specified blueprint id</p> 
+        :type blueprint_id: str
+        :param user_id: <p>\"exact\" match on kandji user ID number</p> 
+        :type user_id: str
+        :param dep_account: <p>The ADE token UUID</p> 
+        :type dep_account: str
+        :param device_family: <p>Mac, iPhone, iPad, AppleTV, iPod</p> 
+        :type device_family: str
+        :param model: <p>Return model results \"containing\" the specified model string. - \"iPad (8th Generation)\", \"MacBook Air\"</p> 
+        :type model: str
+        :param os: <p>OSX, iOS, tvOS</p> 
+        :type os: str
+        :param profile_status: <p>The automated device enrollment profile assignment status - assigned, empty, pushed, removed</p> 
+        :type profile_status: str
+        :param serial_number: <p>Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.</p> 
+        :type serial_number: str
+        :param page: <p>Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.</p> 
+        :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14709,6 +15936,15 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_integrations_apple_ade_devices_get_serialize(
+            blueprint_id=blueprint_id,
+            user_id=user_id,
+            dep_account=dep_account,
+            device_family=device_family,
+            model=model,
+            os=os,
+            profile_status=profile_status,
+            serial_number=serial_number,
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14717,6 +15953,7 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
+            '400': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -14732,6 +15969,15 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_devices_get_without_preload_content(
         self,
+        blueprint_id: Annotated[Optional[StrictStr], Field(description="<p>Return results \"containing\" the specified blueprint id</p> ")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="<p>\"exact\" match on kandji user ID number</p> ")] = None,
+        dep_account: Annotated[Optional[StrictStr], Field(description="<p>The ADE token UUID</p> ")] = None,
+        device_family: Annotated[Optional[StrictStr], Field(description="<p>Mac, iPhone, iPad, AppleTV, iPod</p> ")] = None,
+        model: Annotated[Optional[StrictStr], Field(description="<p>Return model results \"containing\" the specified model string. - \"iPad (8th Generation)\", \"MacBook Air\"</p> ")] = None,
+        os: Annotated[Optional[StrictStr], Field(description="<p>OSX, iOS, tvOS</p> ")] = None,
+        profile_status: Annotated[Optional[StrictStr], Field(description="<p>The automated device enrollment profile assignment status - assigned, empty, pushed, removed</p> ")] = None,
+        serial_number: Annotated[Optional[StrictStr], Field(description="<p>Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.</p> ")] = None,
+        page: Annotated[Optional[StrictStr], Field(description="<p>Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14749,6 +15995,24 @@ class DefaultApi:
 
         <p>Get a list of Automated Device Enrollment devices.</p> 
 
+        :param blueprint_id: <p>Return results \"containing\" the specified blueprint id</p> 
+        :type blueprint_id: str
+        :param user_id: <p>\"exact\" match on kandji user ID number</p> 
+        :type user_id: str
+        :param dep_account: <p>The ADE token UUID</p> 
+        :type dep_account: str
+        :param device_family: <p>Mac, iPhone, iPad, AppleTV, iPod</p> 
+        :type device_family: str
+        :param model: <p>Return model results \"containing\" the specified model string. - \"iPad (8th Generation)\", \"MacBook Air\"</p> 
+        :type model: str
+        :param os: <p>OSX, iOS, tvOS</p> 
+        :type os: str
+        :param profile_status: <p>The automated device enrollment profile assignment status - assigned, empty, pushed, removed</p> 
+        :type profile_status: str
+        :param serial_number: <p>Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.</p> 
+        :type serial_number: str
+        :param page: <p>Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.</p> 
+        :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14772,6 +16036,15 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_integrations_apple_ade_devices_get_serialize(
+            blueprint_id=blueprint_id,
+            user_id=user_id,
+            dep_account=dep_account,
+            device_family=device_family,
+            model=model,
+            os=os,
+            profile_status=profile_status,
+            serial_number=serial_number,
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14780,6 +16053,7 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
+            '400': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -14790,6 +16064,15 @@ class DefaultApi:
 
     def _api_v1_integrations_apple_ade_devices_get_serialize(
         self,
+        blueprint_id,
+        user_id,
+        dep_account,
+        device_family,
+        model,
+        os,
+        profile_status,
+        serial_number,
+        page,
         _request_auth,
         _content_type,
         _headers,
@@ -14812,6 +16095,42 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if blueprint_id is not None:
+            
+            _query_params.append(('blueprint_id', blueprint_id))
+            
+        if user_id is not None:
+            
+            _query_params.append(('user_id', user_id))
+            
+        if dep_account is not None:
+            
+            _query_params.append(('dep_account', dep_account))
+            
+        if device_family is not None:
+            
+            _query_params.append(('device_family', device_family))
+            
+        if model is not None:
+            
+            _query_params.append(('model', model))
+            
+        if os is not None:
+            
+            _query_params.append(('os', os))
+            
+        if profile_status is not None:
+            
+            _query_params.append(('profile_status', profile_status))
+            
+        if serial_number is not None:
+            
+            _query_params.append(('serial_number', serial_number))
+            
+        if page is not None:
+            
+            _query_params.append(('page', page))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -14828,6 +16147,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -14863,7 +16183,7 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """List ADE integrations
 
         <p>This request returns a list of configured ADE integrations.</p> 
@@ -14898,7 +16218,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -14926,7 +16246,7 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """List ADE integrations
 
         <p>This request returns a list of configured ADE integrations.</p> 
@@ -14961,7 +16281,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -15024,7 +16344,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -15062,17 +16382,11 @@ class DefaultApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -15096,6 +16410,10 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_post(
         self,
+        blueprint_id: StrictStr,
+        phone: StrictStr,
+        email: StrictStr,
+        file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="<p>This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15113,6 +16431,14 @@ class DefaultApi:
 
         <p>This request will create a new ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> downloaded from ABM are required and must be sent in the request.</p> 
 
+        :param blueprint_id:  (required)
+        :type blueprint_id: str
+        :param phone:  (required)
+        :type phone: str
+        :param email:  (required)
+        :type email: str
+        :param file: <p>This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.</p>  (required)
+        :type file: bytearray
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15136,6 +16462,10 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_integrations_apple_ade_post_serialize(
+            blueprint_id=blueprint_id,
+            phone=phone,
+            email=email,
+            file=file,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15159,6 +16489,10 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_post_with_http_info(
         self,
+        blueprint_id: StrictStr,
+        phone: StrictStr,
+        email: StrictStr,
+        file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="<p>This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15176,6 +16510,14 @@ class DefaultApi:
 
         <p>This request will create a new ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> downloaded from ABM are required and must be sent in the request.</p> 
 
+        :param blueprint_id:  (required)
+        :type blueprint_id: str
+        :param phone:  (required)
+        :type phone: str
+        :param email:  (required)
+        :type email: str
+        :param file: <p>This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.</p>  (required)
+        :type file: bytearray
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15199,6 +16541,10 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_integrations_apple_ade_post_serialize(
+            blueprint_id=blueprint_id,
+            phone=phone,
+            email=email,
+            file=file,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15222,6 +16568,10 @@ class DefaultApi:
     @validate_call
     def api_v1_integrations_apple_ade_post_without_preload_content(
         self,
+        blueprint_id: StrictStr,
+        phone: StrictStr,
+        email: StrictStr,
+        file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="<p>This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15239,6 +16589,14 @@ class DefaultApi:
 
         <p>This request will create a new ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> downloaded from ABM are required and must be sent in the request.</p> 
 
+        :param blueprint_id:  (required)
+        :type blueprint_id: str
+        :param phone:  (required)
+        :type phone: str
+        :param email:  (required)
+        :type email: str
+        :param file: <p>This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.</p>  (required)
+        :type file: bytearray
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15262,6 +16620,10 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_integrations_apple_ade_post_serialize(
+            blueprint_id=blueprint_id,
+            phone=phone,
+            email=email,
+            file=file,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15280,6 +16642,10 @@ class DefaultApi:
 
     def _api_v1_integrations_apple_ade_post_serialize(
         self,
+        blueprint_id,
+        phone,
+        email,
+        file,
         _request_auth,
         _content_type,
         _headers,
@@ -15304,6 +16670,14 @@ class DefaultApi:
         # process the query parameters
         # process the header parameters
         # process the form parameters
+        if blueprint_id is not None:
+            _form_params.append(('blueprint_id', blueprint_id))
+        if phone is not None:
+            _form_params.append(('phone', phone))
+        if email is not None:
+            _form_params.append(('email', email))
+        if file is not None:
+            _files['file'] = file
         # process the body parameter
 
 
@@ -15315,9 +16689,23 @@ class DefaultApi:
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'multipart/form-data'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -15353,7 +16741,7 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> str:
         """Download ADE public key
 
         <p>This request returns the public key used to create an MDM server connection in Apple Business Manager.</p> <p>The encoded information needs to be saved to a file with the <code>.pem</code> format and then uploaded to ABM.</p> 
@@ -15388,7 +16776,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "str",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -15416,7 +16804,7 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[str]:
         """Download ADE public key
 
         <p>This request returns the public key used to create an MDM server connection in Apple Business Manager.</p> <p>The encoded information needs to be saved to a file with the <code>.pem</code> format and then uploaded to ABM.</p> 
@@ -15451,7 +16839,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "str",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -15514,7 +16902,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "str",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -15556,13 +16944,14 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/x-x509-ca-cert'
                 ]
             )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -15586,6 +16975,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_apps_get(
         self,
+        page: Annotated[Optional[StrictStr], Field(description="<p>Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 device records returned per request.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15603,6 +16993,8 @@ class DefaultApi:
 
         <p>This endpoint makes a request to retrieve a list of custom apps from the Kandji library.</p> 
 
+        :param page: <p>Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 device records returned per request.</p> 
+        :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15626,6 +17018,7 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_library_custom_apps_get_serialize(
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15649,6 +17042,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_apps_get_with_http_info(
         self,
+        page: Annotated[Optional[StrictStr], Field(description="<p>Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 device records returned per request.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15666,6 +17060,8 @@ class DefaultApi:
 
         <p>This endpoint makes a request to retrieve a list of custom apps from the Kandji library.</p> 
 
+        :param page: <p>Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 device records returned per request.</p> 
+        :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15689,6 +17085,7 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_library_custom_apps_get_serialize(
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15712,6 +17109,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_apps_get_without_preload_content(
         self,
+        page: Annotated[Optional[StrictStr], Field(description="<p>Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 device records returned per request.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15729,6 +17127,8 @@ class DefaultApi:
 
         <p>This endpoint makes a request to retrieve a list of custom apps from the Kandji library.</p> 
 
+        :param page: <p>Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 device records returned per request.</p> 
+        :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15752,6 +17152,7 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_library_custom_apps_get_serialize(
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15770,6 +17171,7 @@ class DefaultApi:
 
     def _api_v1_library_custom_apps_get_serialize(
         self,
+        page,
         _request_auth,
         _content_type,
         _headers,
@@ -15792,6 +17194,10 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if page is not None:
+            
+            _query_params.append(('page', page))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -15801,13 +17207,14 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json; charset=utf-8'
                 ]
             )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -15831,7 +17238,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_apps_library_item_id_delete(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15844,12 +17251,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Delete Custom App
 
         <p>NOTICE: This is permanent so be careful.</p> <p>This endpoint sends a request to delete a specific custom app from the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -15882,7 +17289,8 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '204': None,
+            '404': "str",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -15898,7 +17306,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_apps_library_item_id_delete_with_http_info(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15911,12 +17319,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Delete Custom App
 
         <p>NOTICE: This is permanent so be careful.</p> <p>This endpoint sends a request to delete a specific custom app from the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -15949,7 +17357,8 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '204': None,
+            '404': "str",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -15965,7 +17374,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_apps_library_item_id_delete_without_preload_content(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15983,7 +17392,7 @@ class DefaultApi:
 
         <p>NOTICE: This is permanent so be careful.</p> <p>This endpoint sends a request to delete a specific custom app from the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -16016,7 +17425,8 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '204': None,
+            '404': "str",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -16061,13 +17471,14 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'text/html; charset=utf-8'
                 ]
             )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -16091,7 +17502,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_apps_library_item_id_get(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -16109,7 +17520,7 @@ class DefaultApi:
 
         <p>This endpoint retrieves details about a specific custom app from the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -16158,7 +17569,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_apps_library_item_id_get_with_http_info(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -16176,7 +17587,7 @@ class DefaultApi:
 
         <p>This endpoint retrieves details about a specific custom app from the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -16225,7 +17636,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_apps_library_item_id_get_without_preload_content(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -16243,7 +17654,7 @@ class DefaultApi:
 
         <p>This endpoint retrieves details about a specific custom app from the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -16321,13 +17732,14 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json; charset=utf-8'
                 ]
             )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -16351,7 +17763,9 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_apps_library_item_id_patch(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
+        name: Annotated[StrictStr, Field(description="<p>Renaming a Custom App</p> ")],
+        active: Annotated[StrictStr, Field(description="<p>(Optional, default=true) Whether this Custom App is active and installable</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -16369,8 +17783,12 @@ class DefaultApi:
 
         <p>This request allows you to update a custom app in the Kandji library.</p> <p>Must have already generated a <code>file_key</code> via <code>Create custom app</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload to S3</code> example.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
+        :param name: <p>Renaming a Custom App</p>  (required)
+        :type name: str
+        :param active: <p>(Optional, default=true) Whether this Custom App is active and installable</p>  (required)
+        :type active: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -16395,6 +17813,8 @@ class DefaultApi:
 
         _param = self._api_v1_library_custom_apps_library_item_id_patch_serialize(
             library_item_id=library_item_id,
+            name=name,
+            active=active,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -16418,7 +17838,9 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_apps_library_item_id_patch_with_http_info(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
+        name: Annotated[StrictStr, Field(description="<p>Renaming a Custom App</p> ")],
+        active: Annotated[StrictStr, Field(description="<p>(Optional, default=true) Whether this Custom App is active and installable</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -16436,8 +17858,12 @@ class DefaultApi:
 
         <p>This request allows you to update a custom app in the Kandji library.</p> <p>Must have already generated a <code>file_key</code> via <code>Create custom app</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload to S3</code> example.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
+        :param name: <p>Renaming a Custom App</p>  (required)
+        :type name: str
+        :param active: <p>(Optional, default=true) Whether this Custom App is active and installable</p>  (required)
+        :type active: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -16462,6 +17888,8 @@ class DefaultApi:
 
         _param = self._api_v1_library_custom_apps_library_item_id_patch_serialize(
             library_item_id=library_item_id,
+            name=name,
+            active=active,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -16485,7 +17913,9 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_apps_library_item_id_patch_without_preload_content(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
+        name: Annotated[StrictStr, Field(description="<p>Renaming a Custom App</p> ")],
+        active: Annotated[StrictStr, Field(description="<p>(Optional, default=true) Whether this Custom App is active and installable</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -16503,8 +17933,12 @@ class DefaultApi:
 
         <p>This request allows you to update a custom app in the Kandji library.</p> <p>Must have already generated a <code>file_key</code> via <code>Create custom app</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload to S3</code> example.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
+        :param name: <p>Renaming a Custom App</p>  (required)
+        :type name: str
+        :param active: <p>(Optional, default=true) Whether this Custom App is active and installable</p>  (required)
+        :type active: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -16529,6 +17963,8 @@ class DefaultApi:
 
         _param = self._api_v1_library_custom_apps_library_item_id_patch_serialize(
             library_item_id=library_item_id,
+            name=name,
+            active=active,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -16548,6 +17984,8 @@ class DefaultApi:
     def _api_v1_library_custom_apps_library_item_id_patch_serialize(
         self,
         library_item_id,
+        name,
+        active,
         _request_auth,
         _content_type,
         _headers,
@@ -16574,6 +18012,10 @@ class DefaultApi:
         # process the query parameters
         # process the header parameters
         # process the form parameters
+        if name is not None:
+            _form_params.append(('name', name))
+        if active is not None:
+            _form_params.append(('active', active))
         # process the body parameter
 
 
@@ -16581,13 +18023,27 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json; charset=utf-8'
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/x-www-form-urlencoded'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -16611,6 +18067,13 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_apps_post(
         self,
+        name: Annotated[StrictStr, Field(description="<p>(Required) The name for this Custom App</p> ")],
+        file_key: Annotated[StrictStr, Field(description="<p>(Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file.</p> ")],
+        install_type: Annotated[StrictStr, Field(description="<p>(Required) Options are package, zip, image</p> ")],
+        install_enforcement: Annotated[StrictStr, Field(description="<p>(Required) Options are install_once, continuously_enforce, no_enforcement</p> ")],
+        show_in_self_service: Annotated[StrictStr, Field(description="<p>(Optional, default=false) Displays this app in Self Service</p> ")],
+        self_service_category_id: Annotated[StrictStr, Field(description="<p>(Required for show_in_self_service=true) Self Service Category (by ID) to display app in</p> ")],
+        self_service_recommended: Annotated[StrictStr, Field(description="<p>(Optional, default=false) Adds recommended flag to app in Self Service</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -16628,6 +18091,20 @@ class DefaultApi:
 
         <p>This request allows you to create a custom app in the Kandji library.</p> <p>Must have already generated a <code>file_key</code> via <code>Create custom app</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload to S3</code> example.</p> 
 
+        :param name: <p>(Required) The name for this Custom App</p>  (required)
+        :type name: str
+        :param file_key: <p>(Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file.</p>  (required)
+        :type file_key: str
+        :param install_type: <p>(Required) Options are package, zip, image</p>  (required)
+        :type install_type: str
+        :param install_enforcement: <p>(Required) Options are install_once, continuously_enforce, no_enforcement</p>  (required)
+        :type install_enforcement: str
+        :param show_in_self_service: <p>(Optional, default=false) Displays this app in Self Service</p>  (required)
+        :type show_in_self_service: str
+        :param self_service_category_id: <p>(Required for show_in_self_service=true) Self Service Category (by ID) to display app in</p>  (required)
+        :type self_service_category_id: str
+        :param self_service_recommended: <p>(Optional, default=false) Adds recommended flag to app in Self Service</p>  (required)
+        :type self_service_recommended: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -16651,6 +18128,13 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_library_custom_apps_post_serialize(
+            name=name,
+            file_key=file_key,
+            install_type=install_type,
+            install_enforcement=install_enforcement,
+            show_in_self_service=show_in_self_service,
+            self_service_category_id=self_service_category_id,
+            self_service_recommended=self_service_recommended,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -16658,7 +18142,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '201': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -16674,6 +18158,13 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_apps_post_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="<p>(Required) The name for this Custom App</p> ")],
+        file_key: Annotated[StrictStr, Field(description="<p>(Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file.</p> ")],
+        install_type: Annotated[StrictStr, Field(description="<p>(Required) Options are package, zip, image</p> ")],
+        install_enforcement: Annotated[StrictStr, Field(description="<p>(Required) Options are install_once, continuously_enforce, no_enforcement</p> ")],
+        show_in_self_service: Annotated[StrictStr, Field(description="<p>(Optional, default=false) Displays this app in Self Service</p> ")],
+        self_service_category_id: Annotated[StrictStr, Field(description="<p>(Required for show_in_self_service=true) Self Service Category (by ID) to display app in</p> ")],
+        self_service_recommended: Annotated[StrictStr, Field(description="<p>(Optional, default=false) Adds recommended flag to app in Self Service</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -16691,6 +18182,20 @@ class DefaultApi:
 
         <p>This request allows you to create a custom app in the Kandji library.</p> <p>Must have already generated a <code>file_key</code> via <code>Create custom app</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload to S3</code> example.</p> 
 
+        :param name: <p>(Required) The name for this Custom App</p>  (required)
+        :type name: str
+        :param file_key: <p>(Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file.</p>  (required)
+        :type file_key: str
+        :param install_type: <p>(Required) Options are package, zip, image</p>  (required)
+        :type install_type: str
+        :param install_enforcement: <p>(Required) Options are install_once, continuously_enforce, no_enforcement</p>  (required)
+        :type install_enforcement: str
+        :param show_in_self_service: <p>(Optional, default=false) Displays this app in Self Service</p>  (required)
+        :type show_in_self_service: str
+        :param self_service_category_id: <p>(Required for show_in_self_service=true) Self Service Category (by ID) to display app in</p>  (required)
+        :type self_service_category_id: str
+        :param self_service_recommended: <p>(Optional, default=false) Adds recommended flag to app in Self Service</p>  (required)
+        :type self_service_recommended: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -16714,6 +18219,13 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_library_custom_apps_post_serialize(
+            name=name,
+            file_key=file_key,
+            install_type=install_type,
+            install_enforcement=install_enforcement,
+            show_in_self_service=show_in_self_service,
+            self_service_category_id=self_service_category_id,
+            self_service_recommended=self_service_recommended,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -16721,7 +18233,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '201': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -16737,6 +18249,13 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_apps_post_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="<p>(Required) The name for this Custom App</p> ")],
+        file_key: Annotated[StrictStr, Field(description="<p>(Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file.</p> ")],
+        install_type: Annotated[StrictStr, Field(description="<p>(Required) Options are package, zip, image</p> ")],
+        install_enforcement: Annotated[StrictStr, Field(description="<p>(Required) Options are install_once, continuously_enforce, no_enforcement</p> ")],
+        show_in_self_service: Annotated[StrictStr, Field(description="<p>(Optional, default=false) Displays this app in Self Service</p> ")],
+        self_service_category_id: Annotated[StrictStr, Field(description="<p>(Required for show_in_self_service=true) Self Service Category (by ID) to display app in</p> ")],
+        self_service_recommended: Annotated[StrictStr, Field(description="<p>(Optional, default=false) Adds recommended flag to app in Self Service</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -16754,6 +18273,20 @@ class DefaultApi:
 
         <p>This request allows you to create a custom app in the Kandji library.</p> <p>Must have already generated a <code>file_key</code> via <code>Create custom app</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload to S3</code> example.</p> 
 
+        :param name: <p>(Required) The name for this Custom App</p>  (required)
+        :type name: str
+        :param file_key: <p>(Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file.</p>  (required)
+        :type file_key: str
+        :param install_type: <p>(Required) Options are package, zip, image</p>  (required)
+        :type install_type: str
+        :param install_enforcement: <p>(Required) Options are install_once, continuously_enforce, no_enforcement</p>  (required)
+        :type install_enforcement: str
+        :param show_in_self_service: <p>(Optional, default=false) Displays this app in Self Service</p>  (required)
+        :type show_in_self_service: str
+        :param self_service_category_id: <p>(Required for show_in_self_service=true) Self Service Category (by ID) to display app in</p>  (required)
+        :type self_service_category_id: str
+        :param self_service_recommended: <p>(Optional, default=false) Adds recommended flag to app in Self Service</p>  (required)
+        :type self_service_recommended: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -16777,6 +18310,13 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_library_custom_apps_post_serialize(
+            name=name,
+            file_key=file_key,
+            install_type=install_type,
+            install_enforcement=install_enforcement,
+            show_in_self_service=show_in_self_service,
+            self_service_category_id=self_service_category_id,
+            self_service_recommended=self_service_recommended,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -16784,7 +18324,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '201': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -16795,6 +18335,13 @@ class DefaultApi:
 
     def _api_v1_library_custom_apps_post_serialize(
         self,
+        name,
+        file_key,
+        install_type,
+        install_enforcement,
+        show_in_self_service,
+        self_service_category_id,
+        self_service_recommended,
         _request_auth,
         _content_type,
         _headers,
@@ -16819,6 +18366,20 @@ class DefaultApi:
         # process the query parameters
         # process the header parameters
         # process the form parameters
+        if name is not None:
+            _form_params.append(('name', name))
+        if file_key is not None:
+            _form_params.append(('file_key', file_key))
+        if install_type is not None:
+            _form_params.append(('install_type', install_type))
+        if install_enforcement is not None:
+            _form_params.append(('install_enforcement', install_enforcement))
+        if show_in_self_service is not None:
+            _form_params.append(('show_in_self_service', show_in_self_service))
+        if self_service_category_id is not None:
+            _form_params.append(('self_service_category_id', self_service_category_id))
+        if self_service_recommended is not None:
+            _form_params.append(('self_service_recommended', self_service_recommended))
         # process the body parameter
 
 
@@ -16826,13 +18387,27 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json; charset=utf-8'
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/x-www-form-urlencoded'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -16856,6 +18431,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_apps_upload_post(
         self,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -16868,11 +18444,13 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Upload Custom App
 
         <p>This request retrieves the S3 upload details need for uploading the app to Amazon S3.</p> <p>Creates a pre-signed <code>post_url</code> to upload a new Custom App to S3.</p> <p>The provided <code>name</code> will be used to calculate a unique <code>file_key</code> in S3.</p> <p>A separate request will have to be made to the <code>Upload to S3</code> endpoint to upload the file to S3 directly using the <code>post_url</code> and <code>post_data</code> from the <code>Upload Custom App</code> response.</p> 
 
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -16896,6 +18474,7 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_library_custom_apps_upload_post_serialize(
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -16903,7 +18482,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '201': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -16919,6 +18498,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_apps_upload_post_with_http_info(
         self,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -16931,11 +18511,13 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Upload Custom App
 
         <p>This request retrieves the S3 upload details need for uploading the app to Amazon S3.</p> <p>Creates a pre-signed <code>post_url</code> to upload a new Custom App to S3.</p> <p>The provided <code>name</code> will be used to calculate a unique <code>file_key</code> in S3.</p> <p>A separate request will have to be made to the <code>Upload to S3</code> endpoint to upload the file to S3 directly using the <code>post_url</code> and <code>post_data</code> from the <code>Upload Custom App</code> response.</p> 
 
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -16959,6 +18541,7 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_library_custom_apps_upload_post_serialize(
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -16966,7 +18549,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '201': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -16982,6 +18565,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_apps_upload_post_without_preload_content(
         self,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -16999,6 +18583,8 @@ class DefaultApi:
 
         <p>This request retrieves the S3 upload details need for uploading the app to Amazon S3.</p> <p>Creates a pre-signed <code>post_url</code> to upload a new Custom App to S3.</p> <p>The provided <code>name</code> will be used to calculate a unique <code>file_key</code> in S3.</p> <p>A separate request will have to be made to the <code>Upload to S3</code> endpoint to upload the file to S3 directly using the <code>post_url</code> and <code>post_data</code> from the <code>Upload Custom App</code> response.</p> 
 
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17022,6 +18608,7 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_library_custom_apps_upload_post_serialize(
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -17029,7 +18616,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '201': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -17040,6 +18627,7 @@ class DefaultApi:
 
     def _api_v1_library_custom_apps_upload_post_serialize(
         self,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -17065,19 +18653,28 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if body is not None:
+            _body_params = body
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
             )
-
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -17101,6 +18698,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_profiles_get(
         self,
+        page: Annotated[Optional[StrictStr], Field(description="<p>Optional page number (when results exceed pagination threshold)</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17118,6 +18716,8 @@ class DefaultApi:
 
         <p>This endpoint makes a request to retrieve a list of custom profiles from the Kandji library.</p> 
 
+        :param page: <p>Optional page number (when results exceed pagination threshold)</p> 
+        :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17141,6 +18741,7 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_library_custom_profiles_get_serialize(
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -17164,6 +18765,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_profiles_get_with_http_info(
         self,
+        page: Annotated[Optional[StrictStr], Field(description="<p>Optional page number (when results exceed pagination threshold)</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17181,6 +18783,8 @@ class DefaultApi:
 
         <p>This endpoint makes a request to retrieve a list of custom profiles from the Kandji library.</p> 
 
+        :param page: <p>Optional page number (when results exceed pagination threshold)</p> 
+        :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17204,6 +18808,7 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_library_custom_profiles_get_serialize(
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -17227,6 +18832,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_profiles_get_without_preload_content(
         self,
+        page: Annotated[Optional[StrictStr], Field(description="<p>Optional page number (when results exceed pagination threshold)</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17244,6 +18850,8 @@ class DefaultApi:
 
         <p>This endpoint makes a request to retrieve a list of custom profiles from the Kandji library.</p> 
 
+        :param page: <p>Optional page number (when results exceed pagination threshold)</p> 
+        :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17267,6 +18875,7 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_library_custom_profiles_get_serialize(
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -17285,6 +18894,7 @@ class DefaultApi:
 
     def _api_v1_library_custom_profiles_get_serialize(
         self,
+        page,
         _request_auth,
         _content_type,
         _headers,
@@ -17307,6 +18917,10 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if page is not None:
+            
+            _query_params.append(('page', page))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -17316,13 +18930,14 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json; charset=utf-8'
                 ]
             )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -17346,7 +18961,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_profiles_library_item_id_delete(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17359,12 +18974,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Delete Custom Profile
 
         <p>NOTICE: This is permanent so be careful.</p> <p>This endpoint sends a request to delete a specific custom profile from the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -17397,7 +19012,8 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '204': None,
+            '404': "str",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -17413,7 +19029,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_profiles_library_item_id_delete_with_http_info(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17426,12 +19042,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Delete Custom Profile
 
         <p>NOTICE: This is permanent so be careful.</p> <p>This endpoint sends a request to delete a specific custom profile from the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -17464,7 +19080,8 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '204': None,
+            '404': "str",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -17480,7 +19097,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_profiles_library_item_id_delete_without_preload_content(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17498,7 +19115,7 @@ class DefaultApi:
 
         <p>NOTICE: This is permanent so be careful.</p> <p>This endpoint sends a request to delete a specific custom profile from the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -17531,7 +19148,8 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '204': None,
+            '404': "str",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -17576,13 +19194,14 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'text/html; charset=utf-8'
                 ]
             )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -17606,7 +19225,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_profiles_library_item_id_get(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17622,9 +19241,9 @@ class DefaultApi:
     ) -> object:
         """Get Custom Profile
 
-        <p>This endpoint retrieves details about a specific custom app from the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
+        <p>This endpoint retrieves details about a specific custom profile from the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -17673,7 +19292,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_profiles_library_item_id_get_with_http_info(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17689,9 +19308,9 @@ class DefaultApi:
     ) -> ApiResponse[object]:
         """Get Custom Profile
 
-        <p>This endpoint retrieves details about a specific custom app from the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
+        <p>This endpoint retrieves details about a specific custom profile from the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -17740,7 +19359,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_profiles_library_item_id_get_without_preload_content(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17756,9 +19375,9 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Get Custom Profile
 
-        <p>This endpoint retrieves details about a specific custom app from the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
+        <p>This endpoint retrieves details about a specific custom profile from the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -17836,13 +19455,14 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json; charset=utf-8'
                 ]
             )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -17866,7 +19486,11 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_profiles_library_item_id_patch(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
+        runs_on_mac: Optional[StrictStr] = None,
+        runs_on_iphone: Optional[StrictStr] = None,
+        runs_on_ipad: Optional[StrictStr] = None,
+        runs_on_tv: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17884,8 +19508,16 @@ class DefaultApi:
 
         <p>This request allows you to update a custom profile in the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
+        :param runs_on_mac: 
+        :type runs_on_mac: str
+        :param runs_on_iphone: 
+        :type runs_on_iphone: str
+        :param runs_on_ipad: 
+        :type runs_on_ipad: str
+        :param runs_on_tv: 
+        :type runs_on_tv: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17910,6 +19542,10 @@ class DefaultApi:
 
         _param = self._api_v1_library_custom_profiles_library_item_id_patch_serialize(
             library_item_id=library_item_id,
+            runs_on_mac=runs_on_mac,
+            runs_on_iphone=runs_on_iphone,
+            runs_on_ipad=runs_on_ipad,
+            runs_on_tv=runs_on_tv,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -17933,7 +19569,11 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_profiles_library_item_id_patch_with_http_info(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
+        runs_on_mac: Optional[StrictStr] = None,
+        runs_on_iphone: Optional[StrictStr] = None,
+        runs_on_ipad: Optional[StrictStr] = None,
+        runs_on_tv: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17951,8 +19591,16 @@ class DefaultApi:
 
         <p>This request allows you to update a custom profile in the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
+        :param runs_on_mac: 
+        :type runs_on_mac: str
+        :param runs_on_iphone: 
+        :type runs_on_iphone: str
+        :param runs_on_ipad: 
+        :type runs_on_ipad: str
+        :param runs_on_tv: 
+        :type runs_on_tv: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17977,6 +19625,10 @@ class DefaultApi:
 
         _param = self._api_v1_library_custom_profiles_library_item_id_patch_serialize(
             library_item_id=library_item_id,
+            runs_on_mac=runs_on_mac,
+            runs_on_iphone=runs_on_iphone,
+            runs_on_ipad=runs_on_ipad,
+            runs_on_tv=runs_on_tv,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -18000,7 +19652,11 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_profiles_library_item_id_patch_without_preload_content(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
+        runs_on_mac: Optional[StrictStr] = None,
+        runs_on_iphone: Optional[StrictStr] = None,
+        runs_on_ipad: Optional[StrictStr] = None,
+        runs_on_tv: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18018,8 +19674,16 @@ class DefaultApi:
 
         <p>This request allows you to update a custom profile in the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
+        :param runs_on_mac: 
+        :type runs_on_mac: str
+        :param runs_on_iphone: 
+        :type runs_on_iphone: str
+        :param runs_on_ipad: 
+        :type runs_on_ipad: str
+        :param runs_on_tv: 
+        :type runs_on_tv: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -18044,6 +19708,10 @@ class DefaultApi:
 
         _param = self._api_v1_library_custom_profiles_library_item_id_patch_serialize(
             library_item_id=library_item_id,
+            runs_on_mac=runs_on_mac,
+            runs_on_iphone=runs_on_iphone,
+            runs_on_ipad=runs_on_ipad,
+            runs_on_tv=runs_on_tv,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -18063,6 +19731,10 @@ class DefaultApi:
     def _api_v1_library_custom_profiles_library_item_id_patch_serialize(
         self,
         library_item_id,
+        runs_on_mac,
+        runs_on_iphone,
+        runs_on_ipad,
+        runs_on_tv,
         _request_auth,
         _content_type,
         _headers,
@@ -18087,6 +19759,22 @@ class DefaultApi:
         if library_item_id is not None:
             _path_params['library_item_id'] = library_item_id
         # process the query parameters
+        if runs_on_mac is not None:
+            
+            _query_params.append(('runs_on_mac', runs_on_mac))
+            
+        if runs_on_iphone is not None:
+            
+            _query_params.append(('runs_on_iphone', runs_on_iphone))
+            
+        if runs_on_ipad is not None:
+            
+            _query_params.append(('runs_on_ipad', runs_on_ipad))
+            
+        if runs_on_tv is not None:
+            
+            _query_params.append(('runs_on_tv', runs_on_tv))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -18096,13 +19784,27 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json; charset=utf-8'
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'multipart/form-data'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -18126,6 +19828,13 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_profiles_post(
         self,
+        name: Annotated[StrictStr, Field(description="<p>(Required) The profile name</p> ")],
+        file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="<p>(Required) The path to the profile's .mobileconfig file</p> ")],
+        active: Annotated[StrictStr, Field(description="<p>(Optional, default=true) Whether this library item is active</p> ")],
+        runs_on_mac: Optional[StrictStr] = None,
+        runs_on_iphone: Optional[StrictStr] = None,
+        runs_on_ipad: Optional[StrictStr] = None,
+        runs_on_tv: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18143,6 +19852,20 @@ class DefaultApi:
 
         <p>This request allows you to create a custom profile in the Kandji library.</p> 
 
+        :param name: <p>(Required) The profile name</p>  (required)
+        :type name: str
+        :param file: <p>(Required) The path to the profile's .mobileconfig file</p>  (required)
+        :type file: bytearray
+        :param active: <p>(Optional, default=true) Whether this library item is active</p>  (required)
+        :type active: str
+        :param runs_on_mac: 
+        :type runs_on_mac: str
+        :param runs_on_iphone: 
+        :type runs_on_iphone: str
+        :param runs_on_ipad: 
+        :type runs_on_ipad: str
+        :param runs_on_tv: 
+        :type runs_on_tv: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -18166,6 +19889,13 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_library_custom_profiles_post_serialize(
+            name=name,
+            file=file,
+            active=active,
+            runs_on_mac=runs_on_mac,
+            runs_on_iphone=runs_on_iphone,
+            runs_on_ipad=runs_on_ipad,
+            runs_on_tv=runs_on_tv,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -18173,7 +19903,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '201': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -18189,6 +19919,13 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_profiles_post_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="<p>(Required) The profile name</p> ")],
+        file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="<p>(Required) The path to the profile's .mobileconfig file</p> ")],
+        active: Annotated[StrictStr, Field(description="<p>(Optional, default=true) Whether this library item is active</p> ")],
+        runs_on_mac: Optional[StrictStr] = None,
+        runs_on_iphone: Optional[StrictStr] = None,
+        runs_on_ipad: Optional[StrictStr] = None,
+        runs_on_tv: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18206,6 +19943,20 @@ class DefaultApi:
 
         <p>This request allows you to create a custom profile in the Kandji library.</p> 
 
+        :param name: <p>(Required) The profile name</p>  (required)
+        :type name: str
+        :param file: <p>(Required) The path to the profile's .mobileconfig file</p>  (required)
+        :type file: bytearray
+        :param active: <p>(Optional, default=true) Whether this library item is active</p>  (required)
+        :type active: str
+        :param runs_on_mac: 
+        :type runs_on_mac: str
+        :param runs_on_iphone: 
+        :type runs_on_iphone: str
+        :param runs_on_ipad: 
+        :type runs_on_ipad: str
+        :param runs_on_tv: 
+        :type runs_on_tv: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -18229,6 +19980,13 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_library_custom_profiles_post_serialize(
+            name=name,
+            file=file,
+            active=active,
+            runs_on_mac=runs_on_mac,
+            runs_on_iphone=runs_on_iphone,
+            runs_on_ipad=runs_on_ipad,
+            runs_on_tv=runs_on_tv,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -18236,7 +19994,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '201': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -18252,6 +20010,13 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_profiles_post_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="<p>(Required) The profile name</p> ")],
+        file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="<p>(Required) The path to the profile's .mobileconfig file</p> ")],
+        active: Annotated[StrictStr, Field(description="<p>(Optional, default=true) Whether this library item is active</p> ")],
+        runs_on_mac: Optional[StrictStr] = None,
+        runs_on_iphone: Optional[StrictStr] = None,
+        runs_on_ipad: Optional[StrictStr] = None,
+        runs_on_tv: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18269,6 +20034,20 @@ class DefaultApi:
 
         <p>This request allows you to create a custom profile in the Kandji library.</p> 
 
+        :param name: <p>(Required) The profile name</p>  (required)
+        :type name: str
+        :param file: <p>(Required) The path to the profile's .mobileconfig file</p>  (required)
+        :type file: bytearray
+        :param active: <p>(Optional, default=true) Whether this library item is active</p>  (required)
+        :type active: str
+        :param runs_on_mac: 
+        :type runs_on_mac: str
+        :param runs_on_iphone: 
+        :type runs_on_iphone: str
+        :param runs_on_ipad: 
+        :type runs_on_ipad: str
+        :param runs_on_tv: 
+        :type runs_on_tv: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -18292,6 +20071,13 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_library_custom_profiles_post_serialize(
+            name=name,
+            file=file,
+            active=active,
+            runs_on_mac=runs_on_mac,
+            runs_on_iphone=runs_on_iphone,
+            runs_on_ipad=runs_on_ipad,
+            runs_on_tv=runs_on_tv,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -18299,7 +20085,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '201': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -18310,6 +20096,13 @@ class DefaultApi:
 
     def _api_v1_library_custom_profiles_post_serialize(
         self,
+        name,
+        file,
+        active,
+        runs_on_mac,
+        runs_on_iphone,
+        runs_on_ipad,
+        runs_on_tv,
         _request_auth,
         _content_type,
         _headers,
@@ -18332,8 +20125,30 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if runs_on_mac is not None:
+            
+            _query_params.append(('runs_on_mac', runs_on_mac))
+            
+        if runs_on_iphone is not None:
+            
+            _query_params.append(('runs_on_iphone', runs_on_iphone))
+            
+        if runs_on_ipad is not None:
+            
+            _query_params.append(('runs_on_ipad', runs_on_ipad))
+            
+        if runs_on_tv is not None:
+            
+            _query_params.append(('runs_on_tv', runs_on_tv))
+            
         # process the header parameters
         # process the form parameters
+        if name is not None:
+            _form_params.append(('name', name))
+        if file is not None:
+            _files['file'] = file
+        if active is not None:
+            _form_params.append(('active', active))
         # process the body parameter
 
 
@@ -18341,13 +20156,27 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json; charset=utf-8'
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'multipart/form-data'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -18371,6 +20200,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_scripts_get(
         self,
+        page: Annotated[Optional[StrictStr], Field(description="<p>Optional page number (when results exceed pagination threshold)</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18388,6 +20218,8 @@ class DefaultApi:
 
         <p>This endpoint makes a request to retrieve a list of custom scripts from the Kandji library.</p> 
 
+        :param page: <p>Optional page number (when results exceed pagination threshold)</p> 
+        :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -18411,6 +20243,7 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_library_custom_scripts_get_serialize(
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -18434,6 +20267,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_scripts_get_with_http_info(
         self,
+        page: Annotated[Optional[StrictStr], Field(description="<p>Optional page number (when results exceed pagination threshold)</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18451,6 +20285,8 @@ class DefaultApi:
 
         <p>This endpoint makes a request to retrieve a list of custom scripts from the Kandji library.</p> 
 
+        :param page: <p>Optional page number (when results exceed pagination threshold)</p> 
+        :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -18474,6 +20310,7 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_library_custom_scripts_get_serialize(
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -18497,6 +20334,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_scripts_get_without_preload_content(
         self,
+        page: Annotated[Optional[StrictStr], Field(description="<p>Optional page number (when results exceed pagination threshold)</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18514,6 +20352,8 @@ class DefaultApi:
 
         <p>This endpoint makes a request to retrieve a list of custom scripts from the Kandji library.</p> 
 
+        :param page: <p>Optional page number (when results exceed pagination threshold)</p> 
+        :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -18537,6 +20377,7 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_library_custom_scripts_get_serialize(
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -18555,6 +20396,7 @@ class DefaultApi:
 
     def _api_v1_library_custom_scripts_get_serialize(
         self,
+        page,
         _request_auth,
         _content_type,
         _headers,
@@ -18577,6 +20419,10 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if page is not None:
+            
+            _query_params.append(('page', page))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -18586,13 +20432,14 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json; charset=utf-8'
                 ]
             )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -18616,7 +20463,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_scripts_library_item_id_delete(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18629,12 +20476,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Delete Custom Script
 
         <p>NOTICE: This is permanent so be careful.</p> <p>This endpoint sends a request to delete a specific custom scripts from the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -18667,7 +20514,8 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '204': None,
+            '404': "str",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -18683,7 +20531,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_scripts_library_item_id_delete_with_http_info(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18696,12 +20544,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Delete Custom Script
 
         <p>NOTICE: This is permanent so be careful.</p> <p>This endpoint sends a request to delete a specific custom scripts from the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -18734,7 +20582,8 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '204': None,
+            '404': "str",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -18750,7 +20599,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_scripts_library_item_id_delete_without_preload_content(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18768,7 +20617,7 @@ class DefaultApi:
 
         <p>NOTICE: This is permanent so be careful.</p> <p>This endpoint sends a request to delete a specific custom scripts from the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -18801,7 +20650,8 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '204': None,
+            '404': "str",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -18846,13 +20696,14 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'text/html; charset=utf-8'
                 ]
             )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -18876,7 +20727,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_scripts_library_item_id_get(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18894,7 +20745,7 @@ class DefaultApi:
 
         <p>This endpoint retrieves details about a specific custom script from the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -18943,7 +20794,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_scripts_library_item_id_get_with_http_info(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18961,7 +20812,7 @@ class DefaultApi:
 
         <p>This endpoint retrieves details about a specific custom script from the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -19010,7 +20861,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_scripts_library_item_id_get_without_preload_content(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19028,7 +20879,7 @@ class DefaultApi:
 
         <p>This endpoint retrieves details about a specific custom script from the Kandji library.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -19106,13 +20957,14 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json; charset=utf-8'
                 ]
             )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -19136,7 +20988,8 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_scripts_library_item_id_patch(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19154,8 +21007,10 @@ class DefaultApi:
 
         <p>This request allows you to update a custom script in the Kandji library.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19180,6 +21035,7 @@ class DefaultApi:
 
         _param = self._api_v1_library_custom_scripts_library_item_id_patch_serialize(
             library_item_id=library_item_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19203,7 +21059,8 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_scripts_library_item_id_patch_with_http_info(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19221,8 +21078,10 @@ class DefaultApi:
 
         <p>This request allows you to update a custom script in the Kandji library.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19247,6 +21106,7 @@ class DefaultApi:
 
         _param = self._api_v1_library_custom_scripts_library_item_id_patch_serialize(
             library_item_id=library_item_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19270,7 +21130,8 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_scripts_library_item_id_patch_without_preload_content(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19288,8 +21149,10 @@ class DefaultApi:
 
         <p>This request allows you to update a custom script in the Kandji library.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19314,6 +21177,7 @@ class DefaultApi:
 
         _param = self._api_v1_library_custom_scripts_library_item_id_patch_serialize(
             library_item_id=library_item_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19333,6 +21197,7 @@ class DefaultApi:
     def _api_v1_library_custom_scripts_library_item_id_patch_serialize(
         self,
         library_item_id,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -19360,19 +21225,35 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if body is not None:
+            _body_params = body
 
 
         # set the HTTP header `Accept`
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json; charset=utf-8'
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -19396,6 +21277,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_scripts_post(
         self,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19413,6 +21295,8 @@ class DefaultApi:
 
         <p>This request allows you to create a custom script in the Kandji library.</p> 
 
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19436,6 +21320,7 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_library_custom_scripts_post_serialize(
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19443,7 +21328,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '201': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -19459,6 +21344,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_scripts_post_with_http_info(
         self,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19476,6 +21362,8 @@ class DefaultApi:
 
         <p>This request allows you to create a custom script in the Kandji library.</p> 
 
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19499,6 +21387,7 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_library_custom_scripts_post_serialize(
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19506,7 +21395,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '201': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -19522,6 +21411,7 @@ class DefaultApi:
     @validate_call
     def api_v1_library_custom_scripts_post_without_preload_content(
         self,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19539,6 +21429,8 @@ class DefaultApi:
 
         <p>This request allows you to create a custom script in the Kandji library.</p> 
 
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19562,6 +21454,7 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_library_custom_scripts_post_serialize(
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19569,7 +21462,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '201': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -19580,6 +21473,7 @@ class DefaultApi:
 
     def _api_v1_library_custom_scripts_post_serialize(
         self,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -19605,19 +21499,35 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if body is not None:
+            _body_params = body
 
 
         # set the HTTP header `Accept`
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json; charset=utf-8'
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -19641,7 +21551,12 @@ class DefaultApi:
     @validate_call
     def api_v1_library_library_items_library_item_id_activity_get(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
+        activity_type: Annotated[Optional[StrictStr], Field(description="<p>Filter actions by this activity type. Choices are: library_item_created, library_item_edited, library_item_deleted, library_item_duplicated, library_item_assignment_changed</p> ")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="<p>Filter actions by this user (id)</p> ")] = None,
+        user_email: Annotated[Optional[StrictStr], Field(description="<p>Filter actions by this user (email)</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19659,8 +21574,18 @@ class DefaultApi:
 
         <p>This endpoint retrieves the activity related to a specific library item. Activity is listed from newest to oldest.</p> <p>To see a delta of the activity events between now and the last request, you can store the newest entry from the previous request and then look for that entry in the next request. Any entry post that will be the delta.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
+        :param activity_type: <p>Filter actions by this activity type. Choices are: library_item_created, library_item_edited, library_item_deleted, library_item_duplicated, library_item_assignment_changed</p> 
+        :type activity_type: str
+        :param user_id: <p>Filter actions by this user (id)</p> 
+        :type user_id: str
+        :param user_email: <p>Filter actions by this user (email)</p> 
+        :type user_email: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19685,6 +21610,11 @@ class DefaultApi:
 
         _param = self._api_v1_library_library_items_library_item_id_activity_get_serialize(
             library_item_id=library_item_id,
+            activity_type=activity_type,
+            user_id=user_id,
+            user_email=user_email,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19708,7 +21638,12 @@ class DefaultApi:
     @validate_call
     def api_v1_library_library_items_library_item_id_activity_get_with_http_info(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
+        activity_type: Annotated[Optional[StrictStr], Field(description="<p>Filter actions by this activity type. Choices are: library_item_created, library_item_edited, library_item_deleted, library_item_duplicated, library_item_assignment_changed</p> ")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="<p>Filter actions by this user (id)</p> ")] = None,
+        user_email: Annotated[Optional[StrictStr], Field(description="<p>Filter actions by this user (email)</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19726,8 +21661,18 @@ class DefaultApi:
 
         <p>This endpoint retrieves the activity related to a specific library item. Activity is listed from newest to oldest.</p> <p>To see a delta of the activity events between now and the last request, you can store the newest entry from the previous request and then look for that entry in the next request. Any entry post that will be the delta.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
+        :param activity_type: <p>Filter actions by this activity type. Choices are: library_item_created, library_item_edited, library_item_deleted, library_item_duplicated, library_item_assignment_changed</p> 
+        :type activity_type: str
+        :param user_id: <p>Filter actions by this user (id)</p> 
+        :type user_id: str
+        :param user_email: <p>Filter actions by this user (email)</p> 
+        :type user_email: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19752,6 +21697,11 @@ class DefaultApi:
 
         _param = self._api_v1_library_library_items_library_item_id_activity_get_serialize(
             library_item_id=library_item_id,
+            activity_type=activity_type,
+            user_id=user_id,
+            user_email=user_email,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19775,7 +21725,12 @@ class DefaultApi:
     @validate_call
     def api_v1_library_library_items_library_item_id_activity_get_without_preload_content(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
+        activity_type: Annotated[Optional[StrictStr], Field(description="<p>Filter actions by this activity type. Choices are: library_item_created, library_item_edited, library_item_deleted, library_item_duplicated, library_item_assignment_changed</p> ")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="<p>Filter actions by this user (id)</p> ")] = None,
+        user_email: Annotated[Optional[StrictStr], Field(description="<p>Filter actions by this user (email)</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19793,8 +21748,18 @@ class DefaultApi:
 
         <p>This endpoint retrieves the activity related to a specific library item. Activity is listed from newest to oldest.</p> <p>To see a delta of the activity events between now and the last request, you can store the newest entry from the previous request and then look for that entry in the next request. Any entry post that will be the delta.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
+        :param activity_type: <p>Filter actions by this activity type. Choices are: library_item_created, library_item_edited, library_item_deleted, library_item_duplicated, library_item_assignment_changed</p> 
+        :type activity_type: str
+        :param user_id: <p>Filter actions by this user (id)</p> 
+        :type user_id: str
+        :param user_email: <p>Filter actions by this user (email)</p> 
+        :type user_email: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19819,6 +21784,11 @@ class DefaultApi:
 
         _param = self._api_v1_library_library_items_library_item_id_activity_get_serialize(
             library_item_id=library_item_id,
+            activity_type=activity_type,
+            user_id=user_id,
+            user_email=user_email,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19838,6 +21808,11 @@ class DefaultApi:
     def _api_v1_library_library_items_library_item_id_activity_get_serialize(
         self,
         library_item_id,
+        activity_type,
+        user_id,
+        user_email,
+        limit,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -19862,6 +21837,26 @@ class DefaultApi:
         if library_item_id is not None:
             _path_params['library_item_id'] = library_item_id
         # process the query parameters
+        if activity_type is not None:
+            
+            _query_params.append(('activity_type', activity_type))
+            
+        if user_id is not None:
+            
+            _query_params.append(('user_id', user_id))
+            
+        if user_email is not None:
+            
+            _query_params.append(('user_email', user_email))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -19871,13 +21866,14 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json; charset=utf-8'
                 ]
             )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -19901,7 +21897,10 @@ class DefaultApi:
     @validate_call
     def api_v1_library_library_items_library_item_id_status_get(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
+        computer_id: Annotated[Optional[StrictStr], Field(description="<p>Query for the status of one device.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19919,8 +21918,14 @@ class DefaultApi:
 
         <p>This endpoint retrieves the statuses related to a specific library item.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
+        :param computer_id: <p>Query for the status of one device.</p> 
+        :type computer_id: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19945,6 +21950,9 @@ class DefaultApi:
 
         _param = self._api_v1_library_library_items_library_item_id_status_get_serialize(
             library_item_id=library_item_id,
+            computer_id=computer_id,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19968,7 +21976,10 @@ class DefaultApi:
     @validate_call
     def api_v1_library_library_items_library_item_id_status_get_with_http_info(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
+        computer_id: Annotated[Optional[StrictStr], Field(description="<p>Query for the status of one device.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19986,8 +21997,14 @@ class DefaultApi:
 
         <p>This endpoint retrieves the statuses related to a specific library item.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
+        :param computer_id: <p>Query for the status of one device.</p> 
+        :type computer_id: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -20012,6 +22029,9 @@ class DefaultApi:
 
         _param = self._api_v1_library_library_items_library_item_id_status_get_serialize(
             library_item_id=library_item_id,
+            computer_id=computer_id,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -20035,7 +22055,10 @@ class DefaultApi:
     @validate_call
     def api_v1_library_library_items_library_item_id_status_get_without_preload_content(
         self,
-        library_item_id: Annotated[StrictStr, Field(description="Path parameter 'library_item_id'")],
+        library_item_id: StrictStr,
+        computer_id: Annotated[Optional[StrictStr], Field(description="<p>Query for the status of one device.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -20053,8 +22076,14 @@ class DefaultApi:
 
         <p>This endpoint retrieves the statuses related to a specific library item.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p> 
 
-        :param library_item_id: Path parameter 'library_item_id' (required)
+        :param library_item_id: (required)
         :type library_item_id: str
+        :param computer_id: <p>Query for the status of one device.</p> 
+        :type computer_id: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -20079,6 +22108,9 @@ class DefaultApi:
 
         _param = self._api_v1_library_library_items_library_item_id_status_get_serialize(
             library_item_id=library_item_id,
+            computer_id=computer_id,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -20098,6 +22130,9 @@ class DefaultApi:
     def _api_v1_library_library_items_library_item_id_status_get_serialize(
         self,
         library_item_id,
+        computer_id,
+        limit,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -20122,6 +22157,18 @@ class DefaultApi:
         if library_item_id is not None:
             _path_params['library_item_id'] = library_item_id
         # process the query parameters
+        if computer_id is not None:
+            
+            _query_params.append(('computer_id', computer_id))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -20131,13 +22178,14 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json; charset=utf-8'
                 ]
             )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -20161,6 +22209,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_activation_lock_get(
         self,
+        blueprint_ids: Optional[StrictStr] = None,
+        device_families: Optional[StrictStr] = None,
+        filter: Optional[StrictStr] = None,
+        sort_by: Optional[StrictStr] = None,
+        limit: Optional[StrictStr] = None,
+        offset: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -20173,11 +22227,23 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Activation lock
 
         <p>Get activation lock attributes for devices.</p> 
 
+        :param blueprint_ids: 
+        :type blueprint_ids: str
+        :param device_families: 
+        :type device_families: str
+        :param filter: 
+        :type filter: str
+        :param sort_by: 
+        :type sort_by: str
+        :param limit: 
+        :type limit: str
+        :param offset: 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -20201,6 +22267,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_activation_lock_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -20208,7 +22280,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -20224,6 +22296,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_activation_lock_get_with_http_info(
         self,
+        blueprint_ids: Optional[StrictStr] = None,
+        device_families: Optional[StrictStr] = None,
+        filter: Optional[StrictStr] = None,
+        sort_by: Optional[StrictStr] = None,
+        limit: Optional[StrictStr] = None,
+        offset: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -20236,11 +22314,23 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Activation lock
 
         <p>Get activation lock attributes for devices.</p> 
 
+        :param blueprint_ids: 
+        :type blueprint_ids: str
+        :param device_families: 
+        :type device_families: str
+        :param filter: 
+        :type filter: str
+        :param sort_by: 
+        :type sort_by: str
+        :param limit: 
+        :type limit: str
+        :param offset: 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -20264,6 +22354,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_activation_lock_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -20271,7 +22367,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -20287,6 +22383,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_activation_lock_get_without_preload_content(
         self,
+        blueprint_ids: Optional[StrictStr] = None,
+        device_families: Optional[StrictStr] = None,
+        filter: Optional[StrictStr] = None,
+        sort_by: Optional[StrictStr] = None,
+        limit: Optional[StrictStr] = None,
+        offset: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -20304,6 +22406,18 @@ class DefaultApi:
 
         <p>Get activation lock attributes for devices.</p> 
 
+        :param blueprint_ids: 
+        :type blueprint_ids: str
+        :param device_families: 
+        :type device_families: str
+        :param filter: 
+        :type filter: str
+        :param sort_by: 
+        :type sort_by: str
+        :param limit: 
+        :type limit: str
+        :param offset: 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -20327,6 +22441,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_activation_lock_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -20334,7 +22454,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -20345,6 +22465,12 @@ class DefaultApi:
 
     def _api_v1_prism_activation_lock_get_serialize(
         self,
+        blueprint_ids,
+        device_families,
+        filter,
+        sort_by,
+        limit,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -20367,22 +22493,40 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if blueprint_ids is not None:
+            
+            _query_params.append(('blueprint_ids', blueprint_ids))
+            
+        if device_families is not None:
+            
+            _query_params.append(('device_families', device_families))
+            
+        if filter is not None:
+            
+            _query_params.append(('filter', filter))
+            
+        if sort_by is not None:
+            
+            _query_params.append(('sort_by', sort_by))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -20406,6 +22550,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_application_firewall_get(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -20423,6 +22573,18 @@ class DefaultApi:
 
         <p>Get Application Firewall details for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -20446,6 +22608,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_application_firewall_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -20469,6 +22637,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_application_firewall_get_with_http_info(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -20486,6 +22660,18 @@ class DefaultApi:
 
         <p>Get Application Firewall details for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -20509,6 +22695,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_application_firewall_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -20532,6 +22724,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_application_firewall_get_without_preload_content(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -20549,6 +22747,18 @@ class DefaultApi:
 
         <p>Get Application Firewall details for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -20572,6 +22782,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_application_firewall_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -20590,6 +22806,12 @@ class DefaultApi:
 
     def _api_v1_prism_application_firewall_get_serialize(
         self,
+        blueprint_ids,
+        device_families,
+        filter,
+        sort_by,
+        limit,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -20612,6 +22834,30 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if blueprint_ids is not None:
+            
+            _query_params.append(('blueprint_ids', blueprint_ids))
+            
+        if device_families is not None:
+            
+            _query_params.append(('device_families', device_families))
+            
+        if filter is not None:
+            
+            _query_params.append(('filter', filter))
+            
+        if sort_by is not None:
+            
+            _query_params.append(('sort_by', sort_by))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -20628,6 +22874,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -20651,6 +22898,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_apps_get(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -20668,6 +22921,18 @@ class DefaultApi:
 
         <p>Get the applications installed on macOS, iOS, iPadOS, and tvOS devices.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -20691,6 +22956,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_apps_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -20714,6 +22985,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_apps_get_with_http_info(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -20731,6 +23008,18 @@ class DefaultApi:
 
         <p>Get the applications installed on macOS, iOS, iPadOS, and tvOS devices.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -20754,6 +23043,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_apps_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -20777,6 +23072,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_apps_get_without_preload_content(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -20794,6 +23095,18 @@ class DefaultApi:
 
         <p>Get the applications installed on macOS, iOS, iPadOS, and tvOS devices.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -20817,6 +23130,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_apps_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -20835,6 +23154,12 @@ class DefaultApi:
 
     def _api_v1_prism_apps_get_serialize(
         self,
+        blueprint_ids,
+        device_families,
+        filter,
+        sort_by,
+        limit,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -20857,6 +23182,30 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if blueprint_ids is not None:
+            
+            _query_params.append(('blueprint_ids', blueprint_ids))
+            
+        if device_families is not None:
+            
+            _query_params.append(('device_families', device_families))
+            
+        if filter is not None:
+            
+            _query_params.append(('filter', filter))
+            
+        if sort_by is not None:
+            
+            _query_params.append(('sort_by', sort_by))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -20873,6 +23222,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -20896,6 +23246,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_certificates_get(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -20913,6 +23269,18 @@ class DefaultApi:
 
         <p>Get certificate details.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -20936,6 +23304,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_certificates_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -20959,6 +23333,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_certificates_get_with_http_info(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -20976,6 +23356,18 @@ class DefaultApi:
 
         <p>Get certificate details.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -20999,6 +23391,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_certificates_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -21022,6 +23420,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_certificates_get_without_preload_content(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -21039,6 +23443,18 @@ class DefaultApi:
 
         <p>Get certificate details.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -21062,6 +23478,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_certificates_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -21080,6 +23502,12 @@ class DefaultApi:
 
     def _api_v1_prism_certificates_get_serialize(
         self,
+        blueprint_ids,
+        device_families,
+        filter,
+        sort_by,
+        limit,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -21102,6 +23530,30 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if blueprint_ids is not None:
+            
+            _query_params.append(('blueprint_ids', blueprint_ids))
+            
+        if device_families is not None:
+            
+            _query_params.append(('device_families', device_families))
+            
+        if filter is not None:
+            
+            _query_params.append(('filter', filter))
+            
+        if sort_by is not None:
+            
+            _query_params.append(('sort_by', sort_by))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -21118,6 +23570,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -21139,8 +23592,9 @@ class DefaultApi:
 
 
     @validate_call
-    def api_v1_prism_countcategoryapps_get(
+    def api_v1_prism_count_get(
         self,
+        category: Annotated[StrictStr, Field(description="<p>Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores (\"_\") when using the API query.</p> <p>Examples: apps device_information kernel_extensions system_extensions</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -21158,6 +23612,8 @@ class DefaultApi:
 
         <p>Get the total record count for the specified Prism category.</p> <p>If a category contains spaces substitute the spaces for underscores (\"_\") when using the API query.</p> <p>Example: <code>Device information</code> becomes <code>device_information</code>.</p> 
 
+        :param category: <p>Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores (\"_\") when using the API query.</p> <p>Examples: apps device_information kernel_extensions system_extensions</p>  (required)
+        :type category: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -21180,7 +23636,8 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api_v1_prism_countcategoryapps_get_serialize(
+        _param = self._api_v1_prism_count_get_serialize(
+            category=category,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -21202,8 +23659,9 @@ class DefaultApi:
 
 
     @validate_call
-    def api_v1_prism_countcategoryapps_get_with_http_info(
+    def api_v1_prism_count_get_with_http_info(
         self,
+        category: Annotated[StrictStr, Field(description="<p>Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores (\"_\") when using the API query.</p> <p>Examples: apps device_information kernel_extensions system_extensions</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -21221,6 +23679,8 @@ class DefaultApi:
 
         <p>Get the total record count for the specified Prism category.</p> <p>If a category contains spaces substitute the spaces for underscores (\"_\") when using the API query.</p> <p>Example: <code>Device information</code> becomes <code>device_information</code>.</p> 
 
+        :param category: <p>Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores (\"_\") when using the API query.</p> <p>Examples: apps device_information kernel_extensions system_extensions</p>  (required)
+        :type category: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -21243,7 +23703,8 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api_v1_prism_countcategoryapps_get_serialize(
+        _param = self._api_v1_prism_count_get_serialize(
+            category=category,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -21265,8 +23726,9 @@ class DefaultApi:
 
 
     @validate_call
-    def api_v1_prism_countcategoryapps_get_without_preload_content(
+    def api_v1_prism_count_get_without_preload_content(
         self,
+        category: Annotated[StrictStr, Field(description="<p>Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores (\"_\") when using the API query.</p> <p>Examples: apps device_information kernel_extensions system_extensions</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -21284,6 +23746,8 @@ class DefaultApi:
 
         <p>Get the total record count for the specified Prism category.</p> <p>If a category contains spaces substitute the spaces for underscores (\"_\") when using the API query.</p> <p>Example: <code>Device information</code> becomes <code>device_information</code>.</p> 
 
+        :param category: <p>Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores (\"_\") when using the API query.</p> <p>Examples: apps device_information kernel_extensions system_extensions</p>  (required)
+        :type category: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -21306,7 +23770,8 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api_v1_prism_countcategoryapps_get_serialize(
+        _param = self._api_v1_prism_count_get_serialize(
+            category=category,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -21323,8 +23788,9 @@ class DefaultApi:
         return response_data.response
 
 
-    def _api_v1_prism_countcategoryapps_get_serialize(
+    def _api_v1_prism_count_get_serialize(
         self,
+        category,
         _request_auth,
         _content_type,
         _headers,
@@ -21347,6 +23813,10 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if category is not None:
+            
+            _query_params.append(('category', category))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -21363,11 +23833,12 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/v1/prism/count?category=apps',
+            resource_path='/api/v1/prism/count',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -21386,6 +23857,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_desktop_and_screensaver_get(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -21403,6 +23880,18 @@ class DefaultApi:
 
         <p>Get Desktop and Screensaver details for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -21426,6 +23915,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_desktop_and_screensaver_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -21449,6 +23944,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_desktop_and_screensaver_get_with_http_info(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -21466,6 +23967,18 @@ class DefaultApi:
 
         <p>Get Desktop and Screensaver details for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -21489,6 +24002,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_desktop_and_screensaver_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -21512,6 +24031,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_desktop_and_screensaver_get_without_preload_content(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -21529,6 +24054,18 @@ class DefaultApi:
 
         <p>Get Desktop and Screensaver details for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -21552,6 +24089,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_desktop_and_screensaver_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -21570,6 +24113,12 @@ class DefaultApi:
 
     def _api_v1_prism_desktop_and_screensaver_get_serialize(
         self,
+        blueprint_ids,
+        device_families,
+        filter,
+        sort_by,
+        limit,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -21592,6 +24141,30 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if blueprint_ids is not None:
+            
+            _query_params.append(('blueprint_ids', blueprint_ids))
+            
+        if device_families is not None:
+            
+            _query_params.append(('device_families', device_families))
+            
+        if filter is not None:
+            
+            _query_params.append(('filter', filter))
+            
+        if sort_by is not None:
+            
+            _query_params.append(('sort_by', sort_by))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -21608,6 +24181,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -21631,6 +24205,13 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_device_information_get(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs.</p> <p>Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -21648,6 +24229,20 @@ class DefaultApi:
 
         <p>Get attributes about devices.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs.</p> <p>Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -21671,6 +24266,13 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_device_information_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -21694,6 +24296,13 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_device_information_get_with_http_info(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs.</p> <p>Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -21711,6 +24320,20 @@ class DefaultApi:
 
         <p>Get attributes about devices.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs.</p> <p>Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -21734,6 +24357,13 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_device_information_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -21757,6 +24387,13 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_device_information_get_without_preload_content(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs.</p> <p>Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -21774,6 +24411,20 @@ class DefaultApi:
 
         <p>Get attributes about devices.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs.</p> <p>Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -21797,6 +24448,13 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_device_information_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -21815,6 +24473,13 @@ class DefaultApi:
 
     def _api_v1_prism_device_information_get_serialize(
         self,
+        blueprint_ids,
+        device_families,
+        filter,
+        sort_by,
+        limit,
+        offset,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -21837,9 +24502,35 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if blueprint_ids is not None:
+            
+            _query_params.append(('blueprint_ids', blueprint_ids))
+            
+        if device_families is not None:
+            
+            _query_params.append(('device_families', device_families))
+            
+        if filter is not None:
+            
+            _query_params.append(('filter', filter))
+            
+        if sort_by is not None:
+            
+            _query_params.append(('sort_by', sort_by))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if body is not None:
+            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -21850,9 +24541,23 @@ class DefaultApi:
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -21876,7 +24581,7 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_export_export_id_get(
         self,
-        export_id: Annotated[StrictStr, Field(description="Path parameter 'export_id'")],
+        export_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -21894,7 +24599,7 @@ class DefaultApi:
 
         <p>Get an export request's status. To download the export, use the <code>signed_url</code>. This will download a CSV file containing the exported category information.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p>export_id (path parameter): The unique identifier of the the export job.</p> 
 
-        :param export_id: Path parameter 'export_id' (required)
+        :param export_id: (required)
         :type export_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -21943,7 +24648,7 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_export_export_id_get_with_http_info(
         self,
-        export_id: Annotated[StrictStr, Field(description="Path parameter 'export_id'")],
+        export_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -21961,7 +24666,7 @@ class DefaultApi:
 
         <p>Get an export request's status. To download the export, use the <code>signed_url</code>. This will download a CSV file containing the exported category information.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p>export_id (path parameter): The unique identifier of the the export job.</p> 
 
-        :param export_id: Path parameter 'export_id' (required)
+        :param export_id: (required)
         :type export_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -22010,7 +24715,7 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_export_export_id_get_without_preload_content(
         self,
-        export_id: Annotated[StrictStr, Field(description="Path parameter 'export_id'")],
+        export_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -22028,7 +24733,7 @@ class DefaultApi:
 
         <p>Get an export request's status. To download the export, use the <code>signed_url</code>. This will download a CSV file containing the exported category information.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p>export_id (path parameter): The unique identifier of the the export job.</p> 
 
-        :param export_id: Path parameter 'export_id' (required)
+        :param export_id: (required)
         :type export_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -22113,6 +24818,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -22136,6 +24842,7 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_export_post(
         self,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -22153,6 +24860,8 @@ class DefaultApi:
 
         <p>Request export of a category. The <code>id</code> key is used when checking the export status using the <em>Request category export</em> endpoint.</p> <p><strong>Request Body Parameters: application/json</strong></p> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th>Key</th> <th>Type</th> <th>Possible value(s)</th> <th>Description</th> </tr> </thead> <tbody> <tr> <td><code>blueprint_ids</code></td> <td><code>array</code></td> <td><code>[\"string\", \"string\", \"string\"]</code></td> <td>List of one or more comma separate blueprint IDs.</td> </tr> <tr> <td><code>category</code></td> <td><code>string</code></td> <td><code>apps</code> ,  <br /><code>activation_lock</code> ,  <br /><code>desktop_and_screensaver</code> ,  <br /><code>device_information</code> ,  <br /><code>gatekeeper_and_xprotect</code> ,  <br /><code>installed_profiles</code> ,  <br /><code>kernel_extensions</code> ,  <br /><code>local_users</code> ,  <br /><code>launch_agents_and_daemons</code> ,  <br /><code>system_extensions</code> ,  <br /><code>startup_settings</code> ,  <br /><code>transparency_database</code></td> <td>Only one category per export reqest.</td> </tr> <tr> <td><code>device_families</code></td> <td><code>array</code></td> <td><code>[\"Mac\", \"iPhone\", \"iPad\", \"tvOS\"]</code></td> <td>List of one or more comma separted string values for device families.</td> </tr> <tr> <td><code>filter</code></td> <td><code>object</code></td> <td><code>{\"apple_silicon\": {\"eq\": true}, \"device__name\": {\"like\": [\"this\", \"or_this\"]}}</code></td> <td>JSON schema object containing one or more key value pairs.  <br />  <br /><strong>Note</strong>: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</td> </tr> <tr> <td><code>sort_by</code></td> <td><code>string</code></td> <td></td> <td>Sort results by the name of a given response body key in either ascending (default behavior) or descending(`-`) order.</td> </tr> </tbody> </table> </div>
 
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -22176,6 +24885,7 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_export_post_serialize(
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -22184,6 +24894,7 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
+            '400': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -22199,6 +24910,7 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_export_post_with_http_info(
         self,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -22216,6 +24928,8 @@ class DefaultApi:
 
         <p>Request export of a category. The <code>id</code> key is used when checking the export status using the <em>Request category export</em> endpoint.</p> <p><strong>Request Body Parameters: application/json</strong></p> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th>Key</th> <th>Type</th> <th>Possible value(s)</th> <th>Description</th> </tr> </thead> <tbody> <tr> <td><code>blueprint_ids</code></td> <td><code>array</code></td> <td><code>[\"string\", \"string\", \"string\"]</code></td> <td>List of one or more comma separate blueprint IDs.</td> </tr> <tr> <td><code>category</code></td> <td><code>string</code></td> <td><code>apps</code> ,  <br /><code>activation_lock</code> ,  <br /><code>desktop_and_screensaver</code> ,  <br /><code>device_information</code> ,  <br /><code>gatekeeper_and_xprotect</code> ,  <br /><code>installed_profiles</code> ,  <br /><code>kernel_extensions</code> ,  <br /><code>local_users</code> ,  <br /><code>launch_agents_and_daemons</code> ,  <br /><code>system_extensions</code> ,  <br /><code>startup_settings</code> ,  <br /><code>transparency_database</code></td> <td>Only one category per export reqest.</td> </tr> <tr> <td><code>device_families</code></td> <td><code>array</code></td> <td><code>[\"Mac\", \"iPhone\", \"iPad\", \"tvOS\"]</code></td> <td>List of one or more comma separted string values for device families.</td> </tr> <tr> <td><code>filter</code></td> <td><code>object</code></td> <td><code>{\"apple_silicon\": {\"eq\": true}, \"device__name\": {\"like\": [\"this\", \"or_this\"]}}</code></td> <td>JSON schema object containing one or more key value pairs.  <br />  <br /><strong>Note</strong>: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</td> </tr> <tr> <td><code>sort_by</code></td> <td><code>string</code></td> <td></td> <td>Sort results by the name of a given response body key in either ascending (default behavior) or descending(`-`) order.</td> </tr> </tbody> </table> </div>
 
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -22239,6 +24953,7 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_export_post_serialize(
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -22247,6 +24962,7 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
+            '400': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -22262,6 +24978,7 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_export_post_without_preload_content(
         self,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -22279,6 +24996,8 @@ class DefaultApi:
 
         <p>Request export of a category. The <code>id</code> key is used when checking the export status using the <em>Request category export</em> endpoint.</p> <p><strong>Request Body Parameters: application/json</strong></p> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th>Key</th> <th>Type</th> <th>Possible value(s)</th> <th>Description</th> </tr> </thead> <tbody> <tr> <td><code>blueprint_ids</code></td> <td><code>array</code></td> <td><code>[\"string\", \"string\", \"string\"]</code></td> <td>List of one or more comma separate blueprint IDs.</td> </tr> <tr> <td><code>category</code></td> <td><code>string</code></td> <td><code>apps</code> ,  <br /><code>activation_lock</code> ,  <br /><code>desktop_and_screensaver</code> ,  <br /><code>device_information</code> ,  <br /><code>gatekeeper_and_xprotect</code> ,  <br /><code>installed_profiles</code> ,  <br /><code>kernel_extensions</code> ,  <br /><code>local_users</code> ,  <br /><code>launch_agents_and_daemons</code> ,  <br /><code>system_extensions</code> ,  <br /><code>startup_settings</code> ,  <br /><code>transparency_database</code></td> <td>Only one category per export reqest.</td> </tr> <tr> <td><code>device_families</code></td> <td><code>array</code></td> <td><code>[\"Mac\", \"iPhone\", \"iPad\", \"tvOS\"]</code></td> <td>List of one or more comma separted string values for device families.</td> </tr> <tr> <td><code>filter</code></td> <td><code>object</code></td> <td><code>{\"apple_silicon\": {\"eq\": true}, \"device__name\": {\"like\": [\"this\", \"or_this\"]}}</code></td> <td>JSON schema object containing one or more key value pairs.  <br />  <br /><strong>Note</strong>: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</td> </tr> <tr> <td><code>sort_by</code></td> <td><code>string</code></td> <td></td> <td>Sort results by the name of a given response body key in either ascending (default behavior) or descending(`-`) order.</td> </tr> </tbody> </table> </div>
 
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -22302,6 +25021,7 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_export_post_serialize(
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -22310,6 +25030,7 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
+            '400': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -22320,6 +25041,7 @@ class DefaultApi:
 
     def _api_v1_prism_export_post_serialize(
         self,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -22345,6 +25067,8 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if body is not None:
+            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -22355,9 +25079,23 @@ class DefaultApi:
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -22381,6 +25119,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_filevault_get(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -22398,6 +25142,18 @@ class DefaultApi:
 
         <p>Get FileVault information for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -22421,6 +25177,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_filevault_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -22444,6 +25206,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_filevault_get_with_http_info(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -22461,6 +25229,18 @@ class DefaultApi:
 
         <p>Get FileVault information for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -22484,6 +25264,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_filevault_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -22507,6 +25293,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_filevault_get_without_preload_content(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -22524,6 +25316,18 @@ class DefaultApi:
 
         <p>Get FileVault information for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -22547,6 +25351,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_filevault_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -22565,6 +25375,12 @@ class DefaultApi:
 
     def _api_v1_prism_filevault_get_serialize(
         self,
+        blueprint_ids,
+        device_families,
+        filter,
+        sort_by,
+        limit,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -22587,6 +25403,30 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if blueprint_ids is not None:
+            
+            _query_params.append(('blueprint_ids', blueprint_ids))
+            
+        if device_families is not None:
+            
+            _query_params.append(('device_families', device_families))
+            
+        if filter is not None:
+            
+            _query_params.append(('filter', filter))
+            
+        if sort_by is not None:
+            
+            _query_params.append(('sort_by', sort_by))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -22603,6 +25443,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -22626,6 +25467,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_gatekeeper_and_xprotect_get(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Results are limited to Mac only as Gatekeeper and XProtect are not applicable for other platfroms.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -22643,6 +25490,18 @@ class DefaultApi:
 
         <p>Get Gatekeeper and XProtect attributes for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Results are limited to Mac only as Gatekeeper and XProtect are not applicable for other platfroms.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -22666,6 +25525,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_gatekeeper_and_xprotect_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -22689,6 +25554,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_gatekeeper_and_xprotect_get_with_http_info(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Results are limited to Mac only as Gatekeeper and XProtect are not applicable for other platfroms.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -22706,6 +25577,18 @@ class DefaultApi:
 
         <p>Get Gatekeeper and XProtect attributes for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Results are limited to Mac only as Gatekeeper and XProtect are not applicable for other platfroms.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -22729,6 +25612,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_gatekeeper_and_xprotect_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -22752,6 +25641,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_gatekeeper_and_xprotect_get_without_preload_content(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Results are limited to Mac only as Gatekeeper and XProtect are not applicable for other platfroms.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -22769,6 +25664,18 @@ class DefaultApi:
 
         <p>Get Gatekeeper and XProtect attributes for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Results are limited to Mac only as Gatekeeper and XProtect are not applicable for other platfroms.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -22792,6 +25699,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_gatekeeper_and_xprotect_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -22810,6 +25723,12 @@ class DefaultApi:
 
     def _api_v1_prism_gatekeeper_and_xprotect_get_serialize(
         self,
+        blueprint_ids,
+        device_families,
+        filter,
+        sort_by,
+        limit,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -22832,6 +25751,30 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if blueprint_ids is not None:
+            
+            _query_params.append(('blueprint_ids', blueprint_ids))
+            
+        if device_families is not None:
+            
+            _query_params.append(('device_families', device_families))
+            
+        if filter is not None:
+            
+            _query_params.append(('filter', filter))
+            
+        if sort_by is not None:
+            
+            _query_params.append(('sort_by', sort_by))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -22848,6 +25791,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -22871,6 +25815,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_installed_profiles_get(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -22888,6 +25838,18 @@ class DefaultApi:
 
         <p>Get Installed Profiles attributes for macOS, iOS, iPadOS, and tvOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -22911,6 +25873,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_installed_profiles_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -22934,6 +25902,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_installed_profiles_get_with_http_info(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -22951,6 +25925,18 @@ class DefaultApi:
 
         <p>Get Installed Profiles attributes for macOS, iOS, iPadOS, and tvOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -22974,6 +25960,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_installed_profiles_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -22997,6 +25989,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_installed_profiles_get_without_preload_content(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -23014,6 +26012,18 @@ class DefaultApi:
 
         <p>Get Installed Profiles attributes for macOS, iOS, iPadOS, and tvOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -23037,6 +26047,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_installed_profiles_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -23055,6 +26071,12 @@ class DefaultApi:
 
     def _api_v1_prism_installed_profiles_get_serialize(
         self,
+        blueprint_ids,
+        device_families,
+        filter,
+        sort_by,
+        limit,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -23077,6 +26099,30 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if blueprint_ids is not None:
+            
+            _query_params.append(('blueprint_ids', blueprint_ids))
+            
+        if device_families is not None:
+            
+            _query_params.append(('device_families', device_families))
+            
+        if filter is not None:
+            
+            _query_params.append(('filter', filter))
+            
+        if sort_by is not None:
+            
+            _query_params.append(('sort_by', sort_by))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -23093,6 +26139,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -23116,6 +26163,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_kernel_extensions_get(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>SON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -23133,6 +26186,18 @@ class DefaultApi:
 
         <p>Get Kernel Extension attributes for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>SON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -23156,6 +26221,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_kernel_extensions_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -23179,6 +26250,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_kernel_extensions_get_with_http_info(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>SON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -23196,6 +26273,18 @@ class DefaultApi:
 
         <p>Get Kernel Extension attributes for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>SON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -23219,6 +26308,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_kernel_extensions_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -23242,6 +26337,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_kernel_extensions_get_without_preload_content(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>SON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -23259,6 +26360,18 @@ class DefaultApi:
 
         <p>Get Kernel Extension attributes for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>SON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -23282,6 +26395,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_kernel_extensions_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -23300,6 +26419,12 @@ class DefaultApi:
 
     def _api_v1_prism_kernel_extensions_get_serialize(
         self,
+        blueprint_ids,
+        device_families,
+        filter,
+        sort_by,
+        limit,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -23322,6 +26447,30 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if blueprint_ids is not None:
+            
+            _query_params.append(('blueprint_ids', blueprint_ids))
+            
+        if device_families is not None:
+            
+            _query_params.append(('device_families', device_families))
+            
+        if filter is not None:
+            
+            _query_params.append(('filter', filter))
+            
+        if sort_by is not None:
+            
+            _query_params.append(('sort_by', sort_by))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -23338,6 +26487,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -23361,6 +26511,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_launch_agents_and_daemons_get(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -23378,6 +26534,18 @@ class DefaultApi:
 
         <p>Get Launch Agents and Daemons installed on macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -23401,6 +26569,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_launch_agents_and_daemons_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -23424,6 +26598,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_launch_agents_and_daemons_get_with_http_info(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -23441,6 +26621,18 @@ class DefaultApi:
 
         <p>Get Launch Agents and Daemons installed on macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -23464,6 +26656,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_launch_agents_and_daemons_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -23487,6 +26685,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_launch_agents_and_daemons_get_without_preload_content(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -23504,6 +26708,18 @@ class DefaultApi:
 
         <p>Get Launch Agents and Daemons installed on macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -23527,6 +26743,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_launch_agents_and_daemons_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -23545,6 +26767,12 @@ class DefaultApi:
 
     def _api_v1_prism_launch_agents_and_daemons_get_serialize(
         self,
+        blueprint_ids,
+        device_families,
+        filter,
+        sort_by,
+        limit,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -23567,6 +26795,30 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if blueprint_ids is not None:
+            
+            _query_params.append(('blueprint_ids', blueprint_ids))
+            
+        if device_families is not None:
+            
+            _query_params.append(('device_families', device_families))
+            
+        if filter is not None:
+            
+            _query_params.append(('filter', filter))
+            
+        if sort_by is not None:
+            
+            _query_params.append(('sort_by', sort_by))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -23583,6 +26835,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -23606,6 +26859,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_local_users_get(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -23623,6 +26882,18 @@ class DefaultApi:
 
         <p>Get Local Users detials for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -23646,6 +26917,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_local_users_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -23669,6 +26946,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_local_users_get_with_http_info(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -23686,6 +26969,18 @@ class DefaultApi:
 
         <p>Get Local Users detials for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -23709,6 +27004,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_local_users_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -23732,6 +27033,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_local_users_get_without_preload_content(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -23749,6 +27056,18 @@ class DefaultApi:
 
         <p>Get Local Users detials for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -23772,6 +27091,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_local_users_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -23790,6 +27115,12 @@ class DefaultApi:
 
     def _api_v1_prism_local_users_get_serialize(
         self,
+        blueprint_ids,
+        device_families,
+        filter,
+        sort_by,
+        limit,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -23812,6 +27143,30 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if blueprint_ids is not None:
+            
+            _query_params.append(('blueprint_ids', blueprint_ids))
+            
+        if device_families is not None:
+            
+            _query_params.append(('device_families', device_families))
+            
+        if filter is not None:
+            
+            _query_params.append(('filter', filter))
+            
+        if sort_by is not None:
+            
+            _query_params.append(('sort_by', sort_by))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -23828,6 +27183,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -23851,6 +27207,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_startup_settings_get(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -23868,6 +27230,18 @@ class DefaultApi:
 
         <p>Get Startup settings for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -23891,6 +27265,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_startup_settings_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -23914,6 +27294,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_startup_settings_get_with_http_info(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -23931,6 +27317,18 @@ class DefaultApi:
 
         <p>Get Startup settings for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -23954,6 +27352,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_startup_settings_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -23977,6 +27381,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_startup_settings_get_without_preload_content(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -23994,6 +27404,18 @@ class DefaultApi:
 
         <p>Get Startup settings for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -24017,6 +27439,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_startup_settings_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -24035,6 +27463,12 @@ class DefaultApi:
 
     def _api_v1_prism_startup_settings_get_serialize(
         self,
+        blueprint_ids,
+        device_families,
+        filter,
+        sort_by,
+        limit,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -24057,6 +27491,30 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if blueprint_ids is not None:
+            
+            _query_params.append(('blueprint_ids', blueprint_ids))
+            
+        if device_families is not None:
+            
+            _query_params.append(('device_families', device_families))
+            
+        if filter is not None:
+            
+            _query_params.append(('filter', filter))
+            
+        if sort_by is not None:
+            
+            _query_params.append(('sort_by', sort_by))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -24073,6 +27531,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -24096,6 +27555,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_system_extensions_get(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -24113,6 +27578,18 @@ class DefaultApi:
 
         <p>Get System Extension attributes for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -24136,6 +27613,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_system_extensions_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -24159,6 +27642,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_system_extensions_get_with_http_info(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -24176,6 +27665,18 @@ class DefaultApi:
 
         <p>Get System Extension attributes for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -24199,6 +27700,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_system_extensions_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -24222,6 +27729,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_system_extensions_get_without_preload_content(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -24239,6 +27752,18 @@ class DefaultApi:
 
         <p>Get System Extension attributes for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -24262,6 +27787,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_system_extensions_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -24280,6 +27811,12 @@ class DefaultApi:
 
     def _api_v1_prism_system_extensions_get_serialize(
         self,
+        blueprint_ids,
+        device_families,
+        filter,
+        sort_by,
+        limit,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -24302,6 +27839,30 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if blueprint_ids is not None:
+            
+            _query_params.append(('blueprint_ids', blueprint_ids))
+            
+        if device_families is not None:
+            
+            _query_params.append(('device_families', device_families))
+            
+        if filter is not None:
+            
+            _query_params.append(('filter', filter))
+            
+        if sort_by is not None:
+            
+            _query_params.append(('sort_by', sort_by))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -24318,6 +27879,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -24341,6 +27903,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_transparency_database_get(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -24358,6 +27926,18 @@ class DefaultApi:
 
         <p>Get Transparency Database (TCC) attributes for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -24381,6 +27961,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_transparency_database_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -24404,6 +27990,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_transparency_database_get_with_http_info(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -24421,6 +28013,18 @@ class DefaultApi:
 
         <p>Get Transparency Database (TCC) attributes for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -24444,6 +28048,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_transparency_database_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -24467,6 +28077,12 @@ class DefaultApi:
     @validate_call
     def api_v1_prism_transparency_database_get_without_preload_content(
         self,
+        blueprint_ids: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more blueprint IDs separated by commas.</p> ")] = None,
+        device_families: Annotated[Optional[StrictStr], Field(description="<p>Filter results by one or more device families separate by commas.</p> ")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return.</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -24484,6 +28100,18 @@ class DefaultApi:
 
         <p>Get Transparency Database (TCC) attributes for macOS.</p> 
 
+        :param blueprint_ids: <p>Filter results by one or more blueprint IDs separated by commas.</p> 
+        :type blueprint_ids: str
+        :param device_families: <p>Filter results by one or more device families separate by commas.</p> 
+        :type device_families: str
+        :param filter: <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> 
+        :type filter: str
+        :param sort_by: <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p> 
+        :type sort_by: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return.</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -24507,6 +28135,12 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_prism_transparency_database_get_serialize(
+            blueprint_ids=blueprint_ids,
+            device_families=device_families,
+            filter=filter,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -24525,6 +28159,12 @@ class DefaultApi:
 
     def _api_v1_prism_transparency_database_get_serialize(
         self,
+        blueprint_ids,
+        device_families,
+        filter,
+        sort_by,
+        limit,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -24547,6 +28187,30 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if blueprint_ids is not None:
+            
+            _query_params.append(('blueprint_ids', blueprint_ids))
+            
+        if device_families is not None:
+            
+            _query_params.append(('device_families', device_families))
+            
+        if filter is not None:
+            
+            _query_params.append(('filter', filter))
+            
+        if sort_by is not None:
+            
+            _query_params.append(('sort_by', sort_by))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -24563,6 +28227,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -24801,13 +28466,14 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json; charset=utf-8'
                 ]
             )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -25053,6 +28719,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -25074,8 +28741,9 @@ class DefaultApi:
 
 
     @validate_call
-    def api_v1_tags_post(
+    def api_v1_tags_get(
         self,
+        search: Annotated[StrictStr, Field(description="<p>Return resultes containing a given tag search string.</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -25089,10 +28757,12 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> object:
-        """Create Tag
+        """Get Tags
 
-        <p>Create a tag. Can only create one tag per request.</p> 
+        <p>Return configured tags.</p> 
 
+        :param search: <p>Return resultes containing a given tag search string.</p>  (required)
+        :type search: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -25115,7 +28785,8 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api_v1_tags_post_serialize(
+        _param = self._api_v1_tags_get_serialize(
+            search=search,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -25137,8 +28808,9 @@ class DefaultApi:
 
 
     @validate_call
-    def api_v1_tags_post_with_http_info(
+    def api_v1_tags_get_with_http_info(
         self,
+        search: Annotated[StrictStr, Field(description="<p>Return resultes containing a given tag search string.</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -25152,10 +28824,12 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[object]:
-        """Create Tag
+        """Get Tags
 
-        <p>Create a tag. Can only create one tag per request.</p> 
+        <p>Return configured tags.</p> 
 
+        :param search: <p>Return resultes containing a given tag search string.</p>  (required)
+        :type search: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -25178,7 +28852,8 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api_v1_tags_post_serialize(
+        _param = self._api_v1_tags_get_serialize(
+            search=search,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -25200,8 +28875,9 @@ class DefaultApi:
 
 
     @validate_call
-    def api_v1_tags_post_without_preload_content(
+    def api_v1_tags_get_without_preload_content(
         self,
+        search: Annotated[StrictStr, Field(description="<p>Return resultes containing a given tag search string.</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -25215,10 +28891,141 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
+        """Get Tags
+
+        <p>Return configured tags.</p> 
+
+        :param search: <p>Return resultes containing a given tag search string.</p>  (required)
+        :type search: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_v1_tags_get_serialize(
+            search=search,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "object",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _api_v1_tags_get_serialize(
+        self,
+        search,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        if search is not None:
+            
+            _query_params.append(('search', search))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'bearer'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/api/v1/tags',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def api_v1_tags_post(
+        self,
+        body: Optional[StrictStr] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> object:
         """Create Tag
 
         <p>Create a tag. Can only create one tag per request.</p> 
 
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -25242,6 +29049,7 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_tags_post_serialize(
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -25249,7 +29057,141 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '201': "object",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def api_v1_tags_post_with_http_info(
+        self,
+        body: Optional[StrictStr] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[object]:
+        """Create Tag
+
+        <p>Create a tag. Can only create one tag per request.</p> 
+
+        :param body:
+        :type body: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_v1_tags_post_serialize(
+            body=body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '201': "object",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def api_v1_tags_post_without_preload_content(
+        self,
+        body: Optional[StrictStr] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Create Tag
+
+        <p>Create a tag. Can only create one tag per request.</p> 
+
+        :param body:
+        :type body: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_v1_tags_post_serialize(
+            body=body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '201': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -25260,6 +29202,7 @@ class DefaultApi:
 
     def _api_v1_tags_post_serialize(
         self,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -25285,6 +29228,8 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if body is not None:
+            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -25295,9 +29240,23 @@ class DefaultApi:
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -25321,7 +29280,7 @@ class DefaultApi:
     @validate_call
     def api_v1_tags_tag_id_delete(
         self,
-        tag_id: Annotated[StrictStr, Field(description="Path parameter 'tag_id'")],
+        tag_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -25334,12 +29293,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Delete Tag
 
         <p>Delete a tag.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>tag_id</code> (path parameter): The unique identifier of the tag.</p> 
 
-        :param tag_id: Path parameter 'tag_id' (required)
+        :param tag_id: (required)
         :type tag_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -25372,7 +29331,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '204': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -25388,7 +29347,7 @@ class DefaultApi:
     @validate_call
     def api_v1_tags_tag_id_delete_with_http_info(
         self,
-        tag_id: Annotated[StrictStr, Field(description="Path parameter 'tag_id'")],
+        tag_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -25401,12 +29360,12 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Delete Tag
 
         <p>Delete a tag.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>tag_id</code> (path parameter): The unique identifier of the tag.</p> 
 
-        :param tag_id: Path parameter 'tag_id' (required)
+        :param tag_id: (required)
         :type tag_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -25439,7 +29398,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '204': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -25455,7 +29414,7 @@ class DefaultApi:
     @validate_call
     def api_v1_tags_tag_id_delete_without_preload_content(
         self,
-        tag_id: Annotated[StrictStr, Field(description="Path parameter 'tag_id'")],
+        tag_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -25473,7 +29432,7 @@ class DefaultApi:
 
         <p>Delete a tag.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>tag_id</code> (path parameter): The unique identifier of the tag.</p> 
 
-        :param tag_id: Path parameter 'tag_id' (required)
+        :param tag_id: (required)
         :type tag_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -25506,7 +29465,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '204': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -25547,17 +29506,11 @@ class DefaultApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
 
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -25581,7 +29534,8 @@ class DefaultApi:
     @validate_call
     def api_v1_tags_tag_id_patch(
         self,
-        tag_id: Annotated[StrictStr, Field(description="Path parameter 'tag_id'")],
+        tag_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -25599,8 +29553,10 @@ class DefaultApi:
 
         <p>Update tag name.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>tag_id</code> (path parameter): The unique identifier of the tag.</p> 
 
-        :param tag_id: Path parameter 'tag_id' (required)
+        :param tag_id: (required)
         :type tag_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -25625,6 +29581,7 @@ class DefaultApi:
 
         _param = self._api_v1_tags_tag_id_patch_serialize(
             tag_id=tag_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -25648,7 +29605,8 @@ class DefaultApi:
     @validate_call
     def api_v1_tags_tag_id_patch_with_http_info(
         self,
-        tag_id: Annotated[StrictStr, Field(description="Path parameter 'tag_id'")],
+        tag_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -25666,8 +29624,10 @@ class DefaultApi:
 
         <p>Update tag name.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>tag_id</code> (path parameter): The unique identifier of the tag.</p> 
 
-        :param tag_id: Path parameter 'tag_id' (required)
+        :param tag_id: (required)
         :type tag_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -25692,6 +29652,7 @@ class DefaultApi:
 
         _param = self._api_v1_tags_tag_id_patch_serialize(
             tag_id=tag_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -25715,7 +29676,8 @@ class DefaultApi:
     @validate_call
     def api_v1_tags_tag_id_patch_without_preload_content(
         self,
-        tag_id: Annotated[StrictStr, Field(description="Path parameter 'tag_id'")],
+        tag_id: StrictStr,
+        body: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -25733,8 +29695,10 @@ class DefaultApi:
 
         <p>Update tag name.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>tag_id</code> (path parameter): The unique identifier of the tag.</p> 
 
-        :param tag_id: Path parameter 'tag_id' (required)
+        :param tag_id: (required)
         :type tag_id: str
+        :param body:
+        :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -25759,6 +29723,7 @@ class DefaultApi:
 
         _param = self._api_v1_tags_tag_id_patch_serialize(
             tag_id=tag_id,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -25778,6 +29743,7 @@ class DefaultApi:
     def _api_v1_tags_tag_id_patch_serialize(
         self,
         tag_id,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -25805,6 +29771,8 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if body is not None:
+            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -25815,9 +29783,23 @@ class DefaultApi:
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -25839,253 +29821,16 @@ class DefaultApi:
 
 
     @validate_call
-    def api_v1_tagssearchaccuhive_get(
-        self,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
-        """Get Tags
-
-        <p>Return configured tags.</p> 
-
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._api_v1_tagssearchaccuhive_get_serialize(
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def api_v1_tagssearchaccuhive_get_with_http_info(
-        self,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
-        """Get Tags
-
-        <p>Return configured tags.</p> 
-
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._api_v1_tagssearchaccuhive_get_serialize(
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def api_v1_tagssearchaccuhive_get_without_preload_content(
-        self,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Get Tags
-
-        <p>Return configured tags.</p> 
-
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._api_v1_tagssearchaccuhive_get_serialize(
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _api_v1_tagssearchaccuhive_get_serialize(
-        self,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/api/v1/tags?search=accuhive',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
     def api_v1_threat_details_get(
         self,
+        classification: Annotated[Optional[StrictStr], Field(description="<p>Return all records matching a specified classification. The following classification options are available: <code>malware</code> and <code>pup</code>. Leave this parameter empty to return all classification types.</p> ")] = None,
+        date_range: Annotated[Optional[StrictStr], Field(description="<p>Return all records within a specified number of days. Any positive number of days may be specified. Examples: <code>7</code>, <code>30</code>, <code>60</code>, <code>90</code>, <code>180</code>, or <code>365</code>.</p> ")] = None,
+        device_id: Optional[StrictStr] = None,
+        status: Annotated[Optional[StrictStr], Field(description="<p>Return all records matching a specified status. The following status options are available: <code>quarantined</code>, <code>not_quarantined</code>, or <code>released</code>. Leave this parameter empty to return all status types.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Results can be sorted with the following options: </p> <ul> <li>threat_name</li> <li>classification</li> <li>device_name</li> <li>process_name</li> <li>process_owner</li> <li>detection_date</li> <li>status</li> </ul> <p>Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p> <p><code>?sort_by=-device_name</code> will order the response by device_name in descending order.</p> ")] = None,
+        term: Annotated[Optional[StrictStr], Field(description="<p>Search term to filter threat results.</p> <p>The response will include anything matching the following fields: <code>device_name</code>, <code>file_hash</code>, and <code>file_path</code>.</p> <p>So if you search for <code>bad file</code>, the results will include anywhere <code>bad file</code> exists in the three fields above.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 1000 records returned per request. If more records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. </p> <p>Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -26103,6 +29848,22 @@ class DefaultApi:
 
         <p>Get threat details.</p> 
 
+        :param classification: <p>Return all records matching a specified classification. The following classification options are available: <code>malware</code> and <code>pup</code>. Leave this parameter empty to return all classification types.</p> 
+        :type classification: str
+        :param date_range: <p>Return all records within a specified number of days. Any positive number of days may be specified. Examples: <code>7</code>, <code>30</code>, <code>60</code>, <code>90</code>, <code>180</code>, or <code>365</code>.</p> 
+        :type date_range: str
+        :param device_id: 
+        :type device_id: str
+        :param status: <p>Return all records matching a specified status. The following status options are available: <code>quarantined</code>, <code>not_quarantined</code>, or <code>released</code>. Leave this parameter empty to return all status types.</p> 
+        :type status: str
+        :param sort_by: <p>Results can be sorted with the following options: </p> <ul> <li>threat_name</li> <li>classification</li> <li>device_name</li> <li>process_name</li> <li>process_owner</li> <li>detection_date</li> <li>status</li> </ul> <p>Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p> <p><code>?sort_by=-device_name</code> will order the response by device_name in descending order.</p> 
+        :type sort_by: str
+        :param term: <p>Search term to filter threat results.</p> <p>The response will include anything matching the following fields: <code>device_name</code>, <code>file_hash</code>, and <code>file_path</code>.</p> <p>So if you search for <code>bad file</code>, the results will include anywhere <code>bad file</code> exists in the three fields above.</p> 
+        :type term: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 1000 records returned per request. If more records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. </p> <p>Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -26126,6 +29887,14 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_threat_details_get_serialize(
+            classification=classification,
+            date_range=date_range,
+            device_id=device_id,
+            status=status,
+            sort_by=sort_by,
+            term=term,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -26149,6 +29918,14 @@ class DefaultApi:
     @validate_call
     def api_v1_threat_details_get_with_http_info(
         self,
+        classification: Annotated[Optional[StrictStr], Field(description="<p>Return all records matching a specified classification. The following classification options are available: <code>malware</code> and <code>pup</code>. Leave this parameter empty to return all classification types.</p> ")] = None,
+        date_range: Annotated[Optional[StrictStr], Field(description="<p>Return all records within a specified number of days. Any positive number of days may be specified. Examples: <code>7</code>, <code>30</code>, <code>60</code>, <code>90</code>, <code>180</code>, or <code>365</code>.</p> ")] = None,
+        device_id: Optional[StrictStr] = None,
+        status: Annotated[Optional[StrictStr], Field(description="<p>Return all records matching a specified status. The following status options are available: <code>quarantined</code>, <code>not_quarantined</code>, or <code>released</code>. Leave this parameter empty to return all status types.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Results can be sorted with the following options: </p> <ul> <li>threat_name</li> <li>classification</li> <li>device_name</li> <li>process_name</li> <li>process_owner</li> <li>detection_date</li> <li>status</li> </ul> <p>Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p> <p><code>?sort_by=-device_name</code> will order the response by device_name in descending order.</p> ")] = None,
+        term: Annotated[Optional[StrictStr], Field(description="<p>Search term to filter threat results.</p> <p>The response will include anything matching the following fields: <code>device_name</code>, <code>file_hash</code>, and <code>file_path</code>.</p> <p>So if you search for <code>bad file</code>, the results will include anywhere <code>bad file</code> exists in the three fields above.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 1000 records returned per request. If more records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. </p> <p>Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -26166,6 +29943,22 @@ class DefaultApi:
 
         <p>Get threat details.</p> 
 
+        :param classification: <p>Return all records matching a specified classification. The following classification options are available: <code>malware</code> and <code>pup</code>. Leave this parameter empty to return all classification types.</p> 
+        :type classification: str
+        :param date_range: <p>Return all records within a specified number of days. Any positive number of days may be specified. Examples: <code>7</code>, <code>30</code>, <code>60</code>, <code>90</code>, <code>180</code>, or <code>365</code>.</p> 
+        :type date_range: str
+        :param device_id: 
+        :type device_id: str
+        :param status: <p>Return all records matching a specified status. The following status options are available: <code>quarantined</code>, <code>not_quarantined</code>, or <code>released</code>. Leave this parameter empty to return all status types.</p> 
+        :type status: str
+        :param sort_by: <p>Results can be sorted with the following options: </p> <ul> <li>threat_name</li> <li>classification</li> <li>device_name</li> <li>process_name</li> <li>process_owner</li> <li>detection_date</li> <li>status</li> </ul> <p>Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p> <p><code>?sort_by=-device_name</code> will order the response by device_name in descending order.</p> 
+        :type sort_by: str
+        :param term: <p>Search term to filter threat results.</p> <p>The response will include anything matching the following fields: <code>device_name</code>, <code>file_hash</code>, and <code>file_path</code>.</p> <p>So if you search for <code>bad file</code>, the results will include anywhere <code>bad file</code> exists in the three fields above.</p> 
+        :type term: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 1000 records returned per request. If more records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. </p> <p>Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -26189,6 +29982,14 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_threat_details_get_serialize(
+            classification=classification,
+            date_range=date_range,
+            device_id=device_id,
+            status=status,
+            sort_by=sort_by,
+            term=term,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -26212,6 +30013,14 @@ class DefaultApi:
     @validate_call
     def api_v1_threat_details_get_without_preload_content(
         self,
+        classification: Annotated[Optional[StrictStr], Field(description="<p>Return all records matching a specified classification. The following classification options are available: <code>malware</code> and <code>pup</code>. Leave this parameter empty to return all classification types.</p> ")] = None,
+        date_range: Annotated[Optional[StrictStr], Field(description="<p>Return all records within a specified number of days. Any positive number of days may be specified. Examples: <code>7</code>, <code>30</code>, <code>60</code>, <code>90</code>, <code>180</code>, or <code>365</code>.</p> ")] = None,
+        device_id: Optional[StrictStr] = None,
+        status: Annotated[Optional[StrictStr], Field(description="<p>Return all records matching a specified status. The following status options are available: <code>quarantined</code>, <code>not_quarantined</code>, or <code>released</code>. Leave this parameter empty to return all status types.</p> ")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Results can be sorted with the following options: </p> <ul> <li>threat_name</li> <li>classification</li> <li>device_name</li> <li>process_name</li> <li>process_owner</li> <li>detection_date</li> <li>status</li> </ul> <p>Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p> <p><code>?sort_by=-device_name</code> will order the response by device_name in descending order.</p> ")] = None,
+        term: Annotated[Optional[StrictStr], Field(description="<p>Search term to filter threat results.</p> <p>The response will include anything matching the following fields: <code>device_name</code>, <code>file_hash</code>, and <code>file_path</code>.</p> <p>So if you search for <code>bad file</code>, the results will include anywhere <code>bad file</code> exists in the three fields above.</p> ")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="<p>A hard upper <code>limit</code> is set at 1000 records returned per request. If more records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. </p> <p>Additionally, parameter queries can be added to a request to limit the results.</p> ")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="<p>Specify the starting record to return</p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -26229,6 +30038,22 @@ class DefaultApi:
 
         <p>Get threat details.</p> 
 
+        :param classification: <p>Return all records matching a specified classification. The following classification options are available: <code>malware</code> and <code>pup</code>. Leave this parameter empty to return all classification types.</p> 
+        :type classification: str
+        :param date_range: <p>Return all records within a specified number of days. Any positive number of days may be specified. Examples: <code>7</code>, <code>30</code>, <code>60</code>, <code>90</code>, <code>180</code>, or <code>365</code>.</p> 
+        :type date_range: str
+        :param device_id: 
+        :type device_id: str
+        :param status: <p>Return all records matching a specified status. The following status options are available: <code>quarantined</code>, <code>not_quarantined</code>, or <code>released</code>. Leave this parameter empty to return all status types.</p> 
+        :type status: str
+        :param sort_by: <p>Results can be sorted with the following options: </p> <ul> <li>threat_name</li> <li>classification</li> <li>device_name</li> <li>process_name</li> <li>process_owner</li> <li>detection_date</li> <li>status</li> </ul> <p>Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p> <p><code>?sort_by=-device_name</code> will order the response by device_name in descending order.</p> 
+        :type sort_by: str
+        :param term: <p>Search term to filter threat results.</p> <p>The response will include anything matching the following fields: <code>device_name</code>, <code>file_hash</code>, and <code>file_path</code>.</p> <p>So if you search for <code>bad file</code>, the results will include anywhere <code>bad file</code> exists in the three fields above.</p> 
+        :type term: str
+        :param limit: <p>A hard upper <code>limit</code> is set at 1000 records returned per request. If more records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. </p> <p>Additionally, parameter queries can be added to a request to limit the results.</p> 
+        :type limit: str
+        :param offset: <p>Specify the starting record to return</p> 
+        :type offset: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -26252,6 +30077,14 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_threat_details_get_serialize(
+            classification=classification,
+            date_range=date_range,
+            device_id=device_id,
+            status=status,
+            sort_by=sort_by,
+            term=term,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -26270,6 +30103,14 @@ class DefaultApi:
 
     def _api_v1_threat_details_get_serialize(
         self,
+        classification,
+        date_range,
+        device_id,
+        status,
+        sort_by,
+        term,
+        limit,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -26292,6 +30133,38 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if classification is not None:
+            
+            _query_params.append(('classification', classification))
+            
+        if date_range is not None:
+            
+            _query_params.append(('date_range', date_range))
+            
+        if device_id is not None:
+            
+            _query_params.append(('device_id', device_id))
+            
+        if status is not None:
+            
+            _query_params.append(('status', status))
+            
+        if sort_by is not None:
+            
+            _query_params.append(('sort_by', sort_by))
+            
+        if term is not None:
+            
+            _query_params.append(('term', term))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -26308,6 +30181,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -26331,6 +30205,10 @@ class DefaultApi:
     @validate_call
     def api_v1_users_get(
         self,
+        email: Annotated[Optional[StrictStr], Field(description="<p>Returns users with email addresses containing the provided string.</p> ")] = None,
+        id: Annotated[Optional[StrictStr], Field(description="<p>Search for a user matching the provided UUID value.</p> ")] = None,
+        integration_id: Annotated[Optional[StrictStr], Field(description="<p>Search for a integration matching the provided UUID value.</p> ")] = None,
+        archived: Annotated[Optional[StrictStr], Field(description="<p>Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. </p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -26348,6 +30226,14 @@ class DefaultApi:
 
         <p>This endpoint makes a request to retrieve a list of users from user directory integrations.</p> <p>A maximum of 300 records are returned per request, and pagination can be performed leveraging the URLs provided in the <code>next</code> and <code>previous</code> keys in the response. If there are no more results available, the respective key will be <code>null</code>.</p> 
 
+        :param email: <p>Returns users with email addresses containing the provided string.</p> 
+        :type email: str
+        :param id: <p>Search for a user matching the provided UUID value.</p> 
+        :type id: str
+        :param integration_id: <p>Search for a integration matching the provided UUID value.</p> 
+        :type integration_id: str
+        :param archived: <p>Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. </p> 
+        :type archived: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -26371,6 +30257,10 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_users_get_serialize(
+            email=email,
+            id=id,
+            integration_id=integration_id,
+            archived=archived,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -26394,6 +30284,10 @@ class DefaultApi:
     @validate_call
     def api_v1_users_get_with_http_info(
         self,
+        email: Annotated[Optional[StrictStr], Field(description="<p>Returns users with email addresses containing the provided string.</p> ")] = None,
+        id: Annotated[Optional[StrictStr], Field(description="<p>Search for a user matching the provided UUID value.</p> ")] = None,
+        integration_id: Annotated[Optional[StrictStr], Field(description="<p>Search for a integration matching the provided UUID value.</p> ")] = None,
+        archived: Annotated[Optional[StrictStr], Field(description="<p>Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. </p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -26411,6 +30305,14 @@ class DefaultApi:
 
         <p>This endpoint makes a request to retrieve a list of users from user directory integrations.</p> <p>A maximum of 300 records are returned per request, and pagination can be performed leveraging the URLs provided in the <code>next</code> and <code>previous</code> keys in the response. If there are no more results available, the respective key will be <code>null</code>.</p> 
 
+        :param email: <p>Returns users with email addresses containing the provided string.</p> 
+        :type email: str
+        :param id: <p>Search for a user matching the provided UUID value.</p> 
+        :type id: str
+        :param integration_id: <p>Search for a integration matching the provided UUID value.</p> 
+        :type integration_id: str
+        :param archived: <p>Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. </p> 
+        :type archived: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -26434,6 +30336,10 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_users_get_serialize(
+            email=email,
+            id=id,
+            integration_id=integration_id,
+            archived=archived,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -26457,6 +30363,10 @@ class DefaultApi:
     @validate_call
     def api_v1_users_get_without_preload_content(
         self,
+        email: Annotated[Optional[StrictStr], Field(description="<p>Returns users with email addresses containing the provided string.</p> ")] = None,
+        id: Annotated[Optional[StrictStr], Field(description="<p>Search for a user matching the provided UUID value.</p> ")] = None,
+        integration_id: Annotated[Optional[StrictStr], Field(description="<p>Search for a integration matching the provided UUID value.</p> ")] = None,
+        archived: Annotated[Optional[StrictStr], Field(description="<p>Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. </p> ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -26474,6 +30384,14 @@ class DefaultApi:
 
         <p>This endpoint makes a request to retrieve a list of users from user directory integrations.</p> <p>A maximum of 300 records are returned per request, and pagination can be performed leveraging the URLs provided in the <code>next</code> and <code>previous</code> keys in the response. If there are no more results available, the respective key will be <code>null</code>.</p> 
 
+        :param email: <p>Returns users with email addresses containing the provided string.</p> 
+        :type email: str
+        :param id: <p>Search for a user matching the provided UUID value.</p> 
+        :type id: str
+        :param integration_id: <p>Search for a integration matching the provided UUID value.</p> 
+        :type integration_id: str
+        :param archived: <p>Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. </p> 
+        :type archived: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -26497,6 +30415,10 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v1_users_get_serialize(
+            email=email,
+            id=id,
+            integration_id=integration_id,
+            archived=archived,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -26515,6 +30437,10 @@ class DefaultApi:
 
     def _api_v1_users_get_serialize(
         self,
+        email,
+        id,
+        integration_id,
+        archived,
         _request_auth,
         _content_type,
         _headers,
@@ -26537,6 +30463,22 @@ class DefaultApi:
 
         # process the path parameters
         # process the query parameters
+        if email is not None:
+            
+            _query_params.append(('email', email))
+            
+        if id is not None:
+            
+            _query_params.append(('id', id))
+            
+        if integration_id is not None:
+            
+            _query_params.append(('integration_id', integration_id))
+            
+        if archived is not None:
+            
+            _query_params.append(('archived', archived))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -26553,6 +30495,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -26576,7 +30519,7 @@ class DefaultApi:
     @validate_call
     def api_v1_users_user_id_get(
         self,
-        user_id: Annotated[StrictStr, Field(description="Path parameter 'user_id'")],
+        user_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -26594,7 +30537,7 @@ class DefaultApi:
 
         <p>This endpoint makes a request to retrieve a specified user directory integration user by id.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p>user_id (path parameter): The unique identifier of the user directory integration user.</p> 
 
-        :param user_id: Path parameter 'user_id' (required)
+        :param user_id: (required)
         :type user_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -26643,7 +30586,7 @@ class DefaultApi:
     @validate_call
     def api_v1_users_user_id_get_with_http_info(
         self,
-        user_id: Annotated[StrictStr, Field(description="Path parameter 'user_id'")],
+        user_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -26661,7 +30604,7 @@ class DefaultApi:
 
         <p>This endpoint makes a request to retrieve a specified user directory integration user by id.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p>user_id (path parameter): The unique identifier of the user directory integration user.</p> 
 
-        :param user_id: Path parameter 'user_id' (required)
+        :param user_id: (required)
         :type user_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -26710,7 +30653,7 @@ class DefaultApi:
     @validate_call
     def api_v1_users_user_id_get_without_preload_content(
         self,
-        user_id: Annotated[StrictStr, Field(description="Path parameter 'user_id'")],
+        user_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -26728,7 +30671,7 @@ class DefaultApi:
 
         <p>This endpoint makes a request to retrieve a specified user directory integration user by id.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p>user_id (path parameter): The unique identifier of the user directory integration user.</p> 
 
-        :param user_id: Path parameter 'user_id' (required)
+        :param user_id: (required)
         :type user_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -26813,6 +30756,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
@@ -26834,9 +30778,16 @@ class DefaultApi:
 
 
     @validate_call
-    def url_post(
+    def root_post(
         self,
-        post_url: Annotated[StrictStr, Field(description="Path parameter 'post_url'")],
+        key: Annotated[StrictStr, Field(description="<p>Value provided by \\\"Upload Custom App\\\"</p> ")],
+        x_amz_algorithm: Annotated[StrictStr, Field(description="<p>Value provided by \\\"Upload Custom App\\\"</p> ")],
+        x_amz_credential: Annotated[StrictStr, Field(description="<p>Value provided by \\\"Upload Custom App\\\"</p> ")],
+        x_amz_date: Annotated[StrictStr, Field(description="<p>Value provided by \\\"Upload Custom App\\\"</p> ")],
+        x_amz_security_token: Annotated[StrictStr, Field(description="<p>Value provided by \\\"Upload Custom App\\\"</p> ")],
+        policy: Annotated[StrictStr, Field(description="<p>Value provided by \\\"Upload Custom App\\\"</p> ")],
+        x_amz_signature: Annotated[StrictStr, Field(description="<p>Value provided by \\\"Upload Custom App\\\"</p> ")],
+        file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="<p>(Required) Your file to upload</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -26849,13 +30800,27 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> None:
         """Upload to S3
 
         <p>Example showing separate post request to upload the file to Amazon S3.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>post_url</code> (path parameter): The <code>post_url</code> value from the <code>Upload custom app</code> response.</p> <h3 id=\"request-body\">Request Body</h3> <p>For the request body, use the contents of the <code>post_data</code> object in the <code>Upload Custom App</code> endpoint response (example response below) and supply the path to the custom app file in the <code>file</code> request parameter.</p> <h4 id=\"example-post_data-object\">Example post_data object</h4> <pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code class=\"language-json\">\"post_data\": {    \"key\": \"(field to post along with file to S3 -- the key for the uploaded file)\",    \"x-amz-algorithm\": \"(field to post along with file to S3)\",    \"x-amz-credential\": \"(field to post along with file to S3)\",    \"x-amz-date\": \"(field to post along with file to S3)\",    \"x-amz-security-token\": \"(field to post along with file to S3)\",    \"policy\": \"(field to post along with file to S3)\",    \"x-amz-signature\": \"(field to post along with file to S3)\", }  </code></pre> 
 
-        :param post_url: Path parameter 'post_url' (required)
-        :type post_url: str
+        :param key: <p>Value provided by \\\"Upload Custom App\\\"</p>  (required)
+        :type key: str
+        :param x_amz_algorithm: <p>Value provided by \\\"Upload Custom App\\\"</p>  (required)
+        :type x_amz_algorithm: str
+        :param x_amz_credential: <p>Value provided by \\\"Upload Custom App\\\"</p>  (required)
+        :type x_amz_credential: str
+        :param x_amz_date: <p>Value provided by \\\"Upload Custom App\\\"</p>  (required)
+        :type x_amz_date: str
+        :param x_amz_security_token: <p>Value provided by \\\"Upload Custom App\\\"</p>  (required)
+        :type x_amz_security_token: str
+        :param policy: <p>Value provided by \\\"Upload Custom App\\\"</p>  (required)
+        :type policy: str
+        :param x_amz_signature: <p>Value provided by \\\"Upload Custom App\\\"</p>  (required)
+        :type x_amz_signature: str
+        :param file: <p>(Required) Your file to upload</p>  (required)
+        :type file: bytearray
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -26878,8 +30843,15 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._url_post_serialize(
-            post_url=post_url,
+        _param = self._root_post_serialize(
+            key=key,
+            x_amz_algorithm=x_amz_algorithm,
+            x_amz_credential=x_amz_credential,
+            x_amz_date=x_amz_date,
+            x_amz_security_token=x_amz_security_token,
+            policy=policy,
+            x_amz_signature=x_amz_signature,
+            file=file,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -26887,7 +30859,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '204': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -26901,9 +30873,16 @@ class DefaultApi:
 
 
     @validate_call
-    def url_post_with_http_info(
+    def root_post_with_http_info(
         self,
-        post_url: Annotated[StrictStr, Field(description="Path parameter 'post_url'")],
+        key: Annotated[StrictStr, Field(description="<p>Value provided by \\\"Upload Custom App\\\"</p> ")],
+        x_amz_algorithm: Annotated[StrictStr, Field(description="<p>Value provided by \\\"Upload Custom App\\\"</p> ")],
+        x_amz_credential: Annotated[StrictStr, Field(description="<p>Value provided by \\\"Upload Custom App\\\"</p> ")],
+        x_amz_date: Annotated[StrictStr, Field(description="<p>Value provided by \\\"Upload Custom App\\\"</p> ")],
+        x_amz_security_token: Annotated[StrictStr, Field(description="<p>Value provided by \\\"Upload Custom App\\\"</p> ")],
+        policy: Annotated[StrictStr, Field(description="<p>Value provided by \\\"Upload Custom App\\\"</p> ")],
+        x_amz_signature: Annotated[StrictStr, Field(description="<p>Value provided by \\\"Upload Custom App\\\"</p> ")],
+        file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="<p>(Required) Your file to upload</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -26916,13 +30895,27 @@ class DefaultApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[None]:
         """Upload to S3
 
         <p>Example showing separate post request to upload the file to Amazon S3.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>post_url</code> (path parameter): The <code>post_url</code> value from the <code>Upload custom app</code> response.</p> <h3 id=\"request-body\">Request Body</h3> <p>For the request body, use the contents of the <code>post_data</code> object in the <code>Upload Custom App</code> endpoint response (example response below) and supply the path to the custom app file in the <code>file</code> request parameter.</p> <h4 id=\"example-post_data-object\">Example post_data object</h4> <pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code class=\"language-json\">\"post_data\": {    \"key\": \"(field to post along with file to S3 -- the key for the uploaded file)\",    \"x-amz-algorithm\": \"(field to post along with file to S3)\",    \"x-amz-credential\": \"(field to post along with file to S3)\",    \"x-amz-date\": \"(field to post along with file to S3)\",    \"x-amz-security-token\": \"(field to post along with file to S3)\",    \"policy\": \"(field to post along with file to S3)\",    \"x-amz-signature\": \"(field to post along with file to S3)\", }  </code></pre> 
 
-        :param post_url: Path parameter 'post_url' (required)
-        :type post_url: str
+        :param key: <p>Value provided by \\\"Upload Custom App\\\"</p>  (required)
+        :type key: str
+        :param x_amz_algorithm: <p>Value provided by \\\"Upload Custom App\\\"</p>  (required)
+        :type x_amz_algorithm: str
+        :param x_amz_credential: <p>Value provided by \\\"Upload Custom App\\\"</p>  (required)
+        :type x_amz_credential: str
+        :param x_amz_date: <p>Value provided by \\\"Upload Custom App\\\"</p>  (required)
+        :type x_amz_date: str
+        :param x_amz_security_token: <p>Value provided by \\\"Upload Custom App\\\"</p>  (required)
+        :type x_amz_security_token: str
+        :param policy: <p>Value provided by \\\"Upload Custom App\\\"</p>  (required)
+        :type policy: str
+        :param x_amz_signature: <p>Value provided by \\\"Upload Custom App\\\"</p>  (required)
+        :type x_amz_signature: str
+        :param file: <p>(Required) Your file to upload</p>  (required)
+        :type file: bytearray
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -26945,8 +30938,15 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._url_post_serialize(
-            post_url=post_url,
+        _param = self._root_post_serialize(
+            key=key,
+            x_amz_algorithm=x_amz_algorithm,
+            x_amz_credential=x_amz_credential,
+            x_amz_date=x_amz_date,
+            x_amz_security_token=x_amz_security_token,
+            policy=policy,
+            x_amz_signature=x_amz_signature,
+            file=file,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -26954,7 +30954,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '204': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -26968,9 +30968,16 @@ class DefaultApi:
 
 
     @validate_call
-    def url_post_without_preload_content(
+    def root_post_without_preload_content(
         self,
-        post_url: Annotated[StrictStr, Field(description="Path parameter 'post_url'")],
+        key: Annotated[StrictStr, Field(description="<p>Value provided by \\\"Upload Custom App\\\"</p> ")],
+        x_amz_algorithm: Annotated[StrictStr, Field(description="<p>Value provided by \\\"Upload Custom App\\\"</p> ")],
+        x_amz_credential: Annotated[StrictStr, Field(description="<p>Value provided by \\\"Upload Custom App\\\"</p> ")],
+        x_amz_date: Annotated[StrictStr, Field(description="<p>Value provided by \\\"Upload Custom App\\\"</p> ")],
+        x_amz_security_token: Annotated[StrictStr, Field(description="<p>Value provided by \\\"Upload Custom App\\\"</p> ")],
+        policy: Annotated[StrictStr, Field(description="<p>Value provided by \\\"Upload Custom App\\\"</p> ")],
+        x_amz_signature: Annotated[StrictStr, Field(description="<p>Value provided by \\\"Upload Custom App\\\"</p> ")],
+        file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="<p>(Required) Your file to upload</p> ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -26988,8 +30995,22 @@ class DefaultApi:
 
         <p>Example showing separate post request to upload the file to Amazon S3.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>post_url</code> (path parameter): The <code>post_url</code> value from the <code>Upload custom app</code> response.</p> <h3 id=\"request-body\">Request Body</h3> <p>For the request body, use the contents of the <code>post_data</code> object in the <code>Upload Custom App</code> endpoint response (example response below) and supply the path to the custom app file in the <code>file</code> request parameter.</p> <h4 id=\"example-post_data-object\">Example post_data object</h4> <pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code class=\"language-json\">\"post_data\": {    \"key\": \"(field to post along with file to S3 -- the key for the uploaded file)\",    \"x-amz-algorithm\": \"(field to post along with file to S3)\",    \"x-amz-credential\": \"(field to post along with file to S3)\",    \"x-amz-date\": \"(field to post along with file to S3)\",    \"x-amz-security-token\": \"(field to post along with file to S3)\",    \"policy\": \"(field to post along with file to S3)\",    \"x-amz-signature\": \"(field to post along with file to S3)\", }  </code></pre> 
 
-        :param post_url: Path parameter 'post_url' (required)
-        :type post_url: str
+        :param key: <p>Value provided by \\\"Upload Custom App\\\"</p>  (required)
+        :type key: str
+        :param x_amz_algorithm: <p>Value provided by \\\"Upload Custom App\\\"</p>  (required)
+        :type x_amz_algorithm: str
+        :param x_amz_credential: <p>Value provided by \\\"Upload Custom App\\\"</p>  (required)
+        :type x_amz_credential: str
+        :param x_amz_date: <p>Value provided by \\\"Upload Custom App\\\"</p>  (required)
+        :type x_amz_date: str
+        :param x_amz_security_token: <p>Value provided by \\\"Upload Custom App\\\"</p>  (required)
+        :type x_amz_security_token: str
+        :param policy: <p>Value provided by \\\"Upload Custom App\\\"</p>  (required)
+        :type policy: str
+        :param x_amz_signature: <p>Value provided by \\\"Upload Custom App\\\"</p>  (required)
+        :type x_amz_signature: str
+        :param file: <p>(Required) Your file to upload</p>  (required)
+        :type file: bytearray
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -27012,8 +31033,15 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._url_post_serialize(
-            post_url=post_url,
+        _param = self._root_post_serialize(
+            key=key,
+            x_amz_algorithm=x_amz_algorithm,
+            x_amz_credential=x_amz_credential,
+            x_amz_date=x_amz_date,
+            x_amz_security_token=x_amz_security_token,
+            policy=policy,
+            x_amz_signature=x_amz_signature,
+            file=file,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -27021,7 +31049,7 @@ class DefaultApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '204': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -27030,9 +31058,16 @@ class DefaultApi:
         return response_data.response
 
 
-    def _url_post_serialize(
+    def _root_post_serialize(
         self,
-        post_url,
+        key,
+        x_amz_algorithm,
+        x_amz_credential,
+        x_amz_date,
+        x_amz_security_token,
+        policy,
+        x_amz_signature,
+        file,
         _request_auth,
         _content_type,
         _headers,
@@ -27054,30 +31089,51 @@ class DefaultApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if post_url is not None:
-            _path_params['post_url'] = post_url
         # process the query parameters
         # process the header parameters
         # process the form parameters
+        if key is not None:
+            _form_params.append(('key', key))
+        if x_amz_algorithm is not None:
+            _form_params.append(('x-amz-algorithm', x_amz_algorithm))
+        if x_amz_credential is not None:
+            _form_params.append(('x-amz-credential', x_amz_credential))
+        if x_amz_date is not None:
+            _form_params.append(('x-amz-date', x_amz_date))
+        if x_amz_security_token is not None:
+            _form_params.append(('x-amz-security-token', x_amz_security_token))
+        if policy is not None:
+            _form_params.append(('policy', policy))
+        if x_amz_signature is not None:
+            _form_params.append(('x-amz-signature', x_amz_signature))
+        if file is not None:
+            _files['file'] = file
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'multipart/form-data'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
+            'bearer'
         ]
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/{post_url}',
+            resource_path='/',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

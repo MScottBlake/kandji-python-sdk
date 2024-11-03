@@ -187,23 +187,33 @@ import kandji-python-sdk
 from kandji-python-sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://<post_url>"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji-python-sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 
 # Enter a context with an instance of the API client
 with kandji-python-sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji-python-sdk.DefaultApi(api_client)
-    blueprint_id = 'blueprint_id_example' # str | Path parameter 'blueprint_id'
+    blueprint_id = 'blueprint_id_example' # str | 
+    body = 'body_example' # str |  (optional)
 
     try:
         # Assign Library Item
-        api_response = api_instance.api_v1_blueprints_blueprint_id_assign_library_item_post(blueprint_id)
+        api_response = api_instance.api_v1_blueprints_blueprint_id_assign_library_item_post(blueprint_id, body=body)
         print("The response of DefaultApi->api_v1_blueprints_blueprint_id_assign_library_item_post:\n")
         pprint(api_response)
     except ApiException as e:
@@ -213,7 +223,7 @@ with kandji-python-sdk.ApiClient(configuration) as api_client:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://<post_url>*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -244,9 +254,9 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**api_v1_devices_device_id_action_unlockaccount_post**](docs/DefaultApi.md#api_v1_devices_device_id_action_unlockaccount_post) | **POST** /api/v1/devices/{device_id}/action/unlockaccount | Unlock Account
 *DefaultApi* | [**api_v1_devices_device_id_action_updateinventory_post**](docs/DefaultApi.md#api_v1_devices_device_id_action_updateinventory_post) | **POST** /api/v1/devices/{device_id}/action/updateinventory | Update Inventory
 *DefaultApi* | [**api_v1_devices_device_id_action_updatelocation_post**](docs/DefaultApi.md#api_v1_devices_device_id_action_updatelocation_post) | **POST** /api/v1/devices/{device_id}/action/updatelocation | Update Location
-*DefaultApi* | [**api_v1_devices_device_id_activitylimit300_get**](docs/DefaultApi.md#api_v1_devices_device_id_activitylimit300_get) | **GET** /api/v1/devices/{device_id}/activity?limit&#x3D;300 | Get Device Activity
+*DefaultApi* | [**api_v1_devices_device_id_activity_get**](docs/DefaultApi.md#api_v1_devices_device_id_activity_get) | **GET** /api/v1/devices/{device_id}/activity | Get Device Activity
 *DefaultApi* | [**api_v1_devices_device_id_apps_get**](docs/DefaultApi.md#api_v1_devices_device_id_apps_get) | **GET** /api/v1/devices/{device_id}/apps | Get Device Apps
-*DefaultApi* | [**api_v1_devices_device_id_commandslimit300_get**](docs/DefaultApi.md#api_v1_devices_device_id_commandslimit300_get) | **GET** /api/v1/devices/{device_id}/commands?limit&#x3D;300 | Get Device Commands
+*DefaultApi* | [**api_v1_devices_device_id_commands_get**](docs/DefaultApi.md#api_v1_devices_device_id_commands_get) | **GET** /api/v1/devices/{device_id}/commands | Get Device Commands
 *DefaultApi* | [**api_v1_devices_device_id_delete**](docs/DefaultApi.md#api_v1_devices_device_id_delete) | **DELETE** /api/v1/devices/{device_id} | Delete Device
 *DefaultApi* | [**api_v1_devices_device_id_details_get**](docs/DefaultApi.md#api_v1_devices_device_id_details_get) | **GET** /api/v1/devices/{device_id}/details | Get Device Details
 *DefaultApi* | [**api_v1_devices_device_id_details_lostmode_delete**](docs/DefaultApi.md#api_v1_devices_device_id_details_lostmode_delete) | **DELETE** /api/v1/devices/{device_id}/details/lostmode | Cancel Lost Mode
@@ -265,7 +275,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**api_v1_devices_device_id_secrets_recoverypassword_get**](docs/DefaultApi.md#api_v1_devices_device_id_secrets_recoverypassword_get) | **GET** /api/v1/devices/{device_id}/secrets/recoverypassword | Get Recovery Lock Password
 *DefaultApi* | [**api_v1_devices_device_id_secrets_unlockpin_get**](docs/DefaultApi.md#api_v1_devices_device_id_secrets_unlockpin_get) | **GET** /api/v1/devices/{device_id}/secrets/unlockpin | Get Unlock Pin
 *DefaultApi* | [**api_v1_devices_device_id_status_get**](docs/DefaultApi.md#api_v1_devices_device_id_status_get) | **GET** /api/v1/devices/{device_id}/status | Get Device Status
-*DefaultApi* | [**api_v1_deviceslimit300_get**](docs/DefaultApi.md#api_v1_deviceslimit300_get) | **GET** /api/v1/devices?limit&#x3D;300 | List Devices
+*DefaultApi* | [**api_v1_devices_get**](docs/DefaultApi.md#api_v1_devices_get) | **GET** /api/v1/devices | List Devices
 *DefaultApi* | [**api_v1_integrations_apple_ade_ade_token_id_delete**](docs/DefaultApi.md#api_v1_integrations_apple_ade_ade_token_id_delete) | **DELETE** /api/v1/integrations/apple/ade/{ade_token_id} | Delete ADE integration
 *DefaultApi* | [**api_v1_integrations_apple_ade_ade_token_id_devices_get**](docs/DefaultApi.md#api_v1_integrations_apple_ade_ade_token_id_devices_get) | **GET** /api/v1/integrations/apple/ade/{ade_token_id}/devices | List devices associated to ADE token
 *DefaultApi* | [**api_v1_integrations_apple_ade_ade_token_id_get**](docs/DefaultApi.md#api_v1_integrations_apple_ade_ade_token_id_get) | **GET** /api/v1/integrations/apple/ade/{ade_token_id} | Get ADE integration
@@ -299,7 +309,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**api_v1_prism_application_firewall_get**](docs/DefaultApi.md#api_v1_prism_application_firewall_get) | **GET** /api/v1/prism/application_firewall | Application firewall
 *DefaultApi* | [**api_v1_prism_apps_get**](docs/DefaultApi.md#api_v1_prism_apps_get) | **GET** /api/v1/prism/apps | Applications
 *DefaultApi* | [**api_v1_prism_certificates_get**](docs/DefaultApi.md#api_v1_prism_certificates_get) | **GET** /api/v1/prism/certificates | Certificates
-*DefaultApi* | [**api_v1_prism_countcategoryapps_get**](docs/DefaultApi.md#api_v1_prism_countcategoryapps_get) | **GET** /api/v1/prism/count?category&#x3D;apps | Count
+*DefaultApi* | [**api_v1_prism_count_get**](docs/DefaultApi.md#api_v1_prism_count_get) | **GET** /api/v1/prism/count | Count
 *DefaultApi* | [**api_v1_prism_desktop_and_screensaver_get**](docs/DefaultApi.md#api_v1_prism_desktop_and_screensaver_get) | **GET** /api/v1/prism/desktop_and_screensaver | Desktop and Screensaver
 *DefaultApi* | [**api_v1_prism_device_information_get**](docs/DefaultApi.md#api_v1_prism_device_information_get) | **GET** /api/v1/prism/device_information | Device information
 *DefaultApi* | [**api_v1_prism_export_export_id_get**](docs/DefaultApi.md#api_v1_prism_export_export_id_get) | **GET** /api/v1/prism/export/{export_id} | Get category export
@@ -315,14 +325,14 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**api_v1_prism_transparency_database_get**](docs/DefaultApi.md#api_v1_prism_transparency_database_get) | **GET** /api/v1/prism/transparency_database | Transparency database
 *DefaultApi* | [**api_v1_self_service_categories_get**](docs/DefaultApi.md#api_v1_self_service_categories_get) | **GET** /api/v1/self-service/categories | List Self Service Categories
 *DefaultApi* | [**api_v1_settings_licensing_get**](docs/DefaultApi.md#api_v1_settings_licensing_get) | **GET** /api/v1/settings/licensing | Licensing
+*DefaultApi* | [**api_v1_tags_get**](docs/DefaultApi.md#api_v1_tags_get) | **GET** /api/v1/tags | Get Tags
 *DefaultApi* | [**api_v1_tags_post**](docs/DefaultApi.md#api_v1_tags_post) | **POST** /api/v1/tags | Create Tag
 *DefaultApi* | [**api_v1_tags_tag_id_delete**](docs/DefaultApi.md#api_v1_tags_tag_id_delete) | **DELETE** /api/v1/tags/{tag_id} | Delete Tag
 *DefaultApi* | [**api_v1_tags_tag_id_patch**](docs/DefaultApi.md#api_v1_tags_tag_id_patch) | **PATCH** /api/v1/tags/{tag_id} | Update Tag
-*DefaultApi* | [**api_v1_tagssearchaccuhive_get**](docs/DefaultApi.md#api_v1_tagssearchaccuhive_get) | **GET** /api/v1/tags?search&#x3D;accuhive | Get Tags
 *DefaultApi* | [**api_v1_threat_details_get**](docs/DefaultApi.md#api_v1_threat_details_get) | **GET** /api/v1/threat-details | Get Threat Details
 *DefaultApi* | [**api_v1_users_get**](docs/DefaultApi.md#api_v1_users_get) | **GET** /api/v1/users | List Users
 *DefaultApi* | [**api_v1_users_user_id_get**](docs/DefaultApi.md#api_v1_users_user_id_get) | **GET** /api/v1/users/{user_id} | Get User
-*DefaultApi* | [**url_post**](docs/DefaultApi.md#url_post) | **POST** /{post_url} | Upload to S3
+*DefaultApi* | [**root_post**](docs/DefaultApi.md#root_post) | **POST** / | Upload to S3
 
 
 ## Documentation For Models
@@ -332,7 +342,12 @@ Class | Method | HTTP request | Description
 <a id="documentation-for-authorization"></a>
 ## Documentation For Authorization
 
-Endpoints do not require authorization.
+
+Authentication schemes defined for the API:
+<a id="bearer"></a>
+### bearer
+
+- **Type**: Bearer authentication (API Token)
 
 
 ## Author

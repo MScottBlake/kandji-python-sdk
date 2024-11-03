@@ -36,7 +36,7 @@ jobs:
             --git-repo-id=kandji-${{ env.language }}-sdk
             --git-user-id=MScottBlake
             --output=.
-            --package-name=kandji-${{ env.language }}-sdk
+            --package-name=kandji_${{ env.language }}_sdk
             --remove-operation-id-prefix
           generator: ${{ env.language }}
           generator-tag: latest-release

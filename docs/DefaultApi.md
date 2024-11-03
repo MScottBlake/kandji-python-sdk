@@ -1,4 +1,4 @@
-# kandji-python-sdk.DefaultApi
+# kandji_python_sdk.DefaultApi
 
 All URIs are relative to *https://&lt;post_url&gt;*
 
@@ -124,13 +124,13 @@ Assign Library Item
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -140,14 +140,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -203,13 +203,13 @@ Delete Blueprint
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -219,14 +219,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
 
     try:
@@ -278,13 +278,13 @@ Get Blueprint
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -294,14 +294,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
 
     try:
@@ -353,13 +353,13 @@ List Library Items
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -369,14 +369,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
 
     try:
@@ -430,13 +430,13 @@ Get Manual Enrollment Profile
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -446,14 +446,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
     sso = 'true' # str | <p>Use the <code>sso</code> query parameter, set to <code>true</code>, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which \"Require Authentication\" is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile. </p>  (optional)
 
@@ -509,13 +509,13 @@ Update Blueprint
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -525,14 +525,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
     name = 'name_example' # str | <p>Update the name of the Blueprint</p> 
     description = 'description_example' # str | <p>Update the description of the Blueprint </p> 
@@ -594,13 +594,13 @@ Remove Library Item
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -610,14 +610,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -673,13 +673,13 @@ List Blueprints
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -689,14 +689,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     id = '97e4e175-1631-43f6-a02b-33fd1c748ab8' # str | <p>Look up a specific Blueprint by its ID</p>  (optional)
     id__in = '11f4eb9a-10ed-4c3d-a7c1-fb87f95743fb,6391086e-85a1-4820-813c-f9c75025fff4' # str | <p>Specify a list of Blueprint IDs to limit the results to.  Multiple values may be separated by commas. There is a double underscore (<code>__</code>) between id and in</p>  (optional)
     name = 'testing_blueprint' # str | <p>Return Blueprint names \"containing\" the specified search string.</p>  (optional)
@@ -758,13 +758,13 @@ Create Blueprint
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -774,14 +774,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     name = 'name_example' # str | <p>(required) Set the name of the Blueprint. The name provided must be unique.</p> 
     enrollment_code_is_active = 'enrollment_code_is_active_example' # str | <p>(required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal</p> 
     enrollment_code_code = 'enrollment_code_code_example' # str | <p>Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app.</p> 
@@ -846,13 +846,13 @@ Get Blueprint Templates
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -862,14 +862,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     limit = '100' # str | <p>Number of results to return per page.</p>  (optional)
     offset = '400' # str | <p>The initial index from which to return the results.</p>  (optional)
 
@@ -923,13 +923,13 @@ Send Blankpush
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -939,14 +939,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -998,13 +998,13 @@ Clear Passcode
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -1014,14 +1014,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -1073,13 +1073,13 @@ Delete User
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -1089,14 +1089,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -1150,13 +1150,13 @@ Disable Lost Mode
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -1166,14 +1166,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -1225,13 +1225,13 @@ Enable Lost Mode
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -1241,14 +1241,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -1302,13 +1302,13 @@ Erase Device
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -1318,14 +1318,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -1380,13 +1380,13 @@ Lock Device
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -1396,14 +1396,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -1460,13 +1460,13 @@ Play Lost Mode Sound
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -1476,14 +1476,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -1535,13 +1535,13 @@ Reinstall Agent
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -1551,14 +1551,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -1610,13 +1610,13 @@ Remote Desktop
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -1626,14 +1626,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -1687,13 +1687,13 @@ Renew MDM Profile
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -1703,14 +1703,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -1762,13 +1762,13 @@ Restart Device
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -1778,14 +1778,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -1839,13 +1839,13 @@ Set Name
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -1855,14 +1855,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -1916,13 +1916,13 @@ Shutdown
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -1932,14 +1932,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -1991,13 +1991,13 @@ Unlock Account
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -2007,14 +2007,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -2068,13 +2068,13 @@ Update Inventory
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -2084,14 +2084,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -2143,13 +2143,13 @@ Update Location
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -2159,14 +2159,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -2218,13 +2218,13 @@ Get Device Activity
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -2234,14 +2234,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
     limit = '300' # str | <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
     offset = '0' # str | <p>Specify the starting record to return</p>  (optional)
@@ -2299,13 +2299,13 @@ Get Device Apps
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -2315,14 +2315,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -2376,13 +2376,13 @@ Get Device Commands
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -2392,14 +2392,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
     limit = '300' # str | <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
     offset = 'offset_example' # str | <p>Specify the starting record to return</p>  (optional)
@@ -2455,13 +2455,13 @@ Delete Device
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -2471,14 +2471,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -2530,13 +2530,13 @@ Get Device Details
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -2546,14 +2546,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -2607,13 +2607,13 @@ Cancel Lost Mode
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -2623,14 +2623,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -2682,13 +2682,13 @@ Get Device Lost Mode details
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -2698,14 +2698,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -2760,13 +2760,13 @@ Get Device
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -2776,14 +2776,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -2837,13 +2837,13 @@ Get Device Library Items
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -2853,14 +2853,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -2914,13 +2914,13 @@ Get Device Notes
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -2930,14 +2930,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -2991,13 +2991,13 @@ Delete Device Note
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -3007,14 +3007,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
     note_id = 'note_id_example' # str | 
 
@@ -3070,13 +3070,13 @@ Retrieve Device Note
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -3086,14 +3086,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
     note_id = 'note_id_example' # str | 
 
@@ -3149,13 +3149,13 @@ Update Device Note
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -3165,14 +3165,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
     note_id = 'note_id_example' # str | 
     authorization = 'Bearer {{API TOKEN}}' # str | 
@@ -3234,13 +3234,13 @@ Create Device Note
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -3250,14 +3250,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -3313,13 +3313,13 @@ Get Device Parameters
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -3329,14 +3329,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -3390,13 +3390,13 @@ Update Device
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -3406,14 +3406,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -3469,13 +3469,13 @@ Get Activation Lock Bypass Code
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -3485,14 +3485,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -3546,13 +3546,13 @@ Get FileVault Recovery Key
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -3562,14 +3562,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -3623,13 +3623,13 @@ Get Recovery Lock Password
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -3639,14 +3639,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -3700,13 +3700,13 @@ Get Unlock Pin
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -3716,14 +3716,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -3777,13 +3777,13 @@ Get Device Status
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -3793,14 +3793,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -3854,13 +3854,13 @@ List Devices
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -3870,14 +3870,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     limit = '300' # str | <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p> 
     asset_tag = '23245' # str |  (optional)
     blueprint_id = '91f97957-2353-4f86-a1ab-64d2b044a596' # str | <p>Return results \"containing\" the specified blueprint id</p>  (optional)
@@ -3971,13 +3971,13 @@ Delete ADE integration
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -3987,14 +3987,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     ade_token_id = 'ade_token_id_example' # str | 
 
     try:
@@ -4046,13 +4046,13 @@ List devices associated to ADE token
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -4062,14 +4062,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     ade_token_id = 'ade_token_id_example' # str | 
     page = '1' # str | <p>Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.</p>  (optional)
 
@@ -4125,13 +4125,13 @@ Get ADE integration
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -4141,14 +4141,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     ade_token_id = 'ade_token_id_example' # str | 
 
     try:
@@ -4200,13 +4200,13 @@ Update ADE integration
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -4216,14 +4216,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     ade_token_id = 'ade_token_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -4277,13 +4277,13 @@ Renew ADE integration
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -4293,14 +4293,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     ade_token_id = 'ade_token_id_example' # str | 
     blueprint_id = 'blueprint_id_example' # str | 
     phone = 'phone_example' # str | 
@@ -4360,13 +4360,13 @@ Get ADE device
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -4376,14 +4376,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -4437,13 +4437,13 @@ Update ADE device
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -4453,14 +4453,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     device_id = 'device_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -4516,13 +4516,13 @@ List ADE devices
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -4532,14 +4532,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_id = 'fce0cc58-caa5-40d2-a0d7-a0b257127ec5' # str | <p>Return results \"containing\" the specified blueprint id</p>  (optional)
     user_id = '8136' # str | <p>\"exact\" match on kandji user ID number</p>  (optional)
     dep_account = '' # str | <p>The ADE token UUID</p>  (optional)
@@ -4610,13 +4610,13 @@ List ADE integrations
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -4626,14 +4626,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
 
     try:
         # List ADE integrations
@@ -4681,13 +4681,13 @@ Create ADE integration
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -4697,14 +4697,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
     phone = 'phone_example' # str | 
     email = 'email_example' # str | 
@@ -4764,13 +4764,13 @@ Download ADE public key
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -4780,14 +4780,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
 
     try:
         # Download ADE public key
@@ -4837,13 +4837,13 @@ List Custom Apps
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -4853,14 +4853,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     page = '1' # str | <p>Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 device records returned per request.</p>  (optional)
 
     try:
@@ -4914,13 +4914,13 @@ Delete Custom App
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -4930,14 +4930,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
 
     try:
@@ -4990,13 +4990,13 @@ Get Custom App
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -5006,14 +5006,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
 
     try:
@@ -5067,13 +5067,13 @@ Update Custom App
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -5083,14 +5083,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
     name = 'name_example' # str | <p>Renaming a Custom App</p> 
     active = 'active_example' # str | <p>(Optional, default=true) Whether this Custom App is active and installable</p> 
@@ -5148,13 +5148,13 @@ Create Custom App
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -5164,14 +5164,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     name = 'name_example' # str | <p>(Required) The name for this Custom App</p> 
     file_key = 'file_key_example' # str | <p>(Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file.</p> 
     install_type = 'install_type_example' # str | <p>(Required) Options are package, zip, image</p> 
@@ -5237,13 +5237,13 @@ Upload Custom App
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -5253,14 +5253,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     body = 'body_example' # str |  (optional)
 
     try:
@@ -5312,13 +5312,13 @@ List Custom Profiles
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -5328,14 +5328,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     page = '1' # str | <p>Optional page number (when results exceed pagination threshold)</p>  (optional)
 
     try:
@@ -5389,13 +5389,13 @@ Delete Custom Profile
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -5405,14 +5405,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
 
     try:
@@ -5465,13 +5465,13 @@ Get Custom Profile
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -5481,14 +5481,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
 
     try:
@@ -5542,13 +5542,13 @@ Update Custom Profile
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -5558,14 +5558,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
     runs_on_mac = 'true' # str |  (optional)
     runs_on_iphone = 'false' # str |  (optional)
@@ -5627,13 +5627,13 @@ Create Custom Profile
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -5643,14 +5643,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     name = 'name_example' # str | <p>(Required) The profile name</p> 
     file = None # bytearray | <p>(Required) The path to the profile's .mobileconfig file</p> 
     active = 'active_example' # str | <p>(Optional, default=true) Whether this library item is active</p> 
@@ -5716,13 +5716,13 @@ List Custom Scripts
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -5732,14 +5732,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     page = '1' # str | <p>Optional page number (when results exceed pagination threshold)</p>  (optional)
 
     try:
@@ -5793,13 +5793,13 @@ Delete Custom Script
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -5809,14 +5809,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
 
     try:
@@ -5869,13 +5869,13 @@ Get Custom Script
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -5885,14 +5885,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
 
     try:
@@ -5946,13 +5946,13 @@ Update Custom Script
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -5962,14 +5962,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -6025,13 +6025,13 @@ Create Custom Script
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -6041,14 +6041,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     body = 'body_example' # str |  (optional)
 
     try:
@@ -6102,13 +6102,13 @@ Get Library Item Activity
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -6118,14 +6118,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
     activity_type = 'library_item_assignment_changed' # str | <p>Filter actions by this activity type. Choices are: library_item_created, library_item_edited, library_item_deleted, library_item_duplicated, library_item_assignment_changed</p>  (optional)
     user_id = '{user uuid}' # str | <p>Filter actions by this user (id)</p>  (optional)
@@ -6189,13 +6189,13 @@ Get Library Item Statuses
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -6205,14 +6205,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
     computer_id = '{device_id}' # str | <p>Query for the status of one device.</p>  (optional)
     limit = '300' # str | <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (optional)
@@ -6272,13 +6272,13 @@ Activation lock
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -6288,14 +6288,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str |  (optional)
     device_families = 'Mac,iPhone,iPad' # str |  (optional)
     filter = '' # str |  (optional)
@@ -6357,13 +6357,13 @@ Application firewall
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -6373,14 +6373,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
     device_families = 'Mac' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
     filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
@@ -6444,13 +6444,13 @@ Applications
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -6460,14 +6460,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
     filter = '{\"name\":{\"not_in\":[\"Okta Verify\"]},\"device__name\":{\"not_in\":[\"testuser’s MacBook Air\"]}}' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
@@ -6531,13 +6531,13 @@ Certificates
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -6547,14 +6547,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
     filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
@@ -6618,13 +6618,13 @@ Count
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -6634,14 +6634,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     category = 'apps' # str | <p>Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores (\"_\") when using the API query.</p> <p>Examples: apps device_information kernel_extensions system_extensions</p> 
 
     try:
@@ -6695,13 +6695,13 @@ Desktop and Screensaver
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -6711,14 +6711,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
     filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
@@ -6782,13 +6782,13 @@ Device information
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -6798,14 +6798,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_ids = '14afabf2-7599-47af-a942-bf7f0b8fedf8' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
     filter = '{\"device__name\":{\"in\":[\"testusers's MacBook Air\"]},\"updated_at\":{\"gte\":\"2023-09-03T04:00:00.000Z\",\"lte\":\"2023-09-04T04:00:00.000Z\"}}' # str | <p>JSON schema object containing one or more key value pairs.</p> <p>Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
@@ -6871,13 +6871,13 @@ Get category export
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -6887,14 +6887,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     export_id = 'export_id_example' # str | 
 
     try:
@@ -6948,13 +6948,13 @@ Request category export
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -6964,14 +6964,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     body = 'body_example' # str |  (optional)
 
     try:
@@ -7026,13 +7026,13 @@ FileVault
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -7042,14 +7042,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
     filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
@@ -7113,13 +7113,13 @@ Gatekeeper and XProtect
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -7129,14 +7129,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
     device_families = 'Mac' # str | <p>Results are limited to Mac only as Gatekeeper and XProtect are not applicable for other platfroms.</p>  (optional)
     filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
@@ -7200,13 +7200,13 @@ Installed profiles
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -7216,14 +7216,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
     filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
@@ -7287,13 +7287,13 @@ Kernel Extensions
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -7303,14 +7303,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
     filter = '' # str | <p>SON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
@@ -7374,13 +7374,13 @@ Launch Agents and Daemons
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -7390,14 +7390,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
     filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
@@ -7461,13 +7461,13 @@ Local users
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -7477,14 +7477,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
     filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
@@ -7548,13 +7548,13 @@ Startup settings
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -7564,14 +7564,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
     filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
@@ -7635,13 +7635,13 @@ System Extensions
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -7651,14 +7651,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
     filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
@@ -7722,13 +7722,13 @@ Transparency database
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -7738,14 +7738,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
     filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
@@ -7809,13 +7809,13 @@ List Self Service Categories
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -7825,14 +7825,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
 
     try:
         # List Self Service Categories
@@ -7882,13 +7882,13 @@ Licensing
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -7898,14 +7898,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
 
     try:
         # Licensing
@@ -7955,13 +7955,13 @@ Get Tags
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -7971,14 +7971,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     search = 'accuhive' # str | <p>Return resultes containing a given tag search string.</p> 
 
     try:
@@ -8032,13 +8032,13 @@ Create Tag
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -8048,14 +8048,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     body = 'body_example' # str |  (optional)
 
     try:
@@ -8109,13 +8109,13 @@ Delete Tag
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -8125,14 +8125,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     tag_id = 'tag_id_example' # str | 
 
     try:
@@ -8184,13 +8184,13 @@ Update Tag
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -8200,14 +8200,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     tag_id = 'tag_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -8263,13 +8263,13 @@ Get Threat Details
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -8279,14 +8279,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     classification = 'malware' # str | <p>Return all records matching a specified classification. The following classification options are available: <code>malware</code> and <code>pup</code>. Leave this parameter empty to return all classification types.</p>  (optional)
     date_range = '7' # str | <p>Return all records within a specified number of days. Any positive number of days may be specified. Examples: <code>7</code>, <code>30</code>, <code>60</code>, <code>90</code>, <code>180</code>, or <code>365</code>.</p>  (optional)
     device_id = '15fcec08-xxxx-xxxx-xxxx-7c2f950910eb' # str |  (optional)
@@ -8354,13 +8354,13 @@ List Users
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -8370,14 +8370,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     email = 'test_user_01@accuhive.io' # str | <p>Returns users with email addresses containing the provided string.</p>  (optional)
     id = '69c009ca-1f78-4bdf-bb93-08d6d39041db' # str | <p>Search for a user matching the provided UUID value.</p>  (optional)
     integration_id = 'f7461096-4ef9-43aa-88e9-ca1967ba0b38' # str | <p>Search for a integration matching the provided UUID value.</p>  (optional)
@@ -8437,13 +8437,13 @@ Get User
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -8453,14 +8453,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     user_id = 'user_id_example' # str | 
 
     try:
@@ -8514,13 +8514,13 @@ Upload to S3
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -8530,14 +8530,14 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     key = 'key_example' # str | <p>Value provided by \\\"Upload Custom App\\\"</p> 
     x_amz_algorithm = 'x_amz_algorithm_example' # str | <p>Value provided by \\\"Upload Custom App\\\"</p> 
     x_amz_credential = 'x_amz_credential_example' # str | <p>Value provided by \\\"Upload Custom App\\\"</p> 

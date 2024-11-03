@@ -20,9 +20,9 @@ from pydantic import Field, StrictBytes, StrictStr
 from typing import Any, Dict, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from kandji-python-sdk.api_client import ApiClient, RequestSerialized
-from kandji-python-sdk.api_response import ApiResponse
-from kandji-python-sdk.rest import RESTResponseType
+from kandji_python_sdk.api_client import ApiClient, RequestSerialized
+from kandji_python_sdk.api_response import ApiResponse
+from kandji_python_sdk.rest import RESTResponseType
 
 
 class DefaultApi:

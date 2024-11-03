@@ -3,7 +3,7 @@
 #
 # ref: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-name: kandji-python-sdk Python package
+name: kandji_python_sdk Python package
 
 on: [push, pull_request]
 

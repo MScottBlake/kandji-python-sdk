@@ -17,17 +17,17 @@
 __version__ = "1.0.0"
 
 # import apis into sdk package
-from kandji-python-sdk.api.default_api import DefaultApi
+from kandji_python_sdk.api.default_api import DefaultApi
 
 # import ApiClient
-from kandji-python-sdk.api_response import ApiResponse
-from kandji-python-sdk.api_client import ApiClient
-from kandji-python-sdk.configuration import Configuration
-from kandji-python-sdk.exceptions import OpenApiException
-from kandji-python-sdk.exceptions import ApiTypeError
-from kandji-python-sdk.exceptions import ApiValueError
-from kandji-python-sdk.exceptions import ApiKeyError
-from kandji-python-sdk.exceptions import ApiAttributeError
-from kandji-python-sdk.exceptions import ApiException
+from kandji_python_sdk.api_response import ApiResponse
+from kandji_python_sdk.api_client import ApiClient
+from kandji_python_sdk.configuration import Configuration
+from kandji_python_sdk.exceptions import OpenApiException
+from kandji_python_sdk.exceptions import ApiTypeError
+from kandji_python_sdk.exceptions import ApiValueError
+from kandji_python_sdk.exceptions import ApiKeyError
+from kandji_python_sdk.exceptions import ApiAttributeError
+from kandji_python_sdk.exceptions import ApiException
 
 # import models into sdk package

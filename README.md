@@ -156,7 +156,7 @@ pip install git+https://github.com/MScottBlake/kandji-python-sdk.git
 
 Then import the package:
 ```python
-import kandji-python-sdk
+import kandji_python_sdk
 ```
 
 ### Setuptools
@@ -170,7 +170,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import kandji-python-sdk
+import kandji_python_sdk
 ```
 
 ### Tests
@@ -183,13 +183,13 @@ Please follow the [installation procedure](#installation--usage) and then run th
 
 ```python
 
-import kandji-python-sdk
-from kandji-python-sdk.rest import ApiException
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<post_url>
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     host = "https://<post_url>"
 )
 
@@ -199,15 +199,15 @@ configuration = kandji-python-sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji-python-sdk.Configuration(
+configuration = kandji_python_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 
 # Enter a context with an instance of the API client
-with kandji-python-sdk.ApiClient(configuration) as api_client:
+with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji-python-sdk.DefaultApi(api_client)
+    api_instance = kandji_python_sdk.DefaultApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
     body = 'body_example' # str |  (optional)
 

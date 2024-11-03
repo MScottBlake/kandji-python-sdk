@@ -26,11 +26,11 @@ from urllib.parse import quote
 from typing import Tuple, Optional, List, Dict, Union
 from pydantic import SecretStr
 
-from kandji-python-sdk.configuration import Configuration
-from kandji-python-sdk.api_response import ApiResponse, T as ApiResponseT
-import kandji-python-sdk.models
-from kandji-python-sdk import rest
-from kandji-python-sdk.exceptions import (
+from kandji_python_sdk.configuration import Configuration
+from kandji_python_sdk.api_response import ApiResponse, T as ApiResponseT
+import kandji_python_sdk.models
+from kandji_python_sdk import rest
+from kandji_python_sdk.exceptions import (
     ApiValueError,
     ApiException,
     BadRequestException,
@@ -449,7 +449,7 @@ class ApiClient:
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
             else:
-                klass = getattr(kandji-python-sdk.models, klass)
+                klass = getattr(kandji_python_sdk.models, klass)
 
         if klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)

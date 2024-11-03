@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "kandji-python-sdk"
+name = "kandji_python_sdk"
 version = "1.0.0"
 description = "Kandji API"
 authors = ["OpenAPI Generator Community <team@openapitools.org>"]
@@ -7,7 +7,7 @@ license = "NoLicense"
 readme = "README.md"
 repository = "https://github.com/MScottBlake/kandji-python-sdk"
 keywords = ["OpenAPI", "OpenAPI-Generator", "Kandji API"]
-include = ["kandji-python-sdk/py.typed"]
+include = ["kandji_python_sdk/py.typed"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -35,7 +35,7 @@ extension-pkg-whitelist = "pydantic"
 
 [tool.mypy]
 files = [
-  "kandji-python-sdk",
+  "kandji_python_sdk",
   #"test",  # auto-generated tests
   "tests", # hand-written tests
 ]

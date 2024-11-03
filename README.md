@@ -187,10 +187,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -223,7 +223,7 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://<post_url>*
+All URIs are relative to *https://<sub_domain>.api.kandji.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -332,7 +332,6 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**api_v1_threat_details_get**](docs/DefaultApi.md#api_v1_threat_details_get) | **GET** /api/v1/threat-details | Get Threat Details
 *DefaultApi* | [**api_v1_users_get**](docs/DefaultApi.md#api_v1_users_get) | **GET** /api/v1/users | List Users
 *DefaultApi* | [**api_v1_users_user_id_get**](docs/DefaultApi.md#api_v1_users_user_id_get) | **GET** /api/v1/users/{user_id} | Get User
-*DefaultApi* | [**root_post**](docs/DefaultApi.md#root_post) | **POST** / | Upload to S3
 
 
 ## Documentation For Models

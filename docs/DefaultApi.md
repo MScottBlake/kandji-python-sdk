@@ -1,6 +1,6 @@
 # kandji_python_sdk.DefaultApi
 
-All URIs are relative to *https://&lt;post_url&gt;*
+All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -109,7 +109,6 @@ Method | HTTP request | Description
 [**api_v1_threat_details_get**](DefaultApi.md#api_v1_threat_details_get) | **GET** /api/v1/threat-details | Get Threat Details
 [**api_v1_users_get**](DefaultApi.md#api_v1_users_get) | **GET** /api/v1/users | List Users
 [**api_v1_users_user_id_get**](DefaultApi.md#api_v1_users_user_id_get) | **GET** /api/v1/users/{user_id} | Get User
-[**root_post**](DefaultApi.md#root_post) | **POST** / | Upload to S3
 
 
 # **api_v1_blueprints_blueprint_id_assign_library_item_post**
@@ -128,10 +127,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -207,10 +206,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -282,10 +281,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -357,10 +356,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -434,10 +433,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -513,10 +512,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -598,10 +597,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -677,10 +676,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -762,10 +761,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -850,10 +849,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -927,10 +926,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1002,10 +1001,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1077,10 +1076,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1154,10 +1153,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1229,10 +1228,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1306,10 +1305,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1384,10 +1383,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1464,10 +1463,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1539,10 +1538,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1614,10 +1613,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1691,10 +1690,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1766,10 +1765,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1843,10 +1842,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1920,10 +1919,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1995,10 +1994,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2072,10 +2071,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2147,10 +2146,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2222,10 +2221,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2303,10 +2302,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2380,10 +2379,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2459,10 +2458,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2534,10 +2533,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2611,10 +2610,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2686,10 +2685,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2764,10 +2763,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2841,10 +2840,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2918,10 +2917,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -2995,10 +2994,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3074,10 +3073,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3153,10 +3152,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3238,10 +3237,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3317,10 +3316,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3394,10 +3393,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3473,10 +3472,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3550,10 +3549,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3627,10 +3626,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3704,10 +3703,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3781,10 +3780,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3858,10 +3857,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -3975,10 +3974,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4050,10 +4049,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4129,10 +4128,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4204,10 +4203,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4281,10 +4280,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4364,10 +4363,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4441,10 +4440,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4520,10 +4519,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4614,10 +4613,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4685,10 +4684,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4768,10 +4767,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4841,10 +4840,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4918,10 +4917,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -4994,10 +4993,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5071,10 +5070,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5152,10 +5151,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5241,10 +5240,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5316,10 +5315,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5393,10 +5392,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5469,10 +5468,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5546,10 +5545,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5631,10 +5630,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5720,10 +5719,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5797,10 +5796,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5873,10 +5872,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -5950,10 +5949,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6029,10 +6028,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6106,10 +6105,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6193,10 +6192,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6276,10 +6275,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6361,10 +6360,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6448,10 +6447,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6535,10 +6534,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6622,10 +6621,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6699,10 +6698,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6786,10 +6785,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6875,10 +6874,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -6952,10 +6951,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7030,10 +7029,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7117,10 +7116,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7204,10 +7203,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7291,10 +7290,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7378,10 +7377,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7465,10 +7464,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7552,10 +7551,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7639,10 +7638,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7726,10 +7725,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7813,10 +7812,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7886,10 +7885,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -7959,10 +7958,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -8036,10 +8035,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -8113,10 +8112,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -8188,10 +8187,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -8267,10 +8266,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -8358,10 +8357,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -8441,10 +8440,10 @@ import kandji_python_sdk
 from kandji_python_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://<post_url>
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
+    host = "https://<sub_domain>.api.kandji.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -8499,95 +8498,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  * Content-Type -  <br>  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **root_post**
-> root_post(key, x_amz_algorithm, x_amz_credential, x_amz_date, x_amz_security_token, policy, x_amz_signature, file)
-
-Upload to S3
-
-<p>Example showing separate post request to upload the file to Amazon S3.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>post_url</code> (path parameter): The <code>post_url</code> value from the <code>Upload custom app</code> response.</p> <h3 id=\"request-body\">Request Body</h3> <p>For the request body, use the contents of the <code>post_data</code> object in the <code>Upload Custom App</code> endpoint response (example response below) and supply the path to the custom app file in the <code>file</code> request parameter.</p> <h4 id=\"example-post_data-object\">Example post_data object</h4> <pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code class=\"language-json\">\"post_data\": {    \"key\": \"(field to post along with file to S3 -- the key for the uploaded file)\",    \"x-amz-algorithm\": \"(field to post along with file to S3)\",    \"x-amz-credential\": \"(field to post along with file to S3)\",    \"x-amz-date\": \"(field to post along with file to S3)\",    \"x-amz-security-token\": \"(field to post along with file to S3)\",    \"policy\": \"(field to post along with file to S3)\",    \"x-amz-signature\": \"(field to post along with file to S3)\", }  </code></pre> 
-
-### Example
-
-* Bearer (API Token) Authentication (bearer):
-
-```python
-import kandji_python_sdk
-from kandji_python_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://<post_url>
-# See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_python_sdk.Configuration(
-    host = "https://<post_url>"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization (API Token): bearer
-configuration = kandji_python_sdk.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with kandji_python_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = kandji_python_sdk.DefaultApi(api_client)
-    key = 'key_example' # str | <p>Value provided by \\\"Upload Custom App\\\"</p> 
-    x_amz_algorithm = 'x_amz_algorithm_example' # str | <p>Value provided by \\\"Upload Custom App\\\"</p> 
-    x_amz_credential = 'x_amz_credential_example' # str | <p>Value provided by \\\"Upload Custom App\\\"</p> 
-    x_amz_date = 'x_amz_date_example' # str | <p>Value provided by \\\"Upload Custom App\\\"</p> 
-    x_amz_security_token = 'x_amz_security_token_example' # str | <p>Value provided by \\\"Upload Custom App\\\"</p> 
-    policy = 'policy_example' # str | <p>Value provided by \\\"Upload Custom App\\\"</p> 
-    x_amz_signature = 'x_amz_signature_example' # str | <p>Value provided by \\\"Upload Custom App\\\"</p> 
-    file = None # bytearray | <p>(Required) Your file to upload</p> 
-
-    try:
-        # Upload to S3
-        api_instance.root_post(key, x_amz_algorithm, x_amz_credential, x_amz_date, x_amz_security_token, policy, x_amz_signature, file)
-    except Exception as e:
-        print("Exception when calling DefaultApi->root_post: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **key** | **str**| &lt;p&gt;Value provided by \\\&quot;Upload Custom App\\\&quot;&lt;/p&gt;  | 
- **x_amz_algorithm** | **str**| &lt;p&gt;Value provided by \\\&quot;Upload Custom App\\\&quot;&lt;/p&gt;  | 
- **x_amz_credential** | **str**| &lt;p&gt;Value provided by \\\&quot;Upload Custom App\\\&quot;&lt;/p&gt;  | 
- **x_amz_date** | **str**| &lt;p&gt;Value provided by \\\&quot;Upload Custom App\\\&quot;&lt;/p&gt;  | 
- **x_amz_security_token** | **str**| &lt;p&gt;Value provided by \\\&quot;Upload Custom App\\\&quot;&lt;/p&gt;  | 
- **policy** | **str**| &lt;p&gt;Value provided by \\\&quot;Upload Custom App\\\&quot;&lt;/p&gt;  | 
- **x_amz_signature** | **str**| &lt;p&gt;Value provided by \\\&quot;Upload Custom App\\\&quot;&lt;/p&gt;  | 
- **file** | **bytearray**| &lt;p&gt;(Required) Your file to upload&lt;/p&gt;  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[bearer](../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
- - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | No Content |  * x-amz-id-2 -  <br>  * x-amz-request-id -  <br>  * Date -  <br>  * x-amz-version-id -  <br>  * x-amz-server-side-encryption -  <br>  * ETag -  <br>  * Location -  <br>  * Server -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -208,12 +208,12 @@ configuration = kandji_python_sdk.Configuration(
 with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji_python_sdk.DefaultApi(api_client)
-    blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str |  (optional)
-    device_families = 'Mac,iPhone,iPad' # str |  (optional)
-    filter = '' # str |  (optional)
-    sort_by = '' # str |  (optional)
-    limit = '' # str |  (optional)
-    offset = '' # str |  (optional)
+    blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
+    device_families = 'Mac,iPhone,iPad' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
+    filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
+    sort_by = '' # str | <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p>  (optional)
+    limit = '' # str | <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (optional)
+    offset = '' # str | <p>Specify the starting record to return.</p>  (optional)
 
     try:
         # Activation lock

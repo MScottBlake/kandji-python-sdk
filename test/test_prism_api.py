@@ -1,7 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
-
 """
     Kandji API
 
@@ -14,29 +12,146 @@
 """  # noqa: E501
 
 
-__version__ = "1.0.0"
+import unittest
 
-# import apis into sdk package
-from kandji_python_sdk.api.blueprints_api import BlueprintsApi
-from kandji_python_sdk.api.devices_api import DevicesApi
-from kandji_python_sdk.api.integrations_api import IntegrationsApi
-from kandji_python_sdk.api.library_api import LibraryApi
 from kandji_python_sdk.api.prism_api import PrismApi
-from kandji_python_sdk.api.self_service_api import SelfServiceApi
-from kandji_python_sdk.api.settings_api import SettingsApi
-from kandji_python_sdk.api.tags_api import TagsApi
-from kandji_python_sdk.api.threat_details_api import ThreatDetailsApi
-from kandji_python_sdk.api.users_api import UsersApi
 
-# import ApiClient
-from kandji_python_sdk.api_response import ApiResponse
-from kandji_python_sdk.api_client import ApiClient
-from kandji_python_sdk.configuration import Configuration
-from kandji_python_sdk.exceptions import OpenApiException
-from kandji_python_sdk.exceptions import ApiTypeError
-from kandji_python_sdk.exceptions import ApiValueError
-from kandji_python_sdk.exceptions import ApiKeyError
-from kandji_python_sdk.exceptions import ApiAttributeError
-from kandji_python_sdk.exceptions import ApiException
 
-# import models into sdk package
+class TestPrismApi(unittest.TestCase):
+    """PrismApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = PrismApi()
+
+    def tearDown(self) -> None:
+        pass
+
+    def test_activation_lock(self) -> None:
+        """Test case for activation_lock
+
+        Activation lock
+        """
+        pass
+
+    def test_application_firewall(self) -> None:
+        """Test case for application_firewall
+
+        Application firewall
+        """
+        pass
+
+    def test_applications(self) -> None:
+        """Test case for applications
+
+        Applications
+        """
+        pass
+
+    def test_certificates(self) -> None:
+        """Test case for certificates
+
+        Certificates
+        """
+        pass
+
+    def test_count(self) -> None:
+        """Test case for count
+
+        Count
+        """
+        pass
+
+    def test_desktop_and_screensaver(self) -> None:
+        """Test case for desktop_and_screensaver
+
+        Desktop and Screensaver
+        """
+        pass
+
+    def test_device_information(self) -> None:
+        """Test case for device_information
+
+        Device information
+        """
+        pass
+
+    def test_filevault(self) -> None:
+        """Test case for filevault
+
+        FileVault
+        """
+        pass
+
+    def test_gatekeeper_and_xprotect(self) -> None:
+        """Test case for gatekeeper_and_xprotect
+
+        Gatekeeper and XProtect
+        """
+        pass
+
+    def test_get_category_export(self) -> None:
+        """Test case for get_category_export
+
+        Get category export
+        """
+        pass
+
+    def test_installed_profiles(self) -> None:
+        """Test case for installed_profiles
+
+        Installed profiles
+        """
+        pass
+
+    def test_kernel_extensions(self) -> None:
+        """Test case for kernel_extensions
+
+        Kernel Extensions
+        """
+        pass
+
+    def test_launch_agents_and_daemons(self) -> None:
+        """Test case for launch_agents_and_daemons
+
+        Launch Agents and Daemons
+        """
+        pass
+
+    def test_local_users(self) -> None:
+        """Test case for local_users
+
+        Local users
+        """
+        pass
+
+    def test_request_category_export(self) -> None:
+        """Test case for request_category_export
+
+        Request category export
+        """
+        pass
+
+    def test_startup_settings(self) -> None:
+        """Test case for startup_settings
+
+        Startup settings
+        """
+        pass
+
+    def test_system_extensions(self) -> None:
+        """Test case for system_extensions
+
+        System Extensions
+        """
+        pass
+
+    def test_transparency_database(self) -> None:
+        """Test case for transparency_database
+
+        Transparency database
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -1,7 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
-
 """
     Kandji API
 
@@ -14,29 +12,146 @@
 """  # noqa: E501
 
 
-__version__ = "1.0.0"
+import unittest
 
-# import apis into sdk package
-from kandji_python_sdk.api.blueprints_api import BlueprintsApi
-from kandji_python_sdk.api.devices_api import DevicesApi
-from kandji_python_sdk.api.integrations_api import IntegrationsApi
 from kandji_python_sdk.api.library_api import LibraryApi
-from kandji_python_sdk.api.prism_api import PrismApi
-from kandji_python_sdk.api.self_service_api import SelfServiceApi
-from kandji_python_sdk.api.settings_api import SettingsApi
-from kandji_python_sdk.api.tags_api import TagsApi
-from kandji_python_sdk.api.threat_details_api import ThreatDetailsApi
-from kandji_python_sdk.api.users_api import UsersApi
 
-# import ApiClient
-from kandji_python_sdk.api_response import ApiResponse
-from kandji_python_sdk.api_client import ApiClient
-from kandji_python_sdk.configuration import Configuration
-from kandji_python_sdk.exceptions import OpenApiException
-from kandji_python_sdk.exceptions import ApiTypeError
-from kandji_python_sdk.exceptions import ApiValueError
-from kandji_python_sdk.exceptions import ApiKeyError
-from kandji_python_sdk.exceptions import ApiAttributeError
-from kandji_python_sdk.exceptions import ApiException
 
-# import models into sdk package
+class TestLibraryApi(unittest.TestCase):
+    """LibraryApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = LibraryApi()
+
+    def tearDown(self) -> None:
+        pass
+
+    def test_create_custom_app(self) -> None:
+        """Test case for create_custom_app
+
+        Create Custom App
+        """
+        pass
+
+    def test_create_custom_profile(self) -> None:
+        """Test case for create_custom_profile
+
+        Create Custom Profile
+        """
+        pass
+
+    def test_create_custom_script(self) -> None:
+        """Test case for create_custom_script
+
+        Create Custom Script
+        """
+        pass
+
+    def test_delete_custom_app(self) -> None:
+        """Test case for delete_custom_app
+
+        Delete Custom App
+        """
+        pass
+
+    def test_delete_custom_profile(self) -> None:
+        """Test case for delete_custom_profile
+
+        Delete Custom Profile
+        """
+        pass
+
+    def test_delete_custom_script(self) -> None:
+        """Test case for delete_custom_script
+
+        Delete Custom Script
+        """
+        pass
+
+    def test_get_custom_app(self) -> None:
+        """Test case for get_custom_app
+
+        Get Custom App
+        """
+        pass
+
+    def test_get_custom_profile(self) -> None:
+        """Test case for get_custom_profile
+
+        Get Custom Profile
+        """
+        pass
+
+    def test_get_custom_script(self) -> None:
+        """Test case for get_custom_script
+
+        Get Custom Script
+        """
+        pass
+
+    def test_get_library_item_activity(self) -> None:
+        """Test case for get_library_item_activity
+
+        Get Library Item Activity
+        """
+        pass
+
+    def test_get_library_item_statuses(self) -> None:
+        """Test case for get_library_item_statuses
+
+        Get Library Item Statuses
+        """
+        pass
+
+    def test_list_custom_apps(self) -> None:
+        """Test case for list_custom_apps
+
+        List Custom Apps
+        """
+        pass
+
+    def test_list_custom_profiles(self) -> None:
+        """Test case for list_custom_profiles
+
+        List Custom Profiles
+        """
+        pass
+
+    def test_list_custom_scripts(self) -> None:
+        """Test case for list_custom_scripts
+
+        List Custom Scripts
+        """
+        pass
+
+    def test_update_custom_app(self) -> None:
+        """Test case for update_custom_app
+
+        Update Custom App
+        """
+        pass
+
+    def test_update_custom_profile(self) -> None:
+        """Test case for update_custom_profile
+
+        Update Custom Profile
+        """
+        pass
+
+    def test_update_custom_script(self) -> None:
+        """Test case for update_custom_script
+
+        Update Custom Script
+        """
+        pass
+
+    def test_upload_custom_app(self) -> None:
+        """Test case for upload_custom_app
+
+        Upload Custom App
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

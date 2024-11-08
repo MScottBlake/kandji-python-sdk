@@ -1,0 +1,885 @@
+# kandji_python_sdk.IntegrationsApi
+
+All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**create_ade_integration**](IntegrationsApi.md#create_ade_integration) | **POST** /api/v1/integrations/apple/ade/ | Create ADE integration
+[**delete_ade_integration**](IntegrationsApi.md#delete_ade_integration) | **DELETE** /api/v1/integrations/apple/ade/{ade_token_id} | Delete ADE integration
+[**download_ade_public_key**](IntegrationsApi.md#download_ade_public_key) | **GET** /api/v1/integrations/apple/ade/public_key/ | Download ADE public key
+[**get_ade_device**](IntegrationsApi.md#get_ade_device) | **GET** /api/v1/integrations/apple/ade/devices/{device_id} | Get ADE device
+[**get_ade_integration**](IntegrationsApi.md#get_ade_integration) | **GET** /api/v1/integrations/apple/ade/{ade_token_id} | Get ADE integration
+[**list_ade_devices**](IntegrationsApi.md#list_ade_devices) | **GET** /api/v1/integrations/apple/ade/devices | List ADE devices
+[**list_ade_integrations**](IntegrationsApi.md#list_ade_integrations) | **GET** /api/v1/integrations/apple/ade | List ADE integrations
+[**list_devices_associated_to_ade_token**](IntegrationsApi.md#list_devices_associated_to_ade_token) | **GET** /api/v1/integrations/apple/ade/{ade_token_id}/devices | List devices associated to ADE token
+[**renew_ade_integration**](IntegrationsApi.md#renew_ade_integration) | **POST** /api/v1/integrations/apple/ade/{ade_token_id}/renew | Renew ADE integration
+[**update_ade_device**](IntegrationsApi.md#update_ade_device) | **PATCH** /api/v1/integrations/apple/ade/devices/{device_id} | Update ADE device
+[**update_ade_integration**](IntegrationsApi.md#update_ade_integration) | **PATCH** /api/v1/integrations/apple/ade/{ade_token_id} | Update ADE integration
+
+
+# **create_ade_integration**
+> object create_ade_integration(blueprint_id, phone, email, file)
+
+Create ADE integration
+
+<p>This request will create a new ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> downloaded from ABM are required and must be sent in the request.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.IntegrationsApi(api_client)
+    blueprint_id = 'blueprint_id_example' # str | 
+    phone = 'phone_example' # str | 
+    email = 'email_example' # str | 
+    file = None # bytearray | <p>This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.</p> 
+
+    try:
+        # Create ADE integration
+        api_response = api_instance.create_ade_integration(blueprint_id, phone, email, file)
+        print("The response of IntegrationsApi->create_ade_integration:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IntegrationsApi->create_ade_integration: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blueprint_id** | **str**|  | 
+ **phone** | **str**|  | 
+ **email** | **str**|  | 
+ **file** | **bytearray**| &lt;p&gt;This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.&lt;/p&gt;  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * Connection -  <br>  * Server -  <br>  * Allow -  <br>  * X-Frame-Options -  <br>  * Strict-Transport-Security -  <br>  * X-Content-Type-Options -  <br>  * X-XSS-Protection -  <br>  * Referrer-Policy -  <br>  * Feature-Policy -  <br>  * Vary -  <br>  * Content-Security-Policy -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_ade_integration**
+> delete_ade_integration(ade_token_id)
+
+Delete ADE integration
+
+<h1 id=\"warning\"><strong>WARNING!</strong></h1> <p>This is a HIGHLY destructive action.</p> <p>Deleting an ADE token will unassign the associated device records from Kandji. For currently enrolled devices that were assigned to Kandji via the delete ADE integration will not be impacted until they are wiped and reprovisioned. This action is essentially the same as removing an ADE token from MDM and then adding it back.</p> <p>If applicable, be sure to reassign the device records in ABM.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.IntegrationsApi(api_client)
+    ade_token_id = 'ade_token_id_example' # str | 
+
+    try:
+        # Delete ADE integration
+        api_instance.delete_ade_integration(ade_token_id)
+    except Exception as e:
+        print("Exception when calling IntegrationsApi->delete_ade_integration: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ade_token_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No Content |  * Date -  <br>  * Connection -  <br>  * Set-Cookie -  <br>  * Allow -  <br>  * Content-Security-Policy -  <br>  * Feature-Policy -  <br>  * Referrer-Policy -  <br>  * Server -  <br>  * Strict-Transport-Security -  <br>  * Vary -  <br>  * X-Content-Type-Options -  <br>  * X-Frame-Options -  <br>  * X-Xss-Protection -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **download_ade_public_key**
+> str download_ade_public_key()
+
+Download ADE public key
+
+<p>This request returns the public key used to create an MDM server connection in Apple Business Manager.</p> <p>The encoded information needs to be saved to a file with the <code>.pem</code> format and then uploaded to ABM.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.IntegrationsApi(api_client)
+
+    try:
+        # Download ADE public key
+        api_response = api_instance.download_ade_public_key()
+        print("The response of IntegrationsApi->download_ade_public_key:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IntegrationsApi->download_ade_public_key: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**str**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/x-x509-ca-cert
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * Connection -  <br>  * Set-Cookie -  <br>  * Allow -  <br>  * Content-Security-Policy -  <br>  * Feature-Policy -  <br>  * Referrer-Policy -  <br>  * Server -  <br>  * Strict-Transport-Security -  <br>  * Vary -  <br>  * X-Content-Type-Options -  <br>  * X-Frame-Options -  <br>  * X-Xss-Protection -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_ade_device**
+> object get_ade_device(device_id)
+
+Get ADE device
+
+<p>Get information about a specific Automated Device Enrollment device.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.IntegrationsApi(api_client)
+    device_id = 'device_id_example' # str | 
+
+    try:
+        # Get ADE device
+        api_response = api_instance.get_ade_device(device_id)
+        print("The response of IntegrationsApi->get_ade_device:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IntegrationsApi->get_ade_device: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **device_id** | **str**|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Content-Type -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_ade_integration**
+> get_ade_integration(ade_token_id)
+
+Get ADE integration
+
+<p>This request returns a specific ADE integration based on the <code>ade_token_id</code> passed.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.IntegrationsApi(api_client)
+    ade_token_id = 'ade_token_id_example' # str | 
+
+    try:
+        # Get ADE integration
+        api_instance.get_ade_integration(ade_token_id)
+    except Exception as e:
+        print("Exception when calling IntegrationsApi->get_ade_integration: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ade_token_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_ade_devices**
+> object list_ade_devices(blueprint_id=blueprint_id, user_id=user_id, dep_account=dep_account, device_family=device_family, model=model, os=os, profile_status=profile_status, serial_number=serial_number, page=page)
+
+List ADE devices
+
+<p>Get a list of Automated Device Enrollment devices.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.IntegrationsApi(api_client)
+    blueprint_id = 'fce0cc58-caa5-40d2-a0d7-a0b257127ec5' # str | <p>Return results \"containing\" the specified blueprint id</p>  (optional)
+    user_id = '8136' # str | <p>\"exact\" match on kandji user ID number</p>  (optional)
+    dep_account = '' # str | <p>The ADE token UUID</p>  (optional)
+    device_family = '' # str | <p>Mac, iPhone, iPad, AppleTV, iPod</p>  (optional)
+    model = 'MacBook Air' # str | <p>Return model results \"containing\" the specified model string. - \"iPad (8th Generation)\", \"MacBook Air\"</p>  (optional)
+    os = '' # str | <p>OSX, iOS, tvOS</p>  (optional)
+    profile_status = '' # str | <p>The automated device enrollment profile assignment status - assigned, empty, pushed, removed</p>  (optional)
+    serial_number = '' # str | <p>Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.</p>  (optional)
+    page = '1' # str | <p>Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.</p>  (optional)
+
+    try:
+        # List ADE devices
+        api_response = api_instance.list_ade_devices(blueprint_id=blueprint_id, user_id=user_id, dep_account=dep_account, device_family=device_family, model=model, os=os, profile_status=profile_status, serial_number=serial_number, page=page)
+        print("The response of IntegrationsApi->list_ade_devices:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IntegrationsApi->list_ade_devices: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blueprint_id** | **str**| &lt;p&gt;Return results \&quot;containing\&quot; the specified blueprint id&lt;/p&gt;  | [optional] 
+ **user_id** | **str**| &lt;p&gt;\&quot;exact\&quot; match on kandji user ID number&lt;/p&gt;  | [optional] 
+ **dep_account** | **str**| &lt;p&gt;The ADE token UUID&lt;/p&gt;  | [optional] 
+ **device_family** | **str**| &lt;p&gt;Mac, iPhone, iPad, AppleTV, iPod&lt;/p&gt;  | [optional] 
+ **model** | **str**| &lt;p&gt;Return model results \&quot;containing\&quot; the specified model string. - \&quot;iPad (8th Generation)\&quot;, \&quot;MacBook Air\&quot;&lt;/p&gt;  | [optional] 
+ **os** | **str**| &lt;p&gt;OSX, iOS, tvOS&lt;/p&gt;  | [optional] 
+ **profile_status** | **str**| &lt;p&gt;The automated device enrollment profile assignment status - assigned, empty, pushed, removed&lt;/p&gt;  | [optional] 
+ **serial_number** | **str**| &lt;p&gt;Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.&lt;/p&gt;  | [optional] 
+ **page** | **str**| &lt;p&gt;Use the &lt;code&gt;page&lt;/code&gt; parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the &lt;code&gt;next&lt;/code&gt; and &lt;code&gt;previous&lt;/code&gt; key attributes in the response can be used to request the next page of results or return to the previous page.&lt;/p&gt;  | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Content-Type -  <br>  |
+**400** | Bad Request |  * Content-Type -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_ade_integrations**
+> list_ade_integrations()
+
+List ADE integrations
+
+<p>This request returns a list of configured ADE integrations.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.IntegrationsApi(api_client)
+
+    try:
+        # List ADE integrations
+        api_instance.list_ade_integrations()
+    except Exception as e:
+        print("Exception when calling IntegrationsApi->list_ade_integrations: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_devices_associated_to_ade_token**
+> object list_devices_associated_to_ade_token(ade_token_id, page=page)
+
+List devices associated to ADE token
+
+<p>This request returns a list of devices associated with a specified <code>ade_token_id</code> as well as their enrollment status.</p> <p>When the <code>mdm_device</code> key value is <code>null</code>, this can be taken as an indication that the device is awaiting enrollment into Kandji.</p> <p>When data is present within the mdm_device dictionary, you can reference the <code>device_id</code> as the ID of the enrolled device record.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.IntegrationsApi(api_client)
+    ade_token_id = 'ade_token_id_example' # str | 
+    page = '1' # str | <p>Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.</p>  (optional)
+
+    try:
+        # List devices associated to ADE token
+        api_response = api_instance.list_devices_associated_to_ade_token(ade_token_id, page=page)
+        print("The response of IntegrationsApi->list_devices_associated_to_ade_token:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IntegrationsApi->list_devices_associated_to_ade_token: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ade_token_id** | **str**|  | 
+ **page** | **str**| &lt;p&gt;Use the &lt;code&gt;page&lt;/code&gt; parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the &lt;code&gt;next&lt;/code&gt; and &lt;code&gt;previous&lt;/code&gt; key attributes in the response can be used to request the next page of results or return to the previous page.&lt;/p&gt;  | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * Connection -  <br>  * Set-Cookie -  <br>  * Allow -  <br>  * Content-Security-Policy -  <br>  * Feature-Policy -  <br>  * Referrer-Policy -  <br>  * Server -  <br>  * Strict-Transport-Security -  <br>  * Vary -  <br>  * X-Content-Type-Options -  <br>  * X-Frame-Options -  <br>  * X-Xss-Protection -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **renew_ade_integration**
+> renew_ade_integration(ade_token_id, blueprint_id, phone, email, file)
+
+Renew ADE integration
+
+<p>This request will renew an existing ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> from the associated MDM server in ABM are required and must be sent in the request.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.IntegrationsApi(api_client)
+    ade_token_id = 'ade_token_id_example' # str | 
+    blueprint_id = 'blueprint_id_example' # str | 
+    phone = 'phone_example' # str | 
+    email = 'email_example' # str | 
+    file = None # bytearray | <p>This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.</p> 
+
+    try:
+        # Renew ADE integration
+        api_instance.renew_ade_integration(ade_token_id, blueprint_id, phone, email, file)
+    except Exception as e:
+        print("Exception when calling IntegrationsApi->renew_ade_integration: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ade_token_id** | **str**|  | 
+ **blueprint_id** | **str**|  | 
+ **phone** | **str**|  | 
+ **email** | **str**|  | 
+ **file** | **bytearray**| &lt;p&gt;This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.&lt;/p&gt;  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_ade_device**
+> object update_ade_device(device_id, body=body)
+
+Update ADE device
+
+<p>Update a specific Automated Device Enrollment device's blueprint assignment, user assignment, and asset tag.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.IntegrationsApi(api_client)
+    device_id = 'device_id_example' # str | 
+    body = 'body_example' # str |  (optional)
+
+    try:
+        # Update ADE device
+        api_response = api_instance.update_ade_device(device_id, body=body)
+        print("The response of IntegrationsApi->update_ade_device:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IntegrationsApi->update_ade_device: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **device_id** | **str**|  | 
+ **body** | **str**|  | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Content-Type -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_ade_integration**
+> update_ade_integration(ade_token_id, body=body)
+
+Update ADE integration
+
+<p>This request will update the default blueprint, phone number, and email address in an existing ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, and <code>email</code> address must be sent in the request.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.IntegrationsApi(api_client)
+    ade_token_id = 'ade_token_id_example' # str | 
+    body = 'body_example' # str |  (optional)
+
+    try:
+        # Update ADE integration
+        api_instance.update_ade_integration(ade_token_id, body=body)
+    except Exception as e:
+        print("Exception when calling IntegrationsApi->update_ade_integration: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ade_token_id** | **str**|  | 
+ **body** | **str**|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

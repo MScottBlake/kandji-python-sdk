@@ -1,0 +1,1563 @@
+# kandji_python_sdk.PrismApi
+
+All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**activation_lock**](PrismApi.md#activation_lock) | **GET** /api/v1/prism/activation_lock | Activation lock
+[**application_firewall**](PrismApi.md#application_firewall) | **GET** /api/v1/prism/application_firewall | Application firewall
+[**applications**](PrismApi.md#applications) | **GET** /api/v1/prism/apps | Applications
+[**certificates**](PrismApi.md#certificates) | **GET** /api/v1/prism/certificates | Certificates
+[**count**](PrismApi.md#count) | **GET** /api/v1/prism/count | Count
+[**desktop_and_screensaver**](PrismApi.md#desktop_and_screensaver) | **GET** /api/v1/prism/desktop_and_screensaver | Desktop and Screensaver
+[**device_information**](PrismApi.md#device_information) | **GET** /api/v1/prism/device_information | Device information
+[**filevault**](PrismApi.md#filevault) | **GET** /api/v1/prism/filevault | FileVault
+[**gatekeeper_and_xprotect**](PrismApi.md#gatekeeper_and_xprotect) | **GET** /api/v1/prism/gatekeeper_and_xprotect | Gatekeeper and XProtect
+[**get_category_export**](PrismApi.md#get_category_export) | **GET** /api/v1/prism/export/{export_id} | Get category export
+[**installed_profiles**](PrismApi.md#installed_profiles) | **GET** /api/v1/prism/installed_profiles | Installed profiles
+[**kernel_extensions**](PrismApi.md#kernel_extensions) | **GET** /api/v1/prism/kernel_extensions | Kernel Extensions
+[**launch_agents_and_daemons**](PrismApi.md#launch_agents_and_daemons) | **GET** /api/v1/prism/launch_agents_and_daemons | Launch Agents and Daemons
+[**local_users**](PrismApi.md#local_users) | **GET** /api/v1/prism/local_users | Local users
+[**request_category_export**](PrismApi.md#request_category_export) | **POST** /api/v1/prism/export | Request category export
+[**startup_settings**](PrismApi.md#startup_settings) | **GET** /api/v1/prism/startup_settings | Startup settings
+[**system_extensions**](PrismApi.md#system_extensions) | **GET** /api/v1/prism/system_extensions | System Extensions
+[**transparency_database**](PrismApi.md#transparency_database) | **GET** /api/v1/prism/transparency_database | Transparency database
+
+
+# **activation_lock**
+> activation_lock(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+
+Activation lock
+
+<p>Get activation lock attributes for devices.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.PrismApi(api_client)
+    blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
+    device_families = 'Mac,iPhone,iPad' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
+    filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
+    sort_by = '' # str | <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p>  (optional)
+    limit = '' # str | <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (optional)
+    offset = '' # str | <p>Specify the starting record to return.</p>  (optional)
+
+    try:
+        # Activation lock
+        api_instance.activation_lock(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+    except Exception as e:
+        print("Exception when calling PrismApi->activation_lock: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blueprint_ids** | **str**| &lt;p&gt;Filter results by one or more blueprint IDs separated by commas.&lt;/p&gt;  | [optional] 
+ **device_families** | **str**| &lt;p&gt;Filter results by one or more device families separate by commas.&lt;/p&gt;  | [optional] 
+ **filter** | **str**| &lt;p&gt;JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.&lt;/p&gt;  | [optional] 
+ **sort_by** | **str**| &lt;p&gt;Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.&lt;/p&gt;  | [optional] 
+ **limit** | **str**| &lt;p&gt;A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.&lt;/p&gt;  | [optional] 
+ **offset** | **str**| &lt;p&gt;Specify the starting record to return.&lt;/p&gt;  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Connection -  <br>  * Content-Type -  <br>  * Content-Encoding -  <br>  * Ratelimit-Limit -  <br>  * Ratelimit-Remaining -  <br>  * Ratelimit-Reset -  <br>  * Server -  <br>  * Via -  <br>  * X-Kong-Proxy-Latency -  <br>  * X-Kong-Upstream-Latency -  <br>  * X-Ratelimit-Limit-Hour -  <br>  * X-Ratelimit-Limit-Second -  <br>  * X-Ratelimit-Remaining-Hour -  <br>  * X-Ratelimit-Remaining-Second -  <br>  * Accept-Ranges -  <br>  * Access-Control-Allow-Origin -  <br>  * Date -  <br>  * X-Served-By -  <br>  * X-Cache -  <br>  * X-Cache-Hits -  <br>  * X-Timer -  <br>  * Vary -  <br>  * transfer-encoding -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **application_firewall**
+> object application_firewall(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+
+Application firewall
+
+<p>Get Application Firewall details for macOS.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.PrismApi(api_client)
+    blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
+    device_families = 'Mac' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
+    filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
+    sort_by = '' # str | <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p>  (optional)
+    limit = '' # str | <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (optional)
+    offset = '' # str | <p>Specify the starting record to return.</p>  (optional)
+
+    try:
+        # Application firewall
+        api_response = api_instance.application_firewall(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->application_firewall:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PrismApi->application_firewall: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blueprint_ids** | **str**| &lt;p&gt;Filter results by one or more blueprint IDs separated by commas.&lt;/p&gt;  | [optional] 
+ **device_families** | **str**| &lt;p&gt;Filter results by one or more device families separate by commas.&lt;/p&gt;  | [optional] 
+ **filter** | **str**| &lt;p&gt;JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.&lt;/p&gt;  | [optional] 
+ **sort_by** | **str**| &lt;p&gt;Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.&lt;/p&gt;  | [optional] 
+ **limit** | **str**| &lt;p&gt;A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.&lt;/p&gt;  | [optional] 
+ **offset** | **str**| &lt;p&gt;Specify the starting record to return.&lt;/p&gt;  | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Encoding -  <br>  * Ratelimit-Limit -  <br>  * Ratelimit-Remaining -  <br>  * Ratelimit-Reset -  <br>  * Server -  <br>  * Via -  <br>  * X-Kong-Proxy-Latency -  <br>  * X-Kong-Upstream-Latency -  <br>  * X-Ratelimit-Limit-Hour -  <br>  * X-Ratelimit-Limit-Second -  <br>  * X-Ratelimit-Remaining-Hour -  <br>  * X-Ratelimit-Remaining-Second -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **applications**
+> object applications(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+
+Applications
+
+<p>Get the applications installed on macOS, iOS, iPadOS, and tvOS devices.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.PrismApi(api_client)
+    blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
+    device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
+    filter = '{\"name\":{\"not_in\":[\"Okta Verify\"]},\"device__name\":{\"not_in\":[\"testuser’s MacBook Air\"]}}' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
+    sort_by = '' # str | <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p>  (optional)
+    limit = '' # str | <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (optional)
+    offset = '' # str | <p>Specify the starting record to return.</p>  (optional)
+
+    try:
+        # Applications
+        api_response = api_instance.applications(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->applications:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PrismApi->applications: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blueprint_ids** | **str**| &lt;p&gt;Filter results by one or more blueprint IDs separated by commas.&lt;/p&gt;  | [optional] 
+ **device_families** | **str**| &lt;p&gt;Filter results by one or more device families separate by commas.&lt;/p&gt;  | [optional] 
+ **filter** | **str**| &lt;p&gt;JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.&lt;/p&gt;  | [optional] 
+ **sort_by** | **str**| &lt;p&gt;Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.&lt;/p&gt;  | [optional] 
+ **limit** | **str**| &lt;p&gt;A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.&lt;/p&gt;  | [optional] 
+ **offset** | **str**| &lt;p&gt;Specify the starting record to return.&lt;/p&gt;  | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Connection -  <br>  * Content-Type -  <br>  * Content-Encoding -  <br>  * Ratelimit-Limit -  <br>  * Ratelimit-Remaining -  <br>  * Ratelimit-Reset -  <br>  * Server -  <br>  * Via -  <br>  * X-Kong-Proxy-Latency -  <br>  * X-Kong-Upstream-Latency -  <br>  * X-Ratelimit-Limit-Hour -  <br>  * X-Ratelimit-Limit-Second -  <br>  * X-Ratelimit-Remaining-Hour -  <br>  * X-Ratelimit-Remaining-Second -  <br>  * Accept-Ranges -  <br>  * Access-Control-Allow-Origin -  <br>  * Date -  <br>  * X-Served-By -  <br>  * X-Cache -  <br>  * X-Cache-Hits -  <br>  * X-Timer -  <br>  * Vary -  <br>  * transfer-encoding -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **certificates**
+> object certificates(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+
+Certificates
+
+<p>Get certificate details.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.PrismApi(api_client)
+    blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
+    device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
+    filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
+    sort_by = '' # str | <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p>  (optional)
+    limit = '' # str | <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (optional)
+    offset = '' # str | <p>Specify the starting record to return.</p>  (optional)
+
+    try:
+        # Certificates
+        api_response = api_instance.certificates(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->certificates:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PrismApi->certificates: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blueprint_ids** | **str**| &lt;p&gt;Filter results by one or more blueprint IDs separated by commas.&lt;/p&gt;  | [optional] 
+ **device_families** | **str**| &lt;p&gt;Filter results by one or more device families separate by commas.&lt;/p&gt;  | [optional] 
+ **filter** | **str**| &lt;p&gt;JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.&lt;/p&gt;  | [optional] 
+ **sort_by** | **str**| &lt;p&gt;Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.&lt;/p&gt;  | [optional] 
+ **limit** | **str**| &lt;p&gt;A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.&lt;/p&gt;  | [optional] 
+ **offset** | **str**| &lt;p&gt;Specify the starting record to return.&lt;/p&gt;  | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Connection -  <br>  * Content-Type -  <br>  * Content-Encoding -  <br>  * Ratelimit-Limit -  <br>  * Ratelimit-Remaining -  <br>  * Ratelimit-Reset -  <br>  * Server -  <br>  * Via -  <br>  * X-Kong-Proxy-Latency -  <br>  * X-Kong-Upstream-Latency -  <br>  * X-Ratelimit-Limit-Hour -  <br>  * X-Ratelimit-Limit-Second -  <br>  * X-Ratelimit-Remaining-Hour -  <br>  * X-Ratelimit-Remaining-Second -  <br>  * Accept-Ranges -  <br>  * Access-Control-Allow-Origin -  <br>  * Date -  <br>  * X-Served-By -  <br>  * X-Cache -  <br>  * X-Cache-Hits -  <br>  * X-Timer -  <br>  * Vary -  <br>  * transfer-encoding -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **count**
+> object count(category)
+
+Count
+
+<p>Get the total record count for the specified Prism category.</p> <p>If a category contains spaces substitute the spaces for underscores (\"_\") when using the API query.</p> <p>Example: <code>Device information</code> becomes <code>device_information</code>.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.PrismApi(api_client)
+    category = 'apps' # str | <p>Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores (\"_\") when using the API query.</p> <p>Examples: apps device_information kernel_extensions system_extensions</p> 
+
+    try:
+        # Count
+        api_response = api_instance.count(category)
+        print("The response of PrismApi->count:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PrismApi->count: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **category** | **str**| &lt;p&gt;Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores (\&quot;_\&quot;) when using the API query.&lt;/p&gt; &lt;p&gt;Examples: apps device_information kernel_extensions system_extensions&lt;/p&gt;  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Encoding -  <br>  * Ratelimit-Limit -  <br>  * Ratelimit-Remaining -  <br>  * Ratelimit-Reset -  <br>  * Server -  <br>  * Via -  <br>  * X-Kong-Proxy-Latency -  <br>  * X-Kong-Upstream-Latency -  <br>  * X-Ratelimit-Limit-Hour -  <br>  * X-Ratelimit-Limit-Second -  <br>  * X-Ratelimit-Remaining-Hour -  <br>  * X-Ratelimit-Remaining-Second -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **desktop_and_screensaver**
+> object desktop_and_screensaver(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+
+Desktop and Screensaver
+
+<p>Get Desktop and Screensaver details for macOS.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.PrismApi(api_client)
+    blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
+    device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
+    filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
+    sort_by = '' # str | <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p>  (optional)
+    limit = '' # str | <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (optional)
+    offset = '' # str | <p>Specify the starting record to return.</p>  (optional)
+
+    try:
+        # Desktop and Screensaver
+        api_response = api_instance.desktop_and_screensaver(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->desktop_and_screensaver:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PrismApi->desktop_and_screensaver: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blueprint_ids** | **str**| &lt;p&gt;Filter results by one or more blueprint IDs separated by commas.&lt;/p&gt;  | [optional] 
+ **device_families** | **str**| &lt;p&gt;Filter results by one or more device families separate by commas.&lt;/p&gt;  | [optional] 
+ **filter** | **str**| &lt;p&gt;JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.&lt;/p&gt;  | [optional] 
+ **sort_by** | **str**| &lt;p&gt;Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.&lt;/p&gt;  | [optional] 
+ **limit** | **str**| &lt;p&gt;A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.&lt;/p&gt;  | [optional] 
+ **offset** | **str**| &lt;p&gt;Specify the starting record to return.&lt;/p&gt;  | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Encoding -  <br>  * Ratelimit-Limit -  <br>  * Ratelimit-Remaining -  <br>  * Ratelimit-Reset -  <br>  * Server -  <br>  * Via -  <br>  * X-Kong-Proxy-Latency -  <br>  * X-Kong-Upstream-Latency -  <br>  * X-Ratelimit-Limit-Hour -  <br>  * X-Ratelimit-Limit-Second -  <br>  * X-Ratelimit-Remaining-Hour -  <br>  * X-Ratelimit-Remaining-Second -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **device_information**
+> object device_information(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset, body=body)
+
+Device information
+
+<p>Get attributes about devices.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.PrismApi(api_client)
+    blueprint_ids = '14afabf2-7599-47af-a942-bf7f0b8fedf8' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
+    device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
+    filter = '{\"device__name\":{\"in\":[\"testusers's MacBook Air\"]},\"updated_at\":{\"gte\":\"2023-09-03T04:00:00.000Z\",\"lte\":\"2023-09-04T04:00:00.000Z\"}}' # str | <p>JSON schema object containing one or more key value pairs.</p> <p>Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
+    sort_by = 'serial_number' # str | <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p>  (optional)
+    limit = '' # str | <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (optional)
+    offset = '' # str | <p>Specify the starting record to return</p>  (optional)
+    body = 'body_example' # str |  (optional)
+
+    try:
+        # Device information
+        api_response = api_instance.device_information(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset, body=body)
+        print("The response of PrismApi->device_information:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PrismApi->device_information: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blueprint_ids** | **str**| &lt;p&gt;Filter results by one or more blueprint IDs separated by commas.&lt;/p&gt;  | [optional] 
+ **device_families** | **str**| &lt;p&gt;Filter results by one or more device families separate by commas.&lt;/p&gt;  | [optional] 
+ **filter** | **str**| &lt;p&gt;JSON schema object containing one or more key value pairs.&lt;/p&gt; &lt;p&gt;Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.&lt;/p&gt;  | [optional] 
+ **sort_by** | **str**| &lt;p&gt;Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.&lt;/p&gt;  | [optional] 
+ **limit** | **str**| &lt;p&gt;A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.&lt;/p&gt;  | [optional] 
+ **offset** | **str**| &lt;p&gt;Specify the starting record to return&lt;/p&gt;  | [optional] 
+ **body** | **str**|  | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Encoding -  <br>  * Ratelimit-Limit -  <br>  * Ratelimit-Remaining -  <br>  * Ratelimit-Reset -  <br>  * Server -  <br>  * Via -  <br>  * X-Kong-Proxy-Latency -  <br>  * X-Kong-Upstream-Latency -  <br>  * X-Ratelimit-Limit-Hour -  <br>  * X-Ratelimit-Limit-Second -  <br>  * X-Ratelimit-Remaining-Hour -  <br>  * X-Ratelimit-Remaining-Second -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **filevault**
+> object filevault(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+
+FileVault
+
+<p>Get FileVault information for macOS.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.PrismApi(api_client)
+    blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
+    device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
+    filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
+    sort_by = '' # str | <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p>  (optional)
+    limit = '' # str | <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (optional)
+    offset = '' # str | <p>Specify the starting record to return</p>  (optional)
+
+    try:
+        # FileVault
+        api_response = api_instance.filevault(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->filevault:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PrismApi->filevault: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blueprint_ids** | **str**| &lt;p&gt;Filter results by one or more blueprint IDs separated by commas.&lt;/p&gt;  | [optional] 
+ **device_families** | **str**| &lt;p&gt;Filter results by one or more device families separate by commas.&lt;/p&gt;  | [optional] 
+ **filter** | **str**| &lt;p&gt;JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.&lt;/p&gt;  | [optional] 
+ **sort_by** | **str**| &lt;p&gt;Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.&lt;/p&gt;  | [optional] 
+ **limit** | **str**| &lt;p&gt;A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.&lt;/p&gt;  | [optional] 
+ **offset** | **str**| &lt;p&gt;Specify the starting record to return&lt;/p&gt;  | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Encoding -  <br>  * Ratelimit-Limit -  <br>  * Ratelimit-Remaining -  <br>  * Ratelimit-Reset -  <br>  * Server -  <br>  * Via -  <br>  * X-Kong-Proxy-Latency -  <br>  * X-Kong-Upstream-Latency -  <br>  * X-Ratelimit-Limit-Hour -  <br>  * X-Ratelimit-Limit-Second -  <br>  * X-Ratelimit-Remaining-Hour -  <br>  * X-Ratelimit-Remaining-Second -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gatekeeper_and_xprotect**
+> object gatekeeper_and_xprotect(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+
+Gatekeeper and XProtect
+
+<p>Get Gatekeeper and XProtect attributes for macOS.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.PrismApi(api_client)
+    blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
+    device_families = 'Mac' # str | <p>Results are limited to Mac only as Gatekeeper and XProtect are not applicable for other platfroms.</p>  (optional)
+    filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
+    sort_by = '' # str | <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p>  (optional)
+    limit = '' # str | <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (optional)
+    offset = '' # str | <p>Specify the starting record to return</p>  (optional)
+
+    try:
+        # Gatekeeper and XProtect
+        api_response = api_instance.gatekeeper_and_xprotect(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->gatekeeper_and_xprotect:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PrismApi->gatekeeper_and_xprotect: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blueprint_ids** | **str**| &lt;p&gt;Filter results by one or more blueprint IDs separated by commas.&lt;/p&gt;  | [optional] 
+ **device_families** | **str**| &lt;p&gt;Results are limited to Mac only as Gatekeeper and XProtect are not applicable for other platfroms.&lt;/p&gt;  | [optional] 
+ **filter** | **str**| &lt;p&gt;JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.&lt;/p&gt;  | [optional] 
+ **sort_by** | **str**| &lt;p&gt;Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.&lt;/p&gt;  | [optional] 
+ **limit** | **str**| &lt;p&gt;A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.&lt;/p&gt;  | [optional] 
+ **offset** | **str**| &lt;p&gt;Specify the starting record to return&lt;/p&gt;  | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Encoding -  <br>  * Ratelimit-Limit -  <br>  * Ratelimit-Remaining -  <br>  * Ratelimit-Reset -  <br>  * Server -  <br>  * Via -  <br>  * X-Kong-Proxy-Latency -  <br>  * X-Kong-Upstream-Latency -  <br>  * X-Ratelimit-Limit-Hour -  <br>  * X-Ratelimit-Limit-Second -  <br>  * X-Ratelimit-Remaining-Hour -  <br>  * X-Ratelimit-Remaining-Second -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_category_export**
+> object get_category_export(export_id)
+
+Get category export
+
+<p>Get an export request's status. To download the export, use the <code>signed_url</code>. This will download a CSV file containing the exported category information.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p>export_id (path parameter): The unique identifier of the the export job.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.PrismApi(api_client)
+    export_id = 'export_id_example' # str | 
+
+    try:
+        # Get category export
+        api_response = api_instance.get_category_export(export_id)
+        print("The response of PrismApi->get_category_export:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PrismApi->get_category_export: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **export_id** | **str**|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Encoding -  <br>  * Ratelimit-Limit -  <br>  * Ratelimit-Remaining -  <br>  * Ratelimit-Reset -  <br>  * Server -  <br>  * Via -  <br>  * X-Kong-Proxy-Latency -  <br>  * X-Kong-Upstream-Latency -  <br>  * X-Ratelimit-Limit-Hour -  <br>  * X-Ratelimit-Limit-Second -  <br>  * X-Ratelimit-Remaining-Hour -  <br>  * X-Ratelimit-Remaining-Second -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **installed_profiles**
+> object installed_profiles(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+
+Installed profiles
+
+<p>Get Installed Profiles attributes for macOS, iOS, iPadOS, and tvOS.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.PrismApi(api_client)
+    blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
+    device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
+    filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
+    sort_by = '' # str | <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p>  (optional)
+    limit = '' # str | <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (optional)
+    offset = '' # str | <p>Specify the starting record to return.</p>  (optional)
+
+    try:
+        # Installed profiles
+        api_response = api_instance.installed_profiles(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->installed_profiles:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PrismApi->installed_profiles: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blueprint_ids** | **str**| &lt;p&gt;Filter results by one or more blueprint IDs separated by commas.&lt;/p&gt;  | [optional] 
+ **device_families** | **str**| &lt;p&gt;Filter results by one or more device families separate by commas.&lt;/p&gt;  | [optional] 
+ **filter** | **str**| &lt;p&gt;JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.&lt;/p&gt;  | [optional] 
+ **sort_by** | **str**| &lt;p&gt;Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.&lt;/p&gt;  | [optional] 
+ **limit** | **str**| &lt;p&gt;A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.&lt;/p&gt;  | [optional] 
+ **offset** | **str**| &lt;p&gt;Specify the starting record to return.&lt;/p&gt;  | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Encoding -  <br>  * Ratelimit-Limit -  <br>  * Ratelimit-Remaining -  <br>  * Ratelimit-Reset -  <br>  * Server -  <br>  * Via -  <br>  * X-Kong-Proxy-Latency -  <br>  * X-Kong-Upstream-Latency -  <br>  * X-Ratelimit-Limit-Hour -  <br>  * X-Ratelimit-Limit-Second -  <br>  * X-Ratelimit-Remaining-Hour -  <br>  * X-Ratelimit-Remaining-Second -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **kernel_extensions**
+> object kernel_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+
+Kernel Extensions
+
+<p>Get Kernel Extension attributes for macOS.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.PrismApi(api_client)
+    blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
+    device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
+    filter = '' # str | <p>SON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
+    sort_by = '' # str | <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p>  (optional)
+    limit = '' # str | <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (optional)
+    offset = '' # str | <p>Specify the starting record to return.</p>  (optional)
+
+    try:
+        # Kernel Extensions
+        api_response = api_instance.kernel_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->kernel_extensions:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PrismApi->kernel_extensions: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blueprint_ids** | **str**| &lt;p&gt;Filter results by one or more blueprint IDs separated by commas.&lt;/p&gt;  | [optional] 
+ **device_families** | **str**| &lt;p&gt;Filter results by one or more device families separate by commas.&lt;/p&gt;  | [optional] 
+ **filter** | **str**| &lt;p&gt;SON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.&lt;/p&gt;  | [optional] 
+ **sort_by** | **str**| &lt;p&gt;Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.&lt;/p&gt;  | [optional] 
+ **limit** | **str**| &lt;p&gt;A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.&lt;/p&gt;  | [optional] 
+ **offset** | **str**| &lt;p&gt;Specify the starting record to return.&lt;/p&gt;  | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Encoding -  <br>  * Ratelimit-Limit -  <br>  * Ratelimit-Remaining -  <br>  * Ratelimit-Reset -  <br>  * Server -  <br>  * Via -  <br>  * X-Kong-Proxy-Latency -  <br>  * X-Kong-Upstream-Latency -  <br>  * X-Ratelimit-Limit-Hour -  <br>  * X-Ratelimit-Limit-Second -  <br>  * X-Ratelimit-Remaining-Hour -  <br>  * X-Ratelimit-Remaining-Second -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **launch_agents_and_daemons**
+> object launch_agents_and_daemons(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+
+Launch Agents and Daemons
+
+<p>Get Launch Agents and Daemons installed on macOS.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.PrismApi(api_client)
+    blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
+    device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
+    filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
+    sort_by = '' # str | <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p>  (optional)
+    limit = '' # str | <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (optional)
+    offset = '' # str | <p>Specify the starting record to return.</p>  (optional)
+
+    try:
+        # Launch Agents and Daemons
+        api_response = api_instance.launch_agents_and_daemons(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->launch_agents_and_daemons:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PrismApi->launch_agents_and_daemons: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blueprint_ids** | **str**| &lt;p&gt;Filter results by one or more blueprint IDs separated by commas.&lt;/p&gt;  | [optional] 
+ **device_families** | **str**| &lt;p&gt;Filter results by one or more device families separate by commas.&lt;/p&gt;  | [optional] 
+ **filter** | **str**| &lt;p&gt;JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.&lt;/p&gt;  | [optional] 
+ **sort_by** | **str**| &lt;p&gt;Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.&lt;/p&gt;  | [optional] 
+ **limit** | **str**| &lt;p&gt;A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.&lt;/p&gt;  | [optional] 
+ **offset** | **str**| &lt;p&gt;Specify the starting record to return.&lt;/p&gt;  | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Encoding -  <br>  * Ratelimit-Limit -  <br>  * Ratelimit-Remaining -  <br>  * Ratelimit-Reset -  <br>  * Server -  <br>  * Via -  <br>  * X-Kong-Proxy-Latency -  <br>  * X-Kong-Upstream-Latency -  <br>  * X-Ratelimit-Limit-Hour -  <br>  * X-Ratelimit-Limit-Second -  <br>  * X-Ratelimit-Remaining-Hour -  <br>  * X-Ratelimit-Remaining-Second -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **local_users**
+> object local_users(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+
+Local users
+
+<p>Get Local Users detials for macOS.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.PrismApi(api_client)
+    blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
+    device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
+    filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
+    sort_by = '' # str | <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p>  (optional)
+    limit = '' # str | <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (optional)
+    offset = '' # str | <p>Specify the starting record to return.</p>  (optional)
+
+    try:
+        # Local users
+        api_response = api_instance.local_users(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->local_users:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PrismApi->local_users: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blueprint_ids** | **str**| &lt;p&gt;Filter results by one or more blueprint IDs separated by commas.&lt;/p&gt;  | [optional] 
+ **device_families** | **str**| &lt;p&gt;Filter results by one or more device families separate by commas.&lt;/p&gt;  | [optional] 
+ **filter** | **str**| &lt;p&gt;JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.&lt;/p&gt;  | [optional] 
+ **sort_by** | **str**| &lt;p&gt;Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.&lt;/p&gt;  | [optional] 
+ **limit** | **str**| &lt;p&gt;A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.&lt;/p&gt;  | [optional] 
+ **offset** | **str**| &lt;p&gt;Specify the starting record to return.&lt;/p&gt;  | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Encoding -  <br>  * Ratelimit-Limit -  <br>  * Ratelimit-Remaining -  <br>  * Ratelimit-Reset -  <br>  * Server -  <br>  * Via -  <br>  * X-Kong-Proxy-Latency -  <br>  * X-Kong-Upstream-Latency -  <br>  * X-Ratelimit-Limit-Hour -  <br>  * X-Ratelimit-Limit-Second -  <br>  * X-Ratelimit-Remaining-Hour -  <br>  * X-Ratelimit-Remaining-Second -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **request_category_export**
+> object request_category_export(body=body)
+
+Request category export
+
+<p>Request export of a category. The <code>id</code> key is used when checking the export status using the <em>Request category export</em> endpoint.</p> <p><strong>Request Body Parameters: application/json</strong></p> <div class=\"click-to-expand-wrapper is-table-wrapper\"><table> <thead> <tr> <th>Key</th> <th>Type</th> <th>Possible value(s)</th> <th>Description</th> </tr> </thead> <tbody> <tr> <td><code>blueprint_ids</code></td> <td><code>array</code></td> <td><code>[\"string\", \"string\", \"string\"]</code></td> <td>List of one or more comma separate blueprint IDs.</td> </tr> <tr> <td><code>category</code></td> <td><code>string</code></td> <td><code>apps</code> ,  <br /><code>activation_lock</code> ,  <br /><code>desktop_and_screensaver</code> ,  <br /><code>device_information</code> ,  <br /><code>gatekeeper_and_xprotect</code> ,  <br /><code>installed_profiles</code> ,  <br /><code>kernel_extensions</code> ,  <br /><code>local_users</code> ,  <br /><code>launch_agents_and_daemons</code> ,  <br /><code>system_extensions</code> ,  <br /><code>startup_settings</code> ,  <br /><code>transparency_database</code></td> <td>Only one category per export reqest.</td> </tr> <tr> <td><code>device_families</code></td> <td><code>array</code></td> <td><code>[\"Mac\", \"iPhone\", \"iPad\", \"tvOS\"]</code></td> <td>List of one or more comma separted string values for device families.</td> </tr> <tr> <td><code>filter</code></td> <td><code>object</code></td> <td><code>{\"apple_silicon\": {\"eq\": true}, \"device__name\": {\"like\": [\"this\", \"or_this\"]}}</code></td> <td>JSON schema object containing one or more key value pairs.  <br />  <br /><strong>Note</strong>: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</td> </tr> <tr> <td><code>sort_by</code></td> <td><code>string</code></td> <td></td> <td>Sort results by the name of a given response body key in either ascending (default behavior) or descending(`-`) order.</td> </tr> </tbody> </table> </div>
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.PrismApi(api_client)
+    body = 'body_example' # str |  (optional)
+
+    try:
+        # Request category export
+        api_response = api_instance.request_category_export(body=body)
+        print("The response of PrismApi->request_category_export:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PrismApi->request_category_export: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **str**|  | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Encoding -  <br>  * Ratelimit-Limit -  <br>  * Ratelimit-Remaining -  <br>  * Ratelimit-Reset -  <br>  * Server -  <br>  * Via -  <br>  * X-Kong-Proxy-Latency -  <br>  * X-Kong-Upstream-Latency -  <br>  * X-Ratelimit-Limit-Hour -  <br>  * X-Ratelimit-Limit-Second -  <br>  * X-Ratelimit-Remaining-Hour -  <br>  * X-Ratelimit-Remaining-Second -  <br>  |
+**400** | Bad Request |  * Date -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * Ratelimit-Limit -  <br>  * Ratelimit-Remaining -  <br>  * Ratelimit-Reset -  <br>  * Server -  <br>  * Via -  <br>  * X-Kong-Proxy-Latency -  <br>  * X-Kong-Upstream-Latency -  <br>  * X-Ratelimit-Limit-Hour -  <br>  * X-Ratelimit-Limit-Second -  <br>  * X-Ratelimit-Remaining-Hour -  <br>  * X-Ratelimit-Remaining-Second -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **startup_settings**
+> object startup_settings(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+
+Startup settings
+
+<p>Get Startup settings for macOS.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.PrismApi(api_client)
+    blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
+    device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
+    filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
+    sort_by = '' # str | <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p>  (optional)
+    limit = '' # str | <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (optional)
+    offset = '' # str | <p>Specify the starting record to return</p>  (optional)
+
+    try:
+        # Startup settings
+        api_response = api_instance.startup_settings(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->startup_settings:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PrismApi->startup_settings: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blueprint_ids** | **str**| &lt;p&gt;Filter results by one or more blueprint IDs separated by commas.&lt;/p&gt;  | [optional] 
+ **device_families** | **str**| &lt;p&gt;Filter results by one or more device families separate by commas.&lt;/p&gt;  | [optional] 
+ **filter** | **str**| &lt;p&gt;JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.&lt;/p&gt;  | [optional] 
+ **sort_by** | **str**| &lt;p&gt;Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.&lt;/p&gt;  | [optional] 
+ **limit** | **str**| &lt;p&gt;A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.&lt;/p&gt;  | [optional] 
+ **offset** | **str**| &lt;p&gt;Specify the starting record to return&lt;/p&gt;  | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Encoding -  <br>  * Ratelimit-Limit -  <br>  * Ratelimit-Remaining -  <br>  * Ratelimit-Reset -  <br>  * Server -  <br>  * Via -  <br>  * X-Kong-Proxy-Latency -  <br>  * X-Kong-Upstream-Latency -  <br>  * X-Ratelimit-Limit-Hour -  <br>  * X-Ratelimit-Limit-Second -  <br>  * X-Ratelimit-Remaining-Hour -  <br>  * X-Ratelimit-Remaining-Second -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **system_extensions**
+> object system_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+
+System Extensions
+
+<p>Get System Extension attributes for macOS.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.PrismApi(api_client)
+    blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
+    device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
+    filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
+    sort_by = '' # str | <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p>  (optional)
+    limit = '' # str | <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (optional)
+    offset = '' # str | <p>Specify the starting record to return.</p>  (optional)
+
+    try:
+        # System Extensions
+        api_response = api_instance.system_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->system_extensions:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PrismApi->system_extensions: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blueprint_ids** | **str**| &lt;p&gt;Filter results by one or more blueprint IDs separated by commas.&lt;/p&gt;  | [optional] 
+ **device_families** | **str**| &lt;p&gt;Filter results by one or more device families separate by commas.&lt;/p&gt;  | [optional] 
+ **filter** | **str**| &lt;p&gt;JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.&lt;/p&gt;  | [optional] 
+ **sort_by** | **str**| &lt;p&gt;Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.&lt;/p&gt;  | [optional] 
+ **limit** | **str**| &lt;p&gt;A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.&lt;/p&gt;  | [optional] 
+ **offset** | **str**| &lt;p&gt;Specify the starting record to return.&lt;/p&gt;  | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Encoding -  <br>  * Ratelimit-Limit -  <br>  * Ratelimit-Remaining -  <br>  * Ratelimit-Reset -  <br>  * Server -  <br>  * Via -  <br>  * X-Kong-Proxy-Latency -  <br>  * X-Kong-Upstream-Latency -  <br>  * X-Ratelimit-Limit-Hour -  <br>  * X-Ratelimit-Limit-Second -  <br>  * X-Ratelimit-Remaining-Hour -  <br>  * X-Ratelimit-Remaining-Second -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **transparency_database**
+> object transparency_database(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+
+Transparency database
+
+<p>Get Transparency Database (TCC) attributes for macOS.</p> 
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.PrismApi(api_client)
+    blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | <p>Filter results by one or more blueprint IDs separated by commas.</p>  (optional)
+    device_families = 'Mac,iPhone,iPad,tvOS' # str | <p>Filter results by one or more device families separate by commas.</p>  (optional)
+    filter = '' # str | <p>JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>  (optional)
+    sort_by = '' # str | <p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p>  (optional)
+    limit = '' # str | <p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>  (optional)
+    offset = '' # str | <p>Specify the starting record to return.</p>  (optional)
+
+    try:
+        # Transparency database
+        api_response = api_instance.transparency_database(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->transparency_database:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PrismApi->transparency_database: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blueprint_ids** | **str**| &lt;p&gt;Filter results by one or more blueprint IDs separated by commas.&lt;/p&gt;  | [optional] 
+ **device_families** | **str**| &lt;p&gt;Filter results by one or more device families separate by commas.&lt;/p&gt;  | [optional] 
+ **filter** | **str**| &lt;p&gt;JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.&lt;/p&gt;  | [optional] 
+ **sort_by** | **str**| &lt;p&gt;Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.&lt;/p&gt;  | [optional] 
+ **limit** | **str**| &lt;p&gt;A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.&lt;/p&gt;  | [optional] 
+ **offset** | **str**| &lt;p&gt;Specify the starting record to return.&lt;/p&gt;  | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Transfer-Encoding -  <br>  * Connection -  <br>  * Access-Control-Allow-Origin -  <br>  * Content-Encoding -  <br>  * Ratelimit-Limit -  <br>  * Ratelimit-Remaining -  <br>  * Ratelimit-Reset -  <br>  * Server -  <br>  * Via -  <br>  * X-Kong-Proxy-Latency -  <br>  * X-Kong-Upstream-Latency -  <br>  * X-Ratelimit-Limit-Hour -  <br>  * X-Ratelimit-Limit-Second -  <br>  * X-Ratelimit-Remaining-Hour -  <br>  * X-Ratelimit-Remaining-Second -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

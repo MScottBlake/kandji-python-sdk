@@ -1,7 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
-
 """
     Kandji API
 
@@ -14,29 +12,90 @@
 """  # noqa: E501
 
 
-__version__ = "1.0.0"
+import unittest
 
-# import apis into sdk package
 from kandji_python_sdk.api.blueprints_api import BlueprintsApi
-from kandji_python_sdk.api.devices_api import DevicesApi
-from kandji_python_sdk.api.integrations_api import IntegrationsApi
-from kandji_python_sdk.api.library_api import LibraryApi
-from kandji_python_sdk.api.prism_api import PrismApi
-from kandji_python_sdk.api.self_service_api import SelfServiceApi
-from kandji_python_sdk.api.settings_api import SettingsApi
-from kandji_python_sdk.api.tags_api import TagsApi
-from kandji_python_sdk.api.threat_details_api import ThreatDetailsApi
-from kandji_python_sdk.api.users_api import UsersApi
 
-# import ApiClient
-from kandji_python_sdk.api_response import ApiResponse
-from kandji_python_sdk.api_client import ApiClient
-from kandji_python_sdk.configuration import Configuration
-from kandji_python_sdk.exceptions import OpenApiException
-from kandji_python_sdk.exceptions import ApiTypeError
-from kandji_python_sdk.exceptions import ApiValueError
-from kandji_python_sdk.exceptions import ApiKeyError
-from kandji_python_sdk.exceptions import ApiAttributeError
-from kandji_python_sdk.exceptions import ApiException
 
-# import models into sdk package
+class TestBlueprintsApi(unittest.TestCase):
+    """BlueprintsApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = BlueprintsApi()
+
+    def tearDown(self) -> None:
+        pass
+
+    def test_assign_library_item(self) -> None:
+        """Test case for assign_library_item
+
+        Assign Library Item
+        """
+        pass
+
+    def test_create_blueprint(self) -> None:
+        """Test case for create_blueprint
+
+        Create Blueprint
+        """
+        pass
+
+    def test_delete_blueprint(self) -> None:
+        """Test case for delete_blueprint
+
+        Delete Blueprint
+        """
+        pass
+
+    def test_get_blueprint(self) -> None:
+        """Test case for get_blueprint
+
+        Get Blueprint
+        """
+        pass
+
+    def test_get_blueprint_templates(self) -> None:
+        """Test case for get_blueprint_templates
+
+        Get Blueprint Templates
+        """
+        pass
+
+    def test_get_manual_enrollment_profile(self) -> None:
+        """Test case for get_manual_enrollment_profile
+
+        Get Manual Enrollment Profile
+        """
+        pass
+
+    def test_list_blueprints(self) -> None:
+        """Test case for list_blueprints
+
+        List Blueprints
+        """
+        pass
+
+    def test_list_library_items(self) -> None:
+        """Test case for list_library_items
+
+        List Library Items
+        """
+        pass
+
+    def test_remove_library_item(self) -> None:
+        """Test case for remove_library_item
+
+        Remove Library Item
+        """
+        pass
+
+    def test_update_blueprint(self) -> None:
+        """Test case for update_blueprint
+
+        Update Blueprint
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -1,7 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
-
 """
     Kandji API
 
@@ -14,29 +12,48 @@
 """  # noqa: E501
 
 
-__version__ = "1.0.0"
+import unittest
 
-# import apis into sdk package
-from kandji_python_sdk.api.blueprints_api import BlueprintsApi
-from kandji_python_sdk.api.devices_api import DevicesApi
-from kandji_python_sdk.api.integrations_api import IntegrationsApi
-from kandji_python_sdk.api.library_api import LibraryApi
-from kandji_python_sdk.api.prism_api import PrismApi
-from kandji_python_sdk.api.self_service_api import SelfServiceApi
-from kandji_python_sdk.api.settings_api import SettingsApi
 from kandji_python_sdk.api.tags_api import TagsApi
-from kandji_python_sdk.api.threat_details_api import ThreatDetailsApi
-from kandji_python_sdk.api.users_api import UsersApi
 
-# import ApiClient
-from kandji_python_sdk.api_response import ApiResponse
-from kandji_python_sdk.api_client import ApiClient
-from kandji_python_sdk.configuration import Configuration
-from kandji_python_sdk.exceptions import OpenApiException
-from kandji_python_sdk.exceptions import ApiTypeError
-from kandji_python_sdk.exceptions import ApiValueError
-from kandji_python_sdk.exceptions import ApiKeyError
-from kandji_python_sdk.exceptions import ApiAttributeError
-from kandji_python_sdk.exceptions import ApiException
 
-# import models into sdk package
+class TestTagsApi(unittest.TestCase):
+    """TagsApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = TagsApi()
+
+    def tearDown(self) -> None:
+        pass
+
+    def test_create_tag(self) -> None:
+        """Test case for create_tag
+
+        Create Tag
+        """
+        pass
+
+    def test_delete_tag(self) -> None:
+        """Test case for delete_tag
+
+        Delete Tag
+        """
+        pass
+
+    def test_get_tags(self) -> None:
+        """Test case for get_tags
+
+        Get Tags
+        """
+        pass
+
+    def test_update_tag(self) -> None:
+        """Test case for update_tag
+
+        Update Tag
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

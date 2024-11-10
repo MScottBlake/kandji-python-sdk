@@ -1,98 +1,21 @@
-# kandji_python_sdk.TagsApi
+# kandji_python_sdk.LostModeApi
 
 All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_tag**](TagsApi.md#create_tag) | **POST** /api/v1/tags | Create Tag
-[**delete_tag**](TagsApi.md#delete_tag) | **DELETE** /api/v1/tags/{tag_id} | Delete Tag
-[**get_tags**](TagsApi.md#get_tags) | **GET** /api/v1/tags | Get Tags
-[**update_tag**](TagsApi.md#update_tag) | **PATCH** /api/v1/tags/{tag_id} | Update Tag
+[**disable_lost_mode**](LostModeApi.md#disable_lost_mode) | **POST** /api/v1/devices/{device_id}/action/disablelostmode | Disable Lost Mode
+[**enable_lost_mode**](LostModeApi.md#enable_lost_mode) | **POST** /api/v1/devices/{device_id}/action/enablelostmode | Enable Lost Mode
+[**play_lost_mode_sound**](LostModeApi.md#play_lost_mode_sound) | **POST** /api/v1/devices/{device_id}/action/playlostmodesound | Play Lost Mode Sound
+[**update_location**](LostModeApi.md#update_location) | **POST** /api/v1/devices/{device_id}/action/updatelocation | Update Location
 
 
-# **create_tag**
-> object create_tag(body=body)
+# **disable_lost_mode**
+> disable_lost_mode(device_id)
 
-Create Tag
+Disable Lost Mode
 
-Create a tag. Can only create one tag per request.
-
-### Example
-
-* Bearer (API Token) Authentication (bearer):
-
-```python
-import kandji_python_sdk
-from kandji_python_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_python_sdk.Configuration(
-    host = "https://<sub_domain>.api.kandji.io"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization (API Token): bearer
-configuration = kandji_python_sdk.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with kandji_python_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = kandji_python_sdk.TagsApi(api_client)
-    body = 'body_example' # str |  (optional)
-
-    try:
-        # Create Tag
-        api_response = api_instance.create_tag(body=body)
-        print("The response of TagsApi->create_tag:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TagsApi->create_tag: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **str**|  | [optional] 
-
-### Return type
-
-**object**
-
-### Authorization
-
-[bearer](../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | Created |  * Content-Type -  <br>  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **delete_tag**
-> delete_tag(tag_id)
-
-Delete Tag
-
-Delete a tag.   ### Request Parameters   `tag_id` (path parameter): The unique identifier of the tag.
+This command will send a request to turn off lost mode on iOS and iPadOS.   If the command is already pending, the message '*Disable lost mode is already pending for this device.*' will be in the response.
 
 ### Example
 
@@ -122,14 +45,14 @@ configuration = kandji_python_sdk.Configuration(
 # Enter a context with an instance of the API client
 with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_python_sdk.TagsApi(api_client)
-    tag_id = 'tag_id_example' # str | 
+    api_instance = kandji_python_sdk.LostModeApi(api_client)
+    device_id = 'device_id_example' # str | 
 
     try:
-        # Delete Tag
-        api_instance.delete_tag(tag_id)
+        # Disable Lost Mode
+        api_instance.disable_lost_mode(device_id)
     except Exception as e:
-        print("Exception when calling TagsApi->delete_tag: %s\n" % e)
+        print("Exception when calling LostModeApi->disable_lost_mode: %s\n" % e)
 ```
 
 
@@ -139,7 +62,7 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tag_id** | **str**|  | 
+ **device_id** | **str**|  | 
 
 ### Return type
 
@@ -158,16 +81,16 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | No Content |  -  |
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_tags**
-> object get_tags(search)
+# **enable_lost_mode**
+> enable_lost_mode(device_id, body=body)
 
-Get Tags
+Enable Lost Mode
 
-Return configured tags.
+This endpoint sends an MDM command to remotely turn on lost mode on iOS and iPadOS.   Optionally, a JSON payload can be sent in the request to set a lock message, phone number, and footnote on the target device.
 
 ### Example
 
@@ -197,94 +120,15 @@ configuration = kandji_python_sdk.Configuration(
 # Enter a context with an instance of the API client
 with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_python_sdk.TagsApi(api_client)
-    search = 'accuhive' # str | Return resultes containing a given tag search string.
-
-    try:
-        # Get Tags
-        api_response = api_instance.get_tags(search)
-        print("The response of TagsApi->get_tags:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TagsApi->get_tags: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **search** | **str**| Return resultes containing a given tag search string. | 
-
-### Return type
-
-**object**
-
-### Authorization
-
-[bearer](../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  * Content-Type -  <br>  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_tag**
-> object update_tag(tag_id, body=body)
-
-Update Tag
-
-Update tag name.   ### Request Parameters   `tag_id` (path parameter): The unique identifier of the tag.
-
-### Example
-
-* Bearer (API Token) Authentication (bearer):
-
-```python
-import kandji_python_sdk
-from kandji_python_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_python_sdk.Configuration(
-    host = "https://<sub_domain>.api.kandji.io"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization (API Token): bearer
-configuration = kandji_python_sdk.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with kandji_python_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = kandji_python_sdk.TagsApi(api_client)
-    tag_id = 'tag_id_example' # str | 
+    api_instance = kandji_python_sdk.LostModeApi(api_client)
+    device_id = 'device_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
-        # Update Tag
-        api_response = api_instance.update_tag(tag_id, body=body)
-        print("The response of TagsApi->update_tag:\n")
-        pprint(api_response)
+        # Enable Lost Mode
+        api_instance.enable_lost_mode(device_id, body=body)
     except Exception as e:
-        print("Exception when calling TagsApi->update_tag: %s\n" % e)
+        print("Exception when calling LostModeApi->enable_lost_mode: %s\n" % e)
 ```
 
 
@@ -294,12 +138,12 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tag_id** | **str**|  | 
+ **device_id** | **str**|  | 
  **body** | **str**|  | [optional] 
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -308,13 +152,163 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  * Content-Type -  <br>  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **play_lost_mode_sound**
+> play_lost_mode_sound(device_id)
+
+Play Lost Mode Sound
+
+This command will tell the target iOS or iPadOS device to play the lost mode sound.   **Note**: The Lost Mode sound will play for 2 minutes, even if the device is in silent mode. Anyone finding the device can silence the sound by pressing any of its side buttons.
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.LostModeApi(api_client)
+    device_id = 'device_id_example' # str | 
+
+    try:
+        # Play Lost Mode Sound
+        api_instance.play_lost_mode_sound(device_id)
+    except Exception as e:
+        print("Exception when calling LostModeApi->play_lost_mode_sound: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **device_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_location**
+> update_location(device_id)
+
+Update Location
+
+This endpoint sends an MDM command to update the location data on iOS and iPadOS.
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji_python_sdk
+from kandji_python_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji_python_sdk.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji_python_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji_python_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji_python_sdk.LostModeApi(api_client)
+    device_id = 'device_id_example' # str | 
+
+    try:
+        # Update Location
+        api_instance.update_location(device_id)
+    except Exception as e:
+        print("Exception when calling LostModeApi->update_location: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **device_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

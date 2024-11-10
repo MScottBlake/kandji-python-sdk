@@ -1,6 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
 """
     Kandji API
 
@@ -13,4 +12,83 @@
 """  # noqa: E501
 
 
-# import models into model package
+import unittest
+
+from kandji_python_sdk.api.device_information_api import DeviceInformationApi
+
+
+class TestDeviceInformationApi(unittest.TestCase):
+    """DeviceInformationApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = DeviceInformationApi()
+
+    def tearDown(self) -> None:
+        pass
+
+    def test_cancel_lost_mode(self) -> None:
+        """Test case for cancel_lost_mode
+
+        Cancel Lost Mode
+        """
+        pass
+
+    def test_get_device_activity(self) -> None:
+        """Test case for get_device_activity
+
+        Get Device Activity
+        """
+        pass
+
+    def test_get_device_apps(self) -> None:
+        """Test case for get_device_apps
+
+        Get Device Apps
+        """
+        pass
+
+    def test_get_device_details(self) -> None:
+        """Test case for get_device_details
+
+        Get Device Details
+        """
+        pass
+
+    def test_get_device_library_items(self) -> None:
+        """Test case for get_device_library_items
+
+        Get Device Library Items
+        """
+        pass
+
+    def test_get_device_lost_mode_details(self) -> None:
+        """Test case for get_device_lost_mode_details
+
+        Get Device Lost Mode details
+        """
+        pass
+
+    def test_get_device_parameters(self) -> None:
+        """Test case for get_device_parameters
+
+        Get Device Parameters
+        """
+        pass
+
+    def test_get_device_status(self) -> None:
+        """Test case for get_device_status
+
+        Get Device Status
+        """
+        pass
+
+    def test_list_devices(self) -> None:
+        """Test case for list_devices
+
+        List Devices
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

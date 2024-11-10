@@ -1,6 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
 """
     Kandji API
 
@@ -13,4 +12,55 @@
 """  # noqa: E501
 
 
-# import models into model package
+import unittest
+
+from kandji_python_sdk.api.custom_scripts_api import CustomScriptsApi
+
+
+class TestCustomScriptsApi(unittest.TestCase):
+    """CustomScriptsApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = CustomScriptsApi()
+
+    def tearDown(self) -> None:
+        pass
+
+    def test_create_custom_script(self) -> None:
+        """Test case for create_custom_script
+
+        Create Custom Script
+        """
+        pass
+
+    def test_delete_custom_script(self) -> None:
+        """Test case for delete_custom_script
+
+        Delete Custom Script
+        """
+        pass
+
+    def test_get_custom_script(self) -> None:
+        """Test case for get_custom_script
+
+        Get Custom Script
+        """
+        pass
+
+    def test_list_custom_scripts(self) -> None:
+        """Test case for list_custom_scripts
+
+        List Custom Scripts
+        """
+        pass
+
+    def test_update_custom_script(self) -> None:
+        """Test case for update_custom_script
+
+        Update Custom Script
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

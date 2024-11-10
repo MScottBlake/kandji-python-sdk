@@ -1,6 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
 """
     Kandji API
 
@@ -13,4 +12,55 @@
 """  # noqa: E501
 
 
-# import models into model package
+import unittest
+
+from kandji_python_sdk.api.notes_api import NotesApi
+
+
+class TestNotesApi(unittest.TestCase):
+    """NotesApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = NotesApi()
+
+    def tearDown(self) -> None:
+        pass
+
+    def test_create_device_note(self) -> None:
+        """Test case for create_device_note
+
+        Create Device Note
+        """
+        pass
+
+    def test_delete_device_note(self) -> None:
+        """Test case for delete_device_note
+
+        Delete Device Note
+        """
+        pass
+
+    def test_get_device_notes(self) -> None:
+        """Test case for get_device_notes
+
+        Get Device Notes
+        """
+        pass
+
+    def test_retrieve_device_note(self) -> None:
+        """Test case for retrieve_device_note
+
+        Retrieve Device Note
+        """
+        pass
+
+    def test_update_device_note(self) -> None:
+        """Test case for update_device_note
+
+        Update Device Note
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

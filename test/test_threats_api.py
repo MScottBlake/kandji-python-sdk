@@ -1,6 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
 """
     Kandji API
 
@@ -13,4 +12,27 @@
 """  # noqa: E501
 
 
-# import models into model package
+import unittest
+
+from kandji_python_sdk.api.threats_api import ThreatsApi
+
+
+class TestThreatsApi(unittest.TestCase):
+    """ThreatsApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = ThreatsApi()
+
+    def tearDown(self) -> None:
+        pass
+
+    def test_get_threat_details(self) -> None:
+        """Test case for get_threat_details
+
+        Get Threat Details
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

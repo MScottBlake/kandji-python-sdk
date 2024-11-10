@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 Licensing
 
-<p>Returns Kandji tenant licensing and utilization information.</p> 
+Returns Kandji tenant licensing and utilization information.
 
 ### Example
 

@@ -1,6 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
 """
     Kandji API
 
@@ -13,4 +12,62 @@
 """  # noqa: E501
 
 
-# import models into model package
+import unittest
+
+from kandji_python_sdk.api.custom_apps_api import CustomAppsApi
+
+
+class TestCustomAppsApi(unittest.TestCase):
+    """CustomAppsApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = CustomAppsApi()
+
+    def tearDown(self) -> None:
+        pass
+
+    def test_create_custom_app(self) -> None:
+        """Test case for create_custom_app
+
+        Create Custom App
+        """
+        pass
+
+    def test_delete_custom_app(self) -> None:
+        """Test case for delete_custom_app
+
+        Delete Custom App
+        """
+        pass
+
+    def test_get_custom_app(self) -> None:
+        """Test case for get_custom_app
+
+        Get Custom App
+        """
+        pass
+
+    def test_list_custom_apps(self) -> None:
+        """Test case for list_custom_apps
+
+        List Custom Apps
+        """
+        pass
+
+    def test_update_custom_app(self) -> None:
+        """Test case for update_custom_app
+
+        Update Custom App
+        """
+        pass
+
+    def test_upload_custom_app(self) -> None:
+        """Test case for upload_custom_app
+
+        Upload Custom App
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

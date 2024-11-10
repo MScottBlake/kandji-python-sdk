@@ -1,6 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
 """
     Kandji API
 
@@ -13,4 +12,55 @@
 """  # noqa: E501
 
 
-# import models into model package
+import unittest
+
+from kandji_python_sdk.api.custom_profiles_api import CustomProfilesApi
+
+
+class TestCustomProfilesApi(unittest.TestCase):
+    """CustomProfilesApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = CustomProfilesApi()
+
+    def tearDown(self) -> None:
+        pass
+
+    def test_create_custom_profile(self) -> None:
+        """Test case for create_custom_profile
+
+        Create Custom Profile
+        """
+        pass
+
+    def test_delete_custom_profile(self) -> None:
+        """Test case for delete_custom_profile
+
+        Delete Custom Profile
+        """
+        pass
+
+    def test_get_custom_profile(self) -> None:
+        """Test case for get_custom_profile
+
+        Get Custom Profile
+        """
+        pass
+
+    def test_list_custom_profiles(self) -> None:
+        """Test case for list_custom_profiles
+
+        List Custom Profiles
+        """
+        pass
+
+    def test_update_custom_profile(self) -> None:
+        """Test case for update_custom_profile
+
+        Update Custom Profile
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

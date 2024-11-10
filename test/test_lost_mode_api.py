@@ -1,6 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
 """
     Kandji API
 
@@ -13,4 +12,48 @@
 """  # noqa: E501
 
 
-# import models into model package
+import unittest
+
+from kandji_python_sdk.api.lost_mode_api import LostModeApi
+
+
+class TestLostModeApi(unittest.TestCase):
+    """LostModeApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = LostModeApi()
+
+    def tearDown(self) -> None:
+        pass
+
+    def test_disable_lost_mode(self) -> None:
+        """Test case for disable_lost_mode
+
+        Disable Lost Mode
+        """
+        pass
+
+    def test_enable_lost_mode(self) -> None:
+        """Test case for enable_lost_mode
+
+        Enable Lost Mode
+        """
+        pass
+
+    def test_play_lost_mode_sound(self) -> None:
+        """Test case for play_lost_mode_sound
+
+        Play Lost Mode Sound
+        """
+        pass
+
+    def test_update_location(self) -> None:
+        """Test case for update_location
+
+        Update Location
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

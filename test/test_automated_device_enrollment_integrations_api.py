@@ -1,6 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
 """
     Kandji API
 
@@ -13,4 +12,97 @@
 """  # noqa: E501
 
 
-# import models into model package
+import unittest
+
+from kandji_python_sdk.api.automated_device_enrollment_integrations_api import AutomatedDeviceEnrollmentIntegrationsApi
+
+
+class TestAutomatedDeviceEnrollmentIntegrationsApi(unittest.TestCase):
+    """AutomatedDeviceEnrollmentIntegrationsApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = AutomatedDeviceEnrollmentIntegrationsApi()
+
+    def tearDown(self) -> None:
+        pass
+
+    def test_create_ade_integration(self) -> None:
+        """Test case for create_ade_integration
+
+        Create ADE integration
+        """
+        pass
+
+    def test_delete_ade_integration(self) -> None:
+        """Test case for delete_ade_integration
+
+        Delete ADE integration
+        """
+        pass
+
+    def test_download_ade_public_key(self) -> None:
+        """Test case for download_ade_public_key
+
+        Download ADE public key
+        """
+        pass
+
+    def test_get_ade_device(self) -> None:
+        """Test case for get_ade_device
+
+        Get ADE device
+        """
+        pass
+
+    def test_get_ade_integration(self) -> None:
+        """Test case for get_ade_integration
+
+        Get ADE integration
+        """
+        pass
+
+    def test_list_ade_devices(self) -> None:
+        """Test case for list_ade_devices
+
+        List ADE devices
+        """
+        pass
+
+    def test_list_ade_integrations(self) -> None:
+        """Test case for list_ade_integrations
+
+        List ADE integrations
+        """
+        pass
+
+    def test_list_devices_associated_to_ade_token(self) -> None:
+        """Test case for list_devices_associated_to_ade_token
+
+        List devices associated to ADE token
+        """
+        pass
+
+    def test_renew_ade_integration(self) -> None:
+        """Test case for renew_ade_integration
+
+        Renew ADE integration
+        """
+        pass
+
+    def test_update_ade_device(self) -> None:
+        """Test case for update_ade_device
+
+        Update ADE device
+        """
+        pass
+
+    def test_update_ade_integration(self) -> None:
+        """Test case for update_ade_integration
+
+        Update ADE integration
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -1,6 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
 """
     Kandji API
 
@@ -13,4 +12,125 @@
 """  # noqa: E501
 
 
-# import models into model package
+import unittest
+
+from kandji_python_sdk.api.device_actions_api import DeviceActionsApi
+
+
+class TestDeviceActionsApi(unittest.TestCase):
+    """DeviceActionsApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = DeviceActionsApi()
+
+    def tearDown(self) -> None:
+        pass
+
+    def test_clear_passcode(self) -> None:
+        """Test case for clear_passcode
+
+        Clear Passcode
+        """
+        pass
+
+    def test_delete_device(self) -> None:
+        """Test case for delete_device
+
+        Delete Device
+        """
+        pass
+
+    def test_delete_user(self) -> None:
+        """Test case for delete_user
+
+        Delete User
+        """
+        pass
+
+    def test_erase_device(self) -> None:
+        """Test case for erase_device
+
+        Erase Device
+        """
+        pass
+
+    def test_get_device_commands(self) -> None:
+        """Test case for get_device_commands
+
+        Get Device Commands
+        """
+        pass
+
+    def test_lock_device(self) -> None:
+        """Test case for lock_device
+
+        Lock Device
+        """
+        pass
+
+    def test_reinstall_agent(self) -> None:
+        """Test case for reinstall_agent
+
+        Reinstall Agent
+        """
+        pass
+
+    def test_remote_desktop(self) -> None:
+        """Test case for remote_desktop
+
+        Remote Desktop
+        """
+        pass
+
+    def test_renew_mdm_profile(self) -> None:
+        """Test case for renew_mdm_profile
+
+        Renew MDM Profile
+        """
+        pass
+
+    def test_restart_device(self) -> None:
+        """Test case for restart_device
+
+        Restart Device
+        """
+        pass
+
+    def test_send_blankpush(self) -> None:
+        """Test case for send_blankpush
+
+        Send Blankpush
+        """
+        pass
+
+    def test_set_name(self) -> None:
+        """Test case for set_name
+
+        Set Name
+        """
+        pass
+
+    def test_shutdown(self) -> None:
+        """Test case for shutdown
+
+        Shutdown
+        """
+        pass
+
+    def test_unlock_account(self) -> None:
+        """Test case for unlock_account
+
+        Unlock Account
+        """
+        pass
+
+    def test_update_inventory(self) -> None:
+        """Test case for update_inventory
+
+        Update Inventory
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

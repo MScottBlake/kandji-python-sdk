@@ -1,6 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
 """
     Kandji API
 
@@ -13,4 +12,34 @@
 """  # noqa: E501
 
 
-# import models into model package
+import unittest
+
+from kandji_python_sdk.api.library_items_api import LibraryItemsApi
+
+
+class TestLibraryItemsApi(unittest.TestCase):
+    """LibraryItemsApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = LibraryItemsApi()
+
+    def tearDown(self) -> None:
+        pass
+
+    def test_get_library_item_activity(self) -> None:
+        """Test case for get_library_item_activity
+
+        Get Library Item Activity
+        """
+        pass
+
+    def test_get_library_item_statuses(self) -> None:
+        """Test case for get_library_item_statuses
+
+        Get Library Item Statuses
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

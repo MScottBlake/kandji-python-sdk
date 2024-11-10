@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Get User
 
-<p>This endpoint makes a request to retrieve a specified user directory integration user by id.</p> <h3 id=\"request-parameters\">Request Parameters</h3> <p>user_id (path parameter): The unique identifier of the user directory integration user.</p> 
+This endpoint makes a request to retrieve a specified user directory integration user by id.   ### Request Parameters   user\\_id (path parameter): The unique identifier of the user directory integration user.
 
 ### Example
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 List Users
 
-<p>This endpoint makes a request to retrieve a list of users from user directory integrations.</p> <p>A maximum of 300 records are returned per request, and pagination can be performed leveraging the URLs provided in the <code>next</code> and <code>previous</code> keys in the response. If there are no more results available, the respective key will be <code>null</code>.</p> 
+This endpoint makes a request to retrieve a list of users from user directory integrations.   A maximum of 300 records are returned per request, and pagination can be performed leveraging the URLs provided in the `next` and `previous` keys in the response. If there are no more results available, the respective key will be `null`.
 
 ### Example
 
@@ -121,10 +121,10 @@ configuration = kandji_python_sdk.Configuration(
 with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji_python_sdk.UsersApi(api_client)
-    email = 'test_user_01@accuhive.io' # str | <p>Returns users with email addresses containing the provided string.</p>  (optional)
-    id = '69c009ca-1f78-4bdf-bb93-08d6d39041db' # str | <p>Search for a user matching the provided UUID value.</p>  (optional)
-    integration_id = 'f7461096-4ef9-43aa-88e9-ca1967ba0b38' # str | <p>Search for a integration matching the provided UUID value.</p>  (optional)
-    archived = 'false' # str | <p>Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. </p>  (optional)
+    email = 'test_user_01@accuhive.io' # str | Returns users with email addresses containing the provided string. (optional)
+    id = '69c009ca-1f78-4bdf-bb93-08d6d39041db' # str | Search for a user matching the provided UUID value. (optional)
+    integration_id = 'f7461096-4ef9-43aa-88e9-ca1967ba0b38' # str | Search for a integration matching the provided UUID value. (optional)
+    archived = 'false' # str | Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. (optional)
 
     try:
         # List Users
@@ -142,10 +142,10 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email** | **str**| &lt;p&gt;Returns users with email addresses containing the provided string.&lt;/p&gt;  | [optional] 
- **id** | **str**| &lt;p&gt;Search for a user matching the provided UUID value.&lt;/p&gt;  | [optional] 
- **integration_id** | **str**| &lt;p&gt;Search for a integration matching the provided UUID value.&lt;/p&gt;  | [optional] 
- **archived** | **str**| &lt;p&gt;Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. &lt;/p&gt;  | [optional] 
+ **email** | **str**| Returns users with email addresses containing the provided string. | [optional] 
+ **id** | **str**| Search for a user matching the provided UUID value. | [optional] 
+ **integration_id** | **str**| Search for a integration matching the provided UUID value. | [optional] 
+ **archived** | **str**| Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. | [optional] 
 
 ### Return type
 

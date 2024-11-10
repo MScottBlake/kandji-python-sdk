@@ -1,6 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
 """
     Kandji API
 
@@ -13,4 +12,48 @@
 """  # noqa: E501
 
 
-# import models into model package
+import unittest
+
+from kandji_python_sdk.api.device_secrets_api import DeviceSecretsApi
+
+
+class TestDeviceSecretsApi(unittest.TestCase):
+    """DeviceSecretsApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = DeviceSecretsApi()
+
+    def tearDown(self) -> None:
+        pass
+
+    def test_get_activation_lock_bypass_code(self) -> None:
+        """Test case for get_activation_lock_bypass_code
+
+        Get Activation Lock Bypass Code
+        """
+        pass
+
+    def test_get_filevault_recovery_key(self) -> None:
+        """Test case for get_filevault_recovery_key
+
+        Get FileVault Recovery Key
+        """
+        pass
+
+    def test_get_recovery_lock_password(self) -> None:
+        """Test case for get_recovery_lock_password
+
+        Get Recovery Lock Password
+        """
+        pass
+
+    def test_get_unlock_pin(self) -> None:
+        """Test case for get_unlock_pin
+
+        Get Unlock Pin
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

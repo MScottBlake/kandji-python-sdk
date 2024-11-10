@@ -62,13 +62,13 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
         This request will create a new ADE integration.   The default `blueprint_id`, `phone` number, `email` address, and MDM server token `file` downloaded from ABM are required and must be sent in the request.
 
-        :param blueprint_id:  (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
-        :param email:  (required)
+        :param email: (required)
         :type email: str
         :param file: This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. (required)
         :type file: bytearray
-        :param phone:  (required)
+        :param phone: (required)
         :type phone: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -141,13 +141,13 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
         This request will create a new ADE integration.   The default `blueprint_id`, `phone` number, `email` address, and MDM server token `file` downloaded from ABM are required and must be sent in the request.
 
-        :param blueprint_id:  (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
-        :param email:  (required)
+        :param email: (required)
         :type email: str
         :param file: This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. (required)
         :type file: bytearray
-        :param phone:  (required)
+        :param phone: (required)
         :type phone: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -220,13 +220,13 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
         This request will create a new ADE integration.   The default `blueprint_id`, `phone` number, `email` address, and MDM server token `file` downloaded from ABM are required and must be sent in the request.
 
-        :param blueprint_id:  (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
-        :param email:  (required)
+        :param email: (required)
         :type email: str
         :param file: This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. (required)
         :type file: bytearray
-        :param phone:  (required)
+        :param phone: (required)
         :type phone: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2331,13 +2331,13 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
         :param ade_token_id: (required)
         :type ade_token_id: str
-        :param blueprint_id:  (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
-        :param email:  (required)
+        :param email: (required)
         :type email: str
         :param file: This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. (required)
         :type file: bytearray
-        :param phone:  (required)
+        :param phone: (required)
         :type phone: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2414,13 +2414,13 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
         :param ade_token_id: (required)
         :type ade_token_id: str
-        :param blueprint_id:  (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
-        :param email:  (required)
+        :param email: (required)
         :type email: str
         :param file: This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. (required)
         :type file: bytearray
-        :param phone:  (required)
+        :param phone: (required)
         :type phone: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2497,13 +2497,13 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
         :param ade_token_id: (required)
         :type ade_token_id: str
-        :param blueprint_id:  (required)
+        :param blueprint_id: (required)
         :type blueprint_id: str
-        :param email:  (required)
+        :param email: (required)
         :type email: str
         :param file: This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. (required)
         :type file: bytearray
-        :param phone:  (required)
+        :param phone: (required)
         :type phone: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

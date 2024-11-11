@@ -46,10 +46,16 @@ jobs:
             --pattern "kandji_openapi\.yaml" \
             --output "${{ env.openapi_file }}"
 
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: openapi_file
+          path: ${{ env.openapi_file }}
+
       - name: Generate Client
         uses: openapi-generators/openapitools-generator-action@v1
         with:
-          config-file: kandji-generator-config.yml
+          config-file: kandji-generator-config.yaml
           generator: ${{ env.language }}
           generator-tag: latest-release
 
@@ -57,16 +63,16 @@ jobs:
         run: |
           rm -rf "${{ env.openapi_file }}"
 
-          - name: Check for Changes
-          id: check_changes
-          run: |
-            if [[ -z $(git status --porcelain) ]]; then
-              echo "No changes to commit."
-              echo "continue=false" >> $GITHUB_ENV
-            else
-              echo "Changes detected."
-              echo "continue=true" >> $GITHUB_ENV
-            fi
+      - name: Check for Changes
+        id: check_changes
+        run: |
+          if [[ -z $(git status --porcelain) ]]; then
+            echo "No changes to commit."
+            echo "continue=false" >> $GITHUB_ENV
+          else
+            echo "Changes detected."
+            echo "continue=true" >> $GITHUB_ENV
+          fi
 
       - name: Create Pull Request
         if: env.continue == 'true'

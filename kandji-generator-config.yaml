@@ -1,5 +1,3 @@
-generatorName: python
-inputSpec: kandji_openapi.yaml
 outputDir: .
 verbose: False
 skipOverwrite: True

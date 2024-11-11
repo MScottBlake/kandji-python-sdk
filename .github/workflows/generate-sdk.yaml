@@ -1,7 +1,7 @@
-name: Generate SDK
+name: 1 Generate SDK
 
 on:
-  workflow_dispatch: # Allows manual triggering
+  workflow_dispatch:
   repository_dispatch:
     types: [generate-sdk]
 
@@ -16,51 +16,65 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.KANDJI_POSTMAN_TO_OPENAPI_TOKEN }}
+          token: ${{ secrets.KANDJI_OPENAPI_TOKEN }}
+
+      - name: Delete Generated Files
+        run: |
+          rm -rf .github/workflows/${{ env.language }}.yml \
+            .gitlab-ci.yml \
+            .openapi-generator-ignore \
+            .travis.yml \
+            git_push.sh \
+            pyproject.toml \
+            README.md \
+            requirements.txt \
+            setup.cfg \
+            setup.py \
+            test-requirements.txt \
+            tox.ini \
+            docs \
+            kandji_${{ env.language }}_sdk \
+            test \
+
 
       - name: Download Kandji OpenAPI file
         env:
-          GH_TOKEN: ${{ secrets.KANDJI_POSTMAN_TO_OPENAPI_TOKEN }}
+          GH_TOKEN: ${{ secrets.KANDJI_OPENAPI_TOKEN }}
         run: |
           gh release download \
-            --repo "MScottBlake/kandji-postman-to-openapi" \
+            --repo "MScottBlake/kandji-openapi-spec" \
             --pattern "kandji_openapi\.yaml" \
             --output "${{ env.openapi_file }}"
 
       - name: Generate Client
         uses: openapi-generators/openapitools-generator-action@v1
         with:
-          # config-file: generator-config.yml
-          command-args:
-            --git-host=github.com
-            --git-repo-id=kandji-${{ env.language }}-sdk
-            --git-user-id=MScottBlake
-            --output=.
-            --package-name=kandji_${{ env.language }}_sdk
-            --remove-operation-id-prefix
+          config-file: kandji-generator-config.yml
           generator: ${{ env.language }}
           generator-tag: latest-release
-          openapi-file: ${{ env.openapi_file }}
 
       - name: Delete Kandji OpenAPI file
         run: |
           rm -rf "${{ env.openapi_file }}"
 
-      - name: Commit and Push to GitHub
-        run: |
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -m "Automated SDK Update"
-          git push
+          - name: Check for Changes
+          id: check_changes
+          run: |
+            if [[ -z $(git status --porcelain) ]]; then
+              echo "No changes to commit."
+              echo "continue=false" >> $GITHUB_ENV
+            else
+              echo "Changes detected."
+              echo "continue=true" >> $GITHUB_ENV
+            fi
 
-      - name: Create GitHub Release
-        if: success()
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          tag="sdk-update-$(date +'%Y%m%d%H%M%S')"
-          gh release create "${tag}" \
-            --title "Automated SDK Update $(date +'%Y-%m-%d %H:%M:%S')" \
-            --generate-notes \
-            --latest
+      - name: Create Pull Request
+        if: env.continue == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          sign-commits: true
+          commit-message: "[auto] Updated Kandji SDK"
+          branch: update-sdk
+          base: main
+          delete-branch: true
+          title: "[auto] Updated Kandji SDK"

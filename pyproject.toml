@@ -2,8 +2,8 @@
 name = "kandji_python_sdk"
 version = "1.0.0"
 description = "Kandji API"
-authors = ["OpenAPI Generator Community <team@openapitools.org>"]
-license = "NoLicense"
+authors = ["Scott Blake <mitchelsblake@gmail.com>"]
+license = "MIT License"
 readme = "README.md"
 repository = "https://github.com/MScottBlake/kandji-python-sdk"
 keywords = ["OpenAPI", "OpenAPI-Generator", "Kandji API"]

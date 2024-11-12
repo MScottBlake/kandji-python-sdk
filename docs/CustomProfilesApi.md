@@ -47,7 +47,7 @@ configuration = kandji_python_sdk.Configuration(
 with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji_python_sdk.CustomProfilesApi(api_client)
-    active = 'active_example' # str | (Optional, default\\\\=true) Whether this library item is active
+    active = 'active_example' # str | (Optional, default=true) Whether this library item is active
     file = None # bytearray | (Required) The path to the profile's .mobileconfig file
     name = 'name_example' # str | (Required) The profile name
 
@@ -67,7 +67,7 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **active** | **str**| (Optional, default\\\\&#x3D;true) Whether this library item is active | 
+ **active** | **str**| (Optional, default&#x3D;true) Whether this library item is active | 
  **file** | **bytearray**| (Required) The path to the profile&#39;s .mobileconfig file | 
  **name** | **str**| (Required) The profile name | 
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 Delete Custom Profile
 
-NOTICE: This is permanent so be careful.   This endpoint sends a request to delete a specific custom profile from the Kandji library.    ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+<p>NOTICE: This is permanent so be careful.</p> <p>This endpoint sends a request to delete a specific custom profile from the Kandji library.</p>  <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
 ### Example
 
@@ -173,7 +173,7 @@ void (empty response body)
 
 Get Custom Profile
 
-This endpoint retrieves details about a specific custom profile from the Kandji library.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+<p>This endpoint retrieves details about a specific custom profile from the Kandji library.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
 ### Example
 
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 
 Update Custom Profile
 
-This request allows you to update a custom profile in the Kandji library.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+<p>This request allows you to update a custom profile in the Kandji library.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>  <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
 ### Example
 

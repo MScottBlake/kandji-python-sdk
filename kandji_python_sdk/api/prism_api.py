@@ -3,9 +3,10 @@
 """
     Kandji API
 
-    Welcome to the Kandji API Documentation =======================================    You can find your API URL in Settings \\> Access. The API URL will follow the below formats.   * US \\- `https://SubDomain.api.kandji.io` * EU \\- `https://SubDomain.api.eu.kandji.io`    For information on how to obtain an API token, please refer to the following support article.   <https://support.kandji.io/api>   #### Rate Limit    The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.   #### Request Methods   HTTP request methods supported by the Kandji API.     | Method | Definition | | --- | --- | | GET | The `GET` method requests a representation of the specified resource. | | POST | The `POST` method submits an entity to the specified resource. | | PATCH | The `PATCH` method applies partial modifications to a resource. | | DELETE | The `DELETE` method deletes the specified resource. |   #### Response codes   Not all response codes apply to every endpoint.     | Code | Response | | --- | --- | | 200 | OK | | 201 | Created | | 204 | No content | |  | Typical response when sending the DELETE method. | | 400 | Bad Request | |  | 'Command already running' \\- The command may already be running in a *Pending* state waiting on the device. | |  | 'Command is not allowed for current device' \\- The command may not be compatible with the target device. | |  | 'JSON parse error \\- Expecting ',' delimiter: line 3 column 2 (char 65\\)' | | 401 | Unauthorized | |  | This error can occur if the token is incorrect, was revoked, or the token has expired. |  | 403 | Forbidden | |  | The request was understood but cannot be authorized. | | 404 | Not found | |  | Unable to locate the resource in the Kandji tenant. | | 415 | Unsupported Media Type | |  | The request contains a media type which the server or resource does not support. | | 500 | Internal server error |  | 503 | Service unavailable | |  | This error can occur if a file upload is still being processed via the custom apps API. |   #### Data structure   The API returns all structured responses in JSON schema format.   #### Examples    Code examples using the API can be found in the Kandji support [GitHub](https://github.com/kandji-inc/support/tree/main/api-tools).
+    <html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome to the Kandji API Documentation</h1> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p>  </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p>  <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the Kandji API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th>  </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td>  <td>The <code>POST</code> method submits an entity to the specified resource.</td>  </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>  <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr>  <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr>  <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td>  </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td>  </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr>  <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr>  <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td>  </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td>  </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Kandji tenant.</td> </tr> <tr> <td>415</td>  <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr>  <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table>  </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4>  <p>Code examples using the API can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
 
     The version of the OpenAPI document: 1.0.0
+    Contact: mitchelsblake@gmail.com
     Generated by OpenAPI Generator (https://openapi-generator.tech)
 
     Do not edit the class manually.
@@ -44,8 +45,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -70,9 +71,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -131,8 +132,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -157,9 +158,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -218,8 +219,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -244,9 +245,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -385,8 +386,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -411,9 +412,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -472,8 +473,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -498,9 +499,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -559,8 +560,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -585,9 +586,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -733,8 +734,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -759,9 +760,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -820,8 +821,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -846,9 +847,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -907,8 +908,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -933,9 +934,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -1081,8 +1082,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -1107,9 +1108,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -1168,8 +1169,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -1194,9 +1195,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -1255,8 +1256,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -1281,9 +1282,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -1426,7 +1427,7 @@ class PrismApi:
     @validate_call
     def count(
         self,
-        category: Annotated[StrictStr, Field(description="Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores ('\\\\\\_') when using the API query.   Examples: apps device\\\\\\_information kernel\\\\\\_extensions system\\\\\\_extensions")],
+        category: Annotated[StrictStr, Field(description="<p>Return the count of records for the specified category.   If a category contains spaces substitute the spaces for underscores (&quot;_&quot;) when using the API query.</p> <p>Examples: apps device_information kernel_extensions system_extensions</p>")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1442,9 +1443,9 @@ class PrismApi:
     ) -> object:
         """Count
 
-        Get the total record count for the specified Prism category.    If a category contains spaces substitute the spaces for underscores ('\\_') when using the API query.   Example: `Device information` becomes `device_information`.
+        <p>Get the total record count for the specified Prism category.</p>  <p>If a category contains spaces substitute the spaces for underscores (&quot;_&quot;) when using the API query.</p> <p>Example: <code>Device information</code> becomes <code>device_information</code>.</p>
 
-        :param category: Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores ('\\\\\\_') when using the API query.   Examples: apps device\\\\\\_information kernel\\\\\\_extensions system\\\\\\_extensions (required)
+        :param category: <p>Return the count of records for the specified category.   If a category contains spaces substitute the spaces for underscores (&quot;_&quot;) when using the API query.</p> <p>Examples: apps device_information kernel_extensions system_extensions</p> (required)
         :type category: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1493,7 +1494,7 @@ class PrismApi:
     @validate_call
     def count_with_http_info(
         self,
-        category: Annotated[StrictStr, Field(description="Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores ('\\\\\\_') when using the API query.   Examples: apps device\\\\\\_information kernel\\\\\\_extensions system\\\\\\_extensions")],
+        category: Annotated[StrictStr, Field(description="<p>Return the count of records for the specified category.   If a category contains spaces substitute the spaces for underscores (&quot;_&quot;) when using the API query.</p> <p>Examples: apps device_information kernel_extensions system_extensions</p>")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1509,9 +1510,9 @@ class PrismApi:
     ) -> ApiResponse[object]:
         """Count
 
-        Get the total record count for the specified Prism category.    If a category contains spaces substitute the spaces for underscores ('\\_') when using the API query.   Example: `Device information` becomes `device_information`.
+        <p>Get the total record count for the specified Prism category.</p>  <p>If a category contains spaces substitute the spaces for underscores (&quot;_&quot;) when using the API query.</p> <p>Example: <code>Device information</code> becomes <code>device_information</code>.</p>
 
-        :param category: Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores ('\\\\\\_') when using the API query.   Examples: apps device\\\\\\_information kernel\\\\\\_extensions system\\\\\\_extensions (required)
+        :param category: <p>Return the count of records for the specified category.   If a category contains spaces substitute the spaces for underscores (&quot;_&quot;) when using the API query.</p> <p>Examples: apps device_information kernel_extensions system_extensions</p> (required)
         :type category: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1560,7 +1561,7 @@ class PrismApi:
     @validate_call
     def count_without_preload_content(
         self,
-        category: Annotated[StrictStr, Field(description="Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores ('\\\\\\_') when using the API query.   Examples: apps device\\\\\\_information kernel\\\\\\_extensions system\\\\\\_extensions")],
+        category: Annotated[StrictStr, Field(description="<p>Return the count of records for the specified category.   If a category contains spaces substitute the spaces for underscores (&quot;_&quot;) when using the API query.</p> <p>Examples: apps device_information kernel_extensions system_extensions</p>")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1576,9 +1577,9 @@ class PrismApi:
     ) -> RESTResponseType:
         """Count
 
-        Get the total record count for the specified Prism category.    If a category contains spaces substitute the spaces for underscores ('\\_') when using the API query.   Example: `Device information` becomes `device_information`.
+        <p>Get the total record count for the specified Prism category.</p>  <p>If a category contains spaces substitute the spaces for underscores (&quot;_&quot;) when using the API query.</p> <p>Example: <code>Device information</code> becomes <code>device_information</code>.</p>
 
-        :param category: Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores ('\\\\\\_') when using the API query.   Examples: apps device\\\\\\_information kernel\\\\\\_extensions system\\\\\\_extensions (required)
+        :param category: <p>Return the count of records for the specified category.   If a category contains spaces substitute the spaces for underscores (&quot;_&quot;) when using the API query.</p> <p>Examples: apps device_information kernel_extensions system_extensions</p> (required)
         :type category: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1692,8 +1693,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -1718,9 +1719,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -1779,8 +1780,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -1805,9 +1806,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -1866,8 +1867,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -1892,9 +1893,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -2039,9 +2040,9 @@ class PrismApi:
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.    Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs.</p>  <p>Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         body: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -2065,11 +2066,11 @@ class PrismApi:
         :type blueprint_ids: str
         :param device_families: Filter results by one or more device families separate by commas.
         :type device_families: str
-        :param filter: JSON schema object containing one or more key value pairs.    Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
+        :param filter: <p>JSON schema object containing one or more key value pairs.</p>  <p>Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -2130,9 +2131,9 @@ class PrismApi:
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.    Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs.</p>  <p>Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         body: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -2156,11 +2157,11 @@ class PrismApi:
         :type blueprint_ids: str
         :param device_families: Filter results by one or more device families separate by commas.
         :type device_families: str
-        :param filter: JSON schema object containing one or more key value pairs.    Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
+        :param filter: <p>JSON schema object containing one or more key value pairs.</p>  <p>Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -2221,9 +2222,9 @@ class PrismApi:
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.    Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>JSON schema object containing one or more key value pairs.</p>  <p>Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         body: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -2247,11 +2248,11 @@ class PrismApi:
         :type blueprint_ids: str
         :param device_families: Filter results by one or more device families separate by commas.
         :type device_families: str
-        :param filter: JSON schema object containing one or more key value pairs.    Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
+        :param filter: <p>JSON schema object containing one or more key value pairs.</p>  <p>Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -2416,8 +2417,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -2442,9 +2443,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -2503,8 +2504,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -2529,9 +2530,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -2590,8 +2591,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -2616,9 +2617,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -2764,8 +2765,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Results are limited to Mac only as Gatekeeper and XProtect are not applicable for other platfroms.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -2790,9 +2791,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -2851,8 +2852,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Results are limited to Mac only as Gatekeeper and XProtect are not applicable for other platfroms.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -2877,9 +2878,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -2938,8 +2939,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Results are limited to Mac only as Gatekeeper and XProtect are not applicable for other platfroms.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -2964,9 +2965,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -3125,7 +3126,7 @@ class PrismApi:
     ) -> object:
         """Get category export
 
-        Get an export request's status. To download the export, use the `signed_url`. This will download a CSV file containing the exported category information.   ### Request Parameters   export\\_id (path parameter): The unique identifier of the the export job.
+        <p>Get an export request's status. To download the export, use the <code>signed_url</code>. This will download a CSV file containing the exported category information.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p>export_id (path parameter): The unique identifier of the the export job.</p>
 
         :param export_id: (required)
         :type export_id: str
@@ -3192,7 +3193,7 @@ class PrismApi:
     ) -> ApiResponse[object]:
         """Get category export
 
-        Get an export request's status. To download the export, use the `signed_url`. This will download a CSV file containing the exported category information.   ### Request Parameters   export\\_id (path parameter): The unique identifier of the the export job.
+        <p>Get an export request's status. To download the export, use the <code>signed_url</code>. This will download a CSV file containing the exported category information.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p>export_id (path parameter): The unique identifier of the the export job.</p>
 
         :param export_id: (required)
         :type export_id: str
@@ -3259,7 +3260,7 @@ class PrismApi:
     ) -> RESTResponseType:
         """Get category export
 
-        Get an export request's status. To download the export, use the `signed_url`. This will download a CSV file containing the exported category information.   ### Request Parameters   export\\_id (path parameter): The unique identifier of the the export job.
+        <p>Get an export request's status. To download the export, use the <code>signed_url</code>. This will download a CSV file containing the exported category information.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p>export_id (path parameter): The unique identifier of the the export job.</p>
 
         :param export_id: (required)
         :type export_id: str
@@ -3373,8 +3374,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -3399,9 +3400,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -3460,8 +3461,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -3486,9 +3487,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -3547,8 +3548,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -3573,9 +3574,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -3721,8 +3722,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="SON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -3747,9 +3748,9 @@ class PrismApi:
         :type device_families: str
         :param filter: SON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -3808,8 +3809,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="SON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -3834,9 +3835,9 @@ class PrismApi:
         :type device_families: str
         :param filter: SON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -3895,8 +3896,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="SON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -3921,9 +3922,9 @@ class PrismApi:
         :type device_families: str
         :param filter: SON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -4069,8 +4070,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -4095,9 +4096,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -4156,8 +4157,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -4182,9 +4183,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -4243,8 +4244,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -4269,9 +4270,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -4417,8 +4418,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -4443,9 +4444,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -4504,8 +4505,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -4530,9 +4531,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -4591,8 +4592,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -4617,9 +4618,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -4778,7 +4779,7 @@ class PrismApi:
     ) -> object:
         """Request category export
 
-        Request export of a category. The `id` key is used when checking the export status using the *Request category export* endpoint.   **Request Body Parameters: application/json**     | Key | Type | Possible value(s) | Description | | --- | --- | --- | --- | | `blueprint_ids` | `array` | `['string', 'string', 'string']` | List of one or more comma separate blueprint IDs. | | `category` | `string` | `apps` , `activation_lock` , `desktop_and_screensaver` , `device_information` , `gatekeeper_and_xprotect` , `installed_profiles` , `kernel_extensions` , `local_users` , `launch_agents_and_daemons` , `system_extensions` , `startup_settings` , `transparency_database` | Only one category per export reqest. | | `device_families` | `array` | `['Mac', 'iPhone', 'iPad', 'tvOS']` | List of one or more comma separted string values for device families. |  | `filter` | `object` | `{'apple_silicon': {'eq': true}, 'device__name': {'like': ['this', 'or_this']}}` | JSON schema object containing one or more key value pairs.  **Note**: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. | | `sort_by` | `string` |  | Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order. |
+        <p>Request export of a category. The <code>id</code> key is used when checking the export status using the <em>Request category export</em> endpoint.</p> <p><strong>Request Body Parameters: application/json</strong></p>  <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>  <thead> <tr> <th>Key</th> <th>Type</th> <th>Possible value(s)</th> <th>Description</th>  </tr> </thead> <tbody> <tr> <td><code>blueprint_ids</code></td> <td><code>array</code></td>  <td><code>[&quot;string&quot;, &quot;string&quot;, &quot;string&quot;]</code></td>  <td>List of one or more comma separate blueprint IDs.</td> </tr> <tr>  <td><code>category</code></td> <td><code>string</code></td> <td><code>apps</code> ,  <br /><code>activation_lock</code> ,  <br /><code>desktop_and_screensaver</code> ,  <br /><code>device_information</code> ,  <br /><code>gatekeeper_and_xprotect</code> ,  <br /><code>installed_profiles</code> ,  <br /><code>kernel_extensions</code> ,  <br /><code>local_users</code> ,  <br /><code>launch_agents_and_daemons</code> ,  <br /><code>system_extensions</code> ,  <br /><code>startup_settings</code> ,  <br /><code>transparency_database</code></td> <td>Only one category per export reqest.</td> </tr> <tr> <td><code>device_families</code></td>  <td><code>array</code></td> <td><code>[&quot;Mac&quot;, &quot;iPhone&quot;, &quot;iPad&quot;, &quot;tvOS&quot;]</code></td> <td>List of one or more comma separted string values for device families.</td> </tr> <tr> <td><code>filter</code></td>  <td><code>object</code></td> <td><code>{&quot;apple_silicon&quot;: {&quot;eq&quot;: true}, &quot;device__name&quot;: {&quot;like&quot;: [&quot;this&quot;, &quot;or_this&quot;]}}</code></td>  <td>JSON schema object containing one or more key value pairs.  <br />  <br /><strong>Note</strong>: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</td>  </tr> <tr> <td><code>sort_by</code></td> <td><code>string</code></td>  <td></td> <td>Sort results by the name of a given response body key in either ascending (default behavior) or descending(`-`) order.</td> </tr> </tbody> </table> </div>
 
         :param body:
         :type body: str
@@ -4846,7 +4847,7 @@ class PrismApi:
     ) -> ApiResponse[object]:
         """Request category export
 
-        Request export of a category. The `id` key is used when checking the export status using the *Request category export* endpoint.   **Request Body Parameters: application/json**     | Key | Type | Possible value(s) | Description | | --- | --- | --- | --- | | `blueprint_ids` | `array` | `['string', 'string', 'string']` | List of one or more comma separate blueprint IDs. | | `category` | `string` | `apps` , `activation_lock` , `desktop_and_screensaver` , `device_information` , `gatekeeper_and_xprotect` , `installed_profiles` , `kernel_extensions` , `local_users` , `launch_agents_and_daemons` , `system_extensions` , `startup_settings` , `transparency_database` | Only one category per export reqest. | | `device_families` | `array` | `['Mac', 'iPhone', 'iPad', 'tvOS']` | List of one or more comma separted string values for device families. |  | `filter` | `object` | `{'apple_silicon': {'eq': true}, 'device__name': {'like': ['this', 'or_this']}}` | JSON schema object containing one or more key value pairs.  **Note**: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. | | `sort_by` | `string` |  | Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order. |
+        <p>Request export of a category. The <code>id</code> key is used when checking the export status using the <em>Request category export</em> endpoint.</p> <p><strong>Request Body Parameters: application/json</strong></p>  <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>  <thead> <tr> <th>Key</th> <th>Type</th> <th>Possible value(s)</th> <th>Description</th>  </tr> </thead> <tbody> <tr> <td><code>blueprint_ids</code></td> <td><code>array</code></td>  <td><code>[&quot;string&quot;, &quot;string&quot;, &quot;string&quot;]</code></td>  <td>List of one or more comma separate blueprint IDs.</td> </tr> <tr>  <td><code>category</code></td> <td><code>string</code></td> <td><code>apps</code> ,  <br /><code>activation_lock</code> ,  <br /><code>desktop_and_screensaver</code> ,  <br /><code>device_information</code> ,  <br /><code>gatekeeper_and_xprotect</code> ,  <br /><code>installed_profiles</code> ,  <br /><code>kernel_extensions</code> ,  <br /><code>local_users</code> ,  <br /><code>launch_agents_and_daemons</code> ,  <br /><code>system_extensions</code> ,  <br /><code>startup_settings</code> ,  <br /><code>transparency_database</code></td> <td>Only one category per export reqest.</td> </tr> <tr> <td><code>device_families</code></td>  <td><code>array</code></td> <td><code>[&quot;Mac&quot;, &quot;iPhone&quot;, &quot;iPad&quot;, &quot;tvOS&quot;]</code></td> <td>List of one or more comma separted string values for device families.</td> </tr> <tr> <td><code>filter</code></td>  <td><code>object</code></td> <td><code>{&quot;apple_silicon&quot;: {&quot;eq&quot;: true}, &quot;device__name&quot;: {&quot;like&quot;: [&quot;this&quot;, &quot;or_this&quot;]}}</code></td>  <td>JSON schema object containing one or more key value pairs.  <br />  <br /><strong>Note</strong>: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</td>  </tr> <tr> <td><code>sort_by</code></td> <td><code>string</code></td>  <td></td> <td>Sort results by the name of a given response body key in either ascending (default behavior) or descending(`-`) order.</td> </tr> </tbody> </table> </div>
 
         :param body:
         :type body: str
@@ -4914,7 +4915,7 @@ class PrismApi:
     ) -> RESTResponseType:
         """Request category export
 
-        Request export of a category. The `id` key is used when checking the export status using the *Request category export* endpoint.   **Request Body Parameters: application/json**     | Key | Type | Possible value(s) | Description | | --- | --- | --- | --- | | `blueprint_ids` | `array` | `['string', 'string', 'string']` | List of one or more comma separate blueprint IDs. | | `category` | `string` | `apps` , `activation_lock` , `desktop_and_screensaver` , `device_information` , `gatekeeper_and_xprotect` , `installed_profiles` , `kernel_extensions` , `local_users` , `launch_agents_and_daemons` , `system_extensions` , `startup_settings` , `transparency_database` | Only one category per export reqest. | | `device_families` | `array` | `['Mac', 'iPhone', 'iPad', 'tvOS']` | List of one or more comma separted string values for device families. |  | `filter` | `object` | `{'apple_silicon': {'eq': true}, 'device__name': {'like': ['this', 'or_this']}}` | JSON schema object containing one or more key value pairs.  **Note**: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. | | `sort_by` | `string` |  | Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order. |
+        <p>Request export of a category. The <code>id</code> key is used when checking the export status using the <em>Request category export</em> endpoint.</p> <p><strong>Request Body Parameters: application/json</strong></p>  <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>  <thead> <tr> <th>Key</th> <th>Type</th> <th>Possible value(s)</th> <th>Description</th>  </tr> </thead> <tbody> <tr> <td><code>blueprint_ids</code></td> <td><code>array</code></td>  <td><code>[&quot;string&quot;, &quot;string&quot;, &quot;string&quot;]</code></td>  <td>List of one or more comma separate blueprint IDs.</td> </tr> <tr>  <td><code>category</code></td> <td><code>string</code></td> <td><code>apps</code> ,  <br /><code>activation_lock</code> ,  <br /><code>desktop_and_screensaver</code> ,  <br /><code>device_information</code> ,  <br /><code>gatekeeper_and_xprotect</code> ,  <br /><code>installed_profiles</code> ,  <br /><code>kernel_extensions</code> ,  <br /><code>local_users</code> ,  <br /><code>launch_agents_and_daemons</code> ,  <br /><code>system_extensions</code> ,  <br /><code>startup_settings</code> ,  <br /><code>transparency_database</code></td> <td>Only one category per export reqest.</td> </tr> <tr> <td><code>device_families</code></td>  <td><code>array</code></td> <td><code>[&quot;Mac&quot;, &quot;iPhone&quot;, &quot;iPad&quot;, &quot;tvOS&quot;]</code></td> <td>List of one or more comma separted string values for device families.</td> </tr> <tr> <td><code>filter</code></td>  <td><code>object</code></td> <td><code>{&quot;apple_silicon&quot;: {&quot;eq&quot;: true}, &quot;device__name&quot;: {&quot;like&quot;: [&quot;this&quot;, &quot;or_this&quot;]}}</code></td>  <td>JSON schema object containing one or more key value pairs.  <br />  <br /><strong>Note</strong>: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</td>  </tr> <tr> <td><code>sort_by</code></td> <td><code>string</code></td>  <td></td> <td>Sort results by the name of a given response body key in either ascending (default behavior) or descending(`-`) order.</td> </tr> </tbody> </table> </div>
 
         :param body:
         :type body: str
@@ -5042,8 +5043,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -5068,9 +5069,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -5129,8 +5130,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -5155,9 +5156,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -5216,8 +5217,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -5242,9 +5243,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -5390,8 +5391,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -5416,9 +5417,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -5477,8 +5478,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -5503,9 +5504,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -5564,8 +5565,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -5590,9 +5591,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -5738,8 +5739,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -5764,9 +5765,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -5825,8 +5826,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -5851,9 +5852,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str
@@ -5912,8 +5913,8 @@ class PrismApi:
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
         _request_timeout: Union[
             None,
@@ -5938,9 +5939,9 @@ class PrismApi:
         :type device_families: str
         :param filter: JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
         :type filter: str
-        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order.
+        :param sort_by: Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.
         :type sort_by: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return.
         :type offset: str

@@ -3,9 +3,10 @@
 """
     Kandji API
 
-    Welcome to the Kandji API Documentation =======================================    You can find your API URL in Settings \\> Access. The API URL will follow the below formats.   * US \\- `https://SubDomain.api.kandji.io` * EU \\- `https://SubDomain.api.eu.kandji.io`    For information on how to obtain an API token, please refer to the following support article.   <https://support.kandji.io/api>   #### Rate Limit    The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.   #### Request Methods   HTTP request methods supported by the Kandji API.     | Method | Definition | | --- | --- | | GET | The `GET` method requests a representation of the specified resource. | | POST | The `POST` method submits an entity to the specified resource. | | PATCH | The `PATCH` method applies partial modifications to a resource. | | DELETE | The `DELETE` method deletes the specified resource. |   #### Response codes   Not all response codes apply to every endpoint.     | Code | Response | | --- | --- | | 200 | OK | | 201 | Created | | 204 | No content | |  | Typical response when sending the DELETE method. | | 400 | Bad Request | |  | 'Command already running' \\- The command may already be running in a *Pending* state waiting on the device. | |  | 'Command is not allowed for current device' \\- The command may not be compatible with the target device. | |  | 'JSON parse error \\- Expecting ',' delimiter: line 3 column 2 (char 65\\)' | | 401 | Unauthorized | |  | This error can occur if the token is incorrect, was revoked, or the token has expired. |  | 403 | Forbidden | |  | The request was understood but cannot be authorized. | | 404 | Not found | |  | Unable to locate the resource in the Kandji tenant. | | 415 | Unsupported Media Type | |  | The request contains a media type which the server or resource does not support. | | 500 | Internal server error |  | 503 | Service unavailable | |  | This error can occur if a file upload is still being processed via the custom apps API. |   #### Data structure   The API returns all structured responses in JSON schema format.   #### Examples    Code examples using the API can be found in the Kandji support [GitHub](https://github.com/kandji-inc/support/tree/main/api-tools).
+    <html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome to the Kandji API Documentation</h1> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p>  </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p>  <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the Kandji API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th>  </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td>  <td>The <code>POST</code> method submits an entity to the specified resource.</td>  </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>  <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr>  <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr>  <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td>  </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td>  </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr>  <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr>  <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td>  </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td>  </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Kandji tenant.</td> </tr> <tr> <td>415</td>  <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr>  <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table>  </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4>  <p>Code examples using the API can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
 
     The version of the OpenAPI document: 1.0.0
+    Contact: mitchelsblake@gmail.com
     Generated by OpenAPI Generator (https://openapi-generator.tech)
 
     Do not edit the class manually.
@@ -60,7 +61,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> object:
         """Create ADE integration
 
-        This request will create a new ADE integration.   The default `blueprint_id`, `phone` number, `email` address, and MDM server token `file` downloaded from ABM are required and must be sent in the request.
+        <p>This request will create a new ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> downloaded from ABM are required and must be sent in the request.</p>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
@@ -139,7 +140,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> ApiResponse[object]:
         """Create ADE integration
 
-        This request will create a new ADE integration.   The default `blueprint_id`, `phone` number, `email` address, and MDM server token `file` downloaded from ABM are required and must be sent in the request.
+        <p>This request will create a new ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> downloaded from ABM are required and must be sent in the request.</p>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
@@ -218,7 +219,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> RESTResponseType:
         """Create ADE integration
 
-        This request will create a new ADE integration.   The default `blueprint_id`, `phone` number, `email` address, and MDM server token `file` downloaded from ABM are required and must be sent in the request.
+        <p>This request will create a new ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> downloaded from ABM are required and must be sent in the request.</p>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
@@ -376,7 +377,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> None:
         """Delete ADE integration
 
-        **WARNING!** ============   This is a HIGHLY destructive action.    Deleting an ADE token will unassign the associated device records from Kandji. For currently enrolled devices that were assigned to Kandji via the delete ADE integration will not be impacted until they are wiped and reprovisioned. This action is essentially the same as removing an ADE token from MDM and then adding it back.   If applicable, be sure to reassign the device records in ABM.
+        <h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1> <p>This is a HIGHLY destructive action.</p> <p>Deleting an ADE token will unassign the associated device records from Kandji. For currently enrolled devices that were assigned to Kandji via the delete ADE integration will not be impacted until they are wiped and reprovisioned. This action is essentially the same as removing an ADE token from MDM and then adding it back.</p> <p>If applicable, be sure to reassign the device records in ABM.</p>
 
         :param ade_token_id: (required)
         :type ade_token_id: str
@@ -443,7 +444,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> ApiResponse[None]:
         """Delete ADE integration
 
-        **WARNING!** ============   This is a HIGHLY destructive action.    Deleting an ADE token will unassign the associated device records from Kandji. For currently enrolled devices that were assigned to Kandji via the delete ADE integration will not be impacted until they are wiped and reprovisioned. This action is essentially the same as removing an ADE token from MDM and then adding it back.   If applicable, be sure to reassign the device records in ABM.
+        <h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1> <p>This is a HIGHLY destructive action.</p> <p>Deleting an ADE token will unassign the associated device records from Kandji. For currently enrolled devices that were assigned to Kandji via the delete ADE integration will not be impacted until they are wiped and reprovisioned. This action is essentially the same as removing an ADE token from MDM and then adding it back.</p> <p>If applicable, be sure to reassign the device records in ABM.</p>
 
         :param ade_token_id: (required)
         :type ade_token_id: str
@@ -510,7 +511,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> RESTResponseType:
         """Delete ADE integration
 
-        **WARNING!** ============   This is a HIGHLY destructive action.    Deleting an ADE token will unassign the associated device records from Kandji. For currently enrolled devices that were assigned to Kandji via the delete ADE integration will not be impacted until they are wiped and reprovisioned. This action is essentially the same as removing an ADE token from MDM and then adding it back.   If applicable, be sure to reassign the device records in ABM.
+        <h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1> <p>This is a HIGHLY destructive action.</p> <p>Deleting an ADE token will unassign the associated device records from Kandji. For currently enrolled devices that were assigned to Kandji via the delete ADE integration will not be impacted until they are wiped and reprovisioned. This action is essentially the same as removing an ADE token from MDM and then adding it back.</p> <p>If applicable, be sure to reassign the device records in ABM.</p>
 
         :param ade_token_id: (required)
         :type ade_token_id: str
@@ -642,7 +643,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> str:
         """Download ADE public key
 
-        This request returns the public key used to create an MDM server connection in Apple Business Manager.   The encoded information needs to be saved to a file with the `.pem` format and then uploaded to ABM.
+        <p>This request returns the public key used to create an MDM server connection in Apple Business Manager.</p> <p>The encoded information needs to be saved to a file with the <code>.pem</code> format and then uploaded to ABM.</p>
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -705,7 +706,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> ApiResponse[str]:
         """Download ADE public key
 
-        This request returns the public key used to create an MDM server connection in Apple Business Manager.   The encoded information needs to be saved to a file with the `.pem` format and then uploaded to ABM.
+        <p>This request returns the public key used to create an MDM server connection in Apple Business Manager.</p> <p>The encoded information needs to be saved to a file with the <code>.pem</code> format and then uploaded to ABM.</p>
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -768,7 +769,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> RESTResponseType:
         """Download ADE public key
 
-        This request returns the public key used to create an MDM server connection in Apple Business Manager.   The encoded information needs to be saved to a file with the `.pem` format and then uploaded to ABM.
+        <p>This request returns the public key used to create an MDM server connection in Apple Business Manager.</p> <p>The encoded information needs to be saved to a file with the <code>.pem</code> format and then uploaded to ABM.</p>
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1150,7 +1151,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> None:
         """Get ADE integration
 
-        This request returns a specific ADE integration based on the `ade_token_id` passed.
+        This request returns a specific ADE integration based on the <code>ade_token_id</code> passed.
 
         :param ade_token_id: (required)
         :type ade_token_id: str
@@ -1217,7 +1218,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> ApiResponse[None]:
         """Get ADE integration
 
-        This request returns a specific ADE integration based on the `ade_token_id` passed.
+        This request returns a specific ADE integration based on the <code>ade_token_id</code> passed.
 
         :param ade_token_id: (required)
         :type ade_token_id: str
@@ -1284,7 +1285,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> RESTResponseType:
         """Get ADE integration
 
-        This request returns a specific ADE integration based on the `ade_token_id` passed.
+        This request returns a specific ADE integration based on the <code>ade_token_id</code> passed.
 
         :param ade_token_id: (required)
         :type ade_token_id: str
@@ -1388,15 +1389,15 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     @validate_call
     def list_ade_devices(
         self,
-        blueprint_id: Annotated[Optional[StrictStr], Field(description="Return results 'containing' the specified blueprint id")] = None,
-        user_id: Annotated[Optional[StrictStr], Field(description="'exact' match on kandji user ID number")] = None,
+        blueprint_id: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the specified blueprint id")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID number")] = None,
         dep_account: Annotated[Optional[StrictStr], Field(description="The ADE token UUID")] = None,
         device_family: Annotated[Optional[StrictStr], Field(description="Mac, iPhone, iPad, AppleTV, iPod")] = None,
-        model: Annotated[Optional[StrictStr], Field(description="Return model results 'containing' the specified model string. \\\\\\- 'iPad (8th Generation)', 'MacBook Air'")] = None,
+        model: Annotated[Optional[StrictStr], Field(description="Return model results &quot;containing&quot; the specified model string. - &quot;iPad (8th Generation)&quot;, &quot;MacBook Air&quot;")] = None,
         os: Annotated[Optional[StrictStr], Field(description="OSX, iOS, tvOS")] = None,
-        profile_status: Annotated[Optional[StrictStr], Field(description="The automated device enrollment profile assignment status \\\\\\- assigned, empty, pushed, removed")] = None,
+        profile_status: Annotated[Optional[StrictStr], Field(description="The automated device enrollment profile assignment status - assigned, empty, pushed, removed")] = None,
         serial_number: Annotated[Optional[StrictStr], Field(description="Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.")] = None,
-        page: Annotated[Optional[StrictStr], Field(description="Use the \\`page\\` parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the \\`next\\` and \\`previous\\` key attributes in the response can be used to request the next page of results or return to the previous page.")] = None,
+        page: Annotated[Optional[StrictStr], Field(description="Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1414,23 +1415,23 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
         Get a list of Automated Device Enrollment devices.
 
-        :param blueprint_id: Return results 'containing' the specified blueprint id
+        :param blueprint_id: Return results &quot;containing&quot; the specified blueprint id
         :type blueprint_id: str
-        :param user_id: 'exact' match on kandji user ID number
+        :param user_id: &quot;exact&quot; match on kandji user ID number
         :type user_id: str
         :param dep_account: The ADE token UUID
         :type dep_account: str
         :param device_family: Mac, iPhone, iPad, AppleTV, iPod
         :type device_family: str
-        :param model: Return model results 'containing' the specified model string. \\\\\\- 'iPad (8th Generation)', 'MacBook Air'
+        :param model: Return model results &quot;containing&quot; the specified model string. - &quot;iPad (8th Generation)&quot;, &quot;MacBook Air&quot;
         :type model: str
         :param os: OSX, iOS, tvOS
         :type os: str
-        :param profile_status: The automated device enrollment profile assignment status \\\\\\- assigned, empty, pushed, removed
+        :param profile_status: The automated device enrollment profile assignment status - assigned, empty, pushed, removed
         :type profile_status: str
         :param serial_number: Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.
         :type serial_number: str
-        :param page: Use the \\`page\\` parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the \\`next\\` and \\`previous\\` key attributes in the response can be used to request the next page of results or return to the previous page.
+        :param page: Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.
         :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1488,15 +1489,15 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     @validate_call
     def list_ade_devices_with_http_info(
         self,
-        blueprint_id: Annotated[Optional[StrictStr], Field(description="Return results 'containing' the specified blueprint id")] = None,
-        user_id: Annotated[Optional[StrictStr], Field(description="'exact' match on kandji user ID number")] = None,
+        blueprint_id: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the specified blueprint id")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID number")] = None,
         dep_account: Annotated[Optional[StrictStr], Field(description="The ADE token UUID")] = None,
         device_family: Annotated[Optional[StrictStr], Field(description="Mac, iPhone, iPad, AppleTV, iPod")] = None,
-        model: Annotated[Optional[StrictStr], Field(description="Return model results 'containing' the specified model string. \\\\\\- 'iPad (8th Generation)', 'MacBook Air'")] = None,
+        model: Annotated[Optional[StrictStr], Field(description="Return model results &quot;containing&quot; the specified model string. - &quot;iPad (8th Generation)&quot;, &quot;MacBook Air&quot;")] = None,
         os: Annotated[Optional[StrictStr], Field(description="OSX, iOS, tvOS")] = None,
-        profile_status: Annotated[Optional[StrictStr], Field(description="The automated device enrollment profile assignment status \\\\\\- assigned, empty, pushed, removed")] = None,
+        profile_status: Annotated[Optional[StrictStr], Field(description="The automated device enrollment profile assignment status - assigned, empty, pushed, removed")] = None,
         serial_number: Annotated[Optional[StrictStr], Field(description="Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.")] = None,
-        page: Annotated[Optional[StrictStr], Field(description="Use the \\`page\\` parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the \\`next\\` and \\`previous\\` key attributes in the response can be used to request the next page of results or return to the previous page.")] = None,
+        page: Annotated[Optional[StrictStr], Field(description="Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1514,23 +1515,23 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
         Get a list of Automated Device Enrollment devices.
 
-        :param blueprint_id: Return results 'containing' the specified blueprint id
+        :param blueprint_id: Return results &quot;containing&quot; the specified blueprint id
         :type blueprint_id: str
-        :param user_id: 'exact' match on kandji user ID number
+        :param user_id: &quot;exact&quot; match on kandji user ID number
         :type user_id: str
         :param dep_account: The ADE token UUID
         :type dep_account: str
         :param device_family: Mac, iPhone, iPad, AppleTV, iPod
         :type device_family: str
-        :param model: Return model results 'containing' the specified model string. \\\\\\- 'iPad (8th Generation)', 'MacBook Air'
+        :param model: Return model results &quot;containing&quot; the specified model string. - &quot;iPad (8th Generation)&quot;, &quot;MacBook Air&quot;
         :type model: str
         :param os: OSX, iOS, tvOS
         :type os: str
-        :param profile_status: The automated device enrollment profile assignment status \\\\\\- assigned, empty, pushed, removed
+        :param profile_status: The automated device enrollment profile assignment status - assigned, empty, pushed, removed
         :type profile_status: str
         :param serial_number: Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.
         :type serial_number: str
-        :param page: Use the \\`page\\` parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the \\`next\\` and \\`previous\\` key attributes in the response can be used to request the next page of results or return to the previous page.
+        :param page: Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.
         :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1588,15 +1589,15 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     @validate_call
     def list_ade_devices_without_preload_content(
         self,
-        blueprint_id: Annotated[Optional[StrictStr], Field(description="Return results 'containing' the specified blueprint id")] = None,
-        user_id: Annotated[Optional[StrictStr], Field(description="'exact' match on kandji user ID number")] = None,
+        blueprint_id: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the specified blueprint id")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID number")] = None,
         dep_account: Annotated[Optional[StrictStr], Field(description="The ADE token UUID")] = None,
         device_family: Annotated[Optional[StrictStr], Field(description="Mac, iPhone, iPad, AppleTV, iPod")] = None,
-        model: Annotated[Optional[StrictStr], Field(description="Return model results 'containing' the specified model string. \\\\\\- 'iPad (8th Generation)', 'MacBook Air'")] = None,
+        model: Annotated[Optional[StrictStr], Field(description="Return model results &quot;containing&quot; the specified model string. - &quot;iPad (8th Generation)&quot;, &quot;MacBook Air&quot;")] = None,
         os: Annotated[Optional[StrictStr], Field(description="OSX, iOS, tvOS")] = None,
-        profile_status: Annotated[Optional[StrictStr], Field(description="The automated device enrollment profile assignment status \\\\\\- assigned, empty, pushed, removed")] = None,
+        profile_status: Annotated[Optional[StrictStr], Field(description="The automated device enrollment profile assignment status - assigned, empty, pushed, removed")] = None,
         serial_number: Annotated[Optional[StrictStr], Field(description="Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.")] = None,
-        page: Annotated[Optional[StrictStr], Field(description="Use the \\`page\\` parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the \\`next\\` and \\`previous\\` key attributes in the response can be used to request the next page of results or return to the previous page.")] = None,
+        page: Annotated[Optional[StrictStr], Field(description="Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1614,23 +1615,23 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
         Get a list of Automated Device Enrollment devices.
 
-        :param blueprint_id: Return results 'containing' the specified blueprint id
+        :param blueprint_id: Return results &quot;containing&quot; the specified blueprint id
         :type blueprint_id: str
-        :param user_id: 'exact' match on kandji user ID number
+        :param user_id: &quot;exact&quot; match on kandji user ID number
         :type user_id: str
         :param dep_account: The ADE token UUID
         :type dep_account: str
         :param device_family: Mac, iPhone, iPad, AppleTV, iPod
         :type device_family: str
-        :param model: Return model results 'containing' the specified model string. \\\\\\- 'iPad (8th Generation)', 'MacBook Air'
+        :param model: Return model results &quot;containing&quot; the specified model string. - &quot;iPad (8th Generation)&quot;, &quot;MacBook Air&quot;
         :type model: str
         :param os: OSX, iOS, tvOS
         :type os: str
-        :param profile_status: The automated device enrollment profile assignment status \\\\\\- assigned, empty, pushed, removed
+        :param profile_status: The automated device enrollment profile assignment status - assigned, empty, pushed, removed
         :type profile_status: str
         :param serial_number: Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.
         :type serial_number: str
-        :param page: Use the \\`page\\` parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the \\`next\\` and \\`previous\\` key attributes in the response can be used to request the next page of results or return to the previous page.
+        :param page: Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.
         :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2030,7 +2031,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     def list_devices_associated_to_ade_token(
         self,
         ade_token_id: StrictStr,
-        page: Annotated[Optional[StrictStr], Field(description="Use the \\`page\\` parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the \\`next\\` and \\`previous\\` key attributes in the response can be used to request the next page of results or return to the previous page.")] = None,
+        page: Annotated[Optional[StrictStr], Field(description="Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2046,11 +2047,11 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> object:
         """List devices associated to ADE token
 
-        This request returns a list of devices associated with a specified `ade_token_id` as well as their enrollment status.   When the `mdm_device` key value is `null`, this can be taken as an indication that the device is awaiting enrollment into Kandji.   When data is present within the mdm\\ _device dictionary, you can reference the `device_id` as the ID of the enrolled device record.
+        <p>This request returns a list of devices associated with a specified <code>ade_token_id</code> as well as their enrollment status.</p> <p>When the <code>mdm_device</code> key value is <code>null</code>, this can be taken as an indication that the device is awaiting enrollment into Kandji.</p>  <p>When data is present within the mdm_device dictionary, you can reference the <code>device_id</code> as the ID of the enrolled device record.</p>
 
         :param ade_token_id: (required)
         :type ade_token_id: str
-        :param page: Use the \\`page\\` parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the \\`next\\` and \\`previous\\` key attributes in the response can be used to request the next page of results or return to the previous page.
+        :param page: Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.
         :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2101,7 +2102,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     def list_devices_associated_to_ade_token_with_http_info(
         self,
         ade_token_id: StrictStr,
-        page: Annotated[Optional[StrictStr], Field(description="Use the \\`page\\` parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the \\`next\\` and \\`previous\\` key attributes in the response can be used to request the next page of results or return to the previous page.")] = None,
+        page: Annotated[Optional[StrictStr], Field(description="Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2117,11 +2118,11 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> ApiResponse[object]:
         """List devices associated to ADE token
 
-        This request returns a list of devices associated with a specified `ade_token_id` as well as their enrollment status.   When the `mdm_device` key value is `null`, this can be taken as an indication that the device is awaiting enrollment into Kandji.   When data is present within the mdm\\ _device dictionary, you can reference the `device_id` as the ID of the enrolled device record.
+        <p>This request returns a list of devices associated with a specified <code>ade_token_id</code> as well as their enrollment status.</p> <p>When the <code>mdm_device</code> key value is <code>null</code>, this can be taken as an indication that the device is awaiting enrollment into Kandji.</p>  <p>When data is present within the mdm_device dictionary, you can reference the <code>device_id</code> as the ID of the enrolled device record.</p>
 
         :param ade_token_id: (required)
         :type ade_token_id: str
-        :param page: Use the \\`page\\` parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the \\`next\\` and \\`previous\\` key attributes in the response can be used to request the next page of results or return to the previous page.
+        :param page: Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.
         :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2172,7 +2173,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     def list_devices_associated_to_ade_token_without_preload_content(
         self,
         ade_token_id: StrictStr,
-        page: Annotated[Optional[StrictStr], Field(description="Use the \\`page\\` parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the \\`next\\` and \\`previous\\` key attributes in the response can be used to request the next page of results or return to the previous page.")] = None,
+        page: Annotated[Optional[StrictStr], Field(description="Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2188,11 +2189,11 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> RESTResponseType:
         """List devices associated to ADE token
 
-        This request returns a list of devices associated with a specified `ade_token_id` as well as their enrollment status.   When the `mdm_device` key value is `null`, this can be taken as an indication that the device is awaiting enrollment into Kandji.   When data is present within the mdm\\ _device dictionary, you can reference the `device_id` as the ID of the enrolled device record.
+        <p>This request returns a list of devices associated with a specified <code>ade_token_id</code> as well as their enrollment status.</p> <p>When the <code>mdm_device</code> key value is <code>null</code>, this can be taken as an indication that the device is awaiting enrollment into Kandji.</p>  <p>When data is present within the mdm_device dictionary, you can reference the <code>device_id</code> as the ID of the enrolled device record.</p>
 
         :param ade_token_id: (required)
         :type ade_token_id: str
-        :param page: Use the \\`page\\` parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the \\`next\\` and \\`previous\\` key attributes in the response can be used to request the next page of results or return to the previous page.
+        :param page: Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.
         :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2327,7 +2328,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> None:
         """Renew ADE integration
 
-        This request will renew an existing ADE integration.   The default `blueprint_id`, `phone` number, `email` address, and MDM server token `file` from the associated MDM server in ABM are required and must be sent in the request.
+        <p>This request will renew an existing ADE integration.</p>  <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> from the associated MDM server in ABM are required and must be sent in the request.</p>
 
         :param ade_token_id: (required)
         :type ade_token_id: str
@@ -2410,7 +2411,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> ApiResponse[None]:
         """Renew ADE integration
 
-        This request will renew an existing ADE integration.   The default `blueprint_id`, `phone` number, `email` address, and MDM server token `file` from the associated MDM server in ABM are required and must be sent in the request.
+        <p>This request will renew an existing ADE integration.</p>  <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> from the associated MDM server in ABM are required and must be sent in the request.</p>
 
         :param ade_token_id: (required)
         :type ade_token_id: str
@@ -2493,7 +2494,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> RESTResponseType:
         """Renew ADE integration
 
-        This request will renew an existing ADE integration.   The default `blueprint_id`, `phone` number, `email` address, and MDM server token `file` from the associated MDM server in ABM are required and must be sent in the request.
+        <p>This request will renew an existing ADE integration.</p>  <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> from the associated MDM server in ABM are required and must be sent in the request.</p>
 
         :param ade_token_id: (required)
         :type ade_token_id: str
@@ -2651,7 +2652,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> object:
         """Update ADE device
 
-        Update a specific Automated Device Enrollment device's blueprint assignment, user assignment, and asset tag.   ### Request Parameters    `device_id` (path parameter): The unique identifier of the device.
+        <p>Update a specific Automated Device Enrollment device's blueprint assignment, user assignment, and asset tag.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p>
 
         :param device_id: (required)
         :type device_id: str
@@ -2722,7 +2723,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> ApiResponse[object]:
         """Update ADE device
 
-        Update a specific Automated Device Enrollment device's blueprint assignment, user assignment, and asset tag.   ### Request Parameters    `device_id` (path parameter): The unique identifier of the device.
+        <p>Update a specific Automated Device Enrollment device's blueprint assignment, user assignment, and asset tag.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p>
 
         :param device_id: (required)
         :type device_id: str
@@ -2793,7 +2794,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> RESTResponseType:
         """Update ADE device
 
-        Update a specific Automated Device Enrollment device's blueprint assignment, user assignment, and asset tag.   ### Request Parameters    `device_id` (path parameter): The unique identifier of the device.
+        <p>Update a specific Automated Device Enrollment device's blueprint assignment, user assignment, and asset tag.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p>
 
         :param device_id: (required)
         :type device_id: str
@@ -2940,7 +2941,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> None:
         """Update ADE integration
 
-        This request will update the default blueprint, phone number, and email address in an existing ADE integration.   The default `blueprint_id`, `phone` number, and `email` address must be sent in the request.
+        <p>This request will update the default blueprint, phone number, and email address in an existing ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, and <code>email</code> address must be sent in the request.</p>
 
         :param ade_token_id: (required)
         :type ade_token_id: str
@@ -3011,7 +3012,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> ApiResponse[None]:
         """Update ADE integration
 
-        This request will update the default blueprint, phone number, and email address in an existing ADE integration.   The default `blueprint_id`, `phone` number, and `email` address must be sent in the request.
+        <p>This request will update the default blueprint, phone number, and email address in an existing ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, and <code>email</code> address must be sent in the request.</p>
 
         :param ade_token_id: (required)
         :type ade_token_id: str
@@ -3082,7 +3083,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     ) -> RESTResponseType:
         """Update ADE integration
 
-        This request will update the default blueprint, phone number, and email address in an existing ADE integration.   The default `blueprint_id`, `phone` number, and `email` address must be sent in the request.
+        <p>This request will update the default blueprint, phone number, and email address in an existing ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, and <code>email</code> address must be sent in the request.</p>
 
         :param ade_token_id: (required)
         :type ade_token_id: str

@@ -3,9 +3,10 @@
 """
     Kandji API
 
-    Welcome to the Kandji API Documentation =======================================    You can find your API URL in Settings \\> Access. The API URL will follow the below formats.   * US \\- `https://SubDomain.api.kandji.io` * EU \\- `https://SubDomain.api.eu.kandji.io`    For information on how to obtain an API token, please refer to the following support article.   <https://support.kandji.io/api>   #### Rate Limit    The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.   #### Request Methods   HTTP request methods supported by the Kandji API.     | Method | Definition | | --- | --- | | GET | The `GET` method requests a representation of the specified resource. | | POST | The `POST` method submits an entity to the specified resource. | | PATCH | The `PATCH` method applies partial modifications to a resource. | | DELETE | The `DELETE` method deletes the specified resource. |   #### Response codes   Not all response codes apply to every endpoint.     | Code | Response | | --- | --- | | 200 | OK | | 201 | Created | | 204 | No content | |  | Typical response when sending the DELETE method. | | 400 | Bad Request | |  | 'Command already running' \\- The command may already be running in a *Pending* state waiting on the device. | |  | 'Command is not allowed for current device' \\- The command may not be compatible with the target device. | |  | 'JSON parse error \\- Expecting ',' delimiter: line 3 column 2 (char 65\\)' | | 401 | Unauthorized | |  | This error can occur if the token is incorrect, was revoked, or the token has expired. |  | 403 | Forbidden | |  | The request was understood but cannot be authorized. | | 404 | Not found | |  | Unable to locate the resource in the Kandji tenant. | | 415 | Unsupported Media Type | |  | The request contains a media type which the server or resource does not support. | | 500 | Internal server error |  | 503 | Service unavailable | |  | This error can occur if a file upload is still being processed via the custom apps API. |   #### Data structure   The API returns all structured responses in JSON schema format.   #### Examples    Code examples using the API can be found in the Kandji support [GitHub](https://github.com/kandji-inc/support/tree/main/api-tools).
+    <html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome to the Kandji API Documentation</h1> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p>  </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p>  <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the Kandji API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th>  </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td>  <td>The <code>POST</code> method submits an entity to the specified resource.</td>  </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>  <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr>  <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr>  <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td>  </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td>  </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr>  <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr>  <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td>  </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td>  </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Kandji tenant.</td> </tr> <tr> <td>415</td>  <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr>  <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table>  </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4>  <p>Code examples using the API can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
 
     The version of the OpenAPI document: 1.0.0
+    Contact: mitchelsblake@gmail.com
     Generated by OpenAPI Generator (https://openapi-generator.tech)
 
     Do not edit the class manually.
@@ -296,7 +297,7 @@ class DeviceInformationApi:
     def get_device_activity(
         self,
         device_id: StrictStr,
-        limit: Annotated[StrictStr, Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")],
+        limit: Annotated[StrictStr, Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")],
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -317,7 +318,7 @@ class DeviceInformationApi:
 
         :param device_id: (required)
         :type device_id: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (required)
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (required)
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -371,7 +372,7 @@ class DeviceInformationApi:
     def get_device_activity_with_http_info(
         self,
         device_id: StrictStr,
-        limit: Annotated[StrictStr, Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")],
+        limit: Annotated[StrictStr, Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")],
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -392,7 +393,7 @@ class DeviceInformationApi:
 
         :param device_id: (required)
         :type device_id: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (required)
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (required)
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -446,7 +447,7 @@ class DeviceInformationApi:
     def get_device_activity_without_preload_content(
         self,
         device_id: StrictStr,
-        limit: Annotated[StrictStr, Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")],
+        limit: Annotated[StrictStr, Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")],
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -467,7 +468,7 @@ class DeviceInformationApi:
 
         :param device_id: (required)
         :type device_id: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (required)
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (required)
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -606,7 +607,7 @@ class DeviceInformationApi:
     ) -> object:
         """Get Device Apps
 
-        This request returns a list of all installed apps for a specified Device ID.   For iPhone and iPad, the preinstalled Apple apps are not reported.
+        <p>This request returns a list of all installed apps for a specified Device ID.</p> <p>For iPhone and iPad, the preinstalled Apple apps are not reported.</p>
 
         :param device_id: (required)
         :type device_id: str
@@ -673,7 +674,7 @@ class DeviceInformationApi:
     ) -> ApiResponse[object]:
         """Get Device Apps
 
-        This request returns a list of all installed apps for a specified Device ID.   For iPhone and iPad, the preinstalled Apple apps are not reported.
+        <p>This request returns a list of all installed apps for a specified Device ID.</p> <p>For iPhone and iPad, the preinstalled Apple apps are not reported.</p>
 
         :param device_id: (required)
         :type device_id: str
@@ -740,7 +741,7 @@ class DeviceInformationApi:
     ) -> RESTResponseType:
         """Get Device Apps
 
-        This request returns a list of all installed apps for a specified Device ID.   For iPhone and iPad, the preinstalled Apple apps are not reported.
+        <p>This request returns a list of all installed apps for a specified Device ID.</p> <p>For iPhone and iPad, the preinstalled Apple apps are not reported.</p>
 
         :param device_id: (required)
         :type device_id: str
@@ -1128,7 +1129,7 @@ class DeviceInformationApi:
     ) -> object:
         """Get Device Library Items
 
-        This request gets all library items and their statuses for a specified Device ID   #### Possible library item status values     | **Value** | **Type** | **Additional Info** | | --- | --- | --- | | AVAILABLE | string | Library item available in Self Service | | CACHED | string | Library item downloaded for install but not yet installed | | CHANGE\\_PENDING | string | Recovery Password library item has changes that have not yet been applied | | DOWNLOADING | string | Library item downloading | | ERROR | string | Audit failure | | EXCLUDED | string | Not in scope for assignment rule |  | INCOMPATIBLE | string | Not compatible with device or OS version | | INSTALLING | string | Library item installing | | PASS | string | Device meets requirements | | PENDING | string | Waiting on device, not yet installed (All library items except for config profiles) | | failed | string | Configuration profile failed to install | | pending | string | Waiting on device, Configuration profile not yet installed | | success | string | Configuration profile installed |
+        <p>This request gets all library items and their statuses for a specified Device ID</p> <h4 id=&quot;possible-library-item-status-values&quot;>Possible library item status values</h4> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Value</strong></th>  <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th>  </tr> </thead> <tbody> <tr> <td>AVAILABLE</td> <td>string</td> <td>Library item available in Self Service</td> </tr> <tr> <td>CACHED</td> <td>string</td>  <td>Library item downloaded for install but not yet installed</td> </tr>  <tr> <td>CHANGE_PENDING</td> <td>string</td> <td>Recovery Password library item has changes that have not yet been applied</td> </tr> <tr> <td>DOWNLOADING</td>  <td>string</td> <td>Library item downloading</td> </tr> <tr> <td>ERROR</td>  <td>string</td> <td>Audit failure</td> </tr> <tr> <td>EXCLUDED</td>  <td>string</td> <td>Not in scope for assignment rule</td> </tr> <tr>  <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>INSTALLING</td> <td>string</td> <td>Library item installing</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td>  <td>Waiting on device, not yet installed (All library items except for config profiles)</td> </tr> <tr> <td>failed</td> <td>string</td> <td>Configuration profile failed to install</td> </tr> <tr> <td>pending</td> <td>string</td>  <td>Waiting on device, Configuration profile not yet installed</td> </tr>  <tr> <td>success</td> <td>string</td> <td>Configuration profile installed</td> </tr> </tbody> </table> </div>
 
         :param device_id: (required)
         :type device_id: str
@@ -1195,7 +1196,7 @@ class DeviceInformationApi:
     ) -> ApiResponse[object]:
         """Get Device Library Items
 
-        This request gets all library items and their statuses for a specified Device ID   #### Possible library item status values     | **Value** | **Type** | **Additional Info** | | --- | --- | --- | | AVAILABLE | string | Library item available in Self Service | | CACHED | string | Library item downloaded for install but not yet installed | | CHANGE\\_PENDING | string | Recovery Password library item has changes that have not yet been applied | | DOWNLOADING | string | Library item downloading | | ERROR | string | Audit failure | | EXCLUDED | string | Not in scope for assignment rule |  | INCOMPATIBLE | string | Not compatible with device or OS version | | INSTALLING | string | Library item installing | | PASS | string | Device meets requirements | | PENDING | string | Waiting on device, not yet installed (All library items except for config profiles) | | failed | string | Configuration profile failed to install | | pending | string | Waiting on device, Configuration profile not yet installed | | success | string | Configuration profile installed |
+        <p>This request gets all library items and their statuses for a specified Device ID</p> <h4 id=&quot;possible-library-item-status-values&quot;>Possible library item status values</h4> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Value</strong></th>  <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th>  </tr> </thead> <tbody> <tr> <td>AVAILABLE</td> <td>string</td> <td>Library item available in Self Service</td> </tr> <tr> <td>CACHED</td> <td>string</td>  <td>Library item downloaded for install but not yet installed</td> </tr>  <tr> <td>CHANGE_PENDING</td> <td>string</td> <td>Recovery Password library item has changes that have not yet been applied</td> </tr> <tr> <td>DOWNLOADING</td>  <td>string</td> <td>Library item downloading</td> </tr> <tr> <td>ERROR</td>  <td>string</td> <td>Audit failure</td> </tr> <tr> <td>EXCLUDED</td>  <td>string</td> <td>Not in scope for assignment rule</td> </tr> <tr>  <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>INSTALLING</td> <td>string</td> <td>Library item installing</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td>  <td>Waiting on device, not yet installed (All library items except for config profiles)</td> </tr> <tr> <td>failed</td> <td>string</td> <td>Configuration profile failed to install</td> </tr> <tr> <td>pending</td> <td>string</td>  <td>Waiting on device, Configuration profile not yet installed</td> </tr>  <tr> <td>success</td> <td>string</td> <td>Configuration profile installed</td> </tr> </tbody> </table> </div>
 
         :param device_id: (required)
         :type device_id: str
@@ -1262,7 +1263,7 @@ class DeviceInformationApi:
     ) -> RESTResponseType:
         """Get Device Library Items
 
-        This request gets all library items and their statuses for a specified Device ID   #### Possible library item status values     | **Value** | **Type** | **Additional Info** | | --- | --- | --- | | AVAILABLE | string | Library item available in Self Service | | CACHED | string | Library item downloaded for install but not yet installed | | CHANGE\\_PENDING | string | Recovery Password library item has changes that have not yet been applied | | DOWNLOADING | string | Library item downloading | | ERROR | string | Audit failure | | EXCLUDED | string | Not in scope for assignment rule |  | INCOMPATIBLE | string | Not compatible with device or OS version | | INSTALLING | string | Library item installing | | PASS | string | Device meets requirements | | PENDING | string | Waiting on device, not yet installed (All library items except for config profiles) | | failed | string | Configuration profile failed to install | | pending | string | Waiting on device, Configuration profile not yet installed | | success | string | Configuration profile installed |
+        <p>This request gets all library items and their statuses for a specified Device ID</p> <h4 id=&quot;possible-library-item-status-values&quot;>Possible library item status values</h4> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Value</strong></th>  <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th>  </tr> </thead> <tbody> <tr> <td>AVAILABLE</td> <td>string</td> <td>Library item available in Self Service</td> </tr> <tr> <td>CACHED</td> <td>string</td>  <td>Library item downloaded for install but not yet installed</td> </tr>  <tr> <td>CHANGE_PENDING</td> <td>string</td> <td>Recovery Password library item has changes that have not yet been applied</td> </tr> <tr> <td>DOWNLOADING</td>  <td>string</td> <td>Library item downloading</td> </tr> <tr> <td>ERROR</td>  <td>string</td> <td>Audit failure</td> </tr> <tr> <td>EXCLUDED</td>  <td>string</td> <td>Not in scope for assignment rule</td> </tr> <tr>  <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>INSTALLING</td> <td>string</td> <td>Library item installing</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td>  <td>Waiting on device, not yet installed (All library items except for config profiles)</td> </tr> <tr> <td>failed</td> <td>string</td> <td>Configuration profile failed to install</td> </tr> <tr> <td>pending</td> <td>string</td>  <td>Waiting on device, Configuration profile not yet installed</td> </tr>  <tr> <td>success</td> <td>string</td> <td>Configuration profile installed</td> </tr> </tbody> </table> </div>
 
         :param device_id: (required)
         :type device_id: str
@@ -1389,7 +1390,7 @@ class DeviceInformationApi:
     ) -> object:
         """Get Device Lost Mode details
 
-        This request returns the device lost mode details for a specified Device ID.   **Note**: Lost Mode is is only available for iOS and iPadOS. For more information, please see this [Kandji support artilcle](https://support.kandji.io/a/solutions/articles/72000573873).
+        <p>This request returns the device lost mode details for a specified Device ID.</p> <p><strong>Note</strong>: Lost Mode is is only available for iOS and iPadOS. For more information, please see this <a href=&quot;https://support.kandji.io/a/solutions/articles/72000573873&quot;>Kandji support artilcle</a>.</p>
 
         :param device_id: (required)
         :type device_id: str
@@ -1457,7 +1458,7 @@ class DeviceInformationApi:
     ) -> ApiResponse[object]:
         """Get Device Lost Mode details
 
-        This request returns the device lost mode details for a specified Device ID.   **Note**: Lost Mode is is only available for iOS and iPadOS. For more information, please see this [Kandji support artilcle](https://support.kandji.io/a/solutions/articles/72000573873).
+        <p>This request returns the device lost mode details for a specified Device ID.</p> <p><strong>Note</strong>: Lost Mode is is only available for iOS and iPadOS. For more information, please see this <a href=&quot;https://support.kandji.io/a/solutions/articles/72000573873&quot;>Kandji support artilcle</a>.</p>
 
         :param device_id: (required)
         :type device_id: str
@@ -1525,7 +1526,7 @@ class DeviceInformationApi:
     ) -> RESTResponseType:
         """Get Device Lost Mode details
 
-        This request returns the device lost mode details for a specified Device ID.   **Note**: Lost Mode is is only available for iOS and iPadOS. For more information, please see this [Kandji support artilcle](https://support.kandji.io/a/solutions/articles/72000573873).
+        <p>This request returns the device lost mode details for a specified Device ID.</p> <p><strong>Note</strong>: Lost Mode is is only available for iOS and iPadOS. For more information, please see this <a href=&quot;https://support.kandji.io/a/solutions/articles/72000573873&quot;>Kandji support artilcle</a>.</p>
 
         :param device_id: (required)
         :type device_id: str
@@ -1653,7 +1654,7 @@ class DeviceInformationApi:
     ) -> object:
         """Get Device Parameters
 
-        This request returns the parameters and their statuses for a specified Device ID   This endpoint is only applicable to macOS clients.   The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: [https://github.com/kandji\\-inc/support/wiki/Devices\\ -API\\-\\-\\-Parameter\\-Correlations](https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations)    **Possible parameter status values**     | **Value** | **Type** | **Additional Info** | | --- | --- | --- | | ERROR | string | Audit failure | | INCOMPATIBLE | string | Not compatible with device or OS version |  | PASS | string | Device meets requirements | | PENDING | string | Waiting on device. Not yet run. | | REMEDIATED | string | Parameter remediated |  | WARNING | string | Muted alert |
+        <p>This request returns the parameters and their statuses for a specified Device ID</p> <p>This endpoint is only applicable to macOS clients.</p>  <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p>  <p><strong>Possible parameter status values</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Value</strong></th>  <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th>  </tr> </thead> <tbody> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td>  <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td>  <td>Waiting on device. Not yet run.</td> </tr> <tr> <td>REMEDIATED</td>  <td>string</td> <td>Parameter remediated</td> </tr> <tr> <td>WARNING</td>  <td>string</td> <td>Muted alert</td> </tr> </tbody> </table> </div>
 
         :param device_id: (required)
         :type device_id: str
@@ -1720,7 +1721,7 @@ class DeviceInformationApi:
     ) -> ApiResponse[object]:
         """Get Device Parameters
 
-        This request returns the parameters and their statuses for a specified Device ID   This endpoint is only applicable to macOS clients.   The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: [https://github.com/kandji\\-inc/support/wiki/Devices\\ -API\\-\\-\\-Parameter\\-Correlations](https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations)    **Possible parameter status values**     | **Value** | **Type** | **Additional Info** | | --- | --- | --- | | ERROR | string | Audit failure | | INCOMPATIBLE | string | Not compatible with device or OS version |  | PASS | string | Device meets requirements | | PENDING | string | Waiting on device. Not yet run. | | REMEDIATED | string | Parameter remediated |  | WARNING | string | Muted alert |
+        <p>This request returns the parameters and their statuses for a specified Device ID</p> <p>This endpoint is only applicable to macOS clients.</p>  <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p>  <p><strong>Possible parameter status values</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Value</strong></th>  <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th>  </tr> </thead> <tbody> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td>  <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td>  <td>Waiting on device. Not yet run.</td> </tr> <tr> <td>REMEDIATED</td>  <td>string</td> <td>Parameter remediated</td> </tr> <tr> <td>WARNING</td>  <td>string</td> <td>Muted alert</td> </tr> </tbody> </table> </div>
 
         :param device_id: (required)
         :type device_id: str
@@ -1787,7 +1788,7 @@ class DeviceInformationApi:
     ) -> RESTResponseType:
         """Get Device Parameters
 
-        This request returns the parameters and their statuses for a specified Device ID   This endpoint is only applicable to macOS clients.   The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: [https://github.com/kandji\\-inc/support/wiki/Devices\\ -API\\-\\-\\-Parameter\\-Correlations](https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations)    **Possible parameter status values**     | **Value** | **Type** | **Additional Info** | | --- | --- | --- | | ERROR | string | Audit failure | | INCOMPATIBLE | string | Not compatible with device or OS version |  | PASS | string | Device meets requirements | | PENDING | string | Waiting on device. Not yet run. | | REMEDIATED | string | Parameter remediated |  | WARNING | string | Muted alert |
+        <p>This request returns the parameters and their statuses for a specified Device ID</p> <p>This endpoint is only applicable to macOS clients.</p>  <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p>  <p><strong>Possible parameter status values</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Value</strong></th>  <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th>  </tr> </thead> <tbody> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td>  <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td>  <td>Waiting on device. Not yet run.</td> </tr> <tr> <td>REMEDIATED</td>  <td>string</td> <td>Parameter remediated</td> </tr> <tr> <td>WARNING</td>  <td>string</td> <td>Muted alert</td> </tr> </tbody> </table> </div>
 
         :param device_id: (required)
         :type device_id: str
@@ -1914,7 +1915,7 @@ class DeviceInformationApi:
     ) -> object:
         """Get Device Status
 
-        This request returns the full status (parameters and library items) for a specified Device ID.   The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: [https://github.com/kandji\\-inc/support/wiki/Devices\\-API\\-\\-\\-Parameter\\ -Correlations](https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations)    #### Possible status values   **Library items**     | **Value** | **Type** | **Additional Info** | | --- | --- | --- | | AVAILABLE | string | Library item available in Self Service | | ERROR | string | Audit failure | | EXCLUDED | string | Not in scope for assignment rule | | INCOMPATIBLE | string | Not compatible with device or OS version | | PASS | string | Device meets requirements | | PENDING | string | Waiting on device, not yet installed (All library items except for config profiles) | | failed | string | Configuration profile failed to install | | pending | string | Waiting on device, Configuration profile not yet installed | | success | string | Configuration profile installed |   **Parameters**     | **Value** | **Type** | **Additional Info** | | --- | --- | --- | | ERROR | string | Audit failure | | INCOMPATIBLE | string | Not compatible with device or OS version | | PASS | string | Device meets requirements | | PENDING | string | Waiting on device. Not yet run. | | REMEDIATED | string | Parameter remediated | | WARNING | string | Muted alert |
+        <p>This request returns the full status (parameters and library items) for a specified Device ID.</p> <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p>  <h4 id=&quot;possible-status-values&quot;>Possible status values</h4> <p><strong>Library items</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>  <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th>  <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr>  <td>AVAILABLE</td> <td>string</td> <td>Library item available in Self Service</td>  </tr> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr>  <tr> <td>EXCLUDED</td> <td>string</td> <td>Not in scope for assignment rule</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td>  <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td>  <td>Waiting on device, not yet installed (All library items except for config profiles)</td> </tr> <tr> <td>failed</td> <td>string</td> <td>Configuration profile failed to install</td> </tr> <tr> <td>pending</td> <td>string</td>  <td>Waiting on device, Configuration profile not yet installed</td> </tr>  <tr> <td>success</td> <td>string</td> <td>Configuration profile installed</td>  </tr> </tbody> </table> </div><p><strong>Parameters</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead>  <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>ERROR</td> <td>string</td>  <td>Audit failure</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td>  <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td>  <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td>  <td>string</td> <td>Waiting on device. Not yet run.</td> </tr> <tr> <td>REMEDIATED</td>  <td>string</td> <td>Parameter remediated</td> </tr> <tr> <td>WARNING</td>  <td>string</td> <td>Muted alert</td> </tr> </tbody> </table> </div>
 
         :param device_id: (required)
         :type device_id: str
@@ -1981,7 +1982,7 @@ class DeviceInformationApi:
     ) -> ApiResponse[object]:
         """Get Device Status
 
-        This request returns the full status (parameters and library items) for a specified Device ID.   The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: [https://github.com/kandji\\-inc/support/wiki/Devices\\-API\\-\\-\\-Parameter\\ -Correlations](https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations)    #### Possible status values   **Library items**     | **Value** | **Type** | **Additional Info** | | --- | --- | --- | | AVAILABLE | string | Library item available in Self Service | | ERROR | string | Audit failure | | EXCLUDED | string | Not in scope for assignment rule | | INCOMPATIBLE | string | Not compatible with device or OS version | | PASS | string | Device meets requirements | | PENDING | string | Waiting on device, not yet installed (All library items except for config profiles) | | failed | string | Configuration profile failed to install | | pending | string | Waiting on device, Configuration profile not yet installed | | success | string | Configuration profile installed |   **Parameters**     | **Value** | **Type** | **Additional Info** | | --- | --- | --- | | ERROR | string | Audit failure | | INCOMPATIBLE | string | Not compatible with device or OS version | | PASS | string | Device meets requirements | | PENDING | string | Waiting on device. Not yet run. | | REMEDIATED | string | Parameter remediated | | WARNING | string | Muted alert |
+        <p>This request returns the full status (parameters and library items) for a specified Device ID.</p> <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p>  <h4 id=&quot;possible-status-values&quot;>Possible status values</h4> <p><strong>Library items</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>  <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th>  <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr>  <td>AVAILABLE</td> <td>string</td> <td>Library item available in Self Service</td>  </tr> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr>  <tr> <td>EXCLUDED</td> <td>string</td> <td>Not in scope for assignment rule</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td>  <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td>  <td>Waiting on device, not yet installed (All library items except for config profiles)</td> </tr> <tr> <td>failed</td> <td>string</td> <td>Configuration profile failed to install</td> </tr> <tr> <td>pending</td> <td>string</td>  <td>Waiting on device, Configuration profile not yet installed</td> </tr>  <tr> <td>success</td> <td>string</td> <td>Configuration profile installed</td>  </tr> </tbody> </table> </div><p><strong>Parameters</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead>  <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>ERROR</td> <td>string</td>  <td>Audit failure</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td>  <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td>  <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td>  <td>string</td> <td>Waiting on device. Not yet run.</td> </tr> <tr> <td>REMEDIATED</td>  <td>string</td> <td>Parameter remediated</td> </tr> <tr> <td>WARNING</td>  <td>string</td> <td>Muted alert</td> </tr> </tbody> </table> </div>
 
         :param device_id: (required)
         :type device_id: str
@@ -2048,7 +2049,7 @@ class DeviceInformationApi:
     ) -> RESTResponseType:
         """Get Device Status
 
-        This request returns the full status (parameters and library items) for a specified Device ID.   The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: [https://github.com/kandji\\-inc/support/wiki/Devices\\-API\\-\\-\\-Parameter\\ -Correlations](https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations)    #### Possible status values   **Library items**     | **Value** | **Type** | **Additional Info** | | --- | --- | --- | | AVAILABLE | string | Library item available in Self Service | | ERROR | string | Audit failure | | EXCLUDED | string | Not in scope for assignment rule | | INCOMPATIBLE | string | Not compatible with device or OS version | | PASS | string | Device meets requirements | | PENDING | string | Waiting on device, not yet installed (All library items except for config profiles) | | failed | string | Configuration profile failed to install | | pending | string | Waiting on device, Configuration profile not yet installed | | success | string | Configuration profile installed |   **Parameters**     | **Value** | **Type** | **Additional Info** | | --- | --- | --- | | ERROR | string | Audit failure | | INCOMPATIBLE | string | Not compatible with device or OS version | | PASS | string | Device meets requirements | | PENDING | string | Waiting on device. Not yet run. | | REMEDIATED | string | Parameter remediated | | WARNING | string | Muted alert |
+        <p>This request returns the full status (parameters and library items) for a specified Device ID.</p> <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p>  <h4 id=&quot;possible-status-values&quot;>Possible status values</h4> <p><strong>Library items</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>  <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th>  <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr>  <td>AVAILABLE</td> <td>string</td> <td>Library item available in Self Service</td>  </tr> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr>  <tr> <td>EXCLUDED</td> <td>string</td> <td>Not in scope for assignment rule</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td>  <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td>  <td>Waiting on device, not yet installed (All library items except for config profiles)</td> </tr> <tr> <td>failed</td> <td>string</td> <td>Configuration profile failed to install</td> </tr> <tr> <td>pending</td> <td>string</td>  <td>Waiting on device, Configuration profile not yet installed</td> </tr>  <tr> <td>success</td> <td>string</td> <td>Configuration profile installed</td>  </tr> </tbody> </table> </div><p><strong>Parameters</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead>  <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>ERROR</td> <td>string</td>  <td>Audit failure</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td>  <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td>  <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td>  <td>string</td> <td>Waiting on device. Not yet run.</td> </tr> <tr> <td>REMEDIATED</td>  <td>string</td> <td>Parameter remediated</td> </tr> <tr> <td>WARNING</td>  <td>string</td> <td>Muted alert</td> </tr> </tbody> </table> </div>
 
         :param device_id: (required)
         :type device_id: str
@@ -2159,26 +2160,26 @@ class DeviceInformationApi:
     @validate_call
     def list_devices(
         self,
-        limit: Annotated[StrictStr, Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")],
+        limit: Annotated[StrictStr, Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")],
         asset_tag: Optional[StrictStr] = None,
-        blueprint_id: Annotated[Optional[StrictStr], Field(description="Return results 'containing' the specified blueprint id")] = None,
+        blueprint_id: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the specified blueprint id")] = None,
         device_id: Optional[StrictStr] = None,
         device_name: Optional[StrictStr] = None,
-        filevault_enabled: Annotated[Optional[StrictStr], Field(description="Query for devices that either have FileVault on (true) or off (false). This parameter only applies to macOS.    An empty list \\`\\ []\\` will be returned if no devices are found with the given parameter value.")] = None,
+        filevault_enabled: Annotated[Optional[StrictStr], Field(description="<p>Query for devices that either have FileVault on (true) or off (false). This parameter only applies to macOS. </p> <p>An empty list <code>[]</code> will be returned if no devices are found with the given parameter value.</p>")] = None,
         mac_address: Annotated[Optional[StrictStr], Field(description="Search for a specific device by MAC address")] = None,
-        model: Annotated[Optional[StrictStr], Field(description="Return model results 'containing' the specified model string.")] = None,
-        ordering: Annotated[Optional[StrictStr], Field(description="The \\`ordering\\` parameter can be used to define how the device records are ordered in the response. Prepending a dash (\\\\\\-) to the parameter value will reverse the order of the returned results.   \\ `?ordering\\=\\-serial\\_number\\` will order the response by serial\\\\ \\_number in descending order.   \\*\\*Possible values\\*\\*   \\ * \\`asset\\_tag\\` \\* \\`blueprint\\_id\\` \\* \\`device\\_id\\` \\ * \\`device\\_name\\` \\* \\`last\\_check\\_in\\` \\\\\\- agent checkin  \\* \\`model\\` \\* \\`platform\\` \\* \\`os\\_version\\` \\* \\`serial\\ _number\\` \\* \\`user\\`   Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.   \\`?ordering\\=serial\\_number,platform\\`")] = None,
+        model: Annotated[Optional[StrictStr], Field(description="Return model results &quot;containing&quot; the specified model string.")] = None,
+        ordering: Annotated[Optional[StrictStr], Field(description="<p>The <code>ordering</code> parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p>  <p><code>?ordering=-serial_number</code> will order the response by serial_number in descending order.</p> <p><strong>Possible values</strong></p> <ul>  <li><code>asset_tag</code></li> <li><code>blueprint_id</code></li> <li><code>device_id</code></li>  <li><code>device_name</code></li> <li><code>last_check_in</code> - agent checkin</li> <li><code>model</code></li> <li><code>platform</code></li>  <li><code>os_version</code></li> <li><code>serial_number</code></li>  <li><code>user</code></li> </ul> <p>Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.</p> <p><code>?ordering=serial_number,platform</code></p>")] = None,
         os_version: Annotated[Optional[StrictStr], Field(description="Return all device records with the specified OS version")] = None,
-        platform: Annotated[Optional[StrictStr], Field(description="Return all records matching a specific platform. Possible values:\\`Mac\\`, \\`iPad\\`, \\`iPhone\\`, \\`AppleTV\\`")] = None,
+        platform: Annotated[Optional[StrictStr], Field(description="Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code>")] = None,
         serial_number: Annotated[Optional[StrictStr], Field(description="Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.")] = None,
         tag_name: Annotated[Optional[StrictStr], Field(description="Return results for given tag name. Case sensitive.")] = None,
         tag_name_in: Annotated[Optional[StrictStr], Field(description="Return results for given tag names separate by commas. Case sensitive.")] = None,
         tag_id: Annotated[Optional[StrictStr], Field(description="Search for a tag by its ID. Case sensitive.")] = None,
         tag_id_in: Annotated[Optional[StrictStr], Field(description="Return results for given tag IDs separated by commas. Case sensitive.")] = None,
-        user: Annotated[Optional[StrictStr], Field(description="Return results 'containing' the user name")] = None,
-        user_email: Annotated[Optional[StrictStr], Field(description="Return results 'containing' search on email address")] = None,
-        user_id: Annotated[Optional[StrictStr], Field(description="'exact' match on kandji user ID number")] = None,
-        user_name: Annotated[Optional[StrictStr], Field(description="Return results 'containing' the assigned user Display Name")] = None,
+        user: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the user name")] = None,
+        user_email: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; search on email address")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID number")] = None,
+        user_name: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the assigned user Display Name")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -2195,29 +2196,29 @@ class DeviceInformationApi:
     ) -> object:
         """List Devices
 
-        This request returns a list of devices in a Kandji tenant. Optionally. query parameters can be used to filter results.   There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Kandji support [GitHub](https://github.com/kandji-inc/support/tree/main/api-tools/code-examples).
+        <p>This request returns a list of devices in a Kandji tenant. Optionally. query parameters can be used to filter results.</p> <p>There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/code-examples&quot;>GitHub</a>.</p>
 
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (required)
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (required)
         :type limit: str
         :param asset_tag: 
         :type asset_tag: str
-        :param blueprint_id: Return results 'containing' the specified blueprint id
+        :param blueprint_id: Return results &quot;containing&quot; the specified blueprint id
         :type blueprint_id: str
         :param device_id: 
         :type device_id: str
         :param device_name: 
         :type device_name: str
-        :param filevault_enabled: Query for devices that either have FileVault on (true) or off (false). This parameter only applies to macOS.    An empty list \\`\\ []\\` will be returned if no devices are found with the given parameter value.
+        :param filevault_enabled: <p>Query for devices that either have FileVault on (true) or off (false). This parameter only applies to macOS. </p> <p>An empty list <code>[]</code> will be returned if no devices are found with the given parameter value.</p>
         :type filevault_enabled: str
         :param mac_address: Search for a specific device by MAC address
         :type mac_address: str
-        :param model: Return model results 'containing' the specified model string.
+        :param model: Return model results &quot;containing&quot; the specified model string.
         :type model: str
-        :param ordering: The \\`ordering\\` parameter can be used to define how the device records are ordered in the response. Prepending a dash (\\\\\\-) to the parameter value will reverse the order of the returned results.   \\ `?ordering\\=\\-serial\\_number\\` will order the response by serial\\\\ \\_number in descending order.   \\*\\*Possible values\\*\\*   \\ * \\`asset\\_tag\\` \\* \\`blueprint\\_id\\` \\* \\`device\\_id\\` \\ * \\`device\\_name\\` \\* \\`last\\_check\\_in\\` \\\\\\- agent checkin  \\* \\`model\\` \\* \\`platform\\` \\* \\`os\\_version\\` \\* \\`serial\\ _number\\` \\* \\`user\\`   Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.   \\`?ordering\\=serial\\_number,platform\\`
+        :param ordering: <p>The <code>ordering</code> parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p>  <p><code>?ordering=-serial_number</code> will order the response by serial_number in descending order.</p> <p><strong>Possible values</strong></p> <ul>  <li><code>asset_tag</code></li> <li><code>blueprint_id</code></li> <li><code>device_id</code></li>  <li><code>device_name</code></li> <li><code>last_check_in</code> - agent checkin</li> <li><code>model</code></li> <li><code>platform</code></li>  <li><code>os_version</code></li> <li><code>serial_number</code></li>  <li><code>user</code></li> </ul> <p>Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.</p> <p><code>?ordering=serial_number,platform</code></p>
         :type ordering: str
         :param os_version: Return all device records with the specified OS version
         :type os_version: str
-        :param platform: Return all records matching a specific platform. Possible values:\\`Mac\\`, \\`iPad\\`, \\`iPhone\\`, \\`AppleTV\\`
+        :param platform: Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code>
         :type platform: str
         :param serial_number: Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.
         :type serial_number: str
@@ -2229,13 +2230,13 @@ class DeviceInformationApi:
         :type tag_id: str
         :param tag_id_in: Return results for given tag IDs separated by commas. Case sensitive.
         :type tag_id_in: str
-        :param user: Return results 'containing' the user name
+        :param user: Return results &quot;containing&quot; the user name
         :type user: str
-        :param user_email: Return results 'containing' search on email address
+        :param user_email: Return results &quot;containing&quot; search on email address
         :type user_email: str
-        :param user_id: 'exact' match on kandji user ID number
+        :param user_id: &quot;exact&quot; match on kandji user ID number
         :type user_id: str
-        :param user_name: Return results 'containing' the assigned user Display Name
+        :param user_name: Return results &quot;containing&quot; the assigned user Display Name
         :type user_name: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -2306,26 +2307,26 @@ class DeviceInformationApi:
     @validate_call
     def list_devices_with_http_info(
         self,
-        limit: Annotated[StrictStr, Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")],
+        limit: Annotated[StrictStr, Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")],
         asset_tag: Optional[StrictStr] = None,
-        blueprint_id: Annotated[Optional[StrictStr], Field(description="Return results 'containing' the specified blueprint id")] = None,
+        blueprint_id: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the specified blueprint id")] = None,
         device_id: Optional[StrictStr] = None,
         device_name: Optional[StrictStr] = None,
-        filevault_enabled: Annotated[Optional[StrictStr], Field(description="Query for devices that either have FileVault on (true) or off (false). This parameter only applies to macOS.    An empty list \\`\\ []\\` will be returned if no devices are found with the given parameter value.")] = None,
+        filevault_enabled: Annotated[Optional[StrictStr], Field(description="<p>Query for devices that either have FileVault on (true) or off (false). This parameter only applies to macOS. </p> <p>An empty list <code>[]</code> will be returned if no devices are found with the given parameter value.</p>")] = None,
         mac_address: Annotated[Optional[StrictStr], Field(description="Search for a specific device by MAC address")] = None,
-        model: Annotated[Optional[StrictStr], Field(description="Return model results 'containing' the specified model string.")] = None,
-        ordering: Annotated[Optional[StrictStr], Field(description="The \\`ordering\\` parameter can be used to define how the device records are ordered in the response. Prepending a dash (\\\\\\-) to the parameter value will reverse the order of the returned results.   \\ `?ordering\\=\\-serial\\_number\\` will order the response by serial\\\\ \\_number in descending order.   \\*\\*Possible values\\*\\*   \\ * \\`asset\\_tag\\` \\* \\`blueprint\\_id\\` \\* \\`device\\_id\\` \\ * \\`device\\_name\\` \\* \\`last\\_check\\_in\\` \\\\\\- agent checkin  \\* \\`model\\` \\* \\`platform\\` \\* \\`os\\_version\\` \\* \\`serial\\ _number\\` \\* \\`user\\`   Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.   \\`?ordering\\=serial\\_number,platform\\`")] = None,
+        model: Annotated[Optional[StrictStr], Field(description="Return model results &quot;containing&quot; the specified model string.")] = None,
+        ordering: Annotated[Optional[StrictStr], Field(description="<p>The <code>ordering</code> parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p>  <p><code>?ordering=-serial_number</code> will order the response by serial_number in descending order.</p> <p><strong>Possible values</strong></p> <ul>  <li><code>asset_tag</code></li> <li><code>blueprint_id</code></li> <li><code>device_id</code></li>  <li><code>device_name</code></li> <li><code>last_check_in</code> - agent checkin</li> <li><code>model</code></li> <li><code>platform</code></li>  <li><code>os_version</code></li> <li><code>serial_number</code></li>  <li><code>user</code></li> </ul> <p>Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.</p> <p><code>?ordering=serial_number,platform</code></p>")] = None,
         os_version: Annotated[Optional[StrictStr], Field(description="Return all device records with the specified OS version")] = None,
-        platform: Annotated[Optional[StrictStr], Field(description="Return all records matching a specific platform. Possible values:\\`Mac\\`, \\`iPad\\`, \\`iPhone\\`, \\`AppleTV\\`")] = None,
+        platform: Annotated[Optional[StrictStr], Field(description="Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code>")] = None,
         serial_number: Annotated[Optional[StrictStr], Field(description="Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.")] = None,
         tag_name: Annotated[Optional[StrictStr], Field(description="Return results for given tag name. Case sensitive.")] = None,
         tag_name_in: Annotated[Optional[StrictStr], Field(description="Return results for given tag names separate by commas. Case sensitive.")] = None,
         tag_id: Annotated[Optional[StrictStr], Field(description="Search for a tag by its ID. Case sensitive.")] = None,
         tag_id_in: Annotated[Optional[StrictStr], Field(description="Return results for given tag IDs separated by commas. Case sensitive.")] = None,
-        user: Annotated[Optional[StrictStr], Field(description="Return results 'containing' the user name")] = None,
-        user_email: Annotated[Optional[StrictStr], Field(description="Return results 'containing' search on email address")] = None,
-        user_id: Annotated[Optional[StrictStr], Field(description="'exact' match on kandji user ID number")] = None,
-        user_name: Annotated[Optional[StrictStr], Field(description="Return results 'containing' the assigned user Display Name")] = None,
+        user: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the user name")] = None,
+        user_email: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; search on email address")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID number")] = None,
+        user_name: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the assigned user Display Name")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -2342,29 +2343,29 @@ class DeviceInformationApi:
     ) -> ApiResponse[object]:
         """List Devices
 
-        This request returns a list of devices in a Kandji tenant. Optionally. query parameters can be used to filter results.   There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Kandji support [GitHub](https://github.com/kandji-inc/support/tree/main/api-tools/code-examples).
+        <p>This request returns a list of devices in a Kandji tenant. Optionally. query parameters can be used to filter results.</p> <p>There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/code-examples&quot;>GitHub</a>.</p>
 
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (required)
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (required)
         :type limit: str
         :param asset_tag: 
         :type asset_tag: str
-        :param blueprint_id: Return results 'containing' the specified blueprint id
+        :param blueprint_id: Return results &quot;containing&quot; the specified blueprint id
         :type blueprint_id: str
         :param device_id: 
         :type device_id: str
         :param device_name: 
         :type device_name: str
-        :param filevault_enabled: Query for devices that either have FileVault on (true) or off (false). This parameter only applies to macOS.    An empty list \\`\\ []\\` will be returned if no devices are found with the given parameter value.
+        :param filevault_enabled: <p>Query for devices that either have FileVault on (true) or off (false). This parameter only applies to macOS. </p> <p>An empty list <code>[]</code> will be returned if no devices are found with the given parameter value.</p>
         :type filevault_enabled: str
         :param mac_address: Search for a specific device by MAC address
         :type mac_address: str
-        :param model: Return model results 'containing' the specified model string.
+        :param model: Return model results &quot;containing&quot; the specified model string.
         :type model: str
-        :param ordering: The \\`ordering\\` parameter can be used to define how the device records are ordered in the response. Prepending a dash (\\\\\\-) to the parameter value will reverse the order of the returned results.   \\ `?ordering\\=\\-serial\\_number\\` will order the response by serial\\\\ \\_number in descending order.   \\*\\*Possible values\\*\\*   \\ * \\`asset\\_tag\\` \\* \\`blueprint\\_id\\` \\* \\`device\\_id\\` \\ * \\`device\\_name\\` \\* \\`last\\_check\\_in\\` \\\\\\- agent checkin  \\* \\`model\\` \\* \\`platform\\` \\* \\`os\\_version\\` \\* \\`serial\\ _number\\` \\* \\`user\\`   Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.   \\`?ordering\\=serial\\_number,platform\\`
+        :param ordering: <p>The <code>ordering</code> parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p>  <p><code>?ordering=-serial_number</code> will order the response by serial_number in descending order.</p> <p><strong>Possible values</strong></p> <ul>  <li><code>asset_tag</code></li> <li><code>blueprint_id</code></li> <li><code>device_id</code></li>  <li><code>device_name</code></li> <li><code>last_check_in</code> - agent checkin</li> <li><code>model</code></li> <li><code>platform</code></li>  <li><code>os_version</code></li> <li><code>serial_number</code></li>  <li><code>user</code></li> </ul> <p>Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.</p> <p><code>?ordering=serial_number,platform</code></p>
         :type ordering: str
         :param os_version: Return all device records with the specified OS version
         :type os_version: str
-        :param platform: Return all records matching a specific platform. Possible values:\\`Mac\\`, \\`iPad\\`, \\`iPhone\\`, \\`AppleTV\\`
+        :param platform: Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code>
         :type platform: str
         :param serial_number: Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.
         :type serial_number: str
@@ -2376,13 +2377,13 @@ class DeviceInformationApi:
         :type tag_id: str
         :param tag_id_in: Return results for given tag IDs separated by commas. Case sensitive.
         :type tag_id_in: str
-        :param user: Return results 'containing' the user name
+        :param user: Return results &quot;containing&quot; the user name
         :type user: str
-        :param user_email: Return results 'containing' search on email address
+        :param user_email: Return results &quot;containing&quot; search on email address
         :type user_email: str
-        :param user_id: 'exact' match on kandji user ID number
+        :param user_id: &quot;exact&quot; match on kandji user ID number
         :type user_id: str
-        :param user_name: Return results 'containing' the assigned user Display Name
+        :param user_name: Return results &quot;containing&quot; the assigned user Display Name
         :type user_name: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -2453,26 +2454,26 @@ class DeviceInformationApi:
     @validate_call
     def list_devices_without_preload_content(
         self,
-        limit: Annotated[StrictStr, Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")],
+        limit: Annotated[StrictStr, Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")],
         asset_tag: Optional[StrictStr] = None,
-        blueprint_id: Annotated[Optional[StrictStr], Field(description="Return results 'containing' the specified blueprint id")] = None,
+        blueprint_id: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the specified blueprint id")] = None,
         device_id: Optional[StrictStr] = None,
         device_name: Optional[StrictStr] = None,
-        filevault_enabled: Annotated[Optional[StrictStr], Field(description="Query for devices that either have FileVault on (true) or off (false). This parameter only applies to macOS.    An empty list \\`\\ []\\` will be returned if no devices are found with the given parameter value.")] = None,
+        filevault_enabled: Annotated[Optional[StrictStr], Field(description="<p>Query for devices that either have FileVault on (true) or off (false). This parameter only applies to macOS. </p> <p>An empty list <code>[]</code> will be returned if no devices are found with the given parameter value.</p>")] = None,
         mac_address: Annotated[Optional[StrictStr], Field(description="Search for a specific device by MAC address")] = None,
-        model: Annotated[Optional[StrictStr], Field(description="Return model results 'containing' the specified model string.")] = None,
-        ordering: Annotated[Optional[StrictStr], Field(description="The \\`ordering\\` parameter can be used to define how the device records are ordered in the response. Prepending a dash (\\\\\\-) to the parameter value will reverse the order of the returned results.   \\ `?ordering\\=\\-serial\\_number\\` will order the response by serial\\\\ \\_number in descending order.   \\*\\*Possible values\\*\\*   \\ * \\`asset\\_tag\\` \\* \\`blueprint\\_id\\` \\* \\`device\\_id\\` \\ * \\`device\\_name\\` \\* \\`last\\_check\\_in\\` \\\\\\- agent checkin  \\* \\`model\\` \\* \\`platform\\` \\* \\`os\\_version\\` \\* \\`serial\\ _number\\` \\* \\`user\\`   Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.   \\`?ordering\\=serial\\_number,platform\\`")] = None,
+        model: Annotated[Optional[StrictStr], Field(description="Return model results &quot;containing&quot; the specified model string.")] = None,
+        ordering: Annotated[Optional[StrictStr], Field(description="<p>The <code>ordering</code> parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p>  <p><code>?ordering=-serial_number</code> will order the response by serial_number in descending order.</p> <p><strong>Possible values</strong></p> <ul>  <li><code>asset_tag</code></li> <li><code>blueprint_id</code></li> <li><code>device_id</code></li>  <li><code>device_name</code></li> <li><code>last_check_in</code> - agent checkin</li> <li><code>model</code></li> <li><code>platform</code></li>  <li><code>os_version</code></li> <li><code>serial_number</code></li>  <li><code>user</code></li> </ul> <p>Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.</p> <p><code>?ordering=serial_number,platform</code></p>")] = None,
         os_version: Annotated[Optional[StrictStr], Field(description="Return all device records with the specified OS version")] = None,
-        platform: Annotated[Optional[StrictStr], Field(description="Return all records matching a specific platform. Possible values:\\`Mac\\`, \\`iPad\\`, \\`iPhone\\`, \\`AppleTV\\`")] = None,
+        platform: Annotated[Optional[StrictStr], Field(description="Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code>")] = None,
         serial_number: Annotated[Optional[StrictStr], Field(description="Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.")] = None,
         tag_name: Annotated[Optional[StrictStr], Field(description="Return results for given tag name. Case sensitive.")] = None,
         tag_name_in: Annotated[Optional[StrictStr], Field(description="Return results for given tag names separate by commas. Case sensitive.")] = None,
         tag_id: Annotated[Optional[StrictStr], Field(description="Search for a tag by its ID. Case sensitive.")] = None,
         tag_id_in: Annotated[Optional[StrictStr], Field(description="Return results for given tag IDs separated by commas. Case sensitive.")] = None,
-        user: Annotated[Optional[StrictStr], Field(description="Return results 'containing' the user name")] = None,
-        user_email: Annotated[Optional[StrictStr], Field(description="Return results 'containing' search on email address")] = None,
-        user_id: Annotated[Optional[StrictStr], Field(description="'exact' match on kandji user ID number")] = None,
-        user_name: Annotated[Optional[StrictStr], Field(description="Return results 'containing' the assigned user Display Name")] = None,
+        user: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the user name")] = None,
+        user_email: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; search on email address")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID number")] = None,
+        user_name: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the assigned user Display Name")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -2489,29 +2490,29 @@ class DeviceInformationApi:
     ) -> RESTResponseType:
         """List Devices
 
-        This request returns a list of devices in a Kandji tenant. Optionally. query parameters can be used to filter results.   There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Kandji support [GitHub](https://github.com/kandji-inc/support/tree/main/api-tools/code-examples).
+        <p>This request returns a list of devices in a Kandji tenant. Optionally. query parameters can be used to filter results.</p> <p>There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/code-examples&quot;>GitHub</a>.</p>
 
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (required)
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (required)
         :type limit: str
         :param asset_tag: 
         :type asset_tag: str
-        :param blueprint_id: Return results 'containing' the specified blueprint id
+        :param blueprint_id: Return results &quot;containing&quot; the specified blueprint id
         :type blueprint_id: str
         :param device_id: 
         :type device_id: str
         :param device_name: 
         :type device_name: str
-        :param filevault_enabled: Query for devices that either have FileVault on (true) or off (false). This parameter only applies to macOS.    An empty list \\`\\ []\\` will be returned if no devices are found with the given parameter value.
+        :param filevault_enabled: <p>Query for devices that either have FileVault on (true) or off (false). This parameter only applies to macOS. </p> <p>An empty list <code>[]</code> will be returned if no devices are found with the given parameter value.</p>
         :type filevault_enabled: str
         :param mac_address: Search for a specific device by MAC address
         :type mac_address: str
-        :param model: Return model results 'containing' the specified model string.
+        :param model: Return model results &quot;containing&quot; the specified model string.
         :type model: str
-        :param ordering: The \\`ordering\\` parameter can be used to define how the device records are ordered in the response. Prepending a dash (\\\\\\-) to the parameter value will reverse the order of the returned results.   \\ `?ordering\\=\\-serial\\_number\\` will order the response by serial\\\\ \\_number in descending order.   \\*\\*Possible values\\*\\*   \\ * \\`asset\\_tag\\` \\* \\`blueprint\\_id\\` \\* \\`device\\_id\\` \\ * \\`device\\_name\\` \\* \\`last\\_check\\_in\\` \\\\\\- agent checkin  \\* \\`model\\` \\* \\`platform\\` \\* \\`os\\_version\\` \\* \\`serial\\ _number\\` \\* \\`user\\`   Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.   \\`?ordering\\=serial\\_number,platform\\`
+        :param ordering: <p>The <code>ordering</code> parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p>  <p><code>?ordering=-serial_number</code> will order the response by serial_number in descending order.</p> <p><strong>Possible values</strong></p> <ul>  <li><code>asset_tag</code></li> <li><code>blueprint_id</code></li> <li><code>device_id</code></li>  <li><code>device_name</code></li> <li><code>last_check_in</code> - agent checkin</li> <li><code>model</code></li> <li><code>platform</code></li>  <li><code>os_version</code></li> <li><code>serial_number</code></li>  <li><code>user</code></li> </ul> <p>Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.</p> <p><code>?ordering=serial_number,platform</code></p>
         :type ordering: str
         :param os_version: Return all device records with the specified OS version
         :type os_version: str
-        :param platform: Return all records matching a specific platform. Possible values:\\`Mac\\`, \\`iPad\\`, \\`iPhone\\`, \\`AppleTV\\`
+        :param platform: Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code>
         :type platform: str
         :param serial_number: Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.
         :type serial_number: str
@@ -2523,13 +2524,13 @@ class DeviceInformationApi:
         :type tag_id: str
         :param tag_id_in: Return results for given tag IDs separated by commas. Case sensitive.
         :type tag_id_in: str
-        :param user: Return results 'containing' the user name
+        :param user: Return results &quot;containing&quot; the user name
         :type user: str
-        :param user_email: Return results 'containing' search on email address
+        :param user_email: Return results &quot;containing&quot; search on email address
         :type user_email: str
-        :param user_id: 'exact' match on kandji user ID number
+        :param user_id: &quot;exact&quot; match on kandji user ID number
         :type user_id: str
-        :param user_name: Return results 'containing' the assigned user Display Name
+        :param user_name: Return results &quot;containing&quot; the assigned user Display Name
         :type user_name: str
         :param offset: Specify the starting record to return
         :type offset: str

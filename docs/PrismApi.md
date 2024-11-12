@@ -63,8 +63,8 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
-    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order. (optional)
-    limit = '' # str | A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
+    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order. (optional)
+    limit = '' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
     offset = '' # str | Specify the starting record to return. (optional)
 
     try:
@@ -84,8 +84,8 @@ Name | Type | Description  | Notes
  **blueprint_ids** | **str**| Filter results by one or more blueprint IDs separated by commas. | [optional] 
  **device_families** | **str**| Filter results by one or more device families separate by commas. | [optional] 
  **filter** | **str**| JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. | [optional] 
- **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\&#x60;\\-\\&#x60;) order. | [optional] 
- **limit** | **str**| A hard upper \\&#x60;limit\\&#x60; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\&#x60;limit\\&#x60; and \\&#x60;offset\\&#x60; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
+ **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. | [optional] 
+ **limit** | **str**| A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
  **offset** | **str**| Specify the starting record to return. | [optional] 
 
 ### Return type
@@ -148,8 +148,8 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
-    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order. (optional)
-    limit = '' # str | A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
+    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order. (optional)
+    limit = '' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
     offset = '' # str | Specify the starting record to return. (optional)
 
     try:
@@ -171,8 +171,8 @@ Name | Type | Description  | Notes
  **blueprint_ids** | **str**| Filter results by one or more blueprint IDs separated by commas. | [optional] 
  **device_families** | **str**| Filter results by one or more device families separate by commas. | [optional] 
  **filter** | **str**| JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. | [optional] 
- **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\&#x60;\\-\\&#x60;) order. | [optional] 
- **limit** | **str**| A hard upper \\&#x60;limit\\&#x60; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\&#x60;limit\\&#x60; and \\&#x60;offset\\&#x60; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
+ **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. | [optional] 
+ **limit** | **str**| A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
  **offset** | **str**| Specify the starting record to return. | [optional] 
 
 ### Return type
@@ -235,8 +235,8 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '{\"name\":{\"not_in\":[\"Okta Verify\"]},\"device__name\":{\"not_in\":[\"testuser’s MacBook Air\"]}}' # str | JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
-    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order. (optional)
-    limit = '' # str | A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
+    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order. (optional)
+    limit = '' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
     offset = '' # str | Specify the starting record to return. (optional)
 
     try:
@@ -258,8 +258,8 @@ Name | Type | Description  | Notes
  **blueprint_ids** | **str**| Filter results by one or more blueprint IDs separated by commas. | [optional] 
  **device_families** | **str**| Filter results by one or more device families separate by commas. | [optional] 
  **filter** | **str**| JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. | [optional] 
- **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\&#x60;\\-\\&#x60;) order. | [optional] 
- **limit** | **str**| A hard upper \\&#x60;limit\\&#x60; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\&#x60;limit\\&#x60; and \\&#x60;offset\\&#x60; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
+ **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. | [optional] 
+ **limit** | **str**| A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
  **offset** | **str**| Specify the starting record to return. | [optional] 
 
 ### Return type
@@ -322,8 +322,8 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
-    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order. (optional)
-    limit = '' # str | A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
+    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order. (optional)
+    limit = '' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
     offset = '' # str | Specify the starting record to return. (optional)
 
     try:
@@ -345,8 +345,8 @@ Name | Type | Description  | Notes
  **blueprint_ids** | **str**| Filter results by one or more blueprint IDs separated by commas. | [optional] 
  **device_families** | **str**| Filter results by one or more device families separate by commas. | [optional] 
  **filter** | **str**| JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. | [optional] 
- **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\&#x60;\\-\\&#x60;) order. | [optional] 
- **limit** | **str**| A hard upper \\&#x60;limit\\&#x60; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\&#x60;limit\\&#x60; and \\&#x60;offset\\&#x60; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
+ **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. | [optional] 
+ **limit** | **str**| A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
  **offset** | **str**| Specify the starting record to return. | [optional] 
 
 ### Return type
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 
 Count
 
-Get the total record count for the specified Prism category.    If a category contains spaces substitute the spaces for underscores ('\\_') when using the API query.   Example: `Device information` becomes `device_information`.
+<p>Get the total record count for the specified Prism category.</p>  <p>If a category contains spaces substitute the spaces for underscores (&quot;_&quot;) when using the API query.</p> <p>Example: <code>Device information</code> becomes <code>device_information</code>.</p>
 
 ### Example
 
@@ -406,7 +406,7 @@ configuration = kandji_python_sdk.Configuration(
 with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji_python_sdk.PrismApi(api_client)
-    category = 'apps' # str | Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores ('\\\\\\_') when using the API query.   Examples: apps device\\\\\\_information kernel\\\\\\_extensions system\\\\\\_extensions
+    category = 'apps' # str | <p>Return the count of records for the specified category.   If a category contains spaces substitute the spaces for underscores (&quot;_&quot;) when using the API query.</p> <p>Examples: apps device_information kernel_extensions system_extensions</p>
 
     try:
         # Count
@@ -424,7 +424,7 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **category** | **str**| Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores (&#39;\\\\\\_&#39;) when using the API query.   Examples: apps device\\\\\\_information kernel\\\\\\_extensions system\\\\\\_extensions | 
+ **category** | **str**| &lt;p&gt;Return the count of records for the specified category.   If a category contains spaces substitute the spaces for underscores (&amp;quot;_&amp;quot;) when using the API query.&lt;/p&gt; &lt;p&gt;Examples: apps device_information kernel_extensions system_extensions&lt;/p&gt; | 
 
 ### Return type
 
@@ -486,8 +486,8 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
-    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order. (optional)
-    limit = '' # str | A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
+    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order. (optional)
+    limit = '' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
     offset = '' # str | Specify the starting record to return. (optional)
 
     try:
@@ -509,8 +509,8 @@ Name | Type | Description  | Notes
  **blueprint_ids** | **str**| Filter results by one or more blueprint IDs separated by commas. | [optional] 
  **device_families** | **str**| Filter results by one or more device families separate by commas. | [optional] 
  **filter** | **str**| JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. | [optional] 
- **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\&#x60;\\-\\&#x60;) order. | [optional] 
- **limit** | **str**| A hard upper \\&#x60;limit\\&#x60; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\&#x60;limit\\&#x60; and \\&#x60;offset\\&#x60; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
+ **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. | [optional] 
+ **limit** | **str**| A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
  **offset** | **str**| Specify the starting record to return. | [optional] 
 
 ### Return type
@@ -572,9 +572,9 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     api_instance = kandji_python_sdk.PrismApi(api_client)
     blueprint_ids = '14afabf2-7599-47af-a942-bf7f0b8fedf8' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
-    filter = '{\"device__name\":{\"in\":[\"testusers's MacBook Air\"]},\"updated_at\":{\"gte\":\"2023-09-03T04:00:00.000Z\",\"lte\":\"2023-09-04T04:00:00.000Z\"}}' # str | JSON schema object containing one or more key value pairs.    Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
-    sort_by = 'serial_number' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order. (optional)
-    limit = '' # str | A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
+    filter = '{\"device__name\":{\"in\":[\"testusers's MacBook Air\"]},\"updated_at\":{\"gte\":\"2023-09-03T04:00:00.000Z\",\"lte\":\"2023-09-04T04:00:00.000Z\"}}' # str | <p>JSON schema object containing one or more key value pairs.</p>  <p>Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> (optional)
+    sort_by = 'serial_number' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order. (optional)
+    limit = '' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
     offset = '' # str | Specify the starting record to return (optional)
     body = 'body_example' # str |  (optional)
 
@@ -596,9 +596,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **blueprint_ids** | **str**| Filter results by one or more blueprint IDs separated by commas. | [optional] 
  **device_families** | **str**| Filter results by one or more device families separate by commas. | [optional] 
- **filter** | **str**| JSON schema object containing one or more key value pairs.    Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. | [optional] 
- **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\&#x60;\\-\\&#x60;) order. | [optional] 
- **limit** | **str**| A hard upper \\&#x60;limit\\&#x60; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\&#x60;limit\\&#x60; and \\&#x60;offset\\&#x60; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
+ **filter** | **str**| &lt;p&gt;JSON schema object containing one or more key value pairs.&lt;/p&gt;  &lt;p&gt;Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.&lt;/p&gt; | [optional] 
+ **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. | [optional] 
+ **limit** | **str**| A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
  **offset** | **str**| Specify the starting record to return | [optional] 
  **body** | **str**|  | [optional] 
 
@@ -662,8 +662,8 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
-    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order. (optional)
-    limit = '' # str | A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
+    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order. (optional)
+    limit = '' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
     offset = '' # str | Specify the starting record to return (optional)
 
     try:
@@ -685,8 +685,8 @@ Name | Type | Description  | Notes
  **blueprint_ids** | **str**| Filter results by one or more blueprint IDs separated by commas. | [optional] 
  **device_families** | **str**| Filter results by one or more device families separate by commas. | [optional] 
  **filter** | **str**| JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. | [optional] 
- **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\&#x60;\\-\\&#x60;) order. | [optional] 
- **limit** | **str**| A hard upper \\&#x60;limit\\&#x60; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\&#x60;limit\\&#x60; and \\&#x60;offset\\&#x60; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
+ **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. | [optional] 
+ **limit** | **str**| A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
  **offset** | **str**| Specify the starting record to return | [optional] 
 
 ### Return type
@@ -749,8 +749,8 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac' # str | Results are limited to Mac only as Gatekeeper and XProtect are not applicable for other platfroms. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
-    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order. (optional)
-    limit = '' # str | A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
+    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order. (optional)
+    limit = '' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
     offset = '' # str | Specify the starting record to return (optional)
 
     try:
@@ -772,8 +772,8 @@ Name | Type | Description  | Notes
  **blueprint_ids** | **str**| Filter results by one or more blueprint IDs separated by commas. | [optional] 
  **device_families** | **str**| Results are limited to Mac only as Gatekeeper and XProtect are not applicable for other platfroms. | [optional] 
  **filter** | **str**| JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. | [optional] 
- **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\&#x60;\\-\\&#x60;) order. | [optional] 
- **limit** | **str**| A hard upper \\&#x60;limit\\&#x60; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\&#x60;limit\\&#x60; and \\&#x60;offset\\&#x60; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
+ **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. | [optional] 
+ **limit** | **str**| A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
  **offset** | **str**| Specify the starting record to return | [optional] 
 
 ### Return type
@@ -802,7 +802,7 @@ Name | Type | Description  | Notes
 
 Get category export
 
-Get an export request's status. To download the export, use the `signed_url`. This will download a CSV file containing the exported category information.   ### Request Parameters   export\\_id (path parameter): The unique identifier of the the export job.
+<p>Get an export request's status. To download the export, use the <code>signed_url</code>. This will download a CSV file containing the exported category information.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p>export_id (path parameter): The unique identifier of the the export job.</p>
 
 ### Example
 
@@ -913,8 +913,8 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
-    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order. (optional)
-    limit = '' # str | A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
+    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order. (optional)
+    limit = '' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
     offset = '' # str | Specify the starting record to return. (optional)
 
     try:
@@ -936,8 +936,8 @@ Name | Type | Description  | Notes
  **blueprint_ids** | **str**| Filter results by one or more blueprint IDs separated by commas. | [optional] 
  **device_families** | **str**| Filter results by one or more device families separate by commas. | [optional] 
  **filter** | **str**| JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. | [optional] 
- **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\&#x60;\\-\\&#x60;) order. | [optional] 
- **limit** | **str**| A hard upper \\&#x60;limit\\&#x60; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\&#x60;limit\\&#x60; and \\&#x60;offset\\&#x60; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
+ **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. | [optional] 
+ **limit** | **str**| A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
  **offset** | **str**| Specify the starting record to return. | [optional] 
 
 ### Return type
@@ -1000,8 +1000,8 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | SON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
-    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order. (optional)
-    limit = '' # str | A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
+    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order. (optional)
+    limit = '' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
     offset = '' # str | Specify the starting record to return. (optional)
 
     try:
@@ -1023,8 +1023,8 @@ Name | Type | Description  | Notes
  **blueprint_ids** | **str**| Filter results by one or more blueprint IDs separated by commas. | [optional] 
  **device_families** | **str**| Filter results by one or more device families separate by commas. | [optional] 
  **filter** | **str**| SON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. | [optional] 
- **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\&#x60;\\-\\&#x60;) order. | [optional] 
- **limit** | **str**| A hard upper \\&#x60;limit\\&#x60; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\&#x60;limit\\&#x60; and \\&#x60;offset\\&#x60; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
+ **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. | [optional] 
+ **limit** | **str**| A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
  **offset** | **str**| Specify the starting record to return. | [optional] 
 
 ### Return type
@@ -1087,8 +1087,8 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
-    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order. (optional)
-    limit = '' # str | A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
+    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order. (optional)
+    limit = '' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
     offset = '' # str | Specify the starting record to return. (optional)
 
     try:
@@ -1110,8 +1110,8 @@ Name | Type | Description  | Notes
  **blueprint_ids** | **str**| Filter results by one or more blueprint IDs separated by commas. | [optional] 
  **device_families** | **str**| Filter results by one or more device families separate by commas. | [optional] 
  **filter** | **str**| JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. | [optional] 
- **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\&#x60;\\-\\&#x60;) order. | [optional] 
- **limit** | **str**| A hard upper \\&#x60;limit\\&#x60; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\&#x60;limit\\&#x60; and \\&#x60;offset\\&#x60; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
+ **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. | [optional] 
+ **limit** | **str**| A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
  **offset** | **str**| Specify the starting record to return. | [optional] 
 
 ### Return type
@@ -1174,8 +1174,8 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
-    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order. (optional)
-    limit = '' # str | A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
+    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order. (optional)
+    limit = '' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
     offset = '' # str | Specify the starting record to return. (optional)
 
     try:
@@ -1197,8 +1197,8 @@ Name | Type | Description  | Notes
  **blueprint_ids** | **str**| Filter results by one or more blueprint IDs separated by commas. | [optional] 
  **device_families** | **str**| Filter results by one or more device families separate by commas. | [optional] 
  **filter** | **str**| JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. | [optional] 
- **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\&#x60;\\-\\&#x60;) order. | [optional] 
- **limit** | **str**| A hard upper \\&#x60;limit\\&#x60; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\&#x60;limit\\&#x60; and \\&#x60;offset\\&#x60; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
+ **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. | [optional] 
+ **limit** | **str**| A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
  **offset** | **str**| Specify the starting record to return. | [optional] 
 
 ### Return type
@@ -1227,7 +1227,7 @@ Name | Type | Description  | Notes
 
 Request category export
 
-Request export of a category. The `id` key is used when checking the export status using the *Request category export* endpoint.   **Request Body Parameters: application/json**     | Key | Type | Possible value(s) | Description | | --- | --- | --- | --- | | `blueprint_ids` | `array` | `['string', 'string', 'string']` | List of one or more comma separate blueprint IDs. | | `category` | `string` | `apps` , `activation_lock` , `desktop_and_screensaver` , `device_information` , `gatekeeper_and_xprotect` , `installed_profiles` , `kernel_extensions` , `local_users` , `launch_agents_and_daemons` , `system_extensions` , `startup_settings` , `transparency_database` | Only one category per export reqest. | | `device_families` | `array` | `['Mac', 'iPhone', 'iPad', 'tvOS']` | List of one or more comma separted string values for device families. |  | `filter` | `object` | `{'apple_silicon': {'eq': true}, 'device__name': {'like': ['this', 'or_this']}}` | JSON schema object containing one or more key value pairs.  **Note**: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. | | `sort_by` | `string` |  | Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order. |
+<p>Request export of a category. The <code>id</code> key is used when checking the export status using the <em>Request category export</em> endpoint.</p> <p><strong>Request Body Parameters: application/json</strong></p>  <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>  <thead> <tr> <th>Key</th> <th>Type</th> <th>Possible value(s)</th> <th>Description</th>  </tr> </thead> <tbody> <tr> <td><code>blueprint_ids</code></td> <td><code>array</code></td>  <td><code>[&quot;string&quot;, &quot;string&quot;, &quot;string&quot;]</code></td>  <td>List of one or more comma separate blueprint IDs.</td> </tr> <tr>  <td><code>category</code></td> <td><code>string</code></td> <td><code>apps</code> ,  <br /><code>activation_lock</code> ,  <br /><code>desktop_and_screensaver</code> ,  <br /><code>device_information</code> ,  <br /><code>gatekeeper_and_xprotect</code> ,  <br /><code>installed_profiles</code> ,  <br /><code>kernel_extensions</code> ,  <br /><code>local_users</code> ,  <br /><code>launch_agents_and_daemons</code> ,  <br /><code>system_extensions</code> ,  <br /><code>startup_settings</code> ,  <br /><code>transparency_database</code></td> <td>Only one category per export reqest.</td> </tr> <tr> <td><code>device_families</code></td>  <td><code>array</code></td> <td><code>[&quot;Mac&quot;, &quot;iPhone&quot;, &quot;iPad&quot;, &quot;tvOS&quot;]</code></td> <td>List of one or more comma separted string values for device families.</td> </tr> <tr> <td><code>filter</code></td>  <td><code>object</code></td> <td><code>{&quot;apple_silicon&quot;: {&quot;eq&quot;: true}, &quot;device__name&quot;: {&quot;like&quot;: [&quot;this&quot;, &quot;or_this&quot;]}}</code></td>  <td>JSON schema object containing one or more key value pairs.  <br />  <br /><strong>Note</strong>: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</td>  </tr> <tr> <td><code>sort_by</code></td> <td><code>string</code></td>  <td></td> <td>Sort results by the name of a given response body key in either ascending (default behavior) or descending(`-`) order.</td> </tr> </tbody> </table> </div>
 
 ### Example
 
@@ -1339,8 +1339,8 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
-    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order. (optional)
-    limit = '' # str | A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
+    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order. (optional)
+    limit = '' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
     offset = '' # str | Specify the starting record to return (optional)
 
     try:
@@ -1362,8 +1362,8 @@ Name | Type | Description  | Notes
  **blueprint_ids** | **str**| Filter results by one or more blueprint IDs separated by commas. | [optional] 
  **device_families** | **str**| Filter results by one or more device families separate by commas. | [optional] 
  **filter** | **str**| JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. | [optional] 
- **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\&#x60;\\-\\&#x60;) order. | [optional] 
- **limit** | **str**| A hard upper \\&#x60;limit\\&#x60; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\&#x60;limit\\&#x60; and \\&#x60;offset\\&#x60; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
+ **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. | [optional] 
+ **limit** | **str**| A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
  **offset** | **str**| Specify the starting record to return | [optional] 
 
 ### Return type
@@ -1426,8 +1426,8 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
-    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order. (optional)
-    limit = '' # str | A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
+    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order. (optional)
+    limit = '' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
     offset = '' # str | Specify the starting record to return. (optional)
 
     try:
@@ -1449,8 +1449,8 @@ Name | Type | Description  | Notes
  **blueprint_ids** | **str**| Filter results by one or more blueprint IDs separated by commas. | [optional] 
  **device_families** | **str**| Filter results by one or more device families separate by commas. | [optional] 
  **filter** | **str**| JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. | [optional] 
- **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\&#x60;\\-\\&#x60;) order. | [optional] 
- **limit** | **str**| A hard upper \\&#x60;limit\\&#x60; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\&#x60;limit\\&#x60; and \\&#x60;offset\\&#x60; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
+ **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. | [optional] 
+ **limit** | **str**| A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
  **offset** | **str**| Specify the starting record to return. | [optional] 
 
 ### Return type
@@ -1513,8 +1513,8 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
-    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\`\\-\\`) order. (optional)
-    limit = '' # str | A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
+    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order. (optional)
+    limit = '' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
     offset = '' # str | Specify the starting record to return. (optional)
 
     try:
@@ -1536,8 +1536,8 @@ Name | Type | Description  | Notes
  **blueprint_ids** | **str**| Filter results by one or more blueprint IDs separated by commas. | [optional] 
  **device_families** | **str**| Filter results by one or more device families separate by commas. | [optional] 
  **filter** | **str**| JSON schema object containing one or more key value pairs.  Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. | [optional] 
- **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(\\&#x60;\\-\\&#x60;) order. | [optional] 
- **limit** | **str**| A hard upper \\&#x60;limit\\&#x60; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\&#x60;limit\\&#x60; and \\&#x60;offset\\&#x60; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
+ **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. | [optional] 
+ **limit** | **str**| A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
  **offset** | **str**| Specify the starting record to return. | [optional] 
 
 ### Return type

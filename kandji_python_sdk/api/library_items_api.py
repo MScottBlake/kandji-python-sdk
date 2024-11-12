@@ -3,9 +3,10 @@
 """
     Kandji API
 
-    Welcome to the Kandji API Documentation =======================================    You can find your API URL in Settings \\> Access. The API URL will follow the below formats.   * US \\- `https://SubDomain.api.kandji.io` * EU \\- `https://SubDomain.api.eu.kandji.io`    For information on how to obtain an API token, please refer to the following support article.   <https://support.kandji.io/api>   #### Rate Limit    The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.   #### Request Methods   HTTP request methods supported by the Kandji API.     | Method | Definition | | --- | --- | | GET | The `GET` method requests a representation of the specified resource. | | POST | The `POST` method submits an entity to the specified resource. | | PATCH | The `PATCH` method applies partial modifications to a resource. | | DELETE | The `DELETE` method deletes the specified resource. |   #### Response codes   Not all response codes apply to every endpoint.     | Code | Response | | --- | --- | | 200 | OK | | 201 | Created | | 204 | No content | |  | Typical response when sending the DELETE method. | | 400 | Bad Request | |  | 'Command already running' \\- The command may already be running in a *Pending* state waiting on the device. | |  | 'Command is not allowed for current device' \\- The command may not be compatible with the target device. | |  | 'JSON parse error \\- Expecting ',' delimiter: line 3 column 2 (char 65\\)' | | 401 | Unauthorized | |  | This error can occur if the token is incorrect, was revoked, or the token has expired. |  | 403 | Forbidden | |  | The request was understood but cannot be authorized. | | 404 | Not found | |  | Unable to locate the resource in the Kandji tenant. | | 415 | Unsupported Media Type | |  | The request contains a media type which the server or resource does not support. | | 500 | Internal server error |  | 503 | Service unavailable | |  | This error can occur if a file upload is still being processed via the custom apps API. |   #### Data structure   The API returns all structured responses in JSON schema format.   #### Examples    Code examples using the API can be found in the Kandji support [GitHub](https://github.com/kandji-inc/support/tree/main/api-tools).
+    <html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome to the Kandji API Documentation</h1> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p>  </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p>  <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the Kandji API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th>  </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td>  <td>The <code>POST</code> method submits an entity to the specified resource.</td>  </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>  <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr>  <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr>  <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td>  </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td>  </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr>  <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr>  <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td>  </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td>  </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Kandji tenant.</td> </tr> <tr> <td>415</td>  <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr>  <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table>  </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4>  <p>Code examples using the API can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
 
     The version of the OpenAPI document: 1.0.0
+    Contact: mitchelsblake@gmail.com
     Generated by OpenAPI Generator (https://openapi-generator.tech)
 
     Do not edit the class manually.
@@ -42,10 +43,10 @@ class LibraryItemsApi:
     def get_library_item_activity(
         self,
         library_item_id: StrictStr,
-        activity_type: Annotated[Optional[StrictStr], Field(description="Filter actions by this activity type. Choices are: library\\\\\\_item\\\\\\_created, library\\\\\\_item\\\\\\_edited, library\\\\\\_item\\\\\\_deleted, library\\\\\\_item\\\\\\_duplicated, library\\\\\\_item\\\\\\_assignment\\\\\\_changed")] = None,
+        activity_type: Annotated[Optional[StrictStr], Field(description="Filter actions by this activity type. Choices are: library_item_created, library_item_edited, library_item_deleted, library_item_duplicated, library_item_assignment_changed")] = None,
         user_id: Annotated[Optional[StrictStr], Field(description="Filter actions by this user (id)")] = None,
         user_email: Annotated[Optional[StrictStr], Field(description="Filter actions by this user (email)")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -62,17 +63,17 @@ class LibraryItemsApi:
     ) -> object:
         """Get Library Item Activity
 
-        This endpoint retrieves the activity related to a specific library item. Activity is listed from newest to oldest.   To see a delta of the activity events between now and the last request, you can store the newest entry from the previous request and then look for that entry in the next request. Any entry post that will be the delta.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+        <p>This endpoint retrieves the activity related to a specific library item. Activity is listed from newest to oldest.</p> <p>To see a delta of the activity events between now and the last request, you can store the newest entry from the previous request and then look for that entry in the next request. Any entry post that will be the delta.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
         :param library_item_id: (required)
         :type library_item_id: str
-        :param activity_type: Filter actions by this activity type. Choices are: library\\\\\\_item\\\\\\_created, library\\\\\\_item\\\\\\_edited, library\\\\\\_item\\\\\\_deleted, library\\\\\\_item\\\\\\_duplicated, library\\\\\\_item\\\\\\_assignment\\\\\\_changed
+        :param activity_type: Filter actions by this activity type. Choices are: library_item_created, library_item_edited, library_item_deleted, library_item_duplicated, library_item_assignment_changed
         :type activity_type: str
         :param user_id: Filter actions by this user (id)
         :type user_id: str
         :param user_email: Filter actions by this user (email)
         :type user_email: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -129,10 +130,10 @@ class LibraryItemsApi:
     def get_library_item_activity_with_http_info(
         self,
         library_item_id: StrictStr,
-        activity_type: Annotated[Optional[StrictStr], Field(description="Filter actions by this activity type. Choices are: library\\\\\\_item\\\\\\_created, library\\\\\\_item\\\\\\_edited, library\\\\\\_item\\\\\\_deleted, library\\\\\\_item\\\\\\_duplicated, library\\\\\\_item\\\\\\_assignment\\\\\\_changed")] = None,
+        activity_type: Annotated[Optional[StrictStr], Field(description="Filter actions by this activity type. Choices are: library_item_created, library_item_edited, library_item_deleted, library_item_duplicated, library_item_assignment_changed")] = None,
         user_id: Annotated[Optional[StrictStr], Field(description="Filter actions by this user (id)")] = None,
         user_email: Annotated[Optional[StrictStr], Field(description="Filter actions by this user (email)")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -149,17 +150,17 @@ class LibraryItemsApi:
     ) -> ApiResponse[object]:
         """Get Library Item Activity
 
-        This endpoint retrieves the activity related to a specific library item. Activity is listed from newest to oldest.   To see a delta of the activity events between now and the last request, you can store the newest entry from the previous request and then look for that entry in the next request. Any entry post that will be the delta.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+        <p>This endpoint retrieves the activity related to a specific library item. Activity is listed from newest to oldest.</p> <p>To see a delta of the activity events between now and the last request, you can store the newest entry from the previous request and then look for that entry in the next request. Any entry post that will be the delta.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
         :param library_item_id: (required)
         :type library_item_id: str
-        :param activity_type: Filter actions by this activity type. Choices are: library\\\\\\_item\\\\\\_created, library\\\\\\_item\\\\\\_edited, library\\\\\\_item\\\\\\_deleted, library\\\\\\_item\\\\\\_duplicated, library\\\\\\_item\\\\\\_assignment\\\\\\_changed
+        :param activity_type: Filter actions by this activity type. Choices are: library_item_created, library_item_edited, library_item_deleted, library_item_duplicated, library_item_assignment_changed
         :type activity_type: str
         :param user_id: Filter actions by this user (id)
         :type user_id: str
         :param user_email: Filter actions by this user (email)
         :type user_email: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -216,10 +217,10 @@ class LibraryItemsApi:
     def get_library_item_activity_without_preload_content(
         self,
         library_item_id: StrictStr,
-        activity_type: Annotated[Optional[StrictStr], Field(description="Filter actions by this activity type. Choices are: library\\\\\\_item\\\\\\_created, library\\\\\\_item\\\\\\_edited, library\\\\\\_item\\\\\\_deleted, library\\\\\\_item\\\\\\_duplicated, library\\\\\\_item\\\\\\_assignment\\\\\\_changed")] = None,
+        activity_type: Annotated[Optional[StrictStr], Field(description="Filter actions by this activity type. Choices are: library_item_created, library_item_edited, library_item_deleted, library_item_duplicated, library_item_assignment_changed")] = None,
         user_id: Annotated[Optional[StrictStr], Field(description="Filter actions by this user (id)")] = None,
         user_email: Annotated[Optional[StrictStr], Field(description="Filter actions by this user (email)")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -236,17 +237,17 @@ class LibraryItemsApi:
     ) -> RESTResponseType:
         """Get Library Item Activity
 
-        This endpoint retrieves the activity related to a specific library item. Activity is listed from newest to oldest.   To see a delta of the activity events between now and the last request, you can store the newest entry from the previous request and then look for that entry in the next request. Any entry post that will be the delta.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+        <p>This endpoint retrieves the activity related to a specific library item. Activity is listed from newest to oldest.</p> <p>To see a delta of the activity events between now and the last request, you can store the newest entry from the previous request and then look for that entry in the next request. Any entry post that will be the delta.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
         :param library_item_id: (required)
         :type library_item_id: str
-        :param activity_type: Filter actions by this activity type. Choices are: library\\\\\\_item\\\\\\_created, library\\\\\\_item\\\\\\_edited, library\\\\\\_item\\\\\\_deleted, library\\\\\\_item\\\\\\_duplicated, library\\\\\\_item\\\\\\_assignment\\\\\\_changed
+        :param activity_type: Filter actions by this activity type. Choices are: library_item_created, library_item_edited, library_item_deleted, library_item_duplicated, library_item_assignment_changed
         :type activity_type: str
         :param user_id: Filter actions by this user (id)
         :type user_id: str
         :param user_email: Filter actions by this user (email)
         :type user_email: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -389,7 +390,7 @@ class LibraryItemsApi:
         self,
         library_item_id: StrictStr,
         computer_id: Annotated[Optional[StrictStr], Field(description="Query for the status of one device.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -406,13 +407,13 @@ class LibraryItemsApi:
     ) -> object:
         """Get Library Item Statuses
 
-        This endpoint retrieves the statuses related to a specific library item.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+        <p>This endpoint retrieves the statuses related to a specific library item.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>  <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
         :param library_item_id: (required)
         :type library_item_id: str
         :param computer_id: Query for the status of one device.
         :type computer_id: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -468,7 +469,7 @@ class LibraryItemsApi:
         self,
         library_item_id: StrictStr,
         computer_id: Annotated[Optional[StrictStr], Field(description="Query for the status of one device.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -485,13 +486,13 @@ class LibraryItemsApi:
     ) -> ApiResponse[object]:
         """Get Library Item Statuses
 
-        This endpoint retrieves the statuses related to a specific library item.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+        <p>This endpoint retrieves the statuses related to a specific library item.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>  <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
         :param library_item_id: (required)
         :type library_item_id: str
         :param computer_id: Query for the status of one device.
         :type computer_id: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -547,7 +548,7 @@ class LibraryItemsApi:
         self,
         library_item_id: StrictStr,
         computer_id: Annotated[Optional[StrictStr], Field(description="Query for the status of one device.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -564,13 +565,13 @@ class LibraryItemsApi:
     ) -> RESTResponseType:
         """Get Library Item Statuses
 
-        This endpoint retrieves the statuses related to a specific library item.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+        <p>This endpoint retrieves the statuses related to a specific library item.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>  <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
         :param library_item_id: (required)
         :type library_item_id: str
         :param computer_id: Query for the status of one device.
         :type computer_id: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str

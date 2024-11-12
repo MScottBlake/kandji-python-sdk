@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 List Self Service Categories
 
-This endpoint retrieves a list of self\\-service categories and their associated IDs.   If you are planning to make a Library item available in Self Service under a specific category, you can call this endpoint to get the category ID and then use that ID when creating or updating the library item via the Kandji API.
+<p>This endpoint retrieves a list of self-service categories and their associated IDs.</p> <p>If you are planning to make a Library item available in Self Service under a specific category, you can call this endpoint to get the category ID and then use that ID when creating or updating the library item via the Kandji API.</p>
 
 ### Example
 

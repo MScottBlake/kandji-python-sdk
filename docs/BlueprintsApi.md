@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 Assign Library Item
 
-This endpoint allows assigning a library item to a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.   ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.   ### Request Body   * `library_item_id` (string, required) * `assignment_node_id` (string, required for maps)     + Note: To find the assignment\\_node\\_id, view the map in a browser. Then, on your keyboard, press and hold the Option ⌥ key. Each node ID remains fixed for the lifespan of the node on the map.   ### Error responses      | **Code** | **Body** | | --- | --- | | 400 \\- Bad Request | Bad Request | |  | 'Library Item already exists on Blueprint' | |  | 'Library Item already exists in Assignment Node' | |  | 'assignment\\_node\\_id cannot be provided for Classic Blueprint' | |  | 'Must provide assignment\\_node\\ _id for Assignment Map Blueprint' |
+<p>This endpoint allows assigning a library item to a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=&quot;request-body&quot;>Request Body</h3> <ul> <li><p><code>library_item_id</code> (string, required)</p>  </li> <li><p><code>assignment_node_id</code> (string, required for maps)</p>  <ul> <li>Note: To find the assignment_node_id, view the map in a browser. Then, on your keyboard, press and hold the Option ⌥ key. Each node ID remains fixed for the lifespan of the node on the map.</li> </ul> </li> </ul>  <h3 id=&quot;error-responses&quot;>Error responses</h3> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Code</strong></th>  <th><strong>Body</strong></th> </tr> </thead> <tbody> <tr> <td>400 - Bad Request</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>&quot;Library Item already exists on Blueprint&quot;</td> </tr> <tr> <td></td> <td>&quot;Library Item already exists in Assignment Node&quot;</td> </tr> <tr> <td></td>  <td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td>  </tr> <tr> <td></td> <td>&quot;Must provide assignment_node_id for Assignment Map Blueprint&quot;</td> </tr> </tbody> </table> </div>
 
 ### Example
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 Create Blueprint
 
-This request creates a new empty Blueprint or a new Blueprint from a template. The keys `name` and `enrollment_code` `is_active` are required, and the blueprint name key must be unique from the existing blueprint names in the Kandji tenant.   optionally, `type: map` can be used when creating a new Assignment Map blueprint.   Note: If cloning an existing blueprint,\\ `type\\` value and the type of sourced (\\`source.id\\`) blueprint must match and \\`source.type\\` value must be set to \\`blueprint\\`.
+<p>This request creates a new empty Blueprint or a new Blueprint from a template. The keys <code>name</code> and <code>enrollment_code</code> <code>is_active</code> are required, and the blueprint name key must be unique from the existing blueprint names in the Kandji tenant.</p> <p>optionally, <code>type: map</code> can be used when creating a new Assignment Map blueprint.</p>  <p>Note: If cloning an existing blueprint,`type` value and the type of sourced (`source.id`) blueprint must match and `source.type` value must be set to `blueprint`.</p>
 
 ### Example
 
@@ -135,8 +135,8 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     enrollment_code_is_active = 'enrollment_code_is_active_example' # str | (required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal
     name = 'name_example' # str | (required) Set the name of the Blueprint. The name provided must be unique.
     source_id = 'source_id_example' # str | Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint.
-    source_type = 'source_type_example' # str | Set the source to create the blueprint from. Possible options: `template` and `blueprint`.
-    type = 'type_example' # str | Choose the type of blueprint to create. Options: `classic` or `map`
+    source_type = 'source_type_example' # str | Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>.
+    type = 'type_example' # str | Choose the type of blueprint to create. Options: <code>classic</code> or <code>map</code>
 
     try:
         # Create Blueprint
@@ -158,8 +158,8 @@ Name | Type | Description  | Notes
  **enrollment_code_is_active** | **str**| (required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal | 
  **name** | **str**| (required) Set the name of the Blueprint. The name provided must be unique. | 
  **source_id** | **str**| Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint. | 
- **source_type** | **str**| Set the source to create the blueprint from. Possible options: &#x60;template&#x60; and &#x60;blueprint&#x60;. | 
- **type** | **str**| Choose the type of blueprint to create. Options: &#x60;classic&#x60; or &#x60;map&#x60; | 
+ **source_type** | **str**| Set the source to create the blueprint from. Possible options: &lt;code&gt;template&lt;/code&gt; and &lt;code&gt;blueprint&lt;/code&gt;. | 
+ **type** | **str**| Choose the type of blueprint to create. Options: &lt;code&gt;classic&lt;/code&gt; or &lt;code&gt;map&lt;/code&gt; | 
 
 ### Return type
 
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 Delete Blueprint
 
-**WARNING!** ============   This is a HIGHLY destructive action.    Deleting a Blueprint will un\\-manage ALL devices assigned to the Blueprint.    ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.
+<h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1> <p>This is a HIGHLY destructive action.</p> <p>Deleting a Blueprint will un-manage ALL devices assigned to the Blueprint.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
 ### Example
 
@@ -263,7 +263,7 @@ void (empty response body)
 
 Get Blueprint
 
-This request returns information about a specific blueprint based on blueprint ID.   ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.
+<p>This request returns information about a specific blueprint based on blueprint ID.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
 ### Example
 
@@ -413,7 +413,7 @@ void (empty response body)
 
 Get Manual Enrollment Profile
 
-This request returns the manual enrollment profile (.mobileconfig file) for a specified Blueprint.   This request will return the enrollment profile even if 'Require Authentication' is configured for the Blueprint in Manual Enrollment.   The enrollment profile will be returned in raw form with response headers:   * `Content-Type` \\= `application/x-apple-aspen-config`  * `Content-Disposition` \\= `attachment;filename=kandji-enroll.mobileconfig`    An optional query parameter `sso=true` can be used to return a URL for SSO authentication instead. If this query parameter is used for a Blueprint that does not require authentication, then the enrollment profile will be returned.   ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.
+<p>This request returns the manual enrollment profile (.mobileconfig file) for a specified Blueprint.</p> <p>This request will return the enrollment profile even if &quot;Require Authentication&quot; is configured for the Blueprint in Manual Enrollment.</p> <p>The enrollment profile will be returned in raw form with response headers:</p> <ul> <li><p><code>Content-Type</code> = <code>application/x-apple-aspen-config</code></p> </li> <li><p><code>Content-Disposition</code> = <code>attachment;filename=kandji-enroll.mobileconfig</code></p> </li>  </ul> <p>An optional query parameter <code>sso=true</code> can be used to return a URL for SSO authentication instead. If this query parameter is used for a Blueprint that does not require authentication, then the enrollment profile will be returned.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
 ### Example
 
@@ -445,7 +445,7 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji_python_sdk.BlueprintsApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
-    sso = 'true' # str | Use the \\`sso\\` query parameter, set to \\`true\\`, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which 'Require Authentication' is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile. (optional)
+    sso = 'true' # str | Use the <code>sso</code> query parameter, set to <code>true</code>, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which &quot;Require Authentication&quot; is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile. (optional)
 
     try:
         # Get Manual Enrollment Profile
@@ -464,7 +464,7 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **blueprint_id** | **str**|  | 
- **sso** | **str**| Use the \\&#x60;sso\\&#x60; query parameter, set to \\&#x60;true\\&#x60;, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which &#39;Require Authentication&#39; is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile. | [optional] 
+ **sso** | **str**| Use the &lt;code&gt;sso&lt;/code&gt; query parameter, set to &lt;code&gt;true&lt;/code&gt;, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which &amp;quot;Require Authentication&amp;quot; is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile. | [optional] 
 
 ### Return type
 
@@ -524,8 +524,8 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji_python_sdk.BlueprintsApi(api_client)
     id = '97e4e175-1631-43f6-a02b-33fd1c748ab8' # str | Look up a specific Blueprint by its ID (optional)
-    id__in = '11f4eb9a-10ed-4c3d-a7c1-fb87f95743fb,6391086e-85a1-4820-813c-f9c75025fff4' # str | Specify a list of Blueprint IDs to limit the results to. Multiple values may be separated by commas. There is a double underscore (\\`\\_\\_\\`) between id and in (optional)
-    name = 'testing_blueprint' # str | Return Blueprint names 'containing' the specified search string. (optional)
+    id__in = '11f4eb9a-10ed-4c3d-a7c1-fb87f95743fb,6391086e-85a1-4820-813c-f9c75025fff4' # str | Specify a list of Blueprint IDs to limit the results to.  Multiple values may be separated by commas. There is a double underscore (<code>__</code>) between id and in (optional)
+    name = 'testing_blueprint' # str | Return Blueprint names &quot;containing&quot; the specified search string. (optional)
     limit = '100' # str | Number of results to return per page. (optional)
     offset = '400' # str | The initial index from which to return the results. (optional)
 
@@ -546,8 +546,8 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Look up a specific Blueprint by its ID | [optional] 
- **id__in** | **str**| Specify a list of Blueprint IDs to limit the results to. Multiple values may be separated by commas. There is a double underscore (\\&#x60;\\_\\_\\&#x60;) between id and in | [optional] 
- **name** | **str**| Return Blueprint names &#39;containing&#39; the specified search string. | [optional] 
+ **id__in** | **str**| Specify a list of Blueprint IDs to limit the results to.  Multiple values may be separated by commas. There is a double underscore (&lt;code&gt;__&lt;/code&gt;) between id and in | [optional] 
+ **name** | **str**| Return Blueprint names &amp;quot;containing&amp;quot; the specified search string. | [optional] 
  **limit** | **str**| Number of results to return per page. | [optional] 
  **offset** | **str**| The initial index from which to return the results. | [optional] 
 
@@ -577,7 +577,7 @@ Name | Type | Description  | Notes
 
 List Library Items
 
-This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.   ### Request Parameters    `blueprint_id` (path parameter): The unique identifier of the blueprint.    ### Response fields   * `count` (int): The total count of library items.  * `next` (str): The URL for the next page of results, if available. If not available will value will be `null`. * `previous` (str): The URL for the previous page of results, if available. If not available will value will be `null`. * `results` (object): An array containing objects with the following fields:    + `id` (str): The ID of the library item.  + `name` (str): The name of the library item.
+<p>This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=&quot;response-fields&quot;>Response fields</h3> <ul> <li><p><code>count</code> (int): The total count of library items.</p> </li> <li><p><code>next</code> (str): The URL for the next page of results, if available. If not available will value will be <code>null</code>.</p>  </li> <li><p><code>previous</code> (str): The URL for the previous page of results, if available. If not available will value will be <code>null</code>.</p>  </li> <li><p><code>results</code> (object): An array containing objects with the following fields:</p> <ul> <li><p><code>id</code> (str): The ID of the library item.</p> </li> <li><p><code>name</code> (str): The name of the library item.</p> </li> </ul> </li> </ul>
 
 ### Example
 
@@ -654,7 +654,7 @@ Name | Type | Description  | Notes
 
 Remove Library Item
 
-This endpoint allows removing a library item from a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.   ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.   ### Request Body   * `library_item_id` (string, required) * `assignment_node_id` (string, required for maps)    ### Error responses     | **Code** | **Body** | | --- | --- | | 400 \\- Bad Request | Bad Request | |  | 'assignment\\_node\\_id cannot be provided for Classic Blueprint' | |  | 'Must provide assignment\\_node\\_id for Assignment Map Blueprint' | |  | 'Library Item does not exist on Blueprint' | |  | 'Library Item does not exist in Assignment Node' |
+<p>This endpoint allows removing a library item from a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=&quot;request-body&quot;>Request Body</h3> <ul> <li><p><code>library_item_id</code> (string, required)</p>  </li> <li><p><code>assignment_node_id</code> (string, required for maps)</p>  </li> </ul> <h3 id=&quot;error-responses&quot;>Error responses</h3> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead>  <tr> <th><strong>Code</strong></th> <th><strong>Body</strong></th> </tr>  </thead> <tbody> <tr> <td>400 - Bad Request</td> <td>Bad Request</td>  </tr> <tr> <td></td> <td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td> </tr> <tr> <td></td> <td>&quot;Must provide assignment_node_id for Assignment Map Blueprint&quot;</td> </tr> <tr>  <td></td> <td>&quot;Library Item does not exist on Blueprint&quot;</td>  </tr> <tr> <td></td> <td>&quot;Library Item does not exist in Assignment Node&quot;</td> </tr> </tbody> </table> </div>
 
 ### Example
 
@@ -733,7 +733,7 @@ Name | Type | Description  | Notes
 
 Update Blueprint
 
-This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.   ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.
+<p>This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.</p>  <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
 ### Example
 
@@ -765,8 +765,8 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji_python_sdk.BlueprintsApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
-    description = 'description_example' # str | Update the description of the Blueprint
-    enrollment_code_code = 'enrollment_code_code_example' # str | Update the enrollment code of the Blueprint
+    description = 'description_example' # str | Update the description of the Blueprint 
+    enrollment_code_code = 'enrollment_code_code_example' # str | Update the enrollment code of the Blueprint 
     enrollment_code_is_active = 'enrollment_code_is_active_example' # str | Disable the Blueprint for manual device enrollment from the enrollment portal.
     name = 'name_example' # str | Update the name of the Blueprint
 
@@ -787,8 +787,8 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **blueprint_id** | **str**|  | 
- **description** | **str**| Update the description of the Blueprint | 
- **enrollment_code_code** | **str**| Update the enrollment code of the Blueprint | 
+ **description** | **str**| Update the description of the Blueprint  | 
+ **enrollment_code_code** | **str**| Update the enrollment code of the Blueprint  | 
  **enrollment_code_is_active** | **str**| Disable the Blueprint for manual device enrollment from the enrollment portal. | 
  **name** | **str**| Update the name of the Blueprint | 
 

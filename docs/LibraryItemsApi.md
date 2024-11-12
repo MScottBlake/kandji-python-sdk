@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Get Library Item Activity
 
-This endpoint retrieves the activity related to a specific library item. Activity is listed from newest to oldest.   To see a delta of the activity events between now and the last request, you can store the newest entry from the previous request and then look for that entry in the next request. Any entry post that will be the delta.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+<p>This endpoint retrieves the activity related to a specific library item. Activity is listed from newest to oldest.</p> <p>To see a delta of the activity events between now and the last request, you can store the newest entry from the previous request and then look for that entry in the next request. Any entry post that will be the delta.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
 ### Example
 
@@ -45,10 +45,10 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji_python_sdk.LibraryItemsApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
-    activity_type = 'library_item_assignment_changed' # str | Filter actions by this activity type. Choices are: library\\\\\\_item\\\\\\_created, library\\\\\\_item\\\\\\_edited, library\\\\\\_item\\\\\\_deleted, library\\\\\\_item\\\\\\_duplicated, library\\\\\\_item\\\\\\_assignment\\\\\\_changed (optional)
+    activity_type = 'library_item_assignment_changed' # str | Filter actions by this activity type. Choices are: library_item_created, library_item_edited, library_item_deleted, library_item_duplicated, library_item_assignment_changed (optional)
     user_id = '{user uuid}' # str | Filter actions by this user (id) (optional)
     user_email = 'me@example.com' # str | Filter actions by this user (email) (optional)
-    limit = '10' # str | A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
+    limit = '10' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
     offset = '100' # str | Specify the starting record to return (optional)
 
     try:
@@ -68,10 +68,10 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **library_item_id** | **str**|  | 
- **activity_type** | **str**| Filter actions by this activity type. Choices are: library\\\\\\_item\\\\\\_created, library\\\\\\_item\\\\\\_edited, library\\\\\\_item\\\\\\_deleted, library\\\\\\_item\\\\\\_duplicated, library\\\\\\_item\\\\\\_assignment\\\\\\_changed | [optional] 
+ **activity_type** | **str**| Filter actions by this activity type. Choices are: library_item_created, library_item_edited, library_item_deleted, library_item_duplicated, library_item_assignment_changed | [optional] 
  **user_id** | **str**| Filter actions by this user (id) | [optional] 
  **user_email** | **str**| Filter actions by this user (email) | [optional] 
- **limit** | **str**| A hard upper \\&#x60;limit\\&#x60; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\&#x60;limit\\&#x60; and \\&#x60;offset\\&#x60; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
+ **limit** | **str**| A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
  **offset** | **str**| Specify the starting record to return | [optional] 
 
 ### Return type
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 Get Library Item Statuses
 
-This endpoint retrieves the statuses related to a specific library item.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+<p>This endpoint retrieves the statuses related to a specific library item.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>  <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
 ### Example
 
@@ -133,7 +133,7 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     api_instance = kandji_python_sdk.LibraryItemsApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
     computer_id = '{device_id}' # str | Query for the status of one device. (optional)
-    limit = '300' # str | A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
+    limit = '300' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
     offset = '' # str | Specify the starting record to return (optional)
 
     try:
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **library_item_id** | **str**|  | 
  **computer_id** | **str**| Query for the status of one device. | [optional] 
- **limit** | **str**| A hard upper \\&#x60;limit\\&#x60; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\&#x60;limit\\&#x60; and \\&#x60;offset\\&#x60; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
+ **limit** | **str**| A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
  **offset** | **str**| Specify the starting record to return | [optional] 
 
 ### Return type

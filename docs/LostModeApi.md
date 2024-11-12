@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 Disable Lost Mode
 
-This command will send a request to turn off lost mode on iOS and iPadOS.   If the command is already pending, the message '*Disable lost mode is already pending for this device.*' will be in the response.
+<p>This command will send a request to turn off lost mode on iOS and iPadOS.</p> <p>If the command is already pending, the message &quot;<em>Disable lost mode is already pending for this device.</em>&quot; will be in the response.</p>
 
 ### Example
 
@@ -90,7 +90,7 @@ void (empty response body)
 
 Enable Lost Mode
 
-This endpoint sends an MDM command to remotely turn on lost mode on iOS and iPadOS.   Optionally, a JSON payload can be sent in the request to set a lock message, phone number, and footnote on the target device.
+<p>This endpoint sends an MDM command to remotely turn on lost mode on iOS and iPadOS.</p> <p>Optionally, a JSON payload can be sent in the request to set a lock message, phone number, and footnote on the target device.</p>
 
 ### Example
 
@@ -167,7 +167,7 @@ void (empty response body)
 
 Play Lost Mode Sound
 
-This command will tell the target iOS or iPadOS device to play the lost mode sound.   **Note**: The Lost Mode sound will play for 2 minutes, even if the device is in silent mode. Anyone finding the device can silence the sound by pressing any of its side buttons.
+<p>This command will tell the target iOS or iPadOS device to play the lost mode sound.</p> <p><strong>Note</strong>: The Lost Mode sound will play for 2 minutes, even if the device is in silent mode. Anyone finding the device can silence the sound by pressing any of its side buttons.</p>
 
 ### Example
 

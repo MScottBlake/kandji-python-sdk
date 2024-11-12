@@ -3,9 +3,10 @@
 """
     Kandji API
 
-    Welcome to the Kandji API Documentation =======================================    You can find your API URL in Settings \\> Access. The API URL will follow the below formats.   * US \\- `https://SubDomain.api.kandji.io` * EU \\- `https://SubDomain.api.eu.kandji.io`    For information on how to obtain an API token, please refer to the following support article.   <https://support.kandji.io/api>   #### Rate Limit    The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.   #### Request Methods   HTTP request methods supported by the Kandji API.     | Method | Definition | | --- | --- | | GET | The `GET` method requests a representation of the specified resource. | | POST | The `POST` method submits an entity to the specified resource. | | PATCH | The `PATCH` method applies partial modifications to a resource. | | DELETE | The `DELETE` method deletes the specified resource. |   #### Response codes   Not all response codes apply to every endpoint.     | Code | Response | | --- | --- | | 200 | OK | | 201 | Created | | 204 | No content | |  | Typical response when sending the DELETE method. | | 400 | Bad Request | |  | 'Command already running' \\- The command may already be running in a *Pending* state waiting on the device. | |  | 'Command is not allowed for current device' \\- The command may not be compatible with the target device. | |  | 'JSON parse error \\- Expecting ',' delimiter: line 3 column 2 (char 65\\)' | | 401 | Unauthorized | |  | This error can occur if the token is incorrect, was revoked, or the token has expired. |  | 403 | Forbidden | |  | The request was understood but cannot be authorized. | | 404 | Not found | |  | Unable to locate the resource in the Kandji tenant. | | 415 | Unsupported Media Type | |  | The request contains a media type which the server or resource does not support. | | 500 | Internal server error |  | 503 | Service unavailable | |  | This error can occur if a file upload is still being processed via the custom apps API. |   #### Data structure   The API returns all structured responses in JSON schema format.   #### Examples    Code examples using the API can be found in the Kandji support [GitHub](https://github.com/kandji-inc/support/tree/main/api-tools).
+    <html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome to the Kandji API Documentation</h1> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p>  </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p>  <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the Kandji API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th>  </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td>  <td>The <code>POST</code> method submits an entity to the specified resource.</td>  </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>  <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr>  <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr>  <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td>  </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td>  </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr>  <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr>  <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td>  </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td>  </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Kandji tenant.</td> </tr> <tr> <td>415</td>  <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr>  <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table>  </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4>  <p>Code examples using the API can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
 
     The version of the OpenAPI document: 1.0.0
+    Contact: mitchelsblake@gmail.com
     Generated by OpenAPI Generator (https://openapi-generator.tech)
 
     Do not edit the class manually.
@@ -58,7 +59,7 @@ class BlueprintsApi:
     ) -> object:
         """Assign Library Item
 
-        This endpoint allows assigning a library item to a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.   ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.   ### Request Body   * `library_item_id` (string, required) * `assignment_node_id` (string, required for maps)     + Note: To find the assignment\\_node\\_id, view the map in a browser. Then, on your keyboard, press and hold the Option ⌥ key. Each node ID remains fixed for the lifespan of the node on the map.   ### Error responses      | **Code** | **Body** | | --- | --- | | 400 \\- Bad Request | Bad Request | |  | 'Library Item already exists on Blueprint' | |  | 'Library Item already exists in Assignment Node' | |  | 'assignment\\_node\\_id cannot be provided for Classic Blueprint' | |  | 'Must provide assignment\\_node\\ _id for Assignment Map Blueprint' |
+        <p>This endpoint allows assigning a library item to a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=&quot;request-body&quot;>Request Body</h3> <ul> <li><p><code>library_item_id</code> (string, required)</p>  </li> <li><p><code>assignment_node_id</code> (string, required for maps)</p>  <ul> <li>Note: To find the assignment_node_id, view the map in a browser. Then, on your keyboard, press and hold the Option ⌥ key. Each node ID remains fixed for the lifespan of the node on the map.</li> </ul> </li> </ul>  <h3 id=&quot;error-responses&quot;>Error responses</h3> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Code</strong></th>  <th><strong>Body</strong></th> </tr> </thead> <tbody> <tr> <td>400 - Bad Request</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>&quot;Library Item already exists on Blueprint&quot;</td> </tr> <tr> <td></td> <td>&quot;Library Item already exists in Assignment Node&quot;</td> </tr> <tr> <td></td>  <td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td>  </tr> <tr> <td></td> <td>&quot;Must provide assignment_node_id for Assignment Map Blueprint&quot;</td> </tr> </tbody> </table> </div>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
@@ -129,7 +130,7 @@ class BlueprintsApi:
     ) -> ApiResponse[object]:
         """Assign Library Item
 
-        This endpoint allows assigning a library item to a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.   ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.   ### Request Body   * `library_item_id` (string, required) * `assignment_node_id` (string, required for maps)     + Note: To find the assignment\\_node\\_id, view the map in a browser. Then, on your keyboard, press and hold the Option ⌥ key. Each node ID remains fixed for the lifespan of the node on the map.   ### Error responses      | **Code** | **Body** | | --- | --- | | 400 \\- Bad Request | Bad Request | |  | 'Library Item already exists on Blueprint' | |  | 'Library Item already exists in Assignment Node' | |  | 'assignment\\_node\\_id cannot be provided for Classic Blueprint' | |  | 'Must provide assignment\\_node\\ _id for Assignment Map Blueprint' |
+        <p>This endpoint allows assigning a library item to a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=&quot;request-body&quot;>Request Body</h3> <ul> <li><p><code>library_item_id</code> (string, required)</p>  </li> <li><p><code>assignment_node_id</code> (string, required for maps)</p>  <ul> <li>Note: To find the assignment_node_id, view the map in a browser. Then, on your keyboard, press and hold the Option ⌥ key. Each node ID remains fixed for the lifespan of the node on the map.</li> </ul> </li> </ul>  <h3 id=&quot;error-responses&quot;>Error responses</h3> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Code</strong></th>  <th><strong>Body</strong></th> </tr> </thead> <tbody> <tr> <td>400 - Bad Request</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>&quot;Library Item already exists on Blueprint&quot;</td> </tr> <tr> <td></td> <td>&quot;Library Item already exists in Assignment Node&quot;</td> </tr> <tr> <td></td>  <td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td>  </tr> <tr> <td></td> <td>&quot;Must provide assignment_node_id for Assignment Map Blueprint&quot;</td> </tr> </tbody> </table> </div>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
@@ -200,7 +201,7 @@ class BlueprintsApi:
     ) -> RESTResponseType:
         """Assign Library Item
 
-        This endpoint allows assigning a library item to a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.   ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.   ### Request Body   * `library_item_id` (string, required) * `assignment_node_id` (string, required for maps)     + Note: To find the assignment\\_node\\_id, view the map in a browser. Then, on your keyboard, press and hold the Option ⌥ key. Each node ID remains fixed for the lifespan of the node on the map.   ### Error responses      | **Code** | **Body** | | --- | --- | | 400 \\- Bad Request | Bad Request | |  | 'Library Item already exists on Blueprint' | |  | 'Library Item already exists in Assignment Node' | |  | 'assignment\\_node\\_id cannot be provided for Classic Blueprint' | |  | 'Must provide assignment\\_node\\ _id for Assignment Map Blueprint' |
+        <p>This endpoint allows assigning a library item to a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=&quot;request-body&quot;>Request Body</h3> <ul> <li><p><code>library_item_id</code> (string, required)</p>  </li> <li><p><code>assignment_node_id</code> (string, required for maps)</p>  <ul> <li>Note: To find the assignment_node_id, view the map in a browser. Then, on your keyboard, press and hold the Option ⌥ key. Each node ID remains fixed for the lifespan of the node on the map.</li> </ul> </li> </ul>  <h3 id=&quot;error-responses&quot;>Error responses</h3> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Code</strong></th>  <th><strong>Body</strong></th> </tr> </thead> <tbody> <tr> <td>400 - Bad Request</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>&quot;Library Item already exists on Blueprint&quot;</td> </tr> <tr> <td></td> <td>&quot;Library Item already exists in Assignment Node&quot;</td> </tr> <tr> <td></td>  <td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td>  </tr> <tr> <td></td> <td>&quot;Must provide assignment_node_id for Assignment Map Blueprint&quot;</td> </tr> </tbody> </table> </div>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
@@ -334,8 +335,8 @@ class BlueprintsApi:
         enrollment_code_is_active: Annotated[StrictStr, Field(description="(required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal")],
         name: Annotated[StrictStr, Field(description="(required) Set the name of the Blueprint. The name provided must be unique.")],
         source_id: Annotated[StrictStr, Field(description="Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint.")],
-        source_type: Annotated[StrictStr, Field(description="Set the source to create the blueprint from. Possible options: `template` and `blueprint`.")],
-        type: Annotated[StrictStr, Field(description="Choose the type of blueprint to create. Options: `classic` or `map`")],
+        source_type: Annotated[StrictStr, Field(description="Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>.")],
+        type: Annotated[StrictStr, Field(description="Choose the type of blueprint to create. Options: <code>classic</code> or <code>map</code>")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -351,7 +352,7 @@ class BlueprintsApi:
     ) -> object:
         """Create Blueprint
 
-        This request creates a new empty Blueprint or a new Blueprint from a template. The keys `name` and `enrollment_code` `is_active` are required, and the blueprint name key must be unique from the existing blueprint names in the Kandji tenant.   optionally, `type: map` can be used when creating a new Assignment Map blueprint.   Note: If cloning an existing blueprint,\\ `type\\` value and the type of sourced (\\`source.id\\`) blueprint must match and \\`source.type\\` value must be set to \\`blueprint\\`.
+        <p>This request creates a new empty Blueprint or a new Blueprint from a template. The keys <code>name</code> and <code>enrollment_code</code> <code>is_active</code> are required, and the blueprint name key must be unique from the existing blueprint names in the Kandji tenant.</p> <p>optionally, <code>type: map</code> can be used when creating a new Assignment Map blueprint.</p>  <p>Note: If cloning an existing blueprint,`type` value and the type of sourced (`source.id`) blueprint must match and `source.type` value must be set to `blueprint`.</p>
 
         :param enrollment_code_code: Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app. (required)
         :type enrollment_code_code: str
@@ -361,9 +362,9 @@ class BlueprintsApi:
         :type name: str
         :param source_id: Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint. (required)
         :type source_id: str
-        :param source_type: Set the source to create the blueprint from. Possible options: `template` and `blueprint`. (required)
+        :param source_type: Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>. (required)
         :type source_type: str
-        :param type: Choose the type of blueprint to create. Options: `classic` or `map` (required)
+        :param type: Choose the type of blueprint to create. Options: <code>classic</code> or <code>map</code> (required)
         :type type: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -422,8 +423,8 @@ class BlueprintsApi:
         enrollment_code_is_active: Annotated[StrictStr, Field(description="(required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal")],
         name: Annotated[StrictStr, Field(description="(required) Set the name of the Blueprint. The name provided must be unique.")],
         source_id: Annotated[StrictStr, Field(description="Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint.")],
-        source_type: Annotated[StrictStr, Field(description="Set the source to create the blueprint from. Possible options: `template` and `blueprint`.")],
-        type: Annotated[StrictStr, Field(description="Choose the type of blueprint to create. Options: `classic` or `map`")],
+        source_type: Annotated[StrictStr, Field(description="Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>.")],
+        type: Annotated[StrictStr, Field(description="Choose the type of blueprint to create. Options: <code>classic</code> or <code>map</code>")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -439,7 +440,7 @@ class BlueprintsApi:
     ) -> ApiResponse[object]:
         """Create Blueprint
 
-        This request creates a new empty Blueprint or a new Blueprint from a template. The keys `name` and `enrollment_code` `is_active` are required, and the blueprint name key must be unique from the existing blueprint names in the Kandji tenant.   optionally, `type: map` can be used when creating a new Assignment Map blueprint.   Note: If cloning an existing blueprint,\\ `type\\` value and the type of sourced (\\`source.id\\`) blueprint must match and \\`source.type\\` value must be set to \\`blueprint\\`.
+        <p>This request creates a new empty Blueprint or a new Blueprint from a template. The keys <code>name</code> and <code>enrollment_code</code> <code>is_active</code> are required, and the blueprint name key must be unique from the existing blueprint names in the Kandji tenant.</p> <p>optionally, <code>type: map</code> can be used when creating a new Assignment Map blueprint.</p>  <p>Note: If cloning an existing blueprint,`type` value and the type of sourced (`source.id`) blueprint must match and `source.type` value must be set to `blueprint`.</p>
 
         :param enrollment_code_code: Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app. (required)
         :type enrollment_code_code: str
@@ -449,9 +450,9 @@ class BlueprintsApi:
         :type name: str
         :param source_id: Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint. (required)
         :type source_id: str
-        :param source_type: Set the source to create the blueprint from. Possible options: `template` and `blueprint`. (required)
+        :param source_type: Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>. (required)
         :type source_type: str
-        :param type: Choose the type of blueprint to create. Options: `classic` or `map` (required)
+        :param type: Choose the type of blueprint to create. Options: <code>classic</code> or <code>map</code> (required)
         :type type: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -510,8 +511,8 @@ class BlueprintsApi:
         enrollment_code_is_active: Annotated[StrictStr, Field(description="(required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal")],
         name: Annotated[StrictStr, Field(description="(required) Set the name of the Blueprint. The name provided must be unique.")],
         source_id: Annotated[StrictStr, Field(description="Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint.")],
-        source_type: Annotated[StrictStr, Field(description="Set the source to create the blueprint from. Possible options: `template` and `blueprint`.")],
-        type: Annotated[StrictStr, Field(description="Choose the type of blueprint to create. Options: `classic` or `map`")],
+        source_type: Annotated[StrictStr, Field(description="Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>.")],
+        type: Annotated[StrictStr, Field(description="Choose the type of blueprint to create. Options: <code>classic</code> or <code>map</code>")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -527,7 +528,7 @@ class BlueprintsApi:
     ) -> RESTResponseType:
         """Create Blueprint
 
-        This request creates a new empty Blueprint or a new Blueprint from a template. The keys `name` and `enrollment_code` `is_active` are required, and the blueprint name key must be unique from the existing blueprint names in the Kandji tenant.   optionally, `type: map` can be used when creating a new Assignment Map blueprint.   Note: If cloning an existing blueprint,\\ `type\\` value and the type of sourced (\\`source.id\\`) blueprint must match and \\`source.type\\` value must be set to \\`blueprint\\`.
+        <p>This request creates a new empty Blueprint or a new Blueprint from a template. The keys <code>name</code> and <code>enrollment_code</code> <code>is_active</code> are required, and the blueprint name key must be unique from the existing blueprint names in the Kandji tenant.</p> <p>optionally, <code>type: map</code> can be used when creating a new Assignment Map blueprint.</p>  <p>Note: If cloning an existing blueprint,`type` value and the type of sourced (`source.id`) blueprint must match and `source.type` value must be set to `blueprint`.</p>
 
         :param enrollment_code_code: Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app. (required)
         :type enrollment_code_code: str
@@ -537,9 +538,9 @@ class BlueprintsApi:
         :type name: str
         :param source_id: Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint. (required)
         :type source_id: str
-        :param source_type: Set the source to create the blueprint from. Possible options: `template` and `blueprint`. (required)
+        :param source_type: Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>. (required)
         :type source_type: str
-        :param type: Choose the type of blueprint to create. Options: `classic` or `map` (required)
+        :param type: Choose the type of blueprint to create. Options: <code>classic</code> or <code>map</code> (required)
         :type type: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -698,7 +699,7 @@ class BlueprintsApi:
     ) -> None:
         """Delete Blueprint
 
-        **WARNING!** ============   This is a HIGHLY destructive action.    Deleting a Blueprint will un\\-manage ALL devices assigned to the Blueprint.    ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.
+        <h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1> <p>This is a HIGHLY destructive action.</p> <p>Deleting a Blueprint will un-manage ALL devices assigned to the Blueprint.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
@@ -765,7 +766,7 @@ class BlueprintsApi:
     ) -> ApiResponse[None]:
         """Delete Blueprint
 
-        **WARNING!** ============   This is a HIGHLY destructive action.    Deleting a Blueprint will un\\-manage ALL devices assigned to the Blueprint.    ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.
+        <h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1> <p>This is a HIGHLY destructive action.</p> <p>Deleting a Blueprint will un-manage ALL devices assigned to the Blueprint.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
@@ -832,7 +833,7 @@ class BlueprintsApi:
     ) -> RESTResponseType:
         """Delete Blueprint
 
-        **WARNING!** ============   This is a HIGHLY destructive action.    Deleting a Blueprint will un\\-manage ALL devices assigned to the Blueprint.    ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.
+        <h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1> <p>This is a HIGHLY destructive action.</p> <p>Deleting a Blueprint will un-manage ALL devices assigned to the Blueprint.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
@@ -952,7 +953,7 @@ class BlueprintsApi:
     ) -> None:
         """Get Blueprint
 
-        This request returns information about a specific blueprint based on blueprint ID.   ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.
+        <p>This request returns information about a specific blueprint based on blueprint ID.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
@@ -1019,7 +1020,7 @@ class BlueprintsApi:
     ) -> ApiResponse[None]:
         """Get Blueprint
 
-        This request returns information about a specific blueprint based on blueprint ID.   ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.
+        <p>This request returns information about a specific blueprint based on blueprint ID.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
@@ -1086,7 +1087,7 @@ class BlueprintsApi:
     ) -> RESTResponseType:
         """Get Blueprint
 
-        This request returns information about a specific blueprint based on blueprint ID.   ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.
+        <p>This request returns information about a specific blueprint based on blueprint ID.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
@@ -1461,7 +1462,7 @@ class BlueprintsApi:
     def get_manual_enrollment_profile(
         self,
         blueprint_id: StrictStr,
-        sso: Annotated[Optional[StrictStr], Field(description="Use the \\`sso\\` query parameter, set to \\`true\\`, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which 'Require Authentication' is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile.")] = None,
+        sso: Annotated[Optional[StrictStr], Field(description="Use the <code>sso</code> query parameter, set to <code>true</code>, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which &quot;Require Authentication&quot; is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1477,11 +1478,11 @@ class BlueprintsApi:
     ) -> str:
         """Get Manual Enrollment Profile
 
-        This request returns the manual enrollment profile (.mobileconfig file) for a specified Blueprint.   This request will return the enrollment profile even if 'Require Authentication' is configured for the Blueprint in Manual Enrollment.   The enrollment profile will be returned in raw form with response headers:   * `Content-Type` \\= `application/x-apple-aspen-config`  * `Content-Disposition` \\= `attachment;filename=kandji-enroll.mobileconfig`    An optional query parameter `sso=true` can be used to return a URL for SSO authentication instead. If this query parameter is used for a Blueprint that does not require authentication, then the enrollment profile will be returned.   ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.
+        <p>This request returns the manual enrollment profile (.mobileconfig file) for a specified Blueprint.</p> <p>This request will return the enrollment profile even if &quot;Require Authentication&quot; is configured for the Blueprint in Manual Enrollment.</p> <p>The enrollment profile will be returned in raw form with response headers:</p> <ul> <li><p><code>Content-Type</code> = <code>application/x-apple-aspen-config</code></p> </li> <li><p><code>Content-Disposition</code> = <code>attachment;filename=kandji-enroll.mobileconfig</code></p> </li>  </ul> <p>An optional query parameter <code>sso=true</code> can be used to return a URL for SSO authentication instead. If this query parameter is used for a Blueprint that does not require authentication, then the enrollment profile will be returned.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
-        :param sso: Use the \\`sso\\` query parameter, set to \\`true\\`, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which 'Require Authentication' is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile.
+        :param sso: Use the <code>sso</code> query parameter, set to <code>true</code>, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which &quot;Require Authentication&quot; is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile.
         :type sso: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1532,7 +1533,7 @@ class BlueprintsApi:
     def get_manual_enrollment_profile_with_http_info(
         self,
         blueprint_id: StrictStr,
-        sso: Annotated[Optional[StrictStr], Field(description="Use the \\`sso\\` query parameter, set to \\`true\\`, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which 'Require Authentication' is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile.")] = None,
+        sso: Annotated[Optional[StrictStr], Field(description="Use the <code>sso</code> query parameter, set to <code>true</code>, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which &quot;Require Authentication&quot; is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1548,11 +1549,11 @@ class BlueprintsApi:
     ) -> ApiResponse[str]:
         """Get Manual Enrollment Profile
 
-        This request returns the manual enrollment profile (.mobileconfig file) for a specified Blueprint.   This request will return the enrollment profile even if 'Require Authentication' is configured for the Blueprint in Manual Enrollment.   The enrollment profile will be returned in raw form with response headers:   * `Content-Type` \\= `application/x-apple-aspen-config`  * `Content-Disposition` \\= `attachment;filename=kandji-enroll.mobileconfig`    An optional query parameter `sso=true` can be used to return a URL for SSO authentication instead. If this query parameter is used for a Blueprint that does not require authentication, then the enrollment profile will be returned.   ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.
+        <p>This request returns the manual enrollment profile (.mobileconfig file) for a specified Blueprint.</p> <p>This request will return the enrollment profile even if &quot;Require Authentication&quot; is configured for the Blueprint in Manual Enrollment.</p> <p>The enrollment profile will be returned in raw form with response headers:</p> <ul> <li><p><code>Content-Type</code> = <code>application/x-apple-aspen-config</code></p> </li> <li><p><code>Content-Disposition</code> = <code>attachment;filename=kandji-enroll.mobileconfig</code></p> </li>  </ul> <p>An optional query parameter <code>sso=true</code> can be used to return a URL for SSO authentication instead. If this query parameter is used for a Blueprint that does not require authentication, then the enrollment profile will be returned.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
-        :param sso: Use the \\`sso\\` query parameter, set to \\`true\\`, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which 'Require Authentication' is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile.
+        :param sso: Use the <code>sso</code> query parameter, set to <code>true</code>, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which &quot;Require Authentication&quot; is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile.
         :type sso: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1603,7 +1604,7 @@ class BlueprintsApi:
     def get_manual_enrollment_profile_without_preload_content(
         self,
         blueprint_id: StrictStr,
-        sso: Annotated[Optional[StrictStr], Field(description="Use the \\`sso\\` query parameter, set to \\`true\\`, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which 'Require Authentication' is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile.")] = None,
+        sso: Annotated[Optional[StrictStr], Field(description="Use the <code>sso</code> query parameter, set to <code>true</code>, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which &quot;Require Authentication&quot; is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1619,11 +1620,11 @@ class BlueprintsApi:
     ) -> RESTResponseType:
         """Get Manual Enrollment Profile
 
-        This request returns the manual enrollment profile (.mobileconfig file) for a specified Blueprint.   This request will return the enrollment profile even if 'Require Authentication' is configured for the Blueprint in Manual Enrollment.   The enrollment profile will be returned in raw form with response headers:   * `Content-Type` \\= `application/x-apple-aspen-config`  * `Content-Disposition` \\= `attachment;filename=kandji-enroll.mobileconfig`    An optional query parameter `sso=true` can be used to return a URL for SSO authentication instead. If this query parameter is used for a Blueprint that does not require authentication, then the enrollment profile will be returned.   ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.
+        <p>This request returns the manual enrollment profile (.mobileconfig file) for a specified Blueprint.</p> <p>This request will return the enrollment profile even if &quot;Require Authentication&quot; is configured for the Blueprint in Manual Enrollment.</p> <p>The enrollment profile will be returned in raw form with response headers:</p> <ul> <li><p><code>Content-Type</code> = <code>application/x-apple-aspen-config</code></p> </li> <li><p><code>Content-Disposition</code> = <code>attachment;filename=kandji-enroll.mobileconfig</code></p> </li>  </ul> <p>An optional query parameter <code>sso=true</code> can be used to return a URL for SSO authentication instead. If this query parameter is used for a Blueprint that does not require authentication, then the enrollment profile will be returned.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
-        :param sso: Use the \\`sso\\` query parameter, set to \\`true\\`, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which 'Require Authentication' is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile.
+        :param sso: Use the <code>sso</code> query parameter, set to <code>true</code>, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which &quot;Require Authentication&quot; is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile.
         :type sso: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1739,8 +1740,8 @@ class BlueprintsApi:
     def list_blueprints(
         self,
         id: Annotated[Optional[StrictStr], Field(description="Look up a specific Blueprint by its ID")] = None,
-        id__in: Annotated[Optional[StrictStr], Field(description="Specify a list of Blueprint IDs to limit the results to. Multiple values may be separated by commas. There is a double underscore (\\`\\_\\_\\`) between id and in")] = None,
-        name: Annotated[Optional[StrictStr], Field(description="Return Blueprint names 'containing' the specified search string.")] = None,
+        id__in: Annotated[Optional[StrictStr], Field(description="Specify a list of Blueprint IDs to limit the results to.  Multiple values may be separated by commas. There is a double underscore (<code>__</code>) between id and in")] = None,
+        name: Annotated[Optional[StrictStr], Field(description="Return Blueprint names &quot;containing&quot; the specified search string.")] = None,
         limit: Annotated[Optional[StrictStr], Field(description="Number of results to return per page.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="The initial index from which to return the results.")] = None,
         _request_timeout: Union[
@@ -1762,9 +1763,9 @@ class BlueprintsApi:
 
         :param id: Look up a specific Blueprint by its ID
         :type id: str
-        :param id__in: Specify a list of Blueprint IDs to limit the results to. Multiple values may be separated by commas. There is a double underscore (\\`\\_\\_\\`) between id and in
+        :param id__in: Specify a list of Blueprint IDs to limit the results to.  Multiple values may be separated by commas. There is a double underscore (<code>__</code>) between id and in
         :type id__in: str
-        :param name: Return Blueprint names 'containing' the specified search string.
+        :param name: Return Blueprint names &quot;containing&quot; the specified search string.
         :type name: str
         :param limit: Number of results to return per page.
         :type limit: str
@@ -1822,8 +1823,8 @@ class BlueprintsApi:
     def list_blueprints_with_http_info(
         self,
         id: Annotated[Optional[StrictStr], Field(description="Look up a specific Blueprint by its ID")] = None,
-        id__in: Annotated[Optional[StrictStr], Field(description="Specify a list of Blueprint IDs to limit the results to. Multiple values may be separated by commas. There is a double underscore (\\`\\_\\_\\`) between id and in")] = None,
-        name: Annotated[Optional[StrictStr], Field(description="Return Blueprint names 'containing' the specified search string.")] = None,
+        id__in: Annotated[Optional[StrictStr], Field(description="Specify a list of Blueprint IDs to limit the results to.  Multiple values may be separated by commas. There is a double underscore (<code>__</code>) between id and in")] = None,
+        name: Annotated[Optional[StrictStr], Field(description="Return Blueprint names &quot;containing&quot; the specified search string.")] = None,
         limit: Annotated[Optional[StrictStr], Field(description="Number of results to return per page.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="The initial index from which to return the results.")] = None,
         _request_timeout: Union[
@@ -1845,9 +1846,9 @@ class BlueprintsApi:
 
         :param id: Look up a specific Blueprint by its ID
         :type id: str
-        :param id__in: Specify a list of Blueprint IDs to limit the results to. Multiple values may be separated by commas. There is a double underscore (\\`\\_\\_\\`) between id and in
+        :param id__in: Specify a list of Blueprint IDs to limit the results to.  Multiple values may be separated by commas. There is a double underscore (<code>__</code>) between id and in
         :type id__in: str
-        :param name: Return Blueprint names 'containing' the specified search string.
+        :param name: Return Blueprint names &quot;containing&quot; the specified search string.
         :type name: str
         :param limit: Number of results to return per page.
         :type limit: str
@@ -1905,8 +1906,8 @@ class BlueprintsApi:
     def list_blueprints_without_preload_content(
         self,
         id: Annotated[Optional[StrictStr], Field(description="Look up a specific Blueprint by its ID")] = None,
-        id__in: Annotated[Optional[StrictStr], Field(description="Specify a list of Blueprint IDs to limit the results to. Multiple values may be separated by commas. There is a double underscore (\\`\\_\\_\\`) between id and in")] = None,
-        name: Annotated[Optional[StrictStr], Field(description="Return Blueprint names 'containing' the specified search string.")] = None,
+        id__in: Annotated[Optional[StrictStr], Field(description="Specify a list of Blueprint IDs to limit the results to.  Multiple values may be separated by commas. There is a double underscore (<code>__</code>) between id and in")] = None,
+        name: Annotated[Optional[StrictStr], Field(description="Return Blueprint names &quot;containing&quot; the specified search string.")] = None,
         limit: Annotated[Optional[StrictStr], Field(description="Number of results to return per page.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="The initial index from which to return the results.")] = None,
         _request_timeout: Union[
@@ -1928,9 +1929,9 @@ class BlueprintsApi:
 
         :param id: Look up a specific Blueprint by its ID
         :type id: str
-        :param id__in: Specify a list of Blueprint IDs to limit the results to. Multiple values may be separated by commas. There is a double underscore (\\`\\_\\_\\`) between id and in
+        :param id__in: Specify a list of Blueprint IDs to limit the results to.  Multiple values may be separated by commas. There is a double underscore (<code>__</code>) between id and in
         :type id__in: str
-        :param name: Return Blueprint names 'containing' the specified search string.
+        :param name: Return Blueprint names &quot;containing&quot; the specified search string.
         :type name: str
         :param limit: Number of results to return per page.
         :type limit: str
@@ -2085,7 +2086,7 @@ class BlueprintsApi:
     ) -> object:
         """List Library Items
 
-        This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.   ### Request Parameters    `blueprint_id` (path parameter): The unique identifier of the blueprint.    ### Response fields   * `count` (int): The total count of library items.  * `next` (str): The URL for the next page of results, if available. If not available will value will be `null`. * `previous` (str): The URL for the previous page of results, if available. If not available will value will be `null`. * `results` (object): An array containing objects with the following fields:    + `id` (str): The ID of the library item.  + `name` (str): The name of the library item.
+        <p>This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=&quot;response-fields&quot;>Response fields</h3> <ul> <li><p><code>count</code> (int): The total count of library items.</p> </li> <li><p><code>next</code> (str): The URL for the next page of results, if available. If not available will value will be <code>null</code>.</p>  </li> <li><p><code>previous</code> (str): The URL for the previous page of results, if available. If not available will value will be <code>null</code>.</p>  </li> <li><p><code>results</code> (object): An array containing objects with the following fields:</p> <ul> <li><p><code>id</code> (str): The ID of the library item.</p> </li> <li><p><code>name</code> (str): The name of the library item.</p> </li> </ul> </li> </ul>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
@@ -2152,7 +2153,7 @@ class BlueprintsApi:
     ) -> ApiResponse[object]:
         """List Library Items
 
-        This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.   ### Request Parameters    `blueprint_id` (path parameter): The unique identifier of the blueprint.    ### Response fields   * `count` (int): The total count of library items.  * `next` (str): The URL for the next page of results, if available. If not available will value will be `null`. * `previous` (str): The URL for the previous page of results, if available. If not available will value will be `null`. * `results` (object): An array containing objects with the following fields:    + `id` (str): The ID of the library item.  + `name` (str): The name of the library item.
+        <p>This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=&quot;response-fields&quot;>Response fields</h3> <ul> <li><p><code>count</code> (int): The total count of library items.</p> </li> <li><p><code>next</code> (str): The URL for the next page of results, if available. If not available will value will be <code>null</code>.</p>  </li> <li><p><code>previous</code> (str): The URL for the previous page of results, if available. If not available will value will be <code>null</code>.</p>  </li> <li><p><code>results</code> (object): An array containing objects with the following fields:</p> <ul> <li><p><code>id</code> (str): The ID of the library item.</p> </li> <li><p><code>name</code> (str): The name of the library item.</p> </li> </ul> </li> </ul>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
@@ -2219,7 +2220,7 @@ class BlueprintsApi:
     ) -> RESTResponseType:
         """List Library Items
 
-        This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.   ### Request Parameters    `blueprint_id` (path parameter): The unique identifier of the blueprint.    ### Response fields   * `count` (int): The total count of library items.  * `next` (str): The URL for the next page of results, if available. If not available will value will be `null`. * `previous` (str): The URL for the previous page of results, if available. If not available will value will be `null`. * `results` (object): An array containing objects with the following fields:    + `id` (str): The ID of the library item.  + `name` (str): The name of the library item.
+        <p>This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=&quot;response-fields&quot;>Response fields</h3> <ul> <li><p><code>count</code> (int): The total count of library items.</p> </li> <li><p><code>next</code> (str): The URL for the next page of results, if available. If not available will value will be <code>null</code>.</p>  </li> <li><p><code>previous</code> (str): The URL for the previous page of results, if available. If not available will value will be <code>null</code>.</p>  </li> <li><p><code>results</code> (object): An array containing objects with the following fields:</p> <ul> <li><p><code>id</code> (str): The ID of the library item.</p> </li> <li><p><code>name</code> (str): The name of the library item.</p> </li> </ul> </li> </ul>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
@@ -2347,7 +2348,7 @@ class BlueprintsApi:
     ) -> object:
         """Remove Library Item
 
-        This endpoint allows removing a library item from a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.   ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.   ### Request Body   * `library_item_id` (string, required) * `assignment_node_id` (string, required for maps)    ### Error responses     | **Code** | **Body** | | --- | --- | | 400 \\- Bad Request | Bad Request | |  | 'assignment\\_node\\_id cannot be provided for Classic Blueprint' | |  | 'Must provide assignment\\_node\\_id for Assignment Map Blueprint' | |  | 'Library Item does not exist on Blueprint' | |  | 'Library Item does not exist in Assignment Node' |
+        <p>This endpoint allows removing a library item from a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=&quot;request-body&quot;>Request Body</h3> <ul> <li><p><code>library_item_id</code> (string, required)</p>  </li> <li><p><code>assignment_node_id</code> (string, required for maps)</p>  </li> </ul> <h3 id=&quot;error-responses&quot;>Error responses</h3> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead>  <tr> <th><strong>Code</strong></th> <th><strong>Body</strong></th> </tr>  </thead> <tbody> <tr> <td>400 - Bad Request</td> <td>Bad Request</td>  </tr> <tr> <td></td> <td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td> </tr> <tr> <td></td> <td>&quot;Must provide assignment_node_id for Assignment Map Blueprint&quot;</td> </tr> <tr>  <td></td> <td>&quot;Library Item does not exist on Blueprint&quot;</td>  </tr> <tr> <td></td> <td>&quot;Library Item does not exist in Assignment Node&quot;</td> </tr> </tbody> </table> </div>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
@@ -2418,7 +2419,7 @@ class BlueprintsApi:
     ) -> ApiResponse[object]:
         """Remove Library Item
 
-        This endpoint allows removing a library item from a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.   ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.   ### Request Body   * `library_item_id` (string, required) * `assignment_node_id` (string, required for maps)    ### Error responses     | **Code** | **Body** | | --- | --- | | 400 \\- Bad Request | Bad Request | |  | 'assignment\\_node\\_id cannot be provided for Classic Blueprint' | |  | 'Must provide assignment\\_node\\_id for Assignment Map Blueprint' | |  | 'Library Item does not exist on Blueprint' | |  | 'Library Item does not exist in Assignment Node' |
+        <p>This endpoint allows removing a library item from a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=&quot;request-body&quot;>Request Body</h3> <ul> <li><p><code>library_item_id</code> (string, required)</p>  </li> <li><p><code>assignment_node_id</code> (string, required for maps)</p>  </li> </ul> <h3 id=&quot;error-responses&quot;>Error responses</h3> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead>  <tr> <th><strong>Code</strong></th> <th><strong>Body</strong></th> </tr>  </thead> <tbody> <tr> <td>400 - Bad Request</td> <td>Bad Request</td>  </tr> <tr> <td></td> <td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td> </tr> <tr> <td></td> <td>&quot;Must provide assignment_node_id for Assignment Map Blueprint&quot;</td> </tr> <tr>  <td></td> <td>&quot;Library Item does not exist on Blueprint&quot;</td>  </tr> <tr> <td></td> <td>&quot;Library Item does not exist in Assignment Node&quot;</td> </tr> </tbody> </table> </div>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
@@ -2489,7 +2490,7 @@ class BlueprintsApi:
     ) -> RESTResponseType:
         """Remove Library Item
 
-        This endpoint allows removing a library item from a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.   ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.   ### Request Body   * `library_item_id` (string, required) * `assignment_node_id` (string, required for maps)    ### Error responses     | **Code** | **Body** | | --- | --- | | 400 \\- Bad Request | Bad Request | |  | 'assignment\\_node\\_id cannot be provided for Classic Blueprint' | |  | 'Must provide assignment\\_node\\_id for Assignment Map Blueprint' | |  | 'Library Item does not exist on Blueprint' | |  | 'Library Item does not exist in Assignment Node' |
+        <p>This endpoint allows removing a library item from a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=&quot;request-body&quot;>Request Body</h3> <ul> <li><p><code>library_item_id</code> (string, required)</p>  </li> <li><p><code>assignment_node_id</code> (string, required for maps)</p>  </li> </ul> <h3 id=&quot;error-responses&quot;>Error responses</h3> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead>  <tr> <th><strong>Code</strong></th> <th><strong>Body</strong></th> </tr>  </thead> <tbody> <tr> <td>400 - Bad Request</td> <td>Bad Request</td>  </tr> <tr> <td></td> <td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td> </tr> <tr> <td></td> <td>&quot;Must provide assignment_node_id for Assignment Map Blueprint&quot;</td> </tr> <tr>  <td></td> <td>&quot;Library Item does not exist on Blueprint&quot;</td>  </tr> <tr> <td></td> <td>&quot;Library Item does not exist in Assignment Node&quot;</td> </tr> </tbody> </table> </div>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
@@ -2620,8 +2621,8 @@ class BlueprintsApi:
     def update_blueprint(
         self,
         blueprint_id: StrictStr,
-        description: Annotated[StrictStr, Field(description="Update the description of the Blueprint")],
-        enrollment_code_code: Annotated[StrictStr, Field(description="Update the enrollment code of the Blueprint")],
+        description: Annotated[StrictStr, Field(description="Update the description of the Blueprint ")],
+        enrollment_code_code: Annotated[StrictStr, Field(description="Update the enrollment code of the Blueprint ")],
         enrollment_code_is_active: Annotated[StrictStr, Field(description="Disable the Blueprint for manual device enrollment from the enrollment portal.")],
         name: Annotated[StrictStr, Field(description="Update the name of the Blueprint")],
         _request_timeout: Union[
@@ -2639,13 +2640,13 @@ class BlueprintsApi:
     ) -> object:
         """Update Blueprint
 
-        This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.   ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.
+        <p>This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.</p>  <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
-        :param description: Update the description of the Blueprint (required)
+        :param description: Update the description of the Blueprint  (required)
         :type description: str
-        :param enrollment_code_code: Update the enrollment code of the Blueprint (required)
+        :param enrollment_code_code: Update the enrollment code of the Blueprint  (required)
         :type enrollment_code_code: str
         :param enrollment_code_is_active: Disable the Blueprint for manual device enrollment from the enrollment portal. (required)
         :type enrollment_code_is_active: str
@@ -2703,8 +2704,8 @@ class BlueprintsApi:
     def update_blueprint_with_http_info(
         self,
         blueprint_id: StrictStr,
-        description: Annotated[StrictStr, Field(description="Update the description of the Blueprint")],
-        enrollment_code_code: Annotated[StrictStr, Field(description="Update the enrollment code of the Blueprint")],
+        description: Annotated[StrictStr, Field(description="Update the description of the Blueprint ")],
+        enrollment_code_code: Annotated[StrictStr, Field(description="Update the enrollment code of the Blueprint ")],
         enrollment_code_is_active: Annotated[StrictStr, Field(description="Disable the Blueprint for manual device enrollment from the enrollment portal.")],
         name: Annotated[StrictStr, Field(description="Update the name of the Blueprint")],
         _request_timeout: Union[
@@ -2722,13 +2723,13 @@ class BlueprintsApi:
     ) -> ApiResponse[object]:
         """Update Blueprint
 
-        This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.   ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.
+        <p>This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.</p>  <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
-        :param description: Update the description of the Blueprint (required)
+        :param description: Update the description of the Blueprint  (required)
         :type description: str
-        :param enrollment_code_code: Update the enrollment code of the Blueprint (required)
+        :param enrollment_code_code: Update the enrollment code of the Blueprint  (required)
         :type enrollment_code_code: str
         :param enrollment_code_is_active: Disable the Blueprint for manual device enrollment from the enrollment portal. (required)
         :type enrollment_code_is_active: str
@@ -2786,8 +2787,8 @@ class BlueprintsApi:
     def update_blueprint_without_preload_content(
         self,
         blueprint_id: StrictStr,
-        description: Annotated[StrictStr, Field(description="Update the description of the Blueprint")],
-        enrollment_code_code: Annotated[StrictStr, Field(description="Update the enrollment code of the Blueprint")],
+        description: Annotated[StrictStr, Field(description="Update the description of the Blueprint ")],
+        enrollment_code_code: Annotated[StrictStr, Field(description="Update the enrollment code of the Blueprint ")],
         enrollment_code_is_active: Annotated[StrictStr, Field(description="Disable the Blueprint for manual device enrollment from the enrollment portal.")],
         name: Annotated[StrictStr, Field(description="Update the name of the Blueprint")],
         _request_timeout: Union[
@@ -2805,13 +2806,13 @@ class BlueprintsApi:
     ) -> RESTResponseType:
         """Update Blueprint
 
-        This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.   ### Request Parameters   `blueprint_id` (path parameter): The unique identifier of the blueprint.
+        <p>This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.</p>  <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
         :param blueprint_id: (required)
         :type blueprint_id: str
-        :param description: Update the description of the Blueprint (required)
+        :param description: Update the description of the Blueprint  (required)
         :type description: str
-        :param enrollment_code_code: Update the enrollment code of the Blueprint (required)
+        :param enrollment_code_code: Update the enrollment code of the Blueprint  (required)
         :type enrollment_code_code: str
         :param enrollment_code_is_active: Disable the Blueprint for manual device enrollment from the enrollment portal. (required)
         :type enrollment_code_is_active: str

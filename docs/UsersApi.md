@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Get User
 
-This endpoint makes a request to retrieve a specified user directory integration user by id.   ### Request Parameters   user\\_id (path parameter): The unique identifier of the user directory integration user.
+<p>This endpoint makes a request to retrieve a specified user directory integration user by id.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p>user_id (path parameter): The unique identifier of the user directory integration user.</p>
 
 ### Example
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 List Users
 
-This endpoint makes a request to retrieve a list of users from user directory integrations.   A maximum of 300 records are returned per request, and pagination can be performed leveraging the URLs provided in the `next` and `previous` keys in the response. If there are no more results available, the respective key will be `null`.
+<p>This endpoint makes a request to retrieve a list of users from user directory integrations.</p> <p>A maximum of 300 records are returned per request, and pagination can be performed leveraging the URLs provided in the <code>next</code> and <code>previous</code> keys in the response. If there are no more results available, the respective key will be <code>null</code>.</p>
 
 ### Example
 

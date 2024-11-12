@@ -3,9 +3,10 @@
 """
     Kandji API
 
-    Welcome to the Kandji API Documentation =======================================    You can find your API URL in Settings \\> Access. The API URL will follow the below formats.   * US \\- `https://SubDomain.api.kandji.io` * EU \\- `https://SubDomain.api.eu.kandji.io`    For information on how to obtain an API token, please refer to the following support article.   <https://support.kandji.io/api>   #### Rate Limit    The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.   #### Request Methods   HTTP request methods supported by the Kandji API.     | Method | Definition | | --- | --- | | GET | The `GET` method requests a representation of the specified resource. | | POST | The `POST` method submits an entity to the specified resource. | | PATCH | The `PATCH` method applies partial modifications to a resource. | | DELETE | The `DELETE` method deletes the specified resource. |   #### Response codes   Not all response codes apply to every endpoint.     | Code | Response | | --- | --- | | 200 | OK | | 201 | Created | | 204 | No content | |  | Typical response when sending the DELETE method. | | 400 | Bad Request | |  | 'Command already running' \\- The command may already be running in a *Pending* state waiting on the device. | |  | 'Command is not allowed for current device' \\- The command may not be compatible with the target device. | |  | 'JSON parse error \\- Expecting ',' delimiter: line 3 column 2 (char 65\\)' | | 401 | Unauthorized | |  | This error can occur if the token is incorrect, was revoked, or the token has expired. |  | 403 | Forbidden | |  | The request was understood but cannot be authorized. | | 404 | Not found | |  | Unable to locate the resource in the Kandji tenant. | | 415 | Unsupported Media Type | |  | The request contains a media type which the server or resource does not support. | | 500 | Internal server error |  | 503 | Service unavailable | |  | This error can occur if a file upload is still being processed via the custom apps API. |   #### Data structure   The API returns all structured responses in JSON schema format.   #### Examples    Code examples using the API can be found in the Kandji support [GitHub](https://github.com/kandji-inc/support/tree/main/api-tools).
+    <html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome to the Kandji API Documentation</h1> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p>  </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p>  <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the Kandji API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th>  </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td>  <td>The <code>POST</code> method submits an entity to the specified resource.</td>  </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>  <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr>  <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr>  <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td>  </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td>  </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr>  <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr>  <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td>  </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td>  </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Kandji tenant.</td> </tr> <tr> <td>415</td>  <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr>  <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table>  </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4>  <p>Code examples using the API can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
 
     The version of the OpenAPI document: 1.0.0
+    Contact: mitchelsblake@gmail.com
     Generated by OpenAPI Generator (https://openapi-generator.tech)
 
     Do not edit the class manually.
@@ -41,13 +42,13 @@ class CustomAppsApi:
     @validate_call
     def create_custom_app(
         self,
-        file_key: Annotated[StrictStr, Field(description="(Required) The S3 key from the `Upload Custom App` endpont used to upload the custom app file.")],
-        install_enforcement: Annotated[StrictStr, Field(description="(Required) Options are install\\\\_once, continuously\\\\_enforce, no\\\\_enforcement")],
+        file_key: Annotated[StrictStr, Field(description="(Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file.")],
+        install_enforcement: Annotated[StrictStr, Field(description="(Required) Options are install_once, continuously_enforce, no_enforcement")],
         install_type: Annotated[StrictStr, Field(description="(Required) Options are package, zip, image")],
         name: Annotated[StrictStr, Field(description="(Required) The name for this Custom App")],
-        self_service_category_id: Annotated[StrictStr, Field(description="(Required for show\\\\_in\\\\_self\\\\_service\\\\=true) Self Service Category (by ID) to display app in")],
-        self_service_recommended: Annotated[StrictStr, Field(description="(Optional, default\\\\=false) Adds recommended flag to app in Self Service")],
-        show_in_self_service: Annotated[StrictStr, Field(description="(Optional, default\\\\=false) Displays this app in Self Service")],
+        self_service_category_id: Annotated[StrictStr, Field(description="(Required for show_in_self_service=true) Self Service Category (by ID) to display app in")],
+        self_service_recommended: Annotated[StrictStr, Field(description="(Optional, default=false) Adds recommended flag to app in Self Service")],
+        show_in_self_service: Annotated[StrictStr, Field(description="(Optional, default=false) Displays this app in Self Service")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -63,21 +64,21 @@ class CustomAppsApi:
     ) -> object:
         """Create Custom App
 
-        This request allows you to create a custom app in the Kandji library.    Must have already generated a `file_key` via `Create custom app` endpoint and uploaded the file to S3 using a request similar to the `Upload to S3` example.
+        <p>This request allows you to create a custom app in the Kandji library.</p> <p>Must have already generated a <code>file_key</code> via <code>Create custom app</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload to S3</code> example.</p>
 
-        :param file_key: (Required) The S3 key from the `Upload Custom App` endpont used to upload the custom app file. (required)
+        :param file_key: (Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file. (required)
         :type file_key: str
-        :param install_enforcement: (Required) Options are install\\\\_once, continuously\\\\_enforce, no\\\\_enforcement (required)
+        :param install_enforcement: (Required) Options are install_once, continuously_enforce, no_enforcement (required)
         :type install_enforcement: str
         :param install_type: (Required) Options are package, zip, image (required)
         :type install_type: str
         :param name: (Required) The name for this Custom App (required)
         :type name: str
-        :param self_service_category_id: (Required for show\\\\_in\\\\_self\\\\_service\\\\=true) Self Service Category (by ID) to display app in (required)
+        :param self_service_category_id: (Required for show_in_self_service=true) Self Service Category (by ID) to display app in (required)
         :type self_service_category_id: str
-        :param self_service_recommended: (Optional, default\\\\=false) Adds recommended flag to app in Self Service (required)
+        :param self_service_recommended: (Optional, default=false) Adds recommended flag to app in Self Service (required)
         :type self_service_recommended: str
-        :param show_in_self_service: (Optional, default\\\\=false) Displays this app in Self Service (required)
+        :param show_in_self_service: (Optional, default=false) Displays this app in Self Service (required)
         :type show_in_self_service: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -132,13 +133,13 @@ class CustomAppsApi:
     @validate_call
     def create_custom_app_with_http_info(
         self,
-        file_key: Annotated[StrictStr, Field(description="(Required) The S3 key from the `Upload Custom App` endpont used to upload the custom app file.")],
-        install_enforcement: Annotated[StrictStr, Field(description="(Required) Options are install\\\\_once, continuously\\\\_enforce, no\\\\_enforcement")],
+        file_key: Annotated[StrictStr, Field(description="(Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file.")],
+        install_enforcement: Annotated[StrictStr, Field(description="(Required) Options are install_once, continuously_enforce, no_enforcement")],
         install_type: Annotated[StrictStr, Field(description="(Required) Options are package, zip, image")],
         name: Annotated[StrictStr, Field(description="(Required) The name for this Custom App")],
-        self_service_category_id: Annotated[StrictStr, Field(description="(Required for show\\\\_in\\\\_self\\\\_service\\\\=true) Self Service Category (by ID) to display app in")],
-        self_service_recommended: Annotated[StrictStr, Field(description="(Optional, default\\\\=false) Adds recommended flag to app in Self Service")],
-        show_in_self_service: Annotated[StrictStr, Field(description="(Optional, default\\\\=false) Displays this app in Self Service")],
+        self_service_category_id: Annotated[StrictStr, Field(description="(Required for show_in_self_service=true) Self Service Category (by ID) to display app in")],
+        self_service_recommended: Annotated[StrictStr, Field(description="(Optional, default=false) Adds recommended flag to app in Self Service")],
+        show_in_self_service: Annotated[StrictStr, Field(description="(Optional, default=false) Displays this app in Self Service")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -154,21 +155,21 @@ class CustomAppsApi:
     ) -> ApiResponse[object]:
         """Create Custom App
 
-        This request allows you to create a custom app in the Kandji library.    Must have already generated a `file_key` via `Create custom app` endpoint and uploaded the file to S3 using a request similar to the `Upload to S3` example.
+        <p>This request allows you to create a custom app in the Kandji library.</p> <p>Must have already generated a <code>file_key</code> via <code>Create custom app</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload to S3</code> example.</p>
 
-        :param file_key: (Required) The S3 key from the `Upload Custom App` endpont used to upload the custom app file. (required)
+        :param file_key: (Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file. (required)
         :type file_key: str
-        :param install_enforcement: (Required) Options are install\\\\_once, continuously\\\\_enforce, no\\\\_enforcement (required)
+        :param install_enforcement: (Required) Options are install_once, continuously_enforce, no_enforcement (required)
         :type install_enforcement: str
         :param install_type: (Required) Options are package, zip, image (required)
         :type install_type: str
         :param name: (Required) The name for this Custom App (required)
         :type name: str
-        :param self_service_category_id: (Required for show\\\\_in\\\\_self\\\\_service\\\\=true) Self Service Category (by ID) to display app in (required)
+        :param self_service_category_id: (Required for show_in_self_service=true) Self Service Category (by ID) to display app in (required)
         :type self_service_category_id: str
-        :param self_service_recommended: (Optional, default\\\\=false) Adds recommended flag to app in Self Service (required)
+        :param self_service_recommended: (Optional, default=false) Adds recommended flag to app in Self Service (required)
         :type self_service_recommended: str
-        :param show_in_self_service: (Optional, default\\\\=false) Displays this app in Self Service (required)
+        :param show_in_self_service: (Optional, default=false) Displays this app in Self Service (required)
         :type show_in_self_service: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -223,13 +224,13 @@ class CustomAppsApi:
     @validate_call
     def create_custom_app_without_preload_content(
         self,
-        file_key: Annotated[StrictStr, Field(description="(Required) The S3 key from the `Upload Custom App` endpont used to upload the custom app file.")],
-        install_enforcement: Annotated[StrictStr, Field(description="(Required) Options are install\\\\_once, continuously\\\\_enforce, no\\\\_enforcement")],
+        file_key: Annotated[StrictStr, Field(description="(Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file.")],
+        install_enforcement: Annotated[StrictStr, Field(description="(Required) Options are install_once, continuously_enforce, no_enforcement")],
         install_type: Annotated[StrictStr, Field(description="(Required) Options are package, zip, image")],
         name: Annotated[StrictStr, Field(description="(Required) The name for this Custom App")],
-        self_service_category_id: Annotated[StrictStr, Field(description="(Required for show\\\\_in\\\\_self\\\\_service\\\\=true) Self Service Category (by ID) to display app in")],
-        self_service_recommended: Annotated[StrictStr, Field(description="(Optional, default\\\\=false) Adds recommended flag to app in Self Service")],
-        show_in_self_service: Annotated[StrictStr, Field(description="(Optional, default\\\\=false) Displays this app in Self Service")],
+        self_service_category_id: Annotated[StrictStr, Field(description="(Required for show_in_self_service=true) Self Service Category (by ID) to display app in")],
+        self_service_recommended: Annotated[StrictStr, Field(description="(Optional, default=false) Adds recommended flag to app in Self Service")],
+        show_in_self_service: Annotated[StrictStr, Field(description="(Optional, default=false) Displays this app in Self Service")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -245,21 +246,21 @@ class CustomAppsApi:
     ) -> RESTResponseType:
         """Create Custom App
 
-        This request allows you to create a custom app in the Kandji library.    Must have already generated a `file_key` via `Create custom app` endpoint and uploaded the file to S3 using a request similar to the `Upload to S3` example.
+        <p>This request allows you to create a custom app in the Kandji library.</p> <p>Must have already generated a <code>file_key</code> via <code>Create custom app</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload to S3</code> example.</p>
 
-        :param file_key: (Required) The S3 key from the `Upload Custom App` endpont used to upload the custom app file. (required)
+        :param file_key: (Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file. (required)
         :type file_key: str
-        :param install_enforcement: (Required) Options are install\\\\_once, continuously\\\\_enforce, no\\\\_enforcement (required)
+        :param install_enforcement: (Required) Options are install_once, continuously_enforce, no_enforcement (required)
         :type install_enforcement: str
         :param install_type: (Required) Options are package, zip, image (required)
         :type install_type: str
         :param name: (Required) The name for this Custom App (required)
         :type name: str
-        :param self_service_category_id: (Required for show\\\\_in\\\\_self\\\\_service\\\\=true) Self Service Category (by ID) to display app in (required)
+        :param self_service_category_id: (Required for show_in_self_service=true) Self Service Category (by ID) to display app in (required)
         :type self_service_category_id: str
-        :param self_service_recommended: (Optional, default\\\\=false) Adds recommended flag to app in Self Service (required)
+        :param self_service_recommended: (Optional, default=false) Adds recommended flag to app in Self Service (required)
         :type self_service_recommended: str
-        :param show_in_self_service: (Optional, default\\\\=false) Displays this app in Self Service (required)
+        :param show_in_self_service: (Optional, default=false) Displays this app in Self Service (required)
         :type show_in_self_service: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -421,7 +422,7 @@ class CustomAppsApi:
     ) -> None:
         """Delete Custom App
 
-        NOTICE: This is permanent so be careful.   This endpoint sends a request to delete a specific custom app from the Kandji library.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+        <p>NOTICE: This is permanent so be careful.</p> <p>This endpoint sends a request to delete a specific custom app from the Kandji library.</p>  <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
         :param library_item_id: (required)
         :type library_item_id: str
@@ -489,7 +490,7 @@ class CustomAppsApi:
     ) -> ApiResponse[None]:
         """Delete Custom App
 
-        NOTICE: This is permanent so be careful.   This endpoint sends a request to delete a specific custom app from the Kandji library.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+        <p>NOTICE: This is permanent so be careful.</p> <p>This endpoint sends a request to delete a specific custom app from the Kandji library.</p>  <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
         :param library_item_id: (required)
         :type library_item_id: str
@@ -557,7 +558,7 @@ class CustomAppsApi:
     ) -> RESTResponseType:
         """Delete Custom App
 
-        NOTICE: This is permanent so be careful.   This endpoint sends a request to delete a specific custom app from the Kandji library.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+        <p>NOTICE: This is permanent so be careful.</p> <p>This endpoint sends a request to delete a specific custom app from the Kandji library.</p>  <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
         :param library_item_id: (required)
         :type library_item_id: str
@@ -685,7 +686,7 @@ class CustomAppsApi:
     ) -> object:
         """Get Custom App
 
-        This endpoint retrieves details about a specific custom app from the Kandji library.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+        <p>This endpoint retrieves details about a specific custom app from the Kandji library.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
         :param library_item_id: (required)
         :type library_item_id: str
@@ -752,7 +753,7 @@ class CustomAppsApi:
     ) -> ApiResponse[object]:
         """Get Custom App
 
-        This endpoint retrieves details about a specific custom app from the Kandji library.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+        <p>This endpoint retrieves details about a specific custom app from the Kandji library.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
         :param library_item_id: (required)
         :type library_item_id: str
@@ -819,7 +820,7 @@ class CustomAppsApi:
     ) -> RESTResponseType:
         """Get Custom App
 
-        This endpoint retrieves details about a specific custom app from the Kandji library.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+        <p>This endpoint retrieves details about a specific custom app from the Kandji library.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
         :param library_item_id: (required)
         :type library_item_id: str
@@ -930,7 +931,7 @@ class CustomAppsApi:
     @validate_call
     def list_custom_apps(
         self,
-        page: Annotated[Optional[StrictStr], Field(description="Optional page number. Used when results exceed pagination threshold. A hard upper \\`limit\\` is set at 300 device records returned per request.")] = None,
+        page: Annotated[Optional[StrictStr], Field(description="Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 device records returned per request.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -948,7 +949,7 @@ class CustomAppsApi:
 
         This endpoint makes a request to retrieve a list of custom apps from the Kandji library.
 
-        :param page: Optional page number. Used when results exceed pagination threshold. A hard upper \\`limit\\` is set at 300 device records returned per request.
+        :param page: Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 device records returned per request.
         :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -997,7 +998,7 @@ class CustomAppsApi:
     @validate_call
     def list_custom_apps_with_http_info(
         self,
-        page: Annotated[Optional[StrictStr], Field(description="Optional page number. Used when results exceed pagination threshold. A hard upper \\`limit\\` is set at 300 device records returned per request.")] = None,
+        page: Annotated[Optional[StrictStr], Field(description="Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 device records returned per request.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1015,7 +1016,7 @@ class CustomAppsApi:
 
         This endpoint makes a request to retrieve a list of custom apps from the Kandji library.
 
-        :param page: Optional page number. Used when results exceed pagination threshold. A hard upper \\`limit\\` is set at 300 device records returned per request.
+        :param page: Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 device records returned per request.
         :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1064,7 +1065,7 @@ class CustomAppsApi:
     @validate_call
     def list_custom_apps_without_preload_content(
         self,
-        page: Annotated[Optional[StrictStr], Field(description="Optional page number. Used when results exceed pagination threshold. A hard upper \\`limit\\` is set at 300 device records returned per request.")] = None,
+        page: Annotated[Optional[StrictStr], Field(description="Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 device records returned per request.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1082,7 +1083,7 @@ class CustomAppsApi:
 
         This endpoint makes a request to retrieve a list of custom apps from the Kandji library.
 
-        :param page: Optional page number. Used when results exceed pagination threshold. A hard upper \\`limit\\` is set at 300 device records returned per request.
+        :param page: Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 device records returned per request.
         :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1194,7 +1195,7 @@ class CustomAppsApi:
     def update_custom_app(
         self,
         library_item_id: StrictStr,
-        active: Annotated[StrictStr, Field(description="(Optional, default\\\\=true) Whether this Custom App is active and installable")],
+        active: Annotated[StrictStr, Field(description="(Optional, default=true) Whether this Custom App is active and installable")],
         name: Annotated[StrictStr, Field(description="Renaming a Custom App")],
         _request_timeout: Union[
             None,
@@ -1211,11 +1212,11 @@ class CustomAppsApi:
     ) -> object:
         """Update Custom App
 
-        This request allows you to update a custom app in the Kandji library.    Must have already generated a `file_key` via `Create custom app` endpoint and uploaded the file to S3 using a request similar to the `Upload to S3` example.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+        <p>This request allows you to update a custom app in the Kandji library.</p> <p>Must have already generated a <code>file_key</code> via <code>Create custom app</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload to S3</code> example.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
         :param library_item_id: (required)
         :type library_item_id: str
-        :param active: (Optional, default\\\\=true) Whether this Custom App is active and installable (required)
+        :param active: (Optional, default=true) Whether this Custom App is active and installable (required)
         :type active: str
         :param name: Renaming a Custom App (required)
         :type name: str
@@ -1269,7 +1270,7 @@ class CustomAppsApi:
     def update_custom_app_with_http_info(
         self,
         library_item_id: StrictStr,
-        active: Annotated[StrictStr, Field(description="(Optional, default\\\\=true) Whether this Custom App is active and installable")],
+        active: Annotated[StrictStr, Field(description="(Optional, default=true) Whether this Custom App is active and installable")],
         name: Annotated[StrictStr, Field(description="Renaming a Custom App")],
         _request_timeout: Union[
             None,
@@ -1286,11 +1287,11 @@ class CustomAppsApi:
     ) -> ApiResponse[object]:
         """Update Custom App
 
-        This request allows you to update a custom app in the Kandji library.    Must have already generated a `file_key` via `Create custom app` endpoint and uploaded the file to S3 using a request similar to the `Upload to S3` example.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+        <p>This request allows you to update a custom app in the Kandji library.</p> <p>Must have already generated a <code>file_key</code> via <code>Create custom app</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload to S3</code> example.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
         :param library_item_id: (required)
         :type library_item_id: str
-        :param active: (Optional, default\\\\=true) Whether this Custom App is active and installable (required)
+        :param active: (Optional, default=true) Whether this Custom App is active and installable (required)
         :type active: str
         :param name: Renaming a Custom App (required)
         :type name: str
@@ -1344,7 +1345,7 @@ class CustomAppsApi:
     def update_custom_app_without_preload_content(
         self,
         library_item_id: StrictStr,
-        active: Annotated[StrictStr, Field(description="(Optional, default\\\\=true) Whether this Custom App is active and installable")],
+        active: Annotated[StrictStr, Field(description="(Optional, default=true) Whether this Custom App is active and installable")],
         name: Annotated[StrictStr, Field(description="Renaming a Custom App")],
         _request_timeout: Union[
             None,
@@ -1361,11 +1362,11 @@ class CustomAppsApi:
     ) -> RESTResponseType:
         """Update Custom App
 
-        This request allows you to update a custom app in the Kandji library.    Must have already generated a `file_key` via `Create custom app` endpoint and uploaded the file to S3 using a request similar to the `Upload to S3` example.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+        <p>This request allows you to update a custom app in the Kandji library.</p> <p>Must have already generated a <code>file_key</code> via <code>Create custom app</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload to S3</code> example.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
         :param library_item_id: (required)
         :type library_item_id: str
-        :param active: (Optional, default\\\\=true) Whether this Custom App is active and installable (required)
+        :param active: (Optional, default=true) Whether this Custom App is active and installable (required)
         :type active: str
         :param name: Renaming a Custom App (required)
         :type name: str
@@ -1513,7 +1514,7 @@ class CustomAppsApi:
     ) -> None:
         """Upload Custom App
 
-        This request retrieves the S3 upload details need for uploading the app to Amazon S3\\.   Creates a pre\\-signed `post_url` to upload a new Custom App to S3\\.   The provided `name` will be used to calculate a unique `file_key` in S3\\.   A separate request will have to be made to the `Upload to S3` endpoint to upload the file to S3 directly using the `post_url` and `post_data` from the `Upload Custom App` response.
+        <p>This request retrieves the S3 upload details need for uploading the app to Amazon S3.</p> <p>Creates a pre-signed <code>post_url</code> to upload a new Custom App to S3.</p> <p>The provided <code>name</code> will be used to calculate a unique <code>file_key</code> in S3.</p> <p>A separate request will have to be made to the <code>Upload to S3</code> endpoint to upload the file to S3 directly using the <code>post_url</code> and <code>post_data</code> from the <code>Upload Custom App</code> response.</p>
 
         :param body:
         :type body: str
@@ -1580,7 +1581,7 @@ class CustomAppsApi:
     ) -> ApiResponse[None]:
         """Upload Custom App
 
-        This request retrieves the S3 upload details need for uploading the app to Amazon S3\\.   Creates a pre\\-signed `post_url` to upload a new Custom App to S3\\.   The provided `name` will be used to calculate a unique `file_key` in S3\\.   A separate request will have to be made to the `Upload to S3` endpoint to upload the file to S3 directly using the `post_url` and `post_data` from the `Upload Custom App` response.
+        <p>This request retrieves the S3 upload details need for uploading the app to Amazon S3.</p> <p>Creates a pre-signed <code>post_url</code> to upload a new Custom App to S3.</p> <p>The provided <code>name</code> will be used to calculate a unique <code>file_key</code> in S3.</p> <p>A separate request will have to be made to the <code>Upload to S3</code> endpoint to upload the file to S3 directly using the <code>post_url</code> and <code>post_data</code> from the <code>Upload Custom App</code> response.</p>
 
         :param body:
         :type body: str
@@ -1647,7 +1648,7 @@ class CustomAppsApi:
     ) -> RESTResponseType:
         """Upload Custom App
 
-        This request retrieves the S3 upload details need for uploading the app to Amazon S3\\.   Creates a pre\\-signed `post_url` to upload a new Custom App to S3\\.   The provided `name` will be used to calculate a unique `file_key` in S3\\.   A separate request will have to be made to the `Upload to S3` endpoint to upload the file to S3 directly using the `post_url` and `post_data` from the `Upload Custom App` response.
+        <p>This request retrieves the S3 upload details need for uploading the app to Amazon S3.</p> <p>Creates a pre-signed <code>post_url</code> to upload a new Custom App to S3.</p> <p>The provided <code>name</code> will be used to calculate a unique <code>file_key</code> in S3.</p> <p>A separate request will have to be made to the <code>Upload to S3</code> endpoint to upload the file to S3 directly using the <code>post_url</code> and <code>post_data</code> from the <code>Upload Custom App</code> response.</p>
 
         :param body:
         :type body: str

@@ -3,9 +3,10 @@
 """
     Kandji API
 
-    Welcome to the Kandji API Documentation =======================================    You can find your API URL in Settings \\> Access. The API URL will follow the below formats.   * US \\- `https://SubDomain.api.kandji.io` * EU \\- `https://SubDomain.api.eu.kandji.io`    For information on how to obtain an API token, please refer to the following support article.   <https://support.kandji.io/api>   #### Rate Limit    The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.   #### Request Methods   HTTP request methods supported by the Kandji API.     | Method | Definition | | --- | --- | | GET | The `GET` method requests a representation of the specified resource. | | POST | The `POST` method submits an entity to the specified resource. | | PATCH | The `PATCH` method applies partial modifications to a resource. | | DELETE | The `DELETE` method deletes the specified resource. |   #### Response codes   Not all response codes apply to every endpoint.     | Code | Response | | --- | --- | | 200 | OK | | 201 | Created | | 204 | No content | |  | Typical response when sending the DELETE method. | | 400 | Bad Request | |  | 'Command already running' \\- The command may already be running in a *Pending* state waiting on the device. | |  | 'Command is not allowed for current device' \\- The command may not be compatible with the target device. | |  | 'JSON parse error \\- Expecting ',' delimiter: line 3 column 2 (char 65\\)' | | 401 | Unauthorized | |  | This error can occur if the token is incorrect, was revoked, or the token has expired. |  | 403 | Forbidden | |  | The request was understood but cannot be authorized. | | 404 | Not found | |  | Unable to locate the resource in the Kandji tenant. | | 415 | Unsupported Media Type | |  | The request contains a media type which the server or resource does not support. | | 500 | Internal server error |  | 503 | Service unavailable | |  | This error can occur if a file upload is still being processed via the custom apps API. |   #### Data structure   The API returns all structured responses in JSON schema format.   #### Examples    Code examples using the API can be found in the Kandji support [GitHub](https://github.com/kandji-inc/support/tree/main/api-tools).
+    <html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome to the Kandji API Documentation</h1> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p>  </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p>  <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the Kandji API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th>  </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td>  <td>The <code>POST</code> method submits an entity to the specified resource.</td>  </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>  <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr>  <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr>  <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td>  </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td>  </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr>  <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr>  <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td>  </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td>  </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Kandji tenant.</td> </tr> <tr> <td>415</td>  <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr>  <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table>  </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4>  <p>Code examples using the API can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
 
     The version of the OpenAPI document: 1.0.0
+    Contact: mitchelsblake@gmail.com
     Generated by OpenAPI Generator (https://openapi-generator.tech)
 
     Do not edit the class manually.
@@ -566,7 +567,7 @@ class DeviceActionsApi:
     ) -> None:
         """Delete User
 
-        This endpoint sends an MDM command to delete a local user account on macOS and Shared iPad (Device Supervision via Automated Device Enrollment is required).   **Request Body Parameters**: application/json      ---   `DeleteAllUsers` \\- `boolean`   `ForceDeletion` \\- `boolean`    `UserName` \\- `string`
+        <p>This endpoint sends an MDM command to delete a local user account on macOS and Shared iPad (Device Supervision via Automated Device Enrollment is required).</p> <p><strong>Request Body Parameters</strong>: application/json</p>  <hr /> <p><code>DeleteAllUsers</code> - <code>boolean</code></p> <p><code>ForceDeletion</code> - <code>boolean</code></p> <p><code>UserName</code> - <code>string</code></p>
 
         :param device_id: (required)
         :type device_id: str
@@ -637,7 +638,7 @@ class DeviceActionsApi:
     ) -> ApiResponse[None]:
         """Delete User
 
-        This endpoint sends an MDM command to delete a local user account on macOS and Shared iPad (Device Supervision via Automated Device Enrollment is required).   **Request Body Parameters**: application/json      ---   `DeleteAllUsers` \\- `boolean`   `ForceDeletion` \\- `boolean`    `UserName` \\- `string`
+        <p>This endpoint sends an MDM command to delete a local user account on macOS and Shared iPad (Device Supervision via Automated Device Enrollment is required).</p> <p><strong>Request Body Parameters</strong>: application/json</p>  <hr /> <p><code>DeleteAllUsers</code> - <code>boolean</code></p> <p><code>ForceDeletion</code> - <code>boolean</code></p> <p><code>UserName</code> - <code>string</code></p>
 
         :param device_id: (required)
         :type device_id: str
@@ -708,7 +709,7 @@ class DeviceActionsApi:
     ) -> RESTResponseType:
         """Delete User
 
-        This endpoint sends an MDM command to delete a local user account on macOS and Shared iPad (Device Supervision via Automated Device Enrollment is required).   **Request Body Parameters**: application/json      ---   `DeleteAllUsers` \\- `boolean`   `ForceDeletion` \\- `boolean`    `UserName` \\- `string`
+        <p>This endpoint sends an MDM command to delete a local user account on macOS and Shared iPad (Device Supervision via Automated Device Enrollment is required).</p> <p><strong>Request Body Parameters</strong>: application/json</p>  <hr /> <p><code>DeleteAllUsers</code> - <code>boolean</code></p> <p><code>ForceDeletion</code> - <code>boolean</code></p> <p><code>UserName</code> - <code>string</code></p>
 
         :param device_id: (required)
         :type device_id: str
@@ -848,7 +849,7 @@ class DeviceActionsApi:
     ) -> None:
         """Erase Device
 
-        This endpoint sends an MDM command to erase the device.    iOS 4\\.0\\+, iPadOS 4\\.0\\+, macOS 10\\.7\\+, tvOS 10\\.2\\+   **Request Body Parameters: application/json**     | Key | Type | Description |  | --- | --- | --- | | `PIN` | `string` | The six\\-character PIN for Find My. This value is available in macOS 10\\.8 and later. | | `PreserveDataPlan` | `boolean` | If true, preserve the data plan on an iPhone or iPad with eSIM functionality, if one exists. This value is available in iOS 11 and later.  Default: true | | `DisallowProximitySetup` | `boolean` | If true, disable Proximity Setup on the next reboot and skip the pane in Setup Assistant. This value is available in iOS 11 and later. Prior to iOS 14, don’t use this option with any other option.  Default: false | | `ReturnToService` | `object` | (iOS 17 and later and iPadOS 17 and later and with Shared iPad ) When sending the erase device command to mobile devices, use this key to enable Return to Service. Include an optional Wi\\-Fi payload ProfileId to allow the device to connect to a Wi\\-Fi network automatically after being erased. If a Wi\\ -Fi ProfileId is not provided and the mobile device is not tethered to a Mac to share the network connection, the end\\-user will be required to select a Wi\\-Fi network to complete the setup.  If sent to any macOS computer or to mobile devices on iOS 16 or iPadOS 16 and below, the RTS keys will be ignored, and only the erase device command will be issued to the device. | | \\- `Enabled` | `boolean` | (Required) If true, the device tries to re\\-enroll itself automatically after erasure. The user needs to deactivate all activation locks for this feature to work correctly. | | \\- `ProfileId` | `string` | Profile ID value associated with a Wi\\-Fi profile payload. This is required when the device doesn’t have ethernet access. |
+        <p>This endpoint sends an MDM command to erase the device.</p>  <p>iOS 4.0+, iPadOS 4.0+, macOS 10.7+, tvOS 10.2+</p> <p><strong>Request Body Parameters: application/json</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Key</th> <th>Type</th>  <th>Description</th> </tr> </thead> <tbody> <tr> <td><code>PIN</code></td>  <td><code>string</code></td> <td>The six-character PIN for Find My. This value is available in macOS 10.8 and later.</td> </tr> <tr> <td><code>PreserveDataPlan</code></td>  <td><code>boolean</code></td> <td>If true, preserve the data plan on an iPhone or iPad with eSIM functionality, if one exists. This value is available in iOS 11 and later.  <br />  <br />Default: true</td> </tr> <tr> <td><code>DisallowProximitySetup</code></td>  <td><code>boolean</code></td> <td>If true, disable Proximity Setup on the next reboot and skip the pane in Setup Assistant. This value is available in iOS 11 and later. Prior to iOS 14, don’t use this option with any other option.  <br />  <br />Default: false</td> </tr> <tr> <td><code>ReturnToService</code></td>  <td><code>object</code></td> <td>(iOS 17 and later and iPadOS 17 and later and with Shared iPad ) When sending the erase device command to mobile devices, use this key to enable Return to Service. Include an optional Wi-Fi payload ProfileId to allow the device to connect to a Wi-Fi network automatically after being erased. If a Wi-Fi ProfileId is not provided and the mobile device is not tethered to a Mac to share the network connection, the end-user will be required to select a Wi-Fi network to complete the setup.  <br />  <br />If sent to any macOS computer or to mobile devices on iOS 16 or iPadOS 16 and below, the RTS keys will be ignored, and only the erase device command will be issued to the device.</td> </tr> <tr> <td>- <code>Enabled</code></td>  <td><code>boolean</code></td> <td>(Required) If true, the device tries to re-enroll itself automatically after erasure. The user needs to deactivate all activation locks for this feature to work correctly.</td> </tr> <tr>  <td>- <code>ProfileId</code></td> <td><code>string</code></td> <td>Profile ID value associated with a Wi-Fi profile payload. This is required when the device doesn’t have ethernet access.</td> </tr> </tbody> </table> </div>
 
         :param device_id: (required)
         :type device_id: str
@@ -920,7 +921,7 @@ class DeviceActionsApi:
     ) -> ApiResponse[None]:
         """Erase Device
 
-        This endpoint sends an MDM command to erase the device.    iOS 4\\.0\\+, iPadOS 4\\.0\\+, macOS 10\\.7\\+, tvOS 10\\.2\\+   **Request Body Parameters: application/json**     | Key | Type | Description |  | --- | --- | --- | | `PIN` | `string` | The six\\-character PIN for Find My. This value is available in macOS 10\\.8 and later. | | `PreserveDataPlan` | `boolean` | If true, preserve the data plan on an iPhone or iPad with eSIM functionality, if one exists. This value is available in iOS 11 and later.  Default: true | | `DisallowProximitySetup` | `boolean` | If true, disable Proximity Setup on the next reboot and skip the pane in Setup Assistant. This value is available in iOS 11 and later. Prior to iOS 14, don’t use this option with any other option.  Default: false | | `ReturnToService` | `object` | (iOS 17 and later and iPadOS 17 and later and with Shared iPad ) When sending the erase device command to mobile devices, use this key to enable Return to Service. Include an optional Wi\\-Fi payload ProfileId to allow the device to connect to a Wi\\-Fi network automatically after being erased. If a Wi\\ -Fi ProfileId is not provided and the mobile device is not tethered to a Mac to share the network connection, the end\\-user will be required to select a Wi\\-Fi network to complete the setup.  If sent to any macOS computer or to mobile devices on iOS 16 or iPadOS 16 and below, the RTS keys will be ignored, and only the erase device command will be issued to the device. | | \\- `Enabled` | `boolean` | (Required) If true, the device tries to re\\-enroll itself automatically after erasure. The user needs to deactivate all activation locks for this feature to work correctly. | | \\- `ProfileId` | `string` | Profile ID value associated with a Wi\\-Fi profile payload. This is required when the device doesn’t have ethernet access. |
+        <p>This endpoint sends an MDM command to erase the device.</p>  <p>iOS 4.0+, iPadOS 4.0+, macOS 10.7+, tvOS 10.2+</p> <p><strong>Request Body Parameters: application/json</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Key</th> <th>Type</th>  <th>Description</th> </tr> </thead> <tbody> <tr> <td><code>PIN</code></td>  <td><code>string</code></td> <td>The six-character PIN for Find My. This value is available in macOS 10.8 and later.</td> </tr> <tr> <td><code>PreserveDataPlan</code></td>  <td><code>boolean</code></td> <td>If true, preserve the data plan on an iPhone or iPad with eSIM functionality, if one exists. This value is available in iOS 11 and later.  <br />  <br />Default: true</td> </tr> <tr> <td><code>DisallowProximitySetup</code></td>  <td><code>boolean</code></td> <td>If true, disable Proximity Setup on the next reboot and skip the pane in Setup Assistant. This value is available in iOS 11 and later. Prior to iOS 14, don’t use this option with any other option.  <br />  <br />Default: false</td> </tr> <tr> <td><code>ReturnToService</code></td>  <td><code>object</code></td> <td>(iOS 17 and later and iPadOS 17 and later and with Shared iPad ) When sending the erase device command to mobile devices, use this key to enable Return to Service. Include an optional Wi-Fi payload ProfileId to allow the device to connect to a Wi-Fi network automatically after being erased. If a Wi-Fi ProfileId is not provided and the mobile device is not tethered to a Mac to share the network connection, the end-user will be required to select a Wi-Fi network to complete the setup.  <br />  <br />If sent to any macOS computer or to mobile devices on iOS 16 or iPadOS 16 and below, the RTS keys will be ignored, and only the erase device command will be issued to the device.</td> </tr> <tr> <td>- <code>Enabled</code></td>  <td><code>boolean</code></td> <td>(Required) If true, the device tries to re-enroll itself automatically after erasure. The user needs to deactivate all activation locks for this feature to work correctly.</td> </tr> <tr>  <td>- <code>ProfileId</code></td> <td><code>string</code></td> <td>Profile ID value associated with a Wi-Fi profile payload. This is required when the device doesn’t have ethernet access.</td> </tr> </tbody> </table> </div>
 
         :param device_id: (required)
         :type device_id: str
@@ -992,7 +993,7 @@ class DeviceActionsApi:
     ) -> RESTResponseType:
         """Erase Device
 
-        This endpoint sends an MDM command to erase the device.    iOS 4\\.0\\+, iPadOS 4\\.0\\+, macOS 10\\.7\\+, tvOS 10\\.2\\+   **Request Body Parameters: application/json**     | Key | Type | Description |  | --- | --- | --- | | `PIN` | `string` | The six\\-character PIN for Find My. This value is available in macOS 10\\.8 and later. | | `PreserveDataPlan` | `boolean` | If true, preserve the data plan on an iPhone or iPad with eSIM functionality, if one exists. This value is available in iOS 11 and later.  Default: true | | `DisallowProximitySetup` | `boolean` | If true, disable Proximity Setup on the next reboot and skip the pane in Setup Assistant. This value is available in iOS 11 and later. Prior to iOS 14, don’t use this option with any other option.  Default: false | | `ReturnToService` | `object` | (iOS 17 and later and iPadOS 17 and later and with Shared iPad ) When sending the erase device command to mobile devices, use this key to enable Return to Service. Include an optional Wi\\-Fi payload ProfileId to allow the device to connect to a Wi\\-Fi network automatically after being erased. If a Wi\\ -Fi ProfileId is not provided and the mobile device is not tethered to a Mac to share the network connection, the end\\-user will be required to select a Wi\\-Fi network to complete the setup.  If sent to any macOS computer or to mobile devices on iOS 16 or iPadOS 16 and below, the RTS keys will be ignored, and only the erase device command will be issued to the device. | | \\- `Enabled` | `boolean` | (Required) If true, the device tries to re\\-enroll itself automatically after erasure. The user needs to deactivate all activation locks for this feature to work correctly. | | \\- `ProfileId` | `string` | Profile ID value associated with a Wi\\-Fi profile payload. This is required when the device doesn’t have ethernet access. |
+        <p>This endpoint sends an MDM command to erase the device.</p>  <p>iOS 4.0+, iPadOS 4.0+, macOS 10.7+, tvOS 10.2+</p> <p><strong>Request Body Parameters: application/json</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Key</th> <th>Type</th>  <th>Description</th> </tr> </thead> <tbody> <tr> <td><code>PIN</code></td>  <td><code>string</code></td> <td>The six-character PIN for Find My. This value is available in macOS 10.8 and later.</td> </tr> <tr> <td><code>PreserveDataPlan</code></td>  <td><code>boolean</code></td> <td>If true, preserve the data plan on an iPhone or iPad with eSIM functionality, if one exists. This value is available in iOS 11 and later.  <br />  <br />Default: true</td> </tr> <tr> <td><code>DisallowProximitySetup</code></td>  <td><code>boolean</code></td> <td>If true, disable Proximity Setup on the next reboot and skip the pane in Setup Assistant. This value is available in iOS 11 and later. Prior to iOS 14, don’t use this option with any other option.  <br />  <br />Default: false</td> </tr> <tr> <td><code>ReturnToService</code></td>  <td><code>object</code></td> <td>(iOS 17 and later and iPadOS 17 and later and with Shared iPad ) When sending the erase device command to mobile devices, use this key to enable Return to Service. Include an optional Wi-Fi payload ProfileId to allow the device to connect to a Wi-Fi network automatically after being erased. If a Wi-Fi ProfileId is not provided and the mobile device is not tethered to a Mac to share the network connection, the end-user will be required to select a Wi-Fi network to complete the setup.  <br />  <br />If sent to any macOS computer or to mobile devices on iOS 16 or iPadOS 16 and below, the RTS keys will be ignored, and only the erase device command will be issued to the device.</td> </tr> <tr> <td>- <code>Enabled</code></td>  <td><code>boolean</code></td> <td>(Required) If true, the device tries to re-enroll itself automatically after erasure. The user needs to deactivate all activation locks for this feature to work correctly.</td> </tr> <tr>  <td>- <code>ProfileId</code></td> <td><code>string</code></td> <td>Profile ID value associated with a Wi-Fi profile payload. This is required when the device doesn’t have ethernet access.</td> </tr> </tbody> </table> </div>
 
         :param device_id: (required)
         :type device_id: str
@@ -1124,7 +1125,7 @@ class DeviceActionsApi:
     def get_device_commands(
         self,
         device_id: StrictStr,
-        limit: Annotated[StrictStr, Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")],
+        limit: Annotated[StrictStr, Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")],
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -1141,11 +1142,11 @@ class DeviceActionsApi:
     ) -> None:
         """Get Device Commands
 
-        This endpoint sends a request to get information about the commands sent to a given device ID.   ### MDM Status Codes   * 1 : Command is Pending * 2 : Command is running * 3 : Command completed * 4 : Command failed * 5 : Command received 'Not Now' response
+        <p>This endpoint sends a request to get information about the commands sent to a given device ID.</p> <h3 id=&quot;mdm-status-codes&quot;>MDM Status Codes</h3> <ul> <li>1 : Command is Pending</li> <li>2 : Command is running</li> <li>3 : Command completed</li> <li>4 : Command failed</li>  <li>5 : Command received &quot;Not Now&quot; response</li> </ul>
 
         :param device_id: (required)
         :type device_id: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (required)
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (required)
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -1199,7 +1200,7 @@ class DeviceActionsApi:
     def get_device_commands_with_http_info(
         self,
         device_id: StrictStr,
-        limit: Annotated[StrictStr, Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")],
+        limit: Annotated[StrictStr, Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")],
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -1216,11 +1217,11 @@ class DeviceActionsApi:
     ) -> ApiResponse[None]:
         """Get Device Commands
 
-        This endpoint sends a request to get information about the commands sent to a given device ID.   ### MDM Status Codes   * 1 : Command is Pending * 2 : Command is running * 3 : Command completed * 4 : Command failed * 5 : Command received 'Not Now' response
+        <p>This endpoint sends a request to get information about the commands sent to a given device ID.</p> <h3 id=&quot;mdm-status-codes&quot;>MDM Status Codes</h3> <ul> <li>1 : Command is Pending</li> <li>2 : Command is running</li> <li>3 : Command completed</li> <li>4 : Command failed</li>  <li>5 : Command received &quot;Not Now&quot; response</li> </ul>
 
         :param device_id: (required)
         :type device_id: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (required)
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (required)
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -1274,7 +1275,7 @@ class DeviceActionsApi:
     def get_device_commands_without_preload_content(
         self,
         device_id: StrictStr,
-        limit: Annotated[StrictStr, Field(description="A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results.")],
+        limit: Annotated[StrictStr, Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")],
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
             None,
@@ -1291,11 +1292,11 @@ class DeviceActionsApi:
     ) -> RESTResponseType:
         """Get Device Commands
 
-        This endpoint sends a request to get information about the commands sent to a given device ID.   ### MDM Status Codes   * 1 : Command is Pending * 2 : Command is running * 3 : Command completed * 4 : Command failed * 5 : Command received 'Not Now' response
+        <p>This endpoint sends a request to get information about the commands sent to a given device ID.</p> <h3 id=&quot;mdm-status-codes&quot;>MDM Status Codes</h3> <ul> <li>1 : Command is Pending</li> <li>2 : Command is running</li> <li>3 : Command completed</li> <li>4 : Command failed</li>  <li>5 : Command received &quot;Not Now&quot; response</li> </ul>
 
         :param device_id: (required)
         :type device_id: str
-        :param limit: A hard upper \\`limit\\` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the \\`limit\\` and \\`offset\\` parameters. Additionally, parameter queries can be added to a request to limit the results. (required)
+        :param limit: A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (required)
         :type limit: str
         :param offset: Specify the starting record to return
         :type offset: str
@@ -1428,7 +1429,7 @@ class DeviceActionsApi:
     ) -> object:
         """Lock Device
 
-        This endpoint sends an MDM command to remotely lock a device.    For macOS clients, an unlock PIN will be created, and returned in the response.    > **Caution !!!**   > *For a Mac with Apple silicon running a version of macOS before 11\\.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.*   Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target device.   **Note:** For macOS, although the lock message is displayed on all types of Mac computers, the phone number is displayed only on a Mac with Apple silicon.   #### Response properties     | Property | Description | Type | | --- | --- | --- | | PIN | Six digit pin code used to unlock a Mac. | String |
+        <p>This endpoint sends an MDM command to remotely lock a device.</p>  <p>For macOS clients, an unlock PIN will be created, and returned in the response.</p>  <blockquote> <p><strong>Caution !!!</strong><br /><em>For a Mac with Apple silicon running a version of macOS before 11.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.</em></p> </blockquote> <p>Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target device.</p> <p><strong>Note:</strong> For macOS, although the lock message is displayed on all types of Mac computers, the phone number is displayed only on a Mac with Apple silicon.</p> <h4 id=&quot;response-properties&quot;>Response properties</h4> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>  <thead> <tr> <th>Property</th> <th>Description</th> <th>Type</th> </tr>  </thead> <tbody> <tr> <td>PIN</td> <td>Six digit pin code used to unlock a Mac.</td> <td>String</td> </tr> </tbody> </table> </div>
 
         :param device_id: (required)
         :type device_id: str
@@ -1500,7 +1501,7 @@ class DeviceActionsApi:
     ) -> ApiResponse[object]:
         """Lock Device
 
-        This endpoint sends an MDM command to remotely lock a device.    For macOS clients, an unlock PIN will be created, and returned in the response.    > **Caution !!!**   > *For a Mac with Apple silicon running a version of macOS before 11\\.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.*   Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target device.   **Note:** For macOS, although the lock message is displayed on all types of Mac computers, the phone number is displayed only on a Mac with Apple silicon.   #### Response properties     | Property | Description | Type | | --- | --- | --- | | PIN | Six digit pin code used to unlock a Mac. | String |
+        <p>This endpoint sends an MDM command to remotely lock a device.</p>  <p>For macOS clients, an unlock PIN will be created, and returned in the response.</p>  <blockquote> <p><strong>Caution !!!</strong><br /><em>For a Mac with Apple silicon running a version of macOS before 11.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.</em></p> </blockquote> <p>Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target device.</p> <p><strong>Note:</strong> For macOS, although the lock message is displayed on all types of Mac computers, the phone number is displayed only on a Mac with Apple silicon.</p> <h4 id=&quot;response-properties&quot;>Response properties</h4> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>  <thead> <tr> <th>Property</th> <th>Description</th> <th>Type</th> </tr>  </thead> <tbody> <tr> <td>PIN</td> <td>Six digit pin code used to unlock a Mac.</td> <td>String</td> </tr> </tbody> </table> </div>
 
         :param device_id: (required)
         :type device_id: str
@@ -1572,7 +1573,7 @@ class DeviceActionsApi:
     ) -> RESTResponseType:
         """Lock Device
 
-        This endpoint sends an MDM command to remotely lock a device.    For macOS clients, an unlock PIN will be created, and returned in the response.    > **Caution !!!**   > *For a Mac with Apple silicon running a version of macOS before 11\\.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.*   Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target device.   **Note:** For macOS, although the lock message is displayed on all types of Mac computers, the phone number is displayed only on a Mac with Apple silicon.   #### Response properties     | Property | Description | Type | | --- | --- | --- | | PIN | Six digit pin code used to unlock a Mac. | String |
+        <p>This endpoint sends an MDM command to remotely lock a device.</p>  <p>For macOS clients, an unlock PIN will be created, and returned in the response.</p>  <blockquote> <p><strong>Caution !!!</strong><br /><em>For a Mac with Apple silicon running a version of macOS before 11.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.</em></p> </blockquote> <p>Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target device.</p> <p><strong>Note:</strong> For macOS, although the lock message is displayed on all types of Mac computers, the phone number is displayed only on a Mac with Apple silicon.</p> <h4 id=&quot;response-properties&quot;>Response properties</h4> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>  <thead> <tr> <th>Property</th> <th>Description</th> <th>Type</th> </tr>  </thead> <tbody> <tr> <td>PIN</td> <td>Six digit pin code used to unlock a Mac.</td> <td>String</td> </tr> </tbody> </table> </div>
 
         :param device_id: (required)
         :type device_id: str
@@ -1974,7 +1975,7 @@ class DeviceActionsApi:
     ) -> None:
         """Remote Desktop
 
-        This endpoint sends an MDM command to control the Remote Management status on a Mac. This MDM command turns on (or turns off) Remote Management with *Observe* and *Control* permissions given to all users\\*.\\*   **Request Body Parameters**: application/json     ---   `EnableRemoteDesktop` \\- `boolean`
+        <p>This endpoint sends an MDM command to control the Remote Management status on a Mac. This MDM command turns on (or turns off) Remote Management with <em>Observe</em> and <em>Control</em> permissions given to all users*.*</p>  <p><strong>Request Body Parameters</strong>: application/json</p> <hr />  <p><code>EnableRemoteDesktop</code> - <code>boolean</code></p>
 
         :param device_id: (required)
         :type device_id: str
@@ -2045,7 +2046,7 @@ class DeviceActionsApi:
     ) -> ApiResponse[None]:
         """Remote Desktop
 
-        This endpoint sends an MDM command to control the Remote Management status on a Mac. This MDM command turns on (or turns off) Remote Management with *Observe* and *Control* permissions given to all users\\*.\\*   **Request Body Parameters**: application/json     ---   `EnableRemoteDesktop` \\- `boolean`
+        <p>This endpoint sends an MDM command to control the Remote Management status on a Mac. This MDM command turns on (or turns off) Remote Management with <em>Observe</em> and <em>Control</em> permissions given to all users*.*</p>  <p><strong>Request Body Parameters</strong>: application/json</p> <hr />  <p><code>EnableRemoteDesktop</code> - <code>boolean</code></p>
 
         :param device_id: (required)
         :type device_id: str
@@ -2116,7 +2117,7 @@ class DeviceActionsApi:
     ) -> RESTResponseType:
         """Remote Desktop
 
-        This endpoint sends an MDM command to control the Remote Management status on a Mac. This MDM command turns on (or turns off) Remote Management with *Observe* and *Control* permissions given to all users\\*.\\*   **Request Body Parameters**: application/json     ---   `EnableRemoteDesktop` \\- `boolean`
+        <p>This endpoint sends an MDM command to control the Remote Management status on a Mac. This MDM command turns on (or turns off) Remote Management with <em>Observe</em> and <em>Control</em> permissions given to all users*.*</p>  <p><strong>Request Body Parameters</strong>: application/json</p> <hr />  <p><code>EnableRemoteDesktop</code> - <code>boolean</code></p>
 
         :param device_id: (required)
         :type device_id: str
@@ -2255,7 +2256,7 @@ class DeviceActionsApi:
     ) -> None:
         """Renew MDM Profile
 
-        This endpoint sends an MDM command to re\\-install the existing root MDM profile for a given device ID. This command will not impact any existing configurations, apps, or profiles.
+        This endpoint sends an MDM command to re-install the existing root MDM profile for a given device ID. This command will not impact any existing configurations, apps, or profiles.
 
         :param device_id: (required)
         :type device_id: str
@@ -2322,7 +2323,7 @@ class DeviceActionsApi:
     ) -> ApiResponse[None]:
         """Renew MDM Profile
 
-        This endpoint sends an MDM command to re\\-install the existing root MDM profile for a given device ID. This command will not impact any existing configurations, apps, or profiles.
+        This endpoint sends an MDM command to re-install the existing root MDM profile for a given device ID. This command will not impact any existing configurations, apps, or profiles.
 
         :param device_id: (required)
         :type device_id: str
@@ -2389,7 +2390,7 @@ class DeviceActionsApi:
     ) -> RESTResponseType:
         """Renew MDM Profile
 
-        This endpoint sends an MDM command to re\\-install the existing root MDM profile for a given device ID. This command will not impact any existing configurations, apps, or profiles.
+        This endpoint sends an MDM command to re-install the existing root MDM profile for a given device ID. This command will not impact any existing configurations, apps, or profiles.
 
         :param device_id: (required)
         :type device_id: str
@@ -2510,7 +2511,7 @@ class DeviceActionsApi:
     ) -> None:
         """Restart Device
 
-        This endpoint sends an MDM command to remotely restart a device.    * `RebuildKernelCache` \\- If `true`, the system rebuilds the kernel cache during a device restart. If `BootstrapTokenAllowedForAuthentication` is `true` inSecurityInfoResponse.SecurityInfo, the device requests the bootstrap token from MDM before executing this command. This value is available in macOS 11 and later. Default: false * `NotifyUser` \\- If `true`, notifies the user to restart the device at their convenience. Forced restart if the device is at `loginwindow` with no logged\\-in users. The user can dismiss the notification and ignore the request. No further notifications display unless you resend the command. This value is available in macOS 11\\.3 and later. Default: false
+        <p>This endpoint sends an MDM command to remotely restart a device.</p>  <ul> <li><p><code>RebuildKernelCache</code> - If <code>true</code>, the system rebuilds the kernel cache during a device restart. If <code>BootstrapTokenAllowedForAuthentication</code> is <code>true</code> inSecurityInfoResponse.SecurityInfo, the device requests the bootstrap token from MDM before executing this command. This value is available in macOS 11 and later. Default: false</p> </li> <li><p><code>NotifyUser</code> - If <code>true</code>, notifies the user to restart the device at their convenience. Forced restart if the device is at <code>loginwindow</code> with no logged-in users. The user can dismiss the notification and ignore the request. No further notifications display unless you resend the command. This value is available in macOS 11.3 and later. Default: false</p> </li> </ul>
 
         :param device_id: (required)
         :type device_id: str
@@ -2581,7 +2582,7 @@ class DeviceActionsApi:
     ) -> ApiResponse[None]:
         """Restart Device
 
-        This endpoint sends an MDM command to remotely restart a device.    * `RebuildKernelCache` \\- If `true`, the system rebuilds the kernel cache during a device restart. If `BootstrapTokenAllowedForAuthentication` is `true` inSecurityInfoResponse.SecurityInfo, the device requests the bootstrap token from MDM before executing this command. This value is available in macOS 11 and later. Default: false * `NotifyUser` \\- If `true`, notifies the user to restart the device at their convenience. Forced restart if the device is at `loginwindow` with no logged\\-in users. The user can dismiss the notification and ignore the request. No further notifications display unless you resend the command. This value is available in macOS 11\\.3 and later. Default: false
+        <p>This endpoint sends an MDM command to remotely restart a device.</p>  <ul> <li><p><code>RebuildKernelCache</code> - If <code>true</code>, the system rebuilds the kernel cache during a device restart. If <code>BootstrapTokenAllowedForAuthentication</code> is <code>true</code> inSecurityInfoResponse.SecurityInfo, the device requests the bootstrap token from MDM before executing this command. This value is available in macOS 11 and later. Default: false</p> </li> <li><p><code>NotifyUser</code> - If <code>true</code>, notifies the user to restart the device at their convenience. Forced restart if the device is at <code>loginwindow</code> with no logged-in users. The user can dismiss the notification and ignore the request. No further notifications display unless you resend the command. This value is available in macOS 11.3 and later. Default: false</p> </li> </ul>
 
         :param device_id: (required)
         :type device_id: str
@@ -2652,7 +2653,7 @@ class DeviceActionsApi:
     ) -> RESTResponseType:
         """Restart Device
 
-        This endpoint sends an MDM command to remotely restart a device.    * `RebuildKernelCache` \\- If `true`, the system rebuilds the kernel cache during a device restart. If `BootstrapTokenAllowedForAuthentication` is `true` inSecurityInfoResponse.SecurityInfo, the device requests the bootstrap token from MDM before executing this command. This value is available in macOS 11 and later. Default: false * `NotifyUser` \\- If `true`, notifies the user to restart the device at their convenience. Forced restart if the device is at `loginwindow` with no logged\\-in users. The user can dismiss the notification and ignore the request. No further notifications display unless you resend the command. This value is available in macOS 11\\.3 and later. Default: false
+        <p>This endpoint sends an MDM command to remotely restart a device.</p>  <ul> <li><p><code>RebuildKernelCache</code> - If <code>true</code>, the system rebuilds the kernel cache during a device restart. If <code>BootstrapTokenAllowedForAuthentication</code> is <code>true</code> inSecurityInfoResponse.SecurityInfo, the device requests the bootstrap token from MDM before executing this command. This value is available in macOS 11 and later. Default: false</p> </li> <li><p><code>NotifyUser</code> - If <code>true</code>, notifies the user to restart the device at their convenience. Forced restart if the device is at <code>loginwindow</code> with no logged-in users. The user can dismiss the notification and ignore the request. No further notifications display unless you resend the command. This value is available in macOS 11.3 and later. Default: false</p> </li> </ul>
 
         :param device_id: (required)
         :type device_id: str
@@ -2791,7 +2792,7 @@ class DeviceActionsApi:
     ) -> None:
         """Send Blankpush
 
-        This endpoint sends an MDM command to initiate a blank push.    [Using the Blank Push command](https://support.kandji.io/what-is-a-blank-push)
+        <p>This endpoint sends an MDM command to initiate a blank push.</p>  <p><a href=&quot;https://support.kandji.io/what-is-a-blank-push&quot;>Using the Blank Push command</a></p>
 
         :param device_id: (required)
         :type device_id: str
@@ -2858,7 +2859,7 @@ class DeviceActionsApi:
     ) -> ApiResponse[None]:
         """Send Blankpush
 
-        This endpoint sends an MDM command to initiate a blank push.    [Using the Blank Push command](https://support.kandji.io/what-is-a-blank-push)
+        <p>This endpoint sends an MDM command to initiate a blank push.</p>  <p><a href=&quot;https://support.kandji.io/what-is-a-blank-push&quot;>Using the Blank Push command</a></p>
 
         :param device_id: (required)
         :type device_id: str
@@ -2925,7 +2926,7 @@ class DeviceActionsApi:
     ) -> RESTResponseType:
         """Send Blankpush
 
-        This endpoint sends an MDM command to initiate a blank push.    [Using the Blank Push command](https://support.kandji.io/what-is-a-blank-push)
+        <p>This endpoint sends an MDM command to initiate a blank push.</p>  <p><a href=&quot;https://support.kandji.io/what-is-a-blank-push&quot;>Using the Blank Push command</a></p>
 
         :param device_id: (required)
         :type device_id: str
@@ -3046,7 +3047,7 @@ class DeviceActionsApi:
     ) -> None:
         """Set Name
 
-        This endpoint sends an MDM command to set the device name.    **Request Body Parameters**: application/json     ---   `DeviceName` \\- `string`
+        <p>This endpoint sends an MDM command to set the device name.</p>  <p><strong>Request Body Parameters</strong>: application/json</p> <hr />  <p><code>DeviceName</code> - <code>string</code></p>
 
         :param device_id: (required)
         :type device_id: str
@@ -3117,7 +3118,7 @@ class DeviceActionsApi:
     ) -> ApiResponse[None]:
         """Set Name
 
-        This endpoint sends an MDM command to set the device name.    **Request Body Parameters**: application/json     ---   `DeviceName` \\- `string`
+        <p>This endpoint sends an MDM command to set the device name.</p>  <p><strong>Request Body Parameters</strong>: application/json</p> <hr />  <p><code>DeviceName</code> - <code>string</code></p>
 
         :param device_id: (required)
         :type device_id: str
@@ -3188,7 +3189,7 @@ class DeviceActionsApi:
     ) -> RESTResponseType:
         """Set Name
 
-        This endpoint sends an MDM command to set the device name.    **Request Body Parameters**: application/json     ---   `DeviceName` \\- `string`
+        <p>This endpoint sends an MDM command to set the device name.</p>  <p><strong>Request Body Parameters</strong>: application/json</p> <hr />  <p><code>DeviceName</code> - <code>string</code></p>
 
         :param device_id: (required)
         :type device_id: str
@@ -3582,7 +3583,7 @@ class DeviceActionsApi:
     ) -> None:
         """Unlock Account
 
-        This endpoint sends an MDM command to unlock a user account that locked by the system because of too many failed password attempts. Available for macOS.   **Request Body Parameters**: application/json     ---    `UserName` \\- `string`
+        <p>This endpoint sends an MDM command to unlock a user account that locked by the system because of too many failed password attempts. Available for macOS.</p> <p><strong>Request Body Parameters</strong>: application/json</p>  <hr /> <p><code>UserName</code> - <code>string</code></p>
 
         :param device_id: (required)
         :type device_id: str
@@ -3653,7 +3654,7 @@ class DeviceActionsApi:
     ) -> ApiResponse[None]:
         """Unlock Account
 
-        This endpoint sends an MDM command to unlock a user account that locked by the system because of too many failed password attempts. Available for macOS.   **Request Body Parameters**: application/json     ---    `UserName` \\- `string`
+        <p>This endpoint sends an MDM command to unlock a user account that locked by the system because of too many failed password attempts. Available for macOS.</p> <p><strong>Request Body Parameters</strong>: application/json</p>  <hr /> <p><code>UserName</code> - <code>string</code></p>
 
         :param device_id: (required)
         :type device_id: str
@@ -3724,7 +3725,7 @@ class DeviceActionsApi:
     ) -> RESTResponseType:
         """Unlock Account
 
-        This endpoint sends an MDM command to unlock a user account that locked by the system because of too many failed password attempts. Available for macOS.   **Request Body Parameters**: application/json     ---    `UserName` \\- `string`
+        <p>This endpoint sends an MDM command to unlock a user account that locked by the system because of too many failed password attempts. Available for macOS.</p> <p><strong>Request Body Parameters</strong>: application/json</p>  <hr /> <p><code>UserName</code> - <code>string</code></p>
 
         :param device_id: (required)
         :type device_id: str
@@ -3863,7 +3864,7 @@ class DeviceActionsApi:
     ) -> None:
         """Update Inventory
 
-        This endpoint sends an MDM command to start a check\\-in for a device, initiating the daily MDM commands and MDM logic.
+        This endpoint sends an MDM command to start a check-in for a device, initiating the daily MDM commands and MDM logic.
 
         :param device_id: (required)
         :type device_id: str
@@ -3930,7 +3931,7 @@ class DeviceActionsApi:
     ) -> ApiResponse[None]:
         """Update Inventory
 
-        This endpoint sends an MDM command to start a check\\-in for a device, initiating the daily MDM commands and MDM logic.
+        This endpoint sends an MDM command to start a check-in for a device, initiating the daily MDM commands and MDM logic.
 
         :param device_id: (required)
         :type device_id: str
@@ -3997,7 +3998,7 @@ class DeviceActionsApi:
     ) -> RESTResponseType:
         """Update Inventory
 
-        This endpoint sends an MDM command to start a check\\-in for a device, initiating the daily MDM commands and MDM logic.
+        This endpoint sends an MDM command to start a check-in for a device, initiating the daily MDM commands and MDM logic.
 
         :param device_id: (required)
         :type device_id: str

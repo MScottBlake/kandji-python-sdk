@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 Delete Custom Script
 
-NOTICE: This is permanent so be careful.   This endpoint sends a request to delete a specific custom scripts from the Kandji library.    ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+<p>NOTICE: This is permanent so be careful.</p> <p>This endpoint sends a request to delete a specific custom scripts from the Kandji library.</p>  <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
 ### Example
 
@@ -169,7 +169,7 @@ void (empty response body)
 
 Get Custom Script
 
-This endpoint retrieves details about a specific custom script from the Kandji library.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+<p>This endpoint retrieves details about a specific custom script from the Kandji library.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
 ### Example
 

@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 Create ADE integration
 
-This request will create a new ADE integration.   The default `blueprint_id`, `phone` number, `email` address, and MDM server token `file` downloaded from ABM are required and must be sent in the request.
+<p>This request will create a new ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> downloaded from ABM are required and must be sent in the request.</p>
 
 ### Example
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 Delete ADE integration
 
-**WARNING!** ============   This is a HIGHLY destructive action.    Deleting an ADE token will unassign the associated device records from Kandji. For currently enrolled devices that were assigned to Kandji via the delete ADE integration will not be impacted until they are wiped and reprovisioned. This action is essentially the same as removing an ADE token from MDM and then adding it back.   If applicable, be sure to reassign the device records in ABM.
+<h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1> <p>This is a HIGHLY destructive action.</p> <p>Deleting an ADE token will unassign the associated device records from Kandji. For currently enrolled devices that were assigned to Kandji via the delete ADE integration will not be impacted until they are wiped and reprovisioned. This action is essentially the same as removing an ADE token from MDM and then adding it back.</p> <p>If applicable, be sure to reassign the device records in ABM.</p>
 
 ### Example
 
@@ -180,7 +180,7 @@ void (empty response body)
 
 Download ADE public key
 
-This request returns the public key used to create an MDM server connection in Apple Business Manager.   The encoded information needs to be saved to a file with the `.pem` format and then uploaded to ABM.
+<p>This request returns the public key used to create an MDM server connection in Apple Business Manager.</p> <p>The encoded information needs to be saved to a file with the <code>.pem</code> format and then uploaded to ABM.</p>
 
 ### Example
 
@@ -330,7 +330,7 @@ Name | Type | Description  | Notes
 
 Get ADE integration
 
-This request returns a specific ADE integration based on the `ade_token_id` passed.
+This request returns a specific ADE integration based on the <code>ade_token_id</code> passed.
 
 ### Example
 
@@ -436,15 +436,15 @@ configuration = kandji_python_sdk.Configuration(
 with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji_python_sdk.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
-    blueprint_id = 'fce0cc58-caa5-40d2-a0d7-a0b257127ec5' # str | Return results 'containing' the specified blueprint id (optional)
-    user_id = '8136' # str | 'exact' match on kandji user ID number (optional)
+    blueprint_id = 'fce0cc58-caa5-40d2-a0d7-a0b257127ec5' # str | Return results &quot;containing&quot; the specified blueprint id (optional)
+    user_id = '8136' # str | &quot;exact&quot; match on kandji user ID number (optional)
     dep_account = '' # str | The ADE token UUID (optional)
     device_family = '' # str | Mac, iPhone, iPad, AppleTV, iPod (optional)
-    model = 'MacBook Air' # str | Return model results 'containing' the specified model string. \\\\\\- 'iPad (8th Generation)', 'MacBook Air' (optional)
+    model = 'MacBook Air' # str | Return model results &quot;containing&quot; the specified model string. - &quot;iPad (8th Generation)&quot;, &quot;MacBook Air&quot; (optional)
     os = '' # str | OSX, iOS, tvOS (optional)
-    profile_status = '' # str | The automated device enrollment profile assignment status \\\\\\- assigned, empty, pushed, removed (optional)
+    profile_status = '' # str | The automated device enrollment profile assignment status - assigned, empty, pushed, removed (optional)
     serial_number = '' # str | Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned. (optional)
-    page = '1' # str | Use the \\`page\\` parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the \\`next\\` and \\`previous\\` key attributes in the response can be used to request the next page of results or return to the previous page. (optional)
+    page = '1' # str | Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page. (optional)
 
     try:
         # List ADE devices
@@ -462,15 +462,15 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **blueprint_id** | **str**| Return results &#39;containing&#39; the specified blueprint id | [optional] 
- **user_id** | **str**| &#39;exact&#39; match on kandji user ID number | [optional] 
+ **blueprint_id** | **str**| Return results &amp;quot;containing&amp;quot; the specified blueprint id | [optional] 
+ **user_id** | **str**| &amp;quot;exact&amp;quot; match on kandji user ID number | [optional] 
  **dep_account** | **str**| The ADE token UUID | [optional] 
  **device_family** | **str**| Mac, iPhone, iPad, AppleTV, iPod | [optional] 
- **model** | **str**| Return model results &#39;containing&#39; the specified model string. \\\\\\- &#39;iPad (8th Generation)&#39;, &#39;MacBook Air&#39; | [optional] 
+ **model** | **str**| Return model results &amp;quot;containing&amp;quot; the specified model string. - &amp;quot;iPad (8th Generation)&amp;quot;, &amp;quot;MacBook Air&amp;quot; | [optional] 
  **os** | **str**| OSX, iOS, tvOS | [optional] 
- **profile_status** | **str**| The automated device enrollment profile assignment status \\\\\\- assigned, empty, pushed, removed | [optional] 
+ **profile_status** | **str**| The automated device enrollment profile assignment status - assigned, empty, pushed, removed | [optional] 
  **serial_number** | **str**| Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned. | [optional] 
- **page** | **str**| Use the \\&#x60;page\\&#x60; parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the \\&#x60;next\\&#x60; and \\&#x60;previous\\&#x60; key attributes in the response can be used to request the next page of results or return to the previous page. | [optional] 
+ **page** | **str**| Use the &lt;code&gt;page&lt;/code&gt; parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the &lt;code&gt;next&lt;/code&gt; and &lt;code&gt;previous&lt;/code&gt; key attributes in the response can be used to request the next page of results or return to the previous page. | [optional] 
 
 ### Return type
 
@@ -570,7 +570,7 @@ void (empty response body)
 
 List devices associated to ADE token
 
-This request returns a list of devices associated with a specified `ade_token_id` as well as their enrollment status.   When the `mdm_device` key value is `null`, this can be taken as an indication that the device is awaiting enrollment into Kandji.   When data is present within the mdm\\ _device dictionary, you can reference the `device_id` as the ID of the enrolled device record.
+<p>This request returns a list of devices associated with a specified <code>ade_token_id</code> as well as their enrollment status.</p> <p>When the <code>mdm_device</code> key value is <code>null</code>, this can be taken as an indication that the device is awaiting enrollment into Kandji.</p>  <p>When data is present within the mdm_device dictionary, you can reference the <code>device_id</code> as the ID of the enrolled device record.</p>
 
 ### Example
 
@@ -602,7 +602,7 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji_python_sdk.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
     ade_token_id = 'ade_token_id_example' # str | 
-    page = '1' # str | Use the \\`page\\` parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the \\`next\\` and \\`previous\\` key attributes in the response can be used to request the next page of results or return to the previous page. (optional)
+    page = '1' # str | Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page. (optional)
 
     try:
         # List devices associated to ADE token
@@ -621,7 +621,7 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ade_token_id** | **str**|  | 
- **page** | **str**| Use the \\&#x60;page\\&#x60; parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the \\&#x60;next\\&#x60; and \\&#x60;previous\\&#x60; key attributes in the response can be used to request the next page of results or return to the previous page. | [optional] 
+ **page** | **str**| Use the &lt;code&gt;page&lt;/code&gt; parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the &lt;code&gt;next&lt;/code&gt; and &lt;code&gt;previous&lt;/code&gt; key attributes in the response can be used to request the next page of results or return to the previous page. | [optional] 
 
 ### Return type
 
@@ -649,7 +649,7 @@ Name | Type | Description  | Notes
 
 Renew ADE integration
 
-This request will renew an existing ADE integration.   The default `blueprint_id`, `phone` number, `email` address, and MDM server token `file` from the associated MDM server in ABM are required and must be sent in the request.
+<p>This request will renew an existing ADE integration.</p>  <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> from the associated MDM server in ABM are required and must be sent in the request.</p>
 
 ### Example
 
@@ -732,7 +732,7 @@ void (empty response body)
 
 Update ADE device
 
-Update a specific Automated Device Enrollment device's blueprint assignment, user assignment, and asset tag.   ### Request Parameters    `device_id` (path parameter): The unique identifier of the device.
+<p>Update a specific Automated Device Enrollment device's blueprint assignment, user assignment, and asset tag.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p>
 
 ### Example
 
@@ -811,7 +811,7 @@ Name | Type | Description  | Notes
 
 Update ADE integration
 
-This request will update the default blueprint, phone number, and email address in an existing ADE integration.   The default `blueprint_id`, `phone` number, and `email` address must be sent in the request.
+<p>This request will update the default blueprint, phone number, and email address in an existing ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, and <code>email</code> address must be sent in the request.</p>
 
 ### Example
 

@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Create Custom App
 
-This request allows you to create a custom app in the Kandji library.    Must have already generated a `file_key` via `Create custom app` endpoint and uploaded the file to S3 using a request similar to the `Upload to S3` example.
+<p>This request allows you to create a custom app in the Kandji library.</p> <p>Must have already generated a <code>file_key</code> via <code>Create custom app</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload to S3</code> example.</p>
 
 ### Example
 
@@ -48,13 +48,13 @@ configuration = kandji_python_sdk.Configuration(
 with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji_python_sdk.CustomAppsApi(api_client)
-    file_key = 'file_key_example' # str | (Required) The S3 key from the `Upload Custom App` endpont used to upload the custom app file.
-    install_enforcement = 'install_enforcement_example' # str | (Required) Options are install\\\\_once, continuously\\\\_enforce, no\\\\_enforcement
+    file_key = 'file_key_example' # str | (Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file.
+    install_enforcement = 'install_enforcement_example' # str | (Required) Options are install_once, continuously_enforce, no_enforcement
     install_type = 'install_type_example' # str | (Required) Options are package, zip, image
     name = 'name_example' # str | (Required) The name for this Custom App
-    self_service_category_id = 'self_service_category_id_example' # str | (Required for show\\\\_in\\\\_self\\\\_service\\\\=true) Self Service Category (by ID) to display app in
-    self_service_recommended = 'self_service_recommended_example' # str | (Optional, default\\\\=false) Adds recommended flag to app in Self Service
-    show_in_self_service = 'show_in_self_service_example' # str | (Optional, default\\\\=false) Displays this app in Self Service
+    self_service_category_id = 'self_service_category_id_example' # str | (Required for show_in_self_service=true) Self Service Category (by ID) to display app in
+    self_service_recommended = 'self_service_recommended_example' # str | (Optional, default=false) Adds recommended flag to app in Self Service
+    show_in_self_service = 'show_in_self_service_example' # str | (Optional, default=false) Displays this app in Self Service
 
     try:
         # Create Custom App
@@ -72,13 +72,13 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_key** | **str**| (Required) The S3 key from the &#x60;Upload Custom App&#x60; endpont used to upload the custom app file. | 
- **install_enforcement** | **str**| (Required) Options are install\\\\_once, continuously\\\\_enforce, no\\\\_enforcement | 
+ **file_key** | **str**| (Required) The S3 key from the &lt;code&gt;Upload Custom App&lt;/code&gt; endpont used to upload the custom app file. | 
+ **install_enforcement** | **str**| (Required) Options are install_once, continuously_enforce, no_enforcement | 
  **install_type** | **str**| (Required) Options are package, zip, image | 
  **name** | **str**| (Required) The name for this Custom App | 
- **self_service_category_id** | **str**| (Required for show\\\\_in\\\\_self\\\\_service\\\\&#x3D;true) Self Service Category (by ID) to display app in | 
- **self_service_recommended** | **str**| (Optional, default\\\\&#x3D;false) Adds recommended flag to app in Self Service | 
- **show_in_self_service** | **str**| (Optional, default\\\\&#x3D;false) Displays this app in Self Service | 
+ **self_service_category_id** | **str**| (Required for show_in_self_service&#x3D;true) Self Service Category (by ID) to display app in | 
+ **self_service_recommended** | **str**| (Optional, default&#x3D;false) Adds recommended flag to app in Self Service | 
+ **show_in_self_service** | **str**| (Optional, default&#x3D;false) Displays this app in Self Service | 
 
 ### Return type
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 Delete Custom App
 
-NOTICE: This is permanent so be careful.   This endpoint sends a request to delete a specific custom app from the Kandji library.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+<p>NOTICE: This is permanent so be careful.</p> <p>This endpoint sends a request to delete a specific custom app from the Kandji library.</p>  <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
 ### Example
 
@@ -182,7 +182,7 @@ void (empty response body)
 
 Get Custom App
 
-This endpoint retrieves details about a specific custom app from the Kandji library.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+<p>This endpoint retrieves details about a specific custom app from the Kandji library.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
 ### Example
 
@@ -290,7 +290,7 @@ configuration = kandji_python_sdk.Configuration(
 with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji_python_sdk.CustomAppsApi(api_client)
-    page = '1' # str | Optional page number. Used when results exceed pagination threshold. A hard upper \\`limit\\` is set at 300 device records returned per request. (optional)
+    page = '1' # str | Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 device records returned per request. (optional)
 
     try:
         # List Custom Apps
@@ -308,7 +308,7 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **str**| Optional page number. Used when results exceed pagination threshold. A hard upper \\&#x60;limit\\&#x60; is set at 300 device records returned per request. | [optional] 
+ **page** | **str**| Optional page number. Used when results exceed pagination threshold. A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. | [optional] 
 
 ### Return type
 
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 Update Custom App
 
-This request allows you to update a custom app in the Kandji library.    Must have already generated a `file_key` via `Create custom app` endpoint and uploaded the file to S3 using a request similar to the `Upload to S3` example.   ### Request Parameters   `library_item_id` (path parameter): The unique identifier of the library item.
+<p>This request allows you to update a custom app in the Kandji library.</p> <p>Must have already generated a <code>file_key</code> via <code>Create custom app</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload to S3</code> example.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
 ### Example
 
@@ -368,7 +368,7 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji_python_sdk.CustomAppsApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
-    active = 'active_example' # str | (Optional, default\\\\=true) Whether this Custom App is active and installable
+    active = 'active_example' # str | (Optional, default=true) Whether this Custom App is active and installable
     name = 'name_example' # str | Renaming a Custom App
 
     try:
@@ -388,7 +388,7 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **library_item_id** | **str**|  | 
- **active** | **str**| (Optional, default\\\\&#x3D;true) Whether this Custom App is active and installable | 
+ **active** | **str**| (Optional, default&#x3D;true) Whether this Custom App is active and installable | 
  **name** | **str**| Renaming a Custom App | 
 
 ### Return type
@@ -417,7 +417,7 @@ Name | Type | Description  | Notes
 
 Upload Custom App
 
-This request retrieves the S3 upload details need for uploading the app to Amazon S3\\.   Creates a pre\\-signed `post_url` to upload a new Custom App to S3\\.   The provided `name` will be used to calculate a unique `file_key` in S3\\.   A separate request will have to be made to the `Upload to S3` endpoint to upload the file to S3 directly using the `post_url` and `post_data` from the `Upload Custom App` response.
+<p>This request retrieves the S3 upload details need for uploading the app to Amazon S3.</p> <p>Creates a pre-signed <code>post_url</code> to upload a new Custom App to S3.</p> <p>The provided <code>name</code> will be used to calculate a unique <code>file_key</code> in S3.</p> <p>A separate request will have to be made to the <code>Upload to S3</code> endpoint to upload the file to S3 directly using the <code>post_url</code> and <code>post_data</code> from the <code>Upload Custom App</code> response.</p>
 
 ### Example
 

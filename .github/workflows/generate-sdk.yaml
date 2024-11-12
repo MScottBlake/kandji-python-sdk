@@ -50,8 +50,12 @@ jobs:
       - name: Move and remove directory contents if it exists
         run: |
           if [[ -d "${{ env.language }}-client" ]]; then
-              mv "${{ env.language }}-client"/{*,.*} "${{ env.language }}-client"/../ 2>/dev/null || true
-              rmdir "${{ env.language }}-client"
+            # Move all files and directories (including hidden ones) to the parent directory
+            shopt -s dotglob  # Enable globbing for hidden files
+            mv -v "${{ env.language }}-client"/* "${{ env.language }}-client"/../
+
+            # Remove the original directory and all its contents
+            rm -rf "${{ env.language }}-client"
           else
               echo "Directory ${{ env.language }}-client does not exist, skipping."
           fi

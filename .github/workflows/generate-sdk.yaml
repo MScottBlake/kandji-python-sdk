@@ -50,9 +50,11 @@ jobs:
       - name: Move and remove directory contents if it exists
         run: |
           if [[ -d "${{ env.language }}-client" ]]; then
-            # Move all files and directories (including hidden ones) to the parent directory
-            shopt -s dotglob  # Enable globbing for hidden files
-            mv -v "${{ env.language }}-client"/* "${{ env.language }}-client"/../
+            shopt -s dotglob  # Include hidden files
+            for item in "${{ env.language }}-client"/*; do
+                # Use rsync to merge and move directories, which handles nested structures well
+                rsync -av "$item" "${{ env.language }}-client"/../
+            done
 
             # Remove the original directory and all its contents
             rm -rf "${{ env.language }}-client"

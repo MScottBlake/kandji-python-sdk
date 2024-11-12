@@ -47,10 +47,14 @@ jobs:
           generator-tag: latest-release
           openapi-file: ${{ env.openapi_file }}
 
-      - name: Move the output client to repo root
+      - name: Move and remove directory contents if it exists
         run: |
-          mv ${{ env.language }}-client/{*,.*} ${{ env.language }}-client/../ 2>/dev/null
-          rmdir ${{ env.language }}-client
+          if [[ -d "${{ env.language }}-client" ]]; then
+              mv "${{ env.language }}-client"/{*,.*} "${{ env.language }}-client"/../ 2>/dev/null || true
+              rmdir "${{ env.language }}-client"
+          else
+              echo "Directory ${{ env.language }}-client does not exist, skipping."
+          fi
 
       - name: Delete Kandji OpenAPI file
         run: |

@@ -359,6 +359,6 @@ Authentication schemes defined for the API:
 
 ## Author
 
-
+mitchelsblake@gmail.com
 
 

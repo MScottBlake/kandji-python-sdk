@@ -55,5 +55,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_in_house_apps_api.py
 tox.ini

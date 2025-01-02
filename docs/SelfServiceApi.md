@@ -1,4 +1,4 @@
-# kandji_python_sdk.SelfServiceApi
+# kandji_sdk.SelfServiceApi
 
 All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
@@ -19,13 +19,13 @@ List Self Service Categories
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_python_sdk
-from kandji_python_sdk.rest import ApiException
+import kandji_sdk
+from kandji_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -35,14 +35,14 @@ configuration = kandji_python_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_python_sdk.ApiClient(configuration) as api_client:
+with kandji_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_python_sdk.SelfServiceApi(api_client)
+    api_instance = kandji_sdk.SelfServiceApi(api_client)
 
     try:
         # List Self Service Categories
@@ -76,7 +76,7 @@ This endpoint does not need any parameter.
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  * Allow -  <br>  * Content-Length -  <br>  * Content-Security-Policy -  <br>  * Content-Type -  <br>  * Cross-Origin-Opener-Policy -  <br>  * Date -  <br>  * Feature-Policy -  <br>  * Referrer-Policy -  <br>  * Server -  <br>  * Vary -  <br>  * X-Content-Type-Options -  <br>  * X-Frame-Options -  <br>  |
+**200** | OK |  * Date -  <br>  * Server -  <br>  * Content-Type -  <br>  * Allow -  <br>  * X-Frame-Options -  <br>  * Content-Length -  <br>  * X-Content-Type-Options -  <br>  * Referrer-Policy -  <br>  * Cross-Origin-Opener-Policy -  <br>  * Feature-Policy -  <br>  * Vary -  <br>  * Content-Security-Policy -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

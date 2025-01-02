@@ -1,4 +1,4 @@
-# kandji_python_sdk.LostModeApi
+# kandji_sdk.LostModeApi
 
 All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
@@ -22,13 +22,13 @@ Disable Lost Mode
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_python_sdk
-from kandji_python_sdk.rest import ApiException
+import kandji_sdk
+from kandji_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -38,14 +38,14 @@ configuration = kandji_python_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_python_sdk.ApiClient(configuration) as api_client:
+with kandji_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_python_sdk.LostModeApi(api_client)
+    api_instance = kandji_sdk.LostModeApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -97,13 +97,13 @@ Enable Lost Mode
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_python_sdk
-from kandji_python_sdk.rest import ApiException
+import kandji_sdk
+from kandji_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -113,14 +113,14 @@ configuration = kandji_python_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_python_sdk.ApiClient(configuration) as api_client:
+with kandji_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_python_sdk.LostModeApi(api_client)
+    api_instance = kandji_sdk.LostModeApi(api_client)
     device_id = 'device_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
@@ -174,13 +174,13 @@ Play Lost Mode Sound
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_python_sdk
-from kandji_python_sdk.rest import ApiException
+import kandji_sdk
+from kandji_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -190,14 +190,14 @@ configuration = kandji_python_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_python_sdk.ApiClient(configuration) as api_client:
+with kandji_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_python_sdk.LostModeApi(api_client)
+    api_instance = kandji_sdk.LostModeApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
@@ -249,13 +249,13 @@ This endpoint sends an MDM command to update the location data on iOS and iPadOS
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_python_sdk
-from kandji_python_sdk.rest import ApiException
+import kandji_sdk
+from kandji_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -265,14 +265,14 @@ configuration = kandji_python_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_python_sdk.ApiClient(configuration) as api_client:
+with kandji_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_python_sdk.LostModeApi(api_client)
+    api_instance = kandji_sdk.LostModeApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:

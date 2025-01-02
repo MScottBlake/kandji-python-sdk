@@ -1,4 +1,4 @@
-# kandji_python_sdk.CustomAppsApi
+# kandji_sdk.CustomAppsApi
 
 All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **create_custom_app**
-> object create_custom_app(file_key, install_enforcement, install_type, name, self_service_category_id, self_service_recommended, show_in_self_service)
+> object create_custom_app(name, file_key, install_type, install_enforcement, show_in_self_service, self_service_category_id, self_service_recommended)
 
 Create Custom App
 
@@ -24,13 +24,13 @@ Create Custom App
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_python_sdk
-from kandji_python_sdk.rest import ApiException
+import kandji_sdk
+from kandji_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -40,25 +40,25 @@ configuration = kandji_python_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_python_sdk.ApiClient(configuration) as api_client:
+with kandji_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_python_sdk.CustomAppsApi(api_client)
-    file_key = 'file_key_example' # str | (Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file.
-    install_enforcement = 'install_enforcement_example' # str | (Required) Options are install_once, continuously_enforce, no_enforcement
-    install_type = 'install_type_example' # str | (Required) Options are package, zip, image
+    api_instance = kandji_sdk.CustomAppsApi(api_client)
     name = 'name_example' # str | (Required) The name for this Custom App
+    file_key = 'file_key_example' # str | (Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file.
+    install_type = 'install_type_example' # str | (Required) Options are package, zip, image
+    install_enforcement = 'install_enforcement_example' # str | (Required) Options are install_once, continuously_enforce, no_enforcement
+    show_in_self_service = 'show_in_self_service_example' # str | (Optional, default=false) Displays this app in Self Service
     self_service_category_id = 'self_service_category_id_example' # str | (Required for show_in_self_service=true) Self Service Category (by ID) to display app in
     self_service_recommended = 'self_service_recommended_example' # str | (Optional, default=false) Adds recommended flag to app in Self Service
-    show_in_self_service = 'show_in_self_service_example' # str | (Optional, default=false) Displays this app in Self Service
 
     try:
         # Create Custom App
-        api_response = api_instance.create_custom_app(file_key, install_enforcement, install_type, name, self_service_category_id, self_service_recommended, show_in_self_service)
+        api_response = api_instance.create_custom_app(name, file_key, install_type, install_enforcement, show_in_self_service, self_service_category_id, self_service_recommended)
         print("The response of CustomAppsApi->create_custom_app:\n")
         pprint(api_response)
     except Exception as e:
@@ -72,13 +72,13 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_key** | **str**| (Required) The S3 key from the &lt;code&gt;Upload Custom App&lt;/code&gt; endpont used to upload the custom app file. | 
- **install_enforcement** | **str**| (Required) Options are install_once, continuously_enforce, no_enforcement | 
- **install_type** | **str**| (Required) Options are package, zip, image | 
  **name** | **str**| (Required) The name for this Custom App | 
+ **file_key** | **str**| (Required) The S3 key from the &lt;code&gt;Upload Custom App&lt;/code&gt; endpont used to upload the custom app file. | 
+ **install_type** | **str**| (Required) Options are package, zip, image | 
+ **install_enforcement** | **str**| (Required) Options are install_once, continuously_enforce, no_enforcement | 
+ **show_in_self_service** | **str**| (Optional, default&#x3D;false) Displays this app in Self Service | 
  **self_service_category_id** | **str**| (Required for show_in_self_service&#x3D;true) Self Service Category (by ID) to display app in | 
  **self_service_recommended** | **str**| (Optional, default&#x3D;false) Adds recommended flag to app in Self Service | 
- **show_in_self_service** | **str**| (Optional, default&#x3D;false) Displays this app in Self Service | 
 
 ### Return type
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Created |  * Allow -  <br>  * Content-Length -  <br>  * Content-Security-Policy -  <br>  * Content-Type -  <br>  * Cross-Origin-Opener-Policy -  <br>  * Date -  <br>  * Feature-Policy -  <br>  * Referrer-Policy -  <br>  * Server -  <br>  * Vary -  <br>  * X-Content-Type-Options -  <br>  * X-Frame-Options -  <br>  |
+**201** | Created |  * Date -  <br>  * Server -  <br>  * Content-Type -  <br>  * Allow -  <br>  * X-Frame-Options -  <br>  * Content-Length -  <br>  * X-Content-Type-Options -  <br>  * Referrer-Policy -  <br>  * Cross-Origin-Opener-Policy -  <br>  * Feature-Policy -  <br>  * Vary -  <br>  * Content-Security-Policy -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -106,20 +106,20 @@ Name | Type | Description  | Notes
 
 Delete Custom App
 
-<p>NOTICE: This is permanent so be careful.</p> <p>This endpoint sends a request to delete a specific custom app from the Kandji library.</p>  <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
+<p>NOTICE: This is permanent so be careful.</p> <p>This endpoint sends a request to delete a specific custom app from the Kandji library.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
 ### Example
 
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_python_sdk
-from kandji_python_sdk.rest import ApiException
+import kandji_sdk
+from kandji_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -129,14 +129,14 @@ configuration = kandji_python_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_python_sdk.ApiClient(configuration) as api_client:
+with kandji_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_python_sdk.CustomAppsApi(api_client)
+    api_instance = kandji_sdk.CustomAppsApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
 
     try:
@@ -172,8 +172,8 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | No Content |  * Allow -  <br>  * Content-Length -  <br>  * Content-Security-Policy -  <br>  * Cross-Origin-Opener-Policy -  <br>  * Date -  <br>  * Feature-Policy -  <br>  * Referrer-Policy -  <br>  * Server -  <br>  * Vary -  <br>  * X-Content-Type-Options -  <br>  * X-Frame-Options -  <br>  |
-**404** | Not Found |  * Accept-Ranges -  <br>  * Access-Control-Allow-Origin -  <br>  * Connection -  <br>  * Content-Encoding -  <br>  * Content-Security-Policy -  <br>  * Content-Type -  <br>  * Cross-Origin-Opener-Policy -  <br>  * Date -  <br>  * Feature-Policy -  <br>  * Ratelimit-Limit -  <br>  * Ratelimit-Remaining -  <br>  * Ratelimit-Reset -  <br>  * Referrer-Policy -  <br>  * Server -  <br>  * Strict-Transport-Security -  <br>  * Vary -  <br>  * Via -  <br>  * X-Cache -  <br>  * X-Cache-Hits -  <br>  * X-Content-Type-Options -  <br>  * X-Frame-Options -  <br>  * X-Kong-Proxy-Latency -  <br>  * X-Kong-Upstream-Latency -  <br>  * X-Ratelimit-Limit-Hour -  <br>  * X-Ratelimit-Limit-Second -  <br>  * X-Ratelimit-Remaining-Hour -  <br>  * X-Ratelimit-Remaining-Second -  <br>  * X-Served-By -  <br>  * X-Timer -  <br>  * transfer-encoding -  <br>  |
+**204** | No Content |  * Date -  <br>  * Server -  <br>  * Allow -  <br>  * X-Frame-Options -  <br>  * Content-Length -  <br>  * X-Content-Type-Options -  <br>  * Referrer-Policy -  <br>  * Cross-Origin-Opener-Policy -  <br>  * Feature-Policy -  <br>  * Vary -  <br>  * Content-Security-Policy -  <br>  |
+**404** | Not Found |  * Connection -  <br>  * Content-Type -  <br>  * Content-Encoding -  <br>  * Content-Security-Policy -  <br>  * Cross-Origin-Opener-Policy -  <br>  * Feature-Policy -  <br>  * Ratelimit-Limit -  <br>  * Ratelimit-Remaining -  <br>  * Ratelimit-Reset -  <br>  * Referrer-Policy -  <br>  * Server -  <br>  * Strict-Transport-Security -  <br>  * Via -  <br>  * X-Content-Type-Options -  <br>  * X-Frame-Options -  <br>  * X-Kong-Proxy-Latency -  <br>  * X-Kong-Upstream-Latency -  <br>  * X-Ratelimit-Limit-Hour -  <br>  * X-Ratelimit-Limit-Second -  <br>  * X-Ratelimit-Remaining-Hour -  <br>  * X-Ratelimit-Remaining-Second -  <br>  * Accept-Ranges -  <br>  * Access-Control-Allow-Origin -  <br>  * Date -  <br>  * X-Served-By -  <br>  * X-Cache -  <br>  * X-Cache-Hits -  <br>  * X-Timer -  <br>  * Vary -  <br>  * transfer-encoding -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -189,13 +189,13 @@ Get Custom App
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_python_sdk
-from kandji_python_sdk.rest import ApiException
+import kandji_sdk
+from kandji_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -205,14 +205,14 @@ configuration = kandji_python_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_python_sdk.ApiClient(configuration) as api_client:
+with kandji_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_python_sdk.CustomAppsApi(api_client)
+    api_instance = kandji_sdk.CustomAppsApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
 
     try:
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  * Allow -  <br>  * Content-Length -  <br>  * Content-Security-Policy -  <br>  * Content-Type -  <br>  * Cross-Origin-Opener-Policy -  <br>  * Date -  <br>  * Feature-Policy -  <br>  * Referrer-Policy -  <br>  * Server -  <br>  * Vary -  <br>  * X-Content-Type-Options -  <br>  * X-Frame-Options -  <br>  |
+**200** | OK |  * Date -  <br>  * Server -  <br>  * Content-Type -  <br>  * Allow -  <br>  * X-Frame-Options -  <br>  * Content-Length -  <br>  * X-Content-Type-Options -  <br>  * Referrer-Policy -  <br>  * Cross-Origin-Opener-Policy -  <br>  * Feature-Policy -  <br>  * Vary -  <br>  * Content-Security-Policy -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -266,13 +266,13 @@ This endpoint makes a request to retrieve a list of custom apps from the Kandji 
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_python_sdk
-from kandji_python_sdk.rest import ApiException
+import kandji_sdk
+from kandji_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -282,14 +282,14 @@ configuration = kandji_python_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_python_sdk.ApiClient(configuration) as api_client:
+with kandji_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_python_sdk.CustomAppsApi(api_client)
+    api_instance = kandji_sdk.CustomAppsApi(api_client)
     page = '1' # str | Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 device records returned per request. (optional)
 
     try:
@@ -327,12 +327,12 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  * Allow -  <br>  * Content-Length -  <br>  * Content-Security-Policy -  <br>  * Content-Type -  <br>  * Cross-Origin-Opener-Policy -  <br>  * Date -  <br>  * Feature-Policy -  <br>  * Referrer-Policy -  <br>  * Server -  <br>  * Vary -  <br>  * X-Content-Type-Options -  <br>  * X-Frame-Options -  <br>  |
+**200** | OK |  * Date -  <br>  * Server -  <br>  * Content-Type -  <br>  * Allow -  <br>  * X-Frame-Options -  <br>  * Content-Length -  <br>  * X-Content-Type-Options -  <br>  * Referrer-Policy -  <br>  * Cross-Origin-Opener-Policy -  <br>  * Feature-Policy -  <br>  * Vary -  <br>  * Content-Security-Policy -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_custom_app**
-> object update_custom_app(library_item_id, active, name)
+> object update_custom_app(library_item_id, name, active)
 
 Update Custom App
 
@@ -343,13 +343,13 @@ Update Custom App
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_python_sdk
-from kandji_python_sdk.rest import ApiException
+import kandji_sdk
+from kandji_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -359,21 +359,21 @@ configuration = kandji_python_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_python_sdk.ApiClient(configuration) as api_client:
+with kandji_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_python_sdk.CustomAppsApi(api_client)
+    api_instance = kandji_sdk.CustomAppsApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
-    active = 'active_example' # str | (Optional, default=true) Whether this Custom App is active and installable
     name = 'name_example' # str | Renaming a Custom App
+    active = 'active_example' # str | (Optional, default=true) Whether this Custom App is active and installable
 
     try:
         # Update Custom App
-        api_response = api_instance.update_custom_app(library_item_id, active, name)
+        api_response = api_instance.update_custom_app(library_item_id, name, active)
         print("The response of CustomAppsApi->update_custom_app:\n")
         pprint(api_response)
     except Exception as e:
@@ -388,8 +388,8 @@ with kandji_python_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **library_item_id** | **str**|  | 
- **active** | **str**| (Optional, default&#x3D;true) Whether this Custom App is active and installable | 
  **name** | **str**| Renaming a Custom App | 
+ **active** | **str**| (Optional, default&#x3D;true) Whether this Custom App is active and installable | 
 
 ### Return type
 
@@ -408,7 +408,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  * Allow -  <br>  * Content-Length -  <br>  * Content-Security-Policy -  <br>  * Content-Type -  <br>  * Cross-Origin-Opener-Policy -  <br>  * Date -  <br>  * Feature-Policy -  <br>  * Referrer-Policy -  <br>  * Server -  <br>  * Vary -  <br>  * X-Content-Type-Options -  <br>  * X-Frame-Options -  <br>  |
+**200** | OK |  * Date -  <br>  * Server -  <br>  * Content-Type -  <br>  * Allow -  <br>  * X-Frame-Options -  <br>  * Content-Length -  <br>  * X-Content-Type-Options -  <br>  * Referrer-Policy -  <br>  * Cross-Origin-Opener-Policy -  <br>  * Feature-Policy -  <br>  * Vary -  <br>  * Content-Security-Policy -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -424,13 +424,13 @@ Upload Custom App
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_python_sdk
-from kandji_python_sdk.rest import ApiException
+import kandji_sdk
+from kandji_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -440,14 +440,14 @@ configuration = kandji_python_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_python_sdk.ApiClient(configuration) as api_client:
+with kandji_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_python_sdk.CustomAppsApi(api_client)
+    api_instance = kandji_sdk.CustomAppsApi(api_client)
     body = 'body_example' # str |  (optional)
 
     try:
@@ -483,7 +483,7 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Created |  * Allow -  <br>  * Content-Length -  <br>  * Content-Security-Policy -  <br>  * Content-Type -  <br>  * Cross-Origin-Opener-Policy -  <br>  * Date -  <br>  * Feature-Policy -  <br>  * Referrer-Policy -  <br>  * Server -  <br>  * Vary -  <br>  * X-Content-Type-Options -  <br>  * X-Frame-Options -  <br>  |
+**201** | Created |  * Date -  <br>  * Server -  <br>  * Content-Type -  <br>  * Allow -  <br>  * X-Frame-Options -  <br>  * Content-Length -  <br>  * X-Content-Type-Options -  <br>  * Referrer-Policy -  <br>  * Cross-Origin-Opener-Policy -  <br>  * Feature-Policy -  <br>  * Vary -  <br>  * Content-Security-Policy -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

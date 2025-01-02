@@ -1,4 +1,4 @@
-# kandji_python_sdk.TagsApi
+# kandji_sdk.TagsApi
 
 All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
@@ -22,13 +22,13 @@ Create a tag. Can only create one tag per request.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_python_sdk
-from kandji_python_sdk.rest import ApiException
+import kandji_sdk
+from kandji_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -38,14 +38,14 @@ configuration = kandji_python_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_python_sdk.ApiClient(configuration) as api_client:
+with kandji_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_python_sdk.TagsApi(api_client)
+    api_instance = kandji_sdk.TagsApi(api_client)
     body = 'body_example' # str |  (optional)
 
     try:
@@ -99,13 +99,13 @@ Delete Tag
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_python_sdk
-from kandji_python_sdk.rest import ApiException
+import kandji_sdk
+from kandji_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -115,14 +115,14 @@ configuration = kandji_python_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_python_sdk.ApiClient(configuration) as api_client:
+with kandji_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_python_sdk.TagsApi(api_client)
+    api_instance = kandji_sdk.TagsApi(api_client)
     tag_id = 'tag_id_example' # str | 
 
     try:
@@ -174,13 +174,13 @@ Return configured tags.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_python_sdk
-from kandji_python_sdk.rest import ApiException
+import kandji_sdk
+from kandji_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -190,14 +190,14 @@ configuration = kandji_python_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_python_sdk.ApiClient(configuration) as api_client:
+with kandji_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_python_sdk.TagsApi(api_client)
+    api_instance = kandji_sdk.TagsApi(api_client)
     search = 'accuhive' # str | Return resultes containing a given tag search string.
 
     try:
@@ -251,13 +251,13 @@ Update Tag
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_python_sdk
-from kandji_python_sdk.rest import ApiException
+import kandji_sdk
+from kandji_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -267,14 +267,14 @@ configuration = kandji_python_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_python_sdk.Configuration(
+configuration = kandji_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_python_sdk.ApiClient(configuration) as api_client:
+with kandji_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_python_sdk.TagsApi(api_client)
+    api_instance = kandji_sdk.TagsApi(api_client)
     tag_id = 'tag_id_example' # str | 
     body = 'body_example' # str |  (optional)
 

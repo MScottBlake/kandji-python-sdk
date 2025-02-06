@@ -39,7 +39,7 @@ class DeviceSecretsApi:
 
 
     @validate_call
-    def get_activation_lock_bypass_code(
+    def device_secrets_get_activation_lock_bypass_code(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -83,7 +83,7 @@ class DeviceSecretsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_activation_lock_bypass_code_serialize(
+        _param = self._device_secrets_get_activation_lock_bypass_code_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -106,7 +106,7 @@ class DeviceSecretsApi:
 
 
     @validate_call
-    def get_activation_lock_bypass_code_with_http_info(
+    def device_secrets_get_activation_lock_bypass_code_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -150,7 +150,7 @@ class DeviceSecretsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_activation_lock_bypass_code_serialize(
+        _param = self._device_secrets_get_activation_lock_bypass_code_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -173,7 +173,7 @@ class DeviceSecretsApi:
 
 
     @validate_call
-    def get_activation_lock_bypass_code_without_preload_content(
+    def device_secrets_get_activation_lock_bypass_code_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -217,7 +217,7 @@ class DeviceSecretsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_activation_lock_bypass_code_serialize(
+        _param = self._device_secrets_get_activation_lock_bypass_code_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -235,7 +235,7 @@ class DeviceSecretsApi:
         return response_data.response
 
 
-    def _get_activation_lock_bypass_code_serialize(
+    def _device_secrets_get_activation_lock_bypass_code_serialize(
         self,
         device_id,
         _request_auth,
@@ -300,7 +300,7 @@ class DeviceSecretsApi:
 
 
     @validate_call
-    def get_filevault_recovery_key(
+    def device_secrets_get_filevault_recovery_key(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -344,7 +344,7 @@ class DeviceSecretsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_filevault_recovery_key_serialize(
+        _param = self._device_secrets_get_filevault_recovery_key_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -367,7 +367,7 @@ class DeviceSecretsApi:
 
 
     @validate_call
-    def get_filevault_recovery_key_with_http_info(
+    def device_secrets_get_filevault_recovery_key_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -411,7 +411,7 @@ class DeviceSecretsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_filevault_recovery_key_serialize(
+        _param = self._device_secrets_get_filevault_recovery_key_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -434,7 +434,7 @@ class DeviceSecretsApi:
 
 
     @validate_call
-    def get_filevault_recovery_key_without_preload_content(
+    def device_secrets_get_filevault_recovery_key_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -478,7 +478,7 @@ class DeviceSecretsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_filevault_recovery_key_serialize(
+        _param = self._device_secrets_get_filevault_recovery_key_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -496,7 +496,7 @@ class DeviceSecretsApi:
         return response_data.response
 
 
-    def _get_filevault_recovery_key_serialize(
+    def _device_secrets_get_filevault_recovery_key_serialize(
         self,
         device_id,
         _request_auth,
@@ -561,7 +561,7 @@ class DeviceSecretsApi:
 
 
     @validate_call
-    def get_recovery_lock_password(
+    def device_secrets_get_recovery_lock_password(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -605,7 +605,7 @@ class DeviceSecretsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_recovery_lock_password_serialize(
+        _param = self._device_secrets_get_recovery_lock_password_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -628,7 +628,7 @@ class DeviceSecretsApi:
 
 
     @validate_call
-    def get_recovery_lock_password_with_http_info(
+    def device_secrets_get_recovery_lock_password_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -672,7 +672,7 @@ class DeviceSecretsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_recovery_lock_password_serialize(
+        _param = self._device_secrets_get_recovery_lock_password_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -695,7 +695,7 @@ class DeviceSecretsApi:
 
 
     @validate_call
-    def get_recovery_lock_password_without_preload_content(
+    def device_secrets_get_recovery_lock_password_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -739,7 +739,7 @@ class DeviceSecretsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_recovery_lock_password_serialize(
+        _param = self._device_secrets_get_recovery_lock_password_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -757,7 +757,7 @@ class DeviceSecretsApi:
         return response_data.response
 
 
-    def _get_recovery_lock_password_serialize(
+    def _device_secrets_get_recovery_lock_password_serialize(
         self,
         device_id,
         _request_auth,
@@ -822,7 +822,7 @@ class DeviceSecretsApi:
 
 
     @validate_call
-    def get_unlock_pin(
+    def device_secrets_get_unlock_pin(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -866,7 +866,7 @@ class DeviceSecretsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_unlock_pin_serialize(
+        _param = self._device_secrets_get_unlock_pin_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -889,7 +889,7 @@ class DeviceSecretsApi:
 
 
     @validate_call
-    def get_unlock_pin_with_http_info(
+    def device_secrets_get_unlock_pin_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -933,7 +933,7 @@ class DeviceSecretsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_unlock_pin_serialize(
+        _param = self._device_secrets_get_unlock_pin_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -956,7 +956,7 @@ class DeviceSecretsApi:
 
 
     @validate_call
-    def get_unlock_pin_without_preload_content(
+    def device_secrets_get_unlock_pin_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -1000,7 +1000,7 @@ class DeviceSecretsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_unlock_pin_serialize(
+        _param = self._device_secrets_get_unlock_pin_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1018,7 +1018,7 @@ class DeviceSecretsApi:
         return response_data.response
 
 
-    def _get_unlock_pin_serialize(
+    def _device_secrets_get_unlock_pin_serialize(
         self,
         device_id,
         _request_auth,

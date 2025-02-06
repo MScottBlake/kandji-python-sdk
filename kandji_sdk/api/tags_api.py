@@ -40,7 +40,7 @@ class TagsApi:
 
 
     @validate_call
-    def create_tag(
+    def tags_create_tag(
         self,
         body: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -84,7 +84,7 @@ class TagsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_tag_serialize(
+        _param = self._tags_create_tag_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -107,7 +107,7 @@ class TagsApi:
 
 
     @validate_call
-    def create_tag_with_http_info(
+    def tags_create_tag_with_http_info(
         self,
         body: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -151,7 +151,7 @@ class TagsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_tag_serialize(
+        _param = self._tags_create_tag_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -174,7 +174,7 @@ class TagsApi:
 
 
     @validate_call
-    def create_tag_without_preload_content(
+    def tags_create_tag_without_preload_content(
         self,
         body: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -218,7 +218,7 @@ class TagsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_tag_serialize(
+        _param = self._tags_create_tag_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -236,7 +236,7 @@ class TagsApi:
         return response_data.response
 
 
-    def _create_tag_serialize(
+    def _tags_create_tag_serialize(
         self,
         body,
         _request_auth,
@@ -314,7 +314,7 @@ class TagsApi:
 
 
     @validate_call
-    def delete_tag(
+    def tags_delete_tag(
         self,
         tag_id: StrictStr,
         _request_timeout: Union[
@@ -358,7 +358,7 @@ class TagsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_tag_serialize(
+        _param = self._tags_delete_tag_serialize(
             tag_id=tag_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -381,7 +381,7 @@ class TagsApi:
 
 
     @validate_call
-    def delete_tag_with_http_info(
+    def tags_delete_tag_with_http_info(
         self,
         tag_id: StrictStr,
         _request_timeout: Union[
@@ -425,7 +425,7 @@ class TagsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_tag_serialize(
+        _param = self._tags_delete_tag_serialize(
             tag_id=tag_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -448,7 +448,7 @@ class TagsApi:
 
 
     @validate_call
-    def delete_tag_without_preload_content(
+    def tags_delete_tag_without_preload_content(
         self,
         tag_id: StrictStr,
         _request_timeout: Union[
@@ -492,7 +492,7 @@ class TagsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_tag_serialize(
+        _param = self._tags_delete_tag_serialize(
             tag_id=tag_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -510,7 +510,7 @@ class TagsApi:
         return response_data.response
 
 
-    def _delete_tag_serialize(
+    def _tags_delete_tag_serialize(
         self,
         tag_id,
         _request_auth,
@@ -568,7 +568,7 @@ class TagsApi:
 
 
     @validate_call
-    def get_tags(
+    def tags_get_tags(
         self,
         search: Annotated[StrictStr, Field(description="Return resultes containing a given tag search string.")],
         _request_timeout: Union[
@@ -612,7 +612,7 @@ class TagsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_tags_serialize(
+        _param = self._tags_get_tags_serialize(
             search=search,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -635,7 +635,7 @@ class TagsApi:
 
 
     @validate_call
-    def get_tags_with_http_info(
+    def tags_get_tags_with_http_info(
         self,
         search: Annotated[StrictStr, Field(description="Return resultes containing a given tag search string.")],
         _request_timeout: Union[
@@ -679,7 +679,7 @@ class TagsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_tags_serialize(
+        _param = self._tags_get_tags_serialize(
             search=search,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -702,7 +702,7 @@ class TagsApi:
 
 
     @validate_call
-    def get_tags_without_preload_content(
+    def tags_get_tags_without_preload_content(
         self,
         search: Annotated[StrictStr, Field(description="Return resultes containing a given tag search string.")],
         _request_timeout: Union[
@@ -746,7 +746,7 @@ class TagsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_tags_serialize(
+        _param = self._tags_get_tags_serialize(
             search=search,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -764,7 +764,7 @@ class TagsApi:
         return response_data.response
 
 
-    def _get_tags_serialize(
+    def _tags_get_tags_serialize(
         self,
         search,
         _request_auth,
@@ -831,7 +831,7 @@ class TagsApi:
 
 
     @validate_call
-    def update_tag(
+    def tags_update_tag(
         self,
         tag_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -878,7 +878,7 @@ class TagsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_tag_serialize(
+        _param = self._tags_update_tag_serialize(
             tag_id=tag_id,
             body=body,
             _request_auth=_request_auth,
@@ -902,7 +902,7 @@ class TagsApi:
 
 
     @validate_call
-    def update_tag_with_http_info(
+    def tags_update_tag_with_http_info(
         self,
         tag_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -949,7 +949,7 @@ class TagsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_tag_serialize(
+        _param = self._tags_update_tag_serialize(
             tag_id=tag_id,
             body=body,
             _request_auth=_request_auth,
@@ -973,7 +973,7 @@ class TagsApi:
 
 
     @validate_call
-    def update_tag_without_preload_content(
+    def tags_update_tag_without_preload_content(
         self,
         tag_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -1020,7 +1020,7 @@ class TagsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_tag_serialize(
+        _param = self._tags_update_tag_serialize(
             tag_id=tag_id,
             body=body,
             _request_auth=_request_auth,
@@ -1039,7 +1039,7 @@ class TagsApi:
         return response_data.response
 
 
-    def _update_tag_serialize(
+    def _tags_update_tag_serialize(
         self,
         tag_id,
         body,

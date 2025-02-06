@@ -40,7 +40,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def create_ade_integration(
+    def automated_device_enrollment_integrations_create_ade_integration(
         self,
         blueprint_id: StrictStr,
         phone: StrictStr,
@@ -93,7 +93,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_ade_integration_serialize(
+        _param = self._automated_device_enrollment_integrations_create_ade_integration_serialize(
             blueprint_id=blueprint_id,
             phone=phone,
             email=email,
@@ -119,7 +119,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def create_ade_integration_with_http_info(
+    def automated_device_enrollment_integrations_create_ade_integration_with_http_info(
         self,
         blueprint_id: StrictStr,
         phone: StrictStr,
@@ -172,7 +172,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_ade_integration_serialize(
+        _param = self._automated_device_enrollment_integrations_create_ade_integration_serialize(
             blueprint_id=blueprint_id,
             phone=phone,
             email=email,
@@ -198,7 +198,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def create_ade_integration_without_preload_content(
+    def automated_device_enrollment_integrations_create_ade_integration_without_preload_content(
         self,
         blueprint_id: StrictStr,
         phone: StrictStr,
@@ -251,7 +251,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_ade_integration_serialize(
+        _param = self._automated_device_enrollment_integrations_create_ade_integration_serialize(
             blueprint_id=blueprint_id,
             phone=phone,
             email=email,
@@ -272,7 +272,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         return response_data.response
 
 
-    def _create_ade_integration_serialize(
+    def _automated_device_enrollment_integrations_create_ade_integration_serialize(
         self,
         blueprint_id,
         phone,
@@ -359,7 +359,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def delete_ade_integration(
+    def automated_device_enrollment_integrations_delete_ade_integration(
         self,
         ade_token_id: StrictStr,
         _request_timeout: Union[
@@ -403,7 +403,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_ade_integration_serialize(
+        _param = self._automated_device_enrollment_integrations_delete_ade_integration_serialize(
             ade_token_id=ade_token_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -426,7 +426,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def delete_ade_integration_with_http_info(
+    def automated_device_enrollment_integrations_delete_ade_integration_with_http_info(
         self,
         ade_token_id: StrictStr,
         _request_timeout: Union[
@@ -470,7 +470,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_ade_integration_serialize(
+        _param = self._automated_device_enrollment_integrations_delete_ade_integration_serialize(
             ade_token_id=ade_token_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -493,7 +493,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def delete_ade_integration_without_preload_content(
+    def automated_device_enrollment_integrations_delete_ade_integration_without_preload_content(
         self,
         ade_token_id: StrictStr,
         _request_timeout: Union[
@@ -537,7 +537,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_ade_integration_serialize(
+        _param = self._automated_device_enrollment_integrations_delete_ade_integration_serialize(
             ade_token_id=ade_token_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -555,7 +555,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         return response_data.response
 
 
-    def _delete_ade_integration_serialize(
+    def _automated_device_enrollment_integrations_delete_ade_integration_serialize(
         self,
         ade_token_id,
         _request_auth,
@@ -626,7 +626,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def download_ade_public_key(
+    def automated_device_enrollment_integrations_download_ade_public_key(
         self,
         _request_timeout: Union[
             None,
@@ -667,7 +667,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._download_ade_public_key_serialize(
+        _param = self._automated_device_enrollment_integrations_download_ade_public_key_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -689,7 +689,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def download_ade_public_key_with_http_info(
+    def automated_device_enrollment_integrations_download_ade_public_key_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -730,7 +730,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._download_ade_public_key_serialize(
+        _param = self._automated_device_enrollment_integrations_download_ade_public_key_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -752,7 +752,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def download_ade_public_key_without_preload_content(
+    def automated_device_enrollment_integrations_download_ade_public_key_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -793,7 +793,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._download_ade_public_key_serialize(
+        _param = self._automated_device_enrollment_integrations_download_ade_public_key_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -810,7 +810,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         return response_data.response
 
 
-    def _download_ade_public_key_serialize(
+    def _automated_device_enrollment_integrations_download_ade_public_key_serialize(
         self,
         _request_auth,
         _content_type,
@@ -872,7 +872,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def get_ade_device(
+    def automated_device_enrollment_integrations_get_ade_device(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -916,7 +916,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_ade_device_serialize(
+        _param = self._automated_device_enrollment_integrations_get_ade_device_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -939,7 +939,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def get_ade_device_with_http_info(
+    def automated_device_enrollment_integrations_get_ade_device_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -983,7 +983,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_ade_device_serialize(
+        _param = self._automated_device_enrollment_integrations_get_ade_device_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1006,7 +1006,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def get_ade_device_without_preload_content(
+    def automated_device_enrollment_integrations_get_ade_device_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -1050,7 +1050,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_ade_device_serialize(
+        _param = self._automated_device_enrollment_integrations_get_ade_device_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1068,7 +1068,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         return response_data.response
 
 
-    def _get_ade_device_serialize(
+    def _automated_device_enrollment_integrations_get_ade_device_serialize(
         self,
         device_id,
         _request_auth,
@@ -1133,7 +1133,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def get_ade_integration(
+    def automated_device_enrollment_integrations_get_ade_integration(
         self,
         ade_token_id: StrictStr,
         _request_timeout: Union[
@@ -1177,7 +1177,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_ade_integration_serialize(
+        _param = self._automated_device_enrollment_integrations_get_ade_integration_serialize(
             ade_token_id=ade_token_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1200,7 +1200,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def get_ade_integration_with_http_info(
+    def automated_device_enrollment_integrations_get_ade_integration_with_http_info(
         self,
         ade_token_id: StrictStr,
         _request_timeout: Union[
@@ -1244,7 +1244,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_ade_integration_serialize(
+        _param = self._automated_device_enrollment_integrations_get_ade_integration_serialize(
             ade_token_id=ade_token_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1267,7 +1267,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def get_ade_integration_without_preload_content(
+    def automated_device_enrollment_integrations_get_ade_integration_without_preload_content(
         self,
         ade_token_id: StrictStr,
         _request_timeout: Union[
@@ -1311,7 +1311,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_ade_integration_serialize(
+        _param = self._automated_device_enrollment_integrations_get_ade_integration_serialize(
             ade_token_id=ade_token_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1329,7 +1329,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         return response_data.response
 
 
-    def _get_ade_integration_serialize(
+    def _automated_device_enrollment_integrations_get_ade_integration_serialize(
         self,
         ade_token_id,
         _request_auth,
@@ -1387,7 +1387,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def list_ade_devices(
+    def automated_device_enrollment_integrations_list_ade_devices(
         self,
         blueprint_id: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the specified blueprint id")] = None,
         user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID number")] = None,
@@ -1455,7 +1455,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_ade_devices_serialize(
+        _param = self._automated_device_enrollment_integrations_list_ade_devices_serialize(
             blueprint_id=blueprint_id,
             user_id=user_id,
             dep_account=dep_account,
@@ -1487,7 +1487,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def list_ade_devices_with_http_info(
+    def automated_device_enrollment_integrations_list_ade_devices_with_http_info(
         self,
         blueprint_id: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the specified blueprint id")] = None,
         user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID number")] = None,
@@ -1555,7 +1555,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_ade_devices_serialize(
+        _param = self._automated_device_enrollment_integrations_list_ade_devices_serialize(
             blueprint_id=blueprint_id,
             user_id=user_id,
             dep_account=dep_account,
@@ -1587,7 +1587,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def list_ade_devices_without_preload_content(
+    def automated_device_enrollment_integrations_list_ade_devices_without_preload_content(
         self,
         blueprint_id: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the specified blueprint id")] = None,
         user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID number")] = None,
@@ -1655,7 +1655,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_ade_devices_serialize(
+        _param = self._automated_device_enrollment_integrations_list_ade_devices_serialize(
             blueprint_id=blueprint_id,
             user_id=user_id,
             dep_account=dep_account,
@@ -1682,7 +1682,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         return response_data.response
 
 
-    def _list_ade_devices_serialize(
+    def _automated_device_enrollment_integrations_list_ade_devices_serialize(
         self,
         blueprint_id,
         user_id,
@@ -1789,7 +1789,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def list_ade_integrations(
+    def automated_device_enrollment_integrations_list_ade_integrations(
         self,
         _request_timeout: Union[
             None,
@@ -1830,7 +1830,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_ade_integrations_serialize(
+        _param = self._automated_device_enrollment_integrations_list_ade_integrations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1852,7 +1852,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def list_ade_integrations_with_http_info(
+    def automated_device_enrollment_integrations_list_ade_integrations_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1893,7 +1893,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_ade_integrations_serialize(
+        _param = self._automated_device_enrollment_integrations_list_ade_integrations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1915,7 +1915,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def list_ade_integrations_without_preload_content(
+    def automated_device_enrollment_integrations_list_ade_integrations_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1956,7 +1956,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_ade_integrations_serialize(
+        _param = self._automated_device_enrollment_integrations_list_ade_integrations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1973,7 +1973,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         return response_data.response
 
 
-    def _list_ade_integrations_serialize(
+    def _automated_device_enrollment_integrations_list_ade_integrations_serialize(
         self,
         _request_auth,
         _content_type,
@@ -2028,7 +2028,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def list_devices_associated_to_ade_token(
+    def automated_device_enrollment_integrations_list_devices_associated_to_ade_token(
         self,
         ade_token_id: StrictStr,
         page: Annotated[Optional[StrictStr], Field(description="Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.")] = None,
@@ -2075,7 +2075,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_devices_associated_to_ade_token_serialize(
+        _param = self._automated_device_enrollment_integrations_list_devices_associated_to_ade_token_serialize(
             ade_token_id=ade_token_id,
             page=page,
             _request_auth=_request_auth,
@@ -2099,7 +2099,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def list_devices_associated_to_ade_token_with_http_info(
+    def automated_device_enrollment_integrations_list_devices_associated_to_ade_token_with_http_info(
         self,
         ade_token_id: StrictStr,
         page: Annotated[Optional[StrictStr], Field(description="Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.")] = None,
@@ -2146,7 +2146,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_devices_associated_to_ade_token_serialize(
+        _param = self._automated_device_enrollment_integrations_list_devices_associated_to_ade_token_serialize(
             ade_token_id=ade_token_id,
             page=page,
             _request_auth=_request_auth,
@@ -2170,7 +2170,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def list_devices_associated_to_ade_token_without_preload_content(
+    def automated_device_enrollment_integrations_list_devices_associated_to_ade_token_without_preload_content(
         self,
         ade_token_id: StrictStr,
         page: Annotated[Optional[StrictStr], Field(description="Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.")] = None,
@@ -2217,7 +2217,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_devices_associated_to_ade_token_serialize(
+        _param = self._automated_device_enrollment_integrations_list_devices_associated_to_ade_token_serialize(
             ade_token_id=ade_token_id,
             page=page,
             _request_auth=_request_auth,
@@ -2236,7 +2236,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         return response_data.response
 
 
-    def _list_devices_associated_to_ade_token_serialize(
+    def _automated_device_enrollment_integrations_list_devices_associated_to_ade_token_serialize(
         self,
         ade_token_id,
         page,
@@ -2306,7 +2306,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def renew_ade_integration(
+    def automated_device_enrollment_integrations_renew_ade_integration(
         self,
         ade_token_id: StrictStr,
         blueprint_id: StrictStr,
@@ -2362,7 +2362,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._renew_ade_integration_serialize(
+        _param = self._automated_device_enrollment_integrations_renew_ade_integration_serialize(
             ade_token_id=ade_token_id,
             blueprint_id=blueprint_id,
             phone=phone,
@@ -2389,7 +2389,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def renew_ade_integration_with_http_info(
+    def automated_device_enrollment_integrations_renew_ade_integration_with_http_info(
         self,
         ade_token_id: StrictStr,
         blueprint_id: StrictStr,
@@ -2445,7 +2445,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._renew_ade_integration_serialize(
+        _param = self._automated_device_enrollment_integrations_renew_ade_integration_serialize(
             ade_token_id=ade_token_id,
             blueprint_id=blueprint_id,
             phone=phone,
@@ -2472,7 +2472,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def renew_ade_integration_without_preload_content(
+    def automated_device_enrollment_integrations_renew_ade_integration_without_preload_content(
         self,
         ade_token_id: StrictStr,
         blueprint_id: StrictStr,
@@ -2528,7 +2528,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._renew_ade_integration_serialize(
+        _param = self._automated_device_enrollment_integrations_renew_ade_integration_serialize(
             ade_token_id=ade_token_id,
             blueprint_id=blueprint_id,
             phone=phone,
@@ -2550,7 +2550,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         return response_data.response
 
 
-    def _renew_ade_integration_serialize(
+    def _automated_device_enrollment_integrations_renew_ade_integration_serialize(
         self,
         ade_token_id,
         blueprint_id,
@@ -2633,7 +2633,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def update_ade_device(
+    def automated_device_enrollment_integrations_update_ade_device(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -2680,7 +2680,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_ade_device_serialize(
+        _param = self._automated_device_enrollment_integrations_update_ade_device_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -2704,7 +2704,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def update_ade_device_with_http_info(
+    def automated_device_enrollment_integrations_update_ade_device_with_http_info(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -2751,7 +2751,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_ade_device_serialize(
+        _param = self._automated_device_enrollment_integrations_update_ade_device_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -2775,7 +2775,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def update_ade_device_without_preload_content(
+    def automated_device_enrollment_integrations_update_ade_device_without_preload_content(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -2822,7 +2822,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_ade_device_serialize(
+        _param = self._automated_device_enrollment_integrations_update_ade_device_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -2841,7 +2841,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         return response_data.response
 
 
-    def _update_ade_device_serialize(
+    def _automated_device_enrollment_integrations_update_ade_device_serialize(
         self,
         device_id,
         body,
@@ -2922,7 +2922,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def update_ade_integration(
+    def automated_device_enrollment_integrations_update_ade_integration(
         self,
         ade_token_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -2969,7 +2969,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_ade_integration_serialize(
+        _param = self._automated_device_enrollment_integrations_update_ade_integration_serialize(
             ade_token_id=ade_token_id,
             body=body,
             _request_auth=_request_auth,
@@ -2993,7 +2993,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def update_ade_integration_with_http_info(
+    def automated_device_enrollment_integrations_update_ade_integration_with_http_info(
         self,
         ade_token_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -3040,7 +3040,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_ade_integration_serialize(
+        _param = self._automated_device_enrollment_integrations_update_ade_integration_serialize(
             ade_token_id=ade_token_id,
             body=body,
             _request_auth=_request_auth,
@@ -3064,7 +3064,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
 
     @validate_call
-    def update_ade_integration_without_preload_content(
+    def automated_device_enrollment_integrations_update_ade_integration_without_preload_content(
         self,
         ade_token_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -3111,7 +3111,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_ade_integration_serialize(
+        _param = self._automated_device_enrollment_integrations_update_ade_integration_serialize(
             ade_token_id=ade_token_id,
             body=body,
             _request_auth=_request_auth,
@@ -3130,7 +3130,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         return response_data.response
 
 
-    def _update_ade_integration_serialize(
+    def _automated_device_enrollment_integrations_update_ade_integration_serialize(
         self,
         ade_token_id,
         body,

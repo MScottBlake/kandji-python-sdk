@@ -4,28 +4,28 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**activation_lock**](PrismApi.md#activation_lock) | **GET** /api/v1/prism/activation_lock | Activation lock
-[**application_firewall**](PrismApi.md#application_firewall) | **GET** /api/v1/prism/application_firewall | Application firewall
-[**applications**](PrismApi.md#applications) | **GET** /api/v1/prism/apps | Applications
-[**certificates**](PrismApi.md#certificates) | **GET** /api/v1/prism/certificates | Certificates
-[**count**](PrismApi.md#count) | **GET** /api/v1/prism/count | Count
-[**desktop_and_screensaver**](PrismApi.md#desktop_and_screensaver) | **GET** /api/v1/prism/desktop_and_screensaver | Desktop and Screensaver
-[**device_information**](PrismApi.md#device_information) | **GET** /api/v1/prism/device_information | Device information
-[**filevault**](PrismApi.md#filevault) | **GET** /api/v1/prism/filevault | FileVault
-[**gatekeeper_and_xprotect**](PrismApi.md#gatekeeper_and_xprotect) | **GET** /api/v1/prism/gatekeeper_and_xprotect | Gatekeeper and XProtect
-[**get_category_export**](PrismApi.md#get_category_export) | **GET** /api/v1/prism/export/{export_id} | Get category export
-[**installed_profiles**](PrismApi.md#installed_profiles) | **GET** /api/v1/prism/installed_profiles | Installed profiles
-[**kernel_extensions**](PrismApi.md#kernel_extensions) | **GET** /api/v1/prism/kernel_extensions | Kernel Extensions
-[**launch_agents_and_daemons**](PrismApi.md#launch_agents_and_daemons) | **GET** /api/v1/prism/launch_agents_and_daemons | Launch Agents and Daemons
-[**local_users**](PrismApi.md#local_users) | **GET** /api/v1/prism/local_users | Local users
-[**request_category_export**](PrismApi.md#request_category_export) | **POST** /api/v1/prism/export | Request category export
-[**startup_settings**](PrismApi.md#startup_settings) | **GET** /api/v1/prism/startup_settings | Startup settings
-[**system_extensions**](PrismApi.md#system_extensions) | **GET** /api/v1/prism/system_extensions | System Extensions
-[**transparency_database**](PrismApi.md#transparency_database) | **GET** /api/v1/prism/transparency_database | Transparency database
+[**prism_activation_lock**](PrismApi.md#prism_activation_lock) | **GET** /api/v1/prism/activation_lock | Activation lock
+[**prism_application_firewall**](PrismApi.md#prism_application_firewall) | **GET** /api/v1/prism/application_firewall | Application firewall
+[**prism_applications**](PrismApi.md#prism_applications) | **GET** /api/v1/prism/apps | Applications
+[**prism_certificates**](PrismApi.md#prism_certificates) | **GET** /api/v1/prism/certificates | Certificates
+[**prism_count**](PrismApi.md#prism_count) | **GET** /api/v1/prism/count | Count
+[**prism_desktop_and_screensaver**](PrismApi.md#prism_desktop_and_screensaver) | **GET** /api/v1/prism/desktop_and_screensaver | Desktop and Screensaver
+[**prism_device_information**](PrismApi.md#prism_device_information) | **GET** /api/v1/prism/device_information | Device information
+[**prism_filevault**](PrismApi.md#prism_filevault) | **GET** /api/v1/prism/filevault | FileVault
+[**prism_gatekeeper_and_xprotect**](PrismApi.md#prism_gatekeeper_and_xprotect) | **GET** /api/v1/prism/gatekeeper_and_xprotect | Gatekeeper and XProtect
+[**prism_get_category_export**](PrismApi.md#prism_get_category_export) | **GET** /api/v1/prism/export/{export_id} | Get category export
+[**prism_installed_profiles**](PrismApi.md#prism_installed_profiles) | **GET** /api/v1/prism/installed_profiles | Installed profiles
+[**prism_kernel_extensions**](PrismApi.md#prism_kernel_extensions) | **GET** /api/v1/prism/kernel_extensions | Kernel Extensions
+[**prism_launch_agents_and_daemons**](PrismApi.md#prism_launch_agents_and_daemons) | **GET** /api/v1/prism/launch_agents_and_daemons | Launch Agents and Daemons
+[**prism_local_users**](PrismApi.md#prism_local_users) | **GET** /api/v1/prism/local_users | Local users
+[**prism_request_category_export**](PrismApi.md#prism_request_category_export) | **POST** /api/v1/prism/export | Request category export
+[**prism_startup_settings**](PrismApi.md#prism_startup_settings) | **GET** /api/v1/prism/startup_settings | Startup settings
+[**prism_system_extensions**](PrismApi.md#prism_system_extensions) | **GET** /api/v1/prism/system_extensions | System Extensions
+[**prism_transparency_database**](PrismApi.md#prism_transparency_database) | **GET** /api/v1/prism/transparency_database | Transparency database
 
 
-# **activation_lock**
-> activation_lock(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **prism_activation_lock**
+> prism_activation_lock(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Activation lock
 
@@ -69,9 +69,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Activation lock
-        api_instance.activation_lock(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        api_instance.prism_activation_lock(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
     except Exception as e:
-        print("Exception when calling PrismApi->activation_lock: %s\n" % e)
+        print("Exception when calling PrismApi->prism_activation_lock: %s\n" % e)
 ```
 
 
@@ -109,8 +109,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **application_firewall**
-> object application_firewall(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **prism_application_firewall**
+> object prism_application_firewall(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Application firewall
 
@@ -154,11 +154,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Application firewall
-        api_response = api_instance.application_firewall(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->application_firewall:\n")
+        api_response = api_instance.prism_application_firewall(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->prism_application_firewall:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->application_firewall: %s\n" % e)
+        print("Exception when calling PrismApi->prism_application_firewall: %s\n" % e)
 ```
 
 
@@ -196,8 +196,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **applications**
-> object applications(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **prism_applications**
+> object prism_applications(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Applications
 
@@ -241,11 +241,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Applications
-        api_response = api_instance.applications(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->applications:\n")
+        api_response = api_instance.prism_applications(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->prism_applications:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->applications: %s\n" % e)
+        print("Exception when calling PrismApi->prism_applications: %s\n" % e)
 ```
 
 
@@ -283,8 +283,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **certificates**
-> object certificates(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **prism_certificates**
+> object prism_certificates(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Certificates
 
@@ -328,11 +328,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Certificates
-        api_response = api_instance.certificates(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->certificates:\n")
+        api_response = api_instance.prism_certificates(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->prism_certificates:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->certificates: %s\n" % e)
+        print("Exception when calling PrismApi->prism_certificates: %s\n" % e)
 ```
 
 
@@ -370,8 +370,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **count**
-> object count(category)
+# **prism_count**
+> object prism_count(category)
 
 Count
 
@@ -410,11 +410,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Count
-        api_response = api_instance.count(category)
-        print("The response of PrismApi->count:\n")
+        api_response = api_instance.prism_count(category)
+        print("The response of PrismApi->prism_count:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->count: %s\n" % e)
+        print("Exception when calling PrismApi->prism_count: %s\n" % e)
 ```
 
 
@@ -447,8 +447,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **desktop_and_screensaver**
-> object desktop_and_screensaver(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **prism_desktop_and_screensaver**
+> object prism_desktop_and_screensaver(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Desktop and Screensaver
 
@@ -492,11 +492,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Desktop and Screensaver
-        api_response = api_instance.desktop_and_screensaver(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->desktop_and_screensaver:\n")
+        api_response = api_instance.prism_desktop_and_screensaver(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->prism_desktop_and_screensaver:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->desktop_and_screensaver: %s\n" % e)
+        print("Exception when calling PrismApi->prism_desktop_and_screensaver: %s\n" % e)
 ```
 
 
@@ -534,8 +534,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_information**
-> object device_information(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset, body=body)
+# **prism_device_information**
+> object prism_device_information(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset, body=body)
 
 Device information
 
@@ -580,11 +580,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Device information
-        api_response = api_instance.device_information(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset, body=body)
-        print("The response of PrismApi->device_information:\n")
+        api_response = api_instance.prism_device_information(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset, body=body)
+        print("The response of PrismApi->prism_device_information:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->device_information: %s\n" % e)
+        print("Exception when calling PrismApi->prism_device_information: %s\n" % e)
 ```
 
 
@@ -623,8 +623,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **filevault**
-> object filevault(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **prism_filevault**
+> object prism_filevault(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 FileVault
 
@@ -668,11 +668,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # FileVault
-        api_response = api_instance.filevault(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->filevault:\n")
+        api_response = api_instance.prism_filevault(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->prism_filevault:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->filevault: %s\n" % e)
+        print("Exception when calling PrismApi->prism_filevault: %s\n" % e)
 ```
 
 
@@ -710,8 +710,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **gatekeeper_and_xprotect**
-> object gatekeeper_and_xprotect(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **prism_gatekeeper_and_xprotect**
+> object prism_gatekeeper_and_xprotect(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Gatekeeper and XProtect
 
@@ -755,11 +755,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Gatekeeper and XProtect
-        api_response = api_instance.gatekeeper_and_xprotect(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->gatekeeper_and_xprotect:\n")
+        api_response = api_instance.prism_gatekeeper_and_xprotect(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->prism_gatekeeper_and_xprotect:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->gatekeeper_and_xprotect: %s\n" % e)
+        print("Exception when calling PrismApi->prism_gatekeeper_and_xprotect: %s\n" % e)
 ```
 
 
@@ -797,8 +797,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_category_export**
-> object get_category_export(export_id)
+# **prism_get_category_export**
+> object prism_get_category_export(export_id)
 
 Get category export
 
@@ -837,11 +837,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get category export
-        api_response = api_instance.get_category_export(export_id)
-        print("The response of PrismApi->get_category_export:\n")
+        api_response = api_instance.prism_get_category_export(export_id)
+        print("The response of PrismApi->prism_get_category_export:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->get_category_export: %s\n" % e)
+        print("Exception when calling PrismApi->prism_get_category_export: %s\n" % e)
 ```
 
 
@@ -874,8 +874,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **installed_profiles**
-> object installed_profiles(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **prism_installed_profiles**
+> object prism_installed_profiles(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Installed profiles
 
@@ -919,11 +919,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Installed profiles
-        api_response = api_instance.installed_profiles(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->installed_profiles:\n")
+        api_response = api_instance.prism_installed_profiles(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->prism_installed_profiles:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->installed_profiles: %s\n" % e)
+        print("Exception when calling PrismApi->prism_installed_profiles: %s\n" % e)
 ```
 
 
@@ -961,8 +961,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **kernel_extensions**
-> object kernel_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **prism_kernel_extensions**
+> object prism_kernel_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Kernel Extensions
 
@@ -1006,11 +1006,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Kernel Extensions
-        api_response = api_instance.kernel_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->kernel_extensions:\n")
+        api_response = api_instance.prism_kernel_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->prism_kernel_extensions:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->kernel_extensions: %s\n" % e)
+        print("Exception when calling PrismApi->prism_kernel_extensions: %s\n" % e)
 ```
 
 
@@ -1048,8 +1048,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **launch_agents_and_daemons**
-> object launch_agents_and_daemons(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **prism_launch_agents_and_daemons**
+> object prism_launch_agents_and_daemons(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Launch Agents and Daemons
 
@@ -1093,11 +1093,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Launch Agents and Daemons
-        api_response = api_instance.launch_agents_and_daemons(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->launch_agents_and_daemons:\n")
+        api_response = api_instance.prism_launch_agents_and_daemons(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->prism_launch_agents_and_daemons:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->launch_agents_and_daemons: %s\n" % e)
+        print("Exception when calling PrismApi->prism_launch_agents_and_daemons: %s\n" % e)
 ```
 
 
@@ -1135,8 +1135,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **local_users**
-> object local_users(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **prism_local_users**
+> object prism_local_users(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Local users
 
@@ -1180,11 +1180,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Local users
-        api_response = api_instance.local_users(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->local_users:\n")
+        api_response = api_instance.prism_local_users(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->prism_local_users:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->local_users: %s\n" % e)
+        print("Exception when calling PrismApi->prism_local_users: %s\n" % e)
 ```
 
 
@@ -1222,8 +1222,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **request_category_export**
-> object request_category_export(body=body)
+# **prism_request_category_export**
+> object prism_request_category_export(body=body)
 
 Request category export
 
@@ -1262,11 +1262,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Request category export
-        api_response = api_instance.request_category_export(body=body)
-        print("The response of PrismApi->request_category_export:\n")
+        api_response = api_instance.prism_request_category_export(body=body)
+        print("The response of PrismApi->prism_request_category_export:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->request_category_export: %s\n" % e)
+        print("Exception when calling PrismApi->prism_request_category_export: %s\n" % e)
 ```
 
 
@@ -1300,8 +1300,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **startup_settings**
-> object startup_settings(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **prism_startup_settings**
+> object prism_startup_settings(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Startup settings
 
@@ -1345,11 +1345,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Startup settings
-        api_response = api_instance.startup_settings(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->startup_settings:\n")
+        api_response = api_instance.prism_startup_settings(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->prism_startup_settings:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->startup_settings: %s\n" % e)
+        print("Exception when calling PrismApi->prism_startup_settings: %s\n" % e)
 ```
 
 
@@ -1387,8 +1387,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **system_extensions**
-> object system_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **prism_system_extensions**
+> object prism_system_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 System Extensions
 
@@ -1432,11 +1432,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # System Extensions
-        api_response = api_instance.system_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->system_extensions:\n")
+        api_response = api_instance.prism_system_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->prism_system_extensions:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->system_extensions: %s\n" % e)
+        print("Exception when calling PrismApi->prism_system_extensions: %s\n" % e)
 ```
 
 
@@ -1474,8 +1474,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **transparency_database**
-> object transparency_database(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **prism_transparency_database**
+> object prism_transparency_database(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Transparency database
 
@@ -1519,11 +1519,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Transparency database
-        api_response = api_instance.transparency_database(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->transparency_database:\n")
+        api_response = api_instance.prism_transparency_database(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->prism_transparency_database:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->transparency_database: %s\n" % e)
+        print("Exception when calling PrismApi->prism_transparency_database: %s\n" % e)
 ```
 
 

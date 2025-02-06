@@ -40,7 +40,7 @@ class PrismApi:
 
 
     @validate_call
-    def activation_lock(
+    def prism_activation_lock(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -99,7 +99,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._activation_lock_serialize(
+        _param = self._prism_activation_lock_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -127,7 +127,7 @@ class PrismApi:
 
 
     @validate_call
-    def activation_lock_with_http_info(
+    def prism_activation_lock_with_http_info(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -186,7 +186,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._activation_lock_serialize(
+        _param = self._prism_activation_lock_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -214,7 +214,7 @@ class PrismApi:
 
 
     @validate_call
-    def activation_lock_without_preload_content(
+    def prism_activation_lock_without_preload_content(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -273,7 +273,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._activation_lock_serialize(
+        _param = self._prism_activation_lock_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -296,7 +296,7 @@ class PrismApi:
         return response_data.response
 
 
-    def _activation_lock_serialize(
+    def _prism_activation_lock_serialize(
         self,
         blueprint_ids,
         device_families,
@@ -381,7 +381,7 @@ class PrismApi:
 
 
     @validate_call
-    def application_firewall(
+    def prism_application_firewall(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -440,7 +440,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._application_firewall_serialize(
+        _param = self._prism_application_firewall_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -468,7 +468,7 @@ class PrismApi:
 
 
     @validate_call
-    def application_firewall_with_http_info(
+    def prism_application_firewall_with_http_info(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -527,7 +527,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._application_firewall_serialize(
+        _param = self._prism_application_firewall_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -555,7 +555,7 @@ class PrismApi:
 
 
     @validate_call
-    def application_firewall_without_preload_content(
+    def prism_application_firewall_without_preload_content(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -614,7 +614,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._application_firewall_serialize(
+        _param = self._prism_application_firewall_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -637,7 +637,7 @@ class PrismApi:
         return response_data.response
 
 
-    def _application_firewall_serialize(
+    def _prism_application_firewall_serialize(
         self,
         blueprint_ids,
         device_families,
@@ -729,7 +729,7 @@ class PrismApi:
 
 
     @validate_call
-    def applications(
+    def prism_applications(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -788,7 +788,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._applications_serialize(
+        _param = self._prism_applications_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -816,7 +816,7 @@ class PrismApi:
 
 
     @validate_call
-    def applications_with_http_info(
+    def prism_applications_with_http_info(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -875,7 +875,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._applications_serialize(
+        _param = self._prism_applications_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -903,7 +903,7 @@ class PrismApi:
 
 
     @validate_call
-    def applications_without_preload_content(
+    def prism_applications_without_preload_content(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -962,7 +962,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._applications_serialize(
+        _param = self._prism_applications_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -985,7 +985,7 @@ class PrismApi:
         return response_data.response
 
 
-    def _applications_serialize(
+    def _prism_applications_serialize(
         self,
         blueprint_ids,
         device_families,
@@ -1077,7 +1077,7 @@ class PrismApi:
 
 
     @validate_call
-    def certificates(
+    def prism_certificates(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -1136,7 +1136,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._certificates_serialize(
+        _param = self._prism_certificates_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -1164,7 +1164,7 @@ class PrismApi:
 
 
     @validate_call
-    def certificates_with_http_info(
+    def prism_certificates_with_http_info(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -1223,7 +1223,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._certificates_serialize(
+        _param = self._prism_certificates_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -1251,7 +1251,7 @@ class PrismApi:
 
 
     @validate_call
-    def certificates_without_preload_content(
+    def prism_certificates_without_preload_content(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -1310,7 +1310,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._certificates_serialize(
+        _param = self._prism_certificates_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -1333,7 +1333,7 @@ class PrismApi:
         return response_data.response
 
 
-    def _certificates_serialize(
+    def _prism_certificates_serialize(
         self,
         blueprint_ids,
         device_families,
@@ -1425,7 +1425,7 @@ class PrismApi:
 
 
     @validate_call
-    def count(
+    def prism_count(
         self,
         category: Annotated[StrictStr, Field(description="<p>Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores (&quot;_&quot;) when using the API query.</p> <p>Examples: apps device_information kernel_extensions system_extensions</p>")],
         _request_timeout: Union[
@@ -1469,7 +1469,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._count_serialize(
+        _param = self._prism_count_serialize(
             category=category,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1492,7 +1492,7 @@ class PrismApi:
 
 
     @validate_call
-    def count_with_http_info(
+    def prism_count_with_http_info(
         self,
         category: Annotated[StrictStr, Field(description="<p>Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores (&quot;_&quot;) when using the API query.</p> <p>Examples: apps device_information kernel_extensions system_extensions</p>")],
         _request_timeout: Union[
@@ -1536,7 +1536,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._count_serialize(
+        _param = self._prism_count_serialize(
             category=category,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1559,7 +1559,7 @@ class PrismApi:
 
 
     @validate_call
-    def count_without_preload_content(
+    def prism_count_without_preload_content(
         self,
         category: Annotated[StrictStr, Field(description="<p>Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores (&quot;_&quot;) when using the API query.</p> <p>Examples: apps device_information kernel_extensions system_extensions</p>")],
         _request_timeout: Union[
@@ -1603,7 +1603,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._count_serialize(
+        _param = self._prism_count_serialize(
             category=category,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1621,7 +1621,7 @@ class PrismApi:
         return response_data.response
 
 
-    def _count_serialize(
+    def _prism_count_serialize(
         self,
         category,
         _request_auth,
@@ -1688,7 +1688,7 @@ class PrismApi:
 
 
     @validate_call
-    def desktop_and_screensaver(
+    def prism_desktop_and_screensaver(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -1747,7 +1747,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._desktop_and_screensaver_serialize(
+        _param = self._prism_desktop_and_screensaver_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -1775,7 +1775,7 @@ class PrismApi:
 
 
     @validate_call
-    def desktop_and_screensaver_with_http_info(
+    def prism_desktop_and_screensaver_with_http_info(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -1834,7 +1834,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._desktop_and_screensaver_serialize(
+        _param = self._prism_desktop_and_screensaver_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -1862,7 +1862,7 @@ class PrismApi:
 
 
     @validate_call
-    def desktop_and_screensaver_without_preload_content(
+    def prism_desktop_and_screensaver_without_preload_content(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -1921,7 +1921,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._desktop_and_screensaver_serialize(
+        _param = self._prism_desktop_and_screensaver_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -1944,7 +1944,7 @@ class PrismApi:
         return response_data.response
 
 
-    def _desktop_and_screensaver_serialize(
+    def _prism_desktop_and_screensaver_serialize(
         self,
         blueprint_ids,
         device_families,
@@ -2036,7 +2036,7 @@ class PrismApi:
 
 
     @validate_call
-    def device_information(
+    def prism_device_information(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -2098,7 +2098,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._device_information_serialize(
+        _param = self._prism_device_information_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -2127,7 +2127,7 @@ class PrismApi:
 
 
     @validate_call
-    def device_information_with_http_info(
+    def prism_device_information_with_http_info(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -2189,7 +2189,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._device_information_serialize(
+        _param = self._prism_device_information_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -2218,7 +2218,7 @@ class PrismApi:
 
 
     @validate_call
-    def device_information_without_preload_content(
+    def prism_device_information_without_preload_content(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -2280,7 +2280,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._device_information_serialize(
+        _param = self._prism_device_information_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -2304,7 +2304,7 @@ class PrismApi:
         return response_data.response
 
 
-    def _device_information_serialize(
+    def _prism_device_information_serialize(
         self,
         blueprint_ids,
         device_families,
@@ -2412,7 +2412,7 @@ class PrismApi:
 
 
     @validate_call
-    def filevault(
+    def prism_filevault(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -2471,7 +2471,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._filevault_serialize(
+        _param = self._prism_filevault_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -2499,7 +2499,7 @@ class PrismApi:
 
 
     @validate_call
-    def filevault_with_http_info(
+    def prism_filevault_with_http_info(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -2558,7 +2558,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._filevault_serialize(
+        _param = self._prism_filevault_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -2586,7 +2586,7 @@ class PrismApi:
 
 
     @validate_call
-    def filevault_without_preload_content(
+    def prism_filevault_without_preload_content(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -2645,7 +2645,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._filevault_serialize(
+        _param = self._prism_filevault_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -2668,7 +2668,7 @@ class PrismApi:
         return response_data.response
 
 
-    def _filevault_serialize(
+    def _prism_filevault_serialize(
         self,
         blueprint_ids,
         device_families,
@@ -2760,7 +2760,7 @@ class PrismApi:
 
 
     @validate_call
-    def gatekeeper_and_xprotect(
+    def prism_gatekeeper_and_xprotect(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Results are limited to Mac only as Gatekeeper and XProtect are not applicable for other platfroms.")] = None,
@@ -2819,7 +2819,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._gatekeeper_and_xprotect_serialize(
+        _param = self._prism_gatekeeper_and_xprotect_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -2847,7 +2847,7 @@ class PrismApi:
 
 
     @validate_call
-    def gatekeeper_and_xprotect_with_http_info(
+    def prism_gatekeeper_and_xprotect_with_http_info(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Results are limited to Mac only as Gatekeeper and XProtect are not applicable for other platfroms.")] = None,
@@ -2906,7 +2906,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._gatekeeper_and_xprotect_serialize(
+        _param = self._prism_gatekeeper_and_xprotect_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -2934,7 +2934,7 @@ class PrismApi:
 
 
     @validate_call
-    def gatekeeper_and_xprotect_without_preload_content(
+    def prism_gatekeeper_and_xprotect_without_preload_content(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Results are limited to Mac only as Gatekeeper and XProtect are not applicable for other platfroms.")] = None,
@@ -2993,7 +2993,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._gatekeeper_and_xprotect_serialize(
+        _param = self._prism_gatekeeper_and_xprotect_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -3016,7 +3016,7 @@ class PrismApi:
         return response_data.response
 
 
-    def _gatekeeper_and_xprotect_serialize(
+    def _prism_gatekeeper_and_xprotect_serialize(
         self,
         blueprint_ids,
         device_families,
@@ -3108,7 +3108,7 @@ class PrismApi:
 
 
     @validate_call
-    def get_category_export(
+    def prism_get_category_export(
         self,
         export_id: StrictStr,
         _request_timeout: Union[
@@ -3152,7 +3152,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_category_export_serialize(
+        _param = self._prism_get_category_export_serialize(
             export_id=export_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3175,7 +3175,7 @@ class PrismApi:
 
 
     @validate_call
-    def get_category_export_with_http_info(
+    def prism_get_category_export_with_http_info(
         self,
         export_id: StrictStr,
         _request_timeout: Union[
@@ -3219,7 +3219,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_category_export_serialize(
+        _param = self._prism_get_category_export_serialize(
             export_id=export_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3242,7 +3242,7 @@ class PrismApi:
 
 
     @validate_call
-    def get_category_export_without_preload_content(
+    def prism_get_category_export_without_preload_content(
         self,
         export_id: StrictStr,
         _request_timeout: Union[
@@ -3286,7 +3286,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_category_export_serialize(
+        _param = self._prism_get_category_export_serialize(
             export_id=export_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3304,7 +3304,7 @@ class PrismApi:
         return response_data.response
 
 
-    def _get_category_export_serialize(
+    def _prism_get_category_export_serialize(
         self,
         export_id,
         _request_auth,
@@ -3369,7 +3369,7 @@ class PrismApi:
 
 
     @validate_call
-    def installed_profiles(
+    def prism_installed_profiles(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -3428,7 +3428,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._installed_profiles_serialize(
+        _param = self._prism_installed_profiles_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -3456,7 +3456,7 @@ class PrismApi:
 
 
     @validate_call
-    def installed_profiles_with_http_info(
+    def prism_installed_profiles_with_http_info(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -3515,7 +3515,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._installed_profiles_serialize(
+        _param = self._prism_installed_profiles_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -3543,7 +3543,7 @@ class PrismApi:
 
 
     @validate_call
-    def installed_profiles_without_preload_content(
+    def prism_installed_profiles_without_preload_content(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -3602,7 +3602,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._installed_profiles_serialize(
+        _param = self._prism_installed_profiles_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -3625,7 +3625,7 @@ class PrismApi:
         return response_data.response
 
 
-    def _installed_profiles_serialize(
+    def _prism_installed_profiles_serialize(
         self,
         blueprint_ids,
         device_families,
@@ -3717,7 +3717,7 @@ class PrismApi:
 
 
     @validate_call
-    def kernel_extensions(
+    def prism_kernel_extensions(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -3776,7 +3776,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._kernel_extensions_serialize(
+        _param = self._prism_kernel_extensions_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -3804,7 +3804,7 @@ class PrismApi:
 
 
     @validate_call
-    def kernel_extensions_with_http_info(
+    def prism_kernel_extensions_with_http_info(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -3863,7 +3863,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._kernel_extensions_serialize(
+        _param = self._prism_kernel_extensions_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -3891,7 +3891,7 @@ class PrismApi:
 
 
     @validate_call
-    def kernel_extensions_without_preload_content(
+    def prism_kernel_extensions_without_preload_content(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -3950,7 +3950,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._kernel_extensions_serialize(
+        _param = self._prism_kernel_extensions_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -3973,7 +3973,7 @@ class PrismApi:
         return response_data.response
 
 
-    def _kernel_extensions_serialize(
+    def _prism_kernel_extensions_serialize(
         self,
         blueprint_ids,
         device_families,
@@ -4065,7 +4065,7 @@ class PrismApi:
 
 
     @validate_call
-    def launch_agents_and_daemons(
+    def prism_launch_agents_and_daemons(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -4124,7 +4124,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._launch_agents_and_daemons_serialize(
+        _param = self._prism_launch_agents_and_daemons_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -4152,7 +4152,7 @@ class PrismApi:
 
 
     @validate_call
-    def launch_agents_and_daemons_with_http_info(
+    def prism_launch_agents_and_daemons_with_http_info(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -4211,7 +4211,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._launch_agents_and_daemons_serialize(
+        _param = self._prism_launch_agents_and_daemons_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -4239,7 +4239,7 @@ class PrismApi:
 
 
     @validate_call
-    def launch_agents_and_daemons_without_preload_content(
+    def prism_launch_agents_and_daemons_without_preload_content(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -4298,7 +4298,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._launch_agents_and_daemons_serialize(
+        _param = self._prism_launch_agents_and_daemons_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -4321,7 +4321,7 @@ class PrismApi:
         return response_data.response
 
 
-    def _launch_agents_and_daemons_serialize(
+    def _prism_launch_agents_and_daemons_serialize(
         self,
         blueprint_ids,
         device_families,
@@ -4413,7 +4413,7 @@ class PrismApi:
 
 
     @validate_call
-    def local_users(
+    def prism_local_users(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -4472,7 +4472,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._local_users_serialize(
+        _param = self._prism_local_users_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -4500,7 +4500,7 @@ class PrismApi:
 
 
     @validate_call
-    def local_users_with_http_info(
+    def prism_local_users_with_http_info(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -4559,7 +4559,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._local_users_serialize(
+        _param = self._prism_local_users_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -4587,7 +4587,7 @@ class PrismApi:
 
 
     @validate_call
-    def local_users_without_preload_content(
+    def prism_local_users_without_preload_content(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -4646,7 +4646,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._local_users_serialize(
+        _param = self._prism_local_users_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -4669,7 +4669,7 @@ class PrismApi:
         return response_data.response
 
 
-    def _local_users_serialize(
+    def _prism_local_users_serialize(
         self,
         blueprint_ids,
         device_families,
@@ -4761,7 +4761,7 @@ class PrismApi:
 
 
     @validate_call
-    def request_category_export(
+    def prism_request_category_export(
         self,
         body: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -4805,7 +4805,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._request_category_export_serialize(
+        _param = self._prism_request_category_export_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4829,7 +4829,7 @@ class PrismApi:
 
 
     @validate_call
-    def request_category_export_with_http_info(
+    def prism_request_category_export_with_http_info(
         self,
         body: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -4873,7 +4873,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._request_category_export_serialize(
+        _param = self._prism_request_category_export_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4897,7 +4897,7 @@ class PrismApi:
 
 
     @validate_call
-    def request_category_export_without_preload_content(
+    def prism_request_category_export_without_preload_content(
         self,
         body: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -4941,7 +4941,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._request_category_export_serialize(
+        _param = self._prism_request_category_export_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4960,7 +4960,7 @@ class PrismApi:
         return response_data.response
 
 
-    def _request_category_export_serialize(
+    def _prism_request_category_export_serialize(
         self,
         body,
         _request_auth,
@@ -5038,7 +5038,7 @@ class PrismApi:
 
 
     @validate_call
-    def startup_settings(
+    def prism_startup_settings(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -5097,7 +5097,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._startup_settings_serialize(
+        _param = self._prism_startup_settings_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -5125,7 +5125,7 @@ class PrismApi:
 
 
     @validate_call
-    def startup_settings_with_http_info(
+    def prism_startup_settings_with_http_info(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -5184,7 +5184,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._startup_settings_serialize(
+        _param = self._prism_startup_settings_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -5212,7 +5212,7 @@ class PrismApi:
 
 
     @validate_call
-    def startup_settings_without_preload_content(
+    def prism_startup_settings_without_preload_content(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -5271,7 +5271,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._startup_settings_serialize(
+        _param = self._prism_startup_settings_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -5294,7 +5294,7 @@ class PrismApi:
         return response_data.response
 
 
-    def _startup_settings_serialize(
+    def _prism_startup_settings_serialize(
         self,
         blueprint_ids,
         device_families,
@@ -5386,7 +5386,7 @@ class PrismApi:
 
 
     @validate_call
-    def system_extensions(
+    def prism_system_extensions(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -5445,7 +5445,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._system_extensions_serialize(
+        _param = self._prism_system_extensions_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -5473,7 +5473,7 @@ class PrismApi:
 
 
     @validate_call
-    def system_extensions_with_http_info(
+    def prism_system_extensions_with_http_info(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -5532,7 +5532,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._system_extensions_serialize(
+        _param = self._prism_system_extensions_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -5560,7 +5560,7 @@ class PrismApi:
 
 
     @validate_call
-    def system_extensions_without_preload_content(
+    def prism_system_extensions_without_preload_content(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -5619,7 +5619,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._system_extensions_serialize(
+        _param = self._prism_system_extensions_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -5642,7 +5642,7 @@ class PrismApi:
         return response_data.response
 
 
-    def _system_extensions_serialize(
+    def _prism_system_extensions_serialize(
         self,
         blueprint_ids,
         device_families,
@@ -5734,7 +5734,7 @@ class PrismApi:
 
 
     @validate_call
-    def transparency_database(
+    def prism_transparency_database(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -5793,7 +5793,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._transparency_database_serialize(
+        _param = self._prism_transparency_database_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -5821,7 +5821,7 @@ class PrismApi:
 
 
     @validate_call
-    def transparency_database_with_http_info(
+    def prism_transparency_database_with_http_info(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -5880,7 +5880,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._transparency_database_serialize(
+        _param = self._prism_transparency_database_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -5908,7 +5908,7 @@ class PrismApi:
 
 
     @validate_call
-    def transparency_database_without_preload_content(
+    def prism_transparency_database_without_preload_content(
         self,
         blueprint_ids: Annotated[Optional[StrictStr], Field(description="Filter results by one or more blueprint IDs separated by commas.")] = None,
         device_families: Annotated[Optional[StrictStr], Field(description="Filter results by one or more device families separate by commas.")] = None,
@@ -5967,7 +5967,7 @@ class PrismApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._transparency_database_serialize(
+        _param = self._prism_transparency_database_serialize(
             blueprint_ids=blueprint_ids,
             device_families=device_families,
             filter=filter,
@@ -5990,7 +5990,7 @@ class PrismApi:
         return response_data.response
 
 
-    def _transparency_database_serialize(
+    def _prism_transparency_database_serialize(
         self,
         blueprint_ids,
         device_families,

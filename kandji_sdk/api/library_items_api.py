@@ -40,7 +40,7 @@ class LibraryItemsApi:
 
 
     @validate_call
-    def get_library_item_activity(
+    def library_items_get_library_item_activity(
         self,
         library_item_id: StrictStr,
         activity_type: Annotated[Optional[StrictStr], Field(description="Filter actions by this activity type. Choices are: library_item_created, library_item_edited, library_item_deleted, library_item_duplicated, library_item_assignment_changed")] = None,
@@ -99,7 +99,7 @@ class LibraryItemsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_library_item_activity_serialize(
+        _param = self._library_items_get_library_item_activity_serialize(
             library_item_id=library_item_id,
             activity_type=activity_type,
             user_id=user_id,
@@ -127,7 +127,7 @@ class LibraryItemsApi:
 
 
     @validate_call
-    def get_library_item_activity_with_http_info(
+    def library_items_get_library_item_activity_with_http_info(
         self,
         library_item_id: StrictStr,
         activity_type: Annotated[Optional[StrictStr], Field(description="Filter actions by this activity type. Choices are: library_item_created, library_item_edited, library_item_deleted, library_item_duplicated, library_item_assignment_changed")] = None,
@@ -186,7 +186,7 @@ class LibraryItemsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_library_item_activity_serialize(
+        _param = self._library_items_get_library_item_activity_serialize(
             library_item_id=library_item_id,
             activity_type=activity_type,
             user_id=user_id,
@@ -214,7 +214,7 @@ class LibraryItemsApi:
 
 
     @validate_call
-    def get_library_item_activity_without_preload_content(
+    def library_items_get_library_item_activity_without_preload_content(
         self,
         library_item_id: StrictStr,
         activity_type: Annotated[Optional[StrictStr], Field(description="Filter actions by this activity type. Choices are: library_item_created, library_item_edited, library_item_deleted, library_item_duplicated, library_item_assignment_changed")] = None,
@@ -273,7 +273,7 @@ class LibraryItemsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_library_item_activity_serialize(
+        _param = self._library_items_get_library_item_activity_serialize(
             library_item_id=library_item_id,
             activity_type=activity_type,
             user_id=user_id,
@@ -296,7 +296,7 @@ class LibraryItemsApi:
         return response_data.response
 
 
-    def _get_library_item_activity_serialize(
+    def _library_items_get_library_item_activity_serialize(
         self,
         library_item_id,
         activity_type,
@@ -386,7 +386,7 @@ class LibraryItemsApi:
 
 
     @validate_call
-    def get_library_item_statuses(
+    def library_items_get_library_item_statuses(
         self,
         library_item_id: StrictStr,
         computer_id: Annotated[Optional[StrictStr], Field(description="Query for the status of one device.")] = None,
@@ -439,7 +439,7 @@ class LibraryItemsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_library_item_statuses_serialize(
+        _param = self._library_items_get_library_item_statuses_serialize(
             library_item_id=library_item_id,
             computer_id=computer_id,
             limit=limit,
@@ -465,7 +465,7 @@ class LibraryItemsApi:
 
 
     @validate_call
-    def get_library_item_statuses_with_http_info(
+    def library_items_get_library_item_statuses_with_http_info(
         self,
         library_item_id: StrictStr,
         computer_id: Annotated[Optional[StrictStr], Field(description="Query for the status of one device.")] = None,
@@ -518,7 +518,7 @@ class LibraryItemsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_library_item_statuses_serialize(
+        _param = self._library_items_get_library_item_statuses_serialize(
             library_item_id=library_item_id,
             computer_id=computer_id,
             limit=limit,
@@ -544,7 +544,7 @@ class LibraryItemsApi:
 
 
     @validate_call
-    def get_library_item_statuses_without_preload_content(
+    def library_items_get_library_item_statuses_without_preload_content(
         self,
         library_item_id: StrictStr,
         computer_id: Annotated[Optional[StrictStr], Field(description="Query for the status of one device.")] = None,
@@ -597,7 +597,7 @@ class LibraryItemsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_library_item_statuses_serialize(
+        _param = self._library_items_get_library_item_statuses_serialize(
             library_item_id=library_item_id,
             computer_id=computer_id,
             limit=limit,
@@ -618,7 +618,7 @@ class LibraryItemsApi:
         return response_data.response
 
 
-    def _get_library_item_statuses_serialize(
+    def _library_items_get_library_item_statuses_serialize(
         self,
         library_item_id,
         computer_id,

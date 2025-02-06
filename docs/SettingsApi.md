@@ -4,11 +4,11 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**licensing**](SettingsApi.md#licensing) | **GET** /api/v1/settings/licensing | Licensing
+[**settings_licensing**](SettingsApi.md#settings_licensing) | **GET** /api/v1/settings/licensing | Licensing
 
 
-# **licensing**
-> object licensing()
+# **settings_licensing**
+> object settings_licensing()
 
 Licensing
 
@@ -46,11 +46,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Licensing
-        api_response = api_instance.licensing()
-        print("The response of SettingsApi->licensing:\n")
+        api_response = api_instance.settings_licensing()
+        print("The response of SettingsApi->settings_licensing:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SettingsApi->licensing: %s\n" % e)
+        print("Exception when calling SettingsApi->settings_licensing: %s\n" % e)
 ```
 
 

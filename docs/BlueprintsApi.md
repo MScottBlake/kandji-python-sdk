@@ -4,20 +4,20 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**assign_library_item**](BlueprintsApi.md#assign_library_item) | **POST** /api/v1/blueprints/{blueprint_id}/assign-library-item | Assign Library Item
-[**create_blueprint**](BlueprintsApi.md#create_blueprint) | **POST** /api/v1/blueprints | Create Blueprint
-[**delete_blueprint**](BlueprintsApi.md#delete_blueprint) | **DELETE** /api/v1/blueprints/{blueprint_id} | Delete Blueprint
-[**get_blueprint**](BlueprintsApi.md#get_blueprint) | **GET** /api/v1/blueprints/{blueprint_id} | Get Blueprint
-[**get_blueprint_templates**](BlueprintsApi.md#get_blueprint_templates) | **GET** /api/v1/blueprints/templates/ | Get Blueprint Templates
-[**get_manual_enrollment_profile**](BlueprintsApi.md#get_manual_enrollment_profile) | **GET** /api/v1/blueprints/{blueprint_id}/ota-enrollment-profile | Get Manual Enrollment Profile
-[**list_blueprints**](BlueprintsApi.md#list_blueprints) | **GET** /api/v1/blueprints | List Blueprints
-[**list_library_items**](BlueprintsApi.md#list_library_items) | **GET** /api/v1/blueprints/{blueprint_id}/list-library-items | List Library Items
-[**remove_library_item**](BlueprintsApi.md#remove_library_item) | **POST** /api/v1/blueprints/{blueprint_id}/remove-library-item | Remove Library Item
-[**update_blueprint**](BlueprintsApi.md#update_blueprint) | **PATCH** /api/v1/blueprints/{blueprint_id} | Update Blueprint
+[**blueprints_assign_library_item**](BlueprintsApi.md#blueprints_assign_library_item) | **POST** /api/v1/blueprints/{blueprint_id}/assign-library-item | Assign Library Item
+[**blueprints_create_blueprint**](BlueprintsApi.md#blueprints_create_blueprint) | **POST** /api/v1/blueprints | Create Blueprint
+[**blueprints_delete_blueprint**](BlueprintsApi.md#blueprints_delete_blueprint) | **DELETE** /api/v1/blueprints/{blueprint_id} | Delete Blueprint
+[**blueprints_get_blueprint**](BlueprintsApi.md#blueprints_get_blueprint) | **GET** /api/v1/blueprints/{blueprint_id} | Get Blueprint
+[**blueprints_get_blueprint_templates**](BlueprintsApi.md#blueprints_get_blueprint_templates) | **GET** /api/v1/blueprints/templates/ | Get Blueprint Templates
+[**blueprints_get_manual_enrollment_profile**](BlueprintsApi.md#blueprints_get_manual_enrollment_profile) | **GET** /api/v1/blueprints/{blueprint_id}/ota-enrollment-profile | Get Manual Enrollment Profile
+[**blueprints_list_blueprints**](BlueprintsApi.md#blueprints_list_blueprints) | **GET** /api/v1/blueprints | List Blueprints
+[**blueprints_list_library_items**](BlueprintsApi.md#blueprints_list_library_items) | **GET** /api/v1/blueprints/{blueprint_id}/list-library-items | List Library Items
+[**blueprints_remove_library_item**](BlueprintsApi.md#blueprints_remove_library_item) | **POST** /api/v1/blueprints/{blueprint_id}/remove-library-item | Remove Library Item
+[**blueprints_update_blueprint**](BlueprintsApi.md#blueprints_update_blueprint) | **PATCH** /api/v1/blueprints/{blueprint_id} | Update Blueprint
 
 
-# **assign_library_item**
-> object assign_library_item(blueprint_id, body=body)
+# **blueprints_assign_library_item**
+> object blueprints_assign_library_item(blueprint_id, body=body)
 
 Assign Library Item
 
@@ -57,11 +57,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Assign Library Item
-        api_response = api_instance.assign_library_item(blueprint_id, body=body)
-        print("The response of BlueprintsApi->assign_library_item:\n")
+        api_response = api_instance.blueprints_assign_library_item(blueprint_id, body=body)
+        print("The response of BlueprintsApi->blueprints_assign_library_item:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BlueprintsApi->assign_library_item: %s\n" % e)
+        print("Exception when calling BlueprintsApi->blueprints_assign_library_item: %s\n" % e)
 ```
 
 
@@ -95,8 +95,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_blueprint**
-> object create_blueprint(name, enrollment_code_is_active, enrollment_code_code, source_type, source_id, type)
+# **blueprints_create_blueprint**
+> object blueprints_create_blueprint(name, enrollment_code_is_active, enrollment_code_code, source_type, source_id, type)
 
 Create Blueprint
 
@@ -140,11 +140,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Create Blueprint
-        api_response = api_instance.create_blueprint(name, enrollment_code_is_active, enrollment_code_code, source_type, source_id, type)
-        print("The response of BlueprintsApi->create_blueprint:\n")
+        api_response = api_instance.blueprints_create_blueprint(name, enrollment_code_is_active, enrollment_code_code, source_type, source_id, type)
+        print("The response of BlueprintsApi->blueprints_create_blueprint:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BlueprintsApi->create_blueprint: %s\n" % e)
+        print("Exception when calling BlueprintsApi->blueprints_create_blueprint: %s\n" % e)
 ```
 
 
@@ -183,8 +183,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_blueprint**
-> delete_blueprint(blueprint_id)
+# **blueprints_delete_blueprint**
+> blueprints_delete_blueprint(blueprint_id)
 
 Delete Blueprint
 
@@ -223,9 +223,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Delete Blueprint
-        api_instance.delete_blueprint(blueprint_id)
+        api_instance.blueprints_delete_blueprint(blueprint_id)
     except Exception as e:
-        print("Exception when calling BlueprintsApi->delete_blueprint: %s\n" % e)
+        print("Exception when calling BlueprintsApi->blueprints_delete_blueprint: %s\n" % e)
 ```
 
 
@@ -258,8 +258,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_blueprint**
-> get_blueprint(blueprint_id)
+# **blueprints_get_blueprint**
+> blueprints_get_blueprint(blueprint_id)
 
 Get Blueprint
 
@@ -298,9 +298,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get Blueprint
-        api_instance.get_blueprint(blueprint_id)
+        api_instance.blueprints_get_blueprint(blueprint_id)
     except Exception as e:
-        print("Exception when calling BlueprintsApi->get_blueprint: %s\n" % e)
+        print("Exception when calling BlueprintsApi->blueprints_get_blueprint: %s\n" % e)
 ```
 
 
@@ -333,8 +333,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_blueprint_templates**
-> get_blueprint_templates(limit=limit, offset=offset)
+# **blueprints_get_blueprint_templates**
+> blueprints_get_blueprint_templates(limit=limit, offset=offset)
 
 Get Blueprint Templates
 
@@ -372,9 +372,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get Blueprint Templates
-        api_instance.get_blueprint_templates(limit=limit, offset=offset)
+        api_instance.blueprints_get_blueprint_templates(limit=limit, offset=offset)
     except Exception as e:
-        print("Exception when calling BlueprintsApi->get_blueprint_templates: %s\n" % e)
+        print("Exception when calling BlueprintsApi->blueprints_get_blueprint_templates: %s\n" % e)
 ```
 
 
@@ -408,8 +408,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_manual_enrollment_profile**
-> str get_manual_enrollment_profile(blueprint_id, sso=sso)
+# **blueprints_get_manual_enrollment_profile**
+> str blueprints_get_manual_enrollment_profile(blueprint_id, sso=sso)
 
 Get Manual Enrollment Profile
 
@@ -449,11 +449,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get Manual Enrollment Profile
-        api_response = api_instance.get_manual_enrollment_profile(blueprint_id, sso=sso)
-        print("The response of BlueprintsApi->get_manual_enrollment_profile:\n")
+        api_response = api_instance.blueprints_get_manual_enrollment_profile(blueprint_id, sso=sso)
+        print("The response of BlueprintsApi->blueprints_get_manual_enrollment_profile:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BlueprintsApi->get_manual_enrollment_profile: %s\n" % e)
+        print("Exception when calling BlueprintsApi->blueprints_get_manual_enrollment_profile: %s\n" % e)
 ```
 
 
@@ -487,8 +487,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_blueprints**
-> object list_blueprints(id=id, id__in=id__in, name=name, limit=limit, offset=offset)
+# **blueprints_list_blueprints**
+> object blueprints_list_blueprints(id=id, id__in=id__in, name=name, limit=limit, offset=offset)
 
 List Blueprints
 
@@ -531,11 +531,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # List Blueprints
-        api_response = api_instance.list_blueprints(id=id, id__in=id__in, name=name, limit=limit, offset=offset)
-        print("The response of BlueprintsApi->list_blueprints:\n")
+        api_response = api_instance.blueprints_list_blueprints(id=id, id__in=id__in, name=name, limit=limit, offset=offset)
+        print("The response of BlueprintsApi->blueprints_list_blueprints:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BlueprintsApi->list_blueprints: %s\n" % e)
+        print("Exception when calling BlueprintsApi->blueprints_list_blueprints: %s\n" % e)
 ```
 
 
@@ -572,8 +572,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_library_items**
-> object list_library_items(blueprint_id)
+# **blueprints_list_library_items**
+> object blueprints_list_library_items(blueprint_id)
 
 List Library Items
 
@@ -612,11 +612,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # List Library Items
-        api_response = api_instance.list_library_items(blueprint_id)
-        print("The response of BlueprintsApi->list_library_items:\n")
+        api_response = api_instance.blueprints_list_library_items(blueprint_id)
+        print("The response of BlueprintsApi->blueprints_list_library_items:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BlueprintsApi->list_library_items: %s\n" % e)
+        print("Exception when calling BlueprintsApi->blueprints_list_library_items: %s\n" % e)
 ```
 
 
@@ -649,8 +649,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **remove_library_item**
-> object remove_library_item(blueprint_id, body=body)
+# **blueprints_remove_library_item**
+> object blueprints_remove_library_item(blueprint_id, body=body)
 
 Remove Library Item
 
@@ -690,11 +690,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Remove Library Item
-        api_response = api_instance.remove_library_item(blueprint_id, body=body)
-        print("The response of BlueprintsApi->remove_library_item:\n")
+        api_response = api_instance.blueprints_remove_library_item(blueprint_id, body=body)
+        print("The response of BlueprintsApi->blueprints_remove_library_item:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BlueprintsApi->remove_library_item: %s\n" % e)
+        print("Exception when calling BlueprintsApi->blueprints_remove_library_item: %s\n" % e)
 ```
 
 
@@ -728,8 +728,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_blueprint**
-> object update_blueprint(blueprint_id, name, description, enrollment_code_code, enrollment_code_is_active)
+# **blueprints_update_blueprint**
+> object blueprints_update_blueprint(blueprint_id, name, description, enrollment_code_code, enrollment_code_is_active)
 
 Update Blueprint
 
@@ -772,11 +772,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Update Blueprint
-        api_response = api_instance.update_blueprint(blueprint_id, name, description, enrollment_code_code, enrollment_code_is_active)
-        print("The response of BlueprintsApi->update_blueprint:\n")
+        api_response = api_instance.blueprints_update_blueprint(blueprint_id, name, description, enrollment_code_code, enrollment_code_is_active)
+        print("The response of BlueprintsApi->blueprints_update_blueprint:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BlueprintsApi->update_blueprint: %s\n" % e)
+        print("Exception when calling BlueprintsApi->blueprints_update_blueprint: %s\n" % e)
 ```
 
 

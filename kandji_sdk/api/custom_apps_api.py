@@ -40,7 +40,7 @@ class CustomAppsApi:
 
 
     @validate_call
-    def create_custom_app(
+    def custom_apps_create_custom_app(
         self,
         name: Annotated[StrictStr, Field(description="(Required) The name for this Custom App")],
         file_key: Annotated[StrictStr, Field(description="(Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file.")],
@@ -102,7 +102,7 @@ class CustomAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_custom_app_serialize(
+        _param = self._custom_apps_create_custom_app_serialize(
             name=name,
             file_key=file_key,
             install_type=install_type,
@@ -131,7 +131,7 @@ class CustomAppsApi:
 
 
     @validate_call
-    def create_custom_app_with_http_info(
+    def custom_apps_create_custom_app_with_http_info(
         self,
         name: Annotated[StrictStr, Field(description="(Required) The name for this Custom App")],
         file_key: Annotated[StrictStr, Field(description="(Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file.")],
@@ -193,7 +193,7 @@ class CustomAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_custom_app_serialize(
+        _param = self._custom_apps_create_custom_app_serialize(
             name=name,
             file_key=file_key,
             install_type=install_type,
@@ -222,7 +222,7 @@ class CustomAppsApi:
 
 
     @validate_call
-    def create_custom_app_without_preload_content(
+    def custom_apps_create_custom_app_without_preload_content(
         self,
         name: Annotated[StrictStr, Field(description="(Required) The name for this Custom App")],
         file_key: Annotated[StrictStr, Field(description="(Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file.")],
@@ -284,7 +284,7 @@ class CustomAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_custom_app_serialize(
+        _param = self._custom_apps_create_custom_app_serialize(
             name=name,
             file_key=file_key,
             install_type=install_type,
@@ -308,7 +308,7 @@ class CustomAppsApi:
         return response_data.response
 
 
-    def _create_custom_app_serialize(
+    def _custom_apps_create_custom_app_serialize(
         self,
         name,
         file_key,
@@ -404,7 +404,7 @@ class CustomAppsApi:
 
 
     @validate_call
-    def delete_custom_app(
+    def custom_apps_delete_custom_app(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -448,7 +448,7 @@ class CustomAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_custom_app_serialize(
+        _param = self._custom_apps_delete_custom_app_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -472,7 +472,7 @@ class CustomAppsApi:
 
 
     @validate_call
-    def delete_custom_app_with_http_info(
+    def custom_apps_delete_custom_app_with_http_info(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -516,7 +516,7 @@ class CustomAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_custom_app_serialize(
+        _param = self._custom_apps_delete_custom_app_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -540,7 +540,7 @@ class CustomAppsApi:
 
 
     @validate_call
-    def delete_custom_app_without_preload_content(
+    def custom_apps_delete_custom_app_without_preload_content(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -584,7 +584,7 @@ class CustomAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_custom_app_serialize(
+        _param = self._custom_apps_delete_custom_app_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -603,7 +603,7 @@ class CustomAppsApi:
         return response_data.response
 
 
-    def _delete_custom_app_serialize(
+    def _custom_apps_delete_custom_app_serialize(
         self,
         library_item_id,
         _request_auth,
@@ -668,7 +668,7 @@ class CustomAppsApi:
 
 
     @validate_call
-    def get_custom_app(
+    def custom_apps_get_custom_app(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -712,7 +712,7 @@ class CustomAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_custom_app_serialize(
+        _param = self._custom_apps_get_custom_app_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -735,7 +735,7 @@ class CustomAppsApi:
 
 
     @validate_call
-    def get_custom_app_with_http_info(
+    def custom_apps_get_custom_app_with_http_info(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -779,7 +779,7 @@ class CustomAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_custom_app_serialize(
+        _param = self._custom_apps_get_custom_app_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -802,7 +802,7 @@ class CustomAppsApi:
 
 
     @validate_call
-    def get_custom_app_without_preload_content(
+    def custom_apps_get_custom_app_without_preload_content(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -846,7 +846,7 @@ class CustomAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_custom_app_serialize(
+        _param = self._custom_apps_get_custom_app_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -864,7 +864,7 @@ class CustomAppsApi:
         return response_data.response
 
 
-    def _get_custom_app_serialize(
+    def _custom_apps_get_custom_app_serialize(
         self,
         library_item_id,
         _request_auth,
@@ -929,7 +929,7 @@ class CustomAppsApi:
 
 
     @validate_call
-    def list_custom_apps(
+    def custom_apps_list_custom_apps(
         self,
         page: Annotated[Optional[StrictStr], Field(description="Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 device records returned per request.")] = None,
         _request_timeout: Union[
@@ -973,7 +973,7 @@ class CustomAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_custom_apps_serialize(
+        _param = self._custom_apps_list_custom_apps_serialize(
             page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -996,7 +996,7 @@ class CustomAppsApi:
 
 
     @validate_call
-    def list_custom_apps_with_http_info(
+    def custom_apps_list_custom_apps_with_http_info(
         self,
         page: Annotated[Optional[StrictStr], Field(description="Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 device records returned per request.")] = None,
         _request_timeout: Union[
@@ -1040,7 +1040,7 @@ class CustomAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_custom_apps_serialize(
+        _param = self._custom_apps_list_custom_apps_serialize(
             page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1063,7 +1063,7 @@ class CustomAppsApi:
 
 
     @validate_call
-    def list_custom_apps_without_preload_content(
+    def custom_apps_list_custom_apps_without_preload_content(
         self,
         page: Annotated[Optional[StrictStr], Field(description="Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 device records returned per request.")] = None,
         _request_timeout: Union[
@@ -1107,7 +1107,7 @@ class CustomAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_custom_apps_serialize(
+        _param = self._custom_apps_list_custom_apps_serialize(
             page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1125,7 +1125,7 @@ class CustomAppsApi:
         return response_data.response
 
 
-    def _list_custom_apps_serialize(
+    def _custom_apps_list_custom_apps_serialize(
         self,
         page,
         _request_auth,
@@ -1192,7 +1192,7 @@ class CustomAppsApi:
 
 
     @validate_call
-    def update_custom_app(
+    def custom_apps_update_custom_app(
         self,
         library_item_id: StrictStr,
         name: Annotated[StrictStr, Field(description="Renaming a Custom App")],
@@ -1242,7 +1242,7 @@ class CustomAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_custom_app_serialize(
+        _param = self._custom_apps_update_custom_app_serialize(
             library_item_id=library_item_id,
             name=name,
             active=active,
@@ -1267,7 +1267,7 @@ class CustomAppsApi:
 
 
     @validate_call
-    def update_custom_app_with_http_info(
+    def custom_apps_update_custom_app_with_http_info(
         self,
         library_item_id: StrictStr,
         name: Annotated[StrictStr, Field(description="Renaming a Custom App")],
@@ -1317,7 +1317,7 @@ class CustomAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_custom_app_serialize(
+        _param = self._custom_apps_update_custom_app_serialize(
             library_item_id=library_item_id,
             name=name,
             active=active,
@@ -1342,7 +1342,7 @@ class CustomAppsApi:
 
 
     @validate_call
-    def update_custom_app_without_preload_content(
+    def custom_apps_update_custom_app_without_preload_content(
         self,
         library_item_id: StrictStr,
         name: Annotated[StrictStr, Field(description="Renaming a Custom App")],
@@ -1392,7 +1392,7 @@ class CustomAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_custom_app_serialize(
+        _param = self._custom_apps_update_custom_app_serialize(
             library_item_id=library_item_id,
             name=name,
             active=active,
@@ -1412,7 +1412,7 @@ class CustomAppsApi:
         return response_data.response
 
 
-    def _update_custom_app_serialize(
+    def _custom_apps_update_custom_app_serialize(
         self,
         library_item_id,
         name,
@@ -1496,7 +1496,7 @@ class CustomAppsApi:
 
 
     @validate_call
-    def upload_custom_app(
+    def custom_apps_upload_custom_app(
         self,
         body: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -1540,7 +1540,7 @@ class CustomAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._upload_custom_app_serialize(
+        _param = self._custom_apps_upload_custom_app_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1563,7 +1563,7 @@ class CustomAppsApi:
 
 
     @validate_call
-    def upload_custom_app_with_http_info(
+    def custom_apps_upload_custom_app_with_http_info(
         self,
         body: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -1607,7 +1607,7 @@ class CustomAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._upload_custom_app_serialize(
+        _param = self._custom_apps_upload_custom_app_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1630,7 +1630,7 @@ class CustomAppsApi:
 
 
     @validate_call
-    def upload_custom_app_without_preload_content(
+    def custom_apps_upload_custom_app_without_preload_content(
         self,
         body: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -1674,7 +1674,7 @@ class CustomAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._upload_custom_app_serialize(
+        _param = self._custom_apps_upload_custom_app_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1692,7 +1692,7 @@ class CustomAppsApi:
         return response_data.response
 
 
-    def _upload_custom_app_serialize(
+    def _custom_apps_upload_custom_app_serialize(
         self,
         body,
         _request_auth,

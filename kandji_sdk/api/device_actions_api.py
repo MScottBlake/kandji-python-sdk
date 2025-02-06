@@ -40,7 +40,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def clear_passcode(
+    def device_actions_clear_passcode(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -84,7 +84,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._clear_passcode_serialize(
+        _param = self._device_actions_clear_passcode_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -107,7 +107,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def clear_passcode_with_http_info(
+    def device_actions_clear_passcode_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -151,7 +151,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._clear_passcode_serialize(
+        _param = self._device_actions_clear_passcode_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -174,7 +174,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def clear_passcode_without_preload_content(
+    def device_actions_clear_passcode_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -218,7 +218,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._clear_passcode_serialize(
+        _param = self._device_actions_clear_passcode_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -236,7 +236,7 @@ class DeviceActionsApi:
         return response_data.response
 
 
-    def _clear_passcode_serialize(
+    def _device_actions_clear_passcode_serialize(
         self,
         device_id,
         _request_auth,
@@ -294,7 +294,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def delete_device(
+    def device_actions_delete_device(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -338,7 +338,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_device_serialize(
+        _param = self._device_actions_delete_device_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -361,7 +361,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def delete_device_with_http_info(
+    def device_actions_delete_device_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -405,7 +405,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_device_serialize(
+        _param = self._device_actions_delete_device_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -428,7 +428,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def delete_device_without_preload_content(
+    def device_actions_delete_device_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -472,7 +472,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_device_serialize(
+        _param = self._device_actions_delete_device_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -490,7 +490,7 @@ class DeviceActionsApi:
         return response_data.response
 
 
-    def _delete_device_serialize(
+    def _device_actions_delete_device_serialize(
         self,
         device_id,
         _request_auth,
@@ -548,7 +548,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def delete_user(
+    def device_actions_delete_user(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -595,7 +595,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_user_serialize(
+        _param = self._device_actions_delete_user_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -619,7 +619,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def delete_user_with_http_info(
+    def device_actions_delete_user_with_http_info(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -666,7 +666,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_user_serialize(
+        _param = self._device_actions_delete_user_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -690,7 +690,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def delete_user_without_preload_content(
+    def device_actions_delete_user_without_preload_content(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -737,7 +737,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_user_serialize(
+        _param = self._device_actions_delete_user_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -756,7 +756,7 @@ class DeviceActionsApi:
         return response_data.response
 
 
-    def _delete_user_serialize(
+    def _device_actions_delete_user_serialize(
         self,
         device_id,
         body,
@@ -830,7 +830,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def erase_device(
+    def device_actions_erase_device(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -877,7 +877,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._erase_device_serialize(
+        _param = self._device_actions_erase_device_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -902,7 +902,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def erase_device_with_http_info(
+    def device_actions_erase_device_with_http_info(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -949,7 +949,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._erase_device_serialize(
+        _param = self._device_actions_erase_device_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -974,7 +974,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def erase_device_without_preload_content(
+    def device_actions_erase_device_without_preload_content(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -1021,7 +1021,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._erase_device_serialize(
+        _param = self._device_actions_erase_device_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -1041,7 +1041,7 @@ class DeviceActionsApi:
         return response_data.response
 
 
-    def _erase_device_serialize(
+    def _device_actions_erase_device_serialize(
         self,
         device_id,
         body,
@@ -1122,7 +1122,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def get_device_commands(
+    def device_actions_get_device_commands(
         self,
         device_id: StrictStr,
         limit: Annotated[StrictStr, Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")],
@@ -1172,7 +1172,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_commands_serialize(
+        _param = self._device_actions_get_device_commands_serialize(
             device_id=device_id,
             limit=limit,
             offset=offset,
@@ -1197,7 +1197,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def get_device_commands_with_http_info(
+    def device_actions_get_device_commands_with_http_info(
         self,
         device_id: StrictStr,
         limit: Annotated[StrictStr, Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")],
@@ -1247,7 +1247,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_commands_serialize(
+        _param = self._device_actions_get_device_commands_serialize(
             device_id=device_id,
             limit=limit,
             offset=offset,
@@ -1272,7 +1272,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def get_device_commands_without_preload_content(
+    def device_actions_get_device_commands_without_preload_content(
         self,
         device_id: StrictStr,
         limit: Annotated[StrictStr, Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")],
@@ -1322,7 +1322,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_commands_serialize(
+        _param = self._device_actions_get_device_commands_serialize(
             device_id=device_id,
             limit=limit,
             offset=offset,
@@ -1342,7 +1342,7 @@ class DeviceActionsApi:
         return response_data.response
 
 
-    def _get_device_commands_serialize(
+    def _device_actions_get_device_commands_serialize(
         self,
         device_id,
         limit,
@@ -1410,7 +1410,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def lock_device(
+    def device_actions_lock_device(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -1457,7 +1457,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._lock_device_serialize(
+        _param = self._device_actions_lock_device_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -1482,7 +1482,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def lock_device_with_http_info(
+    def device_actions_lock_device_with_http_info(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -1529,7 +1529,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._lock_device_serialize(
+        _param = self._device_actions_lock_device_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -1554,7 +1554,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def lock_device_without_preload_content(
+    def device_actions_lock_device_without_preload_content(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -1601,7 +1601,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._lock_device_serialize(
+        _param = self._device_actions_lock_device_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -1621,7 +1621,7 @@ class DeviceActionsApi:
         return response_data.response
 
 
-    def _lock_device_serialize(
+    def _device_actions_lock_device_serialize(
         self,
         device_id,
         body,
@@ -1702,7 +1702,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def reinstall_agent(
+    def device_actions_reinstall_agent(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -1746,7 +1746,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._reinstall_agent_serialize(
+        _param = self._device_actions_reinstall_agent_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1769,7 +1769,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def reinstall_agent_with_http_info(
+    def device_actions_reinstall_agent_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -1813,7 +1813,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._reinstall_agent_serialize(
+        _param = self._device_actions_reinstall_agent_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1836,7 +1836,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def reinstall_agent_without_preload_content(
+    def device_actions_reinstall_agent_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -1880,7 +1880,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._reinstall_agent_serialize(
+        _param = self._device_actions_reinstall_agent_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1898,7 +1898,7 @@ class DeviceActionsApi:
         return response_data.response
 
 
-    def _reinstall_agent_serialize(
+    def _device_actions_reinstall_agent_serialize(
         self,
         device_id,
         _request_auth,
@@ -1956,7 +1956,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def remote_desktop(
+    def device_actions_remote_desktop(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -2003,7 +2003,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._remote_desktop_serialize(
+        _param = self._device_actions_remote_desktop_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -2027,7 +2027,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def remote_desktop_with_http_info(
+    def device_actions_remote_desktop_with_http_info(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -2074,7 +2074,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._remote_desktop_serialize(
+        _param = self._device_actions_remote_desktop_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -2098,7 +2098,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def remote_desktop_without_preload_content(
+    def device_actions_remote_desktop_without_preload_content(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -2145,7 +2145,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._remote_desktop_serialize(
+        _param = self._device_actions_remote_desktop_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -2164,7 +2164,7 @@ class DeviceActionsApi:
         return response_data.response
 
 
-    def _remote_desktop_serialize(
+    def _device_actions_remote_desktop_serialize(
         self,
         device_id,
         body,
@@ -2238,7 +2238,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def renew_mdm_profile(
+    def device_actions_renew_mdm_profile(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -2282,7 +2282,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._renew_mdm_profile_serialize(
+        _param = self._device_actions_renew_mdm_profile_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2305,7 +2305,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def renew_mdm_profile_with_http_info(
+    def device_actions_renew_mdm_profile_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -2349,7 +2349,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._renew_mdm_profile_serialize(
+        _param = self._device_actions_renew_mdm_profile_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2372,7 +2372,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def renew_mdm_profile_without_preload_content(
+    def device_actions_renew_mdm_profile_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -2416,7 +2416,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._renew_mdm_profile_serialize(
+        _param = self._device_actions_renew_mdm_profile_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2434,7 +2434,7 @@ class DeviceActionsApi:
         return response_data.response
 
 
-    def _renew_mdm_profile_serialize(
+    def _device_actions_renew_mdm_profile_serialize(
         self,
         device_id,
         _request_auth,
@@ -2492,7 +2492,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def restart_device(
+    def device_actions_restart_device(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -2539,7 +2539,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._restart_device_serialize(
+        _param = self._device_actions_restart_device_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -2563,7 +2563,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def restart_device_with_http_info(
+    def device_actions_restart_device_with_http_info(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -2610,7 +2610,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._restart_device_serialize(
+        _param = self._device_actions_restart_device_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -2634,7 +2634,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def restart_device_without_preload_content(
+    def device_actions_restart_device_without_preload_content(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -2681,7 +2681,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._restart_device_serialize(
+        _param = self._device_actions_restart_device_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -2700,7 +2700,7 @@ class DeviceActionsApi:
         return response_data.response
 
 
-    def _restart_device_serialize(
+    def _device_actions_restart_device_serialize(
         self,
         device_id,
         body,
@@ -2774,7 +2774,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def send_blankpush(
+    def device_actions_send_blankpush(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -2818,7 +2818,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._send_blankpush_serialize(
+        _param = self._device_actions_send_blankpush_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2841,7 +2841,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def send_blankpush_with_http_info(
+    def device_actions_send_blankpush_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -2885,7 +2885,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._send_blankpush_serialize(
+        _param = self._device_actions_send_blankpush_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2908,7 +2908,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def send_blankpush_without_preload_content(
+    def device_actions_send_blankpush_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -2952,7 +2952,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._send_blankpush_serialize(
+        _param = self._device_actions_send_blankpush_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2970,7 +2970,7 @@ class DeviceActionsApi:
         return response_data.response
 
 
-    def _send_blankpush_serialize(
+    def _device_actions_send_blankpush_serialize(
         self,
         device_id,
         _request_auth,
@@ -3028,7 +3028,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def set_name(
+    def device_actions_set_name(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -3075,7 +3075,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._set_name_serialize(
+        _param = self._device_actions_set_name_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -3099,7 +3099,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def set_name_with_http_info(
+    def device_actions_set_name_with_http_info(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -3146,7 +3146,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._set_name_serialize(
+        _param = self._device_actions_set_name_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -3170,7 +3170,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def set_name_without_preload_content(
+    def device_actions_set_name_without_preload_content(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -3217,7 +3217,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._set_name_serialize(
+        _param = self._device_actions_set_name_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -3236,7 +3236,7 @@ class DeviceActionsApi:
         return response_data.response
 
 
-    def _set_name_serialize(
+    def _device_actions_set_name_serialize(
         self,
         device_id,
         body,
@@ -3310,7 +3310,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def shutdown(
+    def device_actions_shutdown(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -3354,7 +3354,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._shutdown_serialize(
+        _param = self._device_actions_shutdown_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3377,7 +3377,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def shutdown_with_http_info(
+    def device_actions_shutdown_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -3421,7 +3421,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._shutdown_serialize(
+        _param = self._device_actions_shutdown_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3444,7 +3444,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def shutdown_without_preload_content(
+    def device_actions_shutdown_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -3488,7 +3488,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._shutdown_serialize(
+        _param = self._device_actions_shutdown_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3506,7 +3506,7 @@ class DeviceActionsApi:
         return response_data.response
 
 
-    def _shutdown_serialize(
+    def _device_actions_shutdown_serialize(
         self,
         device_id,
         _request_auth,
@@ -3564,7 +3564,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def unlock_account(
+    def device_actions_unlock_account(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -3611,7 +3611,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._unlock_account_serialize(
+        _param = self._device_actions_unlock_account_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -3635,7 +3635,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def unlock_account_with_http_info(
+    def device_actions_unlock_account_with_http_info(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -3682,7 +3682,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._unlock_account_serialize(
+        _param = self._device_actions_unlock_account_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -3706,7 +3706,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def unlock_account_without_preload_content(
+    def device_actions_unlock_account_without_preload_content(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -3753,7 +3753,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._unlock_account_serialize(
+        _param = self._device_actions_unlock_account_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -3772,7 +3772,7 @@ class DeviceActionsApi:
         return response_data.response
 
 
-    def _unlock_account_serialize(
+    def _device_actions_unlock_account_serialize(
         self,
         device_id,
         body,
@@ -3846,7 +3846,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def update_inventory(
+    def device_actions_update_inventory(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -3890,7 +3890,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_inventory_serialize(
+        _param = self._device_actions_update_inventory_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3913,7 +3913,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def update_inventory_with_http_info(
+    def device_actions_update_inventory_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -3957,7 +3957,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_inventory_serialize(
+        _param = self._device_actions_update_inventory_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3980,7 +3980,7 @@ class DeviceActionsApi:
 
 
     @validate_call
-    def update_inventory_without_preload_content(
+    def device_actions_update_inventory_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -4024,7 +4024,7 @@ class DeviceActionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_inventory_serialize(
+        _param = self._device_actions_update_inventory_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4042,7 +4042,7 @@ class DeviceActionsApi:
         return response_data.response
 
 
-    def _update_inventory_serialize(
+    def _device_actions_update_inventory_serialize(
         self,
         device_id,
         _request_auth,

@@ -40,7 +40,7 @@ class InHouseAppsApi:
 
 
     @validate_call
-    def create_inhouse_app(
+    def inhouse_apps_create_inhouse_app(
         self,
         content_type: StrictStr,
         body: Optional[StrictStr] = None,
@@ -87,7 +87,7 @@ class InHouseAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_inhouse_app_serialize(
+        _param = self._inhouse_apps_create_inhouse_app_serialize(
             content_type=content_type,
             body=body,
             _request_auth=_request_auth,
@@ -111,7 +111,7 @@ class InHouseAppsApi:
 
 
     @validate_call
-    def create_inhouse_app_with_http_info(
+    def inhouse_apps_create_inhouse_app_with_http_info(
         self,
         content_type: StrictStr,
         body: Optional[StrictStr] = None,
@@ -158,7 +158,7 @@ class InHouseAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_inhouse_app_serialize(
+        _param = self._inhouse_apps_create_inhouse_app_serialize(
             content_type=content_type,
             body=body,
             _request_auth=_request_auth,
@@ -182,7 +182,7 @@ class InHouseAppsApi:
 
 
     @validate_call
-    def create_inhouse_app_without_preload_content(
+    def inhouse_apps_create_inhouse_app_without_preload_content(
         self,
         content_type: StrictStr,
         body: Optional[StrictStr] = None,
@@ -229,7 +229,7 @@ class InHouseAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_inhouse_app_serialize(
+        _param = self._inhouse_apps_create_inhouse_app_serialize(
             content_type=content_type,
             body=body,
             _request_auth=_request_auth,
@@ -248,7 +248,7 @@ class InHouseAppsApi:
         return response_data.response
 
 
-    def _create_inhouse_app_serialize(
+    def _inhouse_apps_create_inhouse_app_serialize(
         self,
         content_type,
         body,
@@ -322,7 +322,7 @@ class InHouseAppsApi:
 
 
     @validate_call
-    def delete_inhouse_app(
+    def inhouse_apps_delete_inhouse_app(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -366,7 +366,7 @@ class InHouseAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_inhouse_app_serialize(
+        _param = self._inhouse_apps_delete_inhouse_app_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -390,7 +390,7 @@ class InHouseAppsApi:
 
 
     @validate_call
-    def delete_inhouse_app_with_http_info(
+    def inhouse_apps_delete_inhouse_app_with_http_info(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -434,7 +434,7 @@ class InHouseAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_inhouse_app_serialize(
+        _param = self._inhouse_apps_delete_inhouse_app_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -458,7 +458,7 @@ class InHouseAppsApi:
 
 
     @validate_call
-    def delete_inhouse_app_without_preload_content(
+    def inhouse_apps_delete_inhouse_app_without_preload_content(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -502,7 +502,7 @@ class InHouseAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_inhouse_app_serialize(
+        _param = self._inhouse_apps_delete_inhouse_app_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -521,7 +521,7 @@ class InHouseAppsApi:
         return response_data.response
 
 
-    def _delete_inhouse_app_serialize(
+    def _inhouse_apps_delete_inhouse_app_serialize(
         self,
         library_item_id,
         _request_auth,
@@ -579,7 +579,7 @@ class InHouseAppsApi:
 
 
     @validate_call
-    def get_inhouse_app(
+    def inhouse_apps_get_inhouse_app(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -623,7 +623,7 @@ class InHouseAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_inhouse_app_serialize(
+        _param = self._inhouse_apps_get_inhouse_app_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -646,7 +646,7 @@ class InHouseAppsApi:
 
 
     @validate_call
-    def get_inhouse_app_with_http_info(
+    def inhouse_apps_get_inhouse_app_with_http_info(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -690,7 +690,7 @@ class InHouseAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_inhouse_app_serialize(
+        _param = self._inhouse_apps_get_inhouse_app_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -713,7 +713,7 @@ class InHouseAppsApi:
 
 
     @validate_call
-    def get_inhouse_app_without_preload_content(
+    def inhouse_apps_get_inhouse_app_without_preload_content(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -757,7 +757,7 @@ class InHouseAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_inhouse_app_serialize(
+        _param = self._inhouse_apps_get_inhouse_app_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -775,7 +775,7 @@ class InHouseAppsApi:
         return response_data.response
 
 
-    def _get_inhouse_app_serialize(
+    def _inhouse_apps_get_inhouse_app_serialize(
         self,
         library_item_id,
         _request_auth,
@@ -840,7 +840,7 @@ class InHouseAppsApi:
 
 
     @validate_call
-    def list_inhouse_apps(
+    def inhouse_apps_list_inhouse_apps(
         self,
         page: Annotated[Optional[StrictStr], Field(description="Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 app records returned per request.")] = None,
         _request_timeout: Union[
@@ -884,7 +884,7 @@ class InHouseAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_inhouse_apps_serialize(
+        _param = self._inhouse_apps_list_inhouse_apps_serialize(
             page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -907,7 +907,7 @@ class InHouseAppsApi:
 
 
     @validate_call
-    def list_inhouse_apps_with_http_info(
+    def inhouse_apps_list_inhouse_apps_with_http_info(
         self,
         page: Annotated[Optional[StrictStr], Field(description="Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 app records returned per request.")] = None,
         _request_timeout: Union[
@@ -951,7 +951,7 @@ class InHouseAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_inhouse_apps_serialize(
+        _param = self._inhouse_apps_list_inhouse_apps_serialize(
             page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -974,7 +974,7 @@ class InHouseAppsApi:
 
 
     @validate_call
-    def list_inhouse_apps_without_preload_content(
+    def inhouse_apps_list_inhouse_apps_without_preload_content(
         self,
         page: Annotated[Optional[StrictStr], Field(description="Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 app records returned per request.")] = None,
         _request_timeout: Union[
@@ -1018,7 +1018,7 @@ class InHouseAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_inhouse_apps_serialize(
+        _param = self._inhouse_apps_list_inhouse_apps_serialize(
             page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1036,7 +1036,7 @@ class InHouseAppsApi:
         return response_data.response
 
 
-    def _list_inhouse_apps_serialize(
+    def _inhouse_apps_list_inhouse_apps_serialize(
         self,
         page,
         _request_auth,
@@ -1103,7 +1103,7 @@ class InHouseAppsApi:
 
 
     @validate_call
-    def update_inhouse_app(
+    def inhouse_apps_update_inhouse_app(
         self,
         library_item_id: StrictStr,
         content_type: StrictStr,
@@ -1153,7 +1153,7 @@ class InHouseAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_inhouse_app_serialize(
+        _param = self._inhouse_apps_update_inhouse_app_serialize(
             library_item_id=library_item_id,
             content_type=content_type,
             body=body,
@@ -1178,7 +1178,7 @@ class InHouseAppsApi:
 
 
     @validate_call
-    def update_inhouse_app_with_http_info(
+    def inhouse_apps_update_inhouse_app_with_http_info(
         self,
         library_item_id: StrictStr,
         content_type: StrictStr,
@@ -1228,7 +1228,7 @@ class InHouseAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_inhouse_app_serialize(
+        _param = self._inhouse_apps_update_inhouse_app_serialize(
             library_item_id=library_item_id,
             content_type=content_type,
             body=body,
@@ -1253,7 +1253,7 @@ class InHouseAppsApi:
 
 
     @validate_call
-    def update_inhouse_app_without_preload_content(
+    def inhouse_apps_update_inhouse_app_without_preload_content(
         self,
         library_item_id: StrictStr,
         content_type: StrictStr,
@@ -1303,7 +1303,7 @@ class InHouseAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_inhouse_app_serialize(
+        _param = self._inhouse_apps_update_inhouse_app_serialize(
             library_item_id=library_item_id,
             content_type=content_type,
             body=body,
@@ -1323,7 +1323,7 @@ class InHouseAppsApi:
         return response_data.response
 
 
-    def _update_inhouse_app_serialize(
+    def _inhouse_apps_update_inhouse_app_serialize(
         self,
         library_item_id,
         content_type,
@@ -1400,7 +1400,7 @@ class InHouseAppsApi:
 
 
     @validate_call
-    def upload_inhouse_app(
+    def inhouse_apps_upload_inhouse_app(
         self,
         content_type: StrictStr,
         body: Optional[StrictStr] = None,
@@ -1447,7 +1447,7 @@ class InHouseAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._upload_inhouse_app_serialize(
+        _param = self._inhouse_apps_upload_inhouse_app_serialize(
             content_type=content_type,
             body=body,
             _request_auth=_request_auth,
@@ -1471,7 +1471,7 @@ class InHouseAppsApi:
 
 
     @validate_call
-    def upload_inhouse_app_with_http_info(
+    def inhouse_apps_upload_inhouse_app_with_http_info(
         self,
         content_type: StrictStr,
         body: Optional[StrictStr] = None,
@@ -1518,7 +1518,7 @@ class InHouseAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._upload_inhouse_app_serialize(
+        _param = self._inhouse_apps_upload_inhouse_app_serialize(
             content_type=content_type,
             body=body,
             _request_auth=_request_auth,
@@ -1542,7 +1542,7 @@ class InHouseAppsApi:
 
 
     @validate_call
-    def upload_inhouse_app_without_preload_content(
+    def inhouse_apps_upload_inhouse_app_without_preload_content(
         self,
         content_type: StrictStr,
         body: Optional[StrictStr] = None,
@@ -1589,7 +1589,7 @@ class InHouseAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._upload_inhouse_app_serialize(
+        _param = self._inhouse_apps_upload_inhouse_app_serialize(
             content_type=content_type,
             body=body,
             _request_auth=_request_auth,
@@ -1608,7 +1608,7 @@ class InHouseAppsApi:
         return response_data.response
 
 
-    def _upload_inhouse_app_serialize(
+    def _inhouse_apps_upload_inhouse_app_serialize(
         self,
         content_type,
         body,
@@ -1689,7 +1689,7 @@ class InHouseAppsApi:
 
 
     @validate_call
-    def upload_inhouse_app_status(
+    def inhouse_apps_upload_inhouse_app_status(
         self,
         pending_upload_id: StrictStr,
         _request_timeout: Union[
@@ -1733,7 +1733,7 @@ class InHouseAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._upload_inhouse_app_status_serialize(
+        _param = self._inhouse_apps_upload_inhouse_app_status_serialize(
             pending_upload_id=pending_upload_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1756,7 +1756,7 @@ class InHouseAppsApi:
 
 
     @validate_call
-    def upload_inhouse_app_status_with_http_info(
+    def inhouse_apps_upload_inhouse_app_status_with_http_info(
         self,
         pending_upload_id: StrictStr,
         _request_timeout: Union[
@@ -1800,7 +1800,7 @@ class InHouseAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._upload_inhouse_app_status_serialize(
+        _param = self._inhouse_apps_upload_inhouse_app_status_serialize(
             pending_upload_id=pending_upload_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1823,7 +1823,7 @@ class InHouseAppsApi:
 
 
     @validate_call
-    def upload_inhouse_app_status_without_preload_content(
+    def inhouse_apps_upload_inhouse_app_status_without_preload_content(
         self,
         pending_upload_id: StrictStr,
         _request_timeout: Union[
@@ -1867,7 +1867,7 @@ class InHouseAppsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._upload_inhouse_app_status_serialize(
+        _param = self._inhouse_apps_upload_inhouse_app_status_serialize(
             pending_upload_id=pending_upload_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1885,7 +1885,7 @@ class InHouseAppsApi:
         return response_data.response
 
 
-    def _upload_inhouse_app_status_serialize(
+    def _inhouse_apps_upload_inhouse_app_status_serialize(
         self,
         pending_upload_id,
         _request_auth,

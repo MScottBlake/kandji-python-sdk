@@ -4,11 +4,11 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_threat_details**](ThreatsApi.md#get_threat_details) | **GET** /api/v1/threat-details | Get Threat Details
+[**threats_get_threat_details**](ThreatsApi.md#threats_get_threat_details) | **GET** /api/v1/threat-details | Get Threat Details
 
 
-# **get_threat_details**
-> object get_threat_details(classification=classification, date_range=date_range, device_id=device_id, status=status, sort_by=sort_by, term=term, limit=limit, offset=offset)
+# **threats_get_threat_details**
+> object threats_get_threat_details(classification=classification, date_range=date_range, device_id=device_id, status=status, sort_by=sort_by, term=term, limit=limit, offset=offset)
 
 Get Threat Details
 
@@ -54,11 +54,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get Threat Details
-        api_response = api_instance.get_threat_details(classification=classification, date_range=date_range, device_id=device_id, status=status, sort_by=sort_by, term=term, limit=limit, offset=offset)
-        print("The response of ThreatsApi->get_threat_details:\n")
+        api_response = api_instance.threats_get_threat_details(classification=classification, date_range=date_range, device_id=device_id, status=status, sort_by=sort_by, term=term, limit=limit, offset=offset)
+        print("The response of ThreatsApi->threats_get_threat_details:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ThreatsApi->get_threat_details: %s\n" % e)
+        print("Exception when calling ThreatsApi->threats_get_threat_details: %s\n" % e)
 ```
 
 

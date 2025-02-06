@@ -4,14 +4,14 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_tag**](TagsApi.md#create_tag) | **POST** /api/v1/tags | Create Tag
-[**delete_tag**](TagsApi.md#delete_tag) | **DELETE** /api/v1/tags/{tag_id} | Delete Tag
-[**get_tags**](TagsApi.md#get_tags) | **GET** /api/v1/tags | Get Tags
-[**update_tag**](TagsApi.md#update_tag) | **PATCH** /api/v1/tags/{tag_id} | Update Tag
+[**tags_create_tag**](TagsApi.md#tags_create_tag) | **POST** /api/v1/tags | Create Tag
+[**tags_delete_tag**](TagsApi.md#tags_delete_tag) | **DELETE** /api/v1/tags/{tag_id} | Delete Tag
+[**tags_get_tags**](TagsApi.md#tags_get_tags) | **GET** /api/v1/tags | Get Tags
+[**tags_update_tag**](TagsApi.md#tags_update_tag) | **PATCH** /api/v1/tags/{tag_id} | Update Tag
 
 
-# **create_tag**
-> object create_tag(body=body)
+# **tags_create_tag**
+> object tags_create_tag(body=body)
 
 Create Tag
 
@@ -50,11 +50,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Create Tag
-        api_response = api_instance.create_tag(body=body)
-        print("The response of TagsApi->create_tag:\n")
+        api_response = api_instance.tags_create_tag(body=body)
+        print("The response of TagsApi->tags_create_tag:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TagsApi->create_tag: %s\n" % e)
+        print("Exception when calling TagsApi->tags_create_tag: %s\n" % e)
 ```
 
 
@@ -87,8 +87,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_tag**
-> delete_tag(tag_id)
+# **tags_delete_tag**
+> tags_delete_tag(tag_id)
 
 Delete Tag
 
@@ -127,9 +127,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Delete Tag
-        api_instance.delete_tag(tag_id)
+        api_instance.tags_delete_tag(tag_id)
     except Exception as e:
-        print("Exception when calling TagsApi->delete_tag: %s\n" % e)
+        print("Exception when calling TagsApi->tags_delete_tag: %s\n" % e)
 ```
 
 
@@ -162,8 +162,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_tags**
-> object get_tags(search)
+# **tags_get_tags**
+> object tags_get_tags(search)
 
 Get Tags
 
@@ -202,11 +202,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get Tags
-        api_response = api_instance.get_tags(search)
-        print("The response of TagsApi->get_tags:\n")
+        api_response = api_instance.tags_get_tags(search)
+        print("The response of TagsApi->tags_get_tags:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TagsApi->get_tags: %s\n" % e)
+        print("Exception when calling TagsApi->tags_get_tags: %s\n" % e)
 ```
 
 
@@ -239,8 +239,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_tag**
-> object update_tag(tag_id, body=body)
+# **tags_update_tag**
+> object tags_update_tag(tag_id, body=body)
 
 Update Tag
 
@@ -280,11 +280,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Update Tag
-        api_response = api_instance.update_tag(tag_id, body=body)
-        print("The response of TagsApi->update_tag:\n")
+        api_response = api_instance.tags_update_tag(tag_id, body=body)
+        print("The response of TagsApi->tags_update_tag:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TagsApi->update_tag: %s\n" % e)
+        print("Exception when calling TagsApi->tags_update_tag: %s\n" % e)
 ```
 
 

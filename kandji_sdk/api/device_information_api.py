@@ -40,7 +40,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def cancel_lost_mode(
+    def device_information_cancel_lost_mode(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -84,7 +84,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._cancel_lost_mode_serialize(
+        _param = self._device_information_cancel_lost_mode_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -107,7 +107,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def cancel_lost_mode_with_http_info(
+    def device_information_cancel_lost_mode_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -151,7 +151,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._cancel_lost_mode_serialize(
+        _param = self._device_information_cancel_lost_mode_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -174,7 +174,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def cancel_lost_mode_without_preload_content(
+    def device_information_cancel_lost_mode_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -218,7 +218,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._cancel_lost_mode_serialize(
+        _param = self._device_information_cancel_lost_mode_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -236,7 +236,7 @@ class DeviceInformationApi:
         return response_data.response
 
 
-    def _cancel_lost_mode_serialize(
+    def _device_information_cancel_lost_mode_serialize(
         self,
         device_id,
         _request_auth,
@@ -294,7 +294,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def get_device_activity(
+    def device_information_get_device_activity(
         self,
         device_id: StrictStr,
         limit: Annotated[StrictStr, Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")],
@@ -344,7 +344,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_activity_serialize(
+        _param = self._device_information_get_device_activity_serialize(
             device_id=device_id,
             limit=limit,
             offset=offset,
@@ -369,7 +369,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def get_device_activity_with_http_info(
+    def device_information_get_device_activity_with_http_info(
         self,
         device_id: StrictStr,
         limit: Annotated[StrictStr, Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")],
@@ -419,7 +419,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_activity_serialize(
+        _param = self._device_information_get_device_activity_serialize(
             device_id=device_id,
             limit=limit,
             offset=offset,
@@ -444,7 +444,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def get_device_activity_without_preload_content(
+    def device_information_get_device_activity_without_preload_content(
         self,
         device_id: StrictStr,
         limit: Annotated[StrictStr, Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")],
@@ -494,7 +494,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_activity_serialize(
+        _param = self._device_information_get_device_activity_serialize(
             device_id=device_id,
             limit=limit,
             offset=offset,
@@ -514,7 +514,7 @@ class DeviceInformationApi:
         return response_data.response
 
 
-    def _get_device_activity_serialize(
+    def _device_information_get_device_activity_serialize(
         self,
         device_id,
         limit,
@@ -589,7 +589,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def get_device_apps(
+    def device_information_get_device_apps(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -633,7 +633,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_apps_serialize(
+        _param = self._device_information_get_device_apps_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -656,7 +656,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def get_device_apps_with_http_info(
+    def device_information_get_device_apps_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -700,7 +700,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_apps_serialize(
+        _param = self._device_information_get_device_apps_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -723,7 +723,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def get_device_apps_without_preload_content(
+    def device_information_get_device_apps_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -767,7 +767,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_apps_serialize(
+        _param = self._device_information_get_device_apps_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -785,7 +785,7 @@ class DeviceInformationApi:
         return response_data.response
 
 
-    def _get_device_apps_serialize(
+    def _device_information_get_device_apps_serialize(
         self,
         device_id,
         _request_auth,
@@ -850,7 +850,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def get_device_details(
+    def device_information_get_device_details(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -894,7 +894,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_details_serialize(
+        _param = self._device_information_get_device_details_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -917,7 +917,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def get_device_details_with_http_info(
+    def device_information_get_device_details_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -961,7 +961,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_details_serialize(
+        _param = self._device_information_get_device_details_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -984,7 +984,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def get_device_details_without_preload_content(
+    def device_information_get_device_details_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -1028,7 +1028,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_details_serialize(
+        _param = self._device_information_get_device_details_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1046,7 +1046,7 @@ class DeviceInformationApi:
         return response_data.response
 
 
-    def _get_device_details_serialize(
+    def _device_information_get_device_details_serialize(
         self,
         device_id,
         _request_auth,
@@ -1111,7 +1111,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def get_device_library_items(
+    def device_information_get_device_library_items(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -1155,7 +1155,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_library_items_serialize(
+        _param = self._device_information_get_device_library_items_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1178,7 +1178,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def get_device_library_items_with_http_info(
+    def device_information_get_device_library_items_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -1222,7 +1222,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_library_items_serialize(
+        _param = self._device_information_get_device_library_items_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1245,7 +1245,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def get_device_library_items_without_preload_content(
+    def device_information_get_device_library_items_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -1289,7 +1289,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_library_items_serialize(
+        _param = self._device_information_get_device_library_items_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1307,7 +1307,7 @@ class DeviceInformationApi:
         return response_data.response
 
 
-    def _get_device_library_items_serialize(
+    def _device_information_get_device_library_items_serialize(
         self,
         device_id,
         _request_auth,
@@ -1372,7 +1372,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def get_device_lost_mode_details(
+    def device_information_get_device_lost_mode_details(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -1416,7 +1416,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_lost_mode_details_serialize(
+        _param = self._device_information_get_device_lost_mode_details_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1440,7 +1440,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def get_device_lost_mode_details_with_http_info(
+    def device_information_get_device_lost_mode_details_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -1484,7 +1484,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_lost_mode_details_serialize(
+        _param = self._device_information_get_device_lost_mode_details_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1508,7 +1508,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def get_device_lost_mode_details_without_preload_content(
+    def device_information_get_device_lost_mode_details_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -1552,7 +1552,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_lost_mode_details_serialize(
+        _param = self._device_information_get_device_lost_mode_details_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1571,7 +1571,7 @@ class DeviceInformationApi:
         return response_data.response
 
 
-    def _get_device_lost_mode_details_serialize(
+    def _device_information_get_device_lost_mode_details_serialize(
         self,
         device_id,
         _request_auth,
@@ -1636,7 +1636,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def get_device_parameters(
+    def device_information_get_device_parameters(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -1680,7 +1680,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_parameters_serialize(
+        _param = self._device_information_get_device_parameters_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1703,7 +1703,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def get_device_parameters_with_http_info(
+    def device_information_get_device_parameters_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -1747,7 +1747,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_parameters_serialize(
+        _param = self._device_information_get_device_parameters_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1770,7 +1770,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def get_device_parameters_without_preload_content(
+    def device_information_get_device_parameters_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -1814,7 +1814,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_parameters_serialize(
+        _param = self._device_information_get_device_parameters_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1832,7 +1832,7 @@ class DeviceInformationApi:
         return response_data.response
 
 
-    def _get_device_parameters_serialize(
+    def _device_information_get_device_parameters_serialize(
         self,
         device_id,
         _request_auth,
@@ -1897,7 +1897,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def get_device_status(
+    def device_information_get_device_status(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -1941,7 +1941,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_status_serialize(
+        _param = self._device_information_get_device_status_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1964,7 +1964,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def get_device_status_with_http_info(
+    def device_information_get_device_status_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -2008,7 +2008,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_status_serialize(
+        _param = self._device_information_get_device_status_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2031,7 +2031,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def get_device_status_without_preload_content(
+    def device_information_get_device_status_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -2075,7 +2075,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_status_serialize(
+        _param = self._device_information_get_device_status_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2093,7 +2093,7 @@ class DeviceInformationApi:
         return response_data.response
 
 
-    def _get_device_status_serialize(
+    def _device_information_get_device_status_serialize(
         self,
         device_id,
         _request_auth,
@@ -2158,7 +2158,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def list_devices(
+    def device_information_list_devices(
         self,
         limit: Annotated[StrictStr, Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")],
         asset_tag: Optional[StrictStr] = None,
@@ -2262,7 +2262,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_devices_serialize(
+        _param = self._device_information_list_devices_serialize(
             limit=limit,
             asset_tag=asset_tag,
             blueprint_id=blueprint_id,
@@ -2305,7 +2305,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def list_devices_with_http_info(
+    def device_information_list_devices_with_http_info(
         self,
         limit: Annotated[StrictStr, Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")],
         asset_tag: Optional[StrictStr] = None,
@@ -2409,7 +2409,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_devices_serialize(
+        _param = self._device_information_list_devices_serialize(
             limit=limit,
             asset_tag=asset_tag,
             blueprint_id=blueprint_id,
@@ -2452,7 +2452,7 @@ class DeviceInformationApi:
 
 
     @validate_call
-    def list_devices_without_preload_content(
+    def device_information_list_devices_without_preload_content(
         self,
         limit: Annotated[StrictStr, Field(description="A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.")],
         asset_tag: Optional[StrictStr] = None,
@@ -2556,7 +2556,7 @@ class DeviceInformationApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_devices_serialize(
+        _param = self._device_information_list_devices_serialize(
             limit=limit,
             asset_tag=asset_tag,
             blueprint_id=blueprint_id,
@@ -2594,7 +2594,7 @@ class DeviceInformationApi:
         return response_data.response
 
 
-    def _list_devices_serialize(
+    def _device_information_list_devices_serialize(
         self,
         limit,
         asset_tag,

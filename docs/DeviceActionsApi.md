@@ -4,25 +4,25 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**clear_passcode**](DeviceActionsApi.md#clear_passcode) | **POST** /api/v1/devices/{device_id}/action/clearpasscode | Clear Passcode
-[**delete_device**](DeviceActionsApi.md#delete_device) | **DELETE** /api/v1/devices/{device_id} | Delete Device
-[**delete_user**](DeviceActionsApi.md#delete_user) | **POST** /api/v1/devices/{device_id}/action/deleteuser | Delete User
-[**erase_device**](DeviceActionsApi.md#erase_device) | **POST** /api/v1/devices/{device_id}/action/erase | Erase Device
-[**get_device_commands**](DeviceActionsApi.md#get_device_commands) | **GET** /api/v1/devices/{device_id}/commands | Get Device Commands
-[**lock_device**](DeviceActionsApi.md#lock_device) | **POST** /api/v1/devices/{device_id}/action/lock | Lock Device
-[**reinstall_agent**](DeviceActionsApi.md#reinstall_agent) | **POST** /api/v1/devices/{device_id}/action/reinstallagent | Reinstall Agent
-[**remote_desktop**](DeviceActionsApi.md#remote_desktop) | **POST** /api/v1/devices/{device_id}/action/remotedesktop | Remote Desktop
-[**renew_mdm_profile**](DeviceActionsApi.md#renew_mdm_profile) | **POST** /api/v1/devices/{device_id}/action/renewmdmprofile | Renew MDM Profile
-[**restart_device**](DeviceActionsApi.md#restart_device) | **POST** /api/v1/devices/{device_id}/action/restart | Restart Device
-[**send_blankpush**](DeviceActionsApi.md#send_blankpush) | **POST** /api/v1/devices/{device_id}/action/blankpush | Send Blankpush
-[**set_name**](DeviceActionsApi.md#set_name) | **POST** /api/v1/devices/{device_id}/action/setname | Set Name
-[**shutdown**](DeviceActionsApi.md#shutdown) | **POST** /api/v1/devices/{device_id}/action/shutdown | Shutdown
-[**unlock_account**](DeviceActionsApi.md#unlock_account) | **POST** /api/v1/devices/{device_id}/action/unlockaccount | Unlock Account
-[**update_inventory**](DeviceActionsApi.md#update_inventory) | **POST** /api/v1/devices/{device_id}/action/updateinventory | Update Inventory
+[**device_actions_clear_passcode**](DeviceActionsApi.md#device_actions_clear_passcode) | **POST** /api/v1/devices/{device_id}/action/clearpasscode | Clear Passcode
+[**device_actions_delete_device**](DeviceActionsApi.md#device_actions_delete_device) | **DELETE** /api/v1/devices/{device_id} | Delete Device
+[**device_actions_delete_user**](DeviceActionsApi.md#device_actions_delete_user) | **POST** /api/v1/devices/{device_id}/action/deleteuser | Delete User
+[**device_actions_erase_device**](DeviceActionsApi.md#device_actions_erase_device) | **POST** /api/v1/devices/{device_id}/action/erase | Erase Device
+[**device_actions_get_device_commands**](DeviceActionsApi.md#device_actions_get_device_commands) | **GET** /api/v1/devices/{device_id}/commands | Get Device Commands
+[**device_actions_lock_device**](DeviceActionsApi.md#device_actions_lock_device) | **POST** /api/v1/devices/{device_id}/action/lock | Lock Device
+[**device_actions_reinstall_agent**](DeviceActionsApi.md#device_actions_reinstall_agent) | **POST** /api/v1/devices/{device_id}/action/reinstallagent | Reinstall Agent
+[**device_actions_remote_desktop**](DeviceActionsApi.md#device_actions_remote_desktop) | **POST** /api/v1/devices/{device_id}/action/remotedesktop | Remote Desktop
+[**device_actions_renew_mdm_profile**](DeviceActionsApi.md#device_actions_renew_mdm_profile) | **POST** /api/v1/devices/{device_id}/action/renewmdmprofile | Renew MDM Profile
+[**device_actions_restart_device**](DeviceActionsApi.md#device_actions_restart_device) | **POST** /api/v1/devices/{device_id}/action/restart | Restart Device
+[**device_actions_send_blankpush**](DeviceActionsApi.md#device_actions_send_blankpush) | **POST** /api/v1/devices/{device_id}/action/blankpush | Send Blankpush
+[**device_actions_set_name**](DeviceActionsApi.md#device_actions_set_name) | **POST** /api/v1/devices/{device_id}/action/setname | Set Name
+[**device_actions_shutdown**](DeviceActionsApi.md#device_actions_shutdown) | **POST** /api/v1/devices/{device_id}/action/shutdown | Shutdown
+[**device_actions_unlock_account**](DeviceActionsApi.md#device_actions_unlock_account) | **POST** /api/v1/devices/{device_id}/action/unlockaccount | Unlock Account
+[**device_actions_update_inventory**](DeviceActionsApi.md#device_actions_update_inventory) | **POST** /api/v1/devices/{device_id}/action/updateinventory | Update Inventory
 
 
-# **clear_passcode**
-> clear_passcode(device_id)
+# **device_actions_clear_passcode**
+> device_actions_clear_passcode(device_id)
 
 Clear Passcode
 
@@ -61,9 +61,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Clear Passcode
-        api_instance.clear_passcode(device_id)
+        api_instance.device_actions_clear_passcode(device_id)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->clear_passcode: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->device_actions_clear_passcode: %s\n" % e)
 ```
 
 
@@ -96,8 +96,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_device**
-> delete_device(device_id)
+# **device_actions_delete_device**
+> device_actions_delete_device(device_id)
 
 Delete Device
 
@@ -136,9 +136,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Delete Device
-        api_instance.delete_device(device_id)
+        api_instance.device_actions_delete_device(device_id)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->delete_device: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->device_actions_delete_device: %s\n" % e)
 ```
 
 
@@ -171,8 +171,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_user**
-> delete_user(device_id, body=body)
+# **device_actions_delete_user**
+> device_actions_delete_user(device_id, body=body)
 
 Delete User
 
@@ -212,9 +212,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Delete User
-        api_instance.delete_user(device_id, body=body)
+        api_instance.device_actions_delete_user(device_id, body=body)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->delete_user: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->device_actions_delete_user: %s\n" % e)
 ```
 
 
@@ -248,8 +248,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **erase_device**
-> erase_device(device_id, body=body)
+# **device_actions_erase_device**
+> device_actions_erase_device(device_id, body=body)
 
 Erase Device
 
@@ -289,9 +289,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Erase Device
-        api_instance.erase_device(device_id, body=body)
+        api_instance.device_actions_erase_device(device_id, body=body)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->erase_device: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->device_actions_erase_device: %s\n" % e)
 ```
 
 
@@ -326,8 +326,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_device_commands**
-> get_device_commands(device_id, limit, offset=offset)
+# **device_actions_get_device_commands**
+> device_actions_get_device_commands(device_id, limit, offset=offset)
 
 Get Device Commands
 
@@ -368,9 +368,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get Device Commands
-        api_instance.get_device_commands(device_id, limit, offset=offset)
+        api_instance.device_actions_get_device_commands(device_id, limit, offset=offset)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->get_device_commands: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->device_actions_get_device_commands: %s\n" % e)
 ```
 
 
@@ -405,8 +405,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **lock_device**
-> object lock_device(device_id, body=body)
+# **device_actions_lock_device**
+> object device_actions_lock_device(device_id, body=body)
 
 Lock Device
 
@@ -446,11 +446,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Lock Device
-        api_response = api_instance.lock_device(device_id, body=body)
-        print("The response of DeviceActionsApi->lock_device:\n")
+        api_response = api_instance.device_actions_lock_device(device_id, body=body)
+        print("The response of DeviceActionsApi->device_actions_lock_device:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->lock_device: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->device_actions_lock_device: %s\n" % e)
 ```
 
 
@@ -485,8 +485,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **reinstall_agent**
-> reinstall_agent(device_id)
+# **device_actions_reinstall_agent**
+> device_actions_reinstall_agent(device_id)
 
 Reinstall Agent
 
@@ -525,9 +525,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Reinstall Agent
-        api_instance.reinstall_agent(device_id)
+        api_instance.device_actions_reinstall_agent(device_id)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->reinstall_agent: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->device_actions_reinstall_agent: %s\n" % e)
 ```
 
 
@@ -560,8 +560,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **remote_desktop**
-> remote_desktop(device_id, body=body)
+# **device_actions_remote_desktop**
+> device_actions_remote_desktop(device_id, body=body)
 
 Remote Desktop
 
@@ -601,9 +601,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Remote Desktop
-        api_instance.remote_desktop(device_id, body=body)
+        api_instance.device_actions_remote_desktop(device_id, body=body)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->remote_desktop: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->device_actions_remote_desktop: %s\n" % e)
 ```
 
 
@@ -637,8 +637,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **renew_mdm_profile**
-> renew_mdm_profile(device_id)
+# **device_actions_renew_mdm_profile**
+> device_actions_renew_mdm_profile(device_id)
 
 Renew MDM Profile
 
@@ -677,9 +677,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Renew MDM Profile
-        api_instance.renew_mdm_profile(device_id)
+        api_instance.device_actions_renew_mdm_profile(device_id)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->renew_mdm_profile: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->device_actions_renew_mdm_profile: %s\n" % e)
 ```
 
 
@@ -712,8 +712,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **restart_device**
-> restart_device(device_id, body=body)
+# **device_actions_restart_device**
+> device_actions_restart_device(device_id, body=body)
 
 Restart Device
 
@@ -753,9 +753,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Restart Device
-        api_instance.restart_device(device_id, body=body)
+        api_instance.device_actions_restart_device(device_id, body=body)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->restart_device: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->device_actions_restart_device: %s\n" % e)
 ```
 
 
@@ -789,8 +789,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **send_blankpush**
-> send_blankpush(device_id)
+# **device_actions_send_blankpush**
+> device_actions_send_blankpush(device_id)
 
 Send Blankpush
 
@@ -829,9 +829,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Send Blankpush
-        api_instance.send_blankpush(device_id)
+        api_instance.device_actions_send_blankpush(device_id)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->send_blankpush: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->device_actions_send_blankpush: %s\n" % e)
 ```
 
 
@@ -864,8 +864,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **set_name**
-> set_name(device_id, body=body)
+# **device_actions_set_name**
+> device_actions_set_name(device_id, body=body)
 
 Set Name
 
@@ -905,9 +905,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Set Name
-        api_instance.set_name(device_id, body=body)
+        api_instance.device_actions_set_name(device_id, body=body)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->set_name: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->device_actions_set_name: %s\n" % e)
 ```
 
 
@@ -941,8 +941,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **shutdown**
-> shutdown(device_id)
+# **device_actions_shutdown**
+> device_actions_shutdown(device_id)
 
 Shutdown
 
@@ -981,9 +981,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Shutdown
-        api_instance.shutdown(device_id)
+        api_instance.device_actions_shutdown(device_id)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->shutdown: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->device_actions_shutdown: %s\n" % e)
 ```
 
 
@@ -1016,8 +1016,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **unlock_account**
-> unlock_account(device_id, body=body)
+# **device_actions_unlock_account**
+> device_actions_unlock_account(device_id, body=body)
 
 Unlock Account
 
@@ -1057,9 +1057,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Unlock Account
-        api_instance.unlock_account(device_id, body=body)
+        api_instance.device_actions_unlock_account(device_id, body=body)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->unlock_account: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->device_actions_unlock_account: %s\n" % e)
 ```
 
 
@@ -1093,8 +1093,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_inventory**
-> update_inventory(device_id)
+# **device_actions_update_inventory**
+> device_actions_update_inventory(device_id)
 
 Update Inventory
 
@@ -1133,9 +1133,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Update Inventory
-        api_instance.update_inventory(device_id)
+        api_instance.device_actions_update_inventory(device_id)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->update_inventory: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->device_actions_update_inventory: %s\n" % e)
 ```
 
 

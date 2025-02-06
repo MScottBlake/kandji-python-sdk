@@ -4,16 +4,16 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_custom_app**](CustomAppsApi.md#create_custom_app) | **POST** /api/v1/library/custom-apps | Create Custom App
-[**delete_custom_app**](CustomAppsApi.md#delete_custom_app) | **DELETE** /api/v1/library/custom-apps/{library_item_id} | Delete Custom App
-[**get_custom_app**](CustomAppsApi.md#get_custom_app) | **GET** /api/v1/library/custom-apps/{library_item_id} | Get Custom App
-[**list_custom_apps**](CustomAppsApi.md#list_custom_apps) | **GET** /api/v1/library/custom-apps | List Custom Apps
-[**update_custom_app**](CustomAppsApi.md#update_custom_app) | **PATCH** /api/v1/library/custom-apps/{library_item_id} | Update Custom App
-[**upload_custom_app**](CustomAppsApi.md#upload_custom_app) | **POST** /api/v1/library/custom-apps/upload | Upload Custom App
+[**custom_apps_create_custom_app**](CustomAppsApi.md#custom_apps_create_custom_app) | **POST** /api/v1/library/custom-apps | Create Custom App
+[**custom_apps_delete_custom_app**](CustomAppsApi.md#custom_apps_delete_custom_app) | **DELETE** /api/v1/library/custom-apps/{library_item_id} | Delete Custom App
+[**custom_apps_get_custom_app**](CustomAppsApi.md#custom_apps_get_custom_app) | **GET** /api/v1/library/custom-apps/{library_item_id} | Get Custom App
+[**custom_apps_list_custom_apps**](CustomAppsApi.md#custom_apps_list_custom_apps) | **GET** /api/v1/library/custom-apps | List Custom Apps
+[**custom_apps_update_custom_app**](CustomAppsApi.md#custom_apps_update_custom_app) | **PATCH** /api/v1/library/custom-apps/{library_item_id} | Update Custom App
+[**custom_apps_upload_custom_app**](CustomAppsApi.md#custom_apps_upload_custom_app) | **POST** /api/v1/library/custom-apps/upload | Upload Custom App
 
 
-# **create_custom_app**
-> object create_custom_app(name, file_key, install_type, install_enforcement, show_in_self_service, self_service_category_id, self_service_recommended)
+# **custom_apps_create_custom_app**
+> object custom_apps_create_custom_app(name, file_key, install_type, install_enforcement, show_in_self_service, self_service_category_id, self_service_recommended)
 
 Create Custom App
 
@@ -58,11 +58,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Create Custom App
-        api_response = api_instance.create_custom_app(name, file_key, install_type, install_enforcement, show_in_self_service, self_service_category_id, self_service_recommended)
-        print("The response of CustomAppsApi->create_custom_app:\n")
+        api_response = api_instance.custom_apps_create_custom_app(name, file_key, install_type, install_enforcement, show_in_self_service, self_service_category_id, self_service_recommended)
+        print("The response of CustomAppsApi->custom_apps_create_custom_app:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomAppsApi->create_custom_app: %s\n" % e)
+        print("Exception when calling CustomAppsApi->custom_apps_create_custom_app: %s\n" % e)
 ```
 
 
@@ -101,8 +101,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_custom_app**
-> delete_custom_app(library_item_id)
+# **custom_apps_delete_custom_app**
+> custom_apps_delete_custom_app(library_item_id)
 
 Delete Custom App
 
@@ -141,9 +141,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Delete Custom App
-        api_instance.delete_custom_app(library_item_id)
+        api_instance.custom_apps_delete_custom_app(library_item_id)
     except Exception as e:
-        print("Exception when calling CustomAppsApi->delete_custom_app: %s\n" % e)
+        print("Exception when calling CustomAppsApi->custom_apps_delete_custom_app: %s\n" % e)
 ```
 
 
@@ -177,8 +177,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_custom_app**
-> object get_custom_app(library_item_id)
+# **custom_apps_get_custom_app**
+> object custom_apps_get_custom_app(library_item_id)
 
 Get Custom App
 
@@ -217,11 +217,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get Custom App
-        api_response = api_instance.get_custom_app(library_item_id)
-        print("The response of CustomAppsApi->get_custom_app:\n")
+        api_response = api_instance.custom_apps_get_custom_app(library_item_id)
+        print("The response of CustomAppsApi->custom_apps_get_custom_app:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomAppsApi->get_custom_app: %s\n" % e)
+        print("Exception when calling CustomAppsApi->custom_apps_get_custom_app: %s\n" % e)
 ```
 
 
@@ -254,8 +254,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_custom_apps**
-> object list_custom_apps(page=page)
+# **custom_apps_list_custom_apps**
+> object custom_apps_list_custom_apps(page=page)
 
 List Custom Apps
 
@@ -294,11 +294,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # List Custom Apps
-        api_response = api_instance.list_custom_apps(page=page)
-        print("The response of CustomAppsApi->list_custom_apps:\n")
+        api_response = api_instance.custom_apps_list_custom_apps(page=page)
+        print("The response of CustomAppsApi->custom_apps_list_custom_apps:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomAppsApi->list_custom_apps: %s\n" % e)
+        print("Exception when calling CustomAppsApi->custom_apps_list_custom_apps: %s\n" % e)
 ```
 
 
@@ -331,8 +331,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_custom_app**
-> object update_custom_app(library_item_id, name, active)
+# **custom_apps_update_custom_app**
+> object custom_apps_update_custom_app(library_item_id, name, active)
 
 Update Custom App
 
@@ -373,11 +373,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Update Custom App
-        api_response = api_instance.update_custom_app(library_item_id, name, active)
-        print("The response of CustomAppsApi->update_custom_app:\n")
+        api_response = api_instance.custom_apps_update_custom_app(library_item_id, name, active)
+        print("The response of CustomAppsApi->custom_apps_update_custom_app:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomAppsApi->update_custom_app: %s\n" % e)
+        print("Exception when calling CustomAppsApi->custom_apps_update_custom_app: %s\n" % e)
 ```
 
 
@@ -412,8 +412,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **upload_custom_app**
-> upload_custom_app(body=body)
+# **custom_apps_upload_custom_app**
+> custom_apps_upload_custom_app(body=body)
 
 Upload Custom App
 
@@ -452,9 +452,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Upload Custom App
-        api_instance.upload_custom_app(body=body)
+        api_instance.custom_apps_upload_custom_app(body=body)
     except Exception as e:
-        print("Exception when calling CustomAppsApi->upload_custom_app: %s\n" % e)
+        print("Exception when calling CustomAppsApi->custom_apps_upload_custom_app: %s\n" % e)
 ```
 
 

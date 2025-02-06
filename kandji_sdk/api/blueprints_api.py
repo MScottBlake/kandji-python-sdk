@@ -40,7 +40,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def assign_library_item(
+    def blueprints_assign_library_item(
         self,
         blueprint_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -87,7 +87,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._assign_library_item_serialize(
+        _param = self._blueprints_assign_library_item_serialize(
             blueprint_id=blueprint_id,
             body=body,
             _request_auth=_request_auth,
@@ -111,7 +111,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def assign_library_item_with_http_info(
+    def blueprints_assign_library_item_with_http_info(
         self,
         blueprint_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -158,7 +158,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._assign_library_item_serialize(
+        _param = self._blueprints_assign_library_item_serialize(
             blueprint_id=blueprint_id,
             body=body,
             _request_auth=_request_auth,
@@ -182,7 +182,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def assign_library_item_without_preload_content(
+    def blueprints_assign_library_item_without_preload_content(
         self,
         blueprint_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -229,7 +229,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._assign_library_item_serialize(
+        _param = self._blueprints_assign_library_item_serialize(
             blueprint_id=blueprint_id,
             body=body,
             _request_auth=_request_auth,
@@ -248,7 +248,7 @@ class BlueprintsApi:
         return response_data.response
 
 
-    def _assign_library_item_serialize(
+    def _blueprints_assign_library_item_serialize(
         self,
         blueprint_id,
         body,
@@ -329,7 +329,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def create_blueprint(
+    def blueprints_create_blueprint(
         self,
         name: Annotated[StrictStr, Field(description="(required) Set the name of the Blueprint. The name provided must be unique.")],
         enrollment_code_is_active: Annotated[StrictStr, Field(description="(required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal")],
@@ -388,7 +388,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_blueprint_serialize(
+        _param = self._blueprints_create_blueprint_serialize(
             name=name,
             enrollment_code_is_active=enrollment_code_is_active,
             enrollment_code_code=enrollment_code_code,
@@ -417,7 +417,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def create_blueprint_with_http_info(
+    def blueprints_create_blueprint_with_http_info(
         self,
         name: Annotated[StrictStr, Field(description="(required) Set the name of the Blueprint. The name provided must be unique.")],
         enrollment_code_is_active: Annotated[StrictStr, Field(description="(required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal")],
@@ -476,7 +476,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_blueprint_serialize(
+        _param = self._blueprints_create_blueprint_serialize(
             name=name,
             enrollment_code_is_active=enrollment_code_is_active,
             enrollment_code_code=enrollment_code_code,
@@ -505,7 +505,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def create_blueprint_without_preload_content(
+    def blueprints_create_blueprint_without_preload_content(
         self,
         name: Annotated[StrictStr, Field(description="(required) Set the name of the Blueprint. The name provided must be unique.")],
         enrollment_code_is_active: Annotated[StrictStr, Field(description="(required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal")],
@@ -564,7 +564,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_blueprint_serialize(
+        _param = self._blueprints_create_blueprint_serialize(
             name=name,
             enrollment_code_is_active=enrollment_code_is_active,
             enrollment_code_code=enrollment_code_code,
@@ -588,7 +588,7 @@ class BlueprintsApi:
         return response_data.response
 
 
-    def _create_blueprint_serialize(
+    def _blueprints_create_blueprint_serialize(
         self,
         name,
         enrollment_code_is_active,
@@ -681,7 +681,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def delete_blueprint(
+    def blueprints_delete_blueprint(
         self,
         blueprint_id: StrictStr,
         _request_timeout: Union[
@@ -725,7 +725,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_blueprint_serialize(
+        _param = self._blueprints_delete_blueprint_serialize(
             blueprint_id=blueprint_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -748,7 +748,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def delete_blueprint_with_http_info(
+    def blueprints_delete_blueprint_with_http_info(
         self,
         blueprint_id: StrictStr,
         _request_timeout: Union[
@@ -792,7 +792,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_blueprint_serialize(
+        _param = self._blueprints_delete_blueprint_serialize(
             blueprint_id=blueprint_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -815,7 +815,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def delete_blueprint_without_preload_content(
+    def blueprints_delete_blueprint_without_preload_content(
         self,
         blueprint_id: StrictStr,
         _request_timeout: Union[
@@ -859,7 +859,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_blueprint_serialize(
+        _param = self._blueprints_delete_blueprint_serialize(
             blueprint_id=blueprint_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -877,7 +877,7 @@ class BlueprintsApi:
         return response_data.response
 
 
-    def _delete_blueprint_serialize(
+    def _blueprints_delete_blueprint_serialize(
         self,
         blueprint_id,
         _request_auth,
@@ -935,7 +935,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def get_blueprint(
+    def blueprints_get_blueprint(
         self,
         blueprint_id: StrictStr,
         _request_timeout: Union[
@@ -979,7 +979,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_blueprint_serialize(
+        _param = self._blueprints_get_blueprint_serialize(
             blueprint_id=blueprint_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1002,7 +1002,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def get_blueprint_with_http_info(
+    def blueprints_get_blueprint_with_http_info(
         self,
         blueprint_id: StrictStr,
         _request_timeout: Union[
@@ -1046,7 +1046,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_blueprint_serialize(
+        _param = self._blueprints_get_blueprint_serialize(
             blueprint_id=blueprint_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1069,7 +1069,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def get_blueprint_without_preload_content(
+    def blueprints_get_blueprint_without_preload_content(
         self,
         blueprint_id: StrictStr,
         _request_timeout: Union[
@@ -1113,7 +1113,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_blueprint_serialize(
+        _param = self._blueprints_get_blueprint_serialize(
             blueprint_id=blueprint_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1131,7 +1131,7 @@ class BlueprintsApi:
         return response_data.response
 
 
-    def _get_blueprint_serialize(
+    def _blueprints_get_blueprint_serialize(
         self,
         blueprint_id,
         _request_auth,
@@ -1189,7 +1189,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def get_blueprint_templates(
+    def blueprints_get_blueprint_templates(
         self,
         limit: Annotated[Optional[StrictStr], Field(description="Number of results to return per page.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="The initial index from which to return the results.")] = None,
@@ -1235,7 +1235,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_blueprint_templates_serialize(
+        _param = self._blueprints_get_blueprint_templates_serialize(
             limit=limit,
             offset=offset,
             _request_auth=_request_auth,
@@ -1259,7 +1259,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def get_blueprint_templates_with_http_info(
+    def blueprints_get_blueprint_templates_with_http_info(
         self,
         limit: Annotated[Optional[StrictStr], Field(description="Number of results to return per page.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="The initial index from which to return the results.")] = None,
@@ -1305,7 +1305,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_blueprint_templates_serialize(
+        _param = self._blueprints_get_blueprint_templates_serialize(
             limit=limit,
             offset=offset,
             _request_auth=_request_auth,
@@ -1329,7 +1329,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def get_blueprint_templates_without_preload_content(
+    def blueprints_get_blueprint_templates_without_preload_content(
         self,
         limit: Annotated[Optional[StrictStr], Field(description="Number of results to return per page.")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="The initial index from which to return the results.")] = None,
@@ -1375,7 +1375,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_blueprint_templates_serialize(
+        _param = self._blueprints_get_blueprint_templates_serialize(
             limit=limit,
             offset=offset,
             _request_auth=_request_auth,
@@ -1394,7 +1394,7 @@ class BlueprintsApi:
         return response_data.response
 
 
-    def _get_blueprint_templates_serialize(
+    def _blueprints_get_blueprint_templates_serialize(
         self,
         limit,
         offset,
@@ -1459,7 +1459,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def get_manual_enrollment_profile(
+    def blueprints_get_manual_enrollment_profile(
         self,
         blueprint_id: StrictStr,
         sso: Annotated[Optional[StrictStr], Field(description="Use the <code>sso</code> query parameter, set to <code>true</code>, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which &quot;Require Authentication&quot; is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile.")] = None,
@@ -1506,7 +1506,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_manual_enrollment_profile_serialize(
+        _param = self._blueprints_get_manual_enrollment_profile_serialize(
             blueprint_id=blueprint_id,
             sso=sso,
             _request_auth=_request_auth,
@@ -1530,7 +1530,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def get_manual_enrollment_profile_with_http_info(
+    def blueprints_get_manual_enrollment_profile_with_http_info(
         self,
         blueprint_id: StrictStr,
         sso: Annotated[Optional[StrictStr], Field(description="Use the <code>sso</code> query parameter, set to <code>true</code>, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which &quot;Require Authentication&quot; is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile.")] = None,
@@ -1577,7 +1577,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_manual_enrollment_profile_serialize(
+        _param = self._blueprints_get_manual_enrollment_profile_serialize(
             blueprint_id=blueprint_id,
             sso=sso,
             _request_auth=_request_auth,
@@ -1601,7 +1601,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def get_manual_enrollment_profile_without_preload_content(
+    def blueprints_get_manual_enrollment_profile_without_preload_content(
         self,
         blueprint_id: StrictStr,
         sso: Annotated[Optional[StrictStr], Field(description="Use the <code>sso</code> query parameter, set to <code>true</code>, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which &quot;Require Authentication&quot; is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile.")] = None,
@@ -1648,7 +1648,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_manual_enrollment_profile_serialize(
+        _param = self._blueprints_get_manual_enrollment_profile_serialize(
             blueprint_id=blueprint_id,
             sso=sso,
             _request_auth=_request_auth,
@@ -1667,7 +1667,7 @@ class BlueprintsApi:
         return response_data.response
 
 
-    def _get_manual_enrollment_profile_serialize(
+    def _blueprints_get_manual_enrollment_profile_serialize(
         self,
         blueprint_id,
         sso,
@@ -1737,7 +1737,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def list_blueprints(
+    def blueprints_list_blueprints(
         self,
         id: Annotated[Optional[StrictStr], Field(description="Look up a specific Blueprint by its ID")] = None,
         id__in: Annotated[Optional[StrictStr], Field(description="Specify a list of Blueprint IDs to limit the results to.  Multiple values may be separated by commas. There is a double underscore (<code>__</code>) between id and in")] = None,
@@ -1793,7 +1793,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_blueprints_serialize(
+        _param = self._blueprints_list_blueprints_serialize(
             id=id,
             id__in=id__in,
             name=name,
@@ -1820,7 +1820,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def list_blueprints_with_http_info(
+    def blueprints_list_blueprints_with_http_info(
         self,
         id: Annotated[Optional[StrictStr], Field(description="Look up a specific Blueprint by its ID")] = None,
         id__in: Annotated[Optional[StrictStr], Field(description="Specify a list of Blueprint IDs to limit the results to.  Multiple values may be separated by commas. There is a double underscore (<code>__</code>) between id and in")] = None,
@@ -1876,7 +1876,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_blueprints_serialize(
+        _param = self._blueprints_list_blueprints_serialize(
             id=id,
             id__in=id__in,
             name=name,
@@ -1903,7 +1903,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def list_blueprints_without_preload_content(
+    def blueprints_list_blueprints_without_preload_content(
         self,
         id: Annotated[Optional[StrictStr], Field(description="Look up a specific Blueprint by its ID")] = None,
         id__in: Annotated[Optional[StrictStr], Field(description="Specify a list of Blueprint IDs to limit the results to.  Multiple values may be separated by commas. There is a double underscore (<code>__</code>) between id and in")] = None,
@@ -1959,7 +1959,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_blueprints_serialize(
+        _param = self._blueprints_list_blueprints_serialize(
             id=id,
             id__in=id__in,
             name=name,
@@ -1981,7 +1981,7 @@ class BlueprintsApi:
         return response_data.response
 
 
-    def _list_blueprints_serialize(
+    def _blueprints_list_blueprints_serialize(
         self,
         id,
         id__in,
@@ -2068,7 +2068,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def list_library_items(
+    def blueprints_list_library_items(
         self,
         blueprint_id: StrictStr,
         _request_timeout: Union[
@@ -2112,7 +2112,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_library_items_serialize(
+        _param = self._blueprints_list_library_items_serialize(
             blueprint_id=blueprint_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2135,7 +2135,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def list_library_items_with_http_info(
+    def blueprints_list_library_items_with_http_info(
         self,
         blueprint_id: StrictStr,
         _request_timeout: Union[
@@ -2179,7 +2179,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_library_items_serialize(
+        _param = self._blueprints_list_library_items_serialize(
             blueprint_id=blueprint_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2202,7 +2202,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def list_library_items_without_preload_content(
+    def blueprints_list_library_items_without_preload_content(
         self,
         blueprint_id: StrictStr,
         _request_timeout: Union[
@@ -2246,7 +2246,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_library_items_serialize(
+        _param = self._blueprints_list_library_items_serialize(
             blueprint_id=blueprint_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2264,7 +2264,7 @@ class BlueprintsApi:
         return response_data.response
 
 
-    def _list_library_items_serialize(
+    def _blueprints_list_library_items_serialize(
         self,
         blueprint_id,
         _request_auth,
@@ -2329,7 +2329,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def remove_library_item(
+    def blueprints_remove_library_item(
         self,
         blueprint_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -2376,7 +2376,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._remove_library_item_serialize(
+        _param = self._blueprints_remove_library_item_serialize(
             blueprint_id=blueprint_id,
             body=body,
             _request_auth=_request_auth,
@@ -2400,7 +2400,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def remove_library_item_with_http_info(
+    def blueprints_remove_library_item_with_http_info(
         self,
         blueprint_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -2447,7 +2447,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._remove_library_item_serialize(
+        _param = self._blueprints_remove_library_item_serialize(
             blueprint_id=blueprint_id,
             body=body,
             _request_auth=_request_auth,
@@ -2471,7 +2471,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def remove_library_item_without_preload_content(
+    def blueprints_remove_library_item_without_preload_content(
         self,
         blueprint_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -2518,7 +2518,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._remove_library_item_serialize(
+        _param = self._blueprints_remove_library_item_serialize(
             blueprint_id=blueprint_id,
             body=body,
             _request_auth=_request_auth,
@@ -2537,7 +2537,7 @@ class BlueprintsApi:
         return response_data.response
 
 
-    def _remove_library_item_serialize(
+    def _blueprints_remove_library_item_serialize(
         self,
         blueprint_id,
         body,
@@ -2618,7 +2618,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def update_blueprint(
+    def blueprints_update_blueprint(
         self,
         blueprint_id: StrictStr,
         name: Annotated[StrictStr, Field(description="Update the name of the Blueprint")],
@@ -2674,7 +2674,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_blueprint_serialize(
+        _param = self._blueprints_update_blueprint_serialize(
             blueprint_id=blueprint_id,
             name=name,
             description=description,
@@ -2701,7 +2701,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def update_blueprint_with_http_info(
+    def blueprints_update_blueprint_with_http_info(
         self,
         blueprint_id: StrictStr,
         name: Annotated[StrictStr, Field(description="Update the name of the Blueprint")],
@@ -2757,7 +2757,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_blueprint_serialize(
+        _param = self._blueprints_update_blueprint_serialize(
             blueprint_id=blueprint_id,
             name=name,
             description=description,
@@ -2784,7 +2784,7 @@ class BlueprintsApi:
 
 
     @validate_call
-    def update_blueprint_without_preload_content(
+    def blueprints_update_blueprint_without_preload_content(
         self,
         blueprint_id: StrictStr,
         name: Annotated[StrictStr, Field(description="Update the name of the Blueprint")],
@@ -2840,7 +2840,7 @@ class BlueprintsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_blueprint_serialize(
+        _param = self._blueprints_update_blueprint_serialize(
             blueprint_id=blueprint_id,
             name=name,
             description=description,
@@ -2862,7 +2862,7 @@ class BlueprintsApi:
         return response_data.response
 
 
-    def _update_blueprint_serialize(
+    def _blueprints_update_blueprint_serialize(
         self,
         blueprint_id,
         name,

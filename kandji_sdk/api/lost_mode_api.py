@@ -39,7 +39,7 @@ class LostModeApi:
 
 
     @validate_call
-    def disable_lost_mode(
+    def lost_mode_disable_lost_mode(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -83,7 +83,7 @@ class LostModeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._disable_lost_mode_serialize(
+        _param = self._lost_mode_disable_lost_mode_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -106,7 +106,7 @@ class LostModeApi:
 
 
     @validate_call
-    def disable_lost_mode_with_http_info(
+    def lost_mode_disable_lost_mode_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -150,7 +150,7 @@ class LostModeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._disable_lost_mode_serialize(
+        _param = self._lost_mode_disable_lost_mode_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -173,7 +173,7 @@ class LostModeApi:
 
 
     @validate_call
-    def disable_lost_mode_without_preload_content(
+    def lost_mode_disable_lost_mode_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -217,7 +217,7 @@ class LostModeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._disable_lost_mode_serialize(
+        _param = self._lost_mode_disable_lost_mode_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -235,7 +235,7 @@ class LostModeApi:
         return response_data.response
 
 
-    def _disable_lost_mode_serialize(
+    def _lost_mode_disable_lost_mode_serialize(
         self,
         device_id,
         _request_auth,
@@ -293,7 +293,7 @@ class LostModeApi:
 
 
     @validate_call
-    def enable_lost_mode(
+    def lost_mode_enable_lost_mode(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -340,7 +340,7 @@ class LostModeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._enable_lost_mode_serialize(
+        _param = self._lost_mode_enable_lost_mode_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -364,7 +364,7 @@ class LostModeApi:
 
 
     @validate_call
-    def enable_lost_mode_with_http_info(
+    def lost_mode_enable_lost_mode_with_http_info(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -411,7 +411,7 @@ class LostModeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._enable_lost_mode_serialize(
+        _param = self._lost_mode_enable_lost_mode_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -435,7 +435,7 @@ class LostModeApi:
 
 
     @validate_call
-    def enable_lost_mode_without_preload_content(
+    def lost_mode_enable_lost_mode_without_preload_content(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -482,7 +482,7 @@ class LostModeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._enable_lost_mode_serialize(
+        _param = self._lost_mode_enable_lost_mode_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -501,7 +501,7 @@ class LostModeApi:
         return response_data.response
 
 
-    def _enable_lost_mode_serialize(
+    def _lost_mode_enable_lost_mode_serialize(
         self,
         device_id,
         body,
@@ -575,7 +575,7 @@ class LostModeApi:
 
 
     @validate_call
-    def play_lost_mode_sound(
+    def lost_mode_play_lost_mode_sound(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -619,7 +619,7 @@ class LostModeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._play_lost_mode_sound_serialize(
+        _param = self._lost_mode_play_lost_mode_sound_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -642,7 +642,7 @@ class LostModeApi:
 
 
     @validate_call
-    def play_lost_mode_sound_with_http_info(
+    def lost_mode_play_lost_mode_sound_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -686,7 +686,7 @@ class LostModeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._play_lost_mode_sound_serialize(
+        _param = self._lost_mode_play_lost_mode_sound_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -709,7 +709,7 @@ class LostModeApi:
 
 
     @validate_call
-    def play_lost_mode_sound_without_preload_content(
+    def lost_mode_play_lost_mode_sound_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -753,7 +753,7 @@ class LostModeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._play_lost_mode_sound_serialize(
+        _param = self._lost_mode_play_lost_mode_sound_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -771,7 +771,7 @@ class LostModeApi:
         return response_data.response
 
 
-    def _play_lost_mode_sound_serialize(
+    def _lost_mode_play_lost_mode_sound_serialize(
         self,
         device_id,
         _request_auth,
@@ -829,7 +829,7 @@ class LostModeApi:
 
 
     @validate_call
-    def update_location(
+    def lost_mode_update_location(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -873,7 +873,7 @@ class LostModeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_location_serialize(
+        _param = self._lost_mode_update_location_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -896,7 +896,7 @@ class LostModeApi:
 
 
     @validate_call
-    def update_location_with_http_info(
+    def lost_mode_update_location_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -940,7 +940,7 @@ class LostModeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_location_serialize(
+        _param = self._lost_mode_update_location_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -963,7 +963,7 @@ class LostModeApi:
 
 
     @validate_call
-    def update_location_without_preload_content(
+    def lost_mode_update_location_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -1007,7 +1007,7 @@ class LostModeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_location_serialize(
+        _param = self._lost_mode_update_location_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1025,7 +1025,7 @@ class LostModeApi:
         return response_data.response
 
 
-    def _update_location_serialize(
+    def _lost_mode_update_location_serialize(
         self,
         device_id,
         _request_auth,

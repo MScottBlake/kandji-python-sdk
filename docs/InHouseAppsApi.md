@@ -4,17 +4,17 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_inhouse_app**](InHouseAppsApi.md#create_inhouse_app) | **POST** /api/v1/library/ipa-apps | Create In-House App
-[**delete_inhouse_app**](InHouseAppsApi.md#delete_inhouse_app) | **DELETE** /api/v1/library/ipa-apps/{library_item_id} | Delete In-House App
-[**get_inhouse_app**](InHouseAppsApi.md#get_inhouse_app) | **GET** /api/v1/library/ipa-apps/{library_item_id} | Get In-House App
-[**list_inhouse_apps**](InHouseAppsApi.md#list_inhouse_apps) | **GET** /api/v1/library/ipa-apps | List In-House Apps
-[**update_inhouse_app**](InHouseAppsApi.md#update_inhouse_app) | **PATCH** /api/v1/library/ipa-apps/{library_item_id} | Update In-House App
-[**upload_inhouse_app**](InHouseAppsApi.md#upload_inhouse_app) | **POST** /api/v1/library/ipa-apps/upload | Upload In-House App
-[**upload_inhouse_app_status**](InHouseAppsApi.md#upload_inhouse_app_status) | **GET** /api/v1/library/ipa-apps/upload/{pending_upload_id}/status | Upload In-House App Status
+[**inhouse_apps_create_inhouse_app**](InHouseAppsApi.md#inhouse_apps_create_inhouse_app) | **POST** /api/v1/library/ipa-apps | Create In-House App
+[**inhouse_apps_delete_inhouse_app**](InHouseAppsApi.md#inhouse_apps_delete_inhouse_app) | **DELETE** /api/v1/library/ipa-apps/{library_item_id} | Delete In-House App
+[**inhouse_apps_get_inhouse_app**](InHouseAppsApi.md#inhouse_apps_get_inhouse_app) | **GET** /api/v1/library/ipa-apps/{library_item_id} | Get In-House App
+[**inhouse_apps_list_inhouse_apps**](InHouseAppsApi.md#inhouse_apps_list_inhouse_apps) | **GET** /api/v1/library/ipa-apps | List In-House Apps
+[**inhouse_apps_update_inhouse_app**](InHouseAppsApi.md#inhouse_apps_update_inhouse_app) | **PATCH** /api/v1/library/ipa-apps/{library_item_id} | Update In-House App
+[**inhouse_apps_upload_inhouse_app**](InHouseAppsApi.md#inhouse_apps_upload_inhouse_app) | **POST** /api/v1/library/ipa-apps/upload | Upload In-House App
+[**inhouse_apps_upload_inhouse_app_status**](InHouseAppsApi.md#inhouse_apps_upload_inhouse_app_status) | **GET** /api/v1/library/ipa-apps/upload/{pending_upload_id}/status | Upload In-House App Status
 
 
-# **create_inhouse_app**
-> create_inhouse_app(content_type, body=body)
+# **inhouse_apps_create_inhouse_app**
+> inhouse_apps_create_inhouse_app(content_type, body=body)
 
 Create In-House App
 
@@ -54,9 +54,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Create In-House App
-        api_instance.create_inhouse_app(content_type, body=body)
+        api_instance.inhouse_apps_create_inhouse_app(content_type, body=body)
     except Exception as e:
-        print("Exception when calling InHouseAppsApi->create_inhouse_app: %s\n" % e)
+        print("Exception when calling InHouseAppsApi->inhouse_apps_create_inhouse_app: %s\n" % e)
 ```
 
 
@@ -90,8 +90,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_inhouse_app**
-> delete_inhouse_app(library_item_id)
+# **inhouse_apps_delete_inhouse_app**
+> inhouse_apps_delete_inhouse_app(library_item_id)
 
 Delete In-House App
 
@@ -130,9 +130,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Delete In-House App
-        api_instance.delete_inhouse_app(library_item_id)
+        api_instance.inhouse_apps_delete_inhouse_app(library_item_id)
     except Exception as e:
-        print("Exception when calling InHouseAppsApi->delete_inhouse_app: %s\n" % e)
+        print("Exception when calling InHouseAppsApi->inhouse_apps_delete_inhouse_app: %s\n" % e)
 ```
 
 
@@ -166,8 +166,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_inhouse_app**
-> object get_inhouse_app(library_item_id)
+# **inhouse_apps_get_inhouse_app**
+> object inhouse_apps_get_inhouse_app(library_item_id)
 
 Get In-House App
 
@@ -206,11 +206,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get In-House App
-        api_response = api_instance.get_inhouse_app(library_item_id)
-        print("The response of InHouseAppsApi->get_inhouse_app:\n")
+        api_response = api_instance.inhouse_apps_get_inhouse_app(library_item_id)
+        print("The response of InHouseAppsApi->inhouse_apps_get_inhouse_app:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InHouseAppsApi->get_inhouse_app: %s\n" % e)
+        print("Exception when calling InHouseAppsApi->inhouse_apps_get_inhouse_app: %s\n" % e)
 ```
 
 
@@ -243,8 +243,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_inhouse_apps**
-> object list_inhouse_apps(page=page)
+# **inhouse_apps_list_inhouse_apps**
+> object inhouse_apps_list_inhouse_apps(page=page)
 
 List In-House Apps
 
@@ -283,11 +283,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # List In-House Apps
-        api_response = api_instance.list_inhouse_apps(page=page)
-        print("The response of InHouseAppsApi->list_inhouse_apps:\n")
+        api_response = api_instance.inhouse_apps_list_inhouse_apps(page=page)
+        print("The response of InHouseAppsApi->inhouse_apps_list_inhouse_apps:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InHouseAppsApi->list_inhouse_apps: %s\n" % e)
+        print("Exception when calling InHouseAppsApi->inhouse_apps_list_inhouse_apps: %s\n" % e)
 ```
 
 
@@ -320,8 +320,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_inhouse_app**
-> update_inhouse_app(library_item_id, content_type, body=body)
+# **inhouse_apps_update_inhouse_app**
+> inhouse_apps_update_inhouse_app(library_item_id, content_type, body=body)
 
 Update In-House App
 
@@ -362,9 +362,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Update In-House App
-        api_instance.update_inhouse_app(library_item_id, content_type, body=body)
+        api_instance.inhouse_apps_update_inhouse_app(library_item_id, content_type, body=body)
     except Exception as e:
-        print("Exception when calling InHouseAppsApi->update_inhouse_app: %s\n" % e)
+        print("Exception when calling InHouseAppsApi->inhouse_apps_update_inhouse_app: %s\n" % e)
 ```
 
 
@@ -399,8 +399,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **upload_inhouse_app**
-> object upload_inhouse_app(content_type, body=body)
+# **inhouse_apps_upload_inhouse_app**
+> object inhouse_apps_upload_inhouse_app(content_type, body=body)
 
 Upload In-House App
 
@@ -440,11 +440,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Upload In-House App
-        api_response = api_instance.upload_inhouse_app(content_type, body=body)
-        print("The response of InHouseAppsApi->upload_inhouse_app:\n")
+        api_response = api_instance.inhouse_apps_upload_inhouse_app(content_type, body=body)
+        print("The response of InHouseAppsApi->inhouse_apps_upload_inhouse_app:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InHouseAppsApi->upload_inhouse_app: %s\n" % e)
+        print("Exception when calling InHouseAppsApi->inhouse_apps_upload_inhouse_app: %s\n" % e)
 ```
 
 
@@ -478,8 +478,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **upload_inhouse_app_status**
-> object upload_inhouse_app_status(pending_upload_id)
+# **inhouse_apps_upload_inhouse_app_status**
+> object inhouse_apps_upload_inhouse_app_status(pending_upload_id)
 
 Upload In-House App Status
 
@@ -518,11 +518,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Upload In-House App Status
-        api_response = api_instance.upload_inhouse_app_status(pending_upload_id)
-        print("The response of InHouseAppsApi->upload_inhouse_app_status:\n")
+        api_response = api_instance.inhouse_apps_upload_inhouse_app_status(pending_upload_id)
+        print("The response of InHouseAppsApi->inhouse_apps_upload_inhouse_app_status:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InHouseAppsApi->upload_inhouse_app_status: %s\n" % e)
+        print("Exception when calling InHouseAppsApi->inhouse_apps_upload_inhouse_app_status: %s\n" % e)
 ```
 
 

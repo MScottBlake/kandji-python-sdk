@@ -4,14 +4,14 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**disable_lost_mode**](LostModeApi.md#disable_lost_mode) | **POST** /api/v1/devices/{device_id}/action/disablelostmode | Disable Lost Mode
-[**enable_lost_mode**](LostModeApi.md#enable_lost_mode) | **POST** /api/v1/devices/{device_id}/action/enablelostmode | Enable Lost Mode
-[**play_lost_mode_sound**](LostModeApi.md#play_lost_mode_sound) | **POST** /api/v1/devices/{device_id}/action/playlostmodesound | Play Lost Mode Sound
-[**update_location**](LostModeApi.md#update_location) | **POST** /api/v1/devices/{device_id}/action/updatelocation | Update Location
+[**lost_mode_disable_lost_mode**](LostModeApi.md#lost_mode_disable_lost_mode) | **POST** /api/v1/devices/{device_id}/action/disablelostmode | Disable Lost Mode
+[**lost_mode_enable_lost_mode**](LostModeApi.md#lost_mode_enable_lost_mode) | **POST** /api/v1/devices/{device_id}/action/enablelostmode | Enable Lost Mode
+[**lost_mode_play_lost_mode_sound**](LostModeApi.md#lost_mode_play_lost_mode_sound) | **POST** /api/v1/devices/{device_id}/action/playlostmodesound | Play Lost Mode Sound
+[**lost_mode_update_location**](LostModeApi.md#lost_mode_update_location) | **POST** /api/v1/devices/{device_id}/action/updatelocation | Update Location
 
 
-# **disable_lost_mode**
-> disable_lost_mode(device_id)
+# **lost_mode_disable_lost_mode**
+> lost_mode_disable_lost_mode(device_id)
 
 Disable Lost Mode
 
@@ -50,9 +50,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Disable Lost Mode
-        api_instance.disable_lost_mode(device_id)
+        api_instance.lost_mode_disable_lost_mode(device_id)
     except Exception as e:
-        print("Exception when calling LostModeApi->disable_lost_mode: %s\n" % e)
+        print("Exception when calling LostModeApi->lost_mode_disable_lost_mode: %s\n" % e)
 ```
 
 
@@ -85,8 +85,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **enable_lost_mode**
-> enable_lost_mode(device_id, body=body)
+# **lost_mode_enable_lost_mode**
+> lost_mode_enable_lost_mode(device_id, body=body)
 
 Enable Lost Mode
 
@@ -126,9 +126,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Enable Lost Mode
-        api_instance.enable_lost_mode(device_id, body=body)
+        api_instance.lost_mode_enable_lost_mode(device_id, body=body)
     except Exception as e:
-        print("Exception when calling LostModeApi->enable_lost_mode: %s\n" % e)
+        print("Exception when calling LostModeApi->lost_mode_enable_lost_mode: %s\n" % e)
 ```
 
 
@@ -162,8 +162,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **play_lost_mode_sound**
-> play_lost_mode_sound(device_id)
+# **lost_mode_play_lost_mode_sound**
+> lost_mode_play_lost_mode_sound(device_id)
 
 Play Lost Mode Sound
 
@@ -202,9 +202,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Play Lost Mode Sound
-        api_instance.play_lost_mode_sound(device_id)
+        api_instance.lost_mode_play_lost_mode_sound(device_id)
     except Exception as e:
-        print("Exception when calling LostModeApi->play_lost_mode_sound: %s\n" % e)
+        print("Exception when calling LostModeApi->lost_mode_play_lost_mode_sound: %s\n" % e)
 ```
 
 
@@ -237,8 +237,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_location**
-> update_location(device_id)
+# **lost_mode_update_location**
+> lost_mode_update_location(device_id)
 
 Update Location
 
@@ -277,9 +277,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Update Location
-        api_instance.update_location(device_id)
+        api_instance.lost_mode_update_location(device_id)
     except Exception as e:
-        print("Exception when calling LostModeApi->update_location: %s\n" % e)
+        print("Exception when calling LostModeApi->lost_mode_update_location: %s\n" % e)
 ```
 
 

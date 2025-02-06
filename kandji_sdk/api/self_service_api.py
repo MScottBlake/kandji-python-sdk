@@ -38,7 +38,7 @@ class SelfServiceApi:
 
 
     @validate_call
-    def list_self_service_categories(
+    def self_service_list_self_service_categories(
         self,
         _request_timeout: Union[
             None,
@@ -79,7 +79,7 @@ class SelfServiceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_self_service_categories_serialize(
+        _param = self._self_service_list_self_service_categories_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -101,7 +101,7 @@ class SelfServiceApi:
 
 
     @validate_call
-    def list_self_service_categories_with_http_info(
+    def self_service_list_self_service_categories_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -142,7 +142,7 @@ class SelfServiceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_self_service_categories_serialize(
+        _param = self._self_service_list_self_service_categories_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -164,7 +164,7 @@ class SelfServiceApi:
 
 
     @validate_call
-    def list_self_service_categories_without_preload_content(
+    def self_service_list_self_service_categories_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -205,7 +205,7 @@ class SelfServiceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_self_service_categories_serialize(
+        _param = self._self_service_list_self_service_categories_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -222,7 +222,7 @@ class SelfServiceApi:
         return response_data.response
 
 
-    def _list_self_service_categories_serialize(
+    def _self_service_list_self_service_categories_serialize(
         self,
         _request_auth,
         _content_type,

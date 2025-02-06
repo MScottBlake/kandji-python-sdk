@@ -40,7 +40,7 @@ class CustomProfilesApi:
 
 
     @validate_call
-    def create_custom_profile(
+    def custom_profiles_create_custom_profile(
         self,
         name: Annotated[StrictStr, Field(description="(Required) The profile name")],
         file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="(Required) The path to the profile's .mobileconfig file")],
@@ -90,7 +90,7 @@ class CustomProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_custom_profile_serialize(
+        _param = self._custom_profiles_create_custom_profile_serialize(
             name=name,
             file=file,
             active=active,
@@ -115,7 +115,7 @@ class CustomProfilesApi:
 
 
     @validate_call
-    def create_custom_profile_with_http_info(
+    def custom_profiles_create_custom_profile_with_http_info(
         self,
         name: Annotated[StrictStr, Field(description="(Required) The profile name")],
         file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="(Required) The path to the profile's .mobileconfig file")],
@@ -165,7 +165,7 @@ class CustomProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_custom_profile_serialize(
+        _param = self._custom_profiles_create_custom_profile_serialize(
             name=name,
             file=file,
             active=active,
@@ -190,7 +190,7 @@ class CustomProfilesApi:
 
 
     @validate_call
-    def create_custom_profile_without_preload_content(
+    def custom_profiles_create_custom_profile_without_preload_content(
         self,
         name: Annotated[StrictStr, Field(description="(Required) The profile name")],
         file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="(Required) The path to the profile's .mobileconfig file")],
@@ -240,7 +240,7 @@ class CustomProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_custom_profile_serialize(
+        _param = self._custom_profiles_create_custom_profile_serialize(
             name=name,
             file=file,
             active=active,
@@ -260,7 +260,7 @@ class CustomProfilesApi:
         return response_data.response
 
 
-    def _create_custom_profile_serialize(
+    def _custom_profiles_create_custom_profile_serialize(
         self,
         name,
         file,
@@ -344,7 +344,7 @@ class CustomProfilesApi:
 
 
     @validate_call
-    def delete_custom_profile(
+    def custom_profiles_delete_custom_profile(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -388,7 +388,7 @@ class CustomProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_custom_profile_serialize(
+        _param = self._custom_profiles_delete_custom_profile_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -412,7 +412,7 @@ class CustomProfilesApi:
 
 
     @validate_call
-    def delete_custom_profile_with_http_info(
+    def custom_profiles_delete_custom_profile_with_http_info(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -456,7 +456,7 @@ class CustomProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_custom_profile_serialize(
+        _param = self._custom_profiles_delete_custom_profile_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -480,7 +480,7 @@ class CustomProfilesApi:
 
 
     @validate_call
-    def delete_custom_profile_without_preload_content(
+    def custom_profiles_delete_custom_profile_without_preload_content(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -524,7 +524,7 @@ class CustomProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_custom_profile_serialize(
+        _param = self._custom_profiles_delete_custom_profile_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -543,7 +543,7 @@ class CustomProfilesApi:
         return response_data.response
 
 
-    def _delete_custom_profile_serialize(
+    def _custom_profiles_delete_custom_profile_serialize(
         self,
         library_item_id,
         _request_auth,
@@ -608,7 +608,7 @@ class CustomProfilesApi:
 
 
     @validate_call
-    def get_custom_profile(
+    def custom_profiles_get_custom_profile(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -652,7 +652,7 @@ class CustomProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_custom_profile_serialize(
+        _param = self._custom_profiles_get_custom_profile_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -675,7 +675,7 @@ class CustomProfilesApi:
 
 
     @validate_call
-    def get_custom_profile_with_http_info(
+    def custom_profiles_get_custom_profile_with_http_info(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -719,7 +719,7 @@ class CustomProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_custom_profile_serialize(
+        _param = self._custom_profiles_get_custom_profile_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -742,7 +742,7 @@ class CustomProfilesApi:
 
 
     @validate_call
-    def get_custom_profile_without_preload_content(
+    def custom_profiles_get_custom_profile_without_preload_content(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -786,7 +786,7 @@ class CustomProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_custom_profile_serialize(
+        _param = self._custom_profiles_get_custom_profile_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -804,7 +804,7 @@ class CustomProfilesApi:
         return response_data.response
 
 
-    def _get_custom_profile_serialize(
+    def _custom_profiles_get_custom_profile_serialize(
         self,
         library_item_id,
         _request_auth,
@@ -869,7 +869,7 @@ class CustomProfilesApi:
 
 
     @validate_call
-    def list_custom_profiles(
+    def custom_profiles_list_custom_profiles(
         self,
         page: Annotated[Optional[StrictStr], Field(description="Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request.")] = None,
         _request_timeout: Union[
@@ -913,7 +913,7 @@ class CustomProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_custom_profiles_serialize(
+        _param = self._custom_profiles_list_custom_profiles_serialize(
             page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -936,7 +936,7 @@ class CustomProfilesApi:
 
 
     @validate_call
-    def list_custom_profiles_with_http_info(
+    def custom_profiles_list_custom_profiles_with_http_info(
         self,
         page: Annotated[Optional[StrictStr], Field(description="Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request.")] = None,
         _request_timeout: Union[
@@ -980,7 +980,7 @@ class CustomProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_custom_profiles_serialize(
+        _param = self._custom_profiles_list_custom_profiles_serialize(
             page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1003,7 +1003,7 @@ class CustomProfilesApi:
 
 
     @validate_call
-    def list_custom_profiles_without_preload_content(
+    def custom_profiles_list_custom_profiles_without_preload_content(
         self,
         page: Annotated[Optional[StrictStr], Field(description="Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request.")] = None,
         _request_timeout: Union[
@@ -1047,7 +1047,7 @@ class CustomProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_custom_profiles_serialize(
+        _param = self._custom_profiles_list_custom_profiles_serialize(
             page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1065,7 +1065,7 @@ class CustomProfilesApi:
         return response_data.response
 
 
-    def _list_custom_profiles_serialize(
+    def _custom_profiles_list_custom_profiles_serialize(
         self,
         page,
         _request_auth,
@@ -1132,7 +1132,7 @@ class CustomProfilesApi:
 
 
     @validate_call
-    def update_custom_profile(
+    def custom_profiles_update_custom_profile(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -1176,7 +1176,7 @@ class CustomProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_custom_profile_serialize(
+        _param = self._custom_profiles_update_custom_profile_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1199,7 +1199,7 @@ class CustomProfilesApi:
 
 
     @validate_call
-    def update_custom_profile_with_http_info(
+    def custom_profiles_update_custom_profile_with_http_info(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -1243,7 +1243,7 @@ class CustomProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_custom_profile_serialize(
+        _param = self._custom_profiles_update_custom_profile_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1266,7 +1266,7 @@ class CustomProfilesApi:
 
 
     @validate_call
-    def update_custom_profile_without_preload_content(
+    def custom_profiles_update_custom_profile_without_preload_content(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -1310,7 +1310,7 @@ class CustomProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_custom_profile_serialize(
+        _param = self._custom_profiles_update_custom_profile_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1328,7 +1328,7 @@ class CustomProfilesApi:
         return response_data.response
 
 
-    def _update_custom_profile_serialize(
+    def _custom_profiles_update_custom_profile_serialize(
         self,
         library_item_id,
         _request_auth,

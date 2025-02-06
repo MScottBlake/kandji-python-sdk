@@ -39,7 +39,7 @@ class NotesApi:
 
 
     @validate_call
-    def create_device_note(
+    def notes_create_device_note(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -86,7 +86,7 @@ class NotesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_device_note_serialize(
+        _param = self._notes_create_device_note_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -110,7 +110,7 @@ class NotesApi:
 
 
     @validate_call
-    def create_device_note_with_http_info(
+    def notes_create_device_note_with_http_info(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -157,7 +157,7 @@ class NotesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_device_note_serialize(
+        _param = self._notes_create_device_note_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -181,7 +181,7 @@ class NotesApi:
 
 
     @validate_call
-    def create_device_note_without_preload_content(
+    def notes_create_device_note_without_preload_content(
         self,
         device_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -228,7 +228,7 @@ class NotesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_device_note_serialize(
+        _param = self._notes_create_device_note_serialize(
             device_id=device_id,
             body=body,
             _request_auth=_request_auth,
@@ -247,7 +247,7 @@ class NotesApi:
         return response_data.response
 
 
-    def _create_device_note_serialize(
+    def _notes_create_device_note_serialize(
         self,
         device_id,
         body,
@@ -328,7 +328,7 @@ class NotesApi:
 
 
     @validate_call
-    def delete_device_note(
+    def notes_delete_device_note(
         self,
         device_id: StrictStr,
         note_id: StrictStr,
@@ -375,7 +375,7 @@ class NotesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_device_note_serialize(
+        _param = self._notes_delete_device_note_serialize(
             device_id=device_id,
             note_id=note_id,
             _request_auth=_request_auth,
@@ -399,7 +399,7 @@ class NotesApi:
 
 
     @validate_call
-    def delete_device_note_with_http_info(
+    def notes_delete_device_note_with_http_info(
         self,
         device_id: StrictStr,
         note_id: StrictStr,
@@ -446,7 +446,7 @@ class NotesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_device_note_serialize(
+        _param = self._notes_delete_device_note_serialize(
             device_id=device_id,
             note_id=note_id,
             _request_auth=_request_auth,
@@ -470,7 +470,7 @@ class NotesApi:
 
 
     @validate_call
-    def delete_device_note_without_preload_content(
+    def notes_delete_device_note_without_preload_content(
         self,
         device_id: StrictStr,
         note_id: StrictStr,
@@ -517,7 +517,7 @@ class NotesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_device_note_serialize(
+        _param = self._notes_delete_device_note_serialize(
             device_id=device_id,
             note_id=note_id,
             _request_auth=_request_auth,
@@ -536,7 +536,7 @@ class NotesApi:
         return response_data.response
 
 
-    def _delete_device_note_serialize(
+    def _notes_delete_device_note_serialize(
         self,
         device_id,
         note_id,
@@ -604,7 +604,7 @@ class NotesApi:
 
 
     @validate_call
-    def get_device_notes(
+    def notes_get_device_notes(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -648,7 +648,7 @@ class NotesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_notes_serialize(
+        _param = self._notes_get_device_notes_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -671,7 +671,7 @@ class NotesApi:
 
 
     @validate_call
-    def get_device_notes_with_http_info(
+    def notes_get_device_notes_with_http_info(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -715,7 +715,7 @@ class NotesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_notes_serialize(
+        _param = self._notes_get_device_notes_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -738,7 +738,7 @@ class NotesApi:
 
 
     @validate_call
-    def get_device_notes_without_preload_content(
+    def notes_get_device_notes_without_preload_content(
         self,
         device_id: StrictStr,
         _request_timeout: Union[
@@ -782,7 +782,7 @@ class NotesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_device_notes_serialize(
+        _param = self._notes_get_device_notes_serialize(
             device_id=device_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -800,7 +800,7 @@ class NotesApi:
         return response_data.response
 
 
-    def _get_device_notes_serialize(
+    def _notes_get_device_notes_serialize(
         self,
         device_id,
         _request_auth,
@@ -865,7 +865,7 @@ class NotesApi:
 
 
     @validate_call
-    def retrieve_device_note(
+    def notes_retrieve_device_note(
         self,
         device_id: StrictStr,
         note_id: StrictStr,
@@ -912,7 +912,7 @@ class NotesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_device_note_serialize(
+        _param = self._notes_retrieve_device_note_serialize(
             device_id=device_id,
             note_id=note_id,
             _request_auth=_request_auth,
@@ -936,7 +936,7 @@ class NotesApi:
 
 
     @validate_call
-    def retrieve_device_note_with_http_info(
+    def notes_retrieve_device_note_with_http_info(
         self,
         device_id: StrictStr,
         note_id: StrictStr,
@@ -983,7 +983,7 @@ class NotesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_device_note_serialize(
+        _param = self._notes_retrieve_device_note_serialize(
             device_id=device_id,
             note_id=note_id,
             _request_auth=_request_auth,
@@ -1007,7 +1007,7 @@ class NotesApi:
 
 
     @validate_call
-    def retrieve_device_note_without_preload_content(
+    def notes_retrieve_device_note_without_preload_content(
         self,
         device_id: StrictStr,
         note_id: StrictStr,
@@ -1054,7 +1054,7 @@ class NotesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_device_note_serialize(
+        _param = self._notes_retrieve_device_note_serialize(
             device_id=device_id,
             note_id=note_id,
             _request_auth=_request_auth,
@@ -1073,7 +1073,7 @@ class NotesApi:
         return response_data.response
 
 
-    def _retrieve_device_note_serialize(
+    def _notes_retrieve_device_note_serialize(
         self,
         device_id,
         note_id,
@@ -1141,7 +1141,7 @@ class NotesApi:
 
 
     @validate_call
-    def update_device_note(
+    def notes_update_device_note(
         self,
         device_id: StrictStr,
         note_id: StrictStr,
@@ -1191,7 +1191,7 @@ class NotesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_device_note_serialize(
+        _param = self._notes_update_device_note_serialize(
             device_id=device_id,
             note_id=note_id,
             body=body,
@@ -1216,7 +1216,7 @@ class NotesApi:
 
 
     @validate_call
-    def update_device_note_with_http_info(
+    def notes_update_device_note_with_http_info(
         self,
         device_id: StrictStr,
         note_id: StrictStr,
@@ -1266,7 +1266,7 @@ class NotesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_device_note_serialize(
+        _param = self._notes_update_device_note_serialize(
             device_id=device_id,
             note_id=note_id,
             body=body,
@@ -1291,7 +1291,7 @@ class NotesApi:
 
 
     @validate_call
-    def update_device_note_without_preload_content(
+    def notes_update_device_note_without_preload_content(
         self,
         device_id: StrictStr,
         note_id: StrictStr,
@@ -1341,7 +1341,7 @@ class NotesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_device_note_serialize(
+        _param = self._notes_update_device_note_serialize(
             device_id=device_id,
             note_id=note_id,
             body=body,
@@ -1361,7 +1361,7 @@ class NotesApi:
         return response_data.response
 
 
-    def _update_device_note_serialize(
+    def _notes_update_device_note_serialize(
         self,
         device_id,
         note_id,

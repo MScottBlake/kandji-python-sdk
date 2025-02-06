@@ -4,21 +4,21 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_ade_integration**](AutomatedDeviceEnrollmentIntegrationsApi.md#create_ade_integration) | **POST** /api/v1/integrations/apple/ade/ | Create ADE integration
-[**delete_ade_integration**](AutomatedDeviceEnrollmentIntegrationsApi.md#delete_ade_integration) | **DELETE** /api/v1/integrations/apple/ade/{ade_token_id} | Delete ADE integration
-[**download_ade_public_key**](AutomatedDeviceEnrollmentIntegrationsApi.md#download_ade_public_key) | **GET** /api/v1/integrations/apple/ade/public_key/ | Download ADE public key
-[**get_ade_device**](AutomatedDeviceEnrollmentIntegrationsApi.md#get_ade_device) | **GET** /api/v1/integrations/apple/ade/devices/{device_id} | Get ADE device
-[**get_ade_integration**](AutomatedDeviceEnrollmentIntegrationsApi.md#get_ade_integration) | **GET** /api/v1/integrations/apple/ade/{ade_token_id} | Get ADE integration
-[**list_ade_devices**](AutomatedDeviceEnrollmentIntegrationsApi.md#list_ade_devices) | **GET** /api/v1/integrations/apple/ade/devices | List ADE devices
-[**list_ade_integrations**](AutomatedDeviceEnrollmentIntegrationsApi.md#list_ade_integrations) | **GET** /api/v1/integrations/apple/ade | List ADE integrations
-[**list_devices_associated_to_ade_token**](AutomatedDeviceEnrollmentIntegrationsApi.md#list_devices_associated_to_ade_token) | **GET** /api/v1/integrations/apple/ade/{ade_token_id}/devices | List devices associated to ADE token
-[**renew_ade_integration**](AutomatedDeviceEnrollmentIntegrationsApi.md#renew_ade_integration) | **POST** /api/v1/integrations/apple/ade/{ade_token_id}/renew | Renew ADE integration
-[**update_ade_device**](AutomatedDeviceEnrollmentIntegrationsApi.md#update_ade_device) | **PATCH** /api/v1/integrations/apple/ade/devices/{device_id} | Update ADE device
-[**update_ade_integration**](AutomatedDeviceEnrollmentIntegrationsApi.md#update_ade_integration) | **PATCH** /api/v1/integrations/apple/ade/{ade_token_id} | Update ADE integration
+[**automated_device_enrollment_integrations_create_ade_integration**](AutomatedDeviceEnrollmentIntegrationsApi.md#automated_device_enrollment_integrations_create_ade_integration) | **POST** /api/v1/integrations/apple/ade/ | Create ADE integration
+[**automated_device_enrollment_integrations_delete_ade_integration**](AutomatedDeviceEnrollmentIntegrationsApi.md#automated_device_enrollment_integrations_delete_ade_integration) | **DELETE** /api/v1/integrations/apple/ade/{ade_token_id} | Delete ADE integration
+[**automated_device_enrollment_integrations_download_ade_public_key**](AutomatedDeviceEnrollmentIntegrationsApi.md#automated_device_enrollment_integrations_download_ade_public_key) | **GET** /api/v1/integrations/apple/ade/public_key/ | Download ADE public key
+[**automated_device_enrollment_integrations_get_ade_device**](AutomatedDeviceEnrollmentIntegrationsApi.md#automated_device_enrollment_integrations_get_ade_device) | **GET** /api/v1/integrations/apple/ade/devices/{device_id} | Get ADE device
+[**automated_device_enrollment_integrations_get_ade_integration**](AutomatedDeviceEnrollmentIntegrationsApi.md#automated_device_enrollment_integrations_get_ade_integration) | **GET** /api/v1/integrations/apple/ade/{ade_token_id} | Get ADE integration
+[**automated_device_enrollment_integrations_list_ade_devices**](AutomatedDeviceEnrollmentIntegrationsApi.md#automated_device_enrollment_integrations_list_ade_devices) | **GET** /api/v1/integrations/apple/ade/devices | List ADE devices
+[**automated_device_enrollment_integrations_list_ade_integrations**](AutomatedDeviceEnrollmentIntegrationsApi.md#automated_device_enrollment_integrations_list_ade_integrations) | **GET** /api/v1/integrations/apple/ade | List ADE integrations
+[**automated_device_enrollment_integrations_list_devices_associated_to_ade_token**](AutomatedDeviceEnrollmentIntegrationsApi.md#automated_device_enrollment_integrations_list_devices_associated_to_ade_token) | **GET** /api/v1/integrations/apple/ade/{ade_token_id}/devices | List devices associated to ADE token
+[**automated_device_enrollment_integrations_renew_ade_integration**](AutomatedDeviceEnrollmentIntegrationsApi.md#automated_device_enrollment_integrations_renew_ade_integration) | **POST** /api/v1/integrations/apple/ade/{ade_token_id}/renew | Renew ADE integration
+[**automated_device_enrollment_integrations_update_ade_device**](AutomatedDeviceEnrollmentIntegrationsApi.md#automated_device_enrollment_integrations_update_ade_device) | **PATCH** /api/v1/integrations/apple/ade/devices/{device_id} | Update ADE device
+[**automated_device_enrollment_integrations_update_ade_integration**](AutomatedDeviceEnrollmentIntegrationsApi.md#automated_device_enrollment_integrations_update_ade_integration) | **PATCH** /api/v1/integrations/apple/ade/{ade_token_id} | Update ADE integration
 
 
-# **create_ade_integration**
-> object create_ade_integration(blueprint_id, phone, email, file)
+# **automated_device_enrollment_integrations_create_ade_integration**
+> object automated_device_enrollment_integrations_create_ade_integration(blueprint_id, phone, email, file)
 
 Create ADE integration
 
@@ -60,11 +60,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Create ADE integration
-        api_response = api_instance.create_ade_integration(blueprint_id, phone, email, file)
-        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->create_ade_integration:\n")
+        api_response = api_instance.automated_device_enrollment_integrations_create_ade_integration(blueprint_id, phone, email, file)
+        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_create_ade_integration:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->create_ade_integration: %s\n" % e)
+        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_create_ade_integration: %s\n" % e)
 ```
 
 
@@ -100,8 +100,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_ade_integration**
-> delete_ade_integration(ade_token_id)
+# **automated_device_enrollment_integrations_delete_ade_integration**
+> automated_device_enrollment_integrations_delete_ade_integration(ade_token_id)
 
 Delete ADE integration
 
@@ -140,9 +140,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Delete ADE integration
-        api_instance.delete_ade_integration(ade_token_id)
+        api_instance.automated_device_enrollment_integrations_delete_ade_integration(ade_token_id)
     except Exception as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->delete_ade_integration: %s\n" % e)
+        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_delete_ade_integration: %s\n" % e)
 ```
 
 
@@ -175,8 +175,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **download_ade_public_key**
-> str download_ade_public_key()
+# **automated_device_enrollment_integrations_download_ade_public_key**
+> str automated_device_enrollment_integrations_download_ade_public_key()
 
 Download ADE public key
 
@@ -214,11 +214,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Download ADE public key
-        api_response = api_instance.download_ade_public_key()
-        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->download_ade_public_key:\n")
+        api_response = api_instance.automated_device_enrollment_integrations_download_ade_public_key()
+        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_download_ade_public_key:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->download_ade_public_key: %s\n" % e)
+        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_download_ade_public_key: %s\n" % e)
 ```
 
 
@@ -248,8 +248,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_ade_device**
-> object get_ade_device(device_id)
+# **automated_device_enrollment_integrations_get_ade_device**
+> object automated_device_enrollment_integrations_get_ade_device(device_id)
 
 Get ADE device
 
@@ -288,11 +288,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get ADE device
-        api_response = api_instance.get_ade_device(device_id)
-        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->get_ade_device:\n")
+        api_response = api_instance.automated_device_enrollment_integrations_get_ade_device(device_id)
+        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_get_ade_device:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->get_ade_device: %s\n" % e)
+        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_get_ade_device: %s\n" % e)
 ```
 
 
@@ -325,8 +325,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_ade_integration**
-> get_ade_integration(ade_token_id)
+# **automated_device_enrollment_integrations_get_ade_integration**
+> automated_device_enrollment_integrations_get_ade_integration(ade_token_id)
 
 Get ADE integration
 
@@ -365,9 +365,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get ADE integration
-        api_instance.get_ade_integration(ade_token_id)
+        api_instance.automated_device_enrollment_integrations_get_ade_integration(ade_token_id)
     except Exception as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->get_ade_integration: %s\n" % e)
+        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_get_ade_integration: %s\n" % e)
 ```
 
 
@@ -400,8 +400,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_ade_devices**
-> object list_ade_devices(blueprint_id=blueprint_id, user_id=user_id, dep_account=dep_account, device_family=device_family, model=model, os=os, profile_status=profile_status, serial_number=serial_number, page=page)
+# **automated_device_enrollment_integrations_list_ade_devices**
+> object automated_device_enrollment_integrations_list_ade_devices(blueprint_id=blueprint_id, user_id=user_id, dep_account=dep_account, device_family=device_family, model=model, os=os, profile_status=profile_status, serial_number=serial_number, page=page)
 
 List ADE devices
 
@@ -448,11 +448,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # List ADE devices
-        api_response = api_instance.list_ade_devices(blueprint_id=blueprint_id, user_id=user_id, dep_account=dep_account, device_family=device_family, model=model, os=os, profile_status=profile_status, serial_number=serial_number, page=page)
-        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->list_ade_devices:\n")
+        api_response = api_instance.automated_device_enrollment_integrations_list_ade_devices(blueprint_id=blueprint_id, user_id=user_id, dep_account=dep_account, device_family=device_family, model=model, os=os, profile_status=profile_status, serial_number=serial_number, page=page)
+        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_list_ade_devices:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->list_ade_devices: %s\n" % e)
+        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_list_ade_devices: %s\n" % e)
 ```
 
 
@@ -494,8 +494,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_ade_integrations**
-> list_ade_integrations()
+# **automated_device_enrollment_integrations_list_ade_integrations**
+> automated_device_enrollment_integrations_list_ade_integrations()
 
 List ADE integrations
 
@@ -533,9 +533,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # List ADE integrations
-        api_instance.list_ade_integrations()
+        api_instance.automated_device_enrollment_integrations_list_ade_integrations()
     except Exception as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->list_ade_integrations: %s\n" % e)
+        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_list_ade_integrations: %s\n" % e)
 ```
 
 
@@ -565,8 +565,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_devices_associated_to_ade_token**
-> object list_devices_associated_to_ade_token(ade_token_id, page=page)
+# **automated_device_enrollment_integrations_list_devices_associated_to_ade_token**
+> object automated_device_enrollment_integrations_list_devices_associated_to_ade_token(ade_token_id, page=page)
 
 List devices associated to ADE token
 
@@ -606,11 +606,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # List devices associated to ADE token
-        api_response = api_instance.list_devices_associated_to_ade_token(ade_token_id, page=page)
-        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->list_devices_associated_to_ade_token:\n")
+        api_response = api_instance.automated_device_enrollment_integrations_list_devices_associated_to_ade_token(ade_token_id, page=page)
+        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_list_devices_associated_to_ade_token:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->list_devices_associated_to_ade_token: %s\n" % e)
+        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_list_devices_associated_to_ade_token: %s\n" % e)
 ```
 
 
@@ -644,8 +644,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **renew_ade_integration**
-> renew_ade_integration(ade_token_id, blueprint_id, phone, email, file)
+# **automated_device_enrollment_integrations_renew_ade_integration**
+> automated_device_enrollment_integrations_renew_ade_integration(ade_token_id, blueprint_id, phone, email, file)
 
 Renew ADE integration
 
@@ -688,9 +688,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Renew ADE integration
-        api_instance.renew_ade_integration(ade_token_id, blueprint_id, phone, email, file)
+        api_instance.automated_device_enrollment_integrations_renew_ade_integration(ade_token_id, blueprint_id, phone, email, file)
     except Exception as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->renew_ade_integration: %s\n" % e)
+        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_renew_ade_integration: %s\n" % e)
 ```
 
 
@@ -727,8 +727,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_ade_device**
-> object update_ade_device(device_id, body=body)
+# **automated_device_enrollment_integrations_update_ade_device**
+> object automated_device_enrollment_integrations_update_ade_device(device_id, body=body)
 
 Update ADE device
 
@@ -768,11 +768,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Update ADE device
-        api_response = api_instance.update_ade_device(device_id, body=body)
-        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->update_ade_device:\n")
+        api_response = api_instance.automated_device_enrollment_integrations_update_ade_device(device_id, body=body)
+        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_update_ade_device:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->update_ade_device: %s\n" % e)
+        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_update_ade_device: %s\n" % e)
 ```
 
 
@@ -806,8 +806,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_ade_integration**
-> update_ade_integration(ade_token_id, body=body)
+# **automated_device_enrollment_integrations_update_ade_integration**
+> automated_device_enrollment_integrations_update_ade_integration(ade_token_id, body=body)
 
 Update ADE integration
 
@@ -847,9 +847,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Update ADE integration
-        api_instance.update_ade_integration(ade_token_id, body=body)
+        api_instance.automated_device_enrollment_integrations_update_ade_integration(ade_token_id, body=body)
     except Exception as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->update_ade_integration: %s\n" % e)
+        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_update_ade_integration: %s\n" % e)
 ```
 
 

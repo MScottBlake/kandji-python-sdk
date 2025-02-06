@@ -40,7 +40,7 @@ class CustomScriptsApi:
 
 
     @validate_call
-    def create_custom_script(
+    def custom_scripts_create_custom_script(
         self,
         body: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -84,7 +84,7 @@ class CustomScriptsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_custom_script_serialize(
+        _param = self._custom_scripts_create_custom_script_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -107,7 +107,7 @@ class CustomScriptsApi:
 
 
     @validate_call
-    def create_custom_script_with_http_info(
+    def custom_scripts_create_custom_script_with_http_info(
         self,
         body: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -151,7 +151,7 @@ class CustomScriptsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_custom_script_serialize(
+        _param = self._custom_scripts_create_custom_script_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -174,7 +174,7 @@ class CustomScriptsApi:
 
 
     @validate_call
-    def create_custom_script_without_preload_content(
+    def custom_scripts_create_custom_script_without_preload_content(
         self,
         body: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -218,7 +218,7 @@ class CustomScriptsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_custom_script_serialize(
+        _param = self._custom_scripts_create_custom_script_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -236,7 +236,7 @@ class CustomScriptsApi:
         return response_data.response
 
 
-    def _create_custom_script_serialize(
+    def _custom_scripts_create_custom_script_serialize(
         self,
         body,
         _request_auth,
@@ -314,7 +314,7 @@ class CustomScriptsApi:
 
 
     @validate_call
-    def delete_custom_script(
+    def custom_scripts_delete_custom_script(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -358,7 +358,7 @@ class CustomScriptsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_custom_script_serialize(
+        _param = self._custom_scripts_delete_custom_script_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -382,7 +382,7 @@ class CustomScriptsApi:
 
 
     @validate_call
-    def delete_custom_script_with_http_info(
+    def custom_scripts_delete_custom_script_with_http_info(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -426,7 +426,7 @@ class CustomScriptsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_custom_script_serialize(
+        _param = self._custom_scripts_delete_custom_script_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -450,7 +450,7 @@ class CustomScriptsApi:
 
 
     @validate_call
-    def delete_custom_script_without_preload_content(
+    def custom_scripts_delete_custom_script_without_preload_content(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -494,7 +494,7 @@ class CustomScriptsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_custom_script_serialize(
+        _param = self._custom_scripts_delete_custom_script_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -513,7 +513,7 @@ class CustomScriptsApi:
         return response_data.response
 
 
-    def _delete_custom_script_serialize(
+    def _custom_scripts_delete_custom_script_serialize(
         self,
         library_item_id,
         _request_auth,
@@ -578,7 +578,7 @@ class CustomScriptsApi:
 
 
     @validate_call
-    def get_custom_script(
+    def custom_scripts_get_custom_script(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -622,7 +622,7 @@ class CustomScriptsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_custom_script_serialize(
+        _param = self._custom_scripts_get_custom_script_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -645,7 +645,7 @@ class CustomScriptsApi:
 
 
     @validate_call
-    def get_custom_script_with_http_info(
+    def custom_scripts_get_custom_script_with_http_info(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -689,7 +689,7 @@ class CustomScriptsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_custom_script_serialize(
+        _param = self._custom_scripts_get_custom_script_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -712,7 +712,7 @@ class CustomScriptsApi:
 
 
     @validate_call
-    def get_custom_script_without_preload_content(
+    def custom_scripts_get_custom_script_without_preload_content(
         self,
         library_item_id: StrictStr,
         _request_timeout: Union[
@@ -756,7 +756,7 @@ class CustomScriptsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_custom_script_serialize(
+        _param = self._custom_scripts_get_custom_script_serialize(
             library_item_id=library_item_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -774,7 +774,7 @@ class CustomScriptsApi:
         return response_data.response
 
 
-    def _get_custom_script_serialize(
+    def _custom_scripts_get_custom_script_serialize(
         self,
         library_item_id,
         _request_auth,
@@ -839,7 +839,7 @@ class CustomScriptsApi:
 
 
     @validate_call
-    def list_custom_scripts(
+    def custom_scripts_list_custom_scripts(
         self,
         page: Annotated[Optional[StrictStr], Field(description="Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request.")] = None,
         _request_timeout: Union[
@@ -883,7 +883,7 @@ class CustomScriptsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_custom_scripts_serialize(
+        _param = self._custom_scripts_list_custom_scripts_serialize(
             page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -906,7 +906,7 @@ class CustomScriptsApi:
 
 
     @validate_call
-    def list_custom_scripts_with_http_info(
+    def custom_scripts_list_custom_scripts_with_http_info(
         self,
         page: Annotated[Optional[StrictStr], Field(description="Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request.")] = None,
         _request_timeout: Union[
@@ -950,7 +950,7 @@ class CustomScriptsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_custom_scripts_serialize(
+        _param = self._custom_scripts_list_custom_scripts_serialize(
             page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -973,7 +973,7 @@ class CustomScriptsApi:
 
 
     @validate_call
-    def list_custom_scripts_without_preload_content(
+    def custom_scripts_list_custom_scripts_without_preload_content(
         self,
         page: Annotated[Optional[StrictStr], Field(description="Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request.")] = None,
         _request_timeout: Union[
@@ -1017,7 +1017,7 @@ class CustomScriptsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_custom_scripts_serialize(
+        _param = self._custom_scripts_list_custom_scripts_serialize(
             page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1035,7 +1035,7 @@ class CustomScriptsApi:
         return response_data.response
 
 
-    def _list_custom_scripts_serialize(
+    def _custom_scripts_list_custom_scripts_serialize(
         self,
         page,
         _request_auth,
@@ -1102,7 +1102,7 @@ class CustomScriptsApi:
 
 
     @validate_call
-    def update_custom_script(
+    def custom_scripts_update_custom_script(
         self,
         library_item_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -1149,7 +1149,7 @@ class CustomScriptsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_custom_script_serialize(
+        _param = self._custom_scripts_update_custom_script_serialize(
             library_item_id=library_item_id,
             body=body,
             _request_auth=_request_auth,
@@ -1173,7 +1173,7 @@ class CustomScriptsApi:
 
 
     @validate_call
-    def update_custom_script_with_http_info(
+    def custom_scripts_update_custom_script_with_http_info(
         self,
         library_item_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -1220,7 +1220,7 @@ class CustomScriptsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_custom_script_serialize(
+        _param = self._custom_scripts_update_custom_script_serialize(
             library_item_id=library_item_id,
             body=body,
             _request_auth=_request_auth,
@@ -1244,7 +1244,7 @@ class CustomScriptsApi:
 
 
     @validate_call
-    def update_custom_script_without_preload_content(
+    def custom_scripts_update_custom_script_without_preload_content(
         self,
         library_item_id: StrictStr,
         body: Optional[StrictStr] = None,
@@ -1291,7 +1291,7 @@ class CustomScriptsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_custom_script_serialize(
+        _param = self._custom_scripts_update_custom_script_serialize(
             library_item_id=library_item_id,
             body=body,
             _request_auth=_request_auth,
@@ -1310,7 +1310,7 @@ class CustomScriptsApi:
         return response_data.response
 
 
-    def _update_custom_script_serialize(
+    def _custom_scripts_update_custom_script_serialize(
         self,
         library_item_id,
         body,

@@ -38,7 +38,7 @@ class SettingsApi:
 
 
     @validate_call
-    def licensing(
+    def settings_licensing(
         self,
         _request_timeout: Union[
             None,
@@ -79,7 +79,7 @@ class SettingsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._licensing_serialize(
+        _param = self._settings_licensing_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -101,7 +101,7 @@ class SettingsApi:
 
 
     @validate_call
-    def licensing_with_http_info(
+    def settings_licensing_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -142,7 +142,7 @@ class SettingsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._licensing_serialize(
+        _param = self._settings_licensing_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -164,7 +164,7 @@ class SettingsApi:
 
 
     @validate_call
-    def licensing_without_preload_content(
+    def settings_licensing_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -205,7 +205,7 @@ class SettingsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._licensing_serialize(
+        _param = self._settings_licensing_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -222,7 +222,7 @@ class SettingsApi:
         return response_data.response
 
 
-    def _licensing_serialize(
+    def _settings_licensing_serialize(
         self,
         _request_auth,
         _content_type,

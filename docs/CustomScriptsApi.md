@@ -4,15 +4,15 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_custom_script**](CustomScriptsApi.md#create_custom_script) | **POST** /api/v1/library/custom-scripts | Create Custom Script
-[**delete_custom_script**](CustomScriptsApi.md#delete_custom_script) | **DELETE** /api/v1/library/custom-scripts/{library_item_id} | Delete Custom Script
-[**get_custom_script**](CustomScriptsApi.md#get_custom_script) | **GET** /api/v1/library/custom-scripts/{library_item_id} | Get Custom Script
-[**list_custom_scripts**](CustomScriptsApi.md#list_custom_scripts) | **GET** /api/v1/library/custom-scripts | List Custom Scripts
-[**update_custom_script**](CustomScriptsApi.md#update_custom_script) | **PATCH** /api/v1/library/custom-scripts/{library_item_id} | Update Custom Script
+[**custom_scripts_create_custom_script**](CustomScriptsApi.md#custom_scripts_create_custom_script) | **POST** /api/v1/library/custom-scripts | Create Custom Script
+[**custom_scripts_delete_custom_script**](CustomScriptsApi.md#custom_scripts_delete_custom_script) | **DELETE** /api/v1/library/custom-scripts/{library_item_id} | Delete Custom Script
+[**custom_scripts_get_custom_script**](CustomScriptsApi.md#custom_scripts_get_custom_script) | **GET** /api/v1/library/custom-scripts/{library_item_id} | Get Custom Script
+[**custom_scripts_list_custom_scripts**](CustomScriptsApi.md#custom_scripts_list_custom_scripts) | **GET** /api/v1/library/custom-scripts | List Custom Scripts
+[**custom_scripts_update_custom_script**](CustomScriptsApi.md#custom_scripts_update_custom_script) | **PATCH** /api/v1/library/custom-scripts/{library_item_id} | Update Custom Script
 
 
-# **create_custom_script**
-> object create_custom_script(body=body)
+# **custom_scripts_create_custom_script**
+> object custom_scripts_create_custom_script(body=body)
 
 Create Custom Script
 
@@ -51,11 +51,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Create Custom Script
-        api_response = api_instance.create_custom_script(body=body)
-        print("The response of CustomScriptsApi->create_custom_script:\n")
+        api_response = api_instance.custom_scripts_create_custom_script(body=body)
+        print("The response of CustomScriptsApi->custom_scripts_create_custom_script:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomScriptsApi->create_custom_script: %s\n" % e)
+        print("Exception when calling CustomScriptsApi->custom_scripts_create_custom_script: %s\n" % e)
 ```
 
 
@@ -88,8 +88,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_custom_script**
-> delete_custom_script(library_item_id)
+# **custom_scripts_delete_custom_script**
+> custom_scripts_delete_custom_script(library_item_id)
 
 Delete Custom Script
 
@@ -128,9 +128,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Delete Custom Script
-        api_instance.delete_custom_script(library_item_id)
+        api_instance.custom_scripts_delete_custom_script(library_item_id)
     except Exception as e:
-        print("Exception when calling CustomScriptsApi->delete_custom_script: %s\n" % e)
+        print("Exception when calling CustomScriptsApi->custom_scripts_delete_custom_script: %s\n" % e)
 ```
 
 
@@ -164,8 +164,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_custom_script**
-> object get_custom_script(library_item_id)
+# **custom_scripts_get_custom_script**
+> object custom_scripts_get_custom_script(library_item_id)
 
 Get Custom Script
 
@@ -204,11 +204,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get Custom Script
-        api_response = api_instance.get_custom_script(library_item_id)
-        print("The response of CustomScriptsApi->get_custom_script:\n")
+        api_response = api_instance.custom_scripts_get_custom_script(library_item_id)
+        print("The response of CustomScriptsApi->custom_scripts_get_custom_script:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomScriptsApi->get_custom_script: %s\n" % e)
+        print("Exception when calling CustomScriptsApi->custom_scripts_get_custom_script: %s\n" % e)
 ```
 
 
@@ -241,8 +241,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_custom_scripts**
-> object list_custom_scripts(page=page)
+# **custom_scripts_list_custom_scripts**
+> object custom_scripts_list_custom_scripts(page=page)
 
 List Custom Scripts
 
@@ -281,11 +281,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # List Custom Scripts
-        api_response = api_instance.list_custom_scripts(page=page)
-        print("The response of CustomScriptsApi->list_custom_scripts:\n")
+        api_response = api_instance.custom_scripts_list_custom_scripts(page=page)
+        print("The response of CustomScriptsApi->custom_scripts_list_custom_scripts:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomScriptsApi->list_custom_scripts: %s\n" % e)
+        print("Exception when calling CustomScriptsApi->custom_scripts_list_custom_scripts: %s\n" % e)
 ```
 
 
@@ -318,8 +318,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_custom_script**
-> object update_custom_script(library_item_id, body=body)
+# **custom_scripts_update_custom_script**
+> object custom_scripts_update_custom_script(library_item_id, body=body)
 
 Update Custom Script
 
@@ -359,11 +359,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Update Custom Script
-        api_response = api_instance.update_custom_script(library_item_id, body=body)
-        print("The response of CustomScriptsApi->update_custom_script:\n")
+        api_response = api_instance.custom_scripts_update_custom_script(library_item_id, body=body)
+        print("The response of CustomScriptsApi->custom_scripts_update_custom_script:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomScriptsApi->update_custom_script: %s\n" % e)
+        print("Exception when calling CustomScriptsApi->custom_scripts_update_custom_script: %s\n" % e)
 ```
 
 

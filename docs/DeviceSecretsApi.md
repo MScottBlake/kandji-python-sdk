@@ -4,14 +4,14 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_activation_lock_bypass_code**](DeviceSecretsApi.md#get_activation_lock_bypass_code) | **GET** /api/v1/devices/{device_id}/secrets/bypasscode | Get Activation Lock Bypass Code
-[**get_filevault_recovery_key**](DeviceSecretsApi.md#get_filevault_recovery_key) | **GET** /api/v1/devices/{device_id}/secrets/filevaultkey | Get FileVault Recovery Key
-[**get_recovery_lock_password**](DeviceSecretsApi.md#get_recovery_lock_password) | **GET** /api/v1/devices/{device_id}/secrets/recoverypassword | Get Recovery Lock Password
-[**get_unlock_pin**](DeviceSecretsApi.md#get_unlock_pin) | **GET** /api/v1/devices/{device_id}/secrets/unlockpin | Get Unlock Pin
+[**device_secrets_get_activation_lock_bypass_code**](DeviceSecretsApi.md#device_secrets_get_activation_lock_bypass_code) | **GET** /api/v1/devices/{device_id}/secrets/bypasscode | Get Activation Lock Bypass Code
+[**device_secrets_get_filevault_recovery_key**](DeviceSecretsApi.md#device_secrets_get_filevault_recovery_key) | **GET** /api/v1/devices/{device_id}/secrets/filevaultkey | Get FileVault Recovery Key
+[**device_secrets_get_recovery_lock_password**](DeviceSecretsApi.md#device_secrets_get_recovery_lock_password) | **GET** /api/v1/devices/{device_id}/secrets/recoverypassword | Get Recovery Lock Password
+[**device_secrets_get_unlock_pin**](DeviceSecretsApi.md#device_secrets_get_unlock_pin) | **GET** /api/v1/devices/{device_id}/secrets/unlockpin | Get Unlock Pin
 
 
-# **get_activation_lock_bypass_code**
-> object get_activation_lock_bypass_code(device_id)
+# **device_secrets_get_activation_lock_bypass_code**
+> object device_secrets_get_activation_lock_bypass_code(device_id)
 
 Get Activation Lock Bypass Code
 
@@ -50,11 +50,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get Activation Lock Bypass Code
-        api_response = api_instance.get_activation_lock_bypass_code(device_id)
-        print("The response of DeviceSecretsApi->get_activation_lock_bypass_code:\n")
+        api_response = api_instance.device_secrets_get_activation_lock_bypass_code(device_id)
+        print("The response of DeviceSecretsApi->device_secrets_get_activation_lock_bypass_code:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DeviceSecretsApi->get_activation_lock_bypass_code: %s\n" % e)
+        print("Exception when calling DeviceSecretsApi->device_secrets_get_activation_lock_bypass_code: %s\n" % e)
 ```
 
 
@@ -87,8 +87,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_filevault_recovery_key**
-> object get_filevault_recovery_key(device_id)
+# **device_secrets_get_filevault_recovery_key**
+> object device_secrets_get_filevault_recovery_key(device_id)
 
 Get FileVault Recovery Key
 
@@ -127,11 +127,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get FileVault Recovery Key
-        api_response = api_instance.get_filevault_recovery_key(device_id)
-        print("The response of DeviceSecretsApi->get_filevault_recovery_key:\n")
+        api_response = api_instance.device_secrets_get_filevault_recovery_key(device_id)
+        print("The response of DeviceSecretsApi->device_secrets_get_filevault_recovery_key:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DeviceSecretsApi->get_filevault_recovery_key: %s\n" % e)
+        print("Exception when calling DeviceSecretsApi->device_secrets_get_filevault_recovery_key: %s\n" % e)
 ```
 
 
@@ -164,8 +164,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_recovery_lock_password**
-> object get_recovery_lock_password(device_id)
+# **device_secrets_get_recovery_lock_password**
+> object device_secrets_get_recovery_lock_password(device_id)
 
 Get Recovery Lock Password
 
@@ -204,11 +204,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get Recovery Lock Password
-        api_response = api_instance.get_recovery_lock_password(device_id)
-        print("The response of DeviceSecretsApi->get_recovery_lock_password:\n")
+        api_response = api_instance.device_secrets_get_recovery_lock_password(device_id)
+        print("The response of DeviceSecretsApi->device_secrets_get_recovery_lock_password:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DeviceSecretsApi->get_recovery_lock_password: %s\n" % e)
+        print("Exception when calling DeviceSecretsApi->device_secrets_get_recovery_lock_password: %s\n" % e)
 ```
 
 
@@ -241,8 +241,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_unlock_pin**
-> object get_unlock_pin(device_id)
+# **device_secrets_get_unlock_pin**
+> object device_secrets_get_unlock_pin(device_id)
 
 Get Unlock Pin
 
@@ -281,11 +281,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get Unlock Pin
-        api_response = api_instance.get_unlock_pin(device_id)
-        print("The response of DeviceSecretsApi->get_unlock_pin:\n")
+        api_response = api_instance.device_secrets_get_unlock_pin(device_id)
+        print("The response of DeviceSecretsApi->device_secrets_get_unlock_pin:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DeviceSecretsApi->get_unlock_pin: %s\n" % e)
+        print("Exception when calling DeviceSecretsApi->device_secrets_get_unlock_pin: %s\n" % e)
 ```
 
 

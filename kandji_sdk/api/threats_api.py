@@ -40,7 +40,7 @@ class ThreatsApi:
 
 
     @validate_call
-    def get_threat_details(
+    def threats_get_threat_details(
         self,
         classification: Annotated[Optional[StrictStr], Field(description="Return all records matching a specified classification. The following classification options are available: <code>malware</code> and <code>pup</code>. Leave this parameter empty to return all classification types.")] = None,
         date_range: Annotated[Optional[StrictStr], Field(description="Return all records within a specified number of days. Any positive number of days may be specified. Examples: <code>7</code>, <code>30</code>, <code>60</code>, <code>90</code>, <code>180</code>, or <code>365</code>.")] = None,
@@ -105,7 +105,7 @@ class ThreatsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_threat_details_serialize(
+        _param = self._threats_get_threat_details_serialize(
             classification=classification,
             date_range=date_range,
             device_id=device_id,
@@ -135,7 +135,7 @@ class ThreatsApi:
 
 
     @validate_call
-    def get_threat_details_with_http_info(
+    def threats_get_threat_details_with_http_info(
         self,
         classification: Annotated[Optional[StrictStr], Field(description="Return all records matching a specified classification. The following classification options are available: <code>malware</code> and <code>pup</code>. Leave this parameter empty to return all classification types.")] = None,
         date_range: Annotated[Optional[StrictStr], Field(description="Return all records within a specified number of days. Any positive number of days may be specified. Examples: <code>7</code>, <code>30</code>, <code>60</code>, <code>90</code>, <code>180</code>, or <code>365</code>.")] = None,
@@ -200,7 +200,7 @@ class ThreatsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_threat_details_serialize(
+        _param = self._threats_get_threat_details_serialize(
             classification=classification,
             date_range=date_range,
             device_id=device_id,
@@ -230,7 +230,7 @@ class ThreatsApi:
 
 
     @validate_call
-    def get_threat_details_without_preload_content(
+    def threats_get_threat_details_without_preload_content(
         self,
         classification: Annotated[Optional[StrictStr], Field(description="Return all records matching a specified classification. The following classification options are available: <code>malware</code> and <code>pup</code>. Leave this parameter empty to return all classification types.")] = None,
         date_range: Annotated[Optional[StrictStr], Field(description="Return all records within a specified number of days. Any positive number of days may be specified. Examples: <code>7</code>, <code>30</code>, <code>60</code>, <code>90</code>, <code>180</code>, or <code>365</code>.")] = None,
@@ -295,7 +295,7 @@ class ThreatsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_threat_details_serialize(
+        _param = self._threats_get_threat_details_serialize(
             classification=classification,
             date_range=date_range,
             device_id=device_id,
@@ -320,7 +320,7 @@ class ThreatsApi:
         return response_data.response
 
 
-    def _get_threat_details_serialize(
+    def _threats_get_threat_details_serialize(
         self,
         classification,
         date_range,

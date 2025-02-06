@@ -4,12 +4,12 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_library_item_activity**](LibraryItemsApi.md#get_library_item_activity) | **GET** /api/v1/library/library-items/{library_item_id}/activity | Get Library Item Activity
-[**get_library_item_statuses**](LibraryItemsApi.md#get_library_item_statuses) | **GET** /api/v1/library/library-items/{library_item_id}/status | Get Library Item Statuses
+[**library_items_get_library_item_activity**](LibraryItemsApi.md#library_items_get_library_item_activity) | **GET** /api/v1/library/library-items/{library_item_id}/activity | Get Library Item Activity
+[**library_items_get_library_item_statuses**](LibraryItemsApi.md#library_items_get_library_item_statuses) | **GET** /api/v1/library/library-items/{library_item_id}/status | Get Library Item Statuses
 
 
-# **get_library_item_activity**
-> object get_library_item_activity(library_item_id, activity_type=activity_type, user_id=user_id, user_email=user_email, limit=limit, offset=offset)
+# **library_items_get_library_item_activity**
+> object library_items_get_library_item_activity(library_item_id, activity_type=activity_type, user_id=user_id, user_email=user_email, limit=limit, offset=offset)
 
 Get Library Item Activity
 
@@ -53,11 +53,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get Library Item Activity
-        api_response = api_instance.get_library_item_activity(library_item_id, activity_type=activity_type, user_id=user_id, user_email=user_email, limit=limit, offset=offset)
-        print("The response of LibraryItemsApi->get_library_item_activity:\n")
+        api_response = api_instance.library_items_get_library_item_activity(library_item_id, activity_type=activity_type, user_id=user_id, user_email=user_email, limit=limit, offset=offset)
+        print("The response of LibraryItemsApi->library_items_get_library_item_activity:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling LibraryItemsApi->get_library_item_activity: %s\n" % e)
+        print("Exception when calling LibraryItemsApi->library_items_get_library_item_activity: %s\n" % e)
 ```
 
 
@@ -95,8 +95,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_library_item_statuses**
-> object get_library_item_statuses(library_item_id, computer_id=computer_id, limit=limit, offset=offset)
+# **library_items_get_library_item_statuses**
+> object library_items_get_library_item_statuses(library_item_id, computer_id=computer_id, limit=limit, offset=offset)
 
 Get Library Item Statuses
 
@@ -138,11 +138,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get Library Item Statuses
-        api_response = api_instance.get_library_item_statuses(library_item_id, computer_id=computer_id, limit=limit, offset=offset)
-        print("The response of LibraryItemsApi->get_library_item_statuses:\n")
+        api_response = api_instance.library_items_get_library_item_statuses(library_item_id, computer_id=computer_id, limit=limit, offset=offset)
+        print("The response of LibraryItemsApi->library_items_get_library_item_statuses:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling LibraryItemsApi->get_library_item_statuses: %s\n" % e)
+        print("Exception when calling LibraryItemsApi->library_items_get_library_item_statuses: %s\n" % e)
 ```
 
 

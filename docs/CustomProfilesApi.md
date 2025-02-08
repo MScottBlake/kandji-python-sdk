@@ -1,18 +1,18 @@
-# kandji_sdk.CustomProfilesApi
+# kandji.CustomProfilesApi
 
 All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**custom_profiles_create_custom_profile**](CustomProfilesApi.md#custom_profiles_create_custom_profile) | **POST** /api/v1/library/custom-profiles | Create Custom Profile
-[**custom_profiles_delete_custom_profile**](CustomProfilesApi.md#custom_profiles_delete_custom_profile) | **DELETE** /api/v1/library/custom-profiles/{library_item_id} | Delete Custom Profile
-[**custom_profiles_get_custom_profile**](CustomProfilesApi.md#custom_profiles_get_custom_profile) | **GET** /api/v1/library/custom-profiles/{library_item_id} | Get Custom Profile
-[**custom_profiles_list_custom_profiles**](CustomProfilesApi.md#custom_profiles_list_custom_profiles) | **GET** /api/v1/library/custom-profiles | List Custom Profiles
-[**custom_profiles_update_custom_profile**](CustomProfilesApi.md#custom_profiles_update_custom_profile) | **PATCH** /api/v1/library/custom-profiles/{library_item_id} | Update Custom Profile
+[**create_custom_profile**](CustomProfilesApi.md#create_custom_profile) | **POST** /api/v1/library/custom-profiles | Create Custom Profile
+[**delete_custom_profile**](CustomProfilesApi.md#delete_custom_profile) | **DELETE** /api/v1/library/custom-profiles/{library_item_id} | Delete Custom Profile
+[**get_custom_profile**](CustomProfilesApi.md#get_custom_profile) | **GET** /api/v1/library/custom-profiles/{library_item_id} | Get Custom Profile
+[**list_custom_profiles**](CustomProfilesApi.md#list_custom_profiles) | **GET** /api/v1/library/custom-profiles | List Custom Profiles
+[**update_custom_profile**](CustomProfilesApi.md#update_custom_profile) | **PATCH** /api/v1/library/custom-profiles/{library_item_id} | Update Custom Profile
 
 
-# **custom_profiles_create_custom_profile**
-> object custom_profiles_create_custom_profile(name, file, active)
+# **create_custom_profile**
+> object create_custom_profile(name, file, active)
 
 Create Custom Profile
 
@@ -23,13 +23,13 @@ This request allows you to create a custom profile in the Kandji library.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -39,25 +39,25 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.CustomProfilesApi(api_client)
+    api_instance = kandji.CustomProfilesApi(api_client)
     name = 'name_example' # str | (Required) The profile name
     file = None # bytearray | (Required) The path to the profile's .mobileconfig file
     active = 'active_example' # str | (Optional, default=true) Whether this library item is active
 
     try:
         # Create Custom Profile
-        api_response = api_instance.custom_profiles_create_custom_profile(name, file, active)
-        print("The response of CustomProfilesApi->custom_profiles_create_custom_profile:\n")
+        api_response = api_instance.create_custom_profile(name, file, active)
+        print("The response of CustomProfilesApi->create_custom_profile:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomProfilesApi->custom_profiles_create_custom_profile: %s\n" % e)
+        print("Exception when calling CustomProfilesApi->create_custom_profile: %s\n" % e)
 ```
 
 
@@ -92,8 +92,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **custom_profiles_delete_custom_profile**
-> custom_profiles_delete_custom_profile(library_item_id)
+# **delete_custom_profile**
+> delete_custom_profile(library_item_id)
 
 Delete Custom Profile
 
@@ -104,13 +104,13 @@ Delete Custom Profile
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -120,21 +120,21 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.CustomProfilesApi(api_client)
+    api_instance = kandji.CustomProfilesApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
 
     try:
         # Delete Custom Profile
-        api_instance.custom_profiles_delete_custom_profile(library_item_id)
+        api_instance.delete_custom_profile(library_item_id)
     except Exception as e:
-        print("Exception when calling CustomProfilesApi->custom_profiles_delete_custom_profile: %s\n" % e)
+        print("Exception when calling CustomProfilesApi->delete_custom_profile: %s\n" % e)
 ```
 
 
@@ -168,8 +168,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **custom_profiles_get_custom_profile**
-> object custom_profiles_get_custom_profile(library_item_id)
+# **get_custom_profile**
+> object get_custom_profile(library_item_id)
 
 Get Custom Profile
 
@@ -180,13 +180,13 @@ Get Custom Profile
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -196,23 +196,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.CustomProfilesApi(api_client)
+    api_instance = kandji.CustomProfilesApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
 
     try:
         # Get Custom Profile
-        api_response = api_instance.custom_profiles_get_custom_profile(library_item_id)
-        print("The response of CustomProfilesApi->custom_profiles_get_custom_profile:\n")
+        api_response = api_instance.get_custom_profile(library_item_id)
+        print("The response of CustomProfilesApi->get_custom_profile:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomProfilesApi->custom_profiles_get_custom_profile: %s\n" % e)
+        print("Exception when calling CustomProfilesApi->get_custom_profile: %s\n" % e)
 ```
 
 
@@ -245,8 +245,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **custom_profiles_list_custom_profiles**
-> object custom_profiles_list_custom_profiles(page=page)
+# **list_custom_profiles**
+> object list_custom_profiles(page=page)
 
 List Custom Profiles
 
@@ -257,13 +257,13 @@ This endpoint makes a request to retrieve a list of custom profiles from the Kan
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -273,23 +273,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.CustomProfilesApi(api_client)
+    api_instance = kandji.CustomProfilesApi(api_client)
     page = '1' # str | Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request. (optional)
 
     try:
         # List Custom Profiles
-        api_response = api_instance.custom_profiles_list_custom_profiles(page=page)
-        print("The response of CustomProfilesApi->custom_profiles_list_custom_profiles:\n")
+        api_response = api_instance.list_custom_profiles(page=page)
+        print("The response of CustomProfilesApi->list_custom_profiles:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomProfilesApi->custom_profiles_list_custom_profiles: %s\n" % e)
+        print("Exception when calling CustomProfilesApi->list_custom_profiles: %s\n" % e)
 ```
 
 
@@ -322,8 +322,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **custom_profiles_update_custom_profile**
-> object custom_profiles_update_custom_profile(library_item_id)
+# **update_custom_profile**
+> object update_custom_profile(library_item_id)
 
 Update Custom Profile
 
@@ -334,13 +334,13 @@ Update Custom Profile
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -350,23 +350,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.CustomProfilesApi(api_client)
+    api_instance = kandji.CustomProfilesApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
 
     try:
         # Update Custom Profile
-        api_response = api_instance.custom_profiles_update_custom_profile(library_item_id)
-        print("The response of CustomProfilesApi->custom_profiles_update_custom_profile:\n")
+        api_response = api_instance.update_custom_profile(library_item_id)
+        print("The response of CustomProfilesApi->update_custom_profile:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomProfilesApi->custom_profiles_update_custom_profile: %s\n" % e)
+        print("Exception when calling CustomProfilesApi->update_custom_profile: %s\n" % e)
 ```
 
 

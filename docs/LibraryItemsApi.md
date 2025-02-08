@@ -1,15 +1,15 @@
-# kandji_sdk.LibraryItemsApi
+# kandji.LibraryItemsApi
 
 All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**library_items_get_library_item_activity**](LibraryItemsApi.md#library_items_get_library_item_activity) | **GET** /api/v1/library/library-items/{library_item_id}/activity | Get Library Item Activity
-[**library_items_get_library_item_statuses**](LibraryItemsApi.md#library_items_get_library_item_statuses) | **GET** /api/v1/library/library-items/{library_item_id}/status | Get Library Item Statuses
+[**get_library_item_activity**](LibraryItemsApi.md#get_library_item_activity) | **GET** /api/v1/library/library-items/{library_item_id}/activity | Get Library Item Activity
+[**get_library_item_statuses**](LibraryItemsApi.md#get_library_item_statuses) | **GET** /api/v1/library/library-items/{library_item_id}/status | Get Library Item Statuses
 
 
-# **library_items_get_library_item_activity**
-> object library_items_get_library_item_activity(library_item_id, activity_type=activity_type, user_id=user_id, user_email=user_email, limit=limit, offset=offset)
+# **get_library_item_activity**
+> object get_library_item_activity(library_item_id, activity_type=activity_type, user_id=user_id, user_email=user_email, limit=limit, offset=offset)
 
 Get Library Item Activity
 
@@ -20,13 +20,13 @@ Get Library Item Activity
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -36,14 +36,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.LibraryItemsApi(api_client)
+    api_instance = kandji.LibraryItemsApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
     activity_type = 'library_item_assignment_changed' # str | Filter actions by this activity type. Choices are: library_item_created, library_item_edited, library_item_deleted, library_item_duplicated, library_item_assignment_changed (optional)
     user_id = '{user uuid}' # str | Filter actions by this user (id) (optional)
@@ -53,11 +53,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get Library Item Activity
-        api_response = api_instance.library_items_get_library_item_activity(library_item_id, activity_type=activity_type, user_id=user_id, user_email=user_email, limit=limit, offset=offset)
-        print("The response of LibraryItemsApi->library_items_get_library_item_activity:\n")
+        api_response = api_instance.get_library_item_activity(library_item_id, activity_type=activity_type, user_id=user_id, user_email=user_email, limit=limit, offset=offset)
+        print("The response of LibraryItemsApi->get_library_item_activity:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling LibraryItemsApi->library_items_get_library_item_activity: %s\n" % e)
+        print("Exception when calling LibraryItemsApi->get_library_item_activity: %s\n" % e)
 ```
 
 
@@ -95,8 +95,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **library_items_get_library_item_statuses**
-> object library_items_get_library_item_statuses(library_item_id, computer_id=computer_id, limit=limit, offset=offset)
+# **get_library_item_statuses**
+> object get_library_item_statuses(library_item_id, computer_id=computer_id, limit=limit, offset=offset)
 
 Get Library Item Statuses
 
@@ -107,13 +107,13 @@ Get Library Item Statuses
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -123,14 +123,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.LibraryItemsApi(api_client)
+    api_instance = kandji.LibraryItemsApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
     computer_id = '{device_id}' # str | Query for the status of one device. (optional)
     limit = '300' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
@@ -138,11 +138,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get Library Item Statuses
-        api_response = api_instance.library_items_get_library_item_statuses(library_item_id, computer_id=computer_id, limit=limit, offset=offset)
-        print("The response of LibraryItemsApi->library_items_get_library_item_statuses:\n")
+        api_response = api_instance.get_library_item_statuses(library_item_id, computer_id=computer_id, limit=limit, offset=offset)
+        print("The response of LibraryItemsApi->get_library_item_statuses:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling LibraryItemsApi->library_items_get_library_item_statuses: %s\n" % e)
+        print("Exception when calling LibraryItemsApi->get_library_item_statuses: %s\n" % e)
 ```
 
 

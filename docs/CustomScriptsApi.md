@@ -1,18 +1,18 @@
-# kandji_sdk.CustomScriptsApi
+# kandji.CustomScriptsApi
 
 All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**custom_scripts_create_custom_script**](CustomScriptsApi.md#custom_scripts_create_custom_script) | **POST** /api/v1/library/custom-scripts | Create Custom Script
-[**custom_scripts_delete_custom_script**](CustomScriptsApi.md#custom_scripts_delete_custom_script) | **DELETE** /api/v1/library/custom-scripts/{library_item_id} | Delete Custom Script
-[**custom_scripts_get_custom_script**](CustomScriptsApi.md#custom_scripts_get_custom_script) | **GET** /api/v1/library/custom-scripts/{library_item_id} | Get Custom Script
-[**custom_scripts_list_custom_scripts**](CustomScriptsApi.md#custom_scripts_list_custom_scripts) | **GET** /api/v1/library/custom-scripts | List Custom Scripts
-[**custom_scripts_update_custom_script**](CustomScriptsApi.md#custom_scripts_update_custom_script) | **PATCH** /api/v1/library/custom-scripts/{library_item_id} | Update Custom Script
+[**create_custom_script**](CustomScriptsApi.md#create_custom_script) | **POST** /api/v1/library/custom-scripts | Create Custom Script
+[**delete_custom_script**](CustomScriptsApi.md#delete_custom_script) | **DELETE** /api/v1/library/custom-scripts/{library_item_id} | Delete Custom Script
+[**get_custom_script**](CustomScriptsApi.md#get_custom_script) | **GET** /api/v1/library/custom-scripts/{library_item_id} | Get Custom Script
+[**list_custom_scripts**](CustomScriptsApi.md#list_custom_scripts) | **GET** /api/v1/library/custom-scripts | List Custom Scripts
+[**update_custom_script**](CustomScriptsApi.md#update_custom_script) | **PATCH** /api/v1/library/custom-scripts/{library_item_id} | Update Custom Script
 
 
-# **custom_scripts_create_custom_script**
-> object custom_scripts_create_custom_script(body=body)
+# **create_custom_script**
+> object create_custom_script(body=body)
 
 Create Custom Script
 
@@ -23,13 +23,13 @@ This request allows you to create a custom script in the Kandji library.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -39,23 +39,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.CustomScriptsApi(api_client)
+    api_instance = kandji.CustomScriptsApi(api_client)
     body = 'body_example' # str |  (optional)
 
     try:
         # Create Custom Script
-        api_response = api_instance.custom_scripts_create_custom_script(body=body)
-        print("The response of CustomScriptsApi->custom_scripts_create_custom_script:\n")
+        api_response = api_instance.create_custom_script(body=body)
+        print("The response of CustomScriptsApi->create_custom_script:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomScriptsApi->custom_scripts_create_custom_script: %s\n" % e)
+        print("Exception when calling CustomScriptsApi->create_custom_script: %s\n" % e)
 ```
 
 
@@ -88,8 +88,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **custom_scripts_delete_custom_script**
-> custom_scripts_delete_custom_script(library_item_id)
+# **delete_custom_script**
+> delete_custom_script(library_item_id)
 
 Delete Custom Script
 
@@ -100,13 +100,13 @@ Delete Custom Script
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -116,21 +116,21 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.CustomScriptsApi(api_client)
+    api_instance = kandji.CustomScriptsApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
 
     try:
         # Delete Custom Script
-        api_instance.custom_scripts_delete_custom_script(library_item_id)
+        api_instance.delete_custom_script(library_item_id)
     except Exception as e:
-        print("Exception when calling CustomScriptsApi->custom_scripts_delete_custom_script: %s\n" % e)
+        print("Exception when calling CustomScriptsApi->delete_custom_script: %s\n" % e)
 ```
 
 
@@ -164,8 +164,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **custom_scripts_get_custom_script**
-> object custom_scripts_get_custom_script(library_item_id)
+# **get_custom_script**
+> object get_custom_script(library_item_id)
 
 Get Custom Script
 
@@ -176,13 +176,13 @@ Get Custom Script
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -192,23 +192,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.CustomScriptsApi(api_client)
+    api_instance = kandji.CustomScriptsApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
 
     try:
         # Get Custom Script
-        api_response = api_instance.custom_scripts_get_custom_script(library_item_id)
-        print("The response of CustomScriptsApi->custom_scripts_get_custom_script:\n")
+        api_response = api_instance.get_custom_script(library_item_id)
+        print("The response of CustomScriptsApi->get_custom_script:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomScriptsApi->custom_scripts_get_custom_script: %s\n" % e)
+        print("Exception when calling CustomScriptsApi->get_custom_script: %s\n" % e)
 ```
 
 
@@ -241,8 +241,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **custom_scripts_list_custom_scripts**
-> object custom_scripts_list_custom_scripts(page=page)
+# **list_custom_scripts**
+> object list_custom_scripts(page=page)
 
 List Custom Scripts
 
@@ -253,13 +253,13 @@ This endpoint makes a request to retrieve a list of custom scripts from the Kand
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -269,23 +269,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.CustomScriptsApi(api_client)
+    api_instance = kandji.CustomScriptsApi(api_client)
     page = '1' # str | Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request. (optional)
 
     try:
         # List Custom Scripts
-        api_response = api_instance.custom_scripts_list_custom_scripts(page=page)
-        print("The response of CustomScriptsApi->custom_scripts_list_custom_scripts:\n")
+        api_response = api_instance.list_custom_scripts(page=page)
+        print("The response of CustomScriptsApi->list_custom_scripts:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomScriptsApi->custom_scripts_list_custom_scripts: %s\n" % e)
+        print("Exception when calling CustomScriptsApi->list_custom_scripts: %s\n" % e)
 ```
 
 
@@ -318,8 +318,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **custom_scripts_update_custom_script**
-> object custom_scripts_update_custom_script(library_item_id, body=body)
+# **update_custom_script**
+> object update_custom_script(library_item_id, body=body)
 
 Update Custom Script
 
@@ -330,13 +330,13 @@ This request allows you to update a custom script in the Kandji library.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -346,24 +346,24 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.CustomScriptsApi(api_client)
+    api_instance = kandji.CustomScriptsApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
         # Update Custom Script
-        api_response = api_instance.custom_scripts_update_custom_script(library_item_id, body=body)
-        print("The response of CustomScriptsApi->custom_scripts_update_custom_script:\n")
+        api_response = api_instance.update_custom_script(library_item_id, body=body)
+        print("The response of CustomScriptsApi->update_custom_script:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomScriptsApi->custom_scripts_update_custom_script: %s\n" % e)
+        print("Exception when calling CustomScriptsApi->update_custom_script: %s\n" % e)
 ```
 
 

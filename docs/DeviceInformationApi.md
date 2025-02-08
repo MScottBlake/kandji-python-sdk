@@ -1,22 +1,22 @@
-# kandji_sdk.DeviceInformationApi
+# kandji.DeviceInformationApi
 
 All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**device_information_cancel_lost_mode**](DeviceInformationApi.md#device_information_cancel_lost_mode) | **DELETE** /api/v1/devices/{device_id}/details/lostmode | Cancel Lost Mode
-[**device_information_get_device_activity**](DeviceInformationApi.md#device_information_get_device_activity) | **GET** /api/v1/devices/{device_id}/activity | Get Device Activity
-[**device_information_get_device_apps**](DeviceInformationApi.md#device_information_get_device_apps) | **GET** /api/v1/devices/{device_id}/apps | Get Device Apps
-[**device_information_get_device_details**](DeviceInformationApi.md#device_information_get_device_details) | **GET** /api/v1/devices/{device_id}/details | Get Device Details
-[**device_information_get_device_library_items**](DeviceInformationApi.md#device_information_get_device_library_items) | **GET** /api/v1/devices/{device_id}/library-items | Get Device Library Items
-[**device_information_get_device_lost_mode_details**](DeviceInformationApi.md#device_information_get_device_lost_mode_details) | **GET** /api/v1/devices/{device_id}/details/lostmode | Get Device Lost Mode details
-[**device_information_get_device_parameters**](DeviceInformationApi.md#device_information_get_device_parameters) | **GET** /api/v1/devices/{device_id}/parameters | Get Device Parameters
-[**device_information_get_device_status**](DeviceInformationApi.md#device_information_get_device_status) | **GET** /api/v1/devices/{device_id}/status | Get Device Status
-[**device_information_list_devices**](DeviceInformationApi.md#device_information_list_devices) | **GET** /api/v1/devices | List Devices
+[**cancel_lost_mode**](DeviceInformationApi.md#cancel_lost_mode) | **DELETE** /api/v1/devices/{device_id}/details/lostmode | Cancel Lost Mode
+[**get_device_activity**](DeviceInformationApi.md#get_device_activity) | **GET** /api/v1/devices/{device_id}/activity | Get Device Activity
+[**get_device_apps**](DeviceInformationApi.md#get_device_apps) | **GET** /api/v1/devices/{device_id}/apps | Get Device Apps
+[**get_device_details**](DeviceInformationApi.md#get_device_details) | **GET** /api/v1/devices/{device_id}/details | Get Device Details
+[**get_device_library_items**](DeviceInformationApi.md#get_device_library_items) | **GET** /api/v1/devices/{device_id}/library-items | Get Device Library Items
+[**get_device_lost_mode_details**](DeviceInformationApi.md#get_device_lost_mode_details) | **GET** /api/v1/devices/{device_id}/details/lostmode | Get Device Lost Mode details
+[**get_device_parameters**](DeviceInformationApi.md#get_device_parameters) | **GET** /api/v1/devices/{device_id}/parameters | Get Device Parameters
+[**get_device_status**](DeviceInformationApi.md#get_device_status) | **GET** /api/v1/devices/{device_id}/status | Get Device Status
+[**list_devices**](DeviceInformationApi.md#list_devices) | **GET** /api/v1/devices | List Devices
 
 
-# **device_information_cancel_lost_mode**
-> device_information_cancel_lost_mode(device_id)
+# **cancel_lost_mode**
+> cancel_lost_mode(device_id)
 
 Cancel Lost Mode
 
@@ -27,13 +27,13 @@ This endpoint can be used to send a cancelation request if Lost Mode is in an er
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -43,21 +43,21 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceInformationApi(api_client)
+    api_instance = kandji.DeviceInformationApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
         # Cancel Lost Mode
-        api_instance.device_information_cancel_lost_mode(device_id)
+        api_instance.cancel_lost_mode(device_id)
     except Exception as e:
-        print("Exception when calling DeviceInformationApi->device_information_cancel_lost_mode: %s\n" % e)
+        print("Exception when calling DeviceInformationApi->cancel_lost_mode: %s\n" % e)
 ```
 
 
@@ -90,8 +90,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_information_get_device_activity**
-> object device_information_get_device_activity(device_id, limit, offset=offset)
+# **get_device_activity**
+> object get_device_activity(device_id, limit, offset=offset)
 
 Get Device Activity
 
@@ -102,13 +102,13 @@ This request returns the device activity for a specified Device ID.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -118,25 +118,25 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceInformationApi(api_client)
+    api_instance = kandji.DeviceInformationApi(api_client)
     device_id = 'device_id_example' # str | 
     limit = '300' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
     offset = '0' # str | Specify the starting record to return (optional)
 
     try:
         # Get Device Activity
-        api_response = api_instance.device_information_get_device_activity(device_id, limit, offset=offset)
-        print("The response of DeviceInformationApi->device_information_get_device_activity:\n")
+        api_response = api_instance.get_device_activity(device_id, limit, offset=offset)
+        print("The response of DeviceInformationApi->get_device_activity:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DeviceInformationApi->device_information_get_device_activity: %s\n" % e)
+        print("Exception when calling DeviceInformationApi->get_device_activity: %s\n" % e)
 ```
 
 
@@ -171,8 +171,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_information_get_device_apps**
-> object device_information_get_device_apps(device_id)
+# **get_device_apps**
+> object get_device_apps(device_id)
 
 Get Device Apps
 
@@ -183,13 +183,13 @@ Get Device Apps
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -199,23 +199,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceInformationApi(api_client)
+    api_instance = kandji.DeviceInformationApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
         # Get Device Apps
-        api_response = api_instance.device_information_get_device_apps(device_id)
-        print("The response of DeviceInformationApi->device_information_get_device_apps:\n")
+        api_response = api_instance.get_device_apps(device_id)
+        print("The response of DeviceInformationApi->get_device_apps:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DeviceInformationApi->device_information_get_device_apps: %s\n" % e)
+        print("Exception when calling DeviceInformationApi->get_device_apps: %s\n" % e)
 ```
 
 
@@ -248,8 +248,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_information_get_device_details**
-> object device_information_get_device_details(device_id)
+# **get_device_details**
+> object get_device_details(device_id)
 
 Get Device Details
 
@@ -260,13 +260,13 @@ This request returns the device details for a specified Device ID.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -276,23 +276,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceInformationApi(api_client)
+    api_instance = kandji.DeviceInformationApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
         # Get Device Details
-        api_response = api_instance.device_information_get_device_details(device_id)
-        print("The response of DeviceInformationApi->device_information_get_device_details:\n")
+        api_response = api_instance.get_device_details(device_id)
+        print("The response of DeviceInformationApi->get_device_details:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DeviceInformationApi->device_information_get_device_details: %s\n" % e)
+        print("Exception when calling DeviceInformationApi->get_device_details: %s\n" % e)
 ```
 
 
@@ -325,8 +325,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_information_get_device_library_items**
-> object device_information_get_device_library_items(device_id)
+# **get_device_library_items**
+> object get_device_library_items(device_id)
 
 Get Device Library Items
 
@@ -337,13 +337,13 @@ Get Device Library Items
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -353,23 +353,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceInformationApi(api_client)
+    api_instance = kandji.DeviceInformationApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
         # Get Device Library Items
-        api_response = api_instance.device_information_get_device_library_items(device_id)
-        print("The response of DeviceInformationApi->device_information_get_device_library_items:\n")
+        api_response = api_instance.get_device_library_items(device_id)
+        print("The response of DeviceInformationApi->get_device_library_items:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DeviceInformationApi->device_information_get_device_library_items: %s\n" % e)
+        print("Exception when calling DeviceInformationApi->get_device_library_items: %s\n" % e)
 ```
 
 
@@ -402,8 +402,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_information_get_device_lost_mode_details**
-> object device_information_get_device_lost_mode_details(device_id)
+# **get_device_lost_mode_details**
+> object get_device_lost_mode_details(device_id)
 
 Get Device Lost Mode details
 
@@ -414,13 +414,13 @@ Get Device Lost Mode details
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -430,23 +430,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceInformationApi(api_client)
+    api_instance = kandji.DeviceInformationApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
         # Get Device Lost Mode details
-        api_response = api_instance.device_information_get_device_lost_mode_details(device_id)
-        print("The response of DeviceInformationApi->device_information_get_device_lost_mode_details:\n")
+        api_response = api_instance.get_device_lost_mode_details(device_id)
+        print("The response of DeviceInformationApi->get_device_lost_mode_details:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DeviceInformationApi->device_information_get_device_lost_mode_details: %s\n" % e)
+        print("Exception when calling DeviceInformationApi->get_device_lost_mode_details: %s\n" % e)
 ```
 
 
@@ -480,8 +480,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_information_get_device_parameters**
-> object device_information_get_device_parameters(device_id)
+# **get_device_parameters**
+> object get_device_parameters(device_id)
 
 Get Device Parameters
 
@@ -492,13 +492,13 @@ Get Device Parameters
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -508,23 +508,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceInformationApi(api_client)
+    api_instance = kandji.DeviceInformationApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
         # Get Device Parameters
-        api_response = api_instance.device_information_get_device_parameters(device_id)
-        print("The response of DeviceInformationApi->device_information_get_device_parameters:\n")
+        api_response = api_instance.get_device_parameters(device_id)
+        print("The response of DeviceInformationApi->get_device_parameters:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DeviceInformationApi->device_information_get_device_parameters: %s\n" % e)
+        print("Exception when calling DeviceInformationApi->get_device_parameters: %s\n" % e)
 ```
 
 
@@ -557,8 +557,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_information_get_device_status**
-> object device_information_get_device_status(device_id)
+# **get_device_status**
+> object get_device_status(device_id)
 
 Get Device Status
 
@@ -569,13 +569,13 @@ Get Device Status
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -585,23 +585,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceInformationApi(api_client)
+    api_instance = kandji.DeviceInformationApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
         # Get Device Status
-        api_response = api_instance.device_information_get_device_status(device_id)
-        print("The response of DeviceInformationApi->device_information_get_device_status:\n")
+        api_response = api_instance.get_device_status(device_id)
+        print("The response of DeviceInformationApi->get_device_status:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DeviceInformationApi->device_information_get_device_status: %s\n" % e)
+        print("Exception when calling DeviceInformationApi->get_device_status: %s\n" % e)
 ```
 
 
@@ -634,8 +634,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_information_list_devices**
-> object device_information_list_devices(limit, asset_tag=asset_tag, blueprint_id=blueprint_id, device_id=device_id, device_name=device_name, filevault_enabled=filevault_enabled, mac_address=mac_address, model=model, ordering=ordering, os_version=os_version, platform=platform, serial_number=serial_number, tag_name=tag_name, tag_name_in=tag_name_in, tag_id=tag_id, tag_id_in=tag_id_in, user=user, user_email=user_email, user_id=user_id, user_name=user_name, offset=offset)
+# **list_devices**
+> object list_devices(limit, asset_tag=asset_tag, blueprint_id=blueprint_id, device_id=device_id, device_name=device_name, filevault_enabled=filevault_enabled, mac_address=mac_address, model=model, ordering=ordering, os_version=os_version, platform=platform, serial_number=serial_number, tag_name=tag_name, tag_name_in=tag_name_in, tag_id=tag_id, tag_id_in=tag_id_in, user=user, user_email=user_email, user_id=user_id, user_name=user_name, offset=offset)
 
 List Devices
 
@@ -646,13 +646,13 @@ List Devices
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -662,14 +662,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceInformationApi(api_client)
+    api_instance = kandji.DeviceInformationApi(api_client)
     limit = '300' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
     asset_tag = '23245' # str |  (optional)
     blueprint_id = '91f97957-2353-4f86-a1ab-64d2b044a596' # str | Return results &quot;containing&quot; the specified blueprint id (optional)
@@ -694,11 +694,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # List Devices
-        api_response = api_instance.device_information_list_devices(limit, asset_tag=asset_tag, blueprint_id=blueprint_id, device_id=device_id, device_name=device_name, filevault_enabled=filevault_enabled, mac_address=mac_address, model=model, ordering=ordering, os_version=os_version, platform=platform, serial_number=serial_number, tag_name=tag_name, tag_name_in=tag_name_in, tag_id=tag_id, tag_id_in=tag_id_in, user=user, user_email=user_email, user_id=user_id, user_name=user_name, offset=offset)
-        print("The response of DeviceInformationApi->device_information_list_devices:\n")
+        api_response = api_instance.list_devices(limit, asset_tag=asset_tag, blueprint_id=blueprint_id, device_id=device_id, device_name=device_name, filevault_enabled=filevault_enabled, mac_address=mac_address, model=model, ordering=ordering, os_version=os_version, platform=platform, serial_number=serial_number, tag_name=tag_name, tag_name_in=tag_name_in, tag_id=tag_id, tag_id_in=tag_id_in, user=user, user_email=user_email, user_id=user_id, user_name=user_name, offset=offset)
+        print("The response of DeviceInformationApi->list_devices:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DeviceInformationApi->device_information_list_devices: %s\n" % e)
+        print("Exception when calling DeviceInformationApi->list_devices: %s\n" % e)
 ```
 
 

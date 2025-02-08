@@ -1,31 +1,31 @@
-# kandji_sdk.PrismApi
+# kandji.PrismApi
 
 All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**prism_activation_lock**](PrismApi.md#prism_activation_lock) | **GET** /api/v1/prism/activation_lock | Activation lock
-[**prism_application_firewall**](PrismApi.md#prism_application_firewall) | **GET** /api/v1/prism/application_firewall | Application firewall
-[**prism_applications**](PrismApi.md#prism_applications) | **GET** /api/v1/prism/apps | Applications
-[**prism_certificates**](PrismApi.md#prism_certificates) | **GET** /api/v1/prism/certificates | Certificates
-[**prism_count**](PrismApi.md#prism_count) | **GET** /api/v1/prism/count | Count
-[**prism_desktop_and_screensaver**](PrismApi.md#prism_desktop_and_screensaver) | **GET** /api/v1/prism/desktop_and_screensaver | Desktop and Screensaver
-[**prism_device_information**](PrismApi.md#prism_device_information) | **GET** /api/v1/prism/device_information | Device information
-[**prism_filevault**](PrismApi.md#prism_filevault) | **GET** /api/v1/prism/filevault | FileVault
-[**prism_gatekeeper_and_xprotect**](PrismApi.md#prism_gatekeeper_and_xprotect) | **GET** /api/v1/prism/gatekeeper_and_xprotect | Gatekeeper and XProtect
-[**prism_get_category_export**](PrismApi.md#prism_get_category_export) | **GET** /api/v1/prism/export/{export_id} | Get category export
-[**prism_installed_profiles**](PrismApi.md#prism_installed_profiles) | **GET** /api/v1/prism/installed_profiles | Installed profiles
-[**prism_kernel_extensions**](PrismApi.md#prism_kernel_extensions) | **GET** /api/v1/prism/kernel_extensions | Kernel Extensions
-[**prism_launch_agents_and_daemons**](PrismApi.md#prism_launch_agents_and_daemons) | **GET** /api/v1/prism/launch_agents_and_daemons | Launch Agents and Daemons
-[**prism_local_users**](PrismApi.md#prism_local_users) | **GET** /api/v1/prism/local_users | Local users
-[**prism_request_category_export**](PrismApi.md#prism_request_category_export) | **POST** /api/v1/prism/export | Request category export
-[**prism_startup_settings**](PrismApi.md#prism_startup_settings) | **GET** /api/v1/prism/startup_settings | Startup settings
-[**prism_system_extensions**](PrismApi.md#prism_system_extensions) | **GET** /api/v1/prism/system_extensions | System Extensions
-[**prism_transparency_database**](PrismApi.md#prism_transparency_database) | **GET** /api/v1/prism/transparency_database | Transparency database
+[**activation_lock**](PrismApi.md#activation_lock) | **GET** /api/v1/prism/activation_lock | Activation lock
+[**application_firewall**](PrismApi.md#application_firewall) | **GET** /api/v1/prism/application_firewall | Application firewall
+[**applications**](PrismApi.md#applications) | **GET** /api/v1/prism/apps | Applications
+[**certificates**](PrismApi.md#certificates) | **GET** /api/v1/prism/certificates | Certificates
+[**count**](PrismApi.md#count) | **GET** /api/v1/prism/count | Count
+[**desktop_and_screensaver**](PrismApi.md#desktop_and_screensaver) | **GET** /api/v1/prism/desktop_and_screensaver | Desktop and Screensaver
+[**device_information**](PrismApi.md#device_information) | **GET** /api/v1/prism/device_information | Device information
+[**filevault**](PrismApi.md#filevault) | **GET** /api/v1/prism/filevault | FileVault
+[**gatekeeper_and_xprotect**](PrismApi.md#gatekeeper_and_xprotect) | **GET** /api/v1/prism/gatekeeper_and_xprotect | Gatekeeper and XProtect
+[**get_category_export**](PrismApi.md#get_category_export) | **GET** /api/v1/prism/export/{export_id} | Get category export
+[**installed_profiles**](PrismApi.md#installed_profiles) | **GET** /api/v1/prism/installed_profiles | Installed profiles
+[**kernel_extensions**](PrismApi.md#kernel_extensions) | **GET** /api/v1/prism/kernel_extensions | Kernel Extensions
+[**launch_agents_and_daemons**](PrismApi.md#launch_agents_and_daemons) | **GET** /api/v1/prism/launch_agents_and_daemons | Launch Agents and Daemons
+[**local_users**](PrismApi.md#local_users) | **GET** /api/v1/prism/local_users | Local users
+[**request_category_export**](PrismApi.md#request_category_export) | **POST** /api/v1/prism/export | Request category export
+[**startup_settings**](PrismApi.md#startup_settings) | **GET** /api/v1/prism/startup_settings | Startup settings
+[**system_extensions**](PrismApi.md#system_extensions) | **GET** /api/v1/prism/system_extensions | System Extensions
+[**transparency_database**](PrismApi.md#transparency_database) | **GET** /api/v1/prism/transparency_database | Transparency database
 
 
-# **prism_activation_lock**
-> prism_activation_lock(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **activation_lock**
+> activation_lock(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Activation lock
 
@@ -36,13 +36,13 @@ Get activation lock attributes for devices.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -52,14 +52,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.PrismApi(api_client)
+    api_instance = kandji.PrismApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
@@ -69,9 +69,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Activation lock
-        api_instance.prism_activation_lock(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        api_instance.activation_lock(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
     except Exception as e:
-        print("Exception when calling PrismApi->prism_activation_lock: %s\n" % e)
+        print("Exception when calling PrismApi->activation_lock: %s\n" % e)
 ```
 
 
@@ -109,8 +109,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prism_application_firewall**
-> object prism_application_firewall(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **application_firewall**
+> object application_firewall(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Application firewall
 
@@ -121,13 +121,13 @@ Get Application Firewall details for macOS.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -137,14 +137,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.PrismApi(api_client)
+    api_instance = kandji.PrismApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
@@ -154,11 +154,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Application firewall
-        api_response = api_instance.prism_application_firewall(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->prism_application_firewall:\n")
+        api_response = api_instance.application_firewall(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->application_firewall:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->prism_application_firewall: %s\n" % e)
+        print("Exception when calling PrismApi->application_firewall: %s\n" % e)
 ```
 
 
@@ -196,8 +196,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prism_applications**
-> object prism_applications(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **applications**
+> object applications(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Applications
 
@@ -208,13 +208,13 @@ Get the applications installed on macOS, iOS, iPadOS, and tvOS devices.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -224,14 +224,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.PrismApi(api_client)
+    api_instance = kandji.PrismApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '{\"name\":{\"not_in\":[\"Okta Verify\"]},\"device__name\":{\"not_in\":[\"testuser’s MacBook Air\"]}}' # str | JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
@@ -241,11 +241,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Applications
-        api_response = api_instance.prism_applications(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->prism_applications:\n")
+        api_response = api_instance.applications(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->applications:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->prism_applications: %s\n" % e)
+        print("Exception when calling PrismApi->applications: %s\n" % e)
 ```
 
 
@@ -283,8 +283,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prism_certificates**
-> object prism_certificates(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **certificates**
+> object certificates(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Certificates
 
@@ -295,13 +295,13 @@ Get certificate details.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -311,14 +311,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.PrismApi(api_client)
+    api_instance = kandji.PrismApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
@@ -328,11 +328,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Certificates
-        api_response = api_instance.prism_certificates(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->prism_certificates:\n")
+        api_response = api_instance.certificates(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->certificates:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->prism_certificates: %s\n" % e)
+        print("Exception when calling PrismApi->certificates: %s\n" % e)
 ```
 
 
@@ -370,8 +370,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prism_count**
-> object prism_count(category)
+# **count**
+> object count(category)
 
 Count
 
@@ -382,13 +382,13 @@ Count
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -398,23 +398,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.PrismApi(api_client)
+    api_instance = kandji.PrismApi(api_client)
     category = 'apps' # str | <p>Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores (&quot;_&quot;) when using the API query.</p> <p>Examples: apps device_information kernel_extensions system_extensions</p>
 
     try:
         # Count
-        api_response = api_instance.prism_count(category)
-        print("The response of PrismApi->prism_count:\n")
+        api_response = api_instance.count(category)
+        print("The response of PrismApi->count:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->prism_count: %s\n" % e)
+        print("Exception when calling PrismApi->count: %s\n" % e)
 ```
 
 
@@ -447,8 +447,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prism_desktop_and_screensaver**
-> object prism_desktop_and_screensaver(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **desktop_and_screensaver**
+> object desktop_and_screensaver(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Desktop and Screensaver
 
@@ -459,13 +459,13 @@ Get Desktop and Screensaver details for macOS.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -475,14 +475,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.PrismApi(api_client)
+    api_instance = kandji.PrismApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
@@ -492,11 +492,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Desktop and Screensaver
-        api_response = api_instance.prism_desktop_and_screensaver(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->prism_desktop_and_screensaver:\n")
+        api_response = api_instance.desktop_and_screensaver(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->desktop_and_screensaver:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->prism_desktop_and_screensaver: %s\n" % e)
+        print("Exception when calling PrismApi->desktop_and_screensaver: %s\n" % e)
 ```
 
 
@@ -534,8 +534,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prism_device_information**
-> object prism_device_information(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset, body=body)
+# **device_information**
+> object device_information(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset, body=body)
 
 Device information
 
@@ -546,13 +546,13 @@ Get attributes about devices.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -562,14 +562,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.PrismApi(api_client)
+    api_instance = kandji.PrismApi(api_client)
     blueprint_ids = '14afabf2-7599-47af-a942-bf7f0b8fedf8' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '{\"device__name\":{\"in\":[\"testusers\'s MacBook Air\"]},\"updated_at\":{\"gte\":\"2023-09-03T04:00:00.000Z\",\"lte\":\"2023-09-04T04:00:00.000Z\"}}' # str | <p>JSON schema object containing one or more key value pairs.</p> <p>Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p> (optional)
@@ -580,11 +580,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Device information
-        api_response = api_instance.prism_device_information(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset, body=body)
-        print("The response of PrismApi->prism_device_information:\n")
+        api_response = api_instance.device_information(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset, body=body)
+        print("The response of PrismApi->device_information:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->prism_device_information: %s\n" % e)
+        print("Exception when calling PrismApi->device_information: %s\n" % e)
 ```
 
 
@@ -623,8 +623,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prism_filevault**
-> object prism_filevault(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **filevault**
+> object filevault(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 FileVault
 
@@ -635,13 +635,13 @@ Get FileVault information for macOS.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -651,14 +651,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.PrismApi(api_client)
+    api_instance = kandji.PrismApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
@@ -668,11 +668,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # FileVault
-        api_response = api_instance.prism_filevault(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->prism_filevault:\n")
+        api_response = api_instance.filevault(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->filevault:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->prism_filevault: %s\n" % e)
+        print("Exception when calling PrismApi->filevault: %s\n" % e)
 ```
 
 
@@ -710,8 +710,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prism_gatekeeper_and_xprotect**
-> object prism_gatekeeper_and_xprotect(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **gatekeeper_and_xprotect**
+> object gatekeeper_and_xprotect(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Gatekeeper and XProtect
 
@@ -722,13 +722,13 @@ Get Gatekeeper and XProtect attributes for macOS.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -738,14 +738,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.PrismApi(api_client)
+    api_instance = kandji.PrismApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac' # str | Results are limited to Mac only as Gatekeeper and XProtect are not applicable for other platfroms. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
@@ -755,11 +755,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Gatekeeper and XProtect
-        api_response = api_instance.prism_gatekeeper_and_xprotect(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->prism_gatekeeper_and_xprotect:\n")
+        api_response = api_instance.gatekeeper_and_xprotect(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->gatekeeper_and_xprotect:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->prism_gatekeeper_and_xprotect: %s\n" % e)
+        print("Exception when calling PrismApi->gatekeeper_and_xprotect: %s\n" % e)
 ```
 
 
@@ -797,8 +797,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prism_get_category_export**
-> object prism_get_category_export(export_id)
+# **get_category_export**
+> object get_category_export(export_id)
 
 Get category export
 
@@ -809,13 +809,13 @@ Get category export
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -825,23 +825,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.PrismApi(api_client)
+    api_instance = kandji.PrismApi(api_client)
     export_id = 'export_id_example' # str | 
 
     try:
         # Get category export
-        api_response = api_instance.prism_get_category_export(export_id)
-        print("The response of PrismApi->prism_get_category_export:\n")
+        api_response = api_instance.get_category_export(export_id)
+        print("The response of PrismApi->get_category_export:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->prism_get_category_export: %s\n" % e)
+        print("Exception when calling PrismApi->get_category_export: %s\n" % e)
 ```
 
 
@@ -874,8 +874,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prism_installed_profiles**
-> object prism_installed_profiles(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **installed_profiles**
+> object installed_profiles(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Installed profiles
 
@@ -886,13 +886,13 @@ Get Installed Profiles attributes for macOS, iOS, iPadOS, and tvOS.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -902,14 +902,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.PrismApi(api_client)
+    api_instance = kandji.PrismApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
@@ -919,11 +919,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Installed profiles
-        api_response = api_instance.prism_installed_profiles(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->prism_installed_profiles:\n")
+        api_response = api_instance.installed_profiles(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->installed_profiles:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->prism_installed_profiles: %s\n" % e)
+        print("Exception when calling PrismApi->installed_profiles: %s\n" % e)
 ```
 
 
@@ -961,8 +961,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prism_kernel_extensions**
-> object prism_kernel_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **kernel_extensions**
+> object kernel_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Kernel Extensions
 
@@ -973,13 +973,13 @@ Get Kernel Extension attributes for macOS.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -989,14 +989,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.PrismApi(api_client)
+    api_instance = kandji.PrismApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | SON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
@@ -1006,11 +1006,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Kernel Extensions
-        api_response = api_instance.prism_kernel_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->prism_kernel_extensions:\n")
+        api_response = api_instance.kernel_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->kernel_extensions:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->prism_kernel_extensions: %s\n" % e)
+        print("Exception when calling PrismApi->kernel_extensions: %s\n" % e)
 ```
 
 
@@ -1048,8 +1048,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prism_launch_agents_and_daemons**
-> object prism_launch_agents_and_daemons(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **launch_agents_and_daemons**
+> object launch_agents_and_daemons(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Launch Agents and Daemons
 
@@ -1060,13 +1060,13 @@ Get Launch Agents and Daemons installed on macOS.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -1076,14 +1076,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.PrismApi(api_client)
+    api_instance = kandji.PrismApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
@@ -1093,11 +1093,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Launch Agents and Daemons
-        api_response = api_instance.prism_launch_agents_and_daemons(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->prism_launch_agents_and_daemons:\n")
+        api_response = api_instance.launch_agents_and_daemons(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->launch_agents_and_daemons:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->prism_launch_agents_and_daemons: %s\n" % e)
+        print("Exception when calling PrismApi->launch_agents_and_daemons: %s\n" % e)
 ```
 
 
@@ -1135,8 +1135,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prism_local_users**
-> object prism_local_users(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **local_users**
+> object local_users(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Local users
 
@@ -1147,13 +1147,13 @@ Get Local Users detials for macOS.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -1163,14 +1163,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.PrismApi(api_client)
+    api_instance = kandji.PrismApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
@@ -1180,11 +1180,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Local users
-        api_response = api_instance.prism_local_users(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->prism_local_users:\n")
+        api_response = api_instance.local_users(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->local_users:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->prism_local_users: %s\n" % e)
+        print("Exception when calling PrismApi->local_users: %s\n" % e)
 ```
 
 
@@ -1222,8 +1222,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prism_request_category_export**
-> object prism_request_category_export(body=body)
+# **request_category_export**
+> object request_category_export(body=body)
 
 Request category export
 
@@ -1234,13 +1234,13 @@ Request category export
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -1250,23 +1250,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.PrismApi(api_client)
+    api_instance = kandji.PrismApi(api_client)
     body = 'body_example' # str |  (optional)
 
     try:
         # Request category export
-        api_response = api_instance.prism_request_category_export(body=body)
-        print("The response of PrismApi->prism_request_category_export:\n")
+        api_response = api_instance.request_category_export(body=body)
+        print("The response of PrismApi->request_category_export:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->prism_request_category_export: %s\n" % e)
+        print("Exception when calling PrismApi->request_category_export: %s\n" % e)
 ```
 
 
@@ -1300,8 +1300,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prism_startup_settings**
-> object prism_startup_settings(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **startup_settings**
+> object startup_settings(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Startup settings
 
@@ -1312,13 +1312,13 @@ Get Startup settings for macOS.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -1328,14 +1328,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.PrismApi(api_client)
+    api_instance = kandji.PrismApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
@@ -1345,11 +1345,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Startup settings
-        api_response = api_instance.prism_startup_settings(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->prism_startup_settings:\n")
+        api_response = api_instance.startup_settings(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->startup_settings:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->prism_startup_settings: %s\n" % e)
+        print("Exception when calling PrismApi->startup_settings: %s\n" % e)
 ```
 
 
@@ -1387,8 +1387,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prism_system_extensions**
-> object prism_system_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **system_extensions**
+> object system_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 System Extensions
 
@@ -1399,13 +1399,13 @@ Get System Extension attributes for macOS.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -1415,14 +1415,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.PrismApi(api_client)
+    api_instance = kandji.PrismApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
@@ -1432,11 +1432,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # System Extensions
-        api_response = api_instance.prism_system_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->prism_system_extensions:\n")
+        api_response = api_instance.system_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->system_extensions:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->prism_system_extensions: %s\n" % e)
+        print("Exception when calling PrismApi->system_extensions: %s\n" % e)
 ```
 
 
@@ -1474,8 +1474,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prism_transparency_database**
-> object prism_transparency_database(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+# **transparency_database**
+> object transparency_database(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Transparency database
 
@@ -1486,13 +1486,13 @@ Get Transparency Database (TCC) attributes for macOS.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -1502,14 +1502,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.PrismApi(api_client)
+    api_instance = kandji.PrismApi(api_client)
     blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
     device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
     filter = '' # str | JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
@@ -1519,11 +1519,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Transparency database
-        api_response = api_instance.prism_transparency_database(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
-        print("The response of PrismApi->prism_transparency_database:\n")
+        api_response = api_instance.transparency_database(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->transparency_database:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PrismApi->prism_transparency_database: %s\n" % e)
+        print("Exception when calling PrismApi->transparency_database: %s\n" % e)
 ```
 
 

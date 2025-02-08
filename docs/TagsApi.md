@@ -1,17 +1,17 @@
-# kandji_sdk.TagsApi
+# kandji.TagsApi
 
 All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**tags_create_tag**](TagsApi.md#tags_create_tag) | **POST** /api/v1/tags | Create Tag
-[**tags_delete_tag**](TagsApi.md#tags_delete_tag) | **DELETE** /api/v1/tags/{tag_id} | Delete Tag
-[**tags_get_tags**](TagsApi.md#tags_get_tags) | **GET** /api/v1/tags | Get Tags
-[**tags_update_tag**](TagsApi.md#tags_update_tag) | **PATCH** /api/v1/tags/{tag_id} | Update Tag
+[**create_tag**](TagsApi.md#create_tag) | **POST** /api/v1/tags | Create Tag
+[**delete_tag**](TagsApi.md#delete_tag) | **DELETE** /api/v1/tags/{tag_id} | Delete Tag
+[**get_tags**](TagsApi.md#get_tags) | **GET** /api/v1/tags | Get Tags
+[**update_tag**](TagsApi.md#update_tag) | **PATCH** /api/v1/tags/{tag_id} | Update Tag
 
 
-# **tags_create_tag**
-> object tags_create_tag(body=body)
+# **create_tag**
+> object create_tag(body=body)
 
 Create Tag
 
@@ -22,13 +22,13 @@ Create a tag. Can only create one tag per request.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -38,23 +38,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.TagsApi(api_client)
+    api_instance = kandji.TagsApi(api_client)
     body = 'body_example' # str |  (optional)
 
     try:
         # Create Tag
-        api_response = api_instance.tags_create_tag(body=body)
-        print("The response of TagsApi->tags_create_tag:\n")
+        api_response = api_instance.create_tag(body=body)
+        print("The response of TagsApi->create_tag:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TagsApi->tags_create_tag: %s\n" % e)
+        print("Exception when calling TagsApi->create_tag: %s\n" % e)
 ```
 
 
@@ -87,8 +87,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **tags_delete_tag**
-> tags_delete_tag(tag_id)
+# **delete_tag**
+> delete_tag(tag_id)
 
 Delete Tag
 
@@ -99,13 +99,13 @@ Delete Tag
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -115,21 +115,21 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.TagsApi(api_client)
+    api_instance = kandji.TagsApi(api_client)
     tag_id = 'tag_id_example' # str | 
 
     try:
         # Delete Tag
-        api_instance.tags_delete_tag(tag_id)
+        api_instance.delete_tag(tag_id)
     except Exception as e:
-        print("Exception when calling TagsApi->tags_delete_tag: %s\n" % e)
+        print("Exception when calling TagsApi->delete_tag: %s\n" % e)
 ```
 
 
@@ -162,8 +162,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **tags_get_tags**
-> object tags_get_tags(search)
+# **get_tags**
+> object get_tags(search)
 
 Get Tags
 
@@ -174,13 +174,13 @@ Return configured tags.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -190,23 +190,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.TagsApi(api_client)
+    api_instance = kandji.TagsApi(api_client)
     search = 'accuhive' # str | Return resultes containing a given tag search string.
 
     try:
         # Get Tags
-        api_response = api_instance.tags_get_tags(search)
-        print("The response of TagsApi->tags_get_tags:\n")
+        api_response = api_instance.get_tags(search)
+        print("The response of TagsApi->get_tags:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TagsApi->tags_get_tags: %s\n" % e)
+        print("Exception when calling TagsApi->get_tags: %s\n" % e)
 ```
 
 
@@ -239,8 +239,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **tags_update_tag**
-> object tags_update_tag(tag_id, body=body)
+# **update_tag**
+> object update_tag(tag_id, body=body)
 
 Update Tag
 
@@ -251,13 +251,13 @@ Update Tag
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -267,24 +267,24 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.TagsApi(api_client)
+    api_instance = kandji.TagsApi(api_client)
     tag_id = 'tag_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
         # Update Tag
-        api_response = api_instance.tags_update_tag(tag_id, body=body)
-        print("The response of TagsApi->tags_update_tag:\n")
+        api_response = api_instance.update_tag(tag_id, body=body)
+        print("The response of TagsApi->update_tag:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TagsApi->tags_update_tag: %s\n" % e)
+        print("Exception when calling TagsApi->update_tag: %s\n" % e)
 ```
 
 

@@ -1,14 +1,14 @@
-# kandji_sdk.ThreatsApi
+# kandji.ThreatsApi
 
 All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**threats_get_threat_details**](ThreatsApi.md#threats_get_threat_details) | **GET** /api/v1/threat-details | Get Threat Details
+[**get_threat_details**](ThreatsApi.md#get_threat_details) | **GET** /api/v1/threat-details | Get Threat Details
 
 
-# **threats_get_threat_details**
-> object threats_get_threat_details(classification=classification, date_range=date_range, device_id=device_id, status=status, sort_by=sort_by, term=term, limit=limit, offset=offset)
+# **get_threat_details**
+> object get_threat_details(classification=classification, date_range=date_range, device_id=device_id, status=status, sort_by=sort_by, term=term, limit=limit, offset=offset)
 
 Get Threat Details
 
@@ -19,13 +19,13 @@ Get threat details.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -35,14 +35,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.ThreatsApi(api_client)
+    api_instance = kandji.ThreatsApi(api_client)
     classification = 'malware' # str | Return all records matching a specified classification. The following classification options are available: <code>malware</code> and <code>pup</code>. Leave this parameter empty to return all classification types. (optional)
     date_range = '7' # str | Return all records within a specified number of days. Any positive number of days may be specified. Examples: <code>7</code>, <code>30</code>, <code>60</code>, <code>90</code>, <code>180</code>, or <code>365</code>. (optional)
     device_id = '15fcec08-xxxx-xxxx-xxxx-7c2f950910eb' # str |  (optional)
@@ -54,11 +54,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get Threat Details
-        api_response = api_instance.threats_get_threat_details(classification=classification, date_range=date_range, device_id=device_id, status=status, sort_by=sort_by, term=term, limit=limit, offset=offset)
-        print("The response of ThreatsApi->threats_get_threat_details:\n")
+        api_response = api_instance.get_threat_details(classification=classification, date_range=date_range, device_id=device_id, status=status, sort_by=sort_by, term=term, limit=limit, offset=offset)
+        print("The response of ThreatsApi->get_threat_details:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ThreatsApi->threats_get_threat_details: %s\n" % e)
+        print("Exception when calling ThreatsApi->get_threat_details: %s\n" % e)
 ```
 
 

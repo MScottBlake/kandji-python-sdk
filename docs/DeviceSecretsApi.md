@@ -1,17 +1,17 @@
-# kandji_sdk.DeviceSecretsApi
+# kandji.DeviceSecretsApi
 
 All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**device_secrets_get_activation_lock_bypass_code**](DeviceSecretsApi.md#device_secrets_get_activation_lock_bypass_code) | **GET** /api/v1/devices/{device_id}/secrets/bypasscode | Get Activation Lock Bypass Code
-[**device_secrets_get_filevault_recovery_key**](DeviceSecretsApi.md#device_secrets_get_filevault_recovery_key) | **GET** /api/v1/devices/{device_id}/secrets/filevaultkey | Get FileVault Recovery Key
-[**device_secrets_get_recovery_lock_password**](DeviceSecretsApi.md#device_secrets_get_recovery_lock_password) | **GET** /api/v1/devices/{device_id}/secrets/recoverypassword | Get Recovery Lock Password
-[**device_secrets_get_unlock_pin**](DeviceSecretsApi.md#device_secrets_get_unlock_pin) | **GET** /api/v1/devices/{device_id}/secrets/unlockpin | Get Unlock Pin
+[**get_activation_lock_bypass_code**](DeviceSecretsApi.md#get_activation_lock_bypass_code) | **GET** /api/v1/devices/{device_id}/secrets/bypasscode | Get Activation Lock Bypass Code
+[**get_filevault_recovery_key**](DeviceSecretsApi.md#get_filevault_recovery_key) | **GET** /api/v1/devices/{device_id}/secrets/filevaultkey | Get FileVault Recovery Key
+[**get_recovery_lock_password**](DeviceSecretsApi.md#get_recovery_lock_password) | **GET** /api/v1/devices/{device_id}/secrets/recoverypassword | Get Recovery Lock Password
+[**get_unlock_pin**](DeviceSecretsApi.md#get_unlock_pin) | **GET** /api/v1/devices/{device_id}/secrets/unlockpin | Get Unlock Pin
 
 
-# **device_secrets_get_activation_lock_bypass_code**
-> object device_secrets_get_activation_lock_bypass_code(device_id)
+# **get_activation_lock_bypass_code**
+> object get_activation_lock_bypass_code(device_id)
 
 Get Activation Lock Bypass Code
 
@@ -22,13 +22,13 @@ Get Activation Lock Bypass Code
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -38,23 +38,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceSecretsApi(api_client)
+    api_instance = kandji.DeviceSecretsApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
         # Get Activation Lock Bypass Code
-        api_response = api_instance.device_secrets_get_activation_lock_bypass_code(device_id)
-        print("The response of DeviceSecretsApi->device_secrets_get_activation_lock_bypass_code:\n")
+        api_response = api_instance.get_activation_lock_bypass_code(device_id)
+        print("The response of DeviceSecretsApi->get_activation_lock_bypass_code:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DeviceSecretsApi->device_secrets_get_activation_lock_bypass_code: %s\n" % e)
+        print("Exception when calling DeviceSecretsApi->get_activation_lock_bypass_code: %s\n" % e)
 ```
 
 
@@ -87,8 +87,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_secrets_get_filevault_recovery_key**
-> object device_secrets_get_filevault_recovery_key(device_id)
+# **get_filevault_recovery_key**
+> object get_filevault_recovery_key(device_id)
 
 Get FileVault Recovery Key
 
@@ -99,13 +99,13 @@ Get FileVault Recovery Key
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -115,23 +115,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceSecretsApi(api_client)
+    api_instance = kandji.DeviceSecretsApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
         # Get FileVault Recovery Key
-        api_response = api_instance.device_secrets_get_filevault_recovery_key(device_id)
-        print("The response of DeviceSecretsApi->device_secrets_get_filevault_recovery_key:\n")
+        api_response = api_instance.get_filevault_recovery_key(device_id)
+        print("The response of DeviceSecretsApi->get_filevault_recovery_key:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DeviceSecretsApi->device_secrets_get_filevault_recovery_key: %s\n" % e)
+        print("Exception when calling DeviceSecretsApi->get_filevault_recovery_key: %s\n" % e)
 ```
 
 
@@ -164,8 +164,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_secrets_get_recovery_lock_password**
-> object device_secrets_get_recovery_lock_password(device_id)
+# **get_recovery_lock_password**
+> object get_recovery_lock_password(device_id)
 
 Get Recovery Lock Password
 
@@ -176,13 +176,13 @@ Get Recovery Lock Password
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -192,23 +192,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceSecretsApi(api_client)
+    api_instance = kandji.DeviceSecretsApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
         # Get Recovery Lock Password
-        api_response = api_instance.device_secrets_get_recovery_lock_password(device_id)
-        print("The response of DeviceSecretsApi->device_secrets_get_recovery_lock_password:\n")
+        api_response = api_instance.get_recovery_lock_password(device_id)
+        print("The response of DeviceSecretsApi->get_recovery_lock_password:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DeviceSecretsApi->device_secrets_get_recovery_lock_password: %s\n" % e)
+        print("Exception when calling DeviceSecretsApi->get_recovery_lock_password: %s\n" % e)
 ```
 
 
@@ -241,8 +241,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_secrets_get_unlock_pin**
-> object device_secrets_get_unlock_pin(device_id)
+# **get_unlock_pin**
+> object get_unlock_pin(device_id)
 
 Get Unlock Pin
 
@@ -253,13 +253,13 @@ Get Unlock Pin
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -269,23 +269,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceSecretsApi(api_client)
+    api_instance = kandji.DeviceSecretsApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
         # Get Unlock Pin
-        api_response = api_instance.device_secrets_get_unlock_pin(device_id)
-        print("The response of DeviceSecretsApi->device_secrets_get_unlock_pin:\n")
+        api_response = api_instance.get_unlock_pin(device_id)
+        print("The response of DeviceSecretsApi->get_unlock_pin:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DeviceSecretsApi->device_secrets_get_unlock_pin: %s\n" % e)
+        print("Exception when calling DeviceSecretsApi->get_unlock_pin: %s\n" % e)
 ```
 
 

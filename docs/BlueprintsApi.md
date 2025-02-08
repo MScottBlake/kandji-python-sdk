@@ -1,23 +1,23 @@
-# kandji_sdk.BlueprintsApi
+# kandji.BlueprintsApi
 
 All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**blueprints_assign_library_item**](BlueprintsApi.md#blueprints_assign_library_item) | **POST** /api/v1/blueprints/{blueprint_id}/assign-library-item | Assign Library Item
-[**blueprints_create_blueprint**](BlueprintsApi.md#blueprints_create_blueprint) | **POST** /api/v1/blueprints | Create Blueprint
-[**blueprints_delete_blueprint**](BlueprintsApi.md#blueprints_delete_blueprint) | **DELETE** /api/v1/blueprints/{blueprint_id} | Delete Blueprint
-[**blueprints_get_blueprint**](BlueprintsApi.md#blueprints_get_blueprint) | **GET** /api/v1/blueprints/{blueprint_id} | Get Blueprint
-[**blueprints_get_blueprint_templates**](BlueprintsApi.md#blueprints_get_blueprint_templates) | **GET** /api/v1/blueprints/templates/ | Get Blueprint Templates
-[**blueprints_get_manual_enrollment_profile**](BlueprintsApi.md#blueprints_get_manual_enrollment_profile) | **GET** /api/v1/blueprints/{blueprint_id}/ota-enrollment-profile | Get Manual Enrollment Profile
-[**blueprints_list_blueprints**](BlueprintsApi.md#blueprints_list_blueprints) | **GET** /api/v1/blueprints | List Blueprints
-[**blueprints_list_library_items**](BlueprintsApi.md#blueprints_list_library_items) | **GET** /api/v1/blueprints/{blueprint_id}/list-library-items | List Library Items
-[**blueprints_remove_library_item**](BlueprintsApi.md#blueprints_remove_library_item) | **POST** /api/v1/blueprints/{blueprint_id}/remove-library-item | Remove Library Item
-[**blueprints_update_blueprint**](BlueprintsApi.md#blueprints_update_blueprint) | **PATCH** /api/v1/blueprints/{blueprint_id} | Update Blueprint
+[**assign_library_item**](BlueprintsApi.md#assign_library_item) | **POST** /api/v1/blueprints/{blueprint_id}/assign-library-item | Assign Library Item
+[**create_blueprint**](BlueprintsApi.md#create_blueprint) | **POST** /api/v1/blueprints | Create Blueprint
+[**delete_blueprint**](BlueprintsApi.md#delete_blueprint) | **DELETE** /api/v1/blueprints/{blueprint_id} | Delete Blueprint
+[**get_blueprint**](BlueprintsApi.md#get_blueprint) | **GET** /api/v1/blueprints/{blueprint_id} | Get Blueprint
+[**get_blueprint_templates**](BlueprintsApi.md#get_blueprint_templates) | **GET** /api/v1/blueprints/templates/ | Get Blueprint Templates
+[**get_manual_enrollment_profile**](BlueprintsApi.md#get_manual_enrollment_profile) | **GET** /api/v1/blueprints/{blueprint_id}/ota-enrollment-profile | Get Manual Enrollment Profile
+[**list_blueprints**](BlueprintsApi.md#list_blueprints) | **GET** /api/v1/blueprints | List Blueprints
+[**list_library_items**](BlueprintsApi.md#list_library_items) | **GET** /api/v1/blueprints/{blueprint_id}/list-library-items | List Library Items
+[**remove_library_item**](BlueprintsApi.md#remove_library_item) | **POST** /api/v1/blueprints/{blueprint_id}/remove-library-item | Remove Library Item
+[**update_blueprint**](BlueprintsApi.md#update_blueprint) | **PATCH** /api/v1/blueprints/{blueprint_id} | Update Blueprint
 
 
-# **blueprints_assign_library_item**
-> object blueprints_assign_library_item(blueprint_id, body=body)
+# **assign_library_item**
+> object assign_library_item(blueprint_id, body=body)
 
 Assign Library Item
 
@@ -28,13 +28,13 @@ Assign Library Item
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -44,24 +44,24 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.BlueprintsApi(api_client)
+    api_instance = kandji.BlueprintsApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
         # Assign Library Item
-        api_response = api_instance.blueprints_assign_library_item(blueprint_id, body=body)
-        print("The response of BlueprintsApi->blueprints_assign_library_item:\n")
+        api_response = api_instance.assign_library_item(blueprint_id, body=body)
+        print("The response of BlueprintsApi->assign_library_item:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BlueprintsApi->blueprints_assign_library_item: %s\n" % e)
+        print("Exception when calling BlueprintsApi->assign_library_item: %s\n" % e)
 ```
 
 
@@ -95,8 +95,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **blueprints_create_blueprint**
-> object blueprints_create_blueprint(name, enrollment_code_is_active, enrollment_code_code, source_type, source_id, type)
+# **create_blueprint**
+> object create_blueprint(name, enrollment_code_is_active, enrollment_code_code, source_type, source_id, type)
 
 Create Blueprint
 
@@ -107,13 +107,13 @@ Create Blueprint
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -123,14 +123,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.BlueprintsApi(api_client)
+    api_instance = kandji.BlueprintsApi(api_client)
     name = 'name_example' # str | (required) Set the name of the Blueprint. The name provided must be unique.
     enrollment_code_is_active = 'enrollment_code_is_active_example' # str | (required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal
     enrollment_code_code = 'enrollment_code_code_example' # str | Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app.
@@ -140,11 +140,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Create Blueprint
-        api_response = api_instance.blueprints_create_blueprint(name, enrollment_code_is_active, enrollment_code_code, source_type, source_id, type)
-        print("The response of BlueprintsApi->blueprints_create_blueprint:\n")
+        api_response = api_instance.create_blueprint(name, enrollment_code_is_active, enrollment_code_code, source_type, source_id, type)
+        print("The response of BlueprintsApi->create_blueprint:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BlueprintsApi->blueprints_create_blueprint: %s\n" % e)
+        print("Exception when calling BlueprintsApi->create_blueprint: %s\n" % e)
 ```
 
 
@@ -183,8 +183,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **blueprints_delete_blueprint**
-> blueprints_delete_blueprint(blueprint_id)
+# **delete_blueprint**
+> delete_blueprint(blueprint_id)
 
 Delete Blueprint
 
@@ -195,13 +195,13 @@ Delete Blueprint
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -211,21 +211,21 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.BlueprintsApi(api_client)
+    api_instance = kandji.BlueprintsApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
 
     try:
         # Delete Blueprint
-        api_instance.blueprints_delete_blueprint(blueprint_id)
+        api_instance.delete_blueprint(blueprint_id)
     except Exception as e:
-        print("Exception when calling BlueprintsApi->blueprints_delete_blueprint: %s\n" % e)
+        print("Exception when calling BlueprintsApi->delete_blueprint: %s\n" % e)
 ```
 
 
@@ -258,8 +258,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **blueprints_get_blueprint**
-> blueprints_get_blueprint(blueprint_id)
+# **get_blueprint**
+> get_blueprint(blueprint_id)
 
 Get Blueprint
 
@@ -270,13 +270,13 @@ Get Blueprint
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -286,21 +286,21 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.BlueprintsApi(api_client)
+    api_instance = kandji.BlueprintsApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
 
     try:
         # Get Blueprint
-        api_instance.blueprints_get_blueprint(blueprint_id)
+        api_instance.get_blueprint(blueprint_id)
     except Exception as e:
-        print("Exception when calling BlueprintsApi->blueprints_get_blueprint: %s\n" % e)
+        print("Exception when calling BlueprintsApi->get_blueprint: %s\n" % e)
 ```
 
 
@@ -333,8 +333,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **blueprints_get_blueprint_templates**
-> blueprints_get_blueprint_templates(limit=limit, offset=offset)
+# **get_blueprint_templates**
+> get_blueprint_templates(limit=limit, offset=offset)
 
 Get Blueprint Templates
 
@@ -343,13 +343,13 @@ Get Blueprint Templates
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -359,22 +359,22 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.BlueprintsApi(api_client)
+    api_instance = kandji.BlueprintsApi(api_client)
     limit = '100' # str | Number of results to return per page. (optional)
     offset = '400' # str | The initial index from which to return the results. (optional)
 
     try:
         # Get Blueprint Templates
-        api_instance.blueprints_get_blueprint_templates(limit=limit, offset=offset)
+        api_instance.get_blueprint_templates(limit=limit, offset=offset)
     except Exception as e:
-        print("Exception when calling BlueprintsApi->blueprints_get_blueprint_templates: %s\n" % e)
+        print("Exception when calling BlueprintsApi->get_blueprint_templates: %s\n" % e)
 ```
 
 
@@ -408,8 +408,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **blueprints_get_manual_enrollment_profile**
-> str blueprints_get_manual_enrollment_profile(blueprint_id, sso=sso)
+# **get_manual_enrollment_profile**
+> str get_manual_enrollment_profile(blueprint_id, sso=sso)
 
 Get Manual Enrollment Profile
 
@@ -420,13 +420,13 @@ Get Manual Enrollment Profile
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -436,24 +436,24 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.BlueprintsApi(api_client)
+    api_instance = kandji.BlueprintsApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
     sso = 'true' # str | Use the <code>sso</code> query parameter, set to <code>true</code>, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which &quot;Require Authentication&quot; is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile. (optional)
 
     try:
         # Get Manual Enrollment Profile
-        api_response = api_instance.blueprints_get_manual_enrollment_profile(blueprint_id, sso=sso)
-        print("The response of BlueprintsApi->blueprints_get_manual_enrollment_profile:\n")
+        api_response = api_instance.get_manual_enrollment_profile(blueprint_id, sso=sso)
+        print("The response of BlueprintsApi->get_manual_enrollment_profile:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BlueprintsApi->blueprints_get_manual_enrollment_profile: %s\n" % e)
+        print("Exception when calling BlueprintsApi->get_manual_enrollment_profile: %s\n" % e)
 ```
 
 
@@ -487,8 +487,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **blueprints_list_blueprints**
-> object blueprints_list_blueprints(id=id, id__in=id__in, name=name, limit=limit, offset=offset)
+# **list_blueprints**
+> object list_blueprints(id=id, id__in=id__in, name=name, limit=limit, offset=offset)
 
 List Blueprints
 
@@ -499,13 +499,13 @@ This request returns a list of a blueprint records in the Kandji tenant. Optiona
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -515,14 +515,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.BlueprintsApi(api_client)
+    api_instance = kandji.BlueprintsApi(api_client)
     id = '97e4e175-1631-43f6-a02b-33fd1c748ab8' # str | Look up a specific Blueprint by its ID (optional)
     id__in = '11f4eb9a-10ed-4c3d-a7c1-fb87f95743fb,6391086e-85a1-4820-813c-f9c75025fff4' # str | Specify a list of Blueprint IDs to limit the results to.  Multiple values may be separated by commas. There is a double underscore (<code>__</code>) between id and in (optional)
     name = 'testing_blueprint' # str | Return Blueprint names &quot;containing&quot; the specified search string. (optional)
@@ -531,11 +531,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # List Blueprints
-        api_response = api_instance.blueprints_list_blueprints(id=id, id__in=id__in, name=name, limit=limit, offset=offset)
-        print("The response of BlueprintsApi->blueprints_list_blueprints:\n")
+        api_response = api_instance.list_blueprints(id=id, id__in=id__in, name=name, limit=limit, offset=offset)
+        print("The response of BlueprintsApi->list_blueprints:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BlueprintsApi->blueprints_list_blueprints: %s\n" % e)
+        print("Exception when calling BlueprintsApi->list_blueprints: %s\n" % e)
 ```
 
 
@@ -572,8 +572,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **blueprints_list_library_items**
-> object blueprints_list_library_items(blueprint_id)
+# **list_library_items**
+> object list_library_items(blueprint_id)
 
 List Library Items
 
@@ -584,13 +584,13 @@ List Library Items
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -600,23 +600,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.BlueprintsApi(api_client)
+    api_instance = kandji.BlueprintsApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
 
     try:
         # List Library Items
-        api_response = api_instance.blueprints_list_library_items(blueprint_id)
-        print("The response of BlueprintsApi->blueprints_list_library_items:\n")
+        api_response = api_instance.list_library_items(blueprint_id)
+        print("The response of BlueprintsApi->list_library_items:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BlueprintsApi->blueprints_list_library_items: %s\n" % e)
+        print("Exception when calling BlueprintsApi->list_library_items: %s\n" % e)
 ```
 
 
@@ -649,8 +649,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **blueprints_remove_library_item**
-> object blueprints_remove_library_item(blueprint_id, body=body)
+# **remove_library_item**
+> object remove_library_item(blueprint_id, body=body)
 
 Remove Library Item
 
@@ -661,13 +661,13 @@ Remove Library Item
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -677,24 +677,24 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.BlueprintsApi(api_client)
+    api_instance = kandji.BlueprintsApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
         # Remove Library Item
-        api_response = api_instance.blueprints_remove_library_item(blueprint_id, body=body)
-        print("The response of BlueprintsApi->blueprints_remove_library_item:\n")
+        api_response = api_instance.remove_library_item(blueprint_id, body=body)
+        print("The response of BlueprintsApi->remove_library_item:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BlueprintsApi->blueprints_remove_library_item: %s\n" % e)
+        print("Exception when calling BlueprintsApi->remove_library_item: %s\n" % e)
 ```
 
 
@@ -728,8 +728,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **blueprints_update_blueprint**
-> object blueprints_update_blueprint(blueprint_id, name, description, enrollment_code_code, enrollment_code_is_active)
+# **update_blueprint**
+> object update_blueprint(blueprint_id, name, description, enrollment_code_code, enrollment_code_is_active)
 
 Update Blueprint
 
@@ -740,13 +740,13 @@ Update Blueprint
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -756,14 +756,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.BlueprintsApi(api_client)
+    api_instance = kandji.BlueprintsApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
     name = 'name_example' # str | Update the name of the Blueprint
     description = 'description_example' # str | Update the description of the Blueprint 
@@ -772,11 +772,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Update Blueprint
-        api_response = api_instance.blueprints_update_blueprint(blueprint_id, name, description, enrollment_code_code, enrollment_code_is_active)
-        print("The response of BlueprintsApi->blueprints_update_blueprint:\n")
+        api_response = api_instance.update_blueprint(blueprint_id, name, description, enrollment_code_code, enrollment_code_is_active)
+        print("The response of BlueprintsApi->update_blueprint:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BlueprintsApi->blueprints_update_blueprint: %s\n" % e)
+        print("Exception when calling BlueprintsApi->update_blueprint: %s\n" % e)
 ```
 
 

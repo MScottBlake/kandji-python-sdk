@@ -1,14 +1,14 @@
-# kandji_sdk.SelfServiceApi
+# kandji.SelfServiceApi
 
 All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**self_service_list_self_service_categories**](SelfServiceApi.md#self_service_list_self_service_categories) | **GET** /api/v1/self-service/categories | List Self Service Categories
+[**list_self_service_categories**](SelfServiceApi.md#list_self_service_categories) | **GET** /api/v1/self-service/categories | List Self Service Categories
 
 
-# **self_service_list_self_service_categories**
-> object self_service_list_self_service_categories()
+# **list_self_service_categories**
+> object list_self_service_categories()
 
 List Self Service Categories
 
@@ -19,13 +19,13 @@ List Self Service Categories
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -35,22 +35,22 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.SelfServiceApi(api_client)
+    api_instance = kandji.SelfServiceApi(api_client)
 
     try:
         # List Self Service Categories
-        api_response = api_instance.self_service_list_self_service_categories()
-        print("The response of SelfServiceApi->self_service_list_self_service_categories:\n")
+        api_response = api_instance.list_self_service_categories()
+        print("The response of SelfServiceApi->list_self_service_categories:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SelfServiceApi->self_service_list_self_service_categories: %s\n" % e)
+        print("Exception when calling SelfServiceApi->list_self_service_categories: %s\n" % e)
 ```
 
 

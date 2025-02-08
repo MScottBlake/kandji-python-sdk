@@ -1,28 +1,28 @@
-# kandji_sdk.DeviceActionsApi
+# kandji.DeviceActionsApi
 
 All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**device_actions_clear_passcode**](DeviceActionsApi.md#device_actions_clear_passcode) | **POST** /api/v1/devices/{device_id}/action/clearpasscode | Clear Passcode
-[**device_actions_delete_device**](DeviceActionsApi.md#device_actions_delete_device) | **DELETE** /api/v1/devices/{device_id} | Delete Device
-[**device_actions_delete_user**](DeviceActionsApi.md#device_actions_delete_user) | **POST** /api/v1/devices/{device_id}/action/deleteuser | Delete User
-[**device_actions_erase_device**](DeviceActionsApi.md#device_actions_erase_device) | **POST** /api/v1/devices/{device_id}/action/erase | Erase Device
-[**device_actions_get_device_commands**](DeviceActionsApi.md#device_actions_get_device_commands) | **GET** /api/v1/devices/{device_id}/commands | Get Device Commands
-[**device_actions_lock_device**](DeviceActionsApi.md#device_actions_lock_device) | **POST** /api/v1/devices/{device_id}/action/lock | Lock Device
-[**device_actions_reinstall_agent**](DeviceActionsApi.md#device_actions_reinstall_agent) | **POST** /api/v1/devices/{device_id}/action/reinstallagent | Reinstall Agent
-[**device_actions_remote_desktop**](DeviceActionsApi.md#device_actions_remote_desktop) | **POST** /api/v1/devices/{device_id}/action/remotedesktop | Remote Desktop
-[**device_actions_renew_mdm_profile**](DeviceActionsApi.md#device_actions_renew_mdm_profile) | **POST** /api/v1/devices/{device_id}/action/renewmdmprofile | Renew MDM Profile
-[**device_actions_restart_device**](DeviceActionsApi.md#device_actions_restart_device) | **POST** /api/v1/devices/{device_id}/action/restart | Restart Device
-[**device_actions_send_blankpush**](DeviceActionsApi.md#device_actions_send_blankpush) | **POST** /api/v1/devices/{device_id}/action/blankpush | Send Blankpush
-[**device_actions_set_name**](DeviceActionsApi.md#device_actions_set_name) | **POST** /api/v1/devices/{device_id}/action/setname | Set Name
-[**device_actions_shutdown**](DeviceActionsApi.md#device_actions_shutdown) | **POST** /api/v1/devices/{device_id}/action/shutdown | Shutdown
-[**device_actions_unlock_account**](DeviceActionsApi.md#device_actions_unlock_account) | **POST** /api/v1/devices/{device_id}/action/unlockaccount | Unlock Account
-[**device_actions_update_inventory**](DeviceActionsApi.md#device_actions_update_inventory) | **POST** /api/v1/devices/{device_id}/action/updateinventory | Update Inventory
+[**clear_passcode**](DeviceActionsApi.md#clear_passcode) | **POST** /api/v1/devices/{device_id}/action/clearpasscode | Clear Passcode
+[**delete_device**](DeviceActionsApi.md#delete_device) | **DELETE** /api/v1/devices/{device_id} | Delete Device
+[**delete_user**](DeviceActionsApi.md#delete_user) | **POST** /api/v1/devices/{device_id}/action/deleteuser | Delete User
+[**erase_device**](DeviceActionsApi.md#erase_device) | **POST** /api/v1/devices/{device_id}/action/erase | Erase Device
+[**get_device_commands**](DeviceActionsApi.md#get_device_commands) | **GET** /api/v1/devices/{device_id}/commands | Get Device Commands
+[**lock_device**](DeviceActionsApi.md#lock_device) | **POST** /api/v1/devices/{device_id}/action/lock | Lock Device
+[**reinstall_agent**](DeviceActionsApi.md#reinstall_agent) | **POST** /api/v1/devices/{device_id}/action/reinstallagent | Reinstall Agent
+[**remote_desktop**](DeviceActionsApi.md#remote_desktop) | **POST** /api/v1/devices/{device_id}/action/remotedesktop | Remote Desktop
+[**renew_mdm_profile**](DeviceActionsApi.md#renew_mdm_profile) | **POST** /api/v1/devices/{device_id}/action/renewmdmprofile | Renew MDM Profile
+[**restart_device**](DeviceActionsApi.md#restart_device) | **POST** /api/v1/devices/{device_id}/action/restart | Restart Device
+[**send_blankpush**](DeviceActionsApi.md#send_blankpush) | **POST** /api/v1/devices/{device_id}/action/blankpush | Send Blankpush
+[**set_name**](DeviceActionsApi.md#set_name) | **POST** /api/v1/devices/{device_id}/action/setname | Set Name
+[**shutdown**](DeviceActionsApi.md#shutdown) | **POST** /api/v1/devices/{device_id}/action/shutdown | Shutdown
+[**unlock_account**](DeviceActionsApi.md#unlock_account) | **POST** /api/v1/devices/{device_id}/action/unlockaccount | Unlock Account
+[**update_inventory**](DeviceActionsApi.md#update_inventory) | **POST** /api/v1/devices/{device_id}/action/updateinventory | Update Inventory
 
 
-# **device_actions_clear_passcode**
-> device_actions_clear_passcode(device_id)
+# **clear_passcode**
+> clear_passcode(device_id)
 
 Clear Passcode
 
@@ -33,13 +33,13 @@ This endpoint sends an MDM command to clear a device passcode. Available for iPh
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -49,21 +49,21 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceActionsApi(api_client)
+    api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
         # Clear Passcode
-        api_instance.device_actions_clear_passcode(device_id)
+        api_instance.clear_passcode(device_id)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->device_actions_clear_passcode: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->clear_passcode: %s\n" % e)
 ```
 
 
@@ -96,8 +96,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_actions_delete_device**
-> device_actions_delete_device(device_id)
+# **delete_device**
+> delete_device(device_id)
 
 Delete Device
 
@@ -108,13 +108,13 @@ This endpoint sends an MDM command to delete a device. This will remove the devi
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -124,21 +124,21 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceActionsApi(api_client)
+    api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
         # Delete Device
-        api_instance.device_actions_delete_device(device_id)
+        api_instance.delete_device(device_id)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->device_actions_delete_device: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->delete_device: %s\n" % e)
 ```
 
 
@@ -171,8 +171,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_actions_delete_user**
-> device_actions_delete_user(device_id, body=body)
+# **delete_user**
+> delete_user(device_id, body=body)
 
 Delete User
 
@@ -183,13 +183,13 @@ Delete User
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -199,22 +199,22 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceActionsApi(api_client)
+    api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
         # Delete User
-        api_instance.device_actions_delete_user(device_id, body=body)
+        api_instance.delete_user(device_id, body=body)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->device_actions_delete_user: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->delete_user: %s\n" % e)
 ```
 
 
@@ -248,8 +248,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_actions_erase_device**
-> device_actions_erase_device(device_id, body=body)
+# **erase_device**
+> erase_device(device_id, body=body)
 
 Erase Device
 
@@ -260,13 +260,13 @@ Erase Device
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -276,22 +276,22 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceActionsApi(api_client)
+    api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
         # Erase Device
-        api_instance.device_actions_erase_device(device_id, body=body)
+        api_instance.erase_device(device_id, body=body)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->device_actions_erase_device: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->erase_device: %s\n" % e)
 ```
 
 
@@ -326,8 +326,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_actions_get_device_commands**
-> device_actions_get_device_commands(device_id, limit, offset=offset)
+# **get_device_commands**
+> get_device_commands(device_id, limit, offset=offset)
 
 Get Device Commands
 
@@ -338,13 +338,13 @@ Get Device Commands
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -354,23 +354,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceActionsApi(api_client)
+    api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
     limit = '300' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
     offset = 'offset_example' # str | Specify the starting record to return (optional)
 
     try:
         # Get Device Commands
-        api_instance.device_actions_get_device_commands(device_id, limit, offset=offset)
+        api_instance.get_device_commands(device_id, limit, offset=offset)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->device_actions_get_device_commands: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->get_device_commands: %s\n" % e)
 ```
 
 
@@ -405,8 +405,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_actions_lock_device**
-> object device_actions_lock_device(device_id, body=body)
+# **lock_device**
+> object lock_device(device_id, body=body)
 
 Lock Device
 
@@ -417,13 +417,13 @@ Lock Device
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -433,24 +433,24 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceActionsApi(api_client)
+    api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
         # Lock Device
-        api_response = api_instance.device_actions_lock_device(device_id, body=body)
-        print("The response of DeviceActionsApi->device_actions_lock_device:\n")
+        api_response = api_instance.lock_device(device_id, body=body)
+        print("The response of DeviceActionsApi->lock_device:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->device_actions_lock_device: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->lock_device: %s\n" % e)
 ```
 
 
@@ -485,8 +485,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_actions_reinstall_agent**
-> device_actions_reinstall_agent(device_id)
+# **reinstall_agent**
+> reinstall_agent(device_id)
 
 Reinstall Agent
 
@@ -497,13 +497,13 @@ This endpoint sends an MDM command reinstall the Kandji Agent. Available for mac
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -513,21 +513,21 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceActionsApi(api_client)
+    api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
         # Reinstall Agent
-        api_instance.device_actions_reinstall_agent(device_id)
+        api_instance.reinstall_agent(device_id)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->device_actions_reinstall_agent: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->reinstall_agent: %s\n" % e)
 ```
 
 
@@ -560,8 +560,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_actions_remote_desktop**
-> device_actions_remote_desktop(device_id, body=body)
+# **remote_desktop**
+> remote_desktop(device_id, body=body)
 
 Remote Desktop
 
@@ -572,13 +572,13 @@ Remote Desktop
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -588,22 +588,22 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceActionsApi(api_client)
+    api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
         # Remote Desktop
-        api_instance.device_actions_remote_desktop(device_id, body=body)
+        api_instance.remote_desktop(device_id, body=body)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->device_actions_remote_desktop: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->remote_desktop: %s\n" % e)
 ```
 
 
@@ -637,8 +637,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_actions_renew_mdm_profile**
-> device_actions_renew_mdm_profile(device_id)
+# **renew_mdm_profile**
+> renew_mdm_profile(device_id)
 
 Renew MDM Profile
 
@@ -649,13 +649,13 @@ This endpoint sends an MDM command to re-install the existing root MDM profile f
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -665,21 +665,21 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceActionsApi(api_client)
+    api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
         # Renew MDM Profile
-        api_instance.device_actions_renew_mdm_profile(device_id)
+        api_instance.renew_mdm_profile(device_id)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->device_actions_renew_mdm_profile: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->renew_mdm_profile: %s\n" % e)
 ```
 
 
@@ -712,8 +712,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_actions_restart_device**
-> device_actions_restart_device(device_id, body=body)
+# **restart_device**
+> restart_device(device_id, body=body)
 
 Restart Device
 
@@ -724,13 +724,13 @@ Restart Device
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -740,22 +740,22 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceActionsApi(api_client)
+    api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
         # Restart Device
-        api_instance.device_actions_restart_device(device_id, body=body)
+        api_instance.restart_device(device_id, body=body)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->device_actions_restart_device: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->restart_device: %s\n" % e)
 ```
 
 
@@ -789,8 +789,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_actions_send_blankpush**
-> device_actions_send_blankpush(device_id)
+# **send_blankpush**
+> send_blankpush(device_id)
 
 Send Blankpush
 
@@ -801,13 +801,13 @@ Send Blankpush
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -817,21 +817,21 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceActionsApi(api_client)
+    api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
         # Send Blankpush
-        api_instance.device_actions_send_blankpush(device_id)
+        api_instance.send_blankpush(device_id)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->device_actions_send_blankpush: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->send_blankpush: %s\n" % e)
 ```
 
 
@@ -864,8 +864,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_actions_set_name**
-> device_actions_set_name(device_id, body=body)
+# **set_name**
+> set_name(device_id, body=body)
 
 Set Name
 
@@ -876,13 +876,13 @@ Set Name
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -892,22 +892,22 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceActionsApi(api_client)
+    api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
         # Set Name
-        api_instance.device_actions_set_name(device_id, body=body)
+        api_instance.set_name(device_id, body=body)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->device_actions_set_name: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->set_name: %s\n" % e)
 ```
 
 
@@ -941,8 +941,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_actions_shutdown**
-> device_actions_shutdown(device_id)
+# **shutdown**
+> shutdown(device_id)
 
 Shutdown
 
@@ -953,13 +953,13 @@ This endpoint sends an MDM command to shutdown a device.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -969,21 +969,21 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceActionsApi(api_client)
+    api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
         # Shutdown
-        api_instance.device_actions_shutdown(device_id)
+        api_instance.shutdown(device_id)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->device_actions_shutdown: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->shutdown: %s\n" % e)
 ```
 
 
@@ -1016,8 +1016,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_actions_unlock_account**
-> device_actions_unlock_account(device_id, body=body)
+# **unlock_account**
+> unlock_account(device_id, body=body)
 
 Unlock Account
 
@@ -1028,13 +1028,13 @@ Unlock Account
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -1044,22 +1044,22 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceActionsApi(api_client)
+    api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
         # Unlock Account
-        api_instance.device_actions_unlock_account(device_id, body=body)
+        api_instance.unlock_account(device_id, body=body)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->device_actions_unlock_account: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->unlock_account: %s\n" % e)
 ```
 
 
@@ -1093,8 +1093,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **device_actions_update_inventory**
-> device_actions_update_inventory(device_id)
+# **update_inventory**
+> update_inventory(device_id)
 
 Update Inventory
 
@@ -1105,13 +1105,13 @@ This endpoint sends an MDM command to start a check-in for a device, initiating 
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -1121,21 +1121,21 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.DeviceActionsApi(api_client)
+    api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
         # Update Inventory
-        api_instance.device_actions_update_inventory(device_id)
+        api_instance.update_inventory(device_id)
     except Exception as e:
-        print("Exception when calling DeviceActionsApi->device_actions_update_inventory: %s\n" % e)
+        print("Exception when calling DeviceActionsApi->update_inventory: %s\n" % e)
 ```
 
 

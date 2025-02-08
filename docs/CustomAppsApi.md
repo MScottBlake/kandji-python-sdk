@@ -1,19 +1,19 @@
-# kandji_sdk.CustomAppsApi
+# kandji.CustomAppsApi
 
 All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**custom_apps_create_custom_app**](CustomAppsApi.md#custom_apps_create_custom_app) | **POST** /api/v1/library/custom-apps | Create Custom App
-[**custom_apps_delete_custom_app**](CustomAppsApi.md#custom_apps_delete_custom_app) | **DELETE** /api/v1/library/custom-apps/{library_item_id} | Delete Custom App
-[**custom_apps_get_custom_app**](CustomAppsApi.md#custom_apps_get_custom_app) | **GET** /api/v1/library/custom-apps/{library_item_id} | Get Custom App
-[**custom_apps_list_custom_apps**](CustomAppsApi.md#custom_apps_list_custom_apps) | **GET** /api/v1/library/custom-apps | List Custom Apps
-[**custom_apps_update_custom_app**](CustomAppsApi.md#custom_apps_update_custom_app) | **PATCH** /api/v1/library/custom-apps/{library_item_id} | Update Custom App
-[**custom_apps_upload_custom_app**](CustomAppsApi.md#custom_apps_upload_custom_app) | **POST** /api/v1/library/custom-apps/upload | Upload Custom App
+[**create_custom_app**](CustomAppsApi.md#create_custom_app) | **POST** /api/v1/library/custom-apps | Create Custom App
+[**delete_custom_app**](CustomAppsApi.md#delete_custom_app) | **DELETE** /api/v1/library/custom-apps/{library_item_id} | Delete Custom App
+[**get_custom_app**](CustomAppsApi.md#get_custom_app) | **GET** /api/v1/library/custom-apps/{library_item_id} | Get Custom App
+[**list_custom_apps**](CustomAppsApi.md#list_custom_apps) | **GET** /api/v1/library/custom-apps | List Custom Apps
+[**update_custom_app**](CustomAppsApi.md#update_custom_app) | **PATCH** /api/v1/library/custom-apps/{library_item_id} | Update Custom App
+[**upload_custom_app**](CustomAppsApi.md#upload_custom_app) | **POST** /api/v1/library/custom-apps/upload | Upload Custom App
 
 
-# **custom_apps_create_custom_app**
-> object custom_apps_create_custom_app(name, file_key, install_type, install_enforcement, show_in_self_service, self_service_category_id, self_service_recommended)
+# **create_custom_app**
+> object create_custom_app(name, file_key, install_type, install_enforcement, show_in_self_service, self_service_category_id, self_service_recommended)
 
 Create Custom App
 
@@ -24,13 +24,13 @@ Create Custom App
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -40,14 +40,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.CustomAppsApi(api_client)
+    api_instance = kandji.CustomAppsApi(api_client)
     name = 'name_example' # str | (Required) The name for this Custom App
     file_key = 'file_key_example' # str | (Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file.
     install_type = 'install_type_example' # str | (Required) Options are package, zip, image
@@ -58,11 +58,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Create Custom App
-        api_response = api_instance.custom_apps_create_custom_app(name, file_key, install_type, install_enforcement, show_in_self_service, self_service_category_id, self_service_recommended)
-        print("The response of CustomAppsApi->custom_apps_create_custom_app:\n")
+        api_response = api_instance.create_custom_app(name, file_key, install_type, install_enforcement, show_in_self_service, self_service_category_id, self_service_recommended)
+        print("The response of CustomAppsApi->create_custom_app:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomAppsApi->custom_apps_create_custom_app: %s\n" % e)
+        print("Exception when calling CustomAppsApi->create_custom_app: %s\n" % e)
 ```
 
 
@@ -101,8 +101,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **custom_apps_delete_custom_app**
-> custom_apps_delete_custom_app(library_item_id)
+# **delete_custom_app**
+> delete_custom_app(library_item_id)
 
 Delete Custom App
 
@@ -113,13 +113,13 @@ Delete Custom App
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -129,21 +129,21 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.CustomAppsApi(api_client)
+    api_instance = kandji.CustomAppsApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
 
     try:
         # Delete Custom App
-        api_instance.custom_apps_delete_custom_app(library_item_id)
+        api_instance.delete_custom_app(library_item_id)
     except Exception as e:
-        print("Exception when calling CustomAppsApi->custom_apps_delete_custom_app: %s\n" % e)
+        print("Exception when calling CustomAppsApi->delete_custom_app: %s\n" % e)
 ```
 
 
@@ -177,8 +177,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **custom_apps_get_custom_app**
-> object custom_apps_get_custom_app(library_item_id)
+# **get_custom_app**
+> object get_custom_app(library_item_id)
 
 Get Custom App
 
@@ -189,13 +189,13 @@ Get Custom App
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -205,23 +205,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.CustomAppsApi(api_client)
+    api_instance = kandji.CustomAppsApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
 
     try:
         # Get Custom App
-        api_response = api_instance.custom_apps_get_custom_app(library_item_id)
-        print("The response of CustomAppsApi->custom_apps_get_custom_app:\n")
+        api_response = api_instance.get_custom_app(library_item_id)
+        print("The response of CustomAppsApi->get_custom_app:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomAppsApi->custom_apps_get_custom_app: %s\n" % e)
+        print("Exception when calling CustomAppsApi->get_custom_app: %s\n" % e)
 ```
 
 
@@ -254,8 +254,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **custom_apps_list_custom_apps**
-> object custom_apps_list_custom_apps(page=page)
+# **list_custom_apps**
+> object list_custom_apps(page=page)
 
 List Custom Apps
 
@@ -266,13 +266,13 @@ This endpoint makes a request to retrieve a list of custom apps from the Kandji 
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -282,23 +282,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.CustomAppsApi(api_client)
+    api_instance = kandji.CustomAppsApi(api_client)
     page = '1' # str | Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 device records returned per request. (optional)
 
     try:
         # List Custom Apps
-        api_response = api_instance.custom_apps_list_custom_apps(page=page)
-        print("The response of CustomAppsApi->custom_apps_list_custom_apps:\n")
+        api_response = api_instance.list_custom_apps(page=page)
+        print("The response of CustomAppsApi->list_custom_apps:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomAppsApi->custom_apps_list_custom_apps: %s\n" % e)
+        print("Exception when calling CustomAppsApi->list_custom_apps: %s\n" % e)
 ```
 
 
@@ -331,8 +331,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **custom_apps_update_custom_app**
-> object custom_apps_update_custom_app(library_item_id, name, active)
+# **update_custom_app**
+> object update_custom_app(library_item_id, name, active)
 
 Update Custom App
 
@@ -343,13 +343,13 @@ Update Custom App
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -359,25 +359,25 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.CustomAppsApi(api_client)
+    api_instance = kandji.CustomAppsApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
     name = 'name_example' # str | Renaming a Custom App
     active = 'active_example' # str | (Optional, default=true) Whether this Custom App is active and installable
 
     try:
         # Update Custom App
-        api_response = api_instance.custom_apps_update_custom_app(library_item_id, name, active)
-        print("The response of CustomAppsApi->custom_apps_update_custom_app:\n")
+        api_response = api_instance.update_custom_app(library_item_id, name, active)
+        print("The response of CustomAppsApi->update_custom_app:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomAppsApi->custom_apps_update_custom_app: %s\n" % e)
+        print("Exception when calling CustomAppsApi->update_custom_app: %s\n" % e)
 ```
 
 
@@ -412,8 +412,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **custom_apps_upload_custom_app**
-> custom_apps_upload_custom_app(body=body)
+# **upload_custom_app**
+> upload_custom_app(body=body)
 
 Upload Custom App
 
@@ -424,13 +424,13 @@ Upload Custom App
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -440,21 +440,21 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.CustomAppsApi(api_client)
+    api_instance = kandji.CustomAppsApi(api_client)
     body = 'body_example' # str |  (optional)
 
     try:
         # Upload Custom App
-        api_instance.custom_apps_upload_custom_app(body=body)
+        api_instance.upload_custom_app(body=body)
     except Exception as e:
-        print("Exception when calling CustomAppsApi->custom_apps_upload_custom_app: %s\n" % e)
+        print("Exception when calling CustomAppsApi->upload_custom_app: %s\n" % e)
 ```
 
 

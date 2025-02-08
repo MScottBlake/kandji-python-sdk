@@ -1,24 +1,24 @@
-# kandji_sdk.AutomatedDeviceEnrollmentIntegrationsApi
+# kandji.AutomatedDeviceEnrollmentIntegrationsApi
 
 All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**automated_device_enrollment_integrations_create_ade_integration**](AutomatedDeviceEnrollmentIntegrationsApi.md#automated_device_enrollment_integrations_create_ade_integration) | **POST** /api/v1/integrations/apple/ade/ | Create ADE integration
-[**automated_device_enrollment_integrations_delete_ade_integration**](AutomatedDeviceEnrollmentIntegrationsApi.md#automated_device_enrollment_integrations_delete_ade_integration) | **DELETE** /api/v1/integrations/apple/ade/{ade_token_id} | Delete ADE integration
-[**automated_device_enrollment_integrations_download_ade_public_key**](AutomatedDeviceEnrollmentIntegrationsApi.md#automated_device_enrollment_integrations_download_ade_public_key) | **GET** /api/v1/integrations/apple/ade/public_key/ | Download ADE public key
-[**automated_device_enrollment_integrations_get_ade_device**](AutomatedDeviceEnrollmentIntegrationsApi.md#automated_device_enrollment_integrations_get_ade_device) | **GET** /api/v1/integrations/apple/ade/devices/{device_id} | Get ADE device
-[**automated_device_enrollment_integrations_get_ade_integration**](AutomatedDeviceEnrollmentIntegrationsApi.md#automated_device_enrollment_integrations_get_ade_integration) | **GET** /api/v1/integrations/apple/ade/{ade_token_id} | Get ADE integration
-[**automated_device_enrollment_integrations_list_ade_devices**](AutomatedDeviceEnrollmentIntegrationsApi.md#automated_device_enrollment_integrations_list_ade_devices) | **GET** /api/v1/integrations/apple/ade/devices | List ADE devices
-[**automated_device_enrollment_integrations_list_ade_integrations**](AutomatedDeviceEnrollmentIntegrationsApi.md#automated_device_enrollment_integrations_list_ade_integrations) | **GET** /api/v1/integrations/apple/ade | List ADE integrations
-[**automated_device_enrollment_integrations_list_devices_associated_to_ade_token**](AutomatedDeviceEnrollmentIntegrationsApi.md#automated_device_enrollment_integrations_list_devices_associated_to_ade_token) | **GET** /api/v1/integrations/apple/ade/{ade_token_id}/devices | List devices associated to ADE token
-[**automated_device_enrollment_integrations_renew_ade_integration**](AutomatedDeviceEnrollmentIntegrationsApi.md#automated_device_enrollment_integrations_renew_ade_integration) | **POST** /api/v1/integrations/apple/ade/{ade_token_id}/renew | Renew ADE integration
-[**automated_device_enrollment_integrations_update_ade_device**](AutomatedDeviceEnrollmentIntegrationsApi.md#automated_device_enrollment_integrations_update_ade_device) | **PATCH** /api/v1/integrations/apple/ade/devices/{device_id} | Update ADE device
-[**automated_device_enrollment_integrations_update_ade_integration**](AutomatedDeviceEnrollmentIntegrationsApi.md#automated_device_enrollment_integrations_update_ade_integration) | **PATCH** /api/v1/integrations/apple/ade/{ade_token_id} | Update ADE integration
+[**create_ade_integration**](AutomatedDeviceEnrollmentIntegrationsApi.md#create_ade_integration) | **POST** /api/v1/integrations/apple/ade/ | Create ADE integration
+[**delete_ade_integration**](AutomatedDeviceEnrollmentIntegrationsApi.md#delete_ade_integration) | **DELETE** /api/v1/integrations/apple/ade/{ade_token_id} | Delete ADE integration
+[**download_ade_public_key**](AutomatedDeviceEnrollmentIntegrationsApi.md#download_ade_public_key) | **GET** /api/v1/integrations/apple/ade/public_key/ | Download ADE public key
+[**get_ade_device**](AutomatedDeviceEnrollmentIntegrationsApi.md#get_ade_device) | **GET** /api/v1/integrations/apple/ade/devices/{device_id} | Get ADE device
+[**get_ade_integration**](AutomatedDeviceEnrollmentIntegrationsApi.md#get_ade_integration) | **GET** /api/v1/integrations/apple/ade/{ade_token_id} | Get ADE integration
+[**list_ade_devices**](AutomatedDeviceEnrollmentIntegrationsApi.md#list_ade_devices) | **GET** /api/v1/integrations/apple/ade/devices | List ADE devices
+[**list_ade_integrations**](AutomatedDeviceEnrollmentIntegrationsApi.md#list_ade_integrations) | **GET** /api/v1/integrations/apple/ade | List ADE integrations
+[**list_devices_associated_to_ade_token**](AutomatedDeviceEnrollmentIntegrationsApi.md#list_devices_associated_to_ade_token) | **GET** /api/v1/integrations/apple/ade/{ade_token_id}/devices | List devices associated to ADE token
+[**renew_ade_integration**](AutomatedDeviceEnrollmentIntegrationsApi.md#renew_ade_integration) | **POST** /api/v1/integrations/apple/ade/{ade_token_id}/renew | Renew ADE integration
+[**update_ade_device**](AutomatedDeviceEnrollmentIntegrationsApi.md#update_ade_device) | **PATCH** /api/v1/integrations/apple/ade/devices/{device_id} | Update ADE device
+[**update_ade_integration**](AutomatedDeviceEnrollmentIntegrationsApi.md#update_ade_integration) | **PATCH** /api/v1/integrations/apple/ade/{ade_token_id} | Update ADE integration
 
 
-# **automated_device_enrollment_integrations_create_ade_integration**
-> object automated_device_enrollment_integrations_create_ade_integration(blueprint_id, phone, email, file)
+# **create_ade_integration**
+> object create_ade_integration(blueprint_id, phone, email, file)
 
 Create ADE integration
 
@@ -29,13 +29,13 @@ Create ADE integration
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -45,14 +45,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
+    api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
     phone = 'phone_example' # str | 
     email = 'email_example' # str | 
@@ -60,11 +60,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Create ADE integration
-        api_response = api_instance.automated_device_enrollment_integrations_create_ade_integration(blueprint_id, phone, email, file)
-        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_create_ade_integration:\n")
+        api_response = api_instance.create_ade_integration(blueprint_id, phone, email, file)
+        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->create_ade_integration:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_create_ade_integration: %s\n" % e)
+        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->create_ade_integration: %s\n" % e)
 ```
 
 
@@ -100,8 +100,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **automated_device_enrollment_integrations_delete_ade_integration**
-> automated_device_enrollment_integrations_delete_ade_integration(ade_token_id)
+# **delete_ade_integration**
+> delete_ade_integration(ade_token_id)
 
 Delete ADE integration
 
@@ -112,13 +112,13 @@ Delete ADE integration
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -128,21 +128,21 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
+    api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
     ade_token_id = 'ade_token_id_example' # str | 
 
     try:
         # Delete ADE integration
-        api_instance.automated_device_enrollment_integrations_delete_ade_integration(ade_token_id)
+        api_instance.delete_ade_integration(ade_token_id)
     except Exception as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_delete_ade_integration: %s\n" % e)
+        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->delete_ade_integration: %s\n" % e)
 ```
 
 
@@ -175,8 +175,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **automated_device_enrollment_integrations_download_ade_public_key**
-> str automated_device_enrollment_integrations_download_ade_public_key()
+# **download_ade_public_key**
+> str download_ade_public_key()
 
 Download ADE public key
 
@@ -187,13 +187,13 @@ Download ADE public key
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -203,22 +203,22 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
+    api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
 
     try:
         # Download ADE public key
-        api_response = api_instance.automated_device_enrollment_integrations_download_ade_public_key()
-        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_download_ade_public_key:\n")
+        api_response = api_instance.download_ade_public_key()
+        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->download_ade_public_key:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_download_ade_public_key: %s\n" % e)
+        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->download_ade_public_key: %s\n" % e)
 ```
 
 
@@ -248,8 +248,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **automated_device_enrollment_integrations_get_ade_device**
-> object automated_device_enrollment_integrations_get_ade_device(device_id)
+# **get_ade_device**
+> object get_ade_device(device_id)
 
 Get ADE device
 
@@ -260,13 +260,13 @@ Get information about a specific Automated Device Enrollment device.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -276,23 +276,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
+    api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
         # Get ADE device
-        api_response = api_instance.automated_device_enrollment_integrations_get_ade_device(device_id)
-        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_get_ade_device:\n")
+        api_response = api_instance.get_ade_device(device_id)
+        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->get_ade_device:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_get_ade_device: %s\n" % e)
+        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->get_ade_device: %s\n" % e)
 ```
 
 
@@ -325,8 +325,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **automated_device_enrollment_integrations_get_ade_integration**
-> automated_device_enrollment_integrations_get_ade_integration(ade_token_id)
+# **get_ade_integration**
+> get_ade_integration(ade_token_id)
 
 Get ADE integration
 
@@ -337,13 +337,13 @@ This request returns a specific ADE integration based on the <code>ade_token_id<
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -353,21 +353,21 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
+    api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
     ade_token_id = 'ade_token_id_example' # str | 
 
     try:
         # Get ADE integration
-        api_instance.automated_device_enrollment_integrations_get_ade_integration(ade_token_id)
+        api_instance.get_ade_integration(ade_token_id)
     except Exception as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_get_ade_integration: %s\n" % e)
+        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->get_ade_integration: %s\n" % e)
 ```
 
 
@@ -400,8 +400,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **automated_device_enrollment_integrations_list_ade_devices**
-> object automated_device_enrollment_integrations_list_ade_devices(blueprint_id=blueprint_id, user_id=user_id, dep_account=dep_account, device_family=device_family, model=model, os=os, profile_status=profile_status, serial_number=serial_number, page=page)
+# **list_ade_devices**
+> object list_ade_devices(blueprint_id=blueprint_id, user_id=user_id, dep_account=dep_account, device_family=device_family, model=model, os=os, profile_status=profile_status, serial_number=serial_number, page=page)
 
 List ADE devices
 
@@ -412,13 +412,13 @@ Get a list of Automated Device Enrollment devices.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -428,14 +428,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
+    api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
     blueprint_id = 'fce0cc58-caa5-40d2-a0d7-a0b257127ec5' # str | Return results &quot;containing&quot; the specified blueprint id (optional)
     user_id = '8136' # str | &quot;exact&quot; match on kandji user ID number (optional)
     dep_account = '' # str | The ADE token UUID (optional)
@@ -448,11 +448,11 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # List ADE devices
-        api_response = api_instance.automated_device_enrollment_integrations_list_ade_devices(blueprint_id=blueprint_id, user_id=user_id, dep_account=dep_account, device_family=device_family, model=model, os=os, profile_status=profile_status, serial_number=serial_number, page=page)
-        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_list_ade_devices:\n")
+        api_response = api_instance.list_ade_devices(blueprint_id=blueprint_id, user_id=user_id, dep_account=dep_account, device_family=device_family, model=model, os=os, profile_status=profile_status, serial_number=serial_number, page=page)
+        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->list_ade_devices:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_list_ade_devices: %s\n" % e)
+        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->list_ade_devices: %s\n" % e)
 ```
 
 
@@ -494,8 +494,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **automated_device_enrollment_integrations_list_ade_integrations**
-> automated_device_enrollment_integrations_list_ade_integrations()
+# **list_ade_integrations**
+> list_ade_integrations()
 
 List ADE integrations
 
@@ -506,13 +506,13 @@ This request returns a list of configured ADE integrations.
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -522,20 +522,20 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
+    api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
 
     try:
         # List ADE integrations
-        api_instance.automated_device_enrollment_integrations_list_ade_integrations()
+        api_instance.list_ade_integrations()
     except Exception as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_list_ade_integrations: %s\n" % e)
+        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->list_ade_integrations: %s\n" % e)
 ```
 
 
@@ -565,8 +565,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **automated_device_enrollment_integrations_list_devices_associated_to_ade_token**
-> object automated_device_enrollment_integrations_list_devices_associated_to_ade_token(ade_token_id, page=page)
+# **list_devices_associated_to_ade_token**
+> object list_devices_associated_to_ade_token(ade_token_id, page=page)
 
 List devices associated to ADE token
 
@@ -577,13 +577,13 @@ List devices associated to ADE token
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -593,24 +593,24 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
+    api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
     ade_token_id = 'ade_token_id_example' # str | 
     page = '1' # str | Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page. (optional)
 
     try:
         # List devices associated to ADE token
-        api_response = api_instance.automated_device_enrollment_integrations_list_devices_associated_to_ade_token(ade_token_id, page=page)
-        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_list_devices_associated_to_ade_token:\n")
+        api_response = api_instance.list_devices_associated_to_ade_token(ade_token_id, page=page)
+        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->list_devices_associated_to_ade_token:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_list_devices_associated_to_ade_token: %s\n" % e)
+        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->list_devices_associated_to_ade_token: %s\n" % e)
 ```
 
 
@@ -644,8 +644,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **automated_device_enrollment_integrations_renew_ade_integration**
-> automated_device_enrollment_integrations_renew_ade_integration(ade_token_id, blueprint_id, phone, email, file)
+# **renew_ade_integration**
+> renew_ade_integration(ade_token_id, blueprint_id, phone, email, file)
 
 Renew ADE integration
 
@@ -656,13 +656,13 @@ Renew ADE integration
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -672,14 +672,14 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
+    api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
     ade_token_id = 'ade_token_id_example' # str | 
     blueprint_id = 'blueprint_id_example' # str | 
     phone = 'phone_example' # str | 
@@ -688,9 +688,9 @@ with kandji_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Renew ADE integration
-        api_instance.automated_device_enrollment_integrations_renew_ade_integration(ade_token_id, blueprint_id, phone, email, file)
+        api_instance.renew_ade_integration(ade_token_id, blueprint_id, phone, email, file)
     except Exception as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_renew_ade_integration: %s\n" % e)
+        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->renew_ade_integration: %s\n" % e)
 ```
 
 
@@ -727,8 +727,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **automated_device_enrollment_integrations_update_ade_device**
-> object automated_device_enrollment_integrations_update_ade_device(device_id, body=body)
+# **update_ade_device**
+> object update_ade_device(device_id, body=body)
 
 Update ADE device
 
@@ -739,13 +739,13 @@ Update ADE device
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -755,24 +755,24 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
+    api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
     device_id = 'device_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
         # Update ADE device
-        api_response = api_instance.automated_device_enrollment_integrations_update_ade_device(device_id, body=body)
-        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_update_ade_device:\n")
+        api_response = api_instance.update_ade_device(device_id, body=body)
+        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->update_ade_device:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_update_ade_device: %s\n" % e)
+        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->update_ade_device: %s\n" % e)
 ```
 
 
@@ -806,8 +806,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **automated_device_enrollment_integrations_update_ade_integration**
-> automated_device_enrollment_integrations_update_ade_integration(ade_token_id, body=body)
+# **update_ade_integration**
+> update_ade_integration(ade_token_id, body=body)
 
 Update ADE integration
 
@@ -818,13 +818,13 @@ Update ADE integration
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -834,22 +834,22 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
+    api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
     ade_token_id = 'ade_token_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
         # Update ADE integration
-        api_instance.automated_device_enrollment_integrations_update_ade_integration(ade_token_id, body=body)
+        api_instance.update_ade_integration(ade_token_id, body=body)
     except Exception as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->automated_device_enrollment_integrations_update_ade_integration: %s\n" % e)
+        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->update_ade_integration: %s\n" % e)
 ```
 
 

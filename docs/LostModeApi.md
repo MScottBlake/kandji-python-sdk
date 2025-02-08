@@ -1,17 +1,17 @@
-# kandji_sdk.LostModeApi
+# kandji.LostModeApi
 
 All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**lost_mode_disable_lost_mode**](LostModeApi.md#lost_mode_disable_lost_mode) | **POST** /api/v1/devices/{device_id}/action/disablelostmode | Disable Lost Mode
-[**lost_mode_enable_lost_mode**](LostModeApi.md#lost_mode_enable_lost_mode) | **POST** /api/v1/devices/{device_id}/action/enablelostmode | Enable Lost Mode
-[**lost_mode_play_lost_mode_sound**](LostModeApi.md#lost_mode_play_lost_mode_sound) | **POST** /api/v1/devices/{device_id}/action/playlostmodesound | Play Lost Mode Sound
-[**lost_mode_update_location**](LostModeApi.md#lost_mode_update_location) | **POST** /api/v1/devices/{device_id}/action/updatelocation | Update Location
+[**disable_lost_mode**](LostModeApi.md#disable_lost_mode) | **POST** /api/v1/devices/{device_id}/action/disablelostmode | Disable Lost Mode
+[**enable_lost_mode**](LostModeApi.md#enable_lost_mode) | **POST** /api/v1/devices/{device_id}/action/enablelostmode | Enable Lost Mode
+[**play_lost_mode_sound**](LostModeApi.md#play_lost_mode_sound) | **POST** /api/v1/devices/{device_id}/action/playlostmodesound | Play Lost Mode Sound
+[**update_location**](LostModeApi.md#update_location) | **POST** /api/v1/devices/{device_id}/action/updatelocation | Update Location
 
 
-# **lost_mode_disable_lost_mode**
-> lost_mode_disable_lost_mode(device_id)
+# **disable_lost_mode**
+> disable_lost_mode(device_id)
 
 Disable Lost Mode
 
@@ -22,13 +22,13 @@ Disable Lost Mode
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -38,21 +38,21 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.LostModeApi(api_client)
+    api_instance = kandji.LostModeApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
         # Disable Lost Mode
-        api_instance.lost_mode_disable_lost_mode(device_id)
+        api_instance.disable_lost_mode(device_id)
     except Exception as e:
-        print("Exception when calling LostModeApi->lost_mode_disable_lost_mode: %s\n" % e)
+        print("Exception when calling LostModeApi->disable_lost_mode: %s\n" % e)
 ```
 
 
@@ -85,8 +85,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **lost_mode_enable_lost_mode**
-> lost_mode_enable_lost_mode(device_id, body=body)
+# **enable_lost_mode**
+> enable_lost_mode(device_id, body=body)
 
 Enable Lost Mode
 
@@ -97,13 +97,13 @@ Enable Lost Mode
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -113,22 +113,22 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.LostModeApi(api_client)
+    api_instance = kandji.LostModeApi(api_client)
     device_id = 'device_id_example' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
         # Enable Lost Mode
-        api_instance.lost_mode_enable_lost_mode(device_id, body=body)
+        api_instance.enable_lost_mode(device_id, body=body)
     except Exception as e:
-        print("Exception when calling LostModeApi->lost_mode_enable_lost_mode: %s\n" % e)
+        print("Exception when calling LostModeApi->enable_lost_mode: %s\n" % e)
 ```
 
 
@@ -162,8 +162,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **lost_mode_play_lost_mode_sound**
-> lost_mode_play_lost_mode_sound(device_id)
+# **play_lost_mode_sound**
+> play_lost_mode_sound(device_id)
 
 Play Lost Mode Sound
 
@@ -174,13 +174,13 @@ Play Lost Mode Sound
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -190,21 +190,21 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.LostModeApi(api_client)
+    api_instance = kandji.LostModeApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
         # Play Lost Mode Sound
-        api_instance.lost_mode_play_lost_mode_sound(device_id)
+        api_instance.play_lost_mode_sound(device_id)
     except Exception as e:
-        print("Exception when calling LostModeApi->lost_mode_play_lost_mode_sound: %s\n" % e)
+        print("Exception when calling LostModeApi->play_lost_mode_sound: %s\n" % e)
 ```
 
 
@@ -237,8 +237,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **lost_mode_update_location**
-> lost_mode_update_location(device_id)
+# **update_location**
+> update_location(device_id)
 
 Update Location
 
@@ -249,13 +249,13 @@ This endpoint sends an MDM command to update the location data on iOS and iPadOS
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -265,21 +265,21 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.LostModeApi(api_client)
+    api_instance = kandji.LostModeApi(api_client)
     device_id = 'device_id_example' # str | 
 
     try:
         # Update Location
-        api_instance.lost_mode_update_location(device_id)
+        api_instance.update_location(device_id)
     except Exception as e:
-        print("Exception when calling LostModeApi->lost_mode_update_location: %s\n" % e)
+        print("Exception when calling LostModeApi->update_location: %s\n" % e)
 ```
 
 

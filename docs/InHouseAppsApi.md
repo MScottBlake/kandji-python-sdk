@@ -1,20 +1,20 @@
-# kandji_sdk.InHouseAppsApi
+# kandji.InHouseAppsApi
 
 All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**inhouse_apps_create_inhouse_app**](InHouseAppsApi.md#inhouse_apps_create_inhouse_app) | **POST** /api/v1/library/ipa-apps | Create In-House App
-[**inhouse_apps_delete_inhouse_app**](InHouseAppsApi.md#inhouse_apps_delete_inhouse_app) | **DELETE** /api/v1/library/ipa-apps/{library_item_id} | Delete In-House App
-[**inhouse_apps_get_inhouse_app**](InHouseAppsApi.md#inhouse_apps_get_inhouse_app) | **GET** /api/v1/library/ipa-apps/{library_item_id} | Get In-House App
-[**inhouse_apps_list_inhouse_apps**](InHouseAppsApi.md#inhouse_apps_list_inhouse_apps) | **GET** /api/v1/library/ipa-apps | List In-House Apps
-[**inhouse_apps_update_inhouse_app**](InHouseAppsApi.md#inhouse_apps_update_inhouse_app) | **PATCH** /api/v1/library/ipa-apps/{library_item_id} | Update In-House App
-[**inhouse_apps_upload_inhouse_app**](InHouseAppsApi.md#inhouse_apps_upload_inhouse_app) | **POST** /api/v1/library/ipa-apps/upload | Upload In-House App
-[**inhouse_apps_upload_inhouse_app_status**](InHouseAppsApi.md#inhouse_apps_upload_inhouse_app_status) | **GET** /api/v1/library/ipa-apps/upload/{pending_upload_id}/status | Upload In-House App Status
+[**create_inhouse_app**](InHouseAppsApi.md#create_inhouse_app) | **POST** /api/v1/library/ipa-apps | Create In-House App
+[**delete_inhouse_app**](InHouseAppsApi.md#delete_inhouse_app) | **DELETE** /api/v1/library/ipa-apps/{library_item_id} | Delete In-House App
+[**get_inhouse_app**](InHouseAppsApi.md#get_inhouse_app) | **GET** /api/v1/library/ipa-apps/{library_item_id} | Get In-House App
+[**list_inhouse_apps**](InHouseAppsApi.md#list_inhouse_apps) | **GET** /api/v1/library/ipa-apps | List In-House Apps
+[**update_inhouse_app**](InHouseAppsApi.md#update_inhouse_app) | **PATCH** /api/v1/library/ipa-apps/{library_item_id} | Update In-House App
+[**upload_inhouse_app**](InHouseAppsApi.md#upload_inhouse_app) | **POST** /api/v1/library/ipa-apps/upload | Upload In-House App
+[**upload_inhouse_app_status**](InHouseAppsApi.md#upload_inhouse_app_status) | **GET** /api/v1/library/ipa-apps/upload/{pending_upload_id}/status | Upload In-House App Status
 
 
-# **inhouse_apps_create_inhouse_app**
-> inhouse_apps_create_inhouse_app(content_type, body=body)
+# **create_inhouse_app**
+> create_inhouse_app(content_type, body=body)
 
 Create In-House App
 
@@ -25,13 +25,13 @@ Create In-House App
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -41,22 +41,22 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.InHouseAppsApi(api_client)
+    api_instance = kandji.InHouseAppsApi(api_client)
     content_type = 'application/json' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
         # Create In-House App
-        api_instance.inhouse_apps_create_inhouse_app(content_type, body=body)
+        api_instance.create_inhouse_app(content_type, body=body)
     except Exception as e:
-        print("Exception when calling InHouseAppsApi->inhouse_apps_create_inhouse_app: %s\n" % e)
+        print("Exception when calling InHouseAppsApi->create_inhouse_app: %s\n" % e)
 ```
 
 
@@ -90,8 +90,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **inhouse_apps_delete_inhouse_app**
-> inhouse_apps_delete_inhouse_app(library_item_id)
+# **delete_inhouse_app**
+> delete_inhouse_app(library_item_id)
 
 Delete In-House App
 
@@ -102,13 +102,13 @@ Delete In-House App
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -118,21 +118,21 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.InHouseAppsApi(api_client)
+    api_instance = kandji.InHouseAppsApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
 
     try:
         # Delete In-House App
-        api_instance.inhouse_apps_delete_inhouse_app(library_item_id)
+        api_instance.delete_inhouse_app(library_item_id)
     except Exception as e:
-        print("Exception when calling InHouseAppsApi->inhouse_apps_delete_inhouse_app: %s\n" % e)
+        print("Exception when calling InHouseAppsApi->delete_inhouse_app: %s\n" % e)
 ```
 
 
@@ -166,8 +166,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **inhouse_apps_get_inhouse_app**
-> object inhouse_apps_get_inhouse_app(library_item_id)
+# **get_inhouse_app**
+> object get_inhouse_app(library_item_id)
 
 Get In-House App
 
@@ -178,13 +178,13 @@ Get In-House App
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -194,23 +194,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.InHouseAppsApi(api_client)
+    api_instance = kandji.InHouseAppsApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
 
     try:
         # Get In-House App
-        api_response = api_instance.inhouse_apps_get_inhouse_app(library_item_id)
-        print("The response of InHouseAppsApi->inhouse_apps_get_inhouse_app:\n")
+        api_response = api_instance.get_inhouse_app(library_item_id)
+        print("The response of InHouseAppsApi->get_inhouse_app:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InHouseAppsApi->inhouse_apps_get_inhouse_app: %s\n" % e)
+        print("Exception when calling InHouseAppsApi->get_inhouse_app: %s\n" % e)
 ```
 
 
@@ -243,8 +243,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **inhouse_apps_list_inhouse_apps**
-> object inhouse_apps_list_inhouse_apps(page=page)
+# **list_inhouse_apps**
+> object list_inhouse_apps(page=page)
 
 List In-House Apps
 
@@ -255,13 +255,13 @@ This endpoint makes a request to retrieve a list of In-House Apps from the Kandj
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -271,23 +271,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.InHouseAppsApi(api_client)
+    api_instance = kandji.InHouseAppsApi(api_client)
     page = '1' # str | Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 app records returned per request. (optional)
 
     try:
         # List In-House Apps
-        api_response = api_instance.inhouse_apps_list_inhouse_apps(page=page)
-        print("The response of InHouseAppsApi->inhouse_apps_list_inhouse_apps:\n")
+        api_response = api_instance.list_inhouse_apps(page=page)
+        print("The response of InHouseAppsApi->list_inhouse_apps:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InHouseAppsApi->inhouse_apps_list_inhouse_apps: %s\n" % e)
+        print("Exception when calling InHouseAppsApi->list_inhouse_apps: %s\n" % e)
 ```
 
 
@@ -320,8 +320,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **inhouse_apps_update_inhouse_app**
-> inhouse_apps_update_inhouse_app(library_item_id, content_type, body=body)
+# **update_inhouse_app**
+> update_inhouse_app(library_item_id, content_type, body=body)
 
 Update In-House App
 
@@ -332,13 +332,13 @@ Update In-House App
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -348,23 +348,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.InHouseAppsApi(api_client)
+    api_instance = kandji.InHouseAppsApi(api_client)
     library_item_id = 'library_item_id_example' # str | 
     content_type = 'application/json' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
         # Update In-House App
-        api_instance.inhouse_apps_update_inhouse_app(library_item_id, content_type, body=body)
+        api_instance.update_inhouse_app(library_item_id, content_type, body=body)
     except Exception as e:
-        print("Exception when calling InHouseAppsApi->inhouse_apps_update_inhouse_app: %s\n" % e)
+        print("Exception when calling InHouseAppsApi->update_inhouse_app: %s\n" % e)
 ```
 
 
@@ -399,8 +399,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **inhouse_apps_upload_inhouse_app**
-> object inhouse_apps_upload_inhouse_app(content_type, body=body)
+# **upload_inhouse_app**
+> object upload_inhouse_app(content_type, body=body)
 
 Upload In-House App
 
@@ -411,13 +411,13 @@ Upload In-House App
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -427,24 +427,24 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.InHouseAppsApi(api_client)
+    api_instance = kandji.InHouseAppsApi(api_client)
     content_type = 'application/json' # str | 
     body = 'body_example' # str |  (optional)
 
     try:
         # Upload In-House App
-        api_response = api_instance.inhouse_apps_upload_inhouse_app(content_type, body=body)
-        print("The response of InHouseAppsApi->inhouse_apps_upload_inhouse_app:\n")
+        api_response = api_instance.upload_inhouse_app(content_type, body=body)
+        print("The response of InHouseAppsApi->upload_inhouse_app:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InHouseAppsApi->inhouse_apps_upload_inhouse_app: %s\n" % e)
+        print("Exception when calling InHouseAppsApi->upload_inhouse_app: %s\n" % e)
 ```
 
 
@@ -478,8 +478,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **inhouse_apps_upload_inhouse_app_status**
-> object inhouse_apps_upload_inhouse_app_status(pending_upload_id)
+# **upload_inhouse_app_status**
+> object upload_inhouse_app_status(pending_upload_id)
 
 Upload In-House App Status
 
@@ -490,13 +490,13 @@ Upload In-House App Status
 * Bearer (API Token) Authentication (bearer):
 
 ```python
-import kandji_sdk
-from kandji_sdk.rest import ApiException
+import kandji
+from kandji.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     host = "https://<sub_domain>.api.kandji.io"
 )
 
@@ -506,23 +506,23 @@ configuration = kandji_sdk.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API Token): bearer
-configuration = kandji_sdk.Configuration(
+configuration = kandji.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with kandji_sdk.ApiClient(configuration) as api_client:
+with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji_sdk.InHouseAppsApi(api_client)
+    api_instance = kandji.InHouseAppsApi(api_client)
     pending_upload_id = 'pending_upload_id_example' # str | 
 
     try:
         # Upload In-House App Status
-        api_response = api_instance.inhouse_apps_upload_inhouse_app_status(pending_upload_id)
-        print("The response of InHouseAppsApi->inhouse_apps_upload_inhouse_app_status:\n")
+        api_response = api_instance.upload_inhouse_app_status(pending_upload_id)
+        print("The response of InHouseAppsApi->upload_inhouse_app_status:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InHouseAppsApi->inhouse_apps_upload_inhouse_app_status: %s\n" % e)
+        print("Exception when calling InHouseAppsApi->upload_inhouse_app_status: %s\n" % e)
 ```
 
 

@@ -46,7 +46,7 @@ configuration = kandji.Configuration(
 with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.TagsApi(api_client)
-    body = 'body_example' # str |  (optional)
+    body = {"name":"accuhive_01"} # str |  (optional)
 
     try:
         # Create Tag
@@ -276,7 +276,7 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.TagsApi(api_client)
     tag_id = 'tag_id_example' # str | 
-    body = 'body_example' # str |  (optional)
+    body = {"name":"accuhive_02"} # str |  (optional)
 
     try:
         # Update Tag

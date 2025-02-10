@@ -1139,7 +1139,7 @@ class DeviceActionsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> object:
         """Get Device Commands
 
         <p>This endpoint sends a request to get information about the commands sent to a given device ID.</p> <h3 id=&quot;mdm-status-codes&quot;>MDM Status Codes</h3> <ul> <li>1 : Command is Pending</li> <li>2 : Command is running</li> <li>3 : Command completed</li> <li>4 : Command failed</li> <li>5 : Command received &quot;Not Now&quot; response</li> </ul>
@@ -1183,7 +1183,7 @@ class DeviceActionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1214,7 +1214,7 @@ class DeviceActionsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[object]:
         """Get Device Commands
 
         <p>This endpoint sends a request to get information about the commands sent to a given device ID.</p> <h3 id=&quot;mdm-status-codes&quot;>MDM Status Codes</h3> <ul> <li>1 : Command is Pending</li> <li>2 : Command is running</li> <li>3 : Command completed</li> <li>4 : Command failed</li> <li>5 : Command received &quot;Not Now&quot; response</li> </ul>
@@ -1258,7 +1258,7 @@ class DeviceActionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1333,7 +1333,7 @@ class DeviceActionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1384,6 +1384,13 @@ class DeviceActionsApi:
         # process the body parameter
 
 
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting

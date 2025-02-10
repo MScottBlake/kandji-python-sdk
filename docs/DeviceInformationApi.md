@@ -5,6 +5,7 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**cancel_lost_mode**](DeviceInformationApi.md#cancel_lost_mode) | **DELETE** /api/v1/devices/{device_id}/details/lostmode | Cancel Lost Mode
+[**get_device**](DeviceInformationApi.md#get_device) | **GET** /api/v1/devices/{device_id} | Get Device
 [**get_device_activity**](DeviceInformationApi.md#get_device_activity) | **GET** /api/v1/devices/{device_id}/activity | Get Device Activity
 [**get_device_apps**](DeviceInformationApi.md#get_device_apps) | **GET** /api/v1/devices/{device_id}/apps | Get Device Apps
 [**get_device_details**](DeviceInformationApi.md#get_device_details) | **GET** /api/v1/devices/{device_id}/details | Get Device Details
@@ -13,6 +14,7 @@ Method | HTTP request | Description
 [**get_device_parameters**](DeviceInformationApi.md#get_device_parameters) | **GET** /api/v1/devices/{device_id}/parameters | Get Device Parameters
 [**get_device_status**](DeviceInformationApi.md#get_device_status) | **GET** /api/v1/devices/{device_id}/status | Get Device Status
 [**list_devices**](DeviceInformationApi.md#list_devices) | **GET** /api/v1/devices | List Devices
+[**update_device**](DeviceInformationApi.md#update_device) | **PATCH** /api/v1/devices/{device_id} | Update Device
 
 
 # **cancel_lost_mode**
@@ -86,7 +88,84 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**204** | No Content |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_device**
+> object get_device(device_id)
+
+Get Device
+
+This request returns the high-level information for a specified Device ID.
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji
+from kandji.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji.DeviceInformationApi(api_client)
+    device_id = 'device_id_example' # str | 
+
+    try:
+        # Get Device
+        api_response = api_instance.get_device(device_id)
+        print("The response of DeviceInformationApi->get_device:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DeviceInformationApi->get_device: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **device_id** | **str**|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * Connection -  <br>  * Server -  <br>  * Allow -  <br>  * X-Frame-Options -  <br>  * Strict-Transport-Security -  <br>  * X-Content-Type-Options -  <br>  * X-XSS-Protection -  <br>  * Referrer-Policy -  <br>  * Feature-Policy -  <br>  * Vary -  <br>  * Content-Security-Policy -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -741,6 +820,85 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Content-Type -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_device**
+> object update_device(device_id, body=body)
+
+Update Device
+
+<p>This request allows you to update device information, such as the assigned blueprint, user, Asset Tag, and Tags. It is not required to use all attributes in a given request. For example if you only want to update the assigned blueprint, you only need to pass the <code>blueprint_id</code> in the request payload.</p> <p><strong>NOTE</strong>: With the introduction of a UUID value for user ID in the <a href=&quot;https://api-docs.kandji.io/#b107eb0a-b586-414f-bc4c-3d2b304cfd5f&quot;>Users API</a>, the Device PATCH endpoint will support both the depricated user ID integer value and the new user ID UUID value when updating the user assignment for a device. The ability to update user assignment via the integer ID value will be removed starting January 2025.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> <h3 id=&quot;additional-information&quot;>Additional information</h3> <p>User ID can be found using the <code>list users</code> API</p> <p>A Blueprint ID can be found using the <code>list blueprints</code> API or in the URL path while on a Blueprint overview page.</p> <p>For example, for this URL <a href=&quot;https://subdomain.kandji.io/blueprints/6391086e-85a1-4820-813c-f9c75025fff4&quot;>https://subdomain.kandji.io/blueprints/6391086e-85a1-4820-813c-f9c75025fff4</a></p> <p>The Blueprint ID would be <code>6391086e-85a1-4820-813c-f9c75025fff4</code></p> <p>An example script that leverages this API can be found in the <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/update-device-record&quot;>Kandji Support GitHub</a></p> <h4 id=&quot;clearing-the-device-asset-tag&quot;>Clearing the device asset tag</h4> <p>To clear a device asset tag, set the <code>asset_tag</code> value to <code>null</code> in the JSON payload.</p> <pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{     &quot;asset_tag&quot;: null }  </code></pre> <h4 id=&quot;clearing-the-assigned-user-attribute&quot;>Clearing the assigned user attribute</h4> <p>To clear the assigned user for a given device, set the <code>user</code> value to <code>null</code> in the JSON payload.</p> <pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{     &quot;user&quot;: null }  </code></pre> <h4 id=&quot;clearing-all-tags&quot;>Clearing all tags</h4> <p>To clear the assigned tags for a given device, set the <code>tags</code> value to an empty list <code>[]</code> in the JSON payload.</p> <pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{     &quot;tags&quot;: [] }  </code></pre>
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji
+from kandji.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji.DeviceInformationApi(api_client)
+    device_id = 'device_id_example' # str | 
+    body = {"user":"5344c996-8823-4b37-8d6e-8515fc7c3a0a","asset_tag":"1040","blueprint_id":"be1a4d67-91d8-4d19-a927-c8be6e77b6b2","tags":["tag1","tag2","tag3","tag4","tag5"]} # str |  (optional)
+
+    try:
+        # Update Device
+        api_response = api_instance.update_device(device_id, body=body)
+        print("The response of DeviceInformationApi->update_device:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DeviceInformationApi->update_device: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **device_id** | **str**|  | 
+ **body** | **str**|  | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

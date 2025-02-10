@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 
 # **activation_lock**
-> activation_lock(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+> object activation_lock(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Activation lock
 
@@ -69,7 +69,9 @@ with kandji.ApiClient(configuration) as api_client:
 
     try:
         # Activation lock
-        api_instance.activation_lock(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        api_response = api_instance.activation_lock(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->activation_lock:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling PrismApi->activation_lock: %s\n" % e)
 ```
@@ -90,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -99,7 +101,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -576,7 +578,7 @@ with kandji.ApiClient(configuration) as api_client:
     sort_by = 'serial_number' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order. (optional)
     limit = '' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
     offset = '' # str | Specify the starting record to return (optional)
-    body = 'body_example' # str |  (optional)
+    body = {} # str |  (optional)
 
     try:
         # Device information
@@ -1258,7 +1260,7 @@ configuration = kandji.Configuration(
 with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.PrismApi(api_client)
-    body = 'body_example' # str |  (optional)
+    body = {"blueprint_ids":["string","string","string"],"device_families":["Mac"],"category":"device_information","filter":{},"sort_by":"device__nam"} # str |  (optional)
 
     try:
         # Request category export

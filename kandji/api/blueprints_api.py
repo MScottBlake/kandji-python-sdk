@@ -950,7 +950,7 @@ class BlueprintsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> object:
         """Get Blueprint
 
         <p>This request returns information about a specific blueprint based on blueprint ID.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
@@ -988,7 +988,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1017,7 +1017,7 @@ class BlueprintsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[object]:
         """Get Blueprint
 
         <p>This request returns information about a specific blueprint based on blueprint ID.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
@@ -1055,7 +1055,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1122,7 +1122,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1163,6 +1163,13 @@ class BlueprintsApi:
         # process the body parameter
 
 
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting

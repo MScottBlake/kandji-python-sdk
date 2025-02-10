@@ -764,7 +764,7 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
     device_id = 'device_id_example' # str | 
-    body = 'body_example' # str |  (optional)
+    body = {"blueprint_id":"3013eb7c-d0c1-4689-852a-50776a92036b","asset_tag":"123456","user_id":"5344c996-8823-4b37-8d6e-8515fc7c3a0a"} # str |  (optional)
 
     try:
         # Update ADE device
@@ -843,7 +843,7 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
     ade_token_id = 'ade_token_id_example' # str | 
-    body = 'body_example' # str |  (optional)
+    body = {"blueprint_id":"bf21d9cf-17cf-48b3-890d-7bc27c241bb7","phone":"1234567890","email":"example@accuhive.io"} # str |  (optional)
 
     try:
         # Update ADE integration

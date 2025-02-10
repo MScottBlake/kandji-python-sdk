@@ -53,7 +53,7 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.BlueprintsApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
-    body = 'body_example' # str |  (optional)
+    body = {"library_item_id":"{library_item_id}","assignment_node_id":"{assignment_node_id}"} # str |  (optional)
 
     try:
         # Assign Library Item
@@ -259,7 +259,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_blueprint**
-> get_blueprint(blueprint_id)
+> object get_blueprint(blueprint_id)
 
 Get Blueprint
 
@@ -298,7 +298,9 @@ with kandji.ApiClient(configuration) as api_client:
 
     try:
         # Get Blueprint
-        api_instance.get_blueprint(blueprint_id)
+        api_response = api_instance.get_blueprint(blueprint_id)
+        print("The response of BlueprintsApi->get_blueprint:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling BlueprintsApi->get_blueprint: %s\n" % e)
 ```
@@ -314,7 +316,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -323,7 +325,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -686,7 +688,7 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.BlueprintsApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
-    body = 'body_example' # str |  (optional)
+    body = {library_item_id={library_item_id}, assignment_node_id={assignment_node_id}} # str |  (optional)
 
     try:
         # Remove Library Item

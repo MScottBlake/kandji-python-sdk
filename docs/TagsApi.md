@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **create_tag**
-> TagsCreateTag201Response create_tag(body=body)
+> Success201Response1 create_tag(body=body)
 
 Create Tag
 
@@ -23,7 +23,7 @@ Create a tag. Can only create one tag per request.
 
 ```python
 import kandji
-from kandji.models.tags_create_tag201_response import TagsCreateTag201Response
+from kandji.models.success201_response1 import Success201Response1
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TagsCreateTag201Response**](TagsCreateTag201Response.md)
+[**Success201Response1**](Success201Response1.md)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_tags**
-> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response get_tags(search)
+> Success200Response get_tags(search)
 
 Get Tags
 
@@ -176,7 +176,7 @@ Return configured tags.
 
 ```python
 import kandji
-from kandji.models.automated_device_enrollment_integrations_list_ade_devices200_response import AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+from kandji.models.success200_response import Success200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
+[**Success200Response**](Success200Response.md)
 
 ### Authorization
 
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_tag**
-> TagsCreateTag201Response update_tag(tag_id, body=body)
+> Success200Response14 update_tag(tag_id, body=body)
 
 Update Tag
 
@@ -254,7 +254,7 @@ Update Tag
 
 ```python
 import kandji
-from kandji.models.tags_create_tag201_response import TagsCreateTag201Response
+from kandji.models.success200_response14 import Success200Response14
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TagsCreateTag201Response**](TagsCreateTag201Response.md)
+[**Success200Response14**](Success200Response14.md)
 
 ### Authorization
 

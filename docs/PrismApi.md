@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 
 # **activation_lock**
-> object activation_lock(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+> PrismActivationLock200Response activation_lock(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Activation lock
 
@@ -37,6 +37,7 @@ Get activation lock attributes for devices.
 
 ```python
 import kandji
+from kandji.models.prism_activation_lock200_response import PrismActivationLock200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -92,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -112,7 +113,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **application_firewall**
-> object application_firewall(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+> PrismActivationLock200Response application_firewall(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Application firewall
 
@@ -124,6 +125,7 @@ Get Application Firewall details for macOS.
 
 ```python
 import kandji
+from kandji.models.prism_activation_lock200_response import PrismActivationLock200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -179,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -199,7 +201,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **applications**
-> object applications(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+> PrismApplications200Response applications(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Applications
 
@@ -211,6 +213,7 @@ Get the applications installed on macOS, iOS, iPadOS, and tvOS devices.
 
 ```python
 import kandji
+from kandji.models.prism_applications200_response import PrismApplications200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -266,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**PrismApplications200Response**](PrismApplications200Response.md)
 
 ### Authorization
 
@@ -286,7 +289,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **certificates**
-> object certificates(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+> PrismActivationLock200Response certificates(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Certificates
 
@@ -298,6 +301,7 @@ Get certificate details.
 
 ```python
 import kandji
+from kandji.models.prism_activation_lock200_response import PrismActivationLock200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -353,7 +357,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -373,7 +377,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **count**
-> object count(category)
+> PrismCount200Response count(category)
 
 Count
 
@@ -385,6 +389,7 @@ Count
 
 ```python
 import kandji
+from kandji.models.prism_count200_response import PrismCount200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -430,7 +435,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**PrismCount200Response**](PrismCount200Response.md)
 
 ### Authorization
 
@@ -450,7 +455,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **desktop_and_screensaver**
-> object desktop_and_screensaver(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+> PrismActivationLock200Response desktop_and_screensaver(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Desktop and Screensaver
 
@@ -462,6 +467,7 @@ Get Desktop and Screensaver details for macOS.
 
 ```python
 import kandji
+from kandji.models.prism_activation_lock200_response import PrismActivationLock200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -517,7 +523,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -537,7 +543,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **device_information**
-> object device_information(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset, body=body)
+> PrismDeviceInformation200Response device_information(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset, body=body)
 
 Device information
 
@@ -549,6 +555,7 @@ Get attributes about devices.
 
 ```python
 import kandji
+from kandji.models.prism_device_information200_response import PrismDeviceInformation200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -606,7 +613,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**PrismDeviceInformation200Response**](PrismDeviceInformation200Response.md)
 
 ### Authorization
 
@@ -626,7 +633,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **filevault**
-> object filevault(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+> PrismDeviceInformation200Response filevault(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 FileVault
 
@@ -638,6 +645,7 @@ Get FileVault information for macOS.
 
 ```python
 import kandji
+from kandji.models.prism_device_information200_response import PrismDeviceInformation200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -693,7 +701,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**PrismDeviceInformation200Response**](PrismDeviceInformation200Response.md)
 
 ### Authorization
 
@@ -713,7 +721,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gatekeeper_and_xprotect**
-> object gatekeeper_and_xprotect(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+> PrismActivationLock200Response gatekeeper_and_xprotect(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Gatekeeper and XProtect
 
@@ -725,6 +733,7 @@ Get Gatekeeper and XProtect attributes for macOS.
 
 ```python
 import kandji
+from kandji.models.prism_activation_lock200_response import PrismActivationLock200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -780,7 +789,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -800,7 +809,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_category_export**
-> object get_category_export(export_id)
+> PrismGetCategoryExport200Response get_category_export(export_id)
 
 Get category export
 
@@ -812,6 +821,7 @@ Get category export
 
 ```python
 import kandji
+from kandji.models.prism_get_category_export200_response import PrismGetCategoryExport200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -857,7 +867,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**PrismGetCategoryExport200Response**](PrismGetCategoryExport200Response.md)
 
 ### Authorization
 
@@ -877,7 +887,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **installed_profiles**
-> object installed_profiles(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+> PrismActivationLock200Response installed_profiles(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Installed profiles
 
@@ -889,6 +899,7 @@ Get Installed Profiles attributes for macOS, iOS, iPadOS, and tvOS.
 
 ```python
 import kandji
+from kandji.models.prism_activation_lock200_response import PrismActivationLock200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -944,7 +955,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -964,7 +975,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **kernel_extensions**
-> object kernel_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+> PrismActivationLock200Response kernel_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Kernel Extensions
 
@@ -976,6 +987,7 @@ Get Kernel Extension attributes for macOS.
 
 ```python
 import kandji
+from kandji.models.prism_activation_lock200_response import PrismActivationLock200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -1031,7 +1043,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -1051,7 +1063,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **launch_agents_and_daemons**
-> object launch_agents_and_daemons(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+> PrismActivationLock200Response launch_agents_and_daemons(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Launch Agents and Daemons
 
@@ -1063,6 +1075,7 @@ Get Launch Agents and Daemons installed on macOS.
 
 ```python
 import kandji
+from kandji.models.prism_activation_lock200_response import PrismActivationLock200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -1118,7 +1131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -1138,7 +1151,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **local_users**
-> object local_users(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+> PrismLocalUsers200Response local_users(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Local users
 
@@ -1150,6 +1163,7 @@ Get Local Users detials for macOS.
 
 ```python
 import kandji
+from kandji.models.prism_local_users200_response import PrismLocalUsers200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -1205,7 +1219,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**PrismLocalUsers200Response**](PrismLocalUsers200Response.md)
 
 ### Authorization
 
@@ -1225,7 +1239,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **request_category_export**
-> object request_category_export(body=body)
+> PrismRequestCategoryExport200Response request_category_export(body=body)
 
 Request category export
 
@@ -1237,6 +1251,7 @@ Request category export
 
 ```python
 import kandji
+from kandji.models.prism_request_category_export200_response import PrismRequestCategoryExport200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -1282,7 +1297,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**PrismRequestCategoryExport200Response**](PrismRequestCategoryExport200Response.md)
 
 ### Authorization
 
@@ -1303,7 +1318,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **startup_settings**
-> object startup_settings(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+> PrismActivationLock200Response startup_settings(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Startup settings
 
@@ -1315,6 +1330,7 @@ Get Startup settings for macOS.
 
 ```python
 import kandji
+from kandji.models.prism_activation_lock200_response import PrismActivationLock200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -1370,7 +1386,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -1390,7 +1406,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **system_extensions**
-> object system_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+> PrismActivationLock200Response system_extensions(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 System Extensions
 
@@ -1402,6 +1418,7 @@ Get System Extension attributes for macOS.
 
 ```python
 import kandji
+from kandji.models.prism_activation_lock200_response import PrismActivationLock200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -1457,7 +1474,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -1477,7 +1494,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **transparency_database**
-> object transparency_database(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+> PrismActivationLock200Response transparency_database(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
 
 Transparency database
 
@@ -1489,6 +1506,7 @@ Get Transparency Database (TCC) attributes for macOS.
 
 ```python
 import kandji
+from kandji.models.prism_activation_lock200_response import PrismActivationLock200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -1544,7 +1562,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 

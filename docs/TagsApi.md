@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **create_tag**
-> object create_tag(body=body)
+> TagsCreateTag201Response create_tag(body=body)
 
 Create Tag
 
@@ -23,6 +23,7 @@ Create a tag. Can only create one tag per request.
 
 ```python
 import kandji
+from kandji.models.tags_create_tag201_response import TagsCreateTag201Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -68,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**TagsCreateTag201Response**](TagsCreateTag201Response.md)
 
 ### Authorization
 
@@ -163,7 +164,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_tags**
-> object get_tags(search)
+> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response get_tags(search)
 
 Get Tags
 
@@ -175,6 +176,7 @@ Return configured tags.
 
 ```python
 import kandji
+from kandji.models.automated_device_enrollment_integrations_list_ade_devices200_response import AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -220,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
 
 ### Authorization
 
@@ -240,7 +242,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_tag**
-> object update_tag(tag_id, body=body)
+> TagsCreateTag201Response update_tag(tag_id, body=body)
 
 Update Tag
 
@@ -252,6 +254,7 @@ Update Tag
 
 ```python
 import kandji
+from kandji.models.tags_create_tag201_response import TagsCreateTag201Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -299,7 +302,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**TagsCreateTag201Response**](TagsCreateTag201Response.md)
 
 ### Authorization
 

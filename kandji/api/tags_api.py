@@ -18,8 +18,10 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
-from typing import Any, Dict, Optional
+from typing import Optional
 from typing_extensions import Annotated
+from kandji.models.automated_device_enrollment_integrations_list_ade_devices200_response import AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+from kandji.models.tags_create_tag201_response import TagsCreateTag201Response
 
 from kandji.api_client import ApiClient, RequestSerialized
 from kandji.api_response import ApiResponse
@@ -55,7 +57,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> TagsCreateTag201Response:
         """Create Tag
 
         Create a tag. Can only create one tag per request.
@@ -93,7 +95,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "object",
+            '201': "TagsCreateTag201Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -122,7 +124,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[TagsCreateTag201Response]:
         """Create Tag
 
         Create a tag. Can only create one tag per request.
@@ -160,7 +162,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "object",
+            '201': "TagsCreateTag201Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -227,7 +229,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "object",
+            '201': "TagsCreateTag201Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -583,7 +585,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response:
         """Get Tags
 
         Return configured tags.
@@ -621,7 +623,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -650,7 +652,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response]:
         """Get Tags
 
         Return configured tags.
@@ -688,7 +690,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -755,7 +757,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -847,7 +849,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> TagsCreateTag201Response:
         """Update Tag
 
         <p>Update tag name.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>tag_id</code> (path parameter): The unique identifier of the tag.</p>
@@ -888,7 +890,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "TagsCreateTag201Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -918,7 +920,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[TagsCreateTag201Response]:
         """Update Tag
 
         <p>Update tag name.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>tag_id</code> (path parameter): The unique identifier of the tag.</p>
@@ -959,7 +961,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "TagsCreateTag201Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1030,7 +1032,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "TagsCreateTag201Response",
         }
         response_data = self.api_client.call_api(
             *_param,

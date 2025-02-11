@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_threat_details**
-> object get_threat_details(classification=classification, date_range=date_range, device_id=device_id, status=status, sort_by=sort_by, term=term, limit=limit, offset=offset)
+> ThreatsGetThreatDetails200Response get_threat_details(classification=classification, date_range=date_range, device_id=device_id, status=status, sort_by=sort_by, term=term, limit=limit, offset=offset)
 
 Get Threat Details
 
@@ -20,6 +20,7 @@ Get threat details.
 
 ```python
 import kandji
+from kandji.models.threats_get_threat_details200_response import ThreatsGetThreatDetails200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -79,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**ThreatsGetThreatDetails200Response**](ThreatsGetThreatDetails200Response.md)
 
 ### Authorization
 

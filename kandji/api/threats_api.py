@@ -20,7 +20,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
-from kandji.models.using_term_param200_response import UsingTermParam200Response
+from kandji.models.threats_get_threat_details200_response import ThreatsGetThreatDetails200Response
 
 from kandji.api_client import ApiClient, RequestSerialized
 from kandji.api_response import ApiResponse
@@ -63,7 +63,7 @@ class ThreatsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> UsingTermParam200Response:
+    ) -> ThreatsGetThreatDetails200Response:
         """Get Threat Details
 
         Get threat details.
@@ -122,7 +122,7 @@ class ThreatsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "UsingTermParam200Response",
+            '200': "ThreatsGetThreatDetails200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -158,7 +158,7 @@ class ThreatsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[UsingTermParam200Response]:
+    ) -> ApiResponse[ThreatsGetThreatDetails200Response]:
         """Get Threat Details
 
         Get threat details.
@@ -217,7 +217,7 @@ class ThreatsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "UsingTermParam200Response",
+            '200': "ThreatsGetThreatDetails200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -312,7 +312,7 @@ class ThreatsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "UsingTermParam200Response",
+            '200': "ThreatsGetThreatDetails200Response",
         }
         response_data = self.api_client.call_api(
             *_param,

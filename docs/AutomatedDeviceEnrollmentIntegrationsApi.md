@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **create_ade_integration**
-> CreateIntegration200Response create_ade_integration(blueprint_id, phone, email, file)
+> AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response create_ade_integration(blueprint_id, phone, email, file)
 
 Create ADE integration
 
@@ -30,7 +30,7 @@ Create ADE integration
 
 ```python
 import kandji
-from kandji.models.create_integration200_response import CreateIntegration200Response
+from kandji.models.automated_device_enrollment_integrations_create_ade_integration200_response import AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateIntegration200Response**](CreateIntegration200Response.md)
+[**AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response**](AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response.md)
 
 ### Authorization
 
@@ -250,7 +250,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_ade_device**
-> Success200Response1 get_ade_device(device_id)
+> AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response get_ade_device(device_id)
 
 Get ADE device
 
@@ -262,7 +262,7 @@ Get information about a specific Automated Device Enrollment device.
 
 ```python
 import kandji
-from kandji.models.success200_response1 import Success200Response1
+from kandji.models.automated_device_enrollment_integrations_get_ade_device200_response import AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Success200Response1**](Success200Response1.md)
+[**AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response**](AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response.md)
 
 ### Authorization
 
@@ -403,7 +403,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_ade_devices**
-> Success200Response list_ade_devices(blueprint_id=blueprint_id, user_id=user_id, dep_account=dep_account, device_family=device_family, model=model, os=os, profile_status=profile_status, serial_number=serial_number, page=page)
+> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response list_ade_devices(blueprint_id=blueprint_id, user_id=user_id, dep_account=dep_account, device_family=device_family, model=model, os=os, profile_status=profile_status, serial_number=serial_number, page=page)
 
 List ADE devices
 
@@ -415,7 +415,7 @@ Get a list of Automated Device Enrollment devices.
 
 ```python
 import kandji
-from kandji.models.success200_response import Success200Response
+from kandji.models.automated_device_enrollment_integrations_list_ade_devices200_response import AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -477,7 +477,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Success200Response**](Success200Response.md)
+[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
 
 ### Authorization
 
@@ -569,7 +569,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_devices_associated_to_ade_token**
-> ListAssociatedDevicesNullMdmDevice200Response list_devices_associated_to_ade_token(ade_token_id, page=page)
+> AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response list_devices_associated_to_ade_token(ade_token_id, page=page)
 
 List devices associated to ADE token
 
@@ -581,7 +581,7 @@ List devices associated to ADE token
 
 ```python
 import kandji
-from kandji.models.list_associated_devices_null_mdm_device200_response import ListAssociatedDevicesNullMdmDevice200Response
+from kandji.models.automated_device_enrollment_integrations_list_devices_associated_to_ade_token200_response import AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -629,7 +629,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListAssociatedDevicesNullMdmDevice200Response**](ListAssociatedDevicesNullMdmDevice200Response.md)
+[**AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response**](AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response.md)
 
 ### Authorization
 
@@ -732,7 +732,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_ade_device**
-> UpdateUserAssignment200Response update_ade_device(device_id, body=body)
+> AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response update_ade_device(device_id, body=body)
 
 Update ADE device
 
@@ -744,7 +744,7 @@ Update ADE device
 
 ```python
 import kandji
-from kandji.models.update_user_assignment200_response import UpdateUserAssignment200Response
+from kandji.models.automated_device_enrollment_integrations_get_ade_device200_response import AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -792,7 +792,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UpdateUserAssignment200Response**](UpdateUserAssignment200Response.md)
+[**AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response**](AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response.md)
 
 ### Authorization
 

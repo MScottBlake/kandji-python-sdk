@@ -20,8 +20,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
-from kandji.models.edr_status200_response1 import EdrStatus200Response1
-from kandji.models.success200_response import Success200Response
+from kandji.models.automated_device_enrollment_integrations_list_ade_devices200_response import AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
 
 from kandji.api_client import ApiClient, RequestSerialized
 from kandji.api_response import ApiResponse
@@ -62,7 +61,7 @@ class LibraryItemsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> Success200Response:
+    ) -> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response:
         """Get Library Item Activity
 
         <p>This endpoint retrieves the activity related to a specific library item. Activity is listed from newest to oldest.</p> <p>To see a delta of the activity events between now and the last request, you can store the newest entry from the previous request and then look for that entry in the next request. Any entry post that will be the delta.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
@@ -115,7 +114,7 @@ class LibraryItemsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Success200Response",
+            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -149,7 +148,7 @@ class LibraryItemsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[Success200Response]:
+    ) -> ApiResponse[AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response]:
         """Get Library Item Activity
 
         <p>This endpoint retrieves the activity related to a specific library item. Activity is listed from newest to oldest.</p> <p>To see a delta of the activity events between now and the last request, you can store the newest entry from the previous request and then look for that entry in the next request. Any entry post that will be the delta.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
@@ -202,7 +201,7 @@ class LibraryItemsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Success200Response",
+            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -289,7 +288,7 @@ class LibraryItemsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Success200Response",
+            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -406,7 +405,7 @@ class LibraryItemsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> EdrStatus200Response1:
+    ) -> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response:
         """Get Library Item Statuses
 
         <p>This endpoint retrieves the statuses related to a specific library item.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
@@ -453,7 +452,7 @@ class LibraryItemsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "EdrStatus200Response1",
+            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -485,7 +484,7 @@ class LibraryItemsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[EdrStatus200Response1]:
+    ) -> ApiResponse[AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response]:
         """Get Library Item Statuses
 
         <p>This endpoint retrieves the statuses related to a specific library item.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
@@ -532,7 +531,7 @@ class LibraryItemsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "EdrStatus200Response1",
+            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -611,7 +610,7 @@ class LibraryItemsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "EdrStatus200Response1",
+            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
         }
         response_data = self.api_client.call_api(
             *_param,

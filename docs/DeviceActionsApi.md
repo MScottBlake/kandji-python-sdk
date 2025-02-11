@@ -327,7 +327,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_device_commands**
-> GetDeviceCommands200Response get_device_commands(device_id, limit, offset=offset)
+> DeviceActionsGetDeviceCommands200Response get_device_commands(device_id, limit, offset=offset)
 
 Get Device Commands
 
@@ -339,7 +339,7 @@ Get Device Commands
 
 ```python
 import kandji
-from kandji.models.get_device_commands200_response import GetDeviceCommands200Response
+from kandji.models.device_actions_get_device_commands200_response import DeviceActionsGetDeviceCommands200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -389,7 +389,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetDeviceCommands200Response**](GetDeviceCommands200Response.md)
+[**DeviceActionsGetDeviceCommands200Response**](DeviceActionsGetDeviceCommands200Response.md)
 
 ### Authorization
 
@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **lock_device**
-> Success200Response4 lock_device(device_id, body=body)
+> DeviceActionsLockDevice200Response lock_device(device_id, body=body)
 
 Lock Device
 
@@ -421,7 +421,7 @@ Lock Device
 
 ```python
 import kandji
-from kandji.models.success200_response4 import Success200Response4
+from kandji.models.device_actions_lock_device200_response import DeviceActionsLockDevice200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Success200Response4**](Success200Response4.md)
+[**DeviceActionsLockDevice200Response**](DeviceActionsLockDevice200Response.md)
 
 ### Authorization
 

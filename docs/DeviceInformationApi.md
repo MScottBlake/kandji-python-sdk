@@ -93,7 +93,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_device**
-> GetIpad200Response get_device(device_id)
+> DeviceInformationGetDevice200Response get_device(device_id)
 
 Get Device
 
@@ -105,7 +105,7 @@ This request returns the high-level information for a specified Device ID.
 
 ```python
 import kandji
-from kandji.models.get_ipad200_response import GetIpad200Response
+from kandji.models.device_information_get_device200_response import DeviceInformationGetDevice200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetIpad200Response**](GetIpad200Response.md)
+[**DeviceInformationGetDevice200Response**](DeviceInformationGetDevice200Response.md)
 
 ### Authorization
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_device_activity**
-> GetDeviceActivity200Response get_device_activity(device_id, limit, offset=offset)
+> DeviceInformationGetDeviceActivity200Response get_device_activity(device_id, limit, offset=offset)
 
 Get Device Activity
 
@@ -183,7 +183,7 @@ This request returns the device activity for a specified Device ID.
 
 ```python
 import kandji
-from kandji.models.get_device_activity200_response import GetDeviceActivity200Response
+from kandji.models.device_information_get_device_activity200_response import DeviceInformationGetDeviceActivity200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetDeviceActivity200Response**](GetDeviceActivity200Response.md)
+[**DeviceInformationGetDeviceActivity200Response**](DeviceInformationGetDeviceActivity200Response.md)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_device_apps**
-> IpadApps200Response get_device_apps(device_id)
+> DeviceInformationGetDeviceApps200Response get_device_apps(device_id)
 
 Get Device Apps
 
@@ -265,7 +265,7 @@ Get Device Apps
 
 ```python
 import kandji
-from kandji.models.ipad_apps200_response import IpadApps200Response
+from kandji.models.device_information_get_device_apps200_response import DeviceInformationGetDeviceApps200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -311,7 +311,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IpadApps200Response**](IpadApps200Response.md)
+[**DeviceInformationGetDeviceApps200Response**](DeviceInformationGetDeviceApps200Response.md)
 
 ### Authorization
 
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_device_details**
-> IphoneOrIpadInLostMode200Response get_device_details(device_id)
+> DeviceInformationGetDeviceDetails200Response get_device_details(device_id)
 
 Get Device Details
 
@@ -343,7 +343,7 @@ This request returns the device details for a specified Device ID.
 
 ```python
 import kandji
-from kandji.models.iphone_or_ipad_in_lost_mode200_response import IphoneOrIpadInLostMode200Response
+from kandji.models.device_information_get_device_details200_response import DeviceInformationGetDeviceDetails200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -389,7 +389,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IphoneOrIpadInLostMode200Response**](IphoneOrIpadInLostMode200Response.md)
+[**DeviceInformationGetDeviceDetails200Response**](DeviceInformationGetDeviceDetails200Response.md)
 
 ### Authorization
 
@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_device_library_items**
-> EdrStatus200Response get_device_library_items(device_id)
+> DeviceInformationGetDeviceLibraryItems200Response get_device_library_items(device_id)
 
 Get Device Library Items
 
@@ -421,7 +421,7 @@ Get Device Library Items
 
 ```python
 import kandji
-from kandji.models.edr_status200_response import EdrStatus200Response
+from kandji.models.device_information_get_device_library_items200_response import DeviceInformationGetDeviceLibraryItems200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -467,7 +467,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EdrStatus200Response**](EdrStatus200Response.md)
+[**DeviceInformationGetDeviceLibraryItems200Response**](DeviceInformationGetDeviceLibraryItems200Response.md)
 
 ### Authorization
 
@@ -487,7 +487,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_device_lost_mode_details**
-> GetDeviceLostModeDetails200Response get_device_lost_mode_details(device_id)
+> DeviceInformationGetDeviceLostModeDetails200Response get_device_lost_mode_details(device_id)
 
 Get Device Lost Mode details
 
@@ -499,7 +499,7 @@ Get Device Lost Mode details
 
 ```python
 import kandji
-from kandji.models.get_device_lost_mode_details200_response import GetDeviceLostModeDetails200Response
+from kandji.models.device_information_get_device_lost_mode_details200_response import DeviceInformationGetDeviceLostModeDetails200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -545,7 +545,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetDeviceLostModeDetails200Response**](GetDeviceLostModeDetails200Response.md)
+[**DeviceInformationGetDeviceLostModeDetails200Response**](DeviceInformationGetDeviceLostModeDetails200Response.md)
 
 ### Authorization
 
@@ -566,7 +566,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_device_parameters**
-> GetDeviceParameters200Response get_device_parameters(device_id)
+> DeviceInformationGetDeviceParameters200Response get_device_parameters(device_id)
 
 Get Device Parameters
 
@@ -578,7 +578,7 @@ Get Device Parameters
 
 ```python
 import kandji
-from kandji.models.get_device_parameters200_response import GetDeviceParameters200Response
+from kandji.models.device_information_get_device_parameters200_response import DeviceInformationGetDeviceParameters200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -624,7 +624,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetDeviceParameters200Response**](GetDeviceParameters200Response.md)
+[**DeviceInformationGetDeviceParameters200Response**](DeviceInformationGetDeviceParameters200Response.md)
 
 ### Authorization
 
@@ -644,7 +644,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_device_status**
-> GetDeviceStatus200Response get_device_status(device_id)
+> DeviceInformationGetDeviceStatus200Response get_device_status(device_id)
 
 Get Device Status
 
@@ -656,7 +656,7 @@ Get Device Status
 
 ```python
 import kandji
-from kandji.models.get_device_status200_response import GetDeviceStatus200Response
+from kandji.models.device_information_get_device_status200_response import DeviceInformationGetDeviceStatus200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -702,7 +702,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetDeviceStatus200Response**](GetDeviceStatus200Response.md)
+[**DeviceInformationGetDeviceStatus200Response**](DeviceInformationGetDeviceStatus200Response.md)
 
 ### Authorization
 
@@ -839,7 +839,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_device**
-> ClearAllTags200Response update_device(device_id, body=body)
+> DeviceInformationUpdateDevice200Response update_device(device_id, body=body)
 
 Update Device
 
@@ -851,7 +851,7 @@ Update Device
 
 ```python
 import kandji
-from kandji.models.clear_all_tags200_response import ClearAllTags200Response
+from kandji.models.device_information_update_device200_response import DeviceInformationUpdateDevice200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -899,7 +899,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ClearAllTags200Response**](ClearAllTags200Response.md)
+[**DeviceInformationUpdateDevice200Response**](DeviceInformationUpdateDevice200Response.md)
 
 ### Authorization
 

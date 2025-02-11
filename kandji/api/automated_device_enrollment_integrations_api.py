@@ -20,11 +20,10 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBytes, StrictStr
 from typing import Optional, Tuple, Union
 from typing_extensions import Annotated
-from kandji.models.create_integration200_response import CreateIntegration200Response
-from kandji.models.list_associated_devices_null_mdm_device200_response import ListAssociatedDevicesNullMdmDevice200Response
-from kandji.models.success200_response import Success200Response
-from kandji.models.success200_response1 import Success200Response1
-from kandji.models.update_user_assignment200_response import UpdateUserAssignment200Response
+from kandji.models.automated_device_enrollment_integrations_create_ade_integration200_response import AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response
+from kandji.models.automated_device_enrollment_integrations_get_ade_device200_response import AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response
+from kandji.models.automated_device_enrollment_integrations_list_ade_devices200_response import AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+from kandji.models.automated_device_enrollment_integrations_list_devices_associated_to_ade_token200_response import AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response
 
 from kandji.api_client import ApiClient, RequestSerialized
 from kandji.api_response import ApiResponse
@@ -63,7 +62,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> CreateIntegration200Response:
+    ) -> AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response:
         """Create ADE integration
 
         <p>This request will create a new ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> downloaded from ABM are required and must be sent in the request.</p>
@@ -110,7 +109,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "CreateIntegration200Response",
+            '200': "AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -142,7 +141,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[CreateIntegration200Response]:
+    ) -> ApiResponse[AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response]:
         """Create ADE integration
 
         <p>This request will create a new ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> downloaded from ABM are required and must be sent in the request.</p>
@@ -189,7 +188,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "CreateIntegration200Response",
+            '200': "AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -268,7 +267,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "CreateIntegration200Response",
+            '200': "AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -892,7 +891,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> Success200Response1:
+    ) -> AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response:
         """Get ADE device
 
         Get information about a specific Automated Device Enrollment device.
@@ -930,7 +929,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Success200Response1",
+            '200': "AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -959,7 +958,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[Success200Response1]:
+    ) -> ApiResponse[AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response]:
         """Get ADE device
 
         Get information about a specific Automated Device Enrollment device.
@@ -997,7 +996,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Success200Response1",
+            '200': "AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1064,7 +1063,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Success200Response1",
+            '200': "AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1415,7 +1414,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> Success200Response:
+    ) -> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response:
         """List ADE devices
 
         Get a list of Automated Device Enrollment devices.
@@ -1477,8 +1476,8 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Success200Response",
-            '400': "InvalidUuid400Response",
+            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
+            '400': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices400Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1515,7 +1514,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[Success200Response]:
+    ) -> ApiResponse[AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response]:
         """List ADE devices
 
         Get a list of Automated Device Enrollment devices.
@@ -1577,8 +1576,8 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Success200Response",
-            '400': "InvalidUuid400Response",
+            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
+            '400': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices400Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1677,8 +1676,8 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Success200Response",
-            '400': "InvalidUuid400Response",
+            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
+            '400': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices400Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2049,7 +2048,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ListAssociatedDevicesNullMdmDevice200Response:
+    ) -> AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response:
         """List devices associated to ADE token
 
         <p>This request returns a list of devices associated with a specified <code>ade_token_id</code> as well as their enrollment status.</p> <p>When the <code>mdm_device</code> key value is <code>null</code>, this can be taken as an indication that the device is awaiting enrollment into Kandji.</p> <p>When data is present within the mdm_device dictionary, you can reference the <code>device_id</code> as the ID of the enrolled device record.</p>
@@ -2090,7 +2089,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ListAssociatedDevicesNullMdmDevice200Response",
+            '200': "AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2120,7 +2119,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ListAssociatedDevicesNullMdmDevice200Response]:
+    ) -> ApiResponse[AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response]:
         """List devices associated to ADE token
 
         <p>This request returns a list of devices associated with a specified <code>ade_token_id</code> as well as their enrollment status.</p> <p>When the <code>mdm_device</code> key value is <code>null</code>, this can be taken as an indication that the device is awaiting enrollment into Kandji.</p> <p>When data is present within the mdm_device dictionary, you can reference the <code>device_id</code> as the ID of the enrolled device record.</p>
@@ -2161,7 +2160,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ListAssociatedDevicesNullMdmDevice200Response",
+            '200': "AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2232,7 +2231,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ListAssociatedDevicesNullMdmDevice200Response",
+            '200': "AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2654,7 +2653,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> UpdateUserAssignment200Response:
+    ) -> AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response:
         """Update ADE device
 
         <p>Update a specific Automated Device Enrollment device's blueprint assignment, user assignment, and asset tag.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p>
@@ -2695,7 +2694,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "UpdateUserAssignment200Response",
+            '200': "AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2725,7 +2724,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[UpdateUserAssignment200Response]:
+    ) -> ApiResponse[AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response]:
         """Update ADE device
 
         <p>Update a specific Automated Device Enrollment device's blueprint assignment, user assignment, and asset tag.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p>
@@ -2766,7 +2765,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "UpdateUserAssignment200Response",
+            '200': "AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2837,7 +2836,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "UpdateUserAssignment200Response",
+            '200': "AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response",
         }
         response_data = self.api_client.call_api(
             *_param,

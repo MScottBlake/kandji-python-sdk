@@ -310,6 +310,11 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**delete_user**](docs/UsersApi.md#delete_user) | **DELETE** /api/v1/users/{user_id} | Delete User
 *UsersApi* | [**get_user**](docs/UsersApi.md#get_user) | **GET** /api/v1/users/{user_id} | Get User
 *UsersApi* | [**list_users**](docs/UsersApi.md#list_users) | **GET** /api/v1/users | List Users
+*VulnerabilitiesApi* | [**get_vulnerability_description**](docs/VulnerabilitiesApi.md#get_vulnerability_description) | **GET** /api/v1/vulnerability-management/vulnerabilities/{cve_id} | Get Vulnerability Description
+*VulnerabilitiesApi* | [**list_affected_applications**](docs/VulnerabilitiesApi.md#list_affected_applications) | **GET** /api/v1/vulnerability-management/vulnerabilities/{cve_id}/applications | List Affected Applications
+*VulnerabilitiesApi* | [**list_affected_devices**](docs/VulnerabilitiesApi.md#list_affected_devices) | **GET** /api/v1/vulnerability-management/vulnerabilities/{cve_id}/devices | List Affected Devices
+*VulnerabilitiesApi* | [**list_detections**](docs/VulnerabilitiesApi.md#list_detections) | **GET** /api/v1/vulnerability-management/detections | List Detections
+*VulnerabilitiesApi* | [**list_vulnerabilities**](docs/VulnerabilitiesApi.md#list_vulnerabilities) | **GET** /api/v1/vulnerability-management/vulnerabilities | List Vulnerabilities
 
 
 ## Documentation For Models
@@ -376,6 +381,9 @@ Class | Method | HTTP request | Description
  - [UsersGetUser200Response](docs/UsersGetUser200Response.md)
  - [UsersGetUser200ResponseIntegration](docs/UsersGetUser200ResponseIntegration.md)
  - [UsersListUsers200Response](docs/UsersListUsers200Response.md)
+ - [VulnerabilitiesGetVulnerabilityDescription200Response](docs/VulnerabilitiesGetVulnerabilityDescription200Response.md)
+ - [VulnerabilitiesListDetections200Response](docs/VulnerabilitiesListDetections200Response.md)
+ - [VulnerabilitiesListVulnerabilities200Response](docs/VulnerabilitiesListVulnerabilities200Response.md)
 
 
 <a id="documentation-for-authorization"></a>

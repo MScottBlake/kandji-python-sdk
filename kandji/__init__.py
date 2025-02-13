@@ -29,6 +29,7 @@ from kandji.api.settings_api import SettingsApi
 from kandji.api.tags_api import TagsApi
 from kandji.api.threats_api import ThreatsApi
 from kandji.api.users_api import UsersApi
+from kandji.api.vulnerabilities_api import VulnerabilitiesApi
 
 # import ApiClient
 from kandji.api_response import ApiResponse
@@ -104,3 +105,6 @@ from kandji.models.threats_get_threat_details200_response import ThreatsGetThrea
 from kandji.models.users_get_user200_response import UsersGetUser200Response
 from kandji.models.users_get_user200_response_integration import UsersGetUser200ResponseIntegration
 from kandji.models.users_list_users200_response import UsersListUsers200Response
+from kandji.models.vulnerabilities_get_vulnerability_description200_response import VulnerabilitiesGetVulnerabilityDescription200Response
+from kandji.models.vulnerabilities_list_detections200_response import VulnerabilitiesListDetections200Response
+from kandji.models.vulnerabilities_list_vulnerabilities200_response import VulnerabilitiesListVulnerabilities200Response

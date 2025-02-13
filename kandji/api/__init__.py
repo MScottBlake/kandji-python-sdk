@@ -12,4 +12,5 @@ from kandji.api.settings_api import SettingsApi
 from kandji.api.tags_api import TagsApi
 from kandji.api.threats_api import ThreatsApi
 from kandji.api.users_api import UsersApi
+from kandji.api.vulnerabilities_api import VulnerabilitiesApi
 

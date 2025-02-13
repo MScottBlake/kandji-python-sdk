@@ -76,6 +76,10 @@ docs/UsersApi.md
 docs/UsersGetUser200Response.md
 docs/UsersGetUser200ResponseIntegration.md
 docs/UsersListUsers200Response.md
+docs/VulnerabilitiesApi.md
+docs/VulnerabilitiesGetVulnerabilityDescription200Response.md
+docs/VulnerabilitiesListDetections200Response.md
+docs/VulnerabilitiesListVulnerabilities200Response.md
 git_push.sh
 kandji/__init__.py
 kandji/api/__init__.py
@@ -90,6 +94,7 @@ kandji/api/settings_api.py
 kandji/api/tags_api.py
 kandji/api/threats_api.py
 kandji/api/users_api.py
+kandji/api/vulnerabilities_api.py
 kandji/api_client.py
 kandji/api_response.py
 kandji/configuration.py
@@ -157,6 +162,9 @@ kandji/models/threats_get_threat_details200_response.py
 kandji/models/users_get_user200_response.py
 kandji/models/users_get_user200_response_integration.py
 kandji/models/users_list_users200_response.py
+kandji/models/vulnerabilities_get_vulnerability_description200_response.py
+kandji/models/vulnerabilities_list_detections200_response.py
+kandji/models/vulnerabilities_list_vulnerabilities200_response.py
 kandji/py.typed
 kandji/rest.py
 pyproject.toml
@@ -165,4 +173,8 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_vulnerabilities_api.py
+test/test_vulnerabilities_get_vulnerability_description200_response.py
+test/test_vulnerabilities_list_detections200_response.py
+test/test_vulnerabilities_list_vulnerabilities200_response.py
 tox.ini

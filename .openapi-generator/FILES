@@ -173,8 +173,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_vulnerabilities_api.py
-test/test_vulnerabilities_get_vulnerability_description200_response.py
-test/test_vulnerabilities_list_detections200_response.py
-test/test_vulnerabilities_list_vulnerabilities200_response.py
 tox.ini

@@ -20,8 +20,8 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
-from kandji.models.device_actions_get_device_commands200_response import DeviceActionsGetDeviceCommands200Response
-from kandji.models.device_actions_lock_device200_response import DeviceActionsLockDevice200Response
+from kandji.models.inline_object17 import InlineObject17
+from kandji.models.inline_object18 import InlineObject18
 
 from kandji.api_client import ApiClient, RequestSerialized
 from kandji.api_response import ApiResponse
@@ -1141,7 +1141,7 @@ class DeviceActionsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> DeviceActionsGetDeviceCommands200Response:
+    ) -> InlineObject17:
         """Get Device Commands
 
         <p>This endpoint sends a request to get information about the commands sent to a given device ID.</p> <h3 id=&quot;mdm-status-codes&quot;>MDM Status Codes</h3> <ul> <li>1 : Command is Pending</li> <li>2 : Command is running</li> <li>3 : Command completed</li> <li>4 : Command failed</li> <li>5 : Command received &quot;Not Now&quot; response</li> </ul>
@@ -1185,7 +1185,7 @@ class DeviceActionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceActionsGetDeviceCommands200Response",
+            '200': "InlineObject17",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1216,7 +1216,7 @@ class DeviceActionsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DeviceActionsGetDeviceCommands200Response]:
+    ) -> ApiResponse[InlineObject17]:
         """Get Device Commands
 
         <p>This endpoint sends a request to get information about the commands sent to a given device ID.</p> <h3 id=&quot;mdm-status-codes&quot;>MDM Status Codes</h3> <ul> <li>1 : Command is Pending</li> <li>2 : Command is running</li> <li>3 : Command completed</li> <li>4 : Command failed</li> <li>5 : Command received &quot;Not Now&quot; response</li> </ul>
@@ -1260,7 +1260,7 @@ class DeviceActionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceActionsGetDeviceCommands200Response",
+            '200': "InlineObject17",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1335,7 +1335,7 @@ class DeviceActionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceActionsGetDeviceCommands200Response",
+            '200': "InlineObject17",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1435,7 +1435,7 @@ class DeviceActionsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> DeviceActionsLockDevice200Response:
+    ) -> InlineObject18:
         """Lock Device
 
         <p>This endpoint sends an MDM command to remotely lock a device.</p> <p>For macOS clients, an unlock PIN will be created, and returned in the response.</p> <blockquote> <p><strong>Caution !!!</strong><br /><em>For a Mac with Apple silicon running a version of macOS before 11.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.</em></p> </blockquote> <p>Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target device.</p> <p><strong>Note:</strong> For macOS, although the lock message is displayed on all types of Mac computers, the phone number is displayed only on a Mac with Apple silicon.</p> <h4 id=&quot;response-properties&quot;>Response properties</h4> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Property</th> <th>Description</th> <th>Type</th> </tr> </thead> <tbody> <tr> <td>PIN</td> <td>Six digit pin code used to unlock a Mac.</td> <td>String</td> </tr> </tbody> </table> </div>
@@ -1476,7 +1476,7 @@ class DeviceActionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceActionsLockDevice200Response",
+            '200': "InlineObject18",
             '400': "object",
         }
         response_data = self.api_client.call_api(
@@ -1507,7 +1507,7 @@ class DeviceActionsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DeviceActionsLockDevice200Response]:
+    ) -> ApiResponse[InlineObject18]:
         """Lock Device
 
         <p>This endpoint sends an MDM command to remotely lock a device.</p> <p>For macOS clients, an unlock PIN will be created, and returned in the response.</p> <blockquote> <p><strong>Caution !!!</strong><br /><em>For a Mac with Apple silicon running a version of macOS before 11.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.</em></p> </blockquote> <p>Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target device.</p> <p><strong>Note:</strong> For macOS, although the lock message is displayed on all types of Mac computers, the phone number is displayed only on a Mac with Apple silicon.</p> <h4 id=&quot;response-properties&quot;>Response properties</h4> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Property</th> <th>Description</th> <th>Type</th> </tr> </thead> <tbody> <tr> <td>PIN</td> <td>Six digit pin code used to unlock a Mac.</td> <td>String</td> </tr> </tbody> </table> </div>
@@ -1548,7 +1548,7 @@ class DeviceActionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceActionsLockDevice200Response",
+            '200': "InlineObject18",
             '400': "object",
         }
         response_data = self.api_client.call_api(
@@ -1620,7 +1620,7 @@ class DeviceActionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceActionsLockDevice200Response",
+            '200': "InlineObject18",
             '400': "object",
         }
         response_data = self.api_client.call_api(

@@ -20,15 +20,15 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import Any, Dict, Optional
 from typing_extensions import Annotated
-from kandji.models.device_information_get_device200_response import DeviceInformationGetDevice200Response
-from kandji.models.device_information_get_device_activity200_response import DeviceInformationGetDeviceActivity200Response
-from kandji.models.device_information_get_device_apps200_response import DeviceInformationGetDeviceApps200Response
-from kandji.models.device_information_get_device_details200_response import DeviceInformationGetDeviceDetails200Response
-from kandji.models.device_information_get_device_library_items200_response import DeviceInformationGetDeviceLibraryItems200Response
-from kandji.models.device_information_get_device_lost_mode_details200_response import DeviceInformationGetDeviceLostModeDetails200Response
-from kandji.models.device_information_get_device_parameters200_response import DeviceInformationGetDeviceParameters200Response
-from kandji.models.device_information_get_device_status200_response import DeviceInformationGetDeviceStatus200Response
-from kandji.models.device_information_update_device200_response import DeviceInformationUpdateDevice200Response
+from kandji.models.inline_object10 import InlineObject10
+from kandji.models.inline_object11 import InlineObject11
+from kandji.models.inline_object12 import InlineObject12
+from kandji.models.inline_object13 import InlineObject13
+from kandji.models.inline_object14 import InlineObject14
+from kandji.models.inline_object15 import InlineObject15
+from kandji.models.inline_object16 import InlineObject16
+from kandji.models.inline_object8 import InlineObject8
+from kandji.models.inline_object9 import InlineObject9
 
 from kandji.api_client import ApiClient, RequestSerialized
 from kandji.api_response import ApiResponse
@@ -318,7 +318,7 @@ class DeviceInformationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> DeviceInformationGetDevice200Response:
+    ) -> InlineObject8:
         """Get Device
 
         This request returns the high-level information for a specified Device ID.
@@ -356,7 +356,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDevice200Response",
+            '200': "InlineObject8",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -385,7 +385,7 @@ class DeviceInformationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DeviceInformationGetDevice200Response]:
+    ) -> ApiResponse[InlineObject8]:
         """Get Device
 
         This request returns the high-level information for a specified Device ID.
@@ -423,7 +423,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDevice200Response",
+            '200': "InlineObject8",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -490,7 +490,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDevice200Response",
+            '200': "InlineObject8",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -581,7 +581,7 @@ class DeviceInformationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> DeviceInformationGetDeviceActivity200Response:
+    ) -> InlineObject12:
         """Get Device Activity
 
         This request returns the device activity for a specified Device ID.
@@ -625,7 +625,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDeviceActivity200Response",
+            '200': "InlineObject12",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -656,7 +656,7 @@ class DeviceInformationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DeviceInformationGetDeviceActivity200Response]:
+    ) -> ApiResponse[InlineObject12]:
         """Get Device Activity
 
         This request returns the device activity for a specified Device ID.
@@ -700,7 +700,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDeviceActivity200Response",
+            '200': "InlineObject12",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -775,7 +775,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDeviceActivity200Response",
+            '200': "InlineObject12",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -874,7 +874,7 @@ class DeviceInformationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> DeviceInformationGetDeviceApps200Response:
+    ) -> InlineObject13:
         """Get Device Apps
 
         <p>This request returns a list of all installed apps for a specified Device ID.</p> <p>For iPhone and iPad, the preinstalled Apple apps are not reported.</p>
@@ -912,7 +912,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDeviceApps200Response",
+            '200': "InlineObject13",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -941,7 +941,7 @@ class DeviceInformationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DeviceInformationGetDeviceApps200Response]:
+    ) -> ApiResponse[InlineObject13]:
         """Get Device Apps
 
         <p>This request returns a list of all installed apps for a specified Device ID.</p> <p>For iPhone and iPad, the preinstalled Apple apps are not reported.</p>
@@ -979,7 +979,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDeviceApps200Response",
+            '200': "InlineObject13",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1046,7 +1046,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDeviceApps200Response",
+            '200': "InlineObject13",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1135,7 +1135,7 @@ class DeviceInformationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> DeviceInformationGetDeviceDetails200Response:
+    ) -> InlineObject10:
         """Get Device Details
 
         This request returns the device details for a specified Device ID.
@@ -1173,7 +1173,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDeviceDetails200Response",
+            '200': "InlineObject10",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1202,7 +1202,7 @@ class DeviceInformationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DeviceInformationGetDeviceDetails200Response]:
+    ) -> ApiResponse[InlineObject10]:
         """Get Device Details
 
         This request returns the device details for a specified Device ID.
@@ -1240,7 +1240,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDeviceDetails200Response",
+            '200': "InlineObject10",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1307,7 +1307,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDeviceDetails200Response",
+            '200': "InlineObject10",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1396,7 +1396,7 @@ class DeviceInformationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> DeviceInformationGetDeviceLibraryItems200Response:
+    ) -> InlineObject14:
         """Get Device Library Items
 
         <p>This request gets all library items and their statuses for a specified Device ID</p> <h4 id=&quot;possible-library-item-status-values&quot;>Possible library item status values</h4> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>AVAILABLE</td> <td>string</td> <td>Library item available in Self Service</td> </tr> <tr> <td>CACHED</td> <td>string</td> <td>Library item downloaded for install but not yet installed</td> </tr> <tr> <td>CHANGE_PENDING</td> <td>string</td> <td>Recovery Password library item has changes that have not yet been applied</td> </tr> <tr> <td>DOWNLOADING</td> <td>string</td> <td>Library item downloading</td> </tr> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>EXCLUDED</td> <td>string</td> <td>Not in scope for assignment rule</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>INSTALLING</td> <td>string</td> <td>Library item installing</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device, not yet installed (All library items except for config profiles)</td> </tr> <tr> <td>failed</td> <td>string</td> <td>Configuration profile failed to install</td> </tr> <tr> <td>pending</td> <td>string</td> <td>Waiting on device, Configuration profile not yet installed</td> </tr> <tr> <td>success</td> <td>string</td> <td>Configuration profile installed</td> </tr> </tbody> </table> </div>
@@ -1434,7 +1434,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDeviceLibraryItems200Response",
+            '200': "InlineObject14",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1463,7 +1463,7 @@ class DeviceInformationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DeviceInformationGetDeviceLibraryItems200Response]:
+    ) -> ApiResponse[InlineObject14]:
         """Get Device Library Items
 
         <p>This request gets all library items and their statuses for a specified Device ID</p> <h4 id=&quot;possible-library-item-status-values&quot;>Possible library item status values</h4> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>AVAILABLE</td> <td>string</td> <td>Library item available in Self Service</td> </tr> <tr> <td>CACHED</td> <td>string</td> <td>Library item downloaded for install but not yet installed</td> </tr> <tr> <td>CHANGE_PENDING</td> <td>string</td> <td>Recovery Password library item has changes that have not yet been applied</td> </tr> <tr> <td>DOWNLOADING</td> <td>string</td> <td>Library item downloading</td> </tr> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>EXCLUDED</td> <td>string</td> <td>Not in scope for assignment rule</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>INSTALLING</td> <td>string</td> <td>Library item installing</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device, not yet installed (All library items except for config profiles)</td> </tr> <tr> <td>failed</td> <td>string</td> <td>Configuration profile failed to install</td> </tr> <tr> <td>pending</td> <td>string</td> <td>Waiting on device, Configuration profile not yet installed</td> </tr> <tr> <td>success</td> <td>string</td> <td>Configuration profile installed</td> </tr> </tbody> </table> </div>
@@ -1501,7 +1501,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDeviceLibraryItems200Response",
+            '200': "InlineObject14",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1568,7 +1568,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDeviceLibraryItems200Response",
+            '200': "InlineObject14",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1657,7 +1657,7 @@ class DeviceInformationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> DeviceInformationGetDeviceLostModeDetails200Response:
+    ) -> InlineObject11:
         """Get Device Lost Mode details
 
         <p>This request returns the device lost mode details for a specified Device ID.</p> <p><strong>Note</strong>: Lost Mode is is only available for iOS and iPadOS. For more information, please see this <a href=&quot;https://support.kandji.io/a/solutions/articles/72000573873&quot;>Kandji support artilcle</a>.</p>
@@ -1695,7 +1695,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDeviceLostModeDetails200Response",
+            '200': "InlineObject11",
             '400': None,
         }
         response_data = self.api_client.call_api(
@@ -1725,7 +1725,7 @@ class DeviceInformationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DeviceInformationGetDeviceLostModeDetails200Response]:
+    ) -> ApiResponse[InlineObject11]:
         """Get Device Lost Mode details
 
         <p>This request returns the device lost mode details for a specified Device ID.</p> <p><strong>Note</strong>: Lost Mode is is only available for iOS and iPadOS. For more information, please see this <a href=&quot;https://support.kandji.io/a/solutions/articles/72000573873&quot;>Kandji support artilcle</a>.</p>
@@ -1763,7 +1763,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDeviceLostModeDetails200Response",
+            '200': "InlineObject11",
             '400': None,
         }
         response_data = self.api_client.call_api(
@@ -1831,7 +1831,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDeviceLostModeDetails200Response",
+            '200': "InlineObject11",
             '400': None,
         }
         response_data = self.api_client.call_api(
@@ -1921,7 +1921,7 @@ class DeviceInformationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> DeviceInformationGetDeviceParameters200Response:
+    ) -> InlineObject15:
         """Get Device Parameters
 
         <p>This request returns the parameters and their statuses for a specified Device ID</p> <p>This endpoint is only applicable to macOS clients.</p> <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p> <p><strong>Possible parameter status values</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device. Not yet run.</td> </tr> <tr> <td>REMEDIATED</td> <td>string</td> <td>Parameter remediated</td> </tr> <tr> <td>WARNING</td> <td>string</td> <td>Muted alert</td> </tr> </tbody> </table> </div>
@@ -1959,7 +1959,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDeviceParameters200Response",
+            '200': "InlineObject15",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1988,7 +1988,7 @@ class DeviceInformationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DeviceInformationGetDeviceParameters200Response]:
+    ) -> ApiResponse[InlineObject15]:
         """Get Device Parameters
 
         <p>This request returns the parameters and their statuses for a specified Device ID</p> <p>This endpoint is only applicable to macOS clients.</p> <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p> <p><strong>Possible parameter status values</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device. Not yet run.</td> </tr> <tr> <td>REMEDIATED</td> <td>string</td> <td>Parameter remediated</td> </tr> <tr> <td>WARNING</td> <td>string</td> <td>Muted alert</td> </tr> </tbody> </table> </div>
@@ -2026,7 +2026,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDeviceParameters200Response",
+            '200': "InlineObject15",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2093,7 +2093,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDeviceParameters200Response",
+            '200': "InlineObject15",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2182,7 +2182,7 @@ class DeviceInformationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> DeviceInformationGetDeviceStatus200Response:
+    ) -> InlineObject16:
         """Get Device Status
 
         <p>This request returns the full status (parameters and library items) for a specified Device ID.</p> <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p> <h4 id=&quot;possible-status-values&quot;>Possible status values</h4> <p><strong>Library items</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>AVAILABLE</td> <td>string</td> <td>Library item available in Self Service</td> </tr> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>EXCLUDED</td> <td>string</td> <td>Not in scope for assignment rule</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device, not yet installed (All library items except for config profiles)</td> </tr> <tr> <td>failed</td> <td>string</td> <td>Configuration profile failed to install</td> </tr> <tr> <td>pending</td> <td>string</td> <td>Waiting on device, Configuration profile not yet installed</td> </tr> <tr> <td>success</td> <td>string</td> <td>Configuration profile installed</td> </tr> </tbody> </table> </div><p><strong>Parameters</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device. Not yet run.</td> </tr> <tr> <td>REMEDIATED</td> <td>string</td> <td>Parameter remediated</td> </tr> <tr> <td>WARNING</td> <td>string</td> <td>Muted alert</td> </tr> </tbody> </table> </div>
@@ -2220,7 +2220,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDeviceStatus200Response",
+            '200': "InlineObject16",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2249,7 +2249,7 @@ class DeviceInformationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DeviceInformationGetDeviceStatus200Response]:
+    ) -> ApiResponse[InlineObject16]:
         """Get Device Status
 
         <p>This request returns the full status (parameters and library items) for a specified Device ID.</p> <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p> <h4 id=&quot;possible-status-values&quot;>Possible status values</h4> <p><strong>Library items</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>AVAILABLE</td> <td>string</td> <td>Library item available in Self Service</td> </tr> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>EXCLUDED</td> <td>string</td> <td>Not in scope for assignment rule</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device, not yet installed (All library items except for config profiles)</td> </tr> <tr> <td>failed</td> <td>string</td> <td>Configuration profile failed to install</td> </tr> <tr> <td>pending</td> <td>string</td> <td>Waiting on device, Configuration profile not yet installed</td> </tr> <tr> <td>success</td> <td>string</td> <td>Configuration profile installed</td> </tr> </tbody> </table> </div><p><strong>Parameters</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device. Not yet run.</td> </tr> <tr> <td>REMEDIATED</td> <td>string</td> <td>Parameter remediated</td> </tr> <tr> <td>WARNING</td> <td>string</td> <td>Muted alert</td> </tr> </tbody> </table> </div>
@@ -2287,7 +2287,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDeviceStatus200Response",
+            '200': "InlineObject16",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2354,7 +2354,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationGetDeviceStatus200Response",
+            '200': "InlineObject16",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3047,7 +3047,7 @@ class DeviceInformationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> DeviceInformationUpdateDevice200Response:
+    ) -> InlineObject9:
         """Update Device
 
         <p>This request allows you to update device information, such as the assigned blueprint, user, Asset Tag, and Tags. It is not required to use all attributes in a given request. For example if you only want to update the assigned blueprint, you only need to pass the <code>blueprint_id</code> in the request payload.</p> <p><strong>NOTE</strong>: With the introduction of a UUID value for user ID in the <a href=&quot;https://api-docs.kandji.io/#b107eb0a-b586-414f-bc4c-3d2b304cfd5f&quot;>Users API</a>, the Device PATCH endpoint will support both the depricated user ID integer value and the new user ID UUID value when updating the user assignment for a device. The ability to update user assignment via the integer ID value will be removed starting January 2025.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> <h3 id=&quot;additional-information&quot;>Additional information</h3> <p>User ID can be found using the <code>list users</code> API</p> <p>A Blueprint ID can be found using the <code>list blueprints</code> API or in the URL path while on a Blueprint overview page.</p> <p>For example, for this URL <a href=&quot;https://subdomain.kandji.io/blueprints/6391086e-85a1-4820-813c-f9c75025fff4&quot;>https://subdomain.kandji.io/blueprints/6391086e-85a1-4820-813c-f9c75025fff4</a></p> <p>The Blueprint ID would be <code>6391086e-85a1-4820-813c-f9c75025fff4</code></p> <p>An example script that leverages this API can be found in the <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/update-device-record&quot;>Kandji Support GitHub</a></p> <h4 id=&quot;clearing-the-device-asset-tag&quot;>Clearing the device asset tag</h4> <p>To clear a device asset tag, set the <code>asset_tag</code> value to <code>null</code> in the JSON payload.</p> <pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{     &quot;asset_tag&quot;: null }  </code></pre> <h4 id=&quot;clearing-the-assigned-user-attribute&quot;>Clearing the assigned user attribute</h4> <p>To clear the assigned user for a given device, set the <code>user</code> value to <code>null</code> in the JSON payload.</p> <pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{     &quot;user&quot;: null }  </code></pre> <h4 id=&quot;clearing-all-tags&quot;>Clearing all tags</h4> <p>To clear the assigned tags for a given device, set the <code>tags</code> value to an empty list <code>[]</code> in the JSON payload.</p> <pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{     &quot;tags&quot;: [] }  </code></pre>
@@ -3088,7 +3088,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationUpdateDevice200Response",
+            '200': "InlineObject9",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3118,7 +3118,7 @@ class DeviceInformationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DeviceInformationUpdateDevice200Response]:
+    ) -> ApiResponse[InlineObject9]:
         """Update Device
 
         <p>This request allows you to update device information, such as the assigned blueprint, user, Asset Tag, and Tags. It is not required to use all attributes in a given request. For example if you only want to update the assigned blueprint, you only need to pass the <code>blueprint_id</code> in the request payload.</p> <p><strong>NOTE</strong>: With the introduction of a UUID value for user ID in the <a href=&quot;https://api-docs.kandji.io/#b107eb0a-b586-414f-bc4c-3d2b304cfd5f&quot;>Users API</a>, the Device PATCH endpoint will support both the depricated user ID integer value and the new user ID UUID value when updating the user assignment for a device. The ability to update user assignment via the integer ID value will be removed starting January 2025.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> <h3 id=&quot;additional-information&quot;>Additional information</h3> <p>User ID can be found using the <code>list users</code> API</p> <p>A Blueprint ID can be found using the <code>list blueprints</code> API or in the URL path while on a Blueprint overview page.</p> <p>For example, for this URL <a href=&quot;https://subdomain.kandji.io/blueprints/6391086e-85a1-4820-813c-f9c75025fff4&quot;>https://subdomain.kandji.io/blueprints/6391086e-85a1-4820-813c-f9c75025fff4</a></p> <p>The Blueprint ID would be <code>6391086e-85a1-4820-813c-f9c75025fff4</code></p> <p>An example script that leverages this API can be found in the <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/update-device-record&quot;>Kandji Support GitHub</a></p> <h4 id=&quot;clearing-the-device-asset-tag&quot;>Clearing the device asset tag</h4> <p>To clear a device asset tag, set the <code>asset_tag</code> value to <code>null</code> in the JSON payload.</p> <pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{     &quot;asset_tag&quot;: null }  </code></pre> <h4 id=&quot;clearing-the-assigned-user-attribute&quot;>Clearing the assigned user attribute</h4> <p>To clear the assigned user for a given device, set the <code>user</code> value to <code>null</code> in the JSON payload.</p> <pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{     &quot;user&quot;: null }  </code></pre> <h4 id=&quot;clearing-all-tags&quot;>Clearing all tags</h4> <p>To clear the assigned tags for a given device, set the <code>tags</code> value to an empty list <code>[]</code> in the JSON payload.</p> <pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{     &quot;tags&quot;: [] }  </code></pre>
@@ -3159,7 +3159,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationUpdateDevice200Response",
+            '200': "InlineObject9",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3230,7 +3230,7 @@ class DeviceInformationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeviceInformationUpdateDevice200Response",
+            '200': "InlineObject9",
         }
         response_data = self.api_client.call_api(
             *_param,

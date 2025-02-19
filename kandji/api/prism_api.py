@@ -20,13 +20,13 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
-from kandji.models.prism_activation_lock200_response import PrismActivationLock200Response
-from kandji.models.prism_applications200_response import PrismApplications200Response
-from kandji.models.prism_count200_response import PrismCount200Response
-from kandji.models.prism_device_information200_response import PrismDeviceInformation200Response
-from kandji.models.prism_get_category_export200_response import PrismGetCategoryExport200Response
-from kandji.models.prism_local_users200_response import PrismLocalUsers200Response
-from kandji.models.prism_request_category_export200_response import PrismRequestCategoryExport200Response
+from kandji.models.inline_object23 import InlineObject23
+from kandji.models.inline_object24 import InlineObject24
+from kandji.models.inline_object25 import InlineObject25
+from kandji.models.inline_object26 import InlineObject26
+from kandji.models.inline_object27 import InlineObject27
+from kandji.models.inline_object29 import InlineObject29
+from kandji.models.inline_object30 import InlineObject30
 
 from kandji.api_client import ApiClient, RequestSerialized
 from kandji.api_response import ApiResponse
@@ -67,7 +67,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismActivationLock200Response:
+    ) -> InlineObject23:
         """Activation lock
 
         Get activation lock attributes for devices.
@@ -120,7 +120,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -154,7 +154,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismActivationLock200Response]:
+    ) -> ApiResponse[InlineObject23]:
         """Activation lock
 
         Get activation lock attributes for devices.
@@ -207,7 +207,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -294,7 +294,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -415,7 +415,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismActivationLock200Response:
+    ) -> InlineObject23:
         """Application firewall
 
         Get Application Firewall details for macOS.
@@ -468,7 +468,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -502,7 +502,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismActivationLock200Response]:
+    ) -> ApiResponse[InlineObject23]:
         """Application firewall
 
         Get Application Firewall details for macOS.
@@ -555,7 +555,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -642,7 +642,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -763,7 +763,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismApplications200Response:
+    ) -> InlineObject24:
         """Applications
 
         Get the applications installed on macOS, iOS, iPadOS, and tvOS devices.
@@ -816,7 +816,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismApplications200Response",
+            '200': "InlineObject24",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -850,7 +850,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismApplications200Response]:
+    ) -> ApiResponse[InlineObject24]:
         """Applications
 
         Get the applications installed on macOS, iOS, iPadOS, and tvOS devices.
@@ -903,7 +903,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismApplications200Response",
+            '200': "InlineObject24",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -990,7 +990,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismApplications200Response",
+            '200': "InlineObject24",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1111,7 +1111,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismActivationLock200Response:
+    ) -> InlineObject23:
         """Certificates
 
         Get certificate details.
@@ -1164,7 +1164,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1198,7 +1198,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismActivationLock200Response]:
+    ) -> ApiResponse[InlineObject23]:
         """Certificates
 
         Get certificate details.
@@ -1251,7 +1251,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1338,7 +1338,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1454,7 +1454,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismCount200Response:
+    ) -> InlineObject30:
         """Count
 
         <p>Get the total record count for the specified Prism category.</p> <p>If a category contains spaces substitute the spaces for underscores (&quot;_&quot;) when using the API query.</p> <p>Example: <code>Device information</code> becomes <code>device_information</code>.</p>
@@ -1492,7 +1492,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismCount200Response",
+            '200': "InlineObject30",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1521,7 +1521,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismCount200Response]:
+    ) -> ApiResponse[InlineObject30]:
         """Count
 
         <p>Get the total record count for the specified Prism category.</p> <p>If a category contains spaces substitute the spaces for underscores (&quot;_&quot;) when using the API query.</p> <p>Example: <code>Device information</code> becomes <code>device_information</code>.</p>
@@ -1559,7 +1559,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismCount200Response",
+            '200': "InlineObject30",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1626,7 +1626,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismCount200Response",
+            '200': "InlineObject30",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1722,7 +1722,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismActivationLock200Response:
+    ) -> InlineObject23:
         """Desktop and Screensaver
 
         Get Desktop and Screensaver details for macOS.
@@ -1775,7 +1775,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1809,7 +1809,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismActivationLock200Response]:
+    ) -> ApiResponse[InlineObject23]:
         """Desktop and Screensaver
 
         Get Desktop and Screensaver details for macOS.
@@ -1862,7 +1862,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1949,7 +1949,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2071,7 +2071,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismDeviceInformation200Response:
+    ) -> InlineObject25:
         """Device information
 
         Get attributes about devices.
@@ -2127,7 +2127,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismDeviceInformation200Response",
+            '200': "InlineObject25",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2162,7 +2162,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismDeviceInformation200Response]:
+    ) -> ApiResponse[InlineObject25]:
         """Device information
 
         Get attributes about devices.
@@ -2218,7 +2218,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismDeviceInformation200Response",
+            '200': "InlineObject25",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2309,7 +2309,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismDeviceInformation200Response",
+            '200': "InlineObject25",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2446,7 +2446,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismDeviceInformation200Response:
+    ) -> InlineObject25:
         """FileVault
 
         Get FileVault information for macOS.
@@ -2499,7 +2499,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismDeviceInformation200Response",
+            '200': "InlineObject25",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2533,7 +2533,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismDeviceInformation200Response]:
+    ) -> ApiResponse[InlineObject25]:
         """FileVault
 
         Get FileVault information for macOS.
@@ -2586,7 +2586,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismDeviceInformation200Response",
+            '200': "InlineObject25",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2673,7 +2673,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismDeviceInformation200Response",
+            '200': "InlineObject25",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2794,7 +2794,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismActivationLock200Response:
+    ) -> InlineObject23:
         """Gatekeeper and XProtect
 
         Get Gatekeeper and XProtect attributes for macOS.
@@ -2847,7 +2847,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2881,7 +2881,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismActivationLock200Response]:
+    ) -> ApiResponse[InlineObject23]:
         """Gatekeeper and XProtect
 
         Get Gatekeeper and XProtect attributes for macOS.
@@ -2934,7 +2934,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3021,7 +3021,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3137,7 +3137,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismGetCategoryExport200Response:
+    ) -> InlineObject29:
         """Get category export
 
         <p>Get an export request's status. To download the export, use the <code>signed_url</code>. This will download a CSV file containing the exported category information.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p>export_id (path parameter): The unique identifier of the the export job.</p>
@@ -3175,7 +3175,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismGetCategoryExport200Response",
+            '200': "InlineObject29",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3204,7 +3204,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismGetCategoryExport200Response]:
+    ) -> ApiResponse[InlineObject29]:
         """Get category export
 
         <p>Get an export request's status. To download the export, use the <code>signed_url</code>. This will download a CSV file containing the exported category information.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p>export_id (path parameter): The unique identifier of the the export job.</p>
@@ -3242,7 +3242,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismGetCategoryExport200Response",
+            '200': "InlineObject29",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3309,7 +3309,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismGetCategoryExport200Response",
+            '200': "InlineObject29",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3403,7 +3403,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismActivationLock200Response:
+    ) -> InlineObject23:
         """Installed profiles
 
         Get Installed Profiles attributes for macOS, iOS, iPadOS, and tvOS.
@@ -3456,7 +3456,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3490,7 +3490,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismActivationLock200Response]:
+    ) -> ApiResponse[InlineObject23]:
         """Installed profiles
 
         Get Installed Profiles attributes for macOS, iOS, iPadOS, and tvOS.
@@ -3543,7 +3543,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3630,7 +3630,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3751,7 +3751,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismActivationLock200Response:
+    ) -> InlineObject23:
         """Kernel Extensions
 
         Get Kernel Extension attributes for macOS.
@@ -3804,7 +3804,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3838,7 +3838,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismActivationLock200Response]:
+    ) -> ApiResponse[InlineObject23]:
         """Kernel Extensions
 
         Get Kernel Extension attributes for macOS.
@@ -3891,7 +3891,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3978,7 +3978,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4099,7 +4099,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismActivationLock200Response:
+    ) -> InlineObject23:
         """Launch Agents and Daemons
 
         Get Launch Agents and Daemons installed on macOS.
@@ -4152,7 +4152,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4186,7 +4186,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismActivationLock200Response]:
+    ) -> ApiResponse[InlineObject23]:
         """Launch Agents and Daemons
 
         Get Launch Agents and Daemons installed on macOS.
@@ -4239,7 +4239,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4326,7 +4326,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4447,7 +4447,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismLocalUsers200Response:
+    ) -> InlineObject26:
         """Local users
 
         Get Local Users detials for macOS.
@@ -4500,7 +4500,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismLocalUsers200Response",
+            '200': "InlineObject26",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4534,7 +4534,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismLocalUsers200Response]:
+    ) -> ApiResponse[InlineObject26]:
         """Local users
 
         Get Local Users detials for macOS.
@@ -4587,7 +4587,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismLocalUsers200Response",
+            '200': "InlineObject26",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4674,7 +4674,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismLocalUsers200Response",
+            '200': "InlineObject26",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4790,7 +4790,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismRequestCategoryExport200Response:
+    ) -> InlineObject27:
         """Request category export
 
         <p>Request export of a category. The <code>id</code> key is used when checking the export status using the <em>Request category export</em> endpoint.</p> <p><strong>Request Body Parameters: application/json</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Key</th> <th>Type</th> <th>Possible value(s)</th> <th>Description</th> </tr> </thead> <tbody> <tr> <td><code>blueprint_ids</code></td> <td><code>array</code></td> <td><code>[&quot;string&quot;, &quot;string&quot;, &quot;string&quot;]</code></td> <td>List of one or more comma separate blueprint IDs.</td> </tr> <tr> <td><code>category</code></td> <td><code>string</code></td> <td><code>apps</code> ,  <br /><code>activation_lock</code> ,  <br /><code>desktop_and_screensaver</code> ,  <br /><code>device_information</code> ,  <br /><code>gatekeeper_and_xprotect</code> ,  <br /><code>installed_profiles</code> ,  <br /><code>kernel_extensions</code> ,  <br /><code>local_users</code> ,  <br /><code>launch_agents_and_daemons</code> ,  <br /><code>system_extensions</code> ,  <br /><code>startup_settings</code> ,  <br /><code>transparency_database</code></td> <td>Only one category per export reqest.</td> </tr> <tr> <td><code>device_families</code></td> <td><code>array</code></td> <td><code>[&quot;Mac&quot;, &quot;iPhone&quot;, &quot;iPad&quot;, &quot;tvOS&quot;]</code></td> <td>List of one or more comma separted string values for device families.</td> </tr> <tr> <td><code>filter</code></td> <td><code>object</code></td> <td><code>{&quot;apple_silicon&quot;: {&quot;eq&quot;: true}, &quot;device__name&quot;: {&quot;like&quot;: [&quot;this&quot;, &quot;or_this&quot;]}}</code></td> <td>JSON schema object containing one or more key value pairs.  <br />  <br /><strong>Note</strong>: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</td> </tr> <tr> <td><code>sort_by</code></td> <td><code>string</code></td> <td></td> <td>Sort results by the name of a given response body key in either ascending (default behavior) or descending(`-`) order.</td> </tr> </tbody> </table> </div>
@@ -4828,8 +4828,8 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismRequestCategoryExport200Response",
-            '400': "PrismRequestCategoryExport400Response",
+            '200': "InlineObject27",
+            '400': "InlineObject28",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4858,7 +4858,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismRequestCategoryExport200Response]:
+    ) -> ApiResponse[InlineObject27]:
         """Request category export
 
         <p>Request export of a category. The <code>id</code> key is used when checking the export status using the <em>Request category export</em> endpoint.</p> <p><strong>Request Body Parameters: application/json</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Key</th> <th>Type</th> <th>Possible value(s)</th> <th>Description</th> </tr> </thead> <tbody> <tr> <td><code>blueprint_ids</code></td> <td><code>array</code></td> <td><code>[&quot;string&quot;, &quot;string&quot;, &quot;string&quot;]</code></td> <td>List of one or more comma separate blueprint IDs.</td> </tr> <tr> <td><code>category</code></td> <td><code>string</code></td> <td><code>apps</code> ,  <br /><code>activation_lock</code> ,  <br /><code>desktop_and_screensaver</code> ,  <br /><code>device_information</code> ,  <br /><code>gatekeeper_and_xprotect</code> ,  <br /><code>installed_profiles</code> ,  <br /><code>kernel_extensions</code> ,  <br /><code>local_users</code> ,  <br /><code>launch_agents_and_daemons</code> ,  <br /><code>system_extensions</code> ,  <br /><code>startup_settings</code> ,  <br /><code>transparency_database</code></td> <td>Only one category per export reqest.</td> </tr> <tr> <td><code>device_families</code></td> <td><code>array</code></td> <td><code>[&quot;Mac&quot;, &quot;iPhone&quot;, &quot;iPad&quot;, &quot;tvOS&quot;]</code></td> <td>List of one or more comma separted string values for device families.</td> </tr> <tr> <td><code>filter</code></td> <td><code>object</code></td> <td><code>{&quot;apple_silicon&quot;: {&quot;eq&quot;: true}, &quot;device__name&quot;: {&quot;like&quot;: [&quot;this&quot;, &quot;or_this&quot;]}}</code></td> <td>JSON schema object containing one or more key value pairs.  <br />  <br /><strong>Note</strong>: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</td> </tr> <tr> <td><code>sort_by</code></td> <td><code>string</code></td> <td></td> <td>Sort results by the name of a given response body key in either ascending (default behavior) or descending(`-`) order.</td> </tr> </tbody> </table> </div>
@@ -4896,8 +4896,8 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismRequestCategoryExport200Response",
-            '400': "PrismRequestCategoryExport400Response",
+            '200': "InlineObject27",
+            '400': "InlineObject28",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4964,8 +4964,8 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismRequestCategoryExport200Response",
-            '400': "PrismRequestCategoryExport400Response",
+            '200': "InlineObject27",
+            '400': "InlineObject28",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5072,7 +5072,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismActivationLock200Response:
+    ) -> InlineObject23:
         """Startup settings
 
         Get Startup settings for macOS.
@@ -5125,7 +5125,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5159,7 +5159,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismActivationLock200Response]:
+    ) -> ApiResponse[InlineObject23]:
         """Startup settings
 
         Get Startup settings for macOS.
@@ -5212,7 +5212,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5299,7 +5299,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5420,7 +5420,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismActivationLock200Response:
+    ) -> InlineObject23:
         """System Extensions
 
         Get System Extension attributes for macOS.
@@ -5473,7 +5473,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5507,7 +5507,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismActivationLock200Response]:
+    ) -> ApiResponse[InlineObject23]:
         """System Extensions
 
         Get System Extension attributes for macOS.
@@ -5560,7 +5560,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5647,7 +5647,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5768,7 +5768,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismActivationLock200Response:
+    ) -> InlineObject23:
         """Transparency database
 
         Get Transparency Database (TCC) attributes for macOS.
@@ -5821,7 +5821,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5855,7 +5855,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismActivationLock200Response]:
+    ) -> ApiResponse[InlineObject23]:
         """Transparency database
 
         Get Transparency Database (TCC) attributes for macOS.
@@ -5908,7 +5908,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5995,7 +5995,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "InlineObject23",
         }
         response_data = self.api_client.call_api(
             *_param,

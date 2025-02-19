@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **create_ade_integration**
-> AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response create_ade_integration(blueprint_id, phone, email, file)
+> InlineObject create_ade_integration(blueprint_id, phone, email, file)
 
 Create ADE integration
 
@@ -30,7 +30,7 @@ Create ADE integration
 
 ```python
 import kandji
-from kandji.models.automated_device_enrollment_integrations_create_ade_integration200_response import AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response
+from kandji.models.inline_object import InlineObject
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response**](AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response.md)
+[**InlineObject**](InlineObject.md)
 
 ### Authorization
 
@@ -250,7 +250,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_ade_device**
-> AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response get_ade_device(device_id)
+> InlineObject4 get_ade_device(device_id)
 
 Get ADE device
 
@@ -262,7 +262,7 @@ Get information about a specific Automated Device Enrollment device.
 
 ```python
 import kandji
-from kandji.models.automated_device_enrollment_integrations_get_ade_device200_response import AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response
+from kandji.models.inline_object4 import InlineObject4
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response**](AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response.md)
+[**InlineObject4**](InlineObject4.md)
 
 ### Authorization
 
@@ -403,7 +403,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_ade_devices**
-> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response list_ade_devices(blueprint_id=blueprint_id, user_id=user_id, dep_account=dep_account, device_family=device_family, model=model, os=os, profile_status=profile_status, serial_number=serial_number, page=page)
+> InlineObject2 list_ade_devices(blueprint_id=blueprint_id, user_id=user_id, dep_account=dep_account, device_family=device_family, model=model, os=os, profile_status=profile_status, serial_number=serial_number, page=page)
 
 List ADE devices
 
@@ -415,7 +415,7 @@ Get a list of Automated Device Enrollment devices.
 
 ```python
 import kandji
-from kandji.models.automated_device_enrollment_integrations_list_ade_devices200_response import AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+from kandji.models.inline_object2 import InlineObject2
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -477,7 +477,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
+[**InlineObject2**](InlineObject2.md)
 
 ### Authorization
 
@@ -569,7 +569,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_devices_associated_to_ade_token**
-> AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response list_devices_associated_to_ade_token(ade_token_id, page=page)
+> InlineObject1 list_devices_associated_to_ade_token(ade_token_id, page=page)
 
 List devices associated to ADE token
 
@@ -581,7 +581,7 @@ List devices associated to ADE token
 
 ```python
 import kandji
-from kandji.models.automated_device_enrollment_integrations_list_devices_associated_to_ade_token200_response import AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response
+from kandji.models.inline_object1 import InlineObject1
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -629,7 +629,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response**](AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response.md)
+[**InlineObject1**](InlineObject1.md)
 
 ### Authorization
 
@@ -732,7 +732,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_ade_device**
-> AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response update_ade_device(device_id, body=body)
+> InlineObject4 update_ade_device(device_id, body=body)
 
 Update ADE device
 
@@ -744,7 +744,7 @@ Update ADE device
 
 ```python
 import kandji
-from kandji.models.automated_device_enrollment_integrations_get_ade_device200_response import AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response
+from kandji.models.inline_object4 import InlineObject4
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -769,7 +769,7 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
     device_id = 'device_id_example' # str | 
-    body = {"blueprint_id":"3013eb7c-d0c1-4689-852a-50776a92036b","asset_tag":"123456","user_id":"5344c996-8823-4b37-8d6e-8515fc7c3a0a"} # str |  (optional)
+    body = {blueprint_id=3013eb7c-d0c1-4689-852a-50776a92036b, asset_tag=123456, user_id=5344c996-8823-4b37-8d6e-8515fc7c3a0a} # str |  (optional)
 
     try:
         # Update ADE device
@@ -792,7 +792,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response**](AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response.md)
+[**InlineObject4**](InlineObject4.md)
 
 ### Authorization
 
@@ -848,7 +848,7 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
     ade_token_id = 'ade_token_id_example' # str | 
-    body = {"blueprint_id":"bf21d9cf-17cf-48b3-890d-7bc27c241bb7","phone":"1234567890","email":"example@accuhive.io"} # str |  (optional)
+    body = {blueprint_id=bf21d9cf-17cf-48b3-890d-7bc27c241bb7, phone=1234567890, email=example@accuhive.io} # str |  (optional)
 
     try:
         # Update ADE integration

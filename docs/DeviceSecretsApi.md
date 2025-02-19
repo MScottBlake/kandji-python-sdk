@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **get_activation_lock_bypass_code**
-> DeviceSecretsGetActivationLockBypassCode200Response get_activation_lock_bypass_code(device_id)
+> InlineObject19 get_activation_lock_bypass_code(device_id)
 
 Get Activation Lock Bypass Code
 
@@ -23,7 +23,7 @@ Get Activation Lock Bypass Code
 
 ```python
 import kandji
-from kandji.models.device_secrets_get_activation_lock_bypass_code200_response import DeviceSecretsGetActivationLockBypassCode200Response
+from kandji.models.inline_object19 import InlineObject19
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceSecretsGetActivationLockBypassCode200Response**](DeviceSecretsGetActivationLockBypassCode200Response.md)
+[**InlineObject19**](InlineObject19.md)
 
 ### Authorization
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_filevault_recovery_key**
-> DeviceSecretsGetFilevaultRecoveryKey200Response get_filevault_recovery_key(device_id)
+> InlineObject20 get_filevault_recovery_key(device_id)
 
 Get FileVault Recovery Key
 
@@ -101,7 +101,7 @@ Get FileVault Recovery Key
 
 ```python
 import kandji
-from kandji.models.device_secrets_get_filevault_recovery_key200_response import DeviceSecretsGetFilevaultRecoveryKey200Response
+from kandji.models.inline_object20 import InlineObject20
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceSecretsGetFilevaultRecoveryKey200Response**](DeviceSecretsGetFilevaultRecoveryKey200Response.md)
+[**InlineObject20**](InlineObject20.md)
 
 ### Authorization
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_recovery_lock_password**
-> DeviceSecretsGetRecoveryLockPassword200Response get_recovery_lock_password(device_id)
+> InlineObject22 get_recovery_lock_password(device_id)
 
 Get Recovery Lock Password
 
@@ -179,7 +179,7 @@ Get Recovery Lock Password
 
 ```python
 import kandji
-from kandji.models.device_secrets_get_recovery_lock_password200_response import DeviceSecretsGetRecoveryLockPassword200Response
+from kandji.models.inline_object22 import InlineObject22
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceSecretsGetRecoveryLockPassword200Response**](DeviceSecretsGetRecoveryLockPassword200Response.md)
+[**InlineObject22**](InlineObject22.md)
 
 ### Authorization
 
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_unlock_pin**
-> DeviceSecretsGetUnlockPin200Response get_unlock_pin(device_id)
+> InlineObject21 get_unlock_pin(device_id)
 
 Get Unlock Pin
 
@@ -257,7 +257,7 @@ Get Unlock Pin
 
 ```python
 import kandji
-from kandji.models.device_secrets_get_unlock_pin200_response import DeviceSecretsGetUnlockPin200Response
+from kandji.models.inline_object21 import InlineObject21
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceSecretsGetUnlockPin200Response**](DeviceSecretsGetUnlockPin200Response.md)
+[**InlineObject21**](InlineObject21.md)
 
 ### Authorization
 

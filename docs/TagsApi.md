@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **create_tag**
-> TagsCreateTag201Response create_tag(body=body)
+> InlineObject31 create_tag(body=body)
 
 Create Tag
 
@@ -23,7 +23,7 @@ Create a tag. Can only create one tag per request.
 
 ```python
 import kandji
-from kandji.models.tags_create_tag201_response import TagsCreateTag201Response
+from kandji.models.inline_object31 import InlineObject31
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -47,7 +47,7 @@ configuration = kandji.Configuration(
 with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.TagsApi(api_client)
-    body = {"name":"accuhive_01"} # str |  (optional)
+    body = {name=accuhive_01} # str |  (optional)
 
     try:
         # Create Tag
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TagsCreateTag201Response**](TagsCreateTag201Response.md)
+[**InlineObject31**](InlineObject31.md)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_tags**
-> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response get_tags(search)
+> InlineObject2 get_tags(search)
 
 Get Tags
 
@@ -176,7 +176,7 @@ Return configured tags.
 
 ```python
 import kandji
-from kandji.models.automated_device_enrollment_integrations_list_ade_devices200_response import AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+from kandji.models.inline_object2 import InlineObject2
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
+[**InlineObject2**](InlineObject2.md)
 
 ### Authorization
 
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_tag**
-> TagsCreateTag201Response update_tag(tag_id, body=body)
+> InlineObject31 update_tag(tag_id, body=body)
 
 Update Tag
 
@@ -254,7 +254,7 @@ Update Tag
 
 ```python
 import kandji
-from kandji.models.tags_create_tag201_response import TagsCreateTag201Response
+from kandji.models.inline_object31 import InlineObject31
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -279,7 +279,7 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.TagsApi(api_client)
     tag_id = 'tag_id_example' # str | 
-    body = {"name":"accuhive_02"} # str |  (optional)
+    body = {name=accuhive_02} # str |  (optional)
 
     try:
         # Update Tag
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TagsCreateTag201Response**](TagsCreateTag201Response.md)
+[**InlineObject31**](InlineObject31.md)
 
 ### Authorization
 

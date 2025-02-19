@@ -53,7 +53,7 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.BlueprintsApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
-    body = {"library_item_id":"{library_item_id}","assignment_node_id":"{assignment_node_id}"} # str |  (optional)
+    body = {library_item_id={library_item_id}, assignment_node_id={assignment_node_id}} # str |  (optional)
 
     try:
         # Assign Library Item
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_blueprint**
-> BlueprintsCreateBlueprint201Response create_blueprint(name, enrollment_code_is_active, enrollment_code_code, source_type, source_id, type)
+> InlineObject5 create_blueprint(name, enrollment_code_is_active, enrollment_code_code, source_type, source_id, type)
 
 Create Blueprint
 
@@ -108,7 +108,7 @@ Create Blueprint
 
 ```python
 import kandji
-from kandji.models.blueprints_create_blueprint201_response import BlueprintsCreateBlueprint201Response
+from kandji.models.inline_object5 import InlineObject5
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BlueprintsCreateBlueprint201Response**](BlueprintsCreateBlueprint201Response.md)
+[**InlineObject5**](InlineObject5.md)
 
 ### Authorization
 
@@ -260,7 +260,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_blueprint**
-> BlueprintsGetBlueprint200Response get_blueprint(blueprint_id)
+> InlineObject6 get_blueprint(blueprint_id)
 
 Get Blueprint
 
@@ -272,7 +272,7 @@ Get Blueprint
 
 ```python
 import kandji
-from kandji.models.blueprints_get_blueprint200_response import BlueprintsGetBlueprint200Response
+from kandji.models.inline_object6 import InlineObject6
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BlueprintsGetBlueprint200Response**](BlueprintsGetBlueprint200Response.md)
+[**InlineObject6**](InlineObject6.md)
 
 ### Authorization
 
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_blueprints**
-> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response list_blueprints(id=id, id__in=id__in, name=name, limit=limit, offset=offset)
+> InlineObject2 list_blueprints(id=id, id__in=id__in, name=name, limit=limit, offset=offset)
 
 List Blueprints
 
@@ -504,7 +504,7 @@ This request returns a list of a blueprint records in the Kandji tenant. Optiona
 
 ```python
 import kandji
-from kandji.models.automated_device_enrollment_integrations_list_ade_devices200_response import AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+from kandji.models.inline_object2 import InlineObject2
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -558,7 +558,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
+[**InlineObject2**](InlineObject2.md)
 
 ### Authorization
 
@@ -578,7 +578,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_library_items**
-> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response list_library_items(blueprint_id)
+> InlineObject2 list_library_items(blueprint_id)
 
 List Library Items
 
@@ -590,7 +590,7 @@ List Library Items
 
 ```python
 import kandji
-from kandji.models.automated_device_enrollment_integrations_list_ade_devices200_response import AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+from kandji.models.inline_object2 import InlineObject2
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -636,7 +636,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
+[**InlineObject2**](InlineObject2.md)
 
 ### Authorization
 
@@ -735,7 +735,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_blueprint**
-> BlueprintsUpdateBlueprint200Response update_blueprint(blueprint_id, name, description, enrollment_code_code, enrollment_code_is_active)
+> InlineObject7 update_blueprint(blueprint_id, name, description, enrollment_code_code, enrollment_code_is_active)
 
 Update Blueprint
 
@@ -747,7 +747,7 @@ Update Blueprint
 
 ```python
 import kandji
-from kandji.models.blueprints_update_blueprint200_response import BlueprintsUpdateBlueprint200Response
+from kandji.models.inline_object7 import InlineObject7
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -801,7 +801,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BlueprintsUpdateBlueprint200Response**](BlueprintsUpdateBlueprint200Response.md)
+[**InlineObject7**](InlineObject7.md)
 
 ### Authorization
 

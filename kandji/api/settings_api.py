@@ -17,7 +17,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from kandji.models.settings_licensing200_response import SettingsLicensing200Response
+from kandji.models.inline_object38 import InlineObject38
 
 from kandji.api_client import ApiClient, RequestSerialized
 from kandji.api_response import ApiResponse
@@ -52,7 +52,7 @@ class SettingsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> SettingsLicensing200Response:
+    ) -> InlineObject38:
         """Licensing
 
         Returns Kandji tenant licensing and utilization information.
@@ -87,7 +87,7 @@ class SettingsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SettingsLicensing200Response",
+            '200': "InlineObject38",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -115,7 +115,7 @@ class SettingsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[SettingsLicensing200Response]:
+    ) -> ApiResponse[InlineObject38]:
         """Licensing
 
         Returns Kandji tenant licensing and utilization information.
@@ -150,7 +150,7 @@ class SettingsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SettingsLicensing200Response",
+            '200': "InlineObject38",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -213,7 +213,7 @@ class SettingsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SettingsLicensing200Response",
+            '200': "InlineObject38",
         }
         response_data = self.api_client.call_api(
             *_param,

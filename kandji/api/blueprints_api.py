@@ -20,10 +20,10 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import Any, Dict, Optional
 from typing_extensions import Annotated
-from kandji.models.inline_object2 import InlineObject2
-from kandji.models.inline_object5 import InlineObject5
-from kandji.models.inline_object6 import InlineObject6
-from kandji.models.inline_object7 import InlineObject7
+from kandji.models.automated_device_enrollment_integrations_list_ade_devices200_response import AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+from kandji.models.blueprints_create_blueprint201_response import BlueprintsCreateBlueprint201Response
+from kandji.models.blueprints_get_blueprint200_response import BlueprintsGetBlueprint200Response
+from kandji.models.blueprints_update_blueprint200_response import BlueprintsUpdateBlueprint200Response
 
 from kandji.api_client import ApiClient, RequestSerialized
 from kandji.api_response import ApiResponse
@@ -353,7 +353,7 @@ class BlueprintsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> InlineObject5:
+    ) -> BlueprintsCreateBlueprint201Response:
         """Create Blueprint
 
         <p>This request creates a new empty Blueprint or a new Blueprint from a template. The keys <code>name</code> and <code>enrollment_code</code> <code>is_active</code> are required, and the blueprint name key must be unique from the existing blueprint names in the Kandji tenant.</p> <p>optionally, <code>type: map</code> can be used when creating a new Assignment Map blueprint.</p> <p>Note: If cloning an existing blueprint,`type` value and the type of sourced (`source.id`) blueprint must match and `source.type` value must be set to `blueprint`.</p>
@@ -406,7 +406,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "InlineObject5",
+            '201': "BlueprintsCreateBlueprint201Response",
             '400': "object",
         }
         response_data = self.api_client.call_api(
@@ -441,7 +441,7 @@ class BlueprintsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[InlineObject5]:
+    ) -> ApiResponse[BlueprintsCreateBlueprint201Response]:
         """Create Blueprint
 
         <p>This request creates a new empty Blueprint or a new Blueprint from a template. The keys <code>name</code> and <code>enrollment_code</code> <code>is_active</code> are required, and the blueprint name key must be unique from the existing blueprint names in the Kandji tenant.</p> <p>optionally, <code>type: map</code> can be used when creating a new Assignment Map blueprint.</p> <p>Note: If cloning an existing blueprint,`type` value and the type of sourced (`source.id`) blueprint must match and `source.type` value must be set to `blueprint`.</p>
@@ -494,7 +494,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "InlineObject5",
+            '201': "BlueprintsCreateBlueprint201Response",
             '400': "object",
         }
         response_data = self.api_client.call_api(
@@ -582,7 +582,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "InlineObject5",
+            '201': "BlueprintsCreateBlueprint201Response",
             '400': "object",
         }
         response_data = self.api_client.call_api(
@@ -954,7 +954,7 @@ class BlueprintsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> InlineObject6:
+    ) -> BlueprintsGetBlueprint200Response:
         """Get Blueprint
 
         <p>This request returns information about a specific blueprint based on blueprint ID.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
@@ -992,7 +992,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject6",
+            '200': "BlueprintsGetBlueprint200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1021,7 +1021,7 @@ class BlueprintsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[InlineObject6]:
+    ) -> ApiResponse[BlueprintsGetBlueprint200Response]:
         """Get Blueprint
 
         <p>This request returns information about a specific blueprint based on blueprint ID.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
@@ -1059,7 +1059,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject6",
+            '200': "BlueprintsGetBlueprint200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1126,7 +1126,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject6",
+            '200': "BlueprintsGetBlueprint200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1767,7 +1767,7 @@ class BlueprintsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> InlineObject2:
+    ) -> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response:
         """List Blueprints
 
         This request returns a list of a blueprint records in the Kandji tenant. Optional query parameters can be specified to filter the results.
@@ -1817,7 +1817,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject2",
+            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1850,7 +1850,7 @@ class BlueprintsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[InlineObject2]:
+    ) -> ApiResponse[AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response]:
         """List Blueprints
 
         This request returns a list of a blueprint records in the Kandji tenant. Optional query parameters can be specified to filter the results.
@@ -1900,7 +1900,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject2",
+            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1983,7 +1983,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject2",
+            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2094,7 +2094,7 @@ class BlueprintsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> InlineObject2:
+    ) -> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response:
         """List Library Items
 
         <p>This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=&quot;response-fields&quot;>Response fields</h3> <ul> <li><p><code>count</code> (int): The total count of library items.</p> </li> <li><p><code>next</code> (str): The URL for the next page of results, if available. If not available will value will be <code>null</code>.</p> </li> <li><p><code>previous</code> (str): The URL for the previous page of results, if available. If not available will value will be <code>null</code>.</p> </li> <li><p><code>results</code> (object): An array containing objects with the following fields:</p> <ul> <li><p><code>id</code> (str): The ID of the library item.</p> </li> <li><p><code>name</code> (str): The name of the library item.</p> </li> </ul> </li> </ul>
@@ -2132,7 +2132,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject2",
+            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2161,7 +2161,7 @@ class BlueprintsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[InlineObject2]:
+    ) -> ApiResponse[AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response]:
         """List Library Items
 
         <p>This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=&quot;response-fields&quot;>Response fields</h3> <ul> <li><p><code>count</code> (int): The total count of library items.</p> </li> <li><p><code>next</code> (str): The URL for the next page of results, if available. If not available will value will be <code>null</code>.</p> </li> <li><p><code>previous</code> (str): The URL for the previous page of results, if available. If not available will value will be <code>null</code>.</p> </li> <li><p><code>results</code> (object): An array containing objects with the following fields:</p> <ul> <li><p><code>id</code> (str): The ID of the library item.</p> </li> <li><p><code>name</code> (str): The name of the library item.</p> </li> </ul> </li> </ul>
@@ -2199,7 +2199,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject2",
+            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2266,7 +2266,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject2",
+            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2648,7 +2648,7 @@ class BlueprintsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> InlineObject7:
+    ) -> BlueprintsUpdateBlueprint200Response:
         """Update Blueprint
 
         <p>This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
@@ -2698,7 +2698,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject7",
+            '200': "BlueprintsUpdateBlueprint200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2731,7 +2731,7 @@ class BlueprintsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[InlineObject7]:
+    ) -> ApiResponse[BlueprintsUpdateBlueprint200Response]:
         """Update Blueprint
 
         <p>This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
@@ -2781,7 +2781,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject7",
+            '200': "BlueprintsUpdateBlueprint200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2864,7 +2864,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject7",
+            '200': "BlueprintsUpdateBlueprint200Response",
         }
         response_data = self.api_client.call_api(
             *_param,

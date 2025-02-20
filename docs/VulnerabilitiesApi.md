@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **get_vulnerability_description**
-> InlineObject35 get_vulnerability_description(cve_id)
+> VulnerabilitiesGetVulnerabilityDescription200Response get_vulnerability_description(cve_id)
 
 Get Vulnerability Description
 
@@ -24,7 +24,7 @@ This endpoint makes a request to retrieve information about a cve and summary in
 
 ```python
 import kandji
-from kandji.models.inline_object35 import InlineObject35
+from kandji.models.vulnerabilities_get_vulnerability_description200_response import VulnerabilitiesGetVulnerabilityDescription200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject35**](InlineObject35.md)
+[**VulnerabilitiesGetVulnerabilityDescription200Response**](VulnerabilitiesGetVulnerabilityDescription200Response.md)
 
 ### Authorization
 
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_detections**
-> InlineObject33 list_detections(after=after, limit=limit, filter=filter)
+> VulnerabilitiesListDetections200Response list_detections(after=after, limit=limit, filter=filter)
 
 List Detections
 
@@ -272,7 +272,7 @@ This endpoint makes a request to retrieve a list of all vulnerability detections
 
 ```python
 import kandji
-from kandji.models.inline_object33 import InlineObject33
+from kandji.models.vulnerabilities_list_detections200_response import VulnerabilitiesListDetections200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject33**](InlineObject33.md)
+[**VulnerabilitiesListDetections200Response**](VulnerabilitiesListDetections200Response.md)
 
 ### Authorization
 
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_vulnerabilities**
-> InlineObject34 list_vulnerabilities(page=page, size=size, sort_by=sort_by, filter=filter)
+> VulnerabilitiesListVulnerabilities200Response list_vulnerabilities(page=page, size=size, sort_by=sort_by, filter=filter)
 
 List Vulnerabilities
 
@@ -354,7 +354,7 @@ This endpoint makes a request to retrieve a list of all vulnerabilities grouped 
 
 ```python
 import kandji
-from kandji.models.inline_object34 import InlineObject34
+from kandji.models.vulnerabilities_list_vulnerabilities200_response import VulnerabilitiesListVulnerabilities200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -406,7 +406,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject34**](InlineObject34.md)
+[**VulnerabilitiesListVulnerabilities200Response**](VulnerabilitiesListVulnerabilities200Response.md)
 
 ### Authorization
 

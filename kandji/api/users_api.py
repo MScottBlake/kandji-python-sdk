@@ -20,8 +20,8 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
-from kandji.models.inline_object36 import InlineObject36
-from kandji.models.inline_object37 import InlineObject37
+from kandji.models.users_get_user200_response import UsersGetUser200Response
+from kandji.models.users_list_users200_response import UsersListUsers200Response
 
 from kandji.api_client import ApiClient, RequestSerialized
 from kandji.api_response import ApiResponse
@@ -96,7 +96,7 @@ class UsersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '400': "InlineObject28",
+            '400': "PrismRequestCategoryExport400Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -164,7 +164,7 @@ class UsersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '400': "InlineObject28",
+            '400': "PrismRequestCategoryExport400Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -232,7 +232,7 @@ class UsersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '400': "InlineObject28",
+            '400': "PrismRequestCategoryExport400Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -321,7 +321,7 @@ class UsersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> InlineObject37:
+    ) -> UsersGetUser200Response:
         """Get User
 
         This endpoint makes a request to retrieve a specified user directory integration user by id.
@@ -359,7 +359,7 @@ class UsersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject37",
+            '200': "UsersGetUser200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -388,7 +388,7 @@ class UsersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[InlineObject37]:
+    ) -> ApiResponse[UsersGetUser200Response]:
         """Get User
 
         This endpoint makes a request to retrieve a specified user directory integration user by id.
@@ -426,7 +426,7 @@ class UsersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject37",
+            '200': "UsersGetUser200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -493,7 +493,7 @@ class UsersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject37",
+            '200': "UsersGetUser200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -585,7 +585,7 @@ class UsersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> InlineObject36:
+    ) -> UsersListUsers200Response:
         """List Users
 
         <p>This endpoint makes a request to retrieve a list of users from user directory integrations.</p> <p>A maximum of 300 records are returned per request, and pagination can be performed leveraging the URLs provided in the <code>next</code> and <code>previous</code> keys in the response. If there are no more results available, the respective key will be <code>null</code>.</p>
@@ -632,7 +632,7 @@ class UsersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject36",
+            '200': "UsersListUsers200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -664,7 +664,7 @@ class UsersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[InlineObject36]:
+    ) -> ApiResponse[UsersListUsers200Response]:
         """List Users
 
         <p>This endpoint makes a request to retrieve a list of users from user directory integrations.</p> <p>A maximum of 300 records are returned per request, and pagination can be performed leveraging the URLs provided in the <code>next</code> and <code>previous</code> keys in the response. If there are no more results available, the respective key will be <code>null</code>.</p>
@@ -711,7 +711,7 @@ class UsersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject36",
+            '200': "UsersListUsers200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -790,7 +790,7 @@ class UsersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject36",
+            '200': "UsersListUsers200Response",
         }
         response_data = self.api_client.call_api(
             *_param,

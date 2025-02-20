@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **licensing**
-> InlineObject38 licensing()
+> SettingsLicensing200Response licensing()
 
 Licensing
 
@@ -20,7 +20,7 @@ Returns Kandji tenant licensing and utilization information.
 
 ```python
 import kandji
-from kandji.models.inline_object38 import InlineObject38
+from kandji.models.settings_licensing200_response import SettingsLicensing200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -62,7 +62,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineObject38**](InlineObject38.md)
+[**SettingsLicensing200Response**](SettingsLicensing200Response.md)
 
 ### Authorization
 

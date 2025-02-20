@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get_library_item_activity**
-> InlineObject2 get_library_item_activity(library_item_id, activity_type=activity_type, user_id=user_id, user_email=user_email, limit=limit, offset=offset)
+> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response get_library_item_activity(library_item_id, activity_type=activity_type, user_id=user_id, user_email=user_email, limit=limit, offset=offset)
 
 Get Library Item Activity
 
@@ -21,7 +21,7 @@ Get Library Item Activity
 
 ```python
 import kandji
-from kandji.models.inline_object2 import InlineObject2
+from kandji.models.automated_device_enrollment_integrations_list_ade_devices200_response import AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject2**](InlineObject2.md)
+[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
 
 ### Authorization
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_library_item_statuses**
-> InlineObject2 get_library_item_statuses(library_item_id, computer_id=computer_id, limit=limit, offset=offset)
+> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response get_library_item_statuses(library_item_id, computer_id=computer_id, limit=limit, offset=offset)
 
 Get Library Item Statuses
 
@@ -109,7 +109,7 @@ Get Library Item Statuses
 
 ```python
 import kandji
-from kandji.models.inline_object2 import InlineObject2
+from kandji.models.automated_device_enrollment_integrations_list_ade_devices200_response import AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject2**](InlineObject2.md)
+[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
 
 ### Authorization
 

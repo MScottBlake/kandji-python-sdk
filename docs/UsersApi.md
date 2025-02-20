@@ -86,7 +86,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_user**
-> InlineObject37 get_user(user_id)
+> UsersGetUser200Response get_user(user_id)
 
 Get User
 
@@ -98,7 +98,7 @@ This endpoint makes a request to retrieve a specified user directory integration
 
 ```python
 import kandji
-from kandji.models.inline_object37 import InlineObject37
+from kandji.models.users_get_user200_response import UsersGetUser200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject37**](InlineObject37.md)
+[**UsersGetUser200Response**](UsersGetUser200Response.md)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_users**
-> InlineObject36 list_users(email=email, id=id, integration_id=integration_id, archived=archived)
+> UsersListUsers200Response list_users(email=email, id=id, integration_id=integration_id, archived=archived)
 
 List Users
 
@@ -176,7 +176,7 @@ List Users
 
 ```python
 import kandji
-from kandji.models.inline_object36 import InlineObject36
+from kandji.models.users_list_users200_response import UsersListUsers200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject36**](InlineObject36.md)
+[**UsersListUsers200Response**](UsersListUsers200Response.md)
 
 ### Authorization
 

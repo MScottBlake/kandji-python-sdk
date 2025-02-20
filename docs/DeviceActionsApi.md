@@ -208,7 +208,7 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
-    body = {DeleteAllUsers=false, ForceDeletion=false, UserName=testuser} # str |  (optional)
+    body = {"DeleteAllUsers":false,"ForceDeletion":false,"UserName":"testuser"} # str |  (optional)
 
     try:
         # Delete User
@@ -285,7 +285,7 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
-    body = {PIN=123456, PreserveDataPlan=true, DisallowProximitySetup=false, ReturnToService={Enabled=false, ProfileId=}} # str |  (optional)
+    body = {"PIN":"123456","PreserveDataPlan":true,"DisallowProximitySetup":false,"ReturnToService":{"Enabled":false,"ProfileId":""}} # str |  (optional)
 
     try:
         # Erase Device
@@ -327,7 +327,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_device_commands**
-> InlineObject17 get_device_commands(device_id, limit, offset=offset)
+> DeviceActionsGetDeviceCommands200Response get_device_commands(device_id, limit, offset=offset)
 
 Get Device Commands
 
@@ -339,7 +339,7 @@ Get Device Commands
 
 ```python
 import kandji
-from kandji.models.inline_object17 import InlineObject17
+from kandji.models.device_actions_get_device_commands200_response import DeviceActionsGetDeviceCommands200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -389,7 +389,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject17**](InlineObject17.md)
+[**DeviceActionsGetDeviceCommands200Response**](DeviceActionsGetDeviceCommands200Response.md)
 
 ### Authorization
 
@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **lock_device**
-> InlineObject18 lock_device(device_id, body=body)
+> DeviceActionsLockDevice200Response lock_device(device_id, body=body)
 
 Lock Device
 
@@ -421,7 +421,7 @@ Lock Device
 
 ```python
 import kandji
-from kandji.models.inline_object18 import InlineObject18
+from kandji.models.device_actions_lock_device200_response import DeviceActionsLockDevice200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -446,7 +446,7 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
-    body = {Message=This device is locked!, PhoneNumber=1234567890} # str |  (optional)
+    body = {"Message":"This device is locked!","PhoneNumber":"1234567890"} # str |  (optional)
 
     try:
         # Lock Device
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject18**](InlineObject18.md)
+[**DeviceActionsLockDevice200Response**](DeviceActionsLockDevice200Response.md)
 
 ### Authorization
 
@@ -601,7 +601,7 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
-    body = {EnableRemoteDesktop=true} # str |  (optional)
+    body = {"EnableRemoteDesktop":true} # str |  (optional)
 
     try:
         # Remote Desktop
@@ -753,7 +753,7 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
-    body = {RebuildKernelCache=false, NotifyUser=false} # str |  (optional)
+    body = {"RebuildKernelCache":false,"NotifyUser":false} # str |  (optional)
 
     try:
         # Restart Device
@@ -905,7 +905,7 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
-    body = {DeviceName=Test Mac Mini} # str |  (optional)
+    body = {"DeviceName":"Test Mac Mini"} # str |  (optional)
 
     try:
         # Set Name
@@ -1057,7 +1057,7 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
-    body = {UserName=LocalUserToUnlock} # str |  (optional)
+    body = {"UserName":"LocalUserToUnlock"} # str |  (optional)
 
     try:
         # Unlock Account

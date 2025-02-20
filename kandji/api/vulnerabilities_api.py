@@ -20,9 +20,9 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import Any, Dict, Optional
 from typing_extensions import Annotated
-from kandji.models.inline_object33 import InlineObject33
-from kandji.models.inline_object34 import InlineObject34
-from kandji.models.inline_object35 import InlineObject35
+from kandji.models.vulnerabilities_get_vulnerability_description200_response import VulnerabilitiesGetVulnerabilityDescription200Response
+from kandji.models.vulnerabilities_list_detections200_response import VulnerabilitiesListDetections200Response
+from kandji.models.vulnerabilities_list_vulnerabilities200_response import VulnerabilitiesListVulnerabilities200Response
 
 from kandji.api_client import ApiClient, RequestSerialized
 from kandji.api_response import ApiResponse
@@ -58,7 +58,7 @@ class VulnerabilitiesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> InlineObject35:
+    ) -> VulnerabilitiesGetVulnerabilityDescription200Response:
         """Get Vulnerability Description
 
         This endpoint makes a request to retrieve information about a cve and summary information about detections for a tenants fleet.
@@ -96,7 +96,7 @@ class VulnerabilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject35",
+            '200': "VulnerabilitiesGetVulnerabilityDescription200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -125,7 +125,7 @@ class VulnerabilitiesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[InlineObject35]:
+    ) -> ApiResponse[VulnerabilitiesGetVulnerabilityDescription200Response]:
         """Get Vulnerability Description
 
         This endpoint makes a request to retrieve information about a cve and summary information about detections for a tenants fleet.
@@ -163,7 +163,7 @@ class VulnerabilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject35",
+            '200': "VulnerabilitiesGetVulnerabilityDescription200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -230,7 +230,7 @@ class VulnerabilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject35",
+            '200': "VulnerabilitiesGetVulnerabilityDescription200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -979,7 +979,7 @@ class VulnerabilitiesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> InlineObject33:
+    ) -> VulnerabilitiesListDetections200Response:
         """List Detections
 
         This endpoint makes a request to retrieve a list of all vulnerability detections across the device fleet.
@@ -1023,7 +1023,7 @@ class VulnerabilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject33",
+            '200': "VulnerabilitiesListDetections200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1054,7 +1054,7 @@ class VulnerabilitiesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[InlineObject33]:
+    ) -> ApiResponse[VulnerabilitiesListDetections200Response]:
         """List Detections
 
         This endpoint makes a request to retrieve a list of all vulnerability detections across the device fleet.
@@ -1098,7 +1098,7 @@ class VulnerabilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject33",
+            '200': "VulnerabilitiesListDetections200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1173,7 +1173,7 @@ class VulnerabilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject33",
+            '200': "VulnerabilitiesListDetections200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1277,7 +1277,7 @@ class VulnerabilitiesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> InlineObject34:
+    ) -> VulnerabilitiesListVulnerabilities200Response:
         """List Vulnerabilities
 
         This endpoint makes a request to retrieve a list of all vulnerabilities grouped by cve.
@@ -1324,7 +1324,7 @@ class VulnerabilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject34",
+            '200': "VulnerabilitiesListVulnerabilities200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1356,7 +1356,7 @@ class VulnerabilitiesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[InlineObject34]:
+    ) -> ApiResponse[VulnerabilitiesListVulnerabilities200Response]:
         """List Vulnerabilities
 
         This endpoint makes a request to retrieve a list of all vulnerabilities grouped by cve.
@@ -1403,7 +1403,7 @@ class VulnerabilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject34",
+            '200': "VulnerabilitiesListVulnerabilities200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1482,7 +1482,7 @@ class VulnerabilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InlineObject34",
+            '200': "VulnerabilitiesListVulnerabilities200Response",
         }
         response_data = self.api_client.call_api(
             *_param,

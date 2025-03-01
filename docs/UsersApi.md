@@ -14,7 +14,14 @@ Method | HTTP request | Description
 
 Delete User
 
-<p>This endpoint makes a request to delete a specified user directory integration user by id (uuid).</p> <h3 id=&quot;user-still-assigned-to-device&quot;>User still assigned to device</h3> <p>You will see the following response (400 bad request), if a user is still assigned to one or more devices in Kandji. The user will need to be unassigned from the device either manually through the Kandji tenant or programatically using the Update device API endpoint.</p> <pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{     &quot;detail&quot;: &quot;User still assigned to one or more devices.&quot; }  </code></pre>
+<p>This endpoint makes a request to delete a specified user directory integration user by id (uuid).</p>
+<h3 id=&quot;user-still-assigned-to-device&quot;>User still assigned to device</h3>
+<p>You will see the following response (400 bad request), if a user is still assigned to one or more devices in Kandji. The user will need to be unassigned from the device either manually through the Kandji tenant or programatically using the Update device API endpoint.</p>
+<pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{
+    &quot;detail&quot;: &quot;User still assigned to one or more devices.&quot;
+}
+
+</code></pre>
 
 ### Example
 
@@ -168,7 +175,8 @@ Name | Type | Description  | Notes
 
 List Users
 
-<p>This endpoint makes a request to retrieve a list of users from user directory integrations.</p> <p>A maximum of 300 records are returned per request, and pagination can be performed leveraging the URLs provided in the <code>next</code> and <code>previous</code> keys in the response. If there are no more results available, the respective key will be <code>null</code>.</p>
+<p>This endpoint makes a request to retrieve a list of users from user directory integrations.</p>
+<p>A maximum of 300 records are returned per request, and pagination can be performed leveraging the URLs provided in the <code>next</code> and <code>previous</code> keys in the response. If there are no more results available, the respective key will be <code>null</code>.</p>
 
 ### Example
 

@@ -257,7 +257,8 @@ Name | Type | Description  | Notes
 
 Get Device Apps
 
-<p>This request returns a list of all installed apps for a specified Device ID.</p> <p>For iPhone and iPad, the preinstalled Apple apps are not reported.</p>
+<p>This request returns a list of all installed apps for a specified Device ID.</p>
+<p>For iPhone and iPad, the preinstalled Apple apps are not reported.</p>
 
 ### Example
 
@@ -413,7 +414,85 @@ Name | Type | Description  | Notes
 
 Get Device Library Items
 
-<p>This request gets all library items and their statuses for a specified Device ID</p> <h4 id=&quot;possible-library-item-status-values&quot;>Possible library item status values</h4> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>AVAILABLE</td> <td>string</td> <td>Library item available in Self Service</td> </tr> <tr> <td>CACHED</td> <td>string</td> <td>Library item downloaded for install but not yet installed</td> </tr> <tr> <td>CHANGE_PENDING</td> <td>string</td> <td>Recovery Password library item has changes that have not yet been applied</td> </tr> <tr> <td>DOWNLOADING</td> <td>string</td> <td>Library item downloading</td> </tr> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>EXCLUDED</td> <td>string</td> <td>Not in scope for assignment rule</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>INSTALLING</td> <td>string</td> <td>Library item installing</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device, not yet installed (All library items except for config profiles)</td> </tr> <tr> <td>failed</td> <td>string</td> <td>Configuration profile failed to install</td> </tr> <tr> <td>pending</td> <td>string</td> <td>Waiting on device, Configuration profile not yet installed</td> </tr> <tr> <td>success</td> <td>string</td> <td>Configuration profile installed</td> </tr> </tbody> </table> </div>
+<p>This request gets all library items and their statuses for a specified Device ID</p>
+<h4 id=&quot;possible-library-item-status-values&quot;>Possible library item status values</h4>
+<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
+<thead>
+<tr>
+<th><strong>Value</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Additional Info</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AVAILABLE</td>
+<td>string</td>
+<td>Library item available in Self Service</td>
+</tr>
+<tr>
+<td>CACHED</td>
+<td>string</td>
+<td>Library item downloaded for install but not yet installed</td>
+</tr>
+<tr>
+<td>CHANGE_PENDING</td>
+<td>string</td>
+<td>Recovery Password library item has changes that have not yet been applied</td>
+</tr>
+<tr>
+<td>DOWNLOADING</td>
+<td>string</td>
+<td>Library item downloading</td>
+</tr>
+<tr>
+<td>ERROR</td>
+<td>string</td>
+<td>Audit failure</td>
+</tr>
+<tr>
+<td>EXCLUDED</td>
+<td>string</td>
+<td>Not in scope for assignment rule</td>
+</tr>
+<tr>
+<td>INCOMPATIBLE</td>
+<td>string</td>
+<td>Not compatible with device or OS version</td>
+</tr>
+<tr>
+<td>INSTALLING</td>
+<td>string</td>
+<td>Library item installing</td>
+</tr>
+<tr>
+<td>PASS</td>
+<td>string</td>
+<td>Device meets requirements</td>
+</tr>
+<tr>
+<td>PENDING</td>
+<td>string</td>
+<td>Waiting on device, not yet installed (All library items except for config profiles)</td>
+</tr>
+<tr>
+<td>failed</td>
+<td>string</td>
+<td>Configuration profile failed to install</td>
+</tr>
+<tr>
+<td>pending</td>
+<td>string</td>
+<td>Waiting on device, Configuration profile not yet installed</td>
+</tr>
+<tr>
+<td>success</td>
+<td>string</td>
+<td>Configuration profile installed</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 ### Example
 
@@ -491,7 +570,8 @@ Name | Type | Description  | Notes
 
 Get Device Lost Mode details
 
-<p>This request returns the device lost mode details for a specified Device ID.</p> <p><strong>Note</strong>: Lost Mode is is only available for iOS and iPadOS. For more information, please see this <a href=&quot;https://support.kandji.io/a/solutions/articles/72000573873&quot;>Kandji support artilcle</a>.</p>
+<p>This request returns the device lost mode details for a specified Device ID.</p>
+<p><strong>Note</strong>: Lost Mode is is only available for iOS and iPadOS. For more information, please see this <a href=&quot;https://support.kandji.io/a/solutions/articles/72000573873&quot;>Kandji support artilcle</a>.</p>
 
 ### Example
 
@@ -570,7 +650,52 @@ Name | Type | Description  | Notes
 
 Get Device Parameters
 
-<p>This request returns the parameters and their statuses for a specified Device ID</p> <p>This endpoint is only applicable to macOS clients.</p> <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p> <p><strong>Possible parameter status values</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device. Not yet run.</td> </tr> <tr> <td>REMEDIATED</td> <td>string</td> <td>Parameter remediated</td> </tr> <tr> <td>WARNING</td> <td>string</td> <td>Muted alert</td> </tr> </tbody> </table> </div>
+<p>This request returns the parameters and their statuses for a specified Device ID</p>
+<p>This endpoint is only applicable to macOS clients.</p>
+<p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p>
+<p><strong>Possible parameter status values</strong></p>
+<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
+<thead>
+<tr>
+<th><strong>Value</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Additional Info</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ERROR</td>
+<td>string</td>
+<td>Audit failure</td>
+</tr>
+<tr>
+<td>INCOMPATIBLE</td>
+<td>string</td>
+<td>Not compatible with device or OS version</td>
+</tr>
+<tr>
+<td>PASS</td>
+<td>string</td>
+<td>Device meets requirements</td>
+</tr>
+<tr>
+<td>PENDING</td>
+<td>string</td>
+<td>Waiting on device. Not yet run.</td>
+</tr>
+<tr>
+<td>REMEDIATED</td>
+<td>string</td>
+<td>Parameter remediated</td>
+</tr>
+<tr>
+<td>WARNING</td>
+<td>string</td>
+<td>Muted alert</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 ### Example
 
@@ -648,7 +773,109 @@ Name | Type | Description  | Notes
 
 Get Device Status
 
-<p>This request returns the full status (parameters and library items) for a specified Device ID.</p> <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p> <h4 id=&quot;possible-status-values&quot;>Possible status values</h4> <p><strong>Library items</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>AVAILABLE</td> <td>string</td> <td>Library item available in Self Service</td> </tr> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>EXCLUDED</td> <td>string</td> <td>Not in scope for assignment rule</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device, not yet installed (All library items except for config profiles)</td> </tr> <tr> <td>failed</td> <td>string</td> <td>Configuration profile failed to install</td> </tr> <tr> <td>pending</td> <td>string</td> <td>Waiting on device, Configuration profile not yet installed</td> </tr> <tr> <td>success</td> <td>string</td> <td>Configuration profile installed</td> </tr> </tbody> </table> </div><p><strong>Parameters</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device. Not yet run.</td> </tr> <tr> <td>REMEDIATED</td> <td>string</td> <td>Parameter remediated</td> </tr> <tr> <td>WARNING</td> <td>string</td> <td>Muted alert</td> </tr> </tbody> </table> </div>
+<p>This request returns the full status (parameters and library items) for a specified Device ID.</p>
+<p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p>
+<h4 id=&quot;possible-status-values&quot;>Possible status values</h4>
+<p><strong>Library items</strong></p>
+<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
+<thead>
+<tr>
+<th><strong>Value</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Additional Info</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AVAILABLE</td>
+<td>string</td>
+<td>Library item available in Self Service</td>
+</tr>
+<tr>
+<td>ERROR</td>
+<td>string</td>
+<td>Audit failure</td>
+</tr>
+<tr>
+<td>EXCLUDED</td>
+<td>string</td>
+<td>Not in scope for assignment rule</td>
+</tr>
+<tr>
+<td>INCOMPATIBLE</td>
+<td>string</td>
+<td>Not compatible with device or OS version</td>
+</tr>
+<tr>
+<td>PASS</td>
+<td>string</td>
+<td>Device meets requirements</td>
+</tr>
+<tr>
+<td>PENDING</td>
+<td>string</td>
+<td>Waiting on device, not yet installed (All library items except for config profiles)</td>
+</tr>
+<tr>
+<td>failed</td>
+<td>string</td>
+<td>Configuration profile failed to install</td>
+</tr>
+<tr>
+<td>pending</td>
+<td>string</td>
+<td>Waiting on device, Configuration profile not yet installed</td>
+</tr>
+<tr>
+<td>success</td>
+<td>string</td>
+<td>Configuration profile installed</td>
+</tr>
+</tbody>
+</table>
+</div><p><strong>Parameters</strong></p>
+<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
+<thead>
+<tr>
+<th><strong>Value</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Additional Info</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ERROR</td>
+<td>string</td>
+<td>Audit failure</td>
+</tr>
+<tr>
+<td>INCOMPATIBLE</td>
+<td>string</td>
+<td>Not compatible with device or OS version</td>
+</tr>
+<tr>
+<td>PASS</td>
+<td>string</td>
+<td>Device meets requirements</td>
+</tr>
+<tr>
+<td>PENDING</td>
+<td>string</td>
+<td>Waiting on device. Not yet run.</td>
+</tr>
+<tr>
+<td>REMEDIATED</td>
+<td>string</td>
+<td>Parameter remediated</td>
+</tr>
+<tr>
+<td>WARNING</td>
+<td>string</td>
+<td>Muted alert</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 ### Example
 
@@ -726,7 +953,8 @@ Name | Type | Description  | Notes
 
 List Devices
 
-<p>This request returns a list of devices in a Kandji tenant. Optionally. query parameters can be used to filter results.</p> <p>There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/code-examples&quot;>GitHub</a>.</p>
+<p>This request returns a list of devices in a Kandji tenant. Optionally. query parameters can be used to filter results.</p>
+<p>There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/code-examples&quot;>GitHub</a>.</p>
 
 ### Example
 
@@ -843,7 +1071,37 @@ Name | Type | Description  | Notes
 
 Update Device
 
-<p>This request allows you to update device information, such as the assigned blueprint, user, Asset Tag, and Tags. It is not required to use all attributes in a given request. For example if you only want to update the assigned blueprint, you only need to pass the <code>blueprint_id</code> in the request payload.</p> <p><strong>NOTE</strong>: With the introduction of a UUID value for user ID in the <a href=&quot;https://api-docs.kandji.io/#b107eb0a-b586-414f-bc4c-3d2b304cfd5f&quot;>Users API</a>, the Device PATCH endpoint will support both the depricated user ID integer value and the new user ID UUID value when updating the user assignment for a device. The ability to update user assignment via the integer ID value will be removed starting January 2025.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> <h3 id=&quot;additional-information&quot;>Additional information</h3> <p>User ID can be found using the <code>list users</code> API</p> <p>A Blueprint ID can be found using the <code>list blueprints</code> API or in the URL path while on a Blueprint overview page.</p> <p>For example, for this URL <a href=&quot;https://subdomain.kandji.io/blueprints/6391086e-85a1-4820-813c-f9c75025fff4&quot;>https://subdomain.kandji.io/blueprints/6391086e-85a1-4820-813c-f9c75025fff4</a></p> <p>The Blueprint ID would be <code>6391086e-85a1-4820-813c-f9c75025fff4</code></p> <p>An example script that leverages this API can be found in the <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/update-device-record&quot;>Kandji Support GitHub</a></p> <h4 id=&quot;clearing-the-device-asset-tag&quot;>Clearing the device asset tag</h4> <p>To clear a device asset tag, set the <code>asset_tag</code> value to <code>null</code> in the JSON payload.</p> <pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{     &quot;asset_tag&quot;: null }  </code></pre> <h4 id=&quot;clearing-the-assigned-user-attribute&quot;>Clearing the assigned user attribute</h4> <p>To clear the assigned user for a given device, set the <code>user</code> value to <code>null</code> in the JSON payload.</p> <pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{     &quot;user&quot;: null }  </code></pre> <h4 id=&quot;clearing-all-tags&quot;>Clearing all tags</h4> <p>To clear the assigned tags for a given device, set the <code>tags</code> value to an empty list <code>[]</code> in the JSON payload.</p> <pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{     &quot;tags&quot;: [] }  </code></pre>
+<p>This request allows you to update device information, such as the assigned blueprint, user, Asset Tag, and Tags. It is not required to use all attributes in a given request. For example if you only want to update the assigned blueprint, you only need to pass the <code>blueprint_id</code> in the request payload.</p>
+<p><strong>NOTE</strong>: With the introduction of a UUID value for user ID in the <a href=&quot;https://api-docs.kandji.io/#b107eb0a-b586-414f-bc4c-3d2b304cfd5f&quot;>Users API</a>, the Device PATCH endpoint will support both the depricated user ID integer value and the new user ID UUID value when updating the user assignment for a device. The ability to update user assignment via the integer ID value will be removed starting January 2025.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>device_id</code> (path parameter): The unique identifier of the device.</p>
+<h3 id=&quot;additional-information&quot;>Additional information</h3>
+<p>User ID can be found using the <code>list users</code> API</p>
+<p>A Blueprint ID can be found using the <code>list blueprints</code> API or in the URL path while on a Blueprint overview page.</p>
+<p>For example, for this URL <a href=&quot;https://subdomain.kandji.io/blueprints/6391086e-85a1-4820-813c-f9c75025fff4&quot;>https://subdomain.kandji.io/blueprints/6391086e-85a1-4820-813c-f9c75025fff4</a></p>
+<p>The Blueprint ID would be <code>6391086e-85a1-4820-813c-f9c75025fff4</code></p>
+<p>An example script that leverages this API can be found in the <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/update-device-record&quot;>Kandji Support GitHub</a></p>
+<h4 id=&quot;clearing-the-device-asset-tag&quot;>Clearing the device asset tag</h4>
+<p>To clear a device asset tag, set the <code>asset_tag</code> value to <code>null</code> in the JSON payload.</p>
+<pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{
+    &quot;asset_tag&quot;: null
+}
+
+</code></pre>
+<h4 id=&quot;clearing-the-assigned-user-attribute&quot;>Clearing the assigned user attribute</h4>
+<p>To clear the assigned user for a given device, set the <code>user</code> value to <code>null</code> in the JSON payload.</p>
+<pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{
+    &quot;user&quot;: null
+}
+
+</code></pre>
+<h4 id=&quot;clearing-all-tags&quot;>Clearing all tags</h4>
+<p>To clear the assigned tags for a given device, set the <code>tags</code> value to an empty list <code>[]</code> in the JSON payload.</p>
+<pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{
+    &quot;tags&quot;: []
+}
+
+</code></pre>
 
 ### Example
 

@@ -381,7 +381,9 @@ Name | Type | Description  | Notes
 
 Count
 
-<p>Get the total record count for the specified Prism category.</p> <p>If a category contains spaces substitute the spaces for underscores (&quot;_&quot;) when using the API query.</p> <p>Example: <code>Device information</code> becomes <code>device_information</code>.</p>
+<p>Get the total record count for the specified Prism category.</p>
+<p>If a category contains spaces substitute the spaces for underscores (&quot;_&quot;) when using the API query.</p>
+<p>Example: <code>Device information</code> becomes <code>device_information</code>.</p>
 
 ### Example
 
@@ -813,7 +815,9 @@ Name | Type | Description  | Notes
 
 Get category export
 
-<p>Get an export request's status. To download the export, use the <code>signed_url</code>. This will download a CSV file containing the exported category information.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p>export_id (path parameter): The unique identifier of the the export job.</p>
+<p>Get an export request's status. To download the export, use the <code>signed_url</code>. This will download a CSV file containing the exported category information.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p>export_id (path parameter): The unique identifier of the the export job.</p>
 
 ### Example
 
@@ -1243,7 +1247,51 @@ Name | Type | Description  | Notes
 
 Request category export
 
-<p>Request export of a category. The <code>id</code> key is used when checking the export status using the <em>Request category export</em> endpoint.</p> <p><strong>Request Body Parameters: application/json</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Key</th> <th>Type</th> <th>Possible value(s)</th> <th>Description</th> </tr> </thead> <tbody> <tr> <td><code>blueprint_ids</code></td> <td><code>array</code></td> <td><code>[&quot;string&quot;, &quot;string&quot;, &quot;string&quot;]</code></td> <td>List of one or more comma separate blueprint IDs.</td> </tr> <tr> <td><code>category</code></td> <td><code>string</code></td> <td><code>apps</code> ,  <br /><code>activation_lock</code> ,  <br /><code>desktop_and_screensaver</code> ,  <br /><code>device_information</code> ,  <br /><code>gatekeeper_and_xprotect</code> ,  <br /><code>installed_profiles</code> ,  <br /><code>kernel_extensions</code> ,  <br /><code>local_users</code> ,  <br /><code>launch_agents_and_daemons</code> ,  <br /><code>system_extensions</code> ,  <br /><code>startup_settings</code> ,  <br /><code>transparency_database</code></td> <td>Only one category per export reqest.</td> </tr> <tr> <td><code>device_families</code></td> <td><code>array</code></td> <td><code>[&quot;Mac&quot;, &quot;iPhone&quot;, &quot;iPad&quot;, &quot;tvOS&quot;]</code></td> <td>List of one or more comma separted string values for device families.</td> </tr> <tr> <td><code>filter</code></td> <td><code>object</code></td> <td><code>{&quot;apple_silicon&quot;: {&quot;eq&quot;: true}, &quot;device__name&quot;: {&quot;like&quot;: [&quot;this&quot;, &quot;or_this&quot;]}}</code></td> <td>JSON schema object containing one or more key value pairs.  <br />  <br /><strong>Note</strong>: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</td> </tr> <tr> <td><code>sort_by</code></td> <td><code>string</code></td> <td></td> <td>Sort results by the name of a given response body key in either ascending (default behavior) or descending(`-`) order.</td> </tr> </tbody> </table> </div>
+<p>Request export of a category. The <code>id</code> key is used when checking the export status using the <em>Request category export</em> endpoint.</p>
+<p><strong>Request Body Parameters: application/json</strong></p>
+<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Possible value(s)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>blueprint_ids</code></td>
+<td><code>array</code></td>
+<td><code>[&quot;string&quot;, &quot;string&quot;, &quot;string&quot;]</code></td>
+<td>List of one or more comma separate blueprint IDs.</td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td><code>string</code></td>
+<td><code>apps</code> ,  <br /><code>activation_lock</code> ,  <br /><code>desktop_and_screensaver</code> ,  <br /><code>device_information</code> ,  <br /><code>gatekeeper_and_xprotect</code> ,  <br /><code>installed_profiles</code> ,  <br /><code>kernel_extensions</code> ,  <br /><code>local_users</code> ,  <br /><code>launch_agents_and_daemons</code> ,  <br /><code>system_extensions</code> ,  <br /><code>startup_settings</code> ,  <br /><code>transparency_database</code></td>
+<td>Only one category per export reqest.</td>
+</tr>
+<tr>
+<td><code>device_families</code></td>
+<td><code>array</code></td>
+<td><code>[&quot;Mac&quot;, &quot;iPhone&quot;, &quot;iPad&quot;, &quot;tvOS&quot;]</code></td>
+<td>List of one or more comma separted string values for device families.</td>
+</tr>
+<tr>
+<td><code>filter</code></td>
+<td><code>object</code></td>
+<td><code>{&quot;apple_silicon&quot;: {&quot;eq&quot;: true}, &quot;device__name&quot;: {&quot;like&quot;: [&quot;this&quot;, &quot;or_this&quot;]}}</code></td>
+<td>JSON schema object containing one or more key value pairs.  <br />  <br /><strong>Note</strong>: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</td>
+</tr>
+<tr>
+<td><code>sort_by</code></td>
+<td><code>string</code></td>
+<td></td>
+<td>Sort results by the name of a given response body key in either ascending (default behavior) or descending(`-`) order.</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 ### Example
 

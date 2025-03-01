@@ -13,7 +13,10 @@ Method | HTTP request | Description
 
 Get Library Item Activity
 
-<p>This endpoint retrieves the activity related to a specific library item. Activity is listed from newest to oldest.</p> <p>To see a delta of the activity events between now and the last request, you can store the newest entry from the previous request and then look for that entry in the next request. Any entry post that will be the delta.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
+<p>This endpoint retrieves the activity related to a specific library item. Activity is listed from newest to oldest.</p>
+<p>To see a delta of the activity events between now and the last request, you can store the newest entry from the previous request and then look for that entry in the next request. Any entry post that will be the delta.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
 ### Example
 
@@ -101,7 +104,9 @@ Name | Type | Description  | Notes
 
 Get Library Item Statuses
 
-<p>This endpoint retrieves the statuses related to a specific library item.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
+<p>This endpoint retrieves the statuses related to a specific library item.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
 ### Example
 

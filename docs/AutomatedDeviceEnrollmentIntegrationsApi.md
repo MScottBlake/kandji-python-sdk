@@ -22,7 +22,8 @@ Method | HTTP request | Description
 
 Create ADE integration
 
-<p>This request will create a new ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> downloaded from ABM are required and must be sent in the request.</p>
+<p>This request will create a new ADE integration.</p>
+<p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> downloaded from ABM are required and must be sent in the request.</p>
 
 ### Example
 
@@ -106,7 +107,10 @@ Name | Type | Description  | Notes
 
 Delete ADE integration
 
-<h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1> <p>This is a HIGHLY destructive action.</p> <p>Deleting an ADE token will unassign the associated device records from Kandji. For currently enrolled devices that were assigned to Kandji via the delete ADE integration will not be impacted until they are wiped and reprovisioned. This action is essentially the same as removing an ADE token from MDM and then adding it back.</p> <p>If applicable, be sure to reassign the device records in ABM.</p>
+<h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1>
+<p>This is a HIGHLY destructive action.</p>
+<p>Deleting an ADE token will unassign the associated device records from Kandji. For currently enrolled devices that were assigned to Kandji via the delete ADE integration will not be impacted until they are wiped and reprovisioned. This action is essentially the same as removing an ADE token from MDM and then adding it back.</p>
+<p>If applicable, be sure to reassign the device records in ABM.</p>
 
 ### Example
 
@@ -181,7 +185,8 @@ void (empty response body)
 
 Download ADE public key
 
-<p>This request returns the public key used to create an MDM server connection in Apple Business Manager.</p> <p>The encoded information needs to be saved to a file with the <code>.pem</code> format and then uploaded to ABM.</p>
+<p>This request returns the public key used to create an MDM server connection in Apple Business Manager.</p>
+<p>The encoded information needs to be saved to a file with the <code>.pem</code> format and then uploaded to ABM.</p>
 
 ### Example
 
@@ -573,7 +578,9 @@ void (empty response body)
 
 List devices associated to ADE token
 
-<p>This request returns a list of devices associated with a specified <code>ade_token_id</code> as well as their enrollment status.</p> <p>When the <code>mdm_device</code> key value is <code>null</code>, this can be taken as an indication that the device is awaiting enrollment into Kandji.</p> <p>When data is present within the mdm_device dictionary, you can reference the <code>device_id</code> as the ID of the enrolled device record.</p>
+<p>This request returns a list of devices associated with a specified <code>ade_token_id</code> as well as their enrollment status.</p>
+<p>When the <code>mdm_device</code> key value is <code>null</code>, this can be taken as an indication that the device is awaiting enrollment into Kandji.</p>
+<p>When data is present within the mdm_device dictionary, you can reference the <code>device_id</code> as the ID of the enrolled device record.</p>
 
 ### Example
 
@@ -653,7 +660,8 @@ Name | Type | Description  | Notes
 
 Renew ADE integration
 
-<p>This request will renew an existing ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> from the associated MDM server in ABM are required and must be sent in the request.</p>
+<p>This request will renew an existing ADE integration.</p>
+<p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> from the associated MDM server in ABM are required and must be sent in the request.</p>
 
 ### Example
 
@@ -736,7 +744,9 @@ void (empty response body)
 
 Update ADE device
 
-<p>Update a specific Automated Device Enrollment device's blueprint assignment, user assignment, and asset tag.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p>
+<p>Update a specific Automated Device Enrollment device's blueprint assignment, user assignment, and asset tag.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>device_id</code> (path parameter): The unique identifier of the device.</p>
 
 ### Example
 
@@ -816,7 +826,8 @@ Name | Type | Description  | Notes
 
 Update ADE integration
 
-<p>This request will update the default blueprint, phone number, and email address in an existing ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, and <code>email</code> address must be sent in the request.</p>
+<p>This request will update the default blueprint, phone number, and email address in an existing ADE integration.</p>
+<p>The default <code>blueprint_id</code>, <code>phone</code> number, and <code>email</code> address must be sent in the request.</p>
 
 ### Example
 

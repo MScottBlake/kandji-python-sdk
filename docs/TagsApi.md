@@ -93,7 +93,9 @@ Name | Type | Description  | Notes
 
 Delete Tag
 
-<p>Delete a tag.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>tag_id</code> (path parameter): The unique identifier of the tag.</p>
+<p>Delete a tag.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>tag_id</code> (path parameter): The unique identifier of the tag.</p>
 
 ### Example
 
@@ -246,7 +248,9 @@ Name | Type | Description  | Notes
 
 Update Tag
 
-<p>Update tag name.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>tag_id</code> (path parameter): The unique identifier of the tag.</p>
+<p>Update tag name.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>tag_id</code> (path parameter): The unique identifier of the tag.</p>
 
 ### Example
 

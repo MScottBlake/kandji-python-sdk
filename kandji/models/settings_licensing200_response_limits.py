@@ -28,11 +28,11 @@ class SettingsLicensing200ResponseLimits(BaseModel):
     """
     SettingsLicensing200ResponseLimits
     """ # noqa: E501
-    plan_type: Optional[StrictStr] = None
     max_devices: Optional[StrictInt] = None
     max_devices_per_platform: Optional[SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform] = None
+    plan_type: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["plan_type", "max_devices", "max_devices_per_platform"]
+    __properties: ClassVar[List[str]] = ["max_devices", "max_devices_per_platform", "plan_type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,9 +95,9 @@ class SettingsLicensing200ResponseLimits(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "plan_type": obj.get("plan_type"),
             "max_devices": obj.get("max_devices"),
-            "max_devices_per_platform": SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform.from_dict(obj["max_devices_per_platform"]) if obj.get("max_devices_per_platform") is not None else None
+            "max_devices_per_platform": SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform.from_dict(obj["max_devices_per_platform"]) if obj.get("max_devices_per_platform") is not None else None,
+            "plan_type": obj.get("plan_type")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mdm_enabled** | **str** |  | [optional] 
-**supervised** | **str** |  | [optional] 
 **install_date** | **str** |  | [optional] 
 **last_check_in** | **str** |  | [optional] 
+**mdm_enabled** | **str** |  | [optional] 
 **mdm_enabled_user** | **object** |  | [optional] 
+**supervised** | **str** |  | [optional] 
 
 ## Example
 

@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**offset** | **int** |  | [optional] 
-**limit** | **int** |  | [optional] 
-**total** | **int** |  | [optional] 
-**data** | **object** |  | [optional] 
 **cursor** | **object** |  | [optional] 
+**data** | **object** |  | [optional] 
+**limit** | **int** |  | [optional] 
+**offset** | **int** |  | [optional] 
+**total** | **int** |  | [optional] 
 
 ## Example
 

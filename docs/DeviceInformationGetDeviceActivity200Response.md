@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**activity** | [**BlueprintsListBlueprints200Response**](BlueprintsListBlueprints200Response.md) |  | [optional] 
 **device_id** | **str** |  | [optional] 
-**activity** | [**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md) |  | [optional] 
 
 ## Example
 

@@ -20,9 +20,9 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import Any, Dict, Optional
 from typing_extensions import Annotated
-from kandji.models.automated_device_enrollment_integrations_list_ade_devices200_response import AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
 from kandji.models.blueprints_create_blueprint201_response import BlueprintsCreateBlueprint201Response
 from kandji.models.blueprints_get_blueprint200_response import BlueprintsGetBlueprint200Response
+from kandji.models.blueprints_list_blueprints200_response import BlueprintsListBlueprints200Response
 from kandji.models.blueprints_update_blueprint200_response import BlueprintsUpdateBlueprint200Response
 
 from kandji.api_client import ApiClient, RequestSerialized
@@ -335,11 +335,11 @@ class BlueprintsApi:
     @validate_call
     def create_blueprint(
         self,
-        name: Annotated[StrictStr, Field(description="(required) Set the name of the Blueprint. The name provided must be unique.")],
-        enrollment_code_is_active: Annotated[StrictStr, Field(description="(required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal")],
         enrollment_code_code: Annotated[StrictStr, Field(description="Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app.")],
-        source_type: Annotated[StrictStr, Field(description="Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>.")],
+        enrollment_code_is_active: Annotated[StrictStr, Field(description="(required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal")],
+        name: Annotated[StrictStr, Field(description="(required) Set the name of the Blueprint. The name provided must be unique.")],
         source_id: Annotated[StrictStr, Field(description="Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint.")],
+        source_type: Annotated[StrictStr, Field(description="Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>.")],
         type: Annotated[StrictStr, Field(description="Choose the type of blueprint to create. Options: <code>classic</code> or <code>map</code>")],
         _request_timeout: Union[
             None,
@@ -358,16 +358,16 @@ class BlueprintsApi:
 
         <p>This request creates a new empty Blueprint or a new Blueprint from a template. The keys <code>name</code> and <code>enrollment_code</code> <code>is_active</code> are required, and the blueprint name key must be unique from the existing blueprint names in the Kandji tenant.</p> <p>optionally, <code>type: map</code> can be used when creating a new Assignment Map blueprint.</p> <p>Note: If cloning an existing blueprint,`type` value and the type of sourced (`source.id`) blueprint must match and `source.type` value must be set to `blueprint`.</p>
 
-        :param name: (required) Set the name of the Blueprint. The name provided must be unique. (required)
-        :type name: str
-        :param enrollment_code_is_active: (required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal (required)
-        :type enrollment_code_is_active: str
         :param enrollment_code_code: Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app. (required)
         :type enrollment_code_code: str
-        :param source_type: Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>. (required)
-        :type source_type: str
+        :param enrollment_code_is_active: (required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal (required)
+        :type enrollment_code_is_active: str
+        :param name: (required) Set the name of the Blueprint. The name provided must be unique. (required)
+        :type name: str
         :param source_id: Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint. (required)
         :type source_id: str
+        :param source_type: Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>. (required)
+        :type source_type: str
         :param type: Choose the type of blueprint to create. Options: <code>classic</code> or <code>map</code> (required)
         :type type: str
         :param _request_timeout: timeout setting for this request. If one
@@ -393,11 +393,11 @@ class BlueprintsApi:
         """ # noqa: E501
 
         _param = self._create_blueprint_serialize(
-            name=name,
-            enrollment_code_is_active=enrollment_code_is_active,
             enrollment_code_code=enrollment_code_code,
-            source_type=source_type,
+            enrollment_code_is_active=enrollment_code_is_active,
+            name=name,
             source_id=source_id,
+            source_type=source_type,
             type=type,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -423,11 +423,11 @@ class BlueprintsApi:
     @validate_call
     def create_blueprint_with_http_info(
         self,
-        name: Annotated[StrictStr, Field(description="(required) Set the name of the Blueprint. The name provided must be unique.")],
-        enrollment_code_is_active: Annotated[StrictStr, Field(description="(required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal")],
         enrollment_code_code: Annotated[StrictStr, Field(description="Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app.")],
-        source_type: Annotated[StrictStr, Field(description="Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>.")],
+        enrollment_code_is_active: Annotated[StrictStr, Field(description="(required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal")],
+        name: Annotated[StrictStr, Field(description="(required) Set the name of the Blueprint. The name provided must be unique.")],
         source_id: Annotated[StrictStr, Field(description="Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint.")],
+        source_type: Annotated[StrictStr, Field(description="Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>.")],
         type: Annotated[StrictStr, Field(description="Choose the type of blueprint to create. Options: <code>classic</code> or <code>map</code>")],
         _request_timeout: Union[
             None,
@@ -446,16 +446,16 @@ class BlueprintsApi:
 
         <p>This request creates a new empty Blueprint or a new Blueprint from a template. The keys <code>name</code> and <code>enrollment_code</code> <code>is_active</code> are required, and the blueprint name key must be unique from the existing blueprint names in the Kandji tenant.</p> <p>optionally, <code>type: map</code> can be used when creating a new Assignment Map blueprint.</p> <p>Note: If cloning an existing blueprint,`type` value and the type of sourced (`source.id`) blueprint must match and `source.type` value must be set to `blueprint`.</p>
 
-        :param name: (required) Set the name of the Blueprint. The name provided must be unique. (required)
-        :type name: str
-        :param enrollment_code_is_active: (required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal (required)
-        :type enrollment_code_is_active: str
         :param enrollment_code_code: Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app. (required)
         :type enrollment_code_code: str
-        :param source_type: Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>. (required)
-        :type source_type: str
+        :param enrollment_code_is_active: (required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal (required)
+        :type enrollment_code_is_active: str
+        :param name: (required) Set the name of the Blueprint. The name provided must be unique. (required)
+        :type name: str
         :param source_id: Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint. (required)
         :type source_id: str
+        :param source_type: Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>. (required)
+        :type source_type: str
         :param type: Choose the type of blueprint to create. Options: <code>classic</code> or <code>map</code> (required)
         :type type: str
         :param _request_timeout: timeout setting for this request. If one
@@ -481,11 +481,11 @@ class BlueprintsApi:
         """ # noqa: E501
 
         _param = self._create_blueprint_serialize(
-            name=name,
-            enrollment_code_is_active=enrollment_code_is_active,
             enrollment_code_code=enrollment_code_code,
-            source_type=source_type,
+            enrollment_code_is_active=enrollment_code_is_active,
+            name=name,
             source_id=source_id,
+            source_type=source_type,
             type=type,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -511,11 +511,11 @@ class BlueprintsApi:
     @validate_call
     def create_blueprint_without_preload_content(
         self,
-        name: Annotated[StrictStr, Field(description="(required) Set the name of the Blueprint. The name provided must be unique.")],
-        enrollment_code_is_active: Annotated[StrictStr, Field(description="(required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal")],
         enrollment_code_code: Annotated[StrictStr, Field(description="Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app.")],
-        source_type: Annotated[StrictStr, Field(description="Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>.")],
+        enrollment_code_is_active: Annotated[StrictStr, Field(description="(required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal")],
+        name: Annotated[StrictStr, Field(description="(required) Set the name of the Blueprint. The name provided must be unique.")],
         source_id: Annotated[StrictStr, Field(description="Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint.")],
+        source_type: Annotated[StrictStr, Field(description="Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>.")],
         type: Annotated[StrictStr, Field(description="Choose the type of blueprint to create. Options: <code>classic</code> or <code>map</code>")],
         _request_timeout: Union[
             None,
@@ -534,16 +534,16 @@ class BlueprintsApi:
 
         <p>This request creates a new empty Blueprint or a new Blueprint from a template. The keys <code>name</code> and <code>enrollment_code</code> <code>is_active</code> are required, and the blueprint name key must be unique from the existing blueprint names in the Kandji tenant.</p> <p>optionally, <code>type: map</code> can be used when creating a new Assignment Map blueprint.</p> <p>Note: If cloning an existing blueprint,`type` value and the type of sourced (`source.id`) blueprint must match and `source.type` value must be set to `blueprint`.</p>
 
-        :param name: (required) Set the name of the Blueprint. The name provided must be unique. (required)
-        :type name: str
-        :param enrollment_code_is_active: (required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal (required)
-        :type enrollment_code_is_active: str
         :param enrollment_code_code: Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app. (required)
         :type enrollment_code_code: str
-        :param source_type: Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>. (required)
-        :type source_type: str
+        :param enrollment_code_is_active: (required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal (required)
+        :type enrollment_code_is_active: str
+        :param name: (required) Set the name of the Blueprint. The name provided must be unique. (required)
+        :type name: str
         :param source_id: Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint. (required)
         :type source_id: str
+        :param source_type: Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>. (required)
+        :type source_type: str
         :param type: Choose the type of blueprint to create. Options: <code>classic</code> or <code>map</code> (required)
         :type type: str
         :param _request_timeout: timeout setting for this request. If one
@@ -569,11 +569,11 @@ class BlueprintsApi:
         """ # noqa: E501
 
         _param = self._create_blueprint_serialize(
-            name=name,
-            enrollment_code_is_active=enrollment_code_is_active,
             enrollment_code_code=enrollment_code_code,
-            source_type=source_type,
+            enrollment_code_is_active=enrollment_code_is_active,
+            name=name,
             source_id=source_id,
+            source_type=source_type,
             type=type,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -594,11 +594,11 @@ class BlueprintsApi:
 
     def _create_blueprint_serialize(
         self,
-        name,
-        enrollment_code_is_active,
         enrollment_code_code,
-        source_type,
+        enrollment_code_is_active,
+        name,
         source_id,
+        source_type,
         type,
         _request_auth,
         _content_type,
@@ -624,16 +624,16 @@ class BlueprintsApi:
         # process the query parameters
         # process the header parameters
         # process the form parameters
-        if name is not None:
-            _form_params.append(('name', name))
-        if enrollment_code_is_active is not None:
-            _form_params.append(('enrollment_code.is_active', enrollment_code_is_active))
         if enrollment_code_code is not None:
             _form_params.append(('enrollment_code.code', enrollment_code_code))
-        if source_type is not None:
-            _form_params.append(('source.type', source_type))
+        if enrollment_code_is_active is not None:
+            _form_params.append(('enrollment_code.is_active', enrollment_code_is_active))
+        if name is not None:
+            _form_params.append(('name', name))
         if source_id is not None:
             _form_params.append(('source.id', source_id))
+        if source_type is not None:
+            _form_params.append(('source.type', source_type))
         if type is not None:
             _form_params.append(('type', type))
         # process the body parameter
@@ -1767,7 +1767,7 @@ class BlueprintsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response:
+    ) -> BlueprintsListBlueprints200Response:
         """List Blueprints
 
         This request returns a list of a blueprint records in the Kandji tenant. Optional query parameters can be specified to filter the results.
@@ -1817,7 +1817,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
+            '200': "BlueprintsListBlueprints200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1850,7 +1850,7 @@ class BlueprintsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response]:
+    ) -> ApiResponse[BlueprintsListBlueprints200Response]:
         """List Blueprints
 
         This request returns a list of a blueprint records in the Kandji tenant. Optional query parameters can be specified to filter the results.
@@ -1900,7 +1900,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
+            '200': "BlueprintsListBlueprints200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1983,7 +1983,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
+            '200': "BlueprintsListBlueprints200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2094,7 +2094,7 @@ class BlueprintsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response:
+    ) -> BlueprintsListBlueprints200Response:
         """List Library Items
 
         <p>This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=&quot;response-fields&quot;>Response fields</h3> <ul> <li><p><code>count</code> (int): The total count of library items.</p> </li> <li><p><code>next</code> (str): The URL for the next page of results, if available. If not available will value will be <code>null</code>.</p> </li> <li><p><code>previous</code> (str): The URL for the previous page of results, if available. If not available will value will be <code>null</code>.</p> </li> <li><p><code>results</code> (object): An array containing objects with the following fields:</p> <ul> <li><p><code>id</code> (str): The ID of the library item.</p> </li> <li><p><code>name</code> (str): The name of the library item.</p> </li> </ul> </li> </ul>
@@ -2132,7 +2132,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
+            '200': "BlueprintsListBlueprints200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2161,7 +2161,7 @@ class BlueprintsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response]:
+    ) -> ApiResponse[BlueprintsListBlueprints200Response]:
         """List Library Items
 
         <p>This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=&quot;response-fields&quot;>Response fields</h3> <ul> <li><p><code>count</code> (int): The total count of library items.</p> </li> <li><p><code>next</code> (str): The URL for the next page of results, if available. If not available will value will be <code>null</code>.</p> </li> <li><p><code>previous</code> (str): The URL for the previous page of results, if available. If not available will value will be <code>null</code>.</p> </li> <li><p><code>results</code> (object): An array containing objects with the following fields:</p> <ul> <li><p><code>id</code> (str): The ID of the library item.</p> </li> <li><p><code>name</code> (str): The name of the library item.</p> </li> </ul> </li> </ul>
@@ -2199,7 +2199,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
+            '200': "BlueprintsListBlueprints200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2266,7 +2266,7 @@ class BlueprintsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
+            '200': "BlueprintsListBlueprints200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2632,10 +2632,10 @@ class BlueprintsApi:
     def update_blueprint(
         self,
         blueprint_id: StrictStr,
-        name: Annotated[StrictStr, Field(description="Update the name of the Blueprint")],
         description: Annotated[StrictStr, Field(description="Update the description of the Blueprint ")],
         enrollment_code_code: Annotated[StrictStr, Field(description="Update the enrollment code of the Blueprint ")],
         enrollment_code_is_active: Annotated[StrictStr, Field(description="Disable the Blueprint for manual device enrollment from the enrollment portal.")],
+        name: Annotated[StrictStr, Field(description="Update the name of the Blueprint")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2655,14 +2655,14 @@ class BlueprintsApi:
 
         :param blueprint_id: (required)
         :type blueprint_id: str
-        :param name: Update the name of the Blueprint (required)
-        :type name: str
         :param description: Update the description of the Blueprint  (required)
         :type description: str
         :param enrollment_code_code: Update the enrollment code of the Blueprint  (required)
         :type enrollment_code_code: str
         :param enrollment_code_is_active: Disable the Blueprint for manual device enrollment from the enrollment portal. (required)
         :type enrollment_code_is_active: str
+        :param name: Update the name of the Blueprint (required)
+        :type name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2687,10 +2687,10 @@ class BlueprintsApi:
 
         _param = self._update_blueprint_serialize(
             blueprint_id=blueprint_id,
-            name=name,
             description=description,
             enrollment_code_code=enrollment_code_code,
             enrollment_code_is_active=enrollment_code_is_active,
+            name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2715,10 +2715,10 @@ class BlueprintsApi:
     def update_blueprint_with_http_info(
         self,
         blueprint_id: StrictStr,
-        name: Annotated[StrictStr, Field(description="Update the name of the Blueprint")],
         description: Annotated[StrictStr, Field(description="Update the description of the Blueprint ")],
         enrollment_code_code: Annotated[StrictStr, Field(description="Update the enrollment code of the Blueprint ")],
         enrollment_code_is_active: Annotated[StrictStr, Field(description="Disable the Blueprint for manual device enrollment from the enrollment portal.")],
+        name: Annotated[StrictStr, Field(description="Update the name of the Blueprint")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2738,14 +2738,14 @@ class BlueprintsApi:
 
         :param blueprint_id: (required)
         :type blueprint_id: str
-        :param name: Update the name of the Blueprint (required)
-        :type name: str
         :param description: Update the description of the Blueprint  (required)
         :type description: str
         :param enrollment_code_code: Update the enrollment code of the Blueprint  (required)
         :type enrollment_code_code: str
         :param enrollment_code_is_active: Disable the Blueprint for manual device enrollment from the enrollment portal. (required)
         :type enrollment_code_is_active: str
+        :param name: Update the name of the Blueprint (required)
+        :type name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2770,10 +2770,10 @@ class BlueprintsApi:
 
         _param = self._update_blueprint_serialize(
             blueprint_id=blueprint_id,
-            name=name,
             description=description,
             enrollment_code_code=enrollment_code_code,
             enrollment_code_is_active=enrollment_code_is_active,
+            name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2798,10 +2798,10 @@ class BlueprintsApi:
     def update_blueprint_without_preload_content(
         self,
         blueprint_id: StrictStr,
-        name: Annotated[StrictStr, Field(description="Update the name of the Blueprint")],
         description: Annotated[StrictStr, Field(description="Update the description of the Blueprint ")],
         enrollment_code_code: Annotated[StrictStr, Field(description="Update the enrollment code of the Blueprint ")],
         enrollment_code_is_active: Annotated[StrictStr, Field(description="Disable the Blueprint for manual device enrollment from the enrollment portal.")],
+        name: Annotated[StrictStr, Field(description="Update the name of the Blueprint")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2821,14 +2821,14 @@ class BlueprintsApi:
 
         :param blueprint_id: (required)
         :type blueprint_id: str
-        :param name: Update the name of the Blueprint (required)
-        :type name: str
         :param description: Update the description of the Blueprint  (required)
         :type description: str
         :param enrollment_code_code: Update the enrollment code of the Blueprint  (required)
         :type enrollment_code_code: str
         :param enrollment_code_is_active: Disable the Blueprint for manual device enrollment from the enrollment portal. (required)
         :type enrollment_code_is_active: str
+        :param name: Update the name of the Blueprint (required)
+        :type name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2853,10 +2853,10 @@ class BlueprintsApi:
 
         _param = self._update_blueprint_serialize(
             blueprint_id=blueprint_id,
-            name=name,
             description=description,
             enrollment_code_code=enrollment_code_code,
             enrollment_code_is_active=enrollment_code_is_active,
+            name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2876,10 +2876,10 @@ class BlueprintsApi:
     def _update_blueprint_serialize(
         self,
         blueprint_id,
-        name,
         description,
         enrollment_code_code,
         enrollment_code_is_active,
+        name,
         _request_auth,
         _content_type,
         _headers,
@@ -2906,14 +2906,14 @@ class BlueprintsApi:
         # process the query parameters
         # process the header parameters
         # process the form parameters
-        if name is not None:
-            _form_params.append(('name', name))
         if description is not None:
             _form_params.append(('description', description))
         if enrollment_code_code is not None:
             _form_params.append(('enrollment_code.code', enrollment_code_code))
         if enrollment_code_is_active is not None:
             _form_params.append(('enrollment_code.is_active', enrollment_code_is_active))
+        if name is not None:
+            _form_params.append(('name', name))
         # process the body parameter
 
 

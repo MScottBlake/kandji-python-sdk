@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **email** | **str** |  | [optional] 
-**name** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **is_archived** | **int** |  | [optional] 
+**name** | **str** |  | [optional] 
 
 ## Example
 

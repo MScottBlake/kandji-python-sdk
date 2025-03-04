@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total** | **int** |  | [optional] 
 **next** | **object** |  | [optional] 
 **previous** | **object** |  | [optional] 
 **results** | **object** |  | [optional] 
+**total** | **int** |  | [optional] 
 
 ## Example
 

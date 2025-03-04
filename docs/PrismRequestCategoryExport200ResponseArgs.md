@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**filter** | **object** |  | [optional] 
-**columns** | **object** |  | [optional] 
-**sort_by** | **str** |  | [optional] 
 **blueprint_ids** | **object** |  | [optional] 
+**columns** | **object** |  | [optional] 
 **device_families** | **object** |  | [optional] 
+**filter** | **object** |  | [optional] 
+**sort_by** | **str** |  | [optional] 
 
 ## Example
 

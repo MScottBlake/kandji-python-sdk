@@ -27,25 +27,25 @@ class DeviceInformationGetDeviceDetails200ResponseGeneral(BaseModel):
     """
     DeviceInformationGetDeviceDetails200ResponseGeneral
     """ # noqa: E501
-    device_id: Optional[StrictStr] = None
-    device_name: Optional[StrictStr] = None
-    last_enrollment: Optional[StrictStr] = None
-    first_enrollment: Optional[StrictStr] = None
-    model: Optional[StrictStr] = None
-    platform: Optional[StrictStr] = None
-    os_version: Optional[StrictStr] = None
-    supplemental_build_version: Optional[StrictStr] = None
-    supplemental_os_version_extra: Optional[StrictStr] = None
-    system_version: Optional[StrictStr] = None
-    boot_volume: Optional[StrictStr] = None
-    time_since_boot: Optional[StrictStr] = None
-    last_user: Optional[StrictStr] = None
     asset_tag: Optional[StrictStr] = None
     assigned_user: Optional[StrictStr] = None
     blueprint_name: Optional[StrictStr] = None
     blueprint_uuid: Optional[StrictStr] = None
+    boot_volume: Optional[StrictStr] = None
+    device_id: Optional[StrictStr] = None
+    device_name: Optional[StrictStr] = None
+    first_enrollment: Optional[StrictStr] = None
+    last_enrollment: Optional[StrictStr] = None
+    last_user: Optional[StrictStr] = None
+    model: Optional[StrictStr] = None
+    os_version: Optional[StrictStr] = None
+    platform: Optional[StrictStr] = None
+    supplemental_build_version: Optional[StrictStr] = None
+    supplemental_os_version_extra: Optional[StrictStr] = None
+    system_version: Optional[StrictStr] = None
+    time_since_boot: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["device_id", "device_name", "last_enrollment", "first_enrollment", "model", "platform", "os_version", "supplemental_build_version", "supplemental_os_version_extra", "system_version", "boot_volume", "time_since_boot", "last_user", "asset_tag", "assigned_user", "blueprint_name", "blueprint_uuid"]
+    __properties: ClassVar[List[str]] = ["asset_tag", "assigned_user", "blueprint_name", "blueprint_uuid", "boot_volume", "device_id", "device_name", "first_enrollment", "last_enrollment", "last_user", "model", "os_version", "platform", "supplemental_build_version", "supplemental_os_version_extra", "system_version", "time_since_boot"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -105,23 +105,23 @@ class DeviceInformationGetDeviceDetails200ResponseGeneral(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "device_id": obj.get("device_id"),
-            "device_name": obj.get("device_name"),
-            "last_enrollment": obj.get("last_enrollment"),
-            "first_enrollment": obj.get("first_enrollment"),
-            "model": obj.get("model"),
-            "platform": obj.get("platform"),
-            "os_version": obj.get("os_version"),
-            "supplemental_build_version": obj.get("supplemental_build_version"),
-            "supplemental_os_version_extra": obj.get("supplemental_os_version_extra"),
-            "system_version": obj.get("system_version"),
-            "boot_volume": obj.get("boot_volume"),
-            "time_since_boot": obj.get("time_since_boot"),
-            "last_user": obj.get("last_user"),
             "asset_tag": obj.get("asset_tag"),
             "assigned_user": obj.get("assigned_user"),
             "blueprint_name": obj.get("blueprint_name"),
-            "blueprint_uuid": obj.get("blueprint_uuid")
+            "blueprint_uuid": obj.get("blueprint_uuid"),
+            "boot_volume": obj.get("boot_volume"),
+            "device_id": obj.get("device_id"),
+            "device_name": obj.get("device_name"),
+            "first_enrollment": obj.get("first_enrollment"),
+            "last_enrollment": obj.get("last_enrollment"),
+            "last_user": obj.get("last_user"),
+            "model": obj.get("model"),
+            "os_version": obj.get("os_version"),
+            "platform": obj.get("platform"),
+            "supplemental_build_version": obj.get("supplemental_build_version"),
+            "supplemental_os_version_extra": obj.get("supplemental_os_version_extra"),
+            "system_version": obj.get("system_version"),
+            "time_since_boot": obj.get("time_since_boot")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

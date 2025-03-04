@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] 
-**enrolled_at** | **str** |  | [optional] 
-**name** | **str** |  | [optional] 
-**enrollment_status** | **int** |  | [optional] 
 **deferred_install** | **int** |  | [optional] 
+**enrolled_at** | **str** |  | [optional] 
+**enrollment_status** | **int** |  | [optional] 
+**id** | **str** |  | [optional] 
 **is_missing** | **int** |  | [optional] 
 **is_removed** | **int** |  | [optional] 
+**name** | **str** |  | [optional] 
 
 ## Example
 

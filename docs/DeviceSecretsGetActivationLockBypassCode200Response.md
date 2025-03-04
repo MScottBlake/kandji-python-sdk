@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**user_based_albc** | **str** |  | [optional] 
 **device_based_albc** | **str** |  | [optional] 
+**user_based_albc** | **str** |  | [optional] 
 
 ## Example
 

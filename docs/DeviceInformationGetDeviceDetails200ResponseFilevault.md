@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **filevault_enabled** | **object** |  | [optional] 
-**filevault_recoverykey_type** | **str** |  | [optional] 
-**filevault_prk_escrowed** | **int** |  | [optional] 
 **filevault_next_rotation** | **str** |  | [optional] 
+**filevault_prk_escrowed** | **int** |  | [optional] 
+**filevault_recoverykey_type** | **str** |  | [optional] 
 **filevault_regen_required** | **int** |  | [optional] 
 
 ## Example

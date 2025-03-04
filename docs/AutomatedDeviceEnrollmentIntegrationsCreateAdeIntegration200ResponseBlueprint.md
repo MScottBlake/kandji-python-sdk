@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**color** | **str** |  | [optional] 
+**icon** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
-**icon** | **str** |  | [optional] 
-**color** | **str** |  | [optional] 
 
 ## Example
 

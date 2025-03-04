@@ -29,10 +29,10 @@ class UsersGetUser200ResponseIntegration(BaseModel):
     """ # noqa: E501
     id: Optional[StrictInt] = None
     name: Optional[StrictStr] = None
-    uuid: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
+    uuid: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["id", "name", "uuid", "type"]
+    __properties: ClassVar[List[str]] = ["id", "name", "type", "uuid"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,8 +94,8 @@ class UsersGetUser200ResponseIntegration(BaseModel):
         _obj = cls.model_validate({
             "id": obj.get("id"),
             "name": obj.get("name"),
-            "uuid": obj.get("uuid"),
-            "type": obj.get("type")
+            "type": obj.get("type"),
+            "uuid": obj.get("uuid")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

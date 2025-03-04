@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**model** | **str** |  | [optional] 
 **color** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
-**serial_number** | **str** |  | [optional] 
-**device_family** | **str** |  | [optional] 
-**os** | **str** |  | [optional] 
-**device_assigned_date** | **str** |  | [optional] 
 **device_assigned_by** | **str** |  | [optional] 
+**device_assigned_date** | **str** |  | [optional] 
+**device_family** | **str** |  | [optional] 
+**model** | **str** |  | [optional] 
+**os** | **str** |  | [optional] 
+**serial_number** | **str** |  | [optional] 
 
 ## Example
 

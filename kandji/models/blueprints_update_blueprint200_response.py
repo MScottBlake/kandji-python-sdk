@@ -28,17 +28,17 @@ class BlueprintsUpdateBlueprint200Response(BaseModel):
     """
     BlueprintsUpdateBlueprint200Response
     """ # noqa: E501
-    id: Optional[StrictStr] = None
-    name: Optional[StrictStr] = None
-    icon: Optional[StrictStr] = None
     color: Optional[StrictStr] = None
-    description: Optional[StrictStr] = None
-    params: Optional[Dict[str, Any]] = None
     computers_count: Optional[StrictInt] = None
-    missing_computers_count: Optional[StrictInt] = None
+    description: Optional[StrictStr] = None
     enrollment_code: Optional[BlueprintsCreateBlueprint201ResponseEnrollmentCode] = None
+    icon: Optional[StrictStr] = None
+    id: Optional[StrictStr] = None
+    missing_computers_count: Optional[StrictInt] = None
+    name: Optional[StrictStr] = None
+    params: Optional[Dict[str, Any]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["id", "name", "icon", "color", "description", "params", "computers_count", "missing_computers_count", "enrollment_code"]
+    __properties: ClassVar[List[str]] = ["color", "computers_count", "description", "enrollment_code", "icon", "id", "missing_computers_count", "name", "params"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -101,15 +101,15 @@ class BlueprintsUpdateBlueprint200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "name": obj.get("name"),
-            "icon": obj.get("icon"),
             "color": obj.get("color"),
-            "description": obj.get("description"),
-            "params": obj.get("params"),
             "computers_count": obj.get("computers_count"),
+            "description": obj.get("description"),
+            "enrollment_code": BlueprintsCreateBlueprint201ResponseEnrollmentCode.from_dict(obj["enrollment_code"]) if obj.get("enrollment_code") is not None else None,
+            "icon": obj.get("icon"),
+            "id": obj.get("id"),
             "missing_computers_count": obj.get("missing_computers_count"),
-            "enrollment_code": BlueprintsCreateBlueprint201ResponseEnrollmentCode.from_dict(obj["enrollment_code"]) if obj.get("enrollment_code") is not None else None
+            "name": obj.get("name"),
+            "params": obj.get("params")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

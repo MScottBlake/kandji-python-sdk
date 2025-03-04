@@ -27,12 +27,12 @@ class DeviceInformationGetDeviceDetails200ResponseRecoveryInformation(BaseModel)
     """
     DeviceInformationGetDeviceDetails200ResponseRecoveryInformation
     """ # noqa: E501
-    recovery_lock_enabled: Optional[StrictInt] = None
     firmware_password_exist: Optional[StrictInt] = None
     firmware_password_pending: Optional[StrictInt] = None
     password_rotation_scheduled: Optional[Any] = None
+    recovery_lock_enabled: Optional[StrictInt] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["recovery_lock_enabled", "firmware_password_exist", "firmware_password_pending", "password_rotation_scheduled"]
+    __properties: ClassVar[List[str]] = ["firmware_password_exist", "firmware_password_pending", "password_rotation_scheduled", "recovery_lock_enabled"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,10 +97,10 @@ class DeviceInformationGetDeviceDetails200ResponseRecoveryInformation(BaseModel)
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "recovery_lock_enabled": obj.get("recovery_lock_enabled"),
             "firmware_password_exist": obj.get("firmware_password_exist"),
             "firmware_password_pending": obj.get("firmware_password_pending"),
-            "password_rotation_scheduled": obj.get("password_rotation_scheduled")
+            "password_rotation_scheduled": obj.get("password_rotation_scheduled"),
+            "recovery_lock_enabled": obj.get("recovery_lock_enabled")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

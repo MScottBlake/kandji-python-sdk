@@ -30,27 +30,27 @@ class AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response(BaseM
     """
     AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response
     """ # noqa: E501
-    id: Optional[StrictStr] = None
-    blueprint: Optional[AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint] = None
     access_token_expiry: Optional[StrictStr] = None
+    admin_id: Optional[StrictStr] = None
+    blueprint: Optional[AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint] = None
+    days_left: Optional[StrictInt] = None
+    defaults: Optional[AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults] = None
+    device_counts: Optional[AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts] = None
+    id: Optional[StrictStr] = None
+    last_device_sync: Optional[Any] = None
+    org_address: Optional[StrictStr] = None
+    org_email: Optional[StrictStr] = None
+    org_name: Optional[StrictStr] = None
+    org_phone: Optional[StrictStr] = None
+    org_type: Optional[StrictStr] = None
     server_name: Optional[StrictStr] = None
     server_uuid: Optional[StrictStr] = None
-    admin_id: Optional[StrictStr] = None
-    org_name: Optional[StrictStr] = None
-    org_email: Optional[StrictStr] = None
-    org_phone: Optional[StrictStr] = None
-    org_address: Optional[StrictStr] = None
-    org_type: Optional[StrictStr] = None
-    stoken_file_name: Optional[StrictStr] = None
-    last_device_sync: Optional[Any] = None
-    defaults: Optional[AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults] = None
-    days_left: Optional[StrictInt] = None
     status: Optional[StrictStr] = None
     status_reason: Optional[Any] = None
     status_received_at: Optional[Any] = None
-    device_counts: Optional[AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts] = None
+    stoken_file_name: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["id", "blueprint", "access_token_expiry", "server_name", "server_uuid", "admin_id", "org_name", "org_email", "org_phone", "org_address", "org_type", "stoken_file_name", "last_device_sync", "defaults", "days_left", "status", "status_reason", "status_received_at", "device_counts"]
+    __properties: ClassVar[List[str]] = ["access_token_expiry", "admin_id", "blueprint", "days_left", "defaults", "device_counts", "id", "last_device_sync", "org_address", "org_email", "org_name", "org_phone", "org_type", "server_name", "server_uuid", "status", "status_reason", "status_received_at", "stoken_file_name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -134,25 +134,25 @@ class AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response(BaseM
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "blueprint": AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint.from_dict(obj["blueprint"]) if obj.get("blueprint") is not None else None,
             "access_token_expiry": obj.get("access_token_expiry"),
+            "admin_id": obj.get("admin_id"),
+            "blueprint": AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint.from_dict(obj["blueprint"]) if obj.get("blueprint") is not None else None,
+            "days_left": obj.get("days_left"),
+            "defaults": AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults.from_dict(obj["defaults"]) if obj.get("defaults") is not None else None,
+            "device_counts": AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts.from_dict(obj["device_counts"]) if obj.get("device_counts") is not None else None,
+            "id": obj.get("id"),
+            "last_device_sync": obj.get("last_device_sync"),
+            "org_address": obj.get("org_address"),
+            "org_email": obj.get("org_email"),
+            "org_name": obj.get("org_name"),
+            "org_phone": obj.get("org_phone"),
+            "org_type": obj.get("org_type"),
             "server_name": obj.get("server_name"),
             "server_uuid": obj.get("server_uuid"),
-            "admin_id": obj.get("admin_id"),
-            "org_name": obj.get("org_name"),
-            "org_email": obj.get("org_email"),
-            "org_phone": obj.get("org_phone"),
-            "org_address": obj.get("org_address"),
-            "org_type": obj.get("org_type"),
-            "stoken_file_name": obj.get("stoken_file_name"),
-            "last_device_sync": obj.get("last_device_sync"),
-            "defaults": AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults.from_dict(obj["defaults"]) if obj.get("defaults") is not None else None,
-            "days_left": obj.get("days_left"),
             "status": obj.get("status"),
             "status_reason": obj.get("status_reason"),
             "status_received_at": obj.get("status_received_at"),
-            "device_counts": AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts.from_dict(obj["device_counts"]) if obj.get("device_counts") is not None else None
+            "stoken_file_name": obj.get("stoken_file_name")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

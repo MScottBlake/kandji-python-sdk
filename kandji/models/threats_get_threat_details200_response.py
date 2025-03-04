@@ -28,13 +28,13 @@ class ThreatsGetThreatDetails200Response(BaseModel):
     ThreatsGetThreatDetails200Response
     """ # noqa: E501
     count: Optional[StrictInt] = None
+    malware_count: Optional[StrictInt] = None
     next: Optional[Any] = None
     previous: Optional[Any] = None
-    malware_count: Optional[StrictInt] = None
     pup_count: Optional[StrictInt] = None
     results: Optional[Any] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["count", "next", "previous", "malware_count", "pup_count", "results"]
+    __properties: ClassVar[List[str]] = ["count", "malware_count", "next", "previous", "pup_count", "results"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -110,9 +110,9 @@ class ThreatsGetThreatDetails200Response(BaseModel):
 
         _obj = cls.model_validate({
             "count": obj.get("count"),
+            "malware_count": obj.get("malware_count"),
             "next": obj.get("next"),
             "previous": obj.get("previous"),
-            "malware_count": obj.get("malware_count"),
             "pup_count": obj.get("pup_count"),
             "results": obj.get("results")
         })

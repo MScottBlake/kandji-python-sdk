@@ -5,25 +5,25 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] 
-**blueprint** | [**AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint**](AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint.md) |  | [optional] 
 **access_token_expiry** | **str** |  | [optional] 
+**admin_id** | **str** |  | [optional] 
+**blueprint** | [**AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint**](AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint.md) |  | [optional] 
+**days_left** | **int** |  | [optional] 
+**defaults** | [**AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults**](AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults.md) |  | [optional] 
+**device_counts** | [**AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts**](AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts.md) |  | [optional] 
+**id** | **str** |  | [optional] 
+**last_device_sync** | **object** |  | [optional] 
+**org_address** | **str** |  | [optional] 
+**org_email** | **str** |  | [optional] 
+**org_name** | **str** |  | [optional] 
+**org_phone** | **str** |  | [optional] 
+**org_type** | **str** |  | [optional] 
 **server_name** | **str** |  | [optional] 
 **server_uuid** | **str** |  | [optional] 
-**admin_id** | **str** |  | [optional] 
-**org_name** | **str** |  | [optional] 
-**org_email** | **str** |  | [optional] 
-**org_phone** | **str** |  | [optional] 
-**org_address** | **str** |  | [optional] 
-**org_type** | **str** |  | [optional] 
-**stoken_file_name** | **str** |  | [optional] 
-**last_device_sync** | **object** |  | [optional] 
-**defaults** | [**AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults**](AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults.md) |  | [optional] 
-**days_left** | **int** |  | [optional] 
 **status** | **str** |  | [optional] 
 **status_reason** | **object** |  | [optional] 
 **status_received_at** | **object** |  | [optional] 
-**device_counts** | [**AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts**](AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts.md) |  | [optional] 
+**stoken_file_name** | **str** |  | [optional] 
 
 ## Example
 

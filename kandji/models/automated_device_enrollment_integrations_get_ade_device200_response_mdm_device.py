@@ -27,15 +27,15 @@ class AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice(Base
     """
     AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice
     """ # noqa: E501
-    id: Optional[StrictStr] = None
-    enrolled_at: Optional[StrictStr] = None
-    name: Optional[StrictStr] = None
-    enrollment_status: Optional[StrictInt] = None
     deferred_install: Optional[StrictInt] = None
+    enrolled_at: Optional[StrictStr] = None
+    enrollment_status: Optional[StrictInt] = None
+    id: Optional[StrictStr] = None
     is_missing: Optional[StrictInt] = None
     is_removed: Optional[StrictInt] = None
+    name: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["id", "enrolled_at", "name", "enrollment_status", "deferred_install", "is_missing", "is_removed"]
+    __properties: ClassVar[List[str]] = ["deferred_install", "enrolled_at", "enrollment_status", "id", "is_missing", "is_removed", "name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,13 +95,13 @@ class AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice(Base
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "enrolled_at": obj.get("enrolled_at"),
-            "name": obj.get("name"),
-            "enrollment_status": obj.get("enrollment_status"),
             "deferred_install": obj.get("deferred_install"),
+            "enrolled_at": obj.get("enrolled_at"),
+            "enrollment_status": obj.get("enrollment_status"),
+            "id": obj.get("id"),
             "is_missing": obj.get("is_missing"),
-            "is_removed": obj.get("is_removed")
+            "is_removed": obj.get("is_removed"),
+            "name": obj.get("name")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

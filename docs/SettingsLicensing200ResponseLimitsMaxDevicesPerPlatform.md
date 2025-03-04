@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**macos** | **int** |  | [optional] 
 **ios_ipados** | **int** |  | [optional] 
+**macos** | **int** |  | [optional] 
 
 ## Example
 

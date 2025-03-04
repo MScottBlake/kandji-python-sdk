@@ -18,41 +18,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
-from kandji.models.automated_device_enrollment_integrations_get_ade_device200_response_dep_account import AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount
-from kandji.models.automated_device_enrollment_integrations_get_ade_device200_response_mdm_device import AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response(BaseModel):
+class BlueprintsListBlueprints200Response(BaseModel):
     """
-    AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response
+    BlueprintsListBlueprints200Response
     """ # noqa: E501
-    asset_tag: Optional[StrictStr] = None
-    assignment_status_received_at: Optional[StrictStr] = None
-    blueprint: Optional[StrictStr] = None
-    blueprint_id: Optional[StrictStr] = None
-    color: Optional[StrictStr] = None
-    dep_account: Optional[AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount] = None
-    description: Optional[StrictStr] = None
-    device_assigned_by: Optional[StrictStr] = None
-    device_assigned_date: Optional[StrictStr] = None
-    device_family: Optional[StrictStr] = None
-    failed_assignment_attempts: Optional[StrictInt] = None
-    id: Optional[StrictStr] = None
-    last_assignment_status: Optional[StrictStr] = None
-    mdm_device: Optional[AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice] = None
-    model: Optional[StrictStr] = None
-    os: Optional[StrictStr] = None
-    profile_assign_time: Optional[StrictStr] = None
-    profile_push_time: Optional[StrictStr] = None
-    profile_status: Optional[StrictStr] = None
-    serial_number: Optional[StrictStr] = None
-    user: Optional[StrictStr] = None
-    user_id: Optional[StrictStr] = None
+    count: Optional[StrictInt] = None
+    next: Optional[Any] = None
+    previous: Optional[Any] = None
+    results: Optional[Any] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["asset_tag", "assignment_status_received_at", "blueprint", "blueprint_id", "color", "dep_account", "description", "device_assigned_by", "device_assigned_date", "device_family", "failed_assignment_attempts", "id", "last_assignment_status", "mdm_device", "model", "os", "profile_assign_time", "profile_push_time", "profile_status", "serial_number", "user", "user_id"]
+    __properties: ClassVar[List[str]] = ["count", "next", "previous", "results"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -72,7 +52,7 @@ class AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response from a JSON string"""
+        """Create an instance of BlueprintsListBlueprints200Response from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -95,22 +75,31 @@ class AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of dep_account
-        if self.dep_account:
-            _dict['dep_account'] = self.dep_account.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of mdm_device
-        if self.mdm_device:
-            _dict['mdm_device'] = self.mdm_device.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
                 _dict[_key] = _value
 
+        # set to None if next (nullable) is None
+        # and model_fields_set contains the field
+        if self.next is None and "next" in self.model_fields_set:
+            _dict['next'] = None
+
+        # set to None if previous (nullable) is None
+        # and model_fields_set contains the field
+        if self.previous is None and "previous" in self.model_fields_set:
+            _dict['previous'] = None
+
+        # set to None if results (nullable) is None
+        # and model_fields_set contains the field
+        if self.results is None and "results" in self.model_fields_set:
+            _dict['results'] = None
+
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response from a dict"""
+        """Create an instance of BlueprintsListBlueprints200Response from a dict"""
         if obj is None:
             return None
 
@@ -118,28 +107,10 @@ class AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "asset_tag": obj.get("asset_tag"),
-            "assignment_status_received_at": obj.get("assignment_status_received_at"),
-            "blueprint": obj.get("blueprint"),
-            "blueprint_id": obj.get("blueprint_id"),
-            "color": obj.get("color"),
-            "dep_account": AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount.from_dict(obj["dep_account"]) if obj.get("dep_account") is not None else None,
-            "description": obj.get("description"),
-            "device_assigned_by": obj.get("device_assigned_by"),
-            "device_assigned_date": obj.get("device_assigned_date"),
-            "device_family": obj.get("device_family"),
-            "failed_assignment_attempts": obj.get("failed_assignment_attempts"),
-            "id": obj.get("id"),
-            "last_assignment_status": obj.get("last_assignment_status"),
-            "mdm_device": AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice.from_dict(obj["mdm_device"]) if obj.get("mdm_device") is not None else None,
-            "model": obj.get("model"),
-            "os": obj.get("os"),
-            "profile_assign_time": obj.get("profile_assign_time"),
-            "profile_push_time": obj.get("profile_push_time"),
-            "profile_status": obj.get("profile_status"),
-            "serial_number": obj.get("serial_number"),
-            "user": obj.get("user"),
-            "user_id": obj.get("user_id")
+            "count": obj.get("count"),
+            "next": obj.get("next"),
+            "previous": obj.get("previous"),
+            "results": obj.get("results")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

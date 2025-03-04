@@ -166,7 +166,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_tags**
-> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response get_tags(search)
+> BlueprintsListBlueprints200Response get_tags(search)
 
 Get Tags
 
@@ -178,7 +178,7 @@ Return configured tags.
 
 ```python
 import kandji
-from kandji.models.automated_device_enrollment_integrations_list_ade_devices200_response import AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+from kandji.models.blueprints_list_blueprints200_response import BlueprintsListBlueprints200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
+[**BlueprintsListBlueprints200Response**](BlueprintsListBlueprints200Response.md)
 
 ### Authorization
 

@@ -27,10 +27,10 @@ class DeviceSecretsGetActivationLockBypassCode200Response(BaseModel):
     """
     DeviceSecretsGetActivationLockBypassCode200Response
     """ # noqa: E501
-    user_based_albc: Optional[StrictStr] = None
     device_based_albc: Optional[StrictStr] = None
+    user_based_albc: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["user_based_albc", "device_based_albc"]
+    __properties: ClassVar[List[str]] = ["device_based_albc", "user_based_albc"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,8 +90,8 @@ class DeviceSecretsGetActivationLockBypassCode200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "user_based_albc": obj.get("user_based_albc"),
-            "device_based_albc": obj.get("device_based_albc")
+            "device_based_albc": obj.get("device_based_albc"),
+            "user_based_albc": obj.get("user_based_albc")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

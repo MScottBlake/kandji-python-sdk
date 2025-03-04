@@ -28,29 +28,29 @@ class DeviceInformationGetDevice200Response(BaseModel):
     """
     DeviceInformationGetDevice200Response
     """ # noqa: E501
-    device_id: Optional[StrictStr] = None
-    device_name: Optional[StrictStr] = None
-    model: Optional[StrictStr] = None
-    serial_number: Optional[StrictStr] = None
-    platform: Optional[StrictStr] = None
-    os_version: Optional[StrictStr] = None
-    supplemental_build_version: Optional[StrictStr] = None
-    supplemental_os_version_extra: Optional[StrictStr] = None
-    last_check_in: Optional[StrictStr] = None
-    user: Optional[DeviceInformationGetDevice200ResponseUser] = None
+    agent_installed: Optional[StrictInt] = None
+    agent_version: Optional[StrictStr] = None
     asset_tag: Optional[StrictStr] = None
     blueprint_id: Optional[StrictStr] = None
-    mdm_enabled: Optional[StrictInt] = None
-    agent_installed: Optional[StrictInt] = None
+    blueprint_name: Optional[StrictStr] = None
+    device_id: Optional[StrictStr] = None
+    device_name: Optional[StrictStr] = None
+    first_enrollment: Optional[StrictStr] = None
     is_missing: Optional[StrictInt] = None
     is_removed: Optional[StrictInt] = None
-    agent_version: Optional[StrictStr] = None
-    first_enrollment: Optional[StrictStr] = None
+    last_check_in: Optional[StrictStr] = None
     last_enrollment: Optional[StrictStr] = None
-    blueprint_name: Optional[StrictStr] = None
+    mdm_enabled: Optional[StrictInt] = None
+    model: Optional[StrictStr] = None
+    os_version: Optional[StrictStr] = None
+    platform: Optional[StrictStr] = None
+    serial_number: Optional[StrictStr] = None
+    supplemental_build_version: Optional[StrictStr] = None
+    supplemental_os_version_extra: Optional[StrictStr] = None
     tags: Optional[Any] = None
+    user: Optional[DeviceInformationGetDevice200ResponseUser] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["device_id", "device_name", "model", "serial_number", "platform", "os_version", "supplemental_build_version", "supplemental_os_version_extra", "last_check_in", "user", "asset_tag", "blueprint_id", "mdm_enabled", "agent_installed", "is_missing", "is_removed", "agent_version", "first_enrollment", "last_enrollment", "blueprint_name", "tags"]
+    __properties: ClassVar[List[str]] = ["agent_installed", "agent_version", "asset_tag", "blueprint_id", "blueprint_name", "device_id", "device_name", "first_enrollment", "is_missing", "is_removed", "last_check_in", "last_enrollment", "mdm_enabled", "model", "os_version", "platform", "serial_number", "supplemental_build_version", "supplemental_os_version_extra", "tags", "user"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -118,27 +118,27 @@ class DeviceInformationGetDevice200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "device_id": obj.get("device_id"),
-            "device_name": obj.get("device_name"),
-            "model": obj.get("model"),
-            "serial_number": obj.get("serial_number"),
-            "platform": obj.get("platform"),
-            "os_version": obj.get("os_version"),
-            "supplemental_build_version": obj.get("supplemental_build_version"),
-            "supplemental_os_version_extra": obj.get("supplemental_os_version_extra"),
-            "last_check_in": obj.get("last_check_in"),
-            "user": DeviceInformationGetDevice200ResponseUser.from_dict(obj["user"]) if obj.get("user") is not None else None,
+            "agent_installed": obj.get("agent_installed"),
+            "agent_version": obj.get("agent_version"),
             "asset_tag": obj.get("asset_tag"),
             "blueprint_id": obj.get("blueprint_id"),
-            "mdm_enabled": obj.get("mdm_enabled"),
-            "agent_installed": obj.get("agent_installed"),
+            "blueprint_name": obj.get("blueprint_name"),
+            "device_id": obj.get("device_id"),
+            "device_name": obj.get("device_name"),
+            "first_enrollment": obj.get("first_enrollment"),
             "is_missing": obj.get("is_missing"),
             "is_removed": obj.get("is_removed"),
-            "agent_version": obj.get("agent_version"),
-            "first_enrollment": obj.get("first_enrollment"),
+            "last_check_in": obj.get("last_check_in"),
             "last_enrollment": obj.get("last_enrollment"),
-            "blueprint_name": obj.get("blueprint_name"),
-            "tags": obj.get("tags")
+            "mdm_enabled": obj.get("mdm_enabled"),
+            "model": obj.get("model"),
+            "os_version": obj.get("os_version"),
+            "platform": obj.get("platform"),
+            "serial_number": obj.get("serial_number"),
+            "supplemental_build_version": obj.get("supplemental_build_version"),
+            "supplemental_os_version_extra": obj.get("supplemental_os_version_extra"),
+            "tags": obj.get("tags"),
+            "user": DeviceInformationGetDevice200ResponseUser.from_dict(obj["user"]) if obj.get("user") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

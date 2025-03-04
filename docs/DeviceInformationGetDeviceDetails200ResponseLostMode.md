@@ -5,19 +5,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**lost_mode_status** | **str** |  | [optional] 
-**enabled_by** | **str** |  | [optional] 
-**enable_status_at** | **str** |  | [optional] 
-**lock_screen_message** | **str** |  | [optional] 
-**lock_screen_phone_number** | **str** |  | [optional] 
-**lock_screen_footnote** | **str** |  | [optional] 
 **disable_status** | **str** |  | [optional] 
-**disabled_by** | **str** |  | [optional] 
 **disable_status_at** | **str** |  | [optional] 
-**last_location_status** | **str** |  | [optional] 
-**last_location_status_at** | **str** |  | [optional] 
+**disabled_by** | **str** |  | [optional] 
+**enable_status_at** | **str** |  | [optional] 
+**enabled_by** | **str** |  | [optional] 
 **last_location** | [**DeviceInformationGetDeviceDetails200ResponseLostModeLastLocation**](DeviceInformationGetDeviceDetails200ResponseLostModeLastLocation.md) |  | [optional] 
 **last_location_at** | **str** |  | [optional] 
+**last_location_status** | **str** |  | [optional] 
+**last_location_status_at** | **str** |  | [optional] 
+**lock_screen_footnote** | **str** |  | [optional] 
+**lock_screen_message** | **str** |  | [optional] 
+**lock_screen_phone_number** | **str** |  | [optional] 
+**lost_mode_status** | **str** |  | [optional] 
 **sound_status** | **str** |  | [optional] 
 **sound_status_at** | **str** |  | [optional] 
 

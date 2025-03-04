@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **int** |  | [optional] 
+**malware_count** | **int** |  | [optional] 
 **next** | **object** |  | [optional] 
 **previous** | **object** |  | [optional] 
-**malware_count** | **int** |  | [optional] 
 **pup_count** | **int** |  | [optional] 
 **results** | **object** |  | [optional] 
 

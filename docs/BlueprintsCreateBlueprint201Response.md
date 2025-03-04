@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] 
-**name** | **str** |  | [optional] 
-**icon** | **str** |  | [optional] 
 **color** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
-**params** | **object** |  | [optional] 
 **enrollment_code** | [**BlueprintsCreateBlueprint201ResponseEnrollmentCode**](BlueprintsCreateBlueprint201ResponseEnrollmentCode.md) |  | [optional] 
+**icon** | **str** |  | [optional] 
+**id** | **str** |  | [optional] 
+**name** | **str** |  | [optional] 
+**params** | **object** |  | [optional] 
 **type** | **str** |  | [optional] 
 
 ## Example

@@ -10,12 +10,12 @@ Name | Type | Description | Notes
 **created_at** | **str** |  | [optional] 
 **department** | **object** |  | [optional] 
 **deprecated_user_id** | **str** |  | [optional] 
+**device_count** | **int** |  | [optional] 
 **email** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **integration** | [**UsersGetUser200ResponseIntegration**](UsersGetUser200ResponseIntegration.md) |  | [optional] 
 **job_title** | **object** |  | [optional] 
 **name** | **str** |  | [optional] 
-**device_count** | **int** |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 
 ## Example

@@ -27,13 +27,13 @@ class PrismApplications200Response(BaseModel):
     """
     PrismApplications200Response
     """ # noqa: E501
-    offset: Optional[Any] = None
-    limit: Optional[StrictInt] = None
-    total: Optional[StrictInt] = None
-    data: Optional[Any] = None
     cursor: Optional[StrictStr] = None
+    data: Optional[Any] = None
+    limit: Optional[StrictInt] = None
+    offset: Optional[Any] = None
+    total: Optional[StrictInt] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["offset", "limit", "total", "data", "cursor"]
+    __properties: ClassVar[List[str]] = ["cursor", "data", "limit", "offset", "total"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,15 +81,15 @@ class PrismApplications200Response(BaseModel):
             for _key, _value in self.additional_properties.items():
                 _dict[_key] = _value
 
-        # set to None if offset (nullable) is None
-        # and model_fields_set contains the field
-        if self.offset is None and "offset" in self.model_fields_set:
-            _dict['offset'] = None
-
         # set to None if data (nullable) is None
         # and model_fields_set contains the field
         if self.data is None and "data" in self.model_fields_set:
             _dict['data'] = None
+
+        # set to None if offset (nullable) is None
+        # and model_fields_set contains the field
+        if self.offset is None and "offset" in self.model_fields_set:
+            _dict['offset'] = None
 
         return _dict
 
@@ -103,11 +103,11 @@ class PrismApplications200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "offset": obj.get("offset"),
-            "limit": obj.get("limit"),
-            "total": obj.get("total"),
+            "cursor": obj.get("cursor"),
             "data": obj.get("data"),
-            "cursor": obj.get("cursor")
+            "limit": obj.get("limit"),
+            "offset": obj.get("offset"),
+            "total": obj.get("total")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

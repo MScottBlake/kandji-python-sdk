@@ -27,13 +27,13 @@ class DeviceInformationGetDeviceDetails200ResponseActivationLock(BaseModel):
     """
     DeviceInformationGetDeviceDetails200ResponseActivationLock
     """ # noqa: E501
-    bypass_code_failed: Optional[StrictInt] = None
-    user_activation_lock_enabled: Optional[StrictInt] = None
-    device_activation_lock_enabled: Optional[StrictInt] = None
     activation_lock_allowed_while_supervised: Optional[StrictInt] = None
     activation_lock_supported: Optional[StrictInt] = None
+    bypass_code_failed: Optional[StrictInt] = None
+    device_activation_lock_enabled: Optional[StrictInt] = None
+    user_activation_lock_enabled: Optional[StrictInt] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["bypass_code_failed", "user_activation_lock_enabled", "device_activation_lock_enabled", "activation_lock_allowed_while_supervised", "activation_lock_supported"]
+    __properties: ClassVar[List[str]] = ["activation_lock_allowed_while_supervised", "activation_lock_supported", "bypass_code_failed", "device_activation_lock_enabled", "user_activation_lock_enabled"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,11 +93,11 @@ class DeviceInformationGetDeviceDetails200ResponseActivationLock(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "bypass_code_failed": obj.get("bypass_code_failed"),
-            "user_activation_lock_enabled": obj.get("user_activation_lock_enabled"),
-            "device_activation_lock_enabled": obj.get("device_activation_lock_enabled"),
             "activation_lock_allowed_while_supervised": obj.get("activation_lock_allowed_while_supervised"),
-            "activation_lock_supported": obj.get("activation_lock_supported")
+            "activation_lock_supported": obj.get("activation_lock_supported"),
+            "bypass_code_failed": obj.get("bypass_code_failed"),
+            "device_activation_lock_enabled": obj.get("device_activation_lock_enabled"),
+            "user_activation_lock_enabled": obj.get("user_activation_lock_enabled")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

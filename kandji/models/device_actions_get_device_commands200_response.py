@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from kandji.models.automated_device_enrollment_integrations_list_ade_devices200_response import AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+from kandji.models.blueprints_list_blueprints200_response import BlueprintsListBlueprints200Response
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,10 +28,10 @@ class DeviceActionsGetDeviceCommands200Response(BaseModel):
     """
     DeviceActionsGetDeviceCommands200Response
     """ # noqa: E501
+    commands: Optional[BlueprintsListBlueprints200Response] = None
     device_id: Optional[StrictStr] = None
-    commands: Optional[AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["device_id", "commands"]
+    __properties: ClassVar[List[str]] = ["commands", "device_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,8 +94,8 @@ class DeviceActionsGetDeviceCommands200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "device_id": obj.get("device_id"),
-            "commands": AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.from_dict(obj["commands"]) if obj.get("commands") is not None else None
+            "commands": BlueprintsListBlueprints200Response.from_dict(obj["commands"]) if obj.get("commands") is not None else None,
+            "device_id": obj.get("device_id")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**device_id** | **str** |  | [optional] 
 **apps** | **object** |  | [optional] 
+**device_id** | **str** |  | [optional] 
 
 ## Example
 

@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
 **name** | **str** |  | [optional] 
-**uuid** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
+**uuid** | **str** |  | [optional] 
 
 ## Example
 

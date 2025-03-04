@@ -27,16 +27,16 @@ class DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager(BaseModel
     """
     DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager
     """ # noqa: E501
-    model: Optional[StrictStr] = None
     color: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
-    serial_number: Optional[StrictStr] = None
-    device_family: Optional[StrictStr] = None
-    os: Optional[StrictStr] = None
-    device_assigned_date: Optional[StrictStr] = None
     device_assigned_by: Optional[StrictStr] = None
+    device_assigned_date: Optional[StrictStr] = None
+    device_family: Optional[StrictStr] = None
+    model: Optional[StrictStr] = None
+    os: Optional[StrictStr] = None
+    serial_number: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["model", "color", "description", "serial_number", "device_family", "os", "device_assigned_date", "device_assigned_by"]
+    __properties: ClassVar[List[str]] = ["color", "description", "device_assigned_by", "device_assigned_date", "device_family", "model", "os", "serial_number"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -96,14 +96,14 @@ class DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager(BaseModel
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "model": obj.get("model"),
             "color": obj.get("color"),
             "description": obj.get("description"),
-            "serial_number": obj.get("serial_number"),
-            "device_family": obj.get("device_family"),
-            "os": obj.get("os"),
+            "device_assigned_by": obj.get("device_assigned_by"),
             "device_assigned_date": obj.get("device_assigned_date"),
-            "device_assigned_by": obj.get("device_assigned_by")
+            "device_family": obj.get("device_family"),
+            "model": obj.get("model"),
+            "os": obj.get("os"),
+            "serial_number": obj.get("serial_number")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

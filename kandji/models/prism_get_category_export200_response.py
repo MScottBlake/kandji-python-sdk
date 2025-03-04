@@ -28,17 +28,17 @@ class PrismGetCategoryExport200Response(BaseModel):
     """
     PrismGetCategoryExport200Response
     """ # noqa: E501
-    id: Optional[StrictStr] = None
-    status: Optional[StrictStr] = None
-    category: Optional[StrictStr] = None
     args: Optional[PrismRequestCategoryExport200ResponseArgs] = None
+    category: Optional[StrictStr] = None
+    created_at: Optional[StrictStr] = None
     error_msg: Optional[Any] = None
+    id: Optional[StrictStr] = None
     path: Optional[StrictStr] = None
     signed_url: Optional[StrictStr] = None
-    created_at: Optional[StrictStr] = None
+    status: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["id", "status", "category", "args", "error_msg", "path", "signed_url", "created_at", "updated_at"]
+    __properties: ClassVar[List[str]] = ["args", "category", "created_at", "error_msg", "id", "path", "signed_url", "status", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -106,14 +106,14 @@ class PrismGetCategoryExport200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "status": obj.get("status"),
-            "category": obj.get("category"),
             "args": PrismRequestCategoryExport200ResponseArgs.from_dict(obj["args"]) if obj.get("args") is not None else None,
+            "category": obj.get("category"),
+            "created_at": obj.get("created_at"),
             "error_msg": obj.get("error_msg"),
+            "id": obj.get("id"),
             "path": obj.get("path"),
             "signed_url": obj.get("signed_url"),
-            "created_at": obj.get("created_at"),
+            "status": obj.get("status"),
             "updated_at": obj.get("updated_at")
         })
         # store additional fields in additional_properties

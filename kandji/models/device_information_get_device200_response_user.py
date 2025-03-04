@@ -28,11 +28,11 @@ class DeviceInformationGetDevice200ResponseUser(BaseModel):
     DeviceInformationGetDevice200ResponseUser
     """ # noqa: E501
     email: Optional[StrictStr] = None
-    name: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     is_archived: Optional[StrictInt] = None
+    name: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["email", "name", "id", "is_archived"]
+    __properties: ClassVar[List[str]] = ["email", "id", "is_archived", "name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,9 +93,9 @@ class DeviceInformationGetDevice200ResponseUser(BaseModel):
 
         _obj = cls.model_validate({
             "email": obj.get("email"),
-            "name": obj.get("name"),
             "id": obj.get("id"),
-            "is_archived": obj.get("is_archived")
+            "is_archived": obj.get("is_archived"),
+            "name": obj.get("name")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

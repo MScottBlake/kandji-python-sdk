@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] 
-**status** | **str** |  | [optional] 
-**category** | **str** |  | [optional] 
 **args** | [**PrismRequestCategoryExport200ResponseArgs**](PrismRequestCategoryExport200ResponseArgs.md) |  | [optional] 
+**category** | **str** |  | [optional] 
+**created_at** | **str** |  | [optional] 
 **error_msg** | **object** |  | [optional] 
+**id** | **str** |  | [optional] 
 **path** | **object** |  | [optional] 
 **signed_url** | **object** |  | [optional] 
-**created_at** | **str** |  | [optional] 
+**status** | **str** |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 
 ## Example

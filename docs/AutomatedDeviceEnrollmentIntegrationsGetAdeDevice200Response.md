@@ -5,28 +5,28 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**blueprint_id** | **str** |  | [optional] 
-**mdm_device** | [**AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice**](AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice.md) |  | [optional] 
-**user_id** | **str** |  | [optional] 
-**dep_account** | [**AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount**](AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount.md) |  | [optional] 
 **asset_tag** | **str** |  | [optional] 
+**assignment_status_received_at** | **str** |  | [optional] 
+**blueprint** | **str** |  | [optional] 
+**blueprint_id** | **str** |  | [optional] 
 **color** | **str** |  | [optional] 
+**dep_account** | [**AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount**](AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount.md) |  | [optional] 
 **description** | **str** |  | [optional] 
 **device_assigned_by** | **str** |  | [optional] 
 **device_assigned_date** | **str** |  | [optional] 
 **device_family** | **str** |  | [optional] 
+**failed_assignment_attempts** | **int** |  | [optional] 
+**id** | **str** |  | [optional] 
+**last_assignment_status** | **str** |  | [optional] 
+**mdm_device** | [**AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice**](AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice.md) |  | [optional] 
 **model** | **str** |  | [optional] 
 **os** | **str** |  | [optional] 
 **profile_assign_time** | **str** |  | [optional] 
 **profile_push_time** | **str** |  | [optional] 
 **profile_status** | **str** |  | [optional] 
 **serial_number** | **str** |  | [optional] 
-**id** | **str** |  | [optional] 
-**last_assignment_status** | **str** |  | [optional] 
-**failed_assignment_attempts** | **int** |  | [optional] 
-**assignment_status_received_at** | **str** |  | [optional] 
-**blueprint** | **str** |  | [optional] 
 **user** | **str** |  | [optional] 
+**user_id** | **str** |  | [optional] 
 
 ## Example
 

@@ -22,8 +22,8 @@ from typing import Optional, Tuple, Union
 from typing_extensions import Annotated
 from kandji.models.automated_device_enrollment_integrations_create_ade_integration200_response import AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response
 from kandji.models.automated_device_enrollment_integrations_get_ade_device200_response import AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response
-from kandji.models.automated_device_enrollment_integrations_list_ade_devices200_response import AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
 from kandji.models.automated_device_enrollment_integrations_list_devices_associated_to_ade_token200_response import AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response
+from kandji.models.blueprints_list_blueprints200_response import BlueprintsListBlueprints200Response
 
 from kandji.api_client import ApiClient, RequestSerialized
 from kandji.api_response import ApiResponse
@@ -47,9 +47,9 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     def create_ade_integration(
         self,
         blueprint_id: StrictStr,
-        phone: StrictStr,
         email: StrictStr,
         file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.")],
+        phone: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -69,12 +69,12 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
         :param blueprint_id: (required)
         :type blueprint_id: str
-        :param phone: (required)
-        :type phone: str
         :param email: (required)
         :type email: str
         :param file: This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. (required)
         :type file: bytearray
+        :param phone: (required)
+        :type phone: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -99,9 +99,9 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
         _param = self._create_ade_integration_serialize(
             blueprint_id=blueprint_id,
-            phone=phone,
             email=email,
             file=file,
+            phone=phone,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -126,9 +126,9 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     def create_ade_integration_with_http_info(
         self,
         blueprint_id: StrictStr,
-        phone: StrictStr,
         email: StrictStr,
         file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.")],
+        phone: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -148,12 +148,12 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
         :param blueprint_id: (required)
         :type blueprint_id: str
-        :param phone: (required)
-        :type phone: str
         :param email: (required)
         :type email: str
         :param file: This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. (required)
         :type file: bytearray
+        :param phone: (required)
+        :type phone: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -178,9 +178,9 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
         _param = self._create_ade_integration_serialize(
             blueprint_id=blueprint_id,
-            phone=phone,
             email=email,
             file=file,
+            phone=phone,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -205,9 +205,9 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     def create_ade_integration_without_preload_content(
         self,
         blueprint_id: StrictStr,
-        phone: StrictStr,
         email: StrictStr,
         file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.")],
+        phone: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -227,12 +227,12 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
         :param blueprint_id: (required)
         :type blueprint_id: str
-        :param phone: (required)
-        :type phone: str
         :param email: (required)
         :type email: str
         :param file: This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. (required)
         :type file: bytearray
+        :param phone: (required)
+        :type phone: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -257,9 +257,9 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
         _param = self._create_ade_integration_serialize(
             blueprint_id=blueprint_id,
-            phone=phone,
             email=email,
             file=file,
+            phone=phone,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -279,9 +279,9 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     def _create_ade_integration_serialize(
         self,
         blueprint_id,
-        phone,
         email,
         file,
+        phone,
         _request_auth,
         _content_type,
         _headers,
@@ -308,12 +308,12 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         # process the form parameters
         if blueprint_id is not None:
             _form_params.append(('blueprint_id', blueprint_id))
-        if phone is not None:
-            _form_params.append(('phone', phone))
         if email is not None:
             _form_params.append(('email', email))
         if file is not None:
             _files['file'] = file
+        if phone is not None:
+            _form_params.append(('phone', phone))
         # process the body parameter
 
 
@@ -1414,7 +1414,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response:
+    ) -> BlueprintsListBlueprints200Response:
         """List ADE devices
 
         Get a list of Automated Device Enrollment devices.
@@ -1476,7 +1476,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
+            '200': "BlueprintsListBlueprints200Response",
             '400': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices400Response",
         }
         response_data = self.api_client.call_api(
@@ -1514,7 +1514,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response]:
+    ) -> ApiResponse[BlueprintsListBlueprints200Response]:
         """List ADE devices
 
         Get a list of Automated Device Enrollment devices.
@@ -1576,7 +1576,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
+            '200': "BlueprintsListBlueprints200Response",
             '400': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices400Response",
         }
         response_data = self.api_client.call_api(
@@ -1676,7 +1676,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
+            '200': "BlueprintsListBlueprints200Response",
             '400': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices400Response",
         }
         response_data = self.api_client.call_api(
@@ -2314,9 +2314,9 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         self,
         ade_token_id: StrictStr,
         blueprint_id: StrictStr,
-        phone: StrictStr,
         email: StrictStr,
         file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.")],
+        phone: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2338,12 +2338,12 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :type ade_token_id: str
         :param blueprint_id: (required)
         :type blueprint_id: str
-        :param phone: (required)
-        :type phone: str
         :param email: (required)
         :type email: str
         :param file: This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. (required)
         :type file: bytearray
+        :param phone: (required)
+        :type phone: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2369,9 +2369,9 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         _param = self._renew_ade_integration_serialize(
             ade_token_id=ade_token_id,
             blueprint_id=blueprint_id,
-            phone=phone,
             email=email,
             file=file,
+            phone=phone,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2397,9 +2397,9 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         self,
         ade_token_id: StrictStr,
         blueprint_id: StrictStr,
-        phone: StrictStr,
         email: StrictStr,
         file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.")],
+        phone: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2421,12 +2421,12 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :type ade_token_id: str
         :param blueprint_id: (required)
         :type blueprint_id: str
-        :param phone: (required)
-        :type phone: str
         :param email: (required)
         :type email: str
         :param file: This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. (required)
         :type file: bytearray
+        :param phone: (required)
+        :type phone: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2452,9 +2452,9 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         _param = self._renew_ade_integration_serialize(
             ade_token_id=ade_token_id,
             blueprint_id=blueprint_id,
-            phone=phone,
             email=email,
             file=file,
+            phone=phone,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2480,9 +2480,9 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         self,
         ade_token_id: StrictStr,
         blueprint_id: StrictStr,
-        phone: StrictStr,
         email: StrictStr,
         file: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.")],
+        phone: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2504,12 +2504,12 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :type ade_token_id: str
         :param blueprint_id: (required)
         :type blueprint_id: str
-        :param phone: (required)
-        :type phone: str
         :param email: (required)
         :type email: str
         :param file: This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. (required)
         :type file: bytearray
+        :param phone: (required)
+        :type phone: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2535,9 +2535,9 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         _param = self._renew_ade_integration_serialize(
             ade_token_id=ade_token_id,
             blueprint_id=blueprint_id,
-            phone=phone,
             email=email,
             file=file,
+            phone=phone,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2558,9 +2558,9 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         self,
         ade_token_id,
         blueprint_id,
-        phone,
         email,
         file,
+        phone,
         _request_auth,
         _content_type,
         _headers,
@@ -2589,12 +2589,12 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         # process the form parameters
         if blueprint_id is not None:
             _form_params.append(('blueprint_id', blueprint_id))
-        if phone is not None:
-            _form_params.append(('phone', phone))
         if email is not None:
             _form_params.append(('email', email))
         if file is not None:
             _files['file'] = file
+        if phone is not None:
+            _form_params.append(('phone', phone))
         # process the body parameter
 
 

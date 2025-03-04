@@ -27,10 +27,10 @@ class DeviceInformationGetDeviceApps200Response(BaseModel):
     """
     DeviceInformationGetDeviceApps200Response
     """ # noqa: E501
-    device_id: Optional[StrictStr] = None
     apps: Optional[Any] = None
+    device_id: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["device_id", "apps"]
+    __properties: ClassVar[List[str]] = ["apps", "device_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,8 +95,8 @@ class DeviceInformationGetDeviceApps200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "device_id": obj.get("device_id"),
-            "apps": obj.get("apps")
+            "apps": obj.get("apps"),
+            "device_id": obj.get("device_id")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

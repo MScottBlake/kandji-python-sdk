@@ -27,10 +27,10 @@ class PrismCount200Response(BaseModel):
     """
     PrismCount200Response
     """ # noqa: E501
-    count: Optional[StrictInt] = None
     approximate: Optional[StrictInt] = None
+    count: Optional[StrictInt] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["count", "approximate"]
+    __properties: ClassVar[List[str]] = ["approximate", "count"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,8 +90,8 @@ class PrismCount200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "count": obj.get("count"),
-            "approximate": obj.get("approximate")
+            "approximate": obj.get("approximate"),
+            "count": obj.get("count")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

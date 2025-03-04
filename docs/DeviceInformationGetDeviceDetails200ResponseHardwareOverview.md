@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uuid** | **str** |  | [optional] 
-**serial_number** | **str** |  | [optional] 
 **model_identifier** | **str** |  | [optional] 
+**serial_number** | **str** |  | [optional] 
+**uuid** | **str** |  | [optional] 
 
 ## Example
 

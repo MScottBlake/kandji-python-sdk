@@ -28,16 +28,16 @@ class BlueprintsCreateBlueprint201Response(BaseModel):
     """
     BlueprintsCreateBlueprint201Response
     """ # noqa: E501
-    id: Optional[StrictStr] = None
-    name: Optional[StrictStr] = None
-    icon: Optional[StrictStr] = None
     color: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
-    params: Optional[Dict[str, Any]] = None
     enrollment_code: Optional[BlueprintsCreateBlueprint201ResponseEnrollmentCode] = None
+    icon: Optional[StrictStr] = None
+    id: Optional[StrictStr] = None
+    name: Optional[StrictStr] = None
+    params: Optional[Dict[str, Any]] = None
     type: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["id", "name", "icon", "color", "description", "params", "enrollment_code", "type"]
+    __properties: ClassVar[List[str]] = ["color", "description", "enrollment_code", "icon", "id", "name", "params", "type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -100,13 +100,13 @@ class BlueprintsCreateBlueprint201Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "name": obj.get("name"),
-            "icon": obj.get("icon"),
             "color": obj.get("color"),
             "description": obj.get("description"),
-            "params": obj.get("params"),
             "enrollment_code": BlueprintsCreateBlueprint201ResponseEnrollmentCode.from_dict(obj["enrollment_code"]) if obj.get("enrollment_code") is not None else None,
+            "icon": obj.get("icon"),
+            "id": obj.get("id"),
+            "name": obj.get("name"),
+            "params": obj.get("params"),
             "type": obj.get("type")
         })
         # store additional fields in additional_properties

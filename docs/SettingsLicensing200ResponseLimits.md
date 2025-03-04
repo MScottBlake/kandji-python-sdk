@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**plan_type** | **str** |  | [optional] 
 **max_devices** | **int** |  | [optional] 
 **max_devices_per_platform** | [**SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform**](SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform.md) |  | [optional] 
+**plan_type** | **str** |  | [optional] 
 
 ## Example
 

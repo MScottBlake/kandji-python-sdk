@@ -33,15 +33,15 @@ class UsersGetUser200Response(BaseModel):
     created_at: Optional[StrictStr] = None
     department: Optional[Any] = None
     deprecated_user_id: Optional[StrictStr] = None
+    device_count: Optional[StrictInt] = None
     email: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     integration: Optional[UsersGetUser200ResponseIntegration] = None
     job_title: Optional[Any] = None
     name: Optional[StrictStr] = None
-    device_count: Optional[StrictInt] = None
     updated_at: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["active", "archived", "created_at", "department", "deprecated_user_id", "email", "id", "integration", "job_title", "name", "device_count", "updated_at"]
+    __properties: ClassVar[List[str]] = ["active", "archived", "created_at", "department", "deprecated_user_id", "device_count", "email", "id", "integration", "job_title", "name", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -119,12 +119,12 @@ class UsersGetUser200Response(BaseModel):
             "created_at": obj.get("created_at"),
             "department": obj.get("department"),
             "deprecated_user_id": obj.get("deprecated_user_id"),
+            "device_count": obj.get("device_count"),
             "email": obj.get("email"),
             "id": obj.get("id"),
             "integration": UsersGetUser200ResponseIntegration.from_dict(obj["integration"]) if obj.get("integration") is not None else None,
             "job_title": obj.get("job_title"),
             "name": obj.get("name"),
-            "device_count": obj.get("device_count"),
             "updated_at": obj.get("updated_at")
         })
         # store additional fields in additional_properties

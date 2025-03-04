@@ -28,23 +28,23 @@ class DeviceInformationGetDeviceDetails200ResponseLostMode(BaseModel):
     """
     DeviceInformationGetDeviceDetails200ResponseLostMode
     """ # noqa: E501
-    lost_mode_status: Optional[StrictStr] = None
-    enabled_by: Optional[StrictStr] = None
-    enable_status_at: Optional[StrictStr] = None
-    lock_screen_message: Optional[StrictStr] = None
-    lock_screen_phone_number: Optional[StrictStr] = None
-    lock_screen_footnote: Optional[StrictStr] = None
     disable_status: Optional[StrictStr] = None
-    disabled_by: Optional[StrictStr] = None
     disable_status_at: Optional[StrictStr] = None
-    last_location_status: Optional[StrictStr] = None
-    last_location_status_at: Optional[StrictStr] = None
+    disabled_by: Optional[StrictStr] = None
+    enable_status_at: Optional[StrictStr] = None
+    enabled_by: Optional[StrictStr] = None
     last_location: Optional[DeviceInformationGetDeviceDetails200ResponseLostModeLastLocation] = None
     last_location_at: Optional[StrictStr] = None
+    last_location_status: Optional[StrictStr] = None
+    last_location_status_at: Optional[StrictStr] = None
+    lock_screen_footnote: Optional[StrictStr] = None
+    lock_screen_message: Optional[StrictStr] = None
+    lock_screen_phone_number: Optional[StrictStr] = None
+    lost_mode_status: Optional[StrictStr] = None
     sound_status: Optional[StrictStr] = None
     sound_status_at: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["lost_mode_status", "enabled_by", "enable_status_at", "lock_screen_message", "lock_screen_phone_number", "lock_screen_footnote", "disable_status", "disabled_by", "disable_status_at", "last_location_status", "last_location_status_at", "last_location", "last_location_at", "sound_status", "sound_status_at"]
+    __properties: ClassVar[List[str]] = ["disable_status", "disable_status_at", "disabled_by", "enable_status_at", "enabled_by", "last_location", "last_location_at", "last_location_status", "last_location_status_at", "lock_screen_footnote", "lock_screen_message", "lock_screen_phone_number", "lost_mode_status", "sound_status", "sound_status_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -107,19 +107,19 @@ class DeviceInformationGetDeviceDetails200ResponseLostMode(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "lost_mode_status": obj.get("lost_mode_status"),
-            "enabled_by": obj.get("enabled_by"),
-            "enable_status_at": obj.get("enable_status_at"),
-            "lock_screen_message": obj.get("lock_screen_message"),
-            "lock_screen_phone_number": obj.get("lock_screen_phone_number"),
-            "lock_screen_footnote": obj.get("lock_screen_footnote"),
             "disable_status": obj.get("disable_status"),
-            "disabled_by": obj.get("disabled_by"),
             "disable_status_at": obj.get("disable_status_at"),
-            "last_location_status": obj.get("last_location_status"),
-            "last_location_status_at": obj.get("last_location_status_at"),
+            "disabled_by": obj.get("disabled_by"),
+            "enable_status_at": obj.get("enable_status_at"),
+            "enabled_by": obj.get("enabled_by"),
             "last_location": DeviceInformationGetDeviceDetails200ResponseLostModeLastLocation.from_dict(obj["last_location"]) if obj.get("last_location") is not None else None,
             "last_location_at": obj.get("last_location_at"),
+            "last_location_status": obj.get("last_location_status"),
+            "last_location_status_at": obj.get("last_location_status_at"),
+            "lock_screen_footnote": obj.get("lock_screen_footnote"),
+            "lock_screen_message": obj.get("lock_screen_message"),
+            "lock_screen_phone_number": obj.get("lock_screen_phone_number"),
+            "lost_mode_status": obj.get("lost_mode_status"),
             "sound_status": obj.get("sound_status"),
             "sound_status_at": obj.get("sound_status_at")
         })

@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**color** | **str** |  | [optional] 
+**computers_count** | **int** |  | [optional] 
+**description** | **str** |  | [optional] 
+**enrollment_code** | [**BlueprintsCreateBlueprint201ResponseEnrollmentCode**](BlueprintsCreateBlueprint201ResponseEnrollmentCode.md) |  | [optional] 
+**icon** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
-**icon** | **str** |  | [optional] 
-**color** | **str** |  | [optional] 
-**description** | **str** |  | [optional] 
 **params** | **object** |  | [optional] 
-**computers_count** | **int** |  | [optional] 
-**enrollment_code** | [**BlueprintsCreateBlueprint201ResponseEnrollmentCode**](BlueprintsCreateBlueprint201ResponseEnrollmentCode.md) |  | [optional] 
 **type** | **str** |  | [optional] 
 
 ## Example

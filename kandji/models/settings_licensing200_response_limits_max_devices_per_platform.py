@@ -27,10 +27,10 @@ class SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform(BaseModel):
     """
     SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform
     """ # noqa: E501
-    macos: Optional[StrictInt] = None
     ios_ipados: Optional[StrictInt] = None
+    macos: Optional[StrictInt] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["macos", "ios_ipados"]
+    __properties: ClassVar[List[str]] = ["ios_ipados", "macos"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,8 +90,8 @@ class SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "macos": obj.get("macos"),
-            "ios_ipados": obj.get("ios_ipados")
+            "ios_ipados": obj.get("ios_ipados"),
+            "macos": obj.get("macos")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

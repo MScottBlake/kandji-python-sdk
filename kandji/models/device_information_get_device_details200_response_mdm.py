@@ -27,13 +27,13 @@ class DeviceInformationGetDeviceDetails200ResponseMdm(BaseModel):
     """
     DeviceInformationGetDeviceDetails200ResponseMdm
     """ # noqa: E501
-    mdm_enabled: Optional[StrictStr] = None
-    supervised: Optional[StrictStr] = None
     install_date: Optional[StrictStr] = None
     last_check_in: Optional[StrictStr] = None
+    mdm_enabled: Optional[StrictStr] = None
     mdm_enabled_user: Optional[Any] = None
+    supervised: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["mdm_enabled", "supervised", "install_date", "last_check_in", "mdm_enabled_user"]
+    __properties: ClassVar[List[str]] = ["install_date", "last_check_in", "mdm_enabled", "mdm_enabled_user", "supervised"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,11 +98,11 @@ class DeviceInformationGetDeviceDetails200ResponseMdm(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "mdm_enabled": obj.get("mdm_enabled"),
-            "supervised": obj.get("supervised"),
             "install_date": obj.get("install_date"),
             "last_check_in": obj.get("last_check_in"),
-            "mdm_enabled_user": obj.get("mdm_enabled_user")
+            "mdm_enabled": obj.get("mdm_enabled"),
+            "mdm_enabled_user": obj.get("mdm_enabled_user"),
+            "supervised": obj.get("supervised")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

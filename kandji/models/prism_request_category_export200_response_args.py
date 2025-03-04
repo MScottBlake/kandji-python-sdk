@@ -27,13 +27,13 @@ class PrismRequestCategoryExport200ResponseArgs(BaseModel):
     """
     PrismRequestCategoryExport200ResponseArgs
     """ # noqa: E501
-    filter: Optional[Dict[str, Any]] = None
-    columns: Optional[Any] = None
-    sort_by: Optional[StrictStr] = None
     blueprint_ids: Optional[Any] = None
+    columns: Optional[Any] = None
     device_families: Optional[Any] = None
+    filter: Optional[Dict[str, Any]] = None
+    sort_by: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["filter", "columns", "sort_by", "blueprint_ids", "device_families"]
+    __properties: ClassVar[List[str]] = ["blueprint_ids", "columns", "device_families", "filter", "sort_by"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,15 +81,15 @@ class PrismRequestCategoryExport200ResponseArgs(BaseModel):
             for _key, _value in self.additional_properties.items():
                 _dict[_key] = _value
 
-        # set to None if columns (nullable) is None
-        # and model_fields_set contains the field
-        if self.columns is None and "columns" in self.model_fields_set:
-            _dict['columns'] = None
-
         # set to None if blueprint_ids (nullable) is None
         # and model_fields_set contains the field
         if self.blueprint_ids is None and "blueprint_ids" in self.model_fields_set:
             _dict['blueprint_ids'] = None
+
+        # set to None if columns (nullable) is None
+        # and model_fields_set contains the field
+        if self.columns is None and "columns" in self.model_fields_set:
+            _dict['columns'] = None
 
         # set to None if device_families (nullable) is None
         # and model_fields_set contains the field
@@ -108,11 +108,11 @@ class PrismRequestCategoryExport200ResponseArgs(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "filter": obj.get("filter"),
-            "columns": obj.get("columns"),
-            "sort_by": obj.get("sort_by"),
             "blueprint_ids": obj.get("blueprint_ids"),
-            "device_families": obj.get("device_families")
+            "columns": obj.get("columns"),
+            "device_families": obj.get("device_families"),
+            "filter": obj.get("filter"),
+            "sort_by": obj.get("sort_by")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

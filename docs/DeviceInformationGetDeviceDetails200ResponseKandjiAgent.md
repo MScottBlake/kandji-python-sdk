@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **agent_installed** | **str** |  | [optional] 
+**agent_version** | **str** |  | [optional] 
 **install_date** | **str** |  | [optional] 
 **last_check_in** | **str** |  | [optional] 
-**agent_version** | **str** |  | [optional] 
 
 ## Example
 

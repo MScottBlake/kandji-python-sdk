@@ -27,12 +27,12 @@ class AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBluepr
     """
     AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint
     """ # noqa: E501
+    color: Optional[StrictStr] = None
+    icon: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
-    icon: Optional[StrictStr] = None
-    color: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["id", "name", "icon", "color"]
+    __properties: ClassVar[List[str]] = ["color", "icon", "id", "name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,10 +92,10 @@ class AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBluepr
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "name": obj.get("name"),
+            "color": obj.get("color"),
             "icon": obj.get("icon"),
-            "color": obj.get("color")
+            "id": obj.get("id"),
+            "name": obj.get("name")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

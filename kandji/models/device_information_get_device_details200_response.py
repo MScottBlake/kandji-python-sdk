@@ -40,25 +40,25 @@ class DeviceInformationGetDeviceDetails200Response(BaseModel):
     """
     DeviceInformationGetDeviceDetails200Response
     """ # noqa: E501
-    general: Optional[DeviceInformationGetDeviceDetails200ResponseGeneral] = None
-    mdm: Optional[DeviceInformationGetDeviceDetails200ResponseMdm] = None
     activation_lock: Optional[DeviceInformationGetDeviceDetails200ResponseActivationLock] = None
-    filevault: Optional[DeviceInformationGetDeviceDetails200ResponseFilevault] = None
-    lost_mode: Optional[DeviceInformationGetDeviceDetails200ResponseLostMode] = None
+    apple_business_manager: Optional[DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager] = None
     automated_device_enrollment: Optional[DeviceInformationGetDeviceDetails200ResponseAutomatedDeviceEnrollment] = None
-    kandji_agent: Optional[DeviceInformationGetDeviceDetails200ResponseKandjiAgent] = None
+    cellular: Optional[DeviceInformationGetDeviceDetails200ResponseCellular] = None
+    filevault: Optional[DeviceInformationGetDeviceDetails200ResponseFilevault] = None
+    general: Optional[DeviceInformationGetDeviceDetails200ResponseGeneral] = None
     hardware_overview: Optional[DeviceInformationGetDeviceDetails200ResponseHardwareOverview] = None
-    volumes: Optional[Any] = None
+    installed_profiles: Optional[Any] = None
+    kandji_agent: Optional[DeviceInformationGetDeviceDetails200ResponseKandjiAgent] = None
+    lost_mode: Optional[DeviceInformationGetDeviceDetails200ResponseLostMode] = None
+    mdm: Optional[DeviceInformationGetDeviceDetails200ResponseMdm] = None
     network: Optional[Dict[str, Any]] = None
     recovery_information: Optional[DeviceInformationGetDeviceDetails200ResponseRecoveryInformation] = None
-    users: Optional[DeviceInformationGetDeviceDetails200ResponseUsers] = None
-    installed_profiles: Optional[Any] = None
-    apple_business_manager: Optional[DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager] = None
     security_information: Optional[DeviceInformationGetDeviceDetails200ResponseSecurityInformation] = None
-    cellular: Optional[DeviceInformationGetDeviceDetails200ResponseCellular] = None
     tags: Optional[Any] = None
+    users: Optional[DeviceInformationGetDeviceDetails200ResponseUsers] = None
+    volumes: Optional[Any] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["general", "mdm", "activation_lock", "filevault", "lost_mode", "automated_device_enrollment", "kandji_agent", "hardware_overview", "volumes", "network", "recovery_information", "users", "installed_profiles", "apple_business_manager", "security_information", "cellular", "tags"]
+    __properties: ClassVar[List[str]] = ["activation_lock", "apple_business_manager", "automated_device_enrollment", "cellular", "filevault", "general", "hardware_overview", "installed_profiles", "kandji_agent", "lost_mode", "mdm", "network", "recovery_information", "security_information", "tags", "users", "volumes"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -101,54 +101,49 @@ class DeviceInformationGetDeviceDetails200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of general
-        if self.general:
-            _dict['general'] = self.general.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of mdm
-        if self.mdm:
-            _dict['mdm'] = self.mdm.to_dict()
         # override the default output from pydantic by calling `to_dict()` of activation_lock
         if self.activation_lock:
             _dict['activation_lock'] = self.activation_lock.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of filevault
-        if self.filevault:
-            _dict['filevault'] = self.filevault.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of lost_mode
-        if self.lost_mode:
-            _dict['lost_mode'] = self.lost_mode.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of automated_device_enrollment
-        if self.automated_device_enrollment:
-            _dict['automated_device_enrollment'] = self.automated_device_enrollment.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of kandji_agent
-        if self.kandji_agent:
-            _dict['kandji_agent'] = self.kandji_agent.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of hardware_overview
-        if self.hardware_overview:
-            _dict['hardware_overview'] = self.hardware_overview.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of recovery_information
-        if self.recovery_information:
-            _dict['recovery_information'] = self.recovery_information.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of users
-        if self.users:
-            _dict['users'] = self.users.to_dict()
         # override the default output from pydantic by calling `to_dict()` of apple_business_manager
         if self.apple_business_manager:
             _dict['apple_business_manager'] = self.apple_business_manager.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of security_information
-        if self.security_information:
-            _dict['security_information'] = self.security_information.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of automated_device_enrollment
+        if self.automated_device_enrollment:
+            _dict['automated_device_enrollment'] = self.automated_device_enrollment.to_dict()
         # override the default output from pydantic by calling `to_dict()` of cellular
         if self.cellular:
             _dict['cellular'] = self.cellular.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of filevault
+        if self.filevault:
+            _dict['filevault'] = self.filevault.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of general
+        if self.general:
+            _dict['general'] = self.general.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of hardware_overview
+        if self.hardware_overview:
+            _dict['hardware_overview'] = self.hardware_overview.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of kandji_agent
+        if self.kandji_agent:
+            _dict['kandji_agent'] = self.kandji_agent.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of lost_mode
+        if self.lost_mode:
+            _dict['lost_mode'] = self.lost_mode.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of mdm
+        if self.mdm:
+            _dict['mdm'] = self.mdm.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of recovery_information
+        if self.recovery_information:
+            _dict['recovery_information'] = self.recovery_information.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of security_information
+        if self.security_information:
+            _dict['security_information'] = self.security_information.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of users
+        if self.users:
+            _dict['users'] = self.users.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
                 _dict[_key] = _value
-
-        # set to None if volumes (nullable) is None
-        # and model_fields_set contains the field
-        if self.volumes is None and "volumes" in self.model_fields_set:
-            _dict['volumes'] = None
 
         # set to None if installed_profiles (nullable) is None
         # and model_fields_set contains the field
@@ -159,6 +154,11 @@ class DeviceInformationGetDeviceDetails200Response(BaseModel):
         # and model_fields_set contains the field
         if self.tags is None and "tags" in self.model_fields_set:
             _dict['tags'] = None
+
+        # set to None if volumes (nullable) is None
+        # and model_fields_set contains the field
+        if self.volumes is None and "volumes" in self.model_fields_set:
+            _dict['volumes'] = None
 
         return _dict
 
@@ -172,23 +172,23 @@ class DeviceInformationGetDeviceDetails200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "general": DeviceInformationGetDeviceDetails200ResponseGeneral.from_dict(obj["general"]) if obj.get("general") is not None else None,
-            "mdm": DeviceInformationGetDeviceDetails200ResponseMdm.from_dict(obj["mdm"]) if obj.get("mdm") is not None else None,
             "activation_lock": DeviceInformationGetDeviceDetails200ResponseActivationLock.from_dict(obj["activation_lock"]) if obj.get("activation_lock") is not None else None,
-            "filevault": DeviceInformationGetDeviceDetails200ResponseFilevault.from_dict(obj["filevault"]) if obj.get("filevault") is not None else None,
-            "lost_mode": DeviceInformationGetDeviceDetails200ResponseLostMode.from_dict(obj["lost_mode"]) if obj.get("lost_mode") is not None else None,
+            "apple_business_manager": DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager.from_dict(obj["apple_business_manager"]) if obj.get("apple_business_manager") is not None else None,
             "automated_device_enrollment": DeviceInformationGetDeviceDetails200ResponseAutomatedDeviceEnrollment.from_dict(obj["automated_device_enrollment"]) if obj.get("automated_device_enrollment") is not None else None,
-            "kandji_agent": DeviceInformationGetDeviceDetails200ResponseKandjiAgent.from_dict(obj["kandji_agent"]) if obj.get("kandji_agent") is not None else None,
+            "cellular": DeviceInformationGetDeviceDetails200ResponseCellular.from_dict(obj["cellular"]) if obj.get("cellular") is not None else None,
+            "filevault": DeviceInformationGetDeviceDetails200ResponseFilevault.from_dict(obj["filevault"]) if obj.get("filevault") is not None else None,
+            "general": DeviceInformationGetDeviceDetails200ResponseGeneral.from_dict(obj["general"]) if obj.get("general") is not None else None,
             "hardware_overview": DeviceInformationGetDeviceDetails200ResponseHardwareOverview.from_dict(obj["hardware_overview"]) if obj.get("hardware_overview") is not None else None,
-            "volumes": obj.get("volumes"),
+            "installed_profiles": obj.get("installed_profiles"),
+            "kandji_agent": DeviceInformationGetDeviceDetails200ResponseKandjiAgent.from_dict(obj["kandji_agent"]) if obj.get("kandji_agent") is not None else None,
+            "lost_mode": DeviceInformationGetDeviceDetails200ResponseLostMode.from_dict(obj["lost_mode"]) if obj.get("lost_mode") is not None else None,
+            "mdm": DeviceInformationGetDeviceDetails200ResponseMdm.from_dict(obj["mdm"]) if obj.get("mdm") is not None else None,
             "network": obj.get("network"),
             "recovery_information": DeviceInformationGetDeviceDetails200ResponseRecoveryInformation.from_dict(obj["recovery_information"]) if obj.get("recovery_information") is not None else None,
-            "users": DeviceInformationGetDeviceDetails200ResponseUsers.from_dict(obj["users"]) if obj.get("users") is not None else None,
-            "installed_profiles": obj.get("installed_profiles"),
-            "apple_business_manager": DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager.from_dict(obj["apple_business_manager"]) if obj.get("apple_business_manager") is not None else None,
             "security_information": DeviceInformationGetDeviceDetails200ResponseSecurityInformation.from_dict(obj["security_information"]) if obj.get("security_information") is not None else None,
-            "cellular": DeviceInformationGetDeviceDetails200ResponseCellular.from_dict(obj["cellular"]) if obj.get("cellular") is not None else None,
-            "tags": obj.get("tags")
+            "tags": obj.get("tags"),
+            "users": DeviceInformationGetDeviceDetails200ResponseUsers.from_dict(obj["users"]) if obj.get("users") is not None else None,
+            "volumes": obj.get("volumes")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

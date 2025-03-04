@@ -28,11 +28,11 @@ class DeviceInformationGetDeviceDetails200ResponseKandjiAgent(BaseModel):
     DeviceInformationGetDeviceDetails200ResponseKandjiAgent
     """ # noqa: E501
     agent_installed: Optional[StrictStr] = None
+    agent_version: Optional[StrictStr] = None
     install_date: Optional[StrictStr] = None
     last_check_in: Optional[StrictStr] = None
-    agent_version: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["agent_installed", "install_date", "last_check_in", "agent_version"]
+    __properties: ClassVar[List[str]] = ["agent_installed", "agent_version", "install_date", "last_check_in"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,9 +93,9 @@ class DeviceInformationGetDeviceDetails200ResponseKandjiAgent(BaseModel):
 
         _obj = cls.model_validate({
             "agent_installed": obj.get("agent_installed"),
+            "agent_version": obj.get("agent_version"),
             "install_date": obj.get("install_date"),
-            "last_check_in": obj.get("last_check_in"),
-            "agent_version": obj.get("agent_version")
+            "last_check_in": obj.get("last_check_in")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

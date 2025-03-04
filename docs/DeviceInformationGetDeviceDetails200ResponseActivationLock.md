@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bypass_code_failed** | **int** |  | [optional] 
-**user_activation_lock_enabled** | **int** |  | [optional] 
-**device_activation_lock_enabled** | **int** |  | [optional] 
 **activation_lock_allowed_while_supervised** | **int** |  | [optional] 
 **activation_lock_supported** | **int** |  | [optional] 
+**bypass_code_failed** | **int** |  | [optional] 
+**device_activation_lock_enabled** | **int** |  | [optional] 
+**user_activation_lock_enabled** | **int** |  | [optional] 
 
 ## Example
 

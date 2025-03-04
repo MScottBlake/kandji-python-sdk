@@ -210,13 +210,13 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
-    phone = 'phone_example' # str | 
     email = 'email_example' # str | 
     file = None # bytearray | This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.
+    phone = 'phone_example' # str | 
 
     try:
         # Create ADE integration
-        api_response = api_instance.create_ade_integration(blueprint_id, phone, email, file)
+        api_response = api_instance.create_ade_integration(blueprint_id, email, file, phone)
         print("The response of AutomatedDeviceEnrollmentIntegrationsApi->create_ade_integration:\n")
         pprint(api_response)
     except ApiException as e:
@@ -326,12 +326,12 @@ Class | Method | HTTP request | Description
  - [AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response](docs/AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response.md)
  - [AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount](docs/AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount.md)
  - [AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice](docs/AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice.md)
- - [AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response](docs/AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
  - [AutomatedDeviceEnrollmentIntegrationsListAdeDevices400Response](docs/AutomatedDeviceEnrollmentIntegrationsListAdeDevices400Response.md)
  - [AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response](docs/AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response.md)
  - [BlueprintsCreateBlueprint201Response](docs/BlueprintsCreateBlueprint201Response.md)
  - [BlueprintsCreateBlueprint201ResponseEnrollmentCode](docs/BlueprintsCreateBlueprint201ResponseEnrollmentCode.md)
  - [BlueprintsGetBlueprint200Response](docs/BlueprintsGetBlueprint200Response.md)
+ - [BlueprintsListBlueprints200Response](docs/BlueprintsListBlueprints200Response.md)
  - [BlueprintsUpdateBlueprint200Response](docs/BlueprintsUpdateBlueprint200Response.md)
  - [DeviceActionsGetDeviceCommands200Response](docs/DeviceActionsGetDeviceCommands200Response.md)
  - [DeviceActionsLockDevice200Response](docs/DeviceActionsLockDevice200Response.md)

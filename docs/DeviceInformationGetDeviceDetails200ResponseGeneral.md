@@ -5,23 +5,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**device_id** | **str** |  | [optional] 
-**device_name** | **str** |  | [optional] 
-**last_enrollment** | **str** |  | [optional] 
-**first_enrollment** | **str** |  | [optional] 
-**model** | **str** |  | [optional] 
-**platform** | **str** |  | [optional] 
-**os_version** | **str** |  | [optional] 
-**supplemental_build_version** | **str** |  | [optional] 
-**supplemental_os_version_extra** | **str** |  | [optional] 
-**system_version** | **str** |  | [optional] 
-**boot_volume** | **str** |  | [optional] 
-**time_since_boot** | **str** |  | [optional] 
-**last_user** | **str** |  | [optional] 
 **asset_tag** | **str** |  | [optional] 
 **assigned_user** | **str** |  | [optional] 
 **blueprint_name** | **str** |  | [optional] 
 **blueprint_uuid** | **str** |  | [optional] 
+**boot_volume** | **str** |  | [optional] 
+**device_id** | **str** |  | [optional] 
+**device_name** | **str** |  | [optional] 
+**first_enrollment** | **str** |  | [optional] 
+**last_enrollment** | **str** |  | [optional] 
+**last_user** | **str** |  | [optional] 
+**model** | **str** |  | [optional] 
+**os_version** | **str** |  | [optional] 
+**platform** | **str** |  | [optional] 
+**supplemental_build_version** | **str** |  | [optional] 
+**supplemental_os_version_extra** | **str** |  | [optional] 
+**system_version** | **str** |  | [optional] 
+**time_since_boot** | **str** |  | [optional] 
 
 ## Example
 

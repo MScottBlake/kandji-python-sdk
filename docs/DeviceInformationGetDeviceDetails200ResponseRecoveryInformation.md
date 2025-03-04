@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**recovery_lock_enabled** | **int** |  | [optional] 
 **firmware_password_exist** | **int** |  | [optional] 
 **firmware_password_pending** | **int** |  | [optional] 
 **password_rotation_scheduled** | **object** |  | [optional] 
+**recovery_lock_enabled** | **int** |  | [optional] 
 
 ## Example
 

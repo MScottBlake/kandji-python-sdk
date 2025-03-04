@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **create_ade_integration**
-> AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response create_ade_integration(blueprint_id, phone, email, file)
+> AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response create_ade_integration(blueprint_id, email, file, phone)
 
 Create ADE integration
 
@@ -56,13 +56,13 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
-    phone = 'phone_example' # str | 
     email = 'email_example' # str | 
     file = None # bytearray | This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.
+    phone = 'phone_example' # str | 
 
     try:
         # Create ADE integration
-        api_response = api_instance.create_ade_integration(blueprint_id, phone, email, file)
+        api_response = api_instance.create_ade_integration(blueprint_id, email, file, phone)
         print("The response of AutomatedDeviceEnrollmentIntegrationsApi->create_ade_integration:\n")
         pprint(api_response)
     except Exception as e:
@@ -77,9 +77,9 @@ with kandji.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **blueprint_id** | **str**|  | 
- **phone** | **str**|  | 
  **email** | **str**|  | 
  **file** | **bytearray**| This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. | 
+ **phone** | **str**|  | 
 
 ### Return type
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * Connection -  <br>  * Server -  <br>  * Allow -  <br>  * X-Frame-Options -  <br>  * Strict-Transport-Security -  <br>  * X-Content-Type-Options -  <br>  * X-XSS-Protection -  <br>  * Referrer-Policy -  <br>  * Feature-Policy -  <br>  * Vary -  <br>  * Content-Security-Policy -  <br>  |
+**200** | OK |  * Allow -  <br>  * Connection -  <br>  * Content-Length -  <br>  * Content-Security-Policy -  <br>  * Content-Type -  <br>  * Date -  <br>  * Feature-Policy -  <br>  * Referrer-Policy -  <br>  * Server -  <br>  * Strict-Transport-Security -  <br>  * Vary -  <br>  * X-Content-Type-Options -  <br>  * X-Frame-Options -  <br>  * X-XSS-Protection -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -176,7 +176,7 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | No Content |  * Date -  <br>  * Connection -  <br>  * Set-Cookie -  <br>  * Allow -  <br>  * Content-Security-Policy -  <br>  * Feature-Policy -  <br>  * Referrer-Policy -  <br>  * Server -  <br>  * Strict-Transport-Security -  <br>  * Vary -  <br>  * X-Content-Type-Options -  <br>  * X-Frame-Options -  <br>  * X-Xss-Protection -  <br>  |
+**204** | No Content |  * Allow -  <br>  * Connection -  <br>  * Content-Security-Policy -  <br>  * Date -  <br>  * Feature-Policy -  <br>  * Referrer-Policy -  <br>  * Server -  <br>  * Set-Cookie -  <br>  * Strict-Transport-Security -  <br>  * Vary -  <br>  * X-Content-Type-Options -  <br>  * X-Frame-Options -  <br>  * X-Xss-Protection -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -250,7 +250,7 @@ This endpoint does not need any parameter.
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * Connection -  <br>  * Set-Cookie -  <br>  * Allow -  <br>  * Content-Security-Policy -  <br>  * Feature-Policy -  <br>  * Referrer-Policy -  <br>  * Server -  <br>  * Strict-Transport-Security -  <br>  * Vary -  <br>  * X-Content-Type-Options -  <br>  * X-Frame-Options -  <br>  * X-Xss-Protection -  <br>  |
+**200** | OK |  * Allow -  <br>  * Connection -  <br>  * Content-Length -  <br>  * Content-Security-Policy -  <br>  * Content-Type -  <br>  * Date -  <br>  * Feature-Policy -  <br>  * Referrer-Policy -  <br>  * Server -  <br>  * Set-Cookie -  <br>  * Strict-Transport-Security -  <br>  * Vary -  <br>  * X-Content-Type-Options -  <br>  * X-Frame-Options -  <br>  * X-Xss-Protection -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -408,7 +408,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_ade_devices**
-> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response list_ade_devices(blueprint_id=blueprint_id, user_id=user_id, dep_account=dep_account, device_family=device_family, model=model, os=os, profile_status=profile_status, serial_number=serial_number, page=page)
+> BlueprintsListBlueprints200Response list_ade_devices(blueprint_id=blueprint_id, user_id=user_id, dep_account=dep_account, device_family=device_family, model=model, os=os, profile_status=profile_status, serial_number=serial_number, page=page)
 
 List ADE devices
 
@@ -420,7 +420,7 @@ Get a list of Automated Device Enrollment devices.
 
 ```python
 import kandji
-from kandji.models.automated_device_enrollment_integrations_list_ade_devices200_response import AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+from kandji.models.blueprints_list_blueprints200_response import BlueprintsListBlueprints200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -482,7 +482,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
+[**BlueprintsListBlueprints200Response**](BlueprintsListBlueprints200Response.md)
 
 ### Authorization
 
@@ -651,12 +651,12 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  * Date -  <br>  * Content-Type -  <br>  * Content-Length -  <br>  * Connection -  <br>  * Set-Cookie -  <br>  * Allow -  <br>  * Content-Security-Policy -  <br>  * Feature-Policy -  <br>  * Referrer-Policy -  <br>  * Server -  <br>  * Strict-Transport-Security -  <br>  * Vary -  <br>  * X-Content-Type-Options -  <br>  * X-Frame-Options -  <br>  * X-Xss-Protection -  <br>  |
+**200** | OK |  * Allow -  <br>  * Connection -  <br>  * Content-Length -  <br>  * Content-Security-Policy -  <br>  * Content-Type -  <br>  * Date -  <br>  * Feature-Policy -  <br>  * Referrer-Policy -  <br>  * Server -  <br>  * Set-Cookie -  <br>  * Strict-Transport-Security -  <br>  * Vary -  <br>  * X-Content-Type-Options -  <br>  * X-Frame-Options -  <br>  * X-Xss-Protection -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **renew_ade_integration**
-> renew_ade_integration(ade_token_id, blueprint_id, phone, email, file)
+> renew_ade_integration(ade_token_id, blueprint_id, email, file, phone)
 
 Renew ADE integration
 
@@ -694,13 +694,13 @@ with kandji.ApiClient(configuration) as api_client:
     api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
     ade_token_id = 'ade_token_id_example' # str | 
     blueprint_id = 'blueprint_id_example' # str | 
-    phone = 'phone_example' # str | 
     email = 'email_example' # str | 
     file = None # bytearray | This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.
+    phone = 'phone_example' # str | 
 
     try:
         # Renew ADE integration
-        api_instance.renew_ade_integration(ade_token_id, blueprint_id, phone, email, file)
+        api_instance.renew_ade_integration(ade_token_id, blueprint_id, email, file, phone)
     except Exception as e:
         print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->renew_ade_integration: %s\n" % e)
 ```
@@ -714,9 +714,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ade_token_id** | **str**|  | 
  **blueprint_id** | **str**|  | 
- **phone** | **str**|  | 
  **email** | **str**|  | 
  **file** | **bytearray**| This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. | 
+ **phone** | **str**|  | 
 
 ### Return type
 
@@ -779,7 +779,7 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
     device_id = 'device_id_example' # str | 
-    body = {"blueprint_id":"3013eb7c-d0c1-4689-852a-50776a92036b","asset_tag":"123456","user_id":"5344c996-8823-4b37-8d6e-8515fc7c3a0a"} # str |  (optional)
+    body = {"asset_tag":"123456","blueprint_id":"3013eb7c-d0c1-4689-852a-50776a92036b","user_id":"5344c996-8823-4b37-8d6e-8515fc7c3a0a"} # str |  (optional)
 
     try:
         # Update ADE device
@@ -859,7 +859,7 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
     ade_token_id = 'ade_token_id_example' # str | 
-    body = {"blueprint_id":"bf21d9cf-17cf-48b3-890d-7bc27c241bb7","phone":"1234567890","email":"example@accuhive.io"} # str |  (optional)
+    body = {"blueprint_id":"bf21d9cf-17cf-48b3-890d-7bc27c241bb7","email":"example@accuhive.io","phone":"1234567890"} # str |  (optional)
 
     try:
         # Update ADE integration

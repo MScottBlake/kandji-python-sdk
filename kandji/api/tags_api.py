@@ -20,7 +20,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
-from kandji.models.automated_device_enrollment_integrations_list_ade_devices200_response import AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+from kandji.models.blueprints_list_blueprints200_response import BlueprintsListBlueprints200Response
 from kandji.models.tags_create_tag201_response import TagsCreateTag201Response
 
 from kandji.api_client import ApiClient, RequestSerialized
@@ -585,7 +585,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response:
+    ) -> BlueprintsListBlueprints200Response:
         """Get Tags
 
         Return configured tags.
@@ -623,7 +623,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
+            '200': "BlueprintsListBlueprints200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -652,7 +652,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response]:
+    ) -> ApiResponse[BlueprintsListBlueprints200Response]:
         """Get Tags
 
         Return configured tags.
@@ -690,7 +690,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
+            '200': "BlueprintsListBlueprints200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -757,7 +757,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response",
+            '200': "BlueprintsListBlueprints200Response",
         }
         response_data = self.api_client.call_api(
             *_param,

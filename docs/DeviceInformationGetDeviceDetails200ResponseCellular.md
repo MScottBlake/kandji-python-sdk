@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**voice_roaming** | **int** |  | [optional] 
-**data_roaming** | **int** |  | [optional] 
 **cellular_technology** | **int** |  | [optional] 
+**data_roaming** | **int** |  | [optional] 
 **subscriptions** | **object** |  | [optional] 
+**voice_roaming** | **int** |  | [optional] 
 
 ## Example
 

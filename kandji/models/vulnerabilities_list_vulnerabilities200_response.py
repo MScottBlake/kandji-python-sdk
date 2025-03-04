@@ -27,12 +27,12 @@ class VulnerabilitiesListVulnerabilities200Response(BaseModel):
     """
     VulnerabilitiesListVulnerabilities200Response
     """ # noqa: E501
-    total: Optional[StrictInt] = None
     next: Optional[Any] = None
     previous: Optional[Any] = None
     results: Optional[Any] = None
+    total: Optional[StrictInt] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["total", "next", "previous", "results"]
+    __properties: ClassVar[List[str]] = ["next", "previous", "results", "total"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -107,10 +107,10 @@ class VulnerabilitiesListVulnerabilities200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "total": obj.get("total"),
             "next": obj.get("next"),
             "previous": obj.get("previous"),
-            "results": obj.get("results")
+            "results": obj.get("results"),
+            "total": obj.get("total")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -28,12 +28,12 @@ class DeviceInformationGetDeviceDetails200ResponseFilevault(BaseModel):
     DeviceInformationGetDeviceDetails200ResponseFilevault
     """ # noqa: E501
     filevault_enabled: Optional[Any] = None
-    filevault_recoverykey_type: Optional[StrictStr] = None
-    filevault_prk_escrowed: Optional[StrictInt] = None
     filevault_next_rotation: Optional[StrictStr] = None
+    filevault_prk_escrowed: Optional[StrictInt] = None
+    filevault_recoverykey_type: Optional[StrictStr] = None
     filevault_regen_required: Optional[StrictInt] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["filevault_enabled", "filevault_recoverykey_type", "filevault_prk_escrowed", "filevault_next_rotation", "filevault_regen_required"]
+    __properties: ClassVar[List[str]] = ["filevault_enabled", "filevault_next_rotation", "filevault_prk_escrowed", "filevault_recoverykey_type", "filevault_regen_required"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,9 +99,9 @@ class DeviceInformationGetDeviceDetails200ResponseFilevault(BaseModel):
 
         _obj = cls.model_validate({
             "filevault_enabled": obj.get("filevault_enabled"),
-            "filevault_recoverykey_type": obj.get("filevault_recoverykey_type"),
-            "filevault_prk_escrowed": obj.get("filevault_prk_escrowed"),
             "filevault_next_rotation": obj.get("filevault_next_rotation"),
+            "filevault_prk_escrowed": obj.get("filevault_prk_escrowed"),
+            "filevault_recoverykey_type": obj.get("filevault_recoverykey_type"),
             "filevault_regen_required": obj.get("filevault_regen_required")
         })
         # store additional fields in additional_properties

@@ -27,12 +27,12 @@ class DeviceInformationGetDeviceDetails200ResponseCellular(BaseModel):
     """
     DeviceInformationGetDeviceDetails200ResponseCellular
     """ # noqa: E501
-    voice_roaming: Optional[StrictInt] = None
-    data_roaming: Optional[StrictInt] = None
     cellular_technology: Optional[StrictInt] = None
+    data_roaming: Optional[StrictInt] = None
     subscriptions: Optional[Any] = None
+    voice_roaming: Optional[StrictInt] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["voice_roaming", "data_roaming", "cellular_technology", "subscriptions"]
+    __properties: ClassVar[List[str]] = ["cellular_technology", "data_roaming", "subscriptions", "voice_roaming"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,10 +97,10 @@ class DeviceInformationGetDeviceDetails200ResponseCellular(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "voice_roaming": obj.get("voice_roaming"),
-            "data_roaming": obj.get("data_roaming"),
             "cellular_technology": obj.get("cellular_technology"),
-            "subscriptions": obj.get("subscriptions")
+            "data_roaming": obj.get("data_roaming"),
+            "subscriptions": obj.get("subscriptions"),
+            "voice_roaming": obj.get("voice_roaming")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

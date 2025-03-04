@@ -173,5 +173,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_blueprints_list_blueprints200_response.py
 tox.ini

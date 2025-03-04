@@ -5,7 +5,7 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_vulnerability_description**](VulnerabilitiesApi.md#get_vulnerability_description) | **GET** /api/v1/vulnerability-management/vulnerabilities/{cve_id} | Get Vulnerability Description
-[**list_affected_applications**](VulnerabilitiesApi.md#list_affected_applications) | **GET** /api/v1/vulnerability-management/vulnerabilities/{cve_id}/applications | List Affected Applications
+[**list_affected_apps**](VulnerabilitiesApi.md#list_affected_apps) | **GET** /api/v1/vulnerability-management/vulnerabilities/{cve_id}/applications | List Affected Apps
 [**list_affected_devices**](VulnerabilitiesApi.md#list_affected_devices) | **GET** /api/v1/vulnerability-management/vulnerabilities/{cve_id}/devices | List Affected Devices
 [**list_detections**](VulnerabilitiesApi.md#list_detections) | **GET** /api/v1/vulnerability-management/detections | List Detections
 [**list_vulnerabilities**](VulnerabilitiesApi.md#list_vulnerabilities) | **GET** /api/v1/vulnerability-management/vulnerabilities | List Vulnerabilities
@@ -89,10 +89,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_affected_applications**
-> object list_affected_applications(cve_id, page=page, size=size, sort_by=sort_by, filter=filter)
+# **list_affected_apps**
+> object list_affected_apps(cve_id, page=page, size=size, sort_by=sort_by, filter=filter)
 
-List Affected Applications
+List Affected Apps
 
 This endpoint makes a request to retrieve a list of applications impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
 
@@ -132,12 +132,12 @@ with kandji.ApiClient(configuration) as api_client:
     filter = 'device_serial_number' # str | Filterable columns: blueprint_id updated_at (optional)
 
     try:
-        # List Affected Applications
-        api_response = api_instance.list_affected_applications(cve_id, page=page, size=size, sort_by=sort_by, filter=filter)
-        print("The response of VulnerabilitiesApi->list_affected_applications:\n")
+        # List Affected Apps
+        api_response = api_instance.list_affected_apps(cve_id, page=page, size=size, sort_by=sort_by, filter=filter)
+        print("The response of VulnerabilitiesApi->list_affected_apps:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VulnerabilitiesApi->list_affected_applications: %s\n" % e)
+        print("Exception when calling VulnerabilitiesApi->list_affected_apps: %s\n" % e)
 ```
 
 

@@ -304,7 +304,7 @@ class VulnerabilitiesApi:
 
 
     @validate_call
-    def list_affected_applications(
+    def list_affected_apps(
         self,
         cve_id: StrictStr,
         page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
@@ -324,7 +324,7 @@ class VulnerabilitiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> object:
-        """List Affected Applications
+        """List Affected Apps
 
         This endpoint makes a request to retrieve a list of applications impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
 
@@ -360,7 +360,7 @@ class VulnerabilitiesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_affected_applications_serialize(
+        _param = self._list_affected_apps_serialize(
             cve_id=cve_id,
             page=page,
             size=size,
@@ -387,7 +387,7 @@ class VulnerabilitiesApi:
 
 
     @validate_call
-    def list_affected_applications_with_http_info(
+    def list_affected_apps_with_http_info(
         self,
         cve_id: StrictStr,
         page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
@@ -407,7 +407,7 @@ class VulnerabilitiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[object]:
-        """List Affected Applications
+        """List Affected Apps
 
         This endpoint makes a request to retrieve a list of applications impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
 
@@ -443,7 +443,7 @@ class VulnerabilitiesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_affected_applications_serialize(
+        _param = self._list_affected_apps_serialize(
             cve_id=cve_id,
             page=page,
             size=size,
@@ -470,7 +470,7 @@ class VulnerabilitiesApi:
 
 
     @validate_call
-    def list_affected_applications_without_preload_content(
+    def list_affected_apps_without_preload_content(
         self,
         cve_id: StrictStr,
         page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
@@ -490,7 +490,7 @@ class VulnerabilitiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """List Affected Applications
+        """List Affected Apps
 
         This endpoint makes a request to retrieve a list of applications impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
 
@@ -526,7 +526,7 @@ class VulnerabilitiesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_affected_applications_serialize(
+        _param = self._list_affected_apps_serialize(
             cve_id=cve_id,
             page=page,
             size=size,
@@ -548,7 +548,7 @@ class VulnerabilitiesApi:
         return response_data.response
 
 
-    def _list_affected_applications_serialize(
+    def _list_affected_apps_serialize(
         self,
         cve_id,
         page,

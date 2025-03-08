@@ -965,7 +965,7 @@ class VulnerabilitiesApi:
     def list_detections(
         self,
         after: Annotated[Optional[StrictStr], Field(description="Cursor token.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
+        size: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Can filter on any key attribute within the response.")] = None,
         _request_timeout: Union[
             None,
@@ -986,8 +986,8 @@ class VulnerabilitiesApi:
 
         :param after: Cursor token.
         :type after: str
-        :param limit: A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.
-        :type limit: str
+        :param size: A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.
+        :type size: str
         :param filter: Can filter on any key attribute within the response.
         :type filter: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1014,7 +1014,7 @@ class VulnerabilitiesApi:
 
         _param = self._list_detections_serialize(
             after=after,
-            limit=limit,
+            size=size,
             filter=filter,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1040,7 +1040,7 @@ class VulnerabilitiesApi:
     def list_detections_with_http_info(
         self,
         after: Annotated[Optional[StrictStr], Field(description="Cursor token.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
+        size: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Can filter on any key attribute within the response.")] = None,
         _request_timeout: Union[
             None,
@@ -1061,8 +1061,8 @@ class VulnerabilitiesApi:
 
         :param after: Cursor token.
         :type after: str
-        :param limit: A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.
-        :type limit: str
+        :param size: A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.
+        :type size: str
         :param filter: Can filter on any key attribute within the response.
         :type filter: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1089,7 +1089,7 @@ class VulnerabilitiesApi:
 
         _param = self._list_detections_serialize(
             after=after,
-            limit=limit,
+            size=size,
             filter=filter,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1115,7 +1115,7 @@ class VulnerabilitiesApi:
     def list_detections_without_preload_content(
         self,
         after: Annotated[Optional[StrictStr], Field(description="Cursor token.")] = None,
-        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
+        size: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Can filter on any key attribute within the response.")] = None,
         _request_timeout: Union[
             None,
@@ -1136,8 +1136,8 @@ class VulnerabilitiesApi:
 
         :param after: Cursor token.
         :type after: str
-        :param limit: A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.
-        :type limit: str
+        :param size: A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.
+        :type size: str
         :param filter: Can filter on any key attribute within the response.
         :type filter: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1164,7 +1164,7 @@ class VulnerabilitiesApi:
 
         _param = self._list_detections_serialize(
             after=after,
-            limit=limit,
+            size=size,
             filter=filter,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1185,7 +1185,7 @@ class VulnerabilitiesApi:
     def _list_detections_serialize(
         self,
         after,
-        limit,
+        size,
         filter,
         _request_auth,
         _content_type,
@@ -1213,9 +1213,9 @@ class VulnerabilitiesApi:
             
             _query_params.append(('after', after))
             
-        if limit is not None:
+        if size is not None:
             
-            _query_params.append(('limit', limit))
+            _query_params.append(('size', size))
             
         if filter is not None:
             

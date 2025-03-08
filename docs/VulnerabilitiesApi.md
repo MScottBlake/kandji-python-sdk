@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_detections**
-> VulnerabilitiesListDetections200Response list_detections(after=after, limit=limit, filter=filter)
+> VulnerabilitiesListDetections200Response list_detections(after=after, size=size, filter=filter)
 
 List Detections
 
@@ -297,12 +297,12 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.VulnerabilitiesApi(api_client)
     after = '' # str | Cursor token. (optional)
-    limit = '300' # str | A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
+    size = '300' # str | A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
     filter = 'device_serial_number' # str | Can filter on any key attribute within the response. (optional)
 
     try:
         # List Detections
-        api_response = api_instance.list_detections(after=after, limit=limit, filter=filter)
+        api_response = api_instance.list_detections(after=after, size=size, filter=filter)
         print("The response of VulnerabilitiesApi->list_detections:\n")
         pprint(api_response)
     except Exception as e:
@@ -317,7 +317,7 @@ with kandji.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **after** | **str**| Cursor token. | [optional] 
- **limit** | **str**| A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | [optional] 
+ **size** | **str**| A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | [optional] 
  **filter** | **str**| Can filter on any key attribute within the response. | [optional] 
 
 ### Return type

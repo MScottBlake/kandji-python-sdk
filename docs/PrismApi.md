@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**activation_lock**](PrismApi.md#activation_lock) | **GET** /api/v1/prism/activation_lock | Activation lock
 [**application_firewall**](PrismApi.md#application_firewall) | **GET** /api/v1/prism/application_firewall | Application firewall
 [**applications**](PrismApi.md#applications) | **GET** /api/v1/prism/apps | Applications
+[**cellular**](PrismApi.md#cellular) | **GET** /api/v1/prism/cellular | Cellular
 [**certificates**](PrismApi.md#certificates) | **GET** /api/v1/prism/certificates | Certificates
 [**count**](PrismApi.md#count) | **GET** /api/v1/prism/count | Count
 [**desktop_and_screensaver**](PrismApi.md#desktop_and_screensaver) | **GET** /api/v1/prism/desktop_and_screensaver | Desktop and Screensaver
@@ -270,6 +271,93 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PrismApplications200Response**](PrismApplications200Response.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Accept-Ranges -  <br>  * Access-Control-Allow-Origin -  <br>  * Connection -  <br>  * Content-Encoding -  <br>  * Content-Type -  <br>  * Date -  <br>  * Ratelimit-Limit -  <br>  * Ratelimit-Remaining -  <br>  * Ratelimit-Reset -  <br>  * Server -  <br>  * Vary -  <br>  * Via -  <br>  * X-Cache -  <br>  * X-Cache-Hits -  <br>  * X-Kong-Proxy-Latency -  <br>  * X-Kong-Upstream-Latency -  <br>  * X-Ratelimit-Limit-Hour -  <br>  * X-Ratelimit-Limit-Second -  <br>  * X-Ratelimit-Remaining-Hour -  <br>  * X-Ratelimit-Remaining-Second -  <br>  * X-Served-By -  <br>  * X-Timer -  <br>  * transfer-encoding -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cellular**
+> object cellular(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+
+Cellular
+
+Get Cellular attributes for devices.
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji
+from kandji.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji.PrismApi(api_client)
+    blueprint_ids = 'blueprint_id, blueprint_id,blueprint_id' # str | Filter results by one or more blueprint IDs separated by commas. (optional)
+    device_families = 'Mac,iPhone,iPad,tvOS' # str | Filter results by one or more device families separate by commas. (optional)
+    filter = '' # str | JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
+    sort_by = '' # str | Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order. (optional)
+    limit = '' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
+    offset = '' # str | Specify the starting record to return. (optional)
+
+    try:
+        # Cellular
+        api_response = api_instance.cellular(blueprint_ids=blueprint_ids, device_families=device_families, filter=filter, sort_by=sort_by, limit=limit, offset=offset)
+        print("The response of PrismApi->cellular:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PrismApi->cellular: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blueprint_ids** | **str**| Filter results by one or more blueprint IDs separated by commas. | [optional] 
+ **device_families** | **str**| Filter results by one or more device families separate by commas. | [optional] 
+ **filter** | **str**| JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. | [optional] 
+ **sort_by** | **str**| Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. | [optional] 
+ **limit** | **str**| A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
+ **offset** | **str**| Specify the starting record to return. | [optional] 
+
+### Return type
+
+**object**
 
 ### Authorization
 

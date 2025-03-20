@@ -71,6 +71,7 @@ docs/SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform.md
 docs/TagsApi.md
 docs/TagsCreateTag201Response.md
 docs/ThreatsApi.md
+docs/ThreatsGetBehavioralDetections200Response.md
 docs/ThreatsGetThreatDetails200Response.md
 docs/UsersApi.md
 docs/UsersGetUser200Response.md
@@ -158,6 +159,7 @@ kandji/models/settings_licensing200_response_counts.py
 kandji/models/settings_licensing200_response_limits.py
 kandji/models/settings_licensing200_response_limits_max_devices_per_platform.py
 kandji/models/tags_create_tag201_response.py
+kandji/models/threats_get_behavioral_detections200_response.py
 kandji/models/threats_get_threat_details200_response.py
 kandji/models/users_get_user200_response.py
 kandji/models/users_get_user200_response_integration.py
@@ -173,4 +175,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_threats_get_behavioral_detections200_response.py
 tox.ini

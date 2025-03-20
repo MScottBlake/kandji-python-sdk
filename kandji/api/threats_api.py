@@ -20,6 +20,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
+from kandji.models.threats_get_behavioral_detections200_response import ThreatsGetBehavioralDetections200Response
 from kandji.models.threats_get_threat_details200_response import ThreatsGetThreatDetails200Response
 
 from kandji.api_client import ApiClient, RequestSerialized
@@ -38,6 +39,490 @@ class ThreatsApi:
         if api_client is None:
             api_client = ApiClient.get_default()
         self.api_client = api_client
+
+
+    @validate_call
+    def get_behavioral_detections(
+        self,
+        threat_id: Annotated[Optional[StrictStr], Field(description="Filter by a specific threat ID (threat_id=Kandji_BD_0096).")] = None,
+        classification: Annotated[Optional[StrictStr], Field(description="Filter by threat classification (classification=malicious).")] = None,
+        status: Annotated[Optional[StrictStr], Field(description="Filter by threat status (threat_status=blocked)")] = None,
+        date_range: Annotated[Optional[StrictStr], Field(description="Return all records within a specified number of days (Int)")] = None,
+        detection_date: Annotated[Optional[StrictStr], Field(description="two query params detection_date_from and detection_date_to")] = None,
+        device_id: Annotated[Optional[StrictStr], Field(description="Search for a specific device by the device id (uuid).")] = None,
+        malware_family: Annotated[Optional[StrictStr], Field(description="Filter by malware family (malware_family=TrickBot).")] = None,
+        parent_process_name: Annotated[Optional[StrictStr], Field(description="Filter by parent process (parent_process_name=bash).")] = None,
+        target_process_name: Annotated[Optional[StrictStr], Field(description="Filter by target process (target_process_name=python).")] = None,
+        informational_tags: Annotated[Optional[StrictStr], Field(description="Filter by tags (informational_tags=exploit,privilege_escalation).")] = None,
+        term: Annotated[Optional[StrictStr], Field(description="Search term to filter threat results. Device name, file hash, image path")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Detections can be sorted by any of the following keys. Prepending a dash (-) to the parameter value will reverse the order of the returned results. ?sort_by=-device_name will order the response by device_name in descending order.</p> <ul> <li>threat_id</li> <li>classification</li> <li>device_name</li> <li>parent_process_name</li> <li>target_process_name</li> <li>detection_date</li> <li>status</li> </ul>")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 1000 records returned per request. If more records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters.  Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ThreatsGetBehavioralDetections200Response:
+        """Get Behavioral Detections
+
+        Get Behavioral Detections.
+
+        :param threat_id: Filter by a specific threat ID (threat_id=Kandji_BD_0096).
+        :type threat_id: str
+        :param classification: Filter by threat classification (classification=malicious).
+        :type classification: str
+        :param status: Filter by threat status (threat_status=blocked)
+        :type status: str
+        :param date_range: Return all records within a specified number of days (Int)
+        :type date_range: str
+        :param detection_date: two query params detection_date_from and detection_date_to
+        :type detection_date: str
+        :param device_id: Search for a specific device by the device id (uuid).
+        :type device_id: str
+        :param malware_family: Filter by malware family (malware_family=TrickBot).
+        :type malware_family: str
+        :param parent_process_name: Filter by parent process (parent_process_name=bash).
+        :type parent_process_name: str
+        :param target_process_name: Filter by target process (target_process_name=python).
+        :type target_process_name: str
+        :param informational_tags: Filter by tags (informational_tags=exploit,privilege_escalation).
+        :type informational_tags: str
+        :param term: Search term to filter threat results. Device name, file hash, image path
+        :type term: str
+        :param sort_by: <p>Detections can be sorted by any of the following keys. Prepending a dash (-) to the parameter value will reverse the order of the returned results. ?sort_by=-device_name will order the response by device_name in descending order.</p> <ul> <li>threat_id</li> <li>classification</li> <li>device_name</li> <li>parent_process_name</li> <li>target_process_name</li> <li>detection_date</li> <li>status</li> </ul>
+        :type sort_by: str
+        :param limit: A hard upper <code>limit</code> is set at 1000 records returned per request. If more records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters.  Additionally, parameter queries can be added to a request to limit the results.
+        :type limit: str
+        :param offset: Specify the starting record to return.
+        :type offset: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_behavioral_detections_serialize(
+            threat_id=threat_id,
+            classification=classification,
+            status=status,
+            date_range=date_range,
+            detection_date=detection_date,
+            device_id=device_id,
+            malware_family=malware_family,
+            parent_process_name=parent_process_name,
+            target_process_name=target_process_name,
+            informational_tags=informational_tags,
+            term=term,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ThreatsGetBehavioralDetections200Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_behavioral_detections_with_http_info(
+        self,
+        threat_id: Annotated[Optional[StrictStr], Field(description="Filter by a specific threat ID (threat_id=Kandji_BD_0096).")] = None,
+        classification: Annotated[Optional[StrictStr], Field(description="Filter by threat classification (classification=malicious).")] = None,
+        status: Annotated[Optional[StrictStr], Field(description="Filter by threat status (threat_status=blocked)")] = None,
+        date_range: Annotated[Optional[StrictStr], Field(description="Return all records within a specified number of days (Int)")] = None,
+        detection_date: Annotated[Optional[StrictStr], Field(description="two query params detection_date_from and detection_date_to")] = None,
+        device_id: Annotated[Optional[StrictStr], Field(description="Search for a specific device by the device id (uuid).")] = None,
+        malware_family: Annotated[Optional[StrictStr], Field(description="Filter by malware family (malware_family=TrickBot).")] = None,
+        parent_process_name: Annotated[Optional[StrictStr], Field(description="Filter by parent process (parent_process_name=bash).")] = None,
+        target_process_name: Annotated[Optional[StrictStr], Field(description="Filter by target process (target_process_name=python).")] = None,
+        informational_tags: Annotated[Optional[StrictStr], Field(description="Filter by tags (informational_tags=exploit,privilege_escalation).")] = None,
+        term: Annotated[Optional[StrictStr], Field(description="Search term to filter threat results. Device name, file hash, image path")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Detections can be sorted by any of the following keys. Prepending a dash (-) to the parameter value will reverse the order of the returned results. ?sort_by=-device_name will order the response by device_name in descending order.</p> <ul> <li>threat_id</li> <li>classification</li> <li>device_name</li> <li>parent_process_name</li> <li>target_process_name</li> <li>detection_date</li> <li>status</li> </ul>")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 1000 records returned per request. If more records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters.  Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ThreatsGetBehavioralDetections200Response]:
+        """Get Behavioral Detections
+
+        Get Behavioral Detections.
+
+        :param threat_id: Filter by a specific threat ID (threat_id=Kandji_BD_0096).
+        :type threat_id: str
+        :param classification: Filter by threat classification (classification=malicious).
+        :type classification: str
+        :param status: Filter by threat status (threat_status=blocked)
+        :type status: str
+        :param date_range: Return all records within a specified number of days (Int)
+        :type date_range: str
+        :param detection_date: two query params detection_date_from and detection_date_to
+        :type detection_date: str
+        :param device_id: Search for a specific device by the device id (uuid).
+        :type device_id: str
+        :param malware_family: Filter by malware family (malware_family=TrickBot).
+        :type malware_family: str
+        :param parent_process_name: Filter by parent process (parent_process_name=bash).
+        :type parent_process_name: str
+        :param target_process_name: Filter by target process (target_process_name=python).
+        :type target_process_name: str
+        :param informational_tags: Filter by tags (informational_tags=exploit,privilege_escalation).
+        :type informational_tags: str
+        :param term: Search term to filter threat results. Device name, file hash, image path
+        :type term: str
+        :param sort_by: <p>Detections can be sorted by any of the following keys. Prepending a dash (-) to the parameter value will reverse the order of the returned results. ?sort_by=-device_name will order the response by device_name in descending order.</p> <ul> <li>threat_id</li> <li>classification</li> <li>device_name</li> <li>parent_process_name</li> <li>target_process_name</li> <li>detection_date</li> <li>status</li> </ul>
+        :type sort_by: str
+        :param limit: A hard upper <code>limit</code> is set at 1000 records returned per request. If more records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters.  Additionally, parameter queries can be added to a request to limit the results.
+        :type limit: str
+        :param offset: Specify the starting record to return.
+        :type offset: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_behavioral_detections_serialize(
+            threat_id=threat_id,
+            classification=classification,
+            status=status,
+            date_range=date_range,
+            detection_date=detection_date,
+            device_id=device_id,
+            malware_family=malware_family,
+            parent_process_name=parent_process_name,
+            target_process_name=target_process_name,
+            informational_tags=informational_tags,
+            term=term,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ThreatsGetBehavioralDetections200Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_behavioral_detections_without_preload_content(
+        self,
+        threat_id: Annotated[Optional[StrictStr], Field(description="Filter by a specific threat ID (threat_id=Kandji_BD_0096).")] = None,
+        classification: Annotated[Optional[StrictStr], Field(description="Filter by threat classification (classification=malicious).")] = None,
+        status: Annotated[Optional[StrictStr], Field(description="Filter by threat status (threat_status=blocked)")] = None,
+        date_range: Annotated[Optional[StrictStr], Field(description="Return all records within a specified number of days (Int)")] = None,
+        detection_date: Annotated[Optional[StrictStr], Field(description="two query params detection_date_from and detection_date_to")] = None,
+        device_id: Annotated[Optional[StrictStr], Field(description="Search for a specific device by the device id (uuid).")] = None,
+        malware_family: Annotated[Optional[StrictStr], Field(description="Filter by malware family (malware_family=TrickBot).")] = None,
+        parent_process_name: Annotated[Optional[StrictStr], Field(description="Filter by parent process (parent_process_name=bash).")] = None,
+        target_process_name: Annotated[Optional[StrictStr], Field(description="Filter by target process (target_process_name=python).")] = None,
+        informational_tags: Annotated[Optional[StrictStr], Field(description="Filter by tags (informational_tags=exploit,privilege_escalation).")] = None,
+        term: Annotated[Optional[StrictStr], Field(description="Search term to filter threat results. Device name, file hash, image path")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Detections can be sorted by any of the following keys. Prepending a dash (-) to the parameter value will reverse the order of the returned results. ?sort_by=-device_name will order the response by device_name in descending order.</p> <ul> <li>threat_id</li> <li>classification</li> <li>device_name</li> <li>parent_process_name</li> <li>target_process_name</li> <li>detection_date</li> <li>status</li> </ul>")] = None,
+        limit: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 1000 records returned per request. If more records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters.  Additionally, parameter queries can be added to a request to limit the results.")] = None,
+        offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get Behavioral Detections
+
+        Get Behavioral Detections.
+
+        :param threat_id: Filter by a specific threat ID (threat_id=Kandji_BD_0096).
+        :type threat_id: str
+        :param classification: Filter by threat classification (classification=malicious).
+        :type classification: str
+        :param status: Filter by threat status (threat_status=blocked)
+        :type status: str
+        :param date_range: Return all records within a specified number of days (Int)
+        :type date_range: str
+        :param detection_date: two query params detection_date_from and detection_date_to
+        :type detection_date: str
+        :param device_id: Search for a specific device by the device id (uuid).
+        :type device_id: str
+        :param malware_family: Filter by malware family (malware_family=TrickBot).
+        :type malware_family: str
+        :param parent_process_name: Filter by parent process (parent_process_name=bash).
+        :type parent_process_name: str
+        :param target_process_name: Filter by target process (target_process_name=python).
+        :type target_process_name: str
+        :param informational_tags: Filter by tags (informational_tags=exploit,privilege_escalation).
+        :type informational_tags: str
+        :param term: Search term to filter threat results. Device name, file hash, image path
+        :type term: str
+        :param sort_by: <p>Detections can be sorted by any of the following keys. Prepending a dash (-) to the parameter value will reverse the order of the returned results. ?sort_by=-device_name will order the response by device_name in descending order.</p> <ul> <li>threat_id</li> <li>classification</li> <li>device_name</li> <li>parent_process_name</li> <li>target_process_name</li> <li>detection_date</li> <li>status</li> </ul>
+        :type sort_by: str
+        :param limit: A hard upper <code>limit</code> is set at 1000 records returned per request. If more records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters.  Additionally, parameter queries can be added to a request to limit the results.
+        :type limit: str
+        :param offset: Specify the starting record to return.
+        :type offset: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_behavioral_detections_serialize(
+            threat_id=threat_id,
+            classification=classification,
+            status=status,
+            date_range=date_range,
+            detection_date=detection_date,
+            device_id=device_id,
+            malware_family=malware_family,
+            parent_process_name=parent_process_name,
+            target_process_name=target_process_name,
+            informational_tags=informational_tags,
+            term=term,
+            sort_by=sort_by,
+            limit=limit,
+            offset=offset,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ThreatsGetBehavioralDetections200Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_behavioral_detections_serialize(
+        self,
+        threat_id,
+        classification,
+        status,
+        date_range,
+        detection_date,
+        device_id,
+        malware_family,
+        parent_process_name,
+        target_process_name,
+        informational_tags,
+        term,
+        sort_by,
+        limit,
+        offset,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        if threat_id is not None:
+            
+            _query_params.append(('threat_id', threat_id))
+            
+        if classification is not None:
+            
+            _query_params.append(('classification', classification))
+            
+        if status is not None:
+            
+            _query_params.append(('status', status))
+            
+        if date_range is not None:
+            
+            _query_params.append(('date_range', date_range))
+            
+        if detection_date is not None:
+            
+            _query_params.append(('detection_date', detection_date))
+            
+        if device_id is not None:
+            
+            _query_params.append(('device_id', device_id))
+            
+        if malware_family is not None:
+            
+            _query_params.append(('malware_family', malware_family))
+            
+        if parent_process_name is not None:
+            
+            _query_params.append(('parent_process_name', parent_process_name))
+            
+        if target_process_name is not None:
+            
+            _query_params.append(('target_process_name', target_process_name))
+            
+        if informational_tags is not None:
+            
+            _query_params.append(('informational_tags', informational_tags))
+            
+        if term is not None:
+            
+            _query_params.append(('term', term))
+            
+        if sort_by is not None:
+            
+            _query_params.append(('sort_by', sort_by))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'bearer'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/api/v1/behavioral-detections',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
 
 
     @validate_call

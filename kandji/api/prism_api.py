@@ -18,12 +18,11 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
-from typing import Any, Dict, Optional
+from typing import Optional
 from typing_extensions import Annotated
 from kandji.models.prism_activation_lock200_response import PrismActivationLock200Response
-from kandji.models.prism_applications200_response import PrismApplications200Response
+from kandji.models.prism_application_firewall200_response import PrismApplicationFirewall200Response
 from kandji.models.prism_count200_response import PrismCount200Response
-from kandji.models.prism_device_information200_response import PrismDeviceInformation200Response
 from kandji.models.prism_get_category_export200_response import PrismGetCategoryExport200Response
 from kandji.models.prism_local_users200_response import PrismLocalUsers200Response
 from kandji.models.prism_request_category_export200_response import PrismRequestCategoryExport200Response
@@ -415,7 +414,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismActivationLock200Response:
+    ) -> PrismApplicationFirewall200Response:
         """Application firewall
 
         Get Application Firewall details for macOS.
@@ -468,7 +467,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "PrismApplicationFirewall200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -502,7 +501,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismActivationLock200Response]:
+    ) -> ApiResponse[PrismApplicationFirewall200Response]:
         """Application firewall
 
         Get Application Firewall details for macOS.
@@ -555,7 +554,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "PrismApplicationFirewall200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -642,7 +641,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "PrismApplicationFirewall200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -763,7 +762,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismApplications200Response:
+    ) -> PrismActivationLock200Response:
         """Applications
 
         Get the applications installed on macOS, iOS, iPadOS, and tvOS devices.
@@ -816,7 +815,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismApplications200Response",
+            '200': "PrismActivationLock200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -850,7 +849,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismApplications200Response]:
+    ) -> ApiResponse[PrismActivationLock200Response]:
         """Applications
 
         Get the applications installed on macOS, iOS, iPadOS, and tvOS devices.
@@ -903,7 +902,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismApplications200Response",
+            '200': "PrismActivationLock200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -990,7 +989,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismApplications200Response",
+            '200': "PrismActivationLock200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1111,7 +1110,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> PrismApplicationFirewall200Response:
         """Cellular
 
         Get Cellular attributes for devices.
@@ -1164,7 +1163,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "PrismApplicationFirewall200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1198,7 +1197,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[PrismApplicationFirewall200Response]:
         """Cellular
 
         Get Cellular attributes for devices.
@@ -1251,7 +1250,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "PrismApplicationFirewall200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1338,7 +1337,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "PrismApplicationFirewall200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1459,7 +1458,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismActivationLock200Response:
+    ) -> PrismApplicationFirewall200Response:
         """Certificates
 
         Get certificate details.
@@ -1512,7 +1511,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "PrismApplicationFirewall200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1546,7 +1545,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismActivationLock200Response]:
+    ) -> ApiResponse[PrismApplicationFirewall200Response]:
         """Certificates
 
         Get certificate details.
@@ -1599,7 +1598,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "PrismApplicationFirewall200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1686,7 +1685,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "PrismApplicationFirewall200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2419,7 +2418,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismDeviceInformation200Response:
+    ) -> PrismActivationLock200Response:
         """Device information
 
         Get attributes about devices.
@@ -2475,7 +2474,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismDeviceInformation200Response",
+            '200': "PrismActivationLock200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2510,7 +2509,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismDeviceInformation200Response]:
+    ) -> ApiResponse[PrismActivationLock200Response]:
         """Device information
 
         Get attributes about devices.
@@ -2566,7 +2565,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismDeviceInformation200Response",
+            '200': "PrismActivationLock200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2657,7 +2656,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismDeviceInformation200Response",
+            '200': "PrismActivationLock200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2794,7 +2793,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismDeviceInformation200Response:
+    ) -> PrismApplicationFirewall200Response:
         """FileVault
 
         Get FileVault information for macOS.
@@ -2847,7 +2846,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismDeviceInformation200Response",
+            '200': "PrismApplicationFirewall200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2881,7 +2880,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismDeviceInformation200Response]:
+    ) -> ApiResponse[PrismApplicationFirewall200Response]:
         """FileVault
 
         Get FileVault information for macOS.
@@ -2934,7 +2933,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismDeviceInformation200Response",
+            '200': "PrismApplicationFirewall200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3021,7 +3020,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismDeviceInformation200Response",
+            '200': "PrismApplicationFirewall200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3142,7 +3141,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PrismActivationLock200Response:
+    ) -> PrismApplicationFirewall200Response:
         """Gatekeeper and XProtect
 
         Get Gatekeeper and XProtect attributes for macOS.
@@ -3195,7 +3194,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "PrismApplicationFirewall200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3229,7 +3228,7 @@ class PrismApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PrismActivationLock200Response]:
+    ) -> ApiResponse[PrismApplicationFirewall200Response]:
         """Gatekeeper and XProtect
 
         Get Gatekeeper and XProtect attributes for macOS.
@@ -3282,7 +3281,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "PrismApplicationFirewall200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3369,7 +3368,7 @@ class PrismApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PrismActivationLock200Response",
+            '200': "PrismApplicationFirewall200Response",
         }
         response_data = self.api_client.call_api(
             *_param,

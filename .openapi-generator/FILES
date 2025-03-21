@@ -55,9 +55,8 @@ docs/DeviceSecretsGetUnlockPin200Response.md
 docs/LibraryItemsApi.md
 docs/PrismActivationLock200Response.md
 docs/PrismApi.md
-docs/PrismApplications200Response.md
+docs/PrismApplicationFirewall200Response.md
 docs/PrismCount200Response.md
-docs/PrismDeviceInformation200Response.md
 docs/PrismGetCategoryExport200Response.md
 docs/PrismLocalUsers200Response.md
 docs/PrismRequestCategoryExport200Response.md
@@ -146,9 +145,8 @@ kandji/models/device_secrets_get_filevault_recovery_key200_response.py
 kandji/models/device_secrets_get_recovery_lock_password200_response.py
 kandji/models/device_secrets_get_unlock_pin200_response.py
 kandji/models/prism_activation_lock200_response.py
-kandji/models/prism_applications200_response.py
+kandji/models/prism_application_firewall200_response.py
 kandji/models/prism_count200_response.py
-kandji/models/prism_device_information200_response.py
 kandji/models/prism_get_category_export200_response.py
 kandji/models/prism_local_users200_response.py
 kandji/models/prism_request_category_export200_response.py
@@ -175,5 +173,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_threats_get_behavioral_detections200_response.py
+test/test_prism_application_firewall200_response.py
 tox.ini

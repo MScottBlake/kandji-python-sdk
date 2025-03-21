@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_users**
-> UsersListUsers200Response list_users(email=email, id=id, integration_id=integration_id, archived=archived)
+> UsersListUsers200Response list_users(email=email, id=id, integration_id=integration_id, archived=archived, cursor=cursor)
 
 List Users
 
@@ -212,10 +212,11 @@ with kandji.ApiClient(configuration) as api_client:
     id = '69c009ca-1f78-4bdf-bb93-08d6d39041db' # str | Search for a user matching the provided UUID value. (optional)
     integration_id = 'f7461096-4ef9-43aa-88e9-ca1967ba0b38' # str | Search for a integration matching the provided UUID value. (optional)
     archived = 'false' # str | Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. (optional)
+    cursor = 'cursor_example' # str | Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response. (optional)
 
     try:
         # List Users
-        api_response = api_instance.list_users(email=email, id=id, integration_id=integration_id, archived=archived)
+        api_response = api_instance.list_users(email=email, id=id, integration_id=integration_id, archived=archived, cursor=cursor)
         print("The response of UsersApi->list_users:\n")
         pprint(api_response)
     except Exception as e:
@@ -233,6 +234,7 @@ Name | Type | Description  | Notes
  **id** | **str**| Search for a user matching the provided UUID value. | [optional] 
  **integration_id** | **str**| Search for a integration matching the provided UUID value. | [optional] 
  **archived** | **str**| Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. | [optional] 
+ **cursor** | **str**| Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response. | [optional] 
 
 ### Return type
 

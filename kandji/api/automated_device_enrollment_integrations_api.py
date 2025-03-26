@@ -1394,7 +1394,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     def list_ade_devices(
         self,
         blueprint_id: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the specified blueprint id")] = None,
-        user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID number")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)")] = None,
         dep_account: Annotated[Optional[StrictStr], Field(description="The ADE token UUID")] = None,
         device_family: Annotated[Optional[StrictStr], Field(description="Mac, iPhone, iPad, AppleTV, iPod")] = None,
         model: Annotated[Optional[StrictStr], Field(description="Return model results &quot;containing&quot; the specified model string. - &quot;iPad (8th Generation)&quot;, &quot;MacBook Air&quot;")] = None,
@@ -1421,7 +1421,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
         :param blueprint_id: Return results &quot;containing&quot; the specified blueprint id
         :type blueprint_id: str
-        :param user_id: &quot;exact&quot; match on kandji user ID number
+        :param user_id: &quot;exact&quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)
         :type user_id: str
         :param dep_account: The ADE token UUID
         :type dep_account: str
@@ -1494,7 +1494,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     def list_ade_devices_with_http_info(
         self,
         blueprint_id: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the specified blueprint id")] = None,
-        user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID number")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)")] = None,
         dep_account: Annotated[Optional[StrictStr], Field(description="The ADE token UUID")] = None,
         device_family: Annotated[Optional[StrictStr], Field(description="Mac, iPhone, iPad, AppleTV, iPod")] = None,
         model: Annotated[Optional[StrictStr], Field(description="Return model results &quot;containing&quot; the specified model string. - &quot;iPad (8th Generation)&quot;, &quot;MacBook Air&quot;")] = None,
@@ -1521,7 +1521,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
         :param blueprint_id: Return results &quot;containing&quot; the specified blueprint id
         :type blueprint_id: str
-        :param user_id: &quot;exact&quot; match on kandji user ID number
+        :param user_id: &quot;exact&quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)
         :type user_id: str
         :param dep_account: The ADE token UUID
         :type dep_account: str
@@ -1594,7 +1594,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
     def list_ade_devices_without_preload_content(
         self,
         blueprint_id: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the specified blueprint id")] = None,
-        user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID number")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)")] = None,
         dep_account: Annotated[Optional[StrictStr], Field(description="The ADE token UUID")] = None,
         device_family: Annotated[Optional[StrictStr], Field(description="Mac, iPhone, iPad, AppleTV, iPod")] = None,
         model: Annotated[Optional[StrictStr], Field(description="Return model results &quot;containing&quot; the specified model string. - &quot;iPad (8th Generation)&quot;, &quot;MacBook Air&quot;")] = None,
@@ -1621,7 +1621,7 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
 
         :param blueprint_id: Return results &quot;containing&quot; the specified blueprint id
         :type blueprint_id: str
-        :param user_id: &quot;exact&quot; match on kandji user ID number
+        :param user_id: &quot;exact&quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)
         :type user_id: str
         :param dep_account: The ADE token UUID
         :type dep_account: str

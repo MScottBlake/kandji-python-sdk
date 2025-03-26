@@ -445,7 +445,7 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
     blueprint_id = 'fce0cc58-caa5-40d2-a0d7-a0b257127ec5' # str | Return results &quot;containing&quot; the specified blueprint id (optional)
-    user_id = '8136' # str | &quot;exact&quot; match on kandji user ID number (optional)
+    user_id = '5344c996-8823-4b37-8d6e-8515fc7c3a0a' # str | &quot;exact&quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
     dep_account = '' # str | The ADE token UUID (optional)
     device_family = '' # str | Mac, iPhone, iPad, AppleTV, iPod (optional)
     model = 'MacBook Air' # str | Return model results &quot;containing&quot; the specified model string. - &quot;iPad (8th Generation)&quot;, &quot;MacBook Air&quot; (optional)
@@ -471,7 +471,7 @@ with kandji.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **blueprint_id** | **str**| Return results &amp;quot;containing&amp;quot; the specified blueprint id | [optional] 
- **user_id** | **str**| &amp;quot;exact&amp;quot; match on kandji user ID number | [optional] 
+ **user_id** | **str**| &amp;quot;exact&amp;quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) | [optional] 
  **dep_account** | **str**| The ADE token UUID | [optional] 
  **device_family** | **str**| Mac, iPhone, iPad, AppleTV, iPod | [optional] 
  **model** | **str**| Return model results &amp;quot;containing&amp;quot; the specified model string. - &amp;quot;iPad (8th Generation)&amp;quot;, &amp;quot;MacBook Air&amp;quot; | [optional] 

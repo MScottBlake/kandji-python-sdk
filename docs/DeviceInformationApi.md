@@ -994,7 +994,7 @@ with kandji.ApiClient(configuration) as api_client:
     mac_address = '00:0c:29:05:43:b6' # str | Search for a specific device by MAC address (optional)
     model = 'MacBook Air (M1, 2020)' # str | Return model results &quot;containing&quot; the specified model string. (optional)
     ordering = 'device_id' # str | <p>The <code>ordering</code> parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p> <p><code>?ordering=-serial_number</code> will order the response by serial_number in descending order.</p> <p><strong>Possible values</strong></p> <ul> <li><code>asset_tag</code></li> <li><code>blueprint_id</code></li> <li><code>device_id</code></li> <li><code>device_name</code></li> <li><code>last_check_in</code> - agent checkin</li> <li><code>model</code></li> <li><code>platform</code></li> <li><code>os_version</code></li> <li><code>serial_number</code></li> <li><code>user</code></li> </ul> <p>Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.</p> <p><code>?ordering=serial_number,platform</code></p> (optional)
-    os_version = '13.2.3' # str | Return all device records with the specified OS version (optional)
+    os_version = '13.2.3' # str | Return all device records containing the specified OS version (optional)
     platform = 'iPad' # str | Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code> (optional)
     serial_number = 'VMC5qeJ5pDkp' # str | Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned. (optional)
     tag_name = 'accuhive_01' # str | Return results for given tag name. Case sensitive. (optional)
@@ -1003,7 +1003,7 @@ with kandji.ApiClient(configuration) as api_client:
     tag_id_in = '' # str | Return results for given tag IDs separated by commas. Case sensitive. (optional)
     user = 'Art Vandelay' # str | Return results &quot;containing&quot; the user name (optional)
     user_email = 'someUser@Kandji.io' # str | Return results &quot;containing&quot; search on email address (optional)
-    user_id = '1' # str | &quot;exact&quot; match on kandji user ID number (optional)
+    user_id = '5344c996-8823-4b37-8d6e-8515fc7c3a0a' # str | &quot;exact&quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
     user_name = 'Vandelay' # str | Return results &quot;containing&quot; the assigned user Display Name (optional)
     offset = '0' # str | Specify the starting record to return (optional)
 
@@ -1032,7 +1032,7 @@ Name | Type | Description  | Notes
  **mac_address** | **str**| Search for a specific device by MAC address | [optional] 
  **model** | **str**| Return model results &amp;quot;containing&amp;quot; the specified model string. | [optional] 
  **ordering** | **str**| &lt;p&gt;The &lt;code&gt;ordering&lt;/code&gt; parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.&lt;/p&gt; &lt;p&gt;&lt;code&gt;?ordering&#x3D;-serial_number&lt;/code&gt; will order the response by serial_number in descending order.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Possible values&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;asset_tag&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;blueprint_id&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;device_id&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;device_name&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;last_check_in&lt;/code&gt; - agent checkin&lt;/li&gt; &lt;li&gt;&lt;code&gt;model&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;platform&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;os_version&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;serial_number&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;user&lt;/code&gt;&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.&lt;/p&gt; &lt;p&gt;&lt;code&gt;?ordering&#x3D;serial_number,platform&lt;/code&gt;&lt;/p&gt; | [optional] 
- **os_version** | **str**| Return all device records with the specified OS version | [optional] 
+ **os_version** | **str**| Return all device records containing the specified OS version | [optional] 
  **platform** | **str**| Return all records matching a specific platform. Possible values:&lt;code&gt;Mac&lt;/code&gt;, &lt;code&gt;iPad&lt;/code&gt;, &lt;code&gt;iPhone&lt;/code&gt;, &lt;code&gt;AppleTV&lt;/code&gt; | [optional] 
  **serial_number** | **str**| Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned. | [optional] 
  **tag_name** | **str**| Return results for given tag name. Case sensitive. | [optional] 
@@ -1041,7 +1041,7 @@ Name | Type | Description  | Notes
  **tag_id_in** | **str**| Return results for given tag IDs separated by commas. Case sensitive. | [optional] 
  **user** | **str**| Return results &amp;quot;containing&amp;quot; the user name | [optional] 
  **user_email** | **str**| Return results &amp;quot;containing&amp;quot; search on email address | [optional] 
- **user_id** | **str**| &amp;quot;exact&amp;quot; match on kandji user ID number | [optional] 
+ **user_id** | **str**| &amp;quot;exact&amp;quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) | [optional] 
  **user_name** | **str**| Return results &amp;quot;containing&amp;quot; the assigned user Display Name | [optional] 
  **offset** | **str**| Specify the starting record to return | [optional] 
 

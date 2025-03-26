@@ -2439,7 +2439,7 @@ class DeviceInformationApi:
         mac_address: Annotated[Optional[StrictStr], Field(description="Search for a specific device by MAC address")] = None,
         model: Annotated[Optional[StrictStr], Field(description="Return model results &quot;containing&quot; the specified model string.")] = None,
         ordering: Annotated[Optional[StrictStr], Field(description="<p>The <code>ordering</code> parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p> <p><code>?ordering=-serial_number</code> will order the response by serial_number in descending order.</p> <p><strong>Possible values</strong></p> <ul> <li><code>asset_tag</code></li> <li><code>blueprint_id</code></li> <li><code>device_id</code></li> <li><code>device_name</code></li> <li><code>last_check_in</code> - agent checkin</li> <li><code>model</code></li> <li><code>platform</code></li> <li><code>os_version</code></li> <li><code>serial_number</code></li> <li><code>user</code></li> </ul> <p>Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.</p> <p><code>?ordering=serial_number,platform</code></p>")] = None,
-        os_version: Annotated[Optional[StrictStr], Field(description="Return all device records with the specified OS version")] = None,
+        os_version: Annotated[Optional[StrictStr], Field(description="Return all device records containing the specified OS version")] = None,
         platform: Annotated[Optional[StrictStr], Field(description="Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code>")] = None,
         serial_number: Annotated[Optional[StrictStr], Field(description="Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.")] = None,
         tag_name: Annotated[Optional[StrictStr], Field(description="Return results for given tag name. Case sensitive.")] = None,
@@ -2448,7 +2448,7 @@ class DeviceInformationApi:
         tag_id_in: Annotated[Optional[StrictStr], Field(description="Return results for given tag IDs separated by commas. Case sensitive.")] = None,
         user: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the user name")] = None,
         user_email: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; search on email address")] = None,
-        user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID number")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)")] = None,
         user_name: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the assigned user Display Name")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
@@ -2486,7 +2486,7 @@ class DeviceInformationApi:
         :type model: str
         :param ordering: <p>The <code>ordering</code> parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p> <p><code>?ordering=-serial_number</code> will order the response by serial_number in descending order.</p> <p><strong>Possible values</strong></p> <ul> <li><code>asset_tag</code></li> <li><code>blueprint_id</code></li> <li><code>device_id</code></li> <li><code>device_name</code></li> <li><code>last_check_in</code> - agent checkin</li> <li><code>model</code></li> <li><code>platform</code></li> <li><code>os_version</code></li> <li><code>serial_number</code></li> <li><code>user</code></li> </ul> <p>Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.</p> <p><code>?ordering=serial_number,platform</code></p>
         :type ordering: str
-        :param os_version: Return all device records with the specified OS version
+        :param os_version: Return all device records containing the specified OS version
         :type os_version: str
         :param platform: Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code>
         :type platform: str
@@ -2504,7 +2504,7 @@ class DeviceInformationApi:
         :type user: str
         :param user_email: Return results &quot;containing&quot; search on email address
         :type user_email: str
-        :param user_id: &quot;exact&quot; match on kandji user ID number
+        :param user_id: &quot;exact&quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)
         :type user_id: str
         :param user_name: Return results &quot;containing&quot; the assigned user Display Name
         :type user_name: str
@@ -2586,7 +2586,7 @@ class DeviceInformationApi:
         mac_address: Annotated[Optional[StrictStr], Field(description="Search for a specific device by MAC address")] = None,
         model: Annotated[Optional[StrictStr], Field(description="Return model results &quot;containing&quot; the specified model string.")] = None,
         ordering: Annotated[Optional[StrictStr], Field(description="<p>The <code>ordering</code> parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p> <p><code>?ordering=-serial_number</code> will order the response by serial_number in descending order.</p> <p><strong>Possible values</strong></p> <ul> <li><code>asset_tag</code></li> <li><code>blueprint_id</code></li> <li><code>device_id</code></li> <li><code>device_name</code></li> <li><code>last_check_in</code> - agent checkin</li> <li><code>model</code></li> <li><code>platform</code></li> <li><code>os_version</code></li> <li><code>serial_number</code></li> <li><code>user</code></li> </ul> <p>Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.</p> <p><code>?ordering=serial_number,platform</code></p>")] = None,
-        os_version: Annotated[Optional[StrictStr], Field(description="Return all device records with the specified OS version")] = None,
+        os_version: Annotated[Optional[StrictStr], Field(description="Return all device records containing the specified OS version")] = None,
         platform: Annotated[Optional[StrictStr], Field(description="Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code>")] = None,
         serial_number: Annotated[Optional[StrictStr], Field(description="Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.")] = None,
         tag_name: Annotated[Optional[StrictStr], Field(description="Return results for given tag name. Case sensitive.")] = None,
@@ -2595,7 +2595,7 @@ class DeviceInformationApi:
         tag_id_in: Annotated[Optional[StrictStr], Field(description="Return results for given tag IDs separated by commas. Case sensitive.")] = None,
         user: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the user name")] = None,
         user_email: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; search on email address")] = None,
-        user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID number")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)")] = None,
         user_name: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the assigned user Display Name")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
@@ -2633,7 +2633,7 @@ class DeviceInformationApi:
         :type model: str
         :param ordering: <p>The <code>ordering</code> parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p> <p><code>?ordering=-serial_number</code> will order the response by serial_number in descending order.</p> <p><strong>Possible values</strong></p> <ul> <li><code>asset_tag</code></li> <li><code>blueprint_id</code></li> <li><code>device_id</code></li> <li><code>device_name</code></li> <li><code>last_check_in</code> - agent checkin</li> <li><code>model</code></li> <li><code>platform</code></li> <li><code>os_version</code></li> <li><code>serial_number</code></li> <li><code>user</code></li> </ul> <p>Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.</p> <p><code>?ordering=serial_number,platform</code></p>
         :type ordering: str
-        :param os_version: Return all device records with the specified OS version
+        :param os_version: Return all device records containing the specified OS version
         :type os_version: str
         :param platform: Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code>
         :type platform: str
@@ -2651,7 +2651,7 @@ class DeviceInformationApi:
         :type user: str
         :param user_email: Return results &quot;containing&quot; search on email address
         :type user_email: str
-        :param user_id: &quot;exact&quot; match on kandji user ID number
+        :param user_id: &quot;exact&quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)
         :type user_id: str
         :param user_name: Return results &quot;containing&quot; the assigned user Display Name
         :type user_name: str
@@ -2733,7 +2733,7 @@ class DeviceInformationApi:
         mac_address: Annotated[Optional[StrictStr], Field(description="Search for a specific device by MAC address")] = None,
         model: Annotated[Optional[StrictStr], Field(description="Return model results &quot;containing&quot; the specified model string.")] = None,
         ordering: Annotated[Optional[StrictStr], Field(description="<p>The <code>ordering</code> parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p> <p><code>?ordering=-serial_number</code> will order the response by serial_number in descending order.</p> <p><strong>Possible values</strong></p> <ul> <li><code>asset_tag</code></li> <li><code>blueprint_id</code></li> <li><code>device_id</code></li> <li><code>device_name</code></li> <li><code>last_check_in</code> - agent checkin</li> <li><code>model</code></li> <li><code>platform</code></li> <li><code>os_version</code></li> <li><code>serial_number</code></li> <li><code>user</code></li> </ul> <p>Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.</p> <p><code>?ordering=serial_number,platform</code></p>")] = None,
-        os_version: Annotated[Optional[StrictStr], Field(description="Return all device records with the specified OS version")] = None,
+        os_version: Annotated[Optional[StrictStr], Field(description="Return all device records containing the specified OS version")] = None,
         platform: Annotated[Optional[StrictStr], Field(description="Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code>")] = None,
         serial_number: Annotated[Optional[StrictStr], Field(description="Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.")] = None,
         tag_name: Annotated[Optional[StrictStr], Field(description="Return results for given tag name. Case sensitive.")] = None,
@@ -2742,7 +2742,7 @@ class DeviceInformationApi:
         tag_id_in: Annotated[Optional[StrictStr], Field(description="Return results for given tag IDs separated by commas. Case sensitive.")] = None,
         user: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the user name")] = None,
         user_email: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; search on email address")] = None,
-        user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID number")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)")] = None,
         user_name: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the assigned user Display Name")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
         _request_timeout: Union[
@@ -2780,7 +2780,7 @@ class DeviceInformationApi:
         :type model: str
         :param ordering: <p>The <code>ordering</code> parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p> <p><code>?ordering=-serial_number</code> will order the response by serial_number in descending order.</p> <p><strong>Possible values</strong></p> <ul> <li><code>asset_tag</code></li> <li><code>blueprint_id</code></li> <li><code>device_id</code></li> <li><code>device_name</code></li> <li><code>last_check_in</code> - agent checkin</li> <li><code>model</code></li> <li><code>platform</code></li> <li><code>os_version</code></li> <li><code>serial_number</code></li> <li><code>user</code></li> </ul> <p>Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.</p> <p><code>?ordering=serial_number,platform</code></p>
         :type ordering: str
-        :param os_version: Return all device records with the specified OS version
+        :param os_version: Return all device records containing the specified OS version
         :type os_version: str
         :param platform: Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code>
         :type platform: str
@@ -2798,7 +2798,7 @@ class DeviceInformationApi:
         :type user: str
         :param user_email: Return results &quot;containing&quot; search on email address
         :type user_email: str
-        :param user_id: &quot;exact&quot; match on kandji user ID number
+        :param user_id: &quot;exact&quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)
         :type user_id: str
         :param user_name: Return results &quot;containing&quot; the assigned user Display Name
         :type user_name: str

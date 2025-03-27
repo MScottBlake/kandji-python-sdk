@@ -208,19 +208,20 @@ configuration = kandji.Configuration(
 # Enter a context with an instance of the API client
 with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
-    blueprint_id = 'blueprint_id_example' # str | 
-    email = 'email_example' # str | 
-    file = None # bytearray | This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.
-    phone = 'phone_example' # str | 
+    api_instance = kandji.AuditLogApi(api_client)
+    limit = '500' # str | A max upper <code>limit</code> is set at 500 records returned per request. Pagination should be used using the cursor in the <code>next</code> key to request more results. Additionally, parameter queries can be added to a request to filter the results.
+    sort_by = '-occurred_at' # str | Sort results by <code>occurred_at</code>, <code>id</code> either ascending (default behavior) or descending(-) order.
+    start_date = '2024-11-26T22:58:26.239570Z' # str | Filter by start date in datetime or year-month-day (2024-11-26) formats (optional)
+    end_date = '2024-12-06T17:48:41.784439Z' # str | Filter by start date in datetime or year-month-day (2024-12-06) formats (optional)
+    cursor = '' # str | You can pass the next cursor as a parameter or use the URL in the next key to get the next page of results or to start from where you left off last. (optional)
 
     try:
-        # Create ADE integration
-        api_response = api_instance.create_ade_integration(blueprint_id, email, file, phone)
-        print("The response of AutomatedDeviceEnrollmentIntegrationsApi->create_ade_integration:\n")
+        # List audit events
+        api_response = api_instance.list_audit_events(limit, sort_by, start_date=start_date, end_date=end_date, cursor=cursor)
+        print("The response of AuditLogApi->list_audit_events:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AutomatedDeviceEnrollmentIntegrationsApi->create_ade_integration: %s\n" % e)
+        print("Exception when calling AuditLogApi->list_audit_events: %s\n" % e)
 
 ```
 
@@ -230,6 +231,7 @@ All URIs are relative to *https://<sub_domain>.api.kandji.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AuditLogApi* | [**list_audit_events**](docs/AuditLogApi.md#list_audit_events) | **GET** /api/v1/audit/events | List audit events
 *AutomatedDeviceEnrollmentIntegrationsApi* | [**create_ade_integration**](docs/AutomatedDeviceEnrollmentIntegrationsApi.md#create_ade_integration) | **POST** /api/v1/integrations/apple/ade/ | Create ADE integration
 *AutomatedDeviceEnrollmentIntegrationsApi* | [**delete_ade_integration**](docs/AutomatedDeviceEnrollmentIntegrationsApi.md#delete_ade_integration) | **DELETE** /api/v1/integrations/apple/ade/{ade_token_id} | Delete ADE integration
 *AutomatedDeviceEnrollmentIntegrationsApi* | [**download_ade_public_key**](docs/AutomatedDeviceEnrollmentIntegrationsApi.md#download_ade_public_key) | **GET** /api/v1/integrations/apple/ade/public_key/ | Download ADE public key
@@ -321,6 +323,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AuditLogListAuditEvents200Response](docs/AuditLogListAuditEvents200Response.md)
  - [AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response](docs/AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response.md)
  - [AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint](docs/AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint.md)
  - [AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults](docs/AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults.md)
@@ -382,7 +385,6 @@ Class | Method | HTTP request | Description
  - [ThreatsGetThreatDetails200Response](docs/ThreatsGetThreatDetails200Response.md)
  - [UsersGetUser200Response](docs/UsersGetUser200Response.md)
  - [UsersGetUser200ResponseIntegration](docs/UsersGetUser200ResponseIntegration.md)
- - [UsersListUsers200Response](docs/UsersListUsers200Response.md)
  - [VulnerabilitiesGetVulnerabilityDescription200Response](docs/VulnerabilitiesGetVulnerabilityDescription200Response.md)
  - [VulnerabilitiesListDetections200Response](docs/VulnerabilitiesListDetections200Response.md)
  - [VulnerabilitiesListVulnerabilities200Response](docs/VulnerabilitiesListVulnerabilities200Response.md)

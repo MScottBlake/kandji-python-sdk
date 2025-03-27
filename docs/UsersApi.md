@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_users**
-> UsersListUsers200Response list_users(email=email, id=id, integration_id=integration_id, archived=archived, cursor=cursor)
+> AuditLogListAuditEvents200Response list_users(email=email, id=id, integration_id=integration_id, archived=archived, cursor=cursor)
 
 List Users
 
@@ -184,7 +184,7 @@ List Users
 
 ```python
 import kandji
-from kandji.models.users_list_users200_response import UsersListUsers200Response
+from kandji.models.audit_log_list_audit_events200_response import AuditLogListAuditEvents200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UsersListUsers200Response**](UsersListUsers200Response.md)
+[**AuditLogListAuditEvents200Response**](AuditLogListAuditEvents200Response.md)
 
 ### Authorization
 

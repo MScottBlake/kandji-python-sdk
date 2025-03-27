@@ -1,6 +1,7 @@
 # flake8: noqa
 
 # import apis into api package
+from kandji.api.audit_log_api import AuditLogApi
 from kandji.api.automated_device_enrollment_integrations_api import AutomatedDeviceEnrollmentIntegrationsApi
 from kandji.api.blueprints_api import BlueprintsApi
 from kandji.api.device_actions_api import DeviceActionsApi

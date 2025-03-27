@@ -20,8 +20,8 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
+from kandji.models.audit_log_list_audit_events200_response import AuditLogListAuditEvents200Response
 from kandji.models.users_get_user200_response import UsersGetUser200Response
-from kandji.models.users_list_users200_response import UsersListUsers200Response
 
 from kandji.api_client import ApiClient, RequestSerialized
 from kandji.api_response import ApiResponse
@@ -586,7 +586,7 @@ class UsersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> UsersListUsers200Response:
+    ) -> AuditLogListAuditEvents200Response:
         """List Users
 
         <p>This endpoint makes a request to retrieve a list of users from user directory integrations.</p> <p>A maximum of 300 records are returned per request, and pagination can be performed leveraging the URLs provided in the <code>next</code> and <code>previous</code> keys in the response. If there are no more results available, the respective key will be <code>null</code>.</p>
@@ -636,7 +636,7 @@ class UsersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "UsersListUsers200Response",
+            '200': "AuditLogListAuditEvents200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -669,7 +669,7 @@ class UsersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[UsersListUsers200Response]:
+    ) -> ApiResponse[AuditLogListAuditEvents200Response]:
         """List Users
 
         <p>This endpoint makes a request to retrieve a list of users from user directory integrations.</p> <p>A maximum of 300 records are returned per request, and pagination can be performed leveraging the URLs provided in the <code>next</code> and <code>previous</code> keys in the response. If there are no more results available, the respective key will be <code>null</code>.</p>
@@ -719,7 +719,7 @@ class UsersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "UsersListUsers200Response",
+            '200': "AuditLogListAuditEvents200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -802,7 +802,7 @@ class UsersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "UsersListUsers200Response",
+            '200': "AuditLogListAuditEvents200Response",
         }
         response_data = self.api_client.call_api(
             *_param,

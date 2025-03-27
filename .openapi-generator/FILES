@@ -3,6 +3,8 @@
 .gitlab-ci.yml
 .travis.yml
 README.md
+docs/AuditLogApi.md
+docs/AuditLogListAuditEvents200Response.md
 docs/AutomatedDeviceEnrollmentIntegrationsApi.md
 docs/AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response.md
 docs/AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint.md
@@ -75,7 +77,6 @@ docs/ThreatsGetThreatDetails200Response.md
 docs/UsersApi.md
 docs/UsersGetUser200Response.md
 docs/UsersGetUser200ResponseIntegration.md
-docs/UsersListUsers200Response.md
 docs/VulnerabilitiesApi.md
 docs/VulnerabilitiesGetVulnerabilityDescription200Response.md
 docs/VulnerabilitiesListDetections200Response.md
@@ -83,6 +84,7 @@ docs/VulnerabilitiesListVulnerabilities200Response.md
 git_push.sh
 kandji/__init__.py
 kandji/api/__init__.py
+kandji/api/audit_log_api.py
 kandji/api/automated_device_enrollment_integrations_api.py
 kandji/api/blueprints_api.py
 kandji/api/device_actions_api.py
@@ -100,6 +102,7 @@ kandji/api_response.py
 kandji/configuration.py
 kandji/exceptions.py
 kandji/models/__init__.py
+kandji/models/audit_log_list_audit_events200_response.py
 kandji/models/automated_device_enrollment_integrations_create_ade_integration200_response.py
 kandji/models/automated_device_enrollment_integrations_create_ade_integration200_response_blueprint.py
 kandji/models/automated_device_enrollment_integrations_create_ade_integration200_response_defaults.py
@@ -161,7 +164,6 @@ kandji/models/threats_get_behavioral_detections200_response.py
 kandji/models/threats_get_threat_details200_response.py
 kandji/models/users_get_user200_response.py
 kandji/models/users_get_user200_response_integration.py
-kandji/models/users_list_users200_response.py
 kandji/models/vulnerabilities_get_vulnerability_description200_response.py
 kandji/models/vulnerabilities_list_detections200_response.py
 kandji/models/vulnerabilities_list_vulnerabilities200_response.py
@@ -173,4 +175,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_audit_log_api.py
+test/test_audit_log_list_audit_events200_response.py
 tox.ini

@@ -175,6 +175,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_audit_log_api.py
-test/test_audit_log_list_audit_events200_response.py
 tox.ini

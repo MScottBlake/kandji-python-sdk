@@ -4,7 +4,6 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**assign_library_item**](BlueprintsApi.md#assign_library_item) | **POST** /api/v1/blueprints/{blueprint_id}/assign-library-item | Assign Library Item
 [**create_blueprint**](BlueprintsApi.md#create_blueprint) | **POST** /api/v1/blueprints | Create Blueprint
 [**delete_blueprint**](BlueprintsApi.md#delete_blueprint) | **DELETE** /api/v1/blueprints/{blueprint_id} | Delete Blueprint
 [**get_blueprint**](BlueprintsApi.md#get_blueprint) | **GET** /api/v1/blueprints/{blueprint_id} | Get Blueprint
@@ -12,132 +11,9 @@ Method | HTTP request | Description
 [**get_manual_enrollment_profile**](BlueprintsApi.md#get_manual_enrollment_profile) | **GET** /api/v1/blueprints/{blueprint_id}/ota-enrollment-profile | Get Manual Enrollment Profile
 [**list_blueprints**](BlueprintsApi.md#list_blueprints) | **GET** /api/v1/blueprints | List Blueprints
 [**list_library_items**](BlueprintsApi.md#list_library_items) | **GET** /api/v1/blueprints/{blueprint_id}/list-library-items | List Library Items
-[**remove_library_item**](BlueprintsApi.md#remove_library_item) | **POST** /api/v1/blueprints/{blueprint_id}/remove-library-item | Remove Library Item
+[**remove_library_item**](BlueprintsApi.md#remove_library_item) | **POST** /api/v1/blueprints/{blueprint_id}/assign-library-item | Remove Library Item
 [**update_blueprint**](BlueprintsApi.md#update_blueprint) | **PATCH** /api/v1/blueprints/{blueprint_id} | Update Blueprint
 
-
-# **assign_library_item**
-> object assign_library_item(blueprint_id, body=body)
-
-Assign Library Item
-
-<p>This endpoint allows assigning a library item to a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
-<h3 id=&quot;request-body&quot;>Request Body</h3>
-<ul>
-<li><p><code>library_item_id</code> (string, required)</p>
-</li>
-<li><p><code>assignment_node_id</code> (string, required for maps)</p>
-<ul>
-<li>Note: To find the assignment_node_id, view the map in a browser. Then, on your keyboard, press and hold the Option ⌥ key. Each node ID remains fixed for the lifespan of the node on the map.</li>
-</ul>
-</li>
-</ul>
-<h3 id=&quot;error-responses&quot;>Error responses</h3>
-<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
-<thead>
-<tr>
-<th><strong>Code</strong></th>
-<th><strong>Body</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>400 - Bad Request</td>
-<td>Bad Request</td>
-</tr>
-<tr>
-<td></td>
-<td>&quot;Library Item already exists on Blueprint&quot;</td>
-</tr>
-<tr>
-<td></td>
-<td>&quot;Library Item already exists in Assignment Node&quot;</td>
-</tr>
-<tr>
-<td></td>
-<td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td>
-</tr>
-<tr>
-<td></td>
-<td>&quot;Must provide assignment_node_id for Assignment Map Blueprint&quot;</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-### Example
-
-* Bearer (API Token) Authentication (bearer):
-
-```python
-import kandji
-from kandji.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = kandji.Configuration(
-    host = "https://<sub_domain>.api.kandji.io"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization (API Token): bearer
-configuration = kandji.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with kandji.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = kandji.BlueprintsApi(api_client)
-    blueprint_id = 'blueprint_id_example' # str | 
-    body = {"assignment_node_id":"{assignment_node_id}","library_item_id":"{library_item_id}"} # str |  (optional)
-
-    try:
-        # Assign Library Item
-        api_response = api_instance.assign_library_item(blueprint_id, body=body)
-        print("The response of BlueprintsApi->assign_library_item:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling BlueprintsApi->assign_library_item: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **blueprint_id** | **str**|  | 
- **body** | **str**|  | [optional] 
-
-### Return type
-
-**object**
-
-### Authorization
-
-[bearer](../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  * Allow -  <br>  * Content-Length -  <br>  * Content-Security-Policy -  <br>  * Content-Type -  <br>  * Cross-Origin-Opener-Policy -  <br>  * Date -  <br>  * Feature-Policy -  <br>  * Referrer-Policy -  <br>  * Server -  <br>  * Vary -  <br>  * X-Content-Type-Options -  <br>  * X-Frame-Options -  <br>  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_blueprint**
 > BlueprintsCreateBlueprint201Response create_blueprint(enrollment_code_code, enrollment_code_is_active, name, source_id, source_type, type)
@@ -238,8 +114,6 @@ Delete Blueprint
 <h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1>
 <p>This is a HIGHLY destructive action.</p>
 <p>Deleting a Blueprint will un-manage ALL devices assigned to the Blueprint.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
 ### Example
 
@@ -314,9 +188,7 @@ void (empty response body)
 
 Get Blueprint
 
-<p>This request returns information about a specific blueprint based on blueprint ID.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
+This request returns information about a specific blueprint based on blueprint ID.
 
 ### Example
 
@@ -479,8 +351,6 @@ Get Manual Enrollment Profile
 </li>
 </ul>
 <p>An optional query parameter <code>sso=true</code> can be used to return a URL for SSO authentication instead. If this query parameter is used for a Blueprint that does not require authentication, then the enrollment profile will be returned.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
 ### Example
 
@@ -646,8 +516,6 @@ Name | Type | Description  | Notes
 List Library Items
 
 <p>This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 <h3 id=&quot;response-fields&quot;>Response fields</h3>
 <ul>
 <li><p><code>count</code> (int): The total count of library items.</p>
@@ -743,13 +611,14 @@ Name | Type | Description  | Notes
 Remove Library Item
 
 <p>This endpoint allows removing a library item from a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 <h3 id=&quot;request-body&quot;>Request Body</h3>
 <ul>
 <li><p><code>library_item_id</code> (string, required)</p>
 </li>
-<li><p><code>assignment_node_id</code> (string, required for maps)</p>
+<li><p><code>assignment_node_id</code> (string, for maps)</p>
+<ul>
+<li>NOT required for assigning to assignment maps if the map does not have conditional logic.</li>
+</ul>
 </li>
 </ul>
 <h3 id=&quot;error-responses&quot;>Error responses</h3>
@@ -815,7 +684,7 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.BlueprintsApi(api_client)
     blueprint_id = 'blueprint_id_example' # str | 
-    body = {assignment_node_id={assignment_node_id}, library_item_id={library_item_id}} # str |  (optional)
+    body = {"assignment_node_id":"{assignment_node_id}","library_item_id":"{library_item_id}"} # str |  (optional)
 
     try:
         # Remove Library Item
@@ -862,9 +731,7 @@ Name | Type | Description  | Notes
 
 Update Blueprint
 
-<p>This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
+This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.
 
 ### Example
 

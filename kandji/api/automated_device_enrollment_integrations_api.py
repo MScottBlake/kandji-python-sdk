@@ -1396,9 +1396,9 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         blueprint_id: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the specified blueprint id")] = None,
         user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)")] = None,
         dep_account: Annotated[Optional[StrictStr], Field(description="The ADE token UUID")] = None,
-        device_family: Annotated[Optional[StrictStr], Field(description="Mac, iPhone, iPad, AppleTV, iPod")] = None,
+        device_family: Annotated[Optional[StrictStr], Field(description="iPad, iPhone, iPod, Mac, AppleTV, or Vision")] = None,
         model: Annotated[Optional[StrictStr], Field(description="Return model results &quot;containing&quot; the specified model string. - &quot;iPad (8th Generation)&quot;, &quot;MacBook Air&quot;")] = None,
-        os: Annotated[Optional[StrictStr], Field(description="OSX, iOS, tvOS")] = None,
+        os: Annotated[Optional[StrictStr], Field(description="iOS, iPadOS, OSX, tvOS, or visionOS")] = None,
         profile_status: Annotated[Optional[StrictStr], Field(description="The automated device enrollment profile assignment status - assigned, empty, pushed, removed")] = None,
         serial_number: Annotated[Optional[StrictStr], Field(description="Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.")] = None,
         page: Annotated[Optional[StrictStr], Field(description="Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.")] = None,
@@ -1425,11 +1425,11 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :type user_id: str
         :param dep_account: The ADE token UUID
         :type dep_account: str
-        :param device_family: Mac, iPhone, iPad, AppleTV, iPod
+        :param device_family: iPad, iPhone, iPod, Mac, AppleTV, or Vision
         :type device_family: str
         :param model: Return model results &quot;containing&quot; the specified model string. - &quot;iPad (8th Generation)&quot;, &quot;MacBook Air&quot;
         :type model: str
-        :param os: OSX, iOS, tvOS
+        :param os: iOS, iPadOS, OSX, tvOS, or visionOS
         :type os: str
         :param profile_status: The automated device enrollment profile assignment status - assigned, empty, pushed, removed
         :type profile_status: str
@@ -1496,9 +1496,9 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         blueprint_id: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the specified blueprint id")] = None,
         user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)")] = None,
         dep_account: Annotated[Optional[StrictStr], Field(description="The ADE token UUID")] = None,
-        device_family: Annotated[Optional[StrictStr], Field(description="Mac, iPhone, iPad, AppleTV, iPod")] = None,
+        device_family: Annotated[Optional[StrictStr], Field(description="iPad, iPhone, iPod, Mac, AppleTV, or Vision")] = None,
         model: Annotated[Optional[StrictStr], Field(description="Return model results &quot;containing&quot; the specified model string. - &quot;iPad (8th Generation)&quot;, &quot;MacBook Air&quot;")] = None,
-        os: Annotated[Optional[StrictStr], Field(description="OSX, iOS, tvOS")] = None,
+        os: Annotated[Optional[StrictStr], Field(description="iOS, iPadOS, OSX, tvOS, or visionOS")] = None,
         profile_status: Annotated[Optional[StrictStr], Field(description="The automated device enrollment profile assignment status - assigned, empty, pushed, removed")] = None,
         serial_number: Annotated[Optional[StrictStr], Field(description="Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.")] = None,
         page: Annotated[Optional[StrictStr], Field(description="Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.")] = None,
@@ -1525,11 +1525,11 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :type user_id: str
         :param dep_account: The ADE token UUID
         :type dep_account: str
-        :param device_family: Mac, iPhone, iPad, AppleTV, iPod
+        :param device_family: iPad, iPhone, iPod, Mac, AppleTV, or Vision
         :type device_family: str
         :param model: Return model results &quot;containing&quot; the specified model string. - &quot;iPad (8th Generation)&quot;, &quot;MacBook Air&quot;
         :type model: str
-        :param os: OSX, iOS, tvOS
+        :param os: iOS, iPadOS, OSX, tvOS, or visionOS
         :type os: str
         :param profile_status: The automated device enrollment profile assignment status - assigned, empty, pushed, removed
         :type profile_status: str
@@ -1596,9 +1596,9 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         blueprint_id: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the specified blueprint id")] = None,
         user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)")] = None,
         dep_account: Annotated[Optional[StrictStr], Field(description="The ADE token UUID")] = None,
-        device_family: Annotated[Optional[StrictStr], Field(description="Mac, iPhone, iPad, AppleTV, iPod")] = None,
+        device_family: Annotated[Optional[StrictStr], Field(description="iPad, iPhone, iPod, Mac, AppleTV, or Vision")] = None,
         model: Annotated[Optional[StrictStr], Field(description="Return model results &quot;containing&quot; the specified model string. - &quot;iPad (8th Generation)&quot;, &quot;MacBook Air&quot;")] = None,
-        os: Annotated[Optional[StrictStr], Field(description="OSX, iOS, tvOS")] = None,
+        os: Annotated[Optional[StrictStr], Field(description="iOS, iPadOS, OSX, tvOS, or visionOS")] = None,
         profile_status: Annotated[Optional[StrictStr], Field(description="The automated device enrollment profile assignment status - assigned, empty, pushed, removed")] = None,
         serial_number: Annotated[Optional[StrictStr], Field(description="Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.")] = None,
         page: Annotated[Optional[StrictStr], Field(description="Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page.")] = None,
@@ -1625,11 +1625,11 @@ class AutomatedDeviceEnrollmentIntegrationsApi:
         :type user_id: str
         :param dep_account: The ADE token UUID
         :type dep_account: str
-        :param device_family: Mac, iPhone, iPad, AppleTV, iPod
+        :param device_family: iPad, iPhone, iPod, Mac, AppleTV, or Vision
         :type device_family: str
         :param model: Return model results &quot;containing&quot; the specified model string. - &quot;iPad (8th Generation)&quot;, &quot;MacBook Air&quot;
         :type model: str
-        :param os: OSX, iOS, tvOS
+        :param os: iOS, iPadOS, OSX, tvOS, or visionOS
         :type os: str
         :param profile_status: The automated device enrollment profile assignment status - assigned, empty, pushed, removed
         :type profile_status: str

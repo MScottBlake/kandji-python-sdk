@@ -447,9 +447,9 @@ with kandji.ApiClient(configuration) as api_client:
     blueprint_id = 'fce0cc58-caa5-40d2-a0d7-a0b257127ec5' # str | Return results &quot;containing&quot; the specified blueprint id (optional)
     user_id = '5344c996-8823-4b37-8d6e-8515fc7c3a0a' # str | &quot;exact&quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
     dep_account = '' # str | The ADE token UUID (optional)
-    device_family = '' # str | Mac, iPhone, iPad, AppleTV, iPod (optional)
+    device_family = '' # str | iPad, iPhone, iPod, Mac, AppleTV, or Vision (optional)
     model = 'MacBook Air' # str | Return model results &quot;containing&quot; the specified model string. - &quot;iPad (8th Generation)&quot;, &quot;MacBook Air&quot; (optional)
-    os = '' # str | OSX, iOS, tvOS (optional)
+    os = '' # str | iOS, iPadOS, OSX, tvOS, or visionOS (optional)
     profile_status = '' # str | The automated device enrollment profile assignment status - assigned, empty, pushed, removed (optional)
     serial_number = '' # str | Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned. (optional)
     page = '1' # str | Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page. (optional)
@@ -473,9 +473,9 @@ Name | Type | Description  | Notes
  **blueprint_id** | **str**| Return results &amp;quot;containing&amp;quot; the specified blueprint id | [optional] 
  **user_id** | **str**| &amp;quot;exact&amp;quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) | [optional] 
  **dep_account** | **str**| The ADE token UUID | [optional] 
- **device_family** | **str**| Mac, iPhone, iPad, AppleTV, iPod | [optional] 
+ **device_family** | **str**| iPad, iPhone, iPod, Mac, AppleTV, or Vision | [optional] 
  **model** | **str**| Return model results &amp;quot;containing&amp;quot; the specified model string. - &amp;quot;iPad (8th Generation)&amp;quot;, &amp;quot;MacBook Air&amp;quot; | [optional] 
- **os** | **str**| OSX, iOS, tvOS | [optional] 
+ **os** | **str**| iOS, iPadOS, OSX, tvOS, or visionOS | [optional] 
  **profile_status** | **str**| The automated device enrollment profile assignment status - assigned, empty, pushed, removed | [optional] 
  **serial_number** | **str**| Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned. | [optional] 
  **page** | **str**| Use the &lt;code&gt;page&lt;/code&gt; parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the &lt;code&gt;next&lt;/code&gt; and &lt;code&gt;previous&lt;/code&gt; key attributes in the response can be used to request the next page of results or return to the previous page. | [optional] 

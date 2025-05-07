@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Get Vulnerability Description
 
-This endpoint makes a request to retrieve information about a cve and summary information about detections for a tenants fleet.
+Retrieve information about a CVE.
 
 ### Example
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_affected_apps**
-> object list_affected_apps(cve_id, page=page, size=size, sort_by=sort_by, filter=filter)
+> VulnerabilitiesListAffectedApps200Response list_affected_apps(cve_id, page=page, size=size, sort_by=sort_by, filter=filter)
 
 List Affected Apps
 
@@ -102,6 +102,7 @@ This endpoint makes a request to retrieve a list of applications impacted by a s
 
 ```python
 import kandji
+from kandji.models.vulnerabilities_list_affected_apps200_response import VulnerabilitiesListAffectedApps200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -129,7 +130,7 @@ with kandji.ApiClient(configuration) as api_client:
     page = '' # str | The page number of the response. (optional)
     size = '50' # str | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
     sort_by = 'cve_id' # str | Field to sort by. Example: sort_by=app_name. (optional)
-    filter = 'device_serial_number' # str | Filterable columns: blueprint_id updated_at (optional)
+    filter = 'device_serial_number' # str | <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul> (optional)
 
     try:
         # List Affected Apps
@@ -151,11 +152,11 @@ Name | Type | Description  | Notes
  **page** | **str**| The page number of the response. | [optional] 
  **size** | **str**| A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | [optional] 
  **sort_by** | **str**| Field to sort by. Example: sort_by&#x3D;app_name. | [optional] 
- **filter** | **str**| Filterable columns: blueprint_id updated_at | [optional] 
+ **filter** | **str**| &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;updated_at&lt;/li&gt; &lt;/ul&gt; | [optional] 
 
 ### Return type
 
-**object**
+[**VulnerabilitiesListAffectedApps200Response**](VulnerabilitiesListAffectedApps200Response.md)
 
 ### Authorization
 
@@ -175,11 +176,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_affected_devices**
-> object list_affected_devices(cve_id, page=page, size=size, sort_by=sort_by, filter=filter)
+> VulnerabilitiesListAffectedApps200Response list_affected_devices(cve_id, page=page, size=size, sort_by=sort_by, filter=filter)
 
 List Affected Devices
 
-This endpoint makes a request to retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
+Retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
 
 ### Example
 
@@ -187,6 +188,7 @@ This endpoint makes a request to retrieve a list of devices impacted by a specif
 
 ```python
 import kandji
+from kandji.models.vulnerabilities_list_affected_apps200_response import VulnerabilitiesListAffectedApps200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -214,7 +216,7 @@ with kandji.ApiClient(configuration) as api_client:
     page = '' # str | The page number of the response. (optional)
     size = '50' # str | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
     sort_by = 'cve_id' # str | Field to sort by. Example: sort_by=app_name. (optional)
-    filter = 'device_serial_number' # str | Filterable columns: blueprint_id updated_at (optional)
+    filter = 'device_serial_number' # str | <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul> (optional)
 
     try:
         # List Affected Devices
@@ -236,11 +238,11 @@ Name | Type | Description  | Notes
  **page** | **str**| The page number of the response. | [optional] 
  **size** | **str**| A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | [optional] 
  **sort_by** | **str**| Field to sort by. Example: sort_by&#x3D;app_name. | [optional] 
- **filter** | **str**| Filterable columns: blueprint_id updated_at | [optional] 
+ **filter** | **str**| &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;updated_at&lt;/li&gt; &lt;/ul&gt; | [optional] 
 
 ### Return type
 
-**object**
+[**VulnerabilitiesListAffectedApps200Response**](VulnerabilitiesListAffectedApps200Response.md)
 
 ### Authorization
 
@@ -264,7 +266,7 @@ Name | Type | Description  | Notes
 
 List Detections
 
-This endpoint makes a request to retrieve a list of all vulnerability detections across the device fleet.
+Retrieve a list of all vulnerability detections across the device fleet.
 
 ### Example
 
@@ -298,7 +300,7 @@ with kandji.ApiClient(configuration) as api_client:
     api_instance = kandji.VulnerabilitiesApi(api_client)
     after = '' # str | Cursor token. (optional)
     size = '300' # str | A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
-    filter = 'device_serial_number' # str | Can filter on any key attribute within the response. (optional)
+    filter = 'device_serial_number' # str | <p>Filter on any key attribute within the response.</p> <ul> <li>device_id</li> <li>device_name</li> <li>device_serial_number</li> <li>device_model</li> <li>device_os_version</li> <li>blueprint_id</li> <li>blueprint_name</li> <li>name</li> <li>path</li> <li>version</li> <li>bundle_id</li> <li>cve_id</li> <li>cve_description</li> <li>cve_link</li> <li>cvss_score</li> <li>cvss_severity</li> <li>detection_datetime</li> <li>cve_published_at</li> <li>cve_modified_at</li> </ul> (optional)
 
     try:
         # List Detections
@@ -318,7 +320,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **after** | **str**| Cursor token. | [optional] 
  **size** | **str**| A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | [optional] 
- **filter** | **str**| Can filter on any key attribute within the response. | [optional] 
+ **filter** | **str**| &lt;p&gt;Filter on any key attribute within the response.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;device_id&lt;/li&gt; &lt;li&gt;device_name&lt;/li&gt; &lt;li&gt;device_serial_number&lt;/li&gt; &lt;li&gt;device_model&lt;/li&gt; &lt;li&gt;device_os_version&lt;/li&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;blueprint_name&lt;/li&gt; &lt;li&gt;name&lt;/li&gt; &lt;li&gt;path&lt;/li&gt; &lt;li&gt;version&lt;/li&gt; &lt;li&gt;bundle_id&lt;/li&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;cve_description&lt;/li&gt; &lt;li&gt;cve_link&lt;/li&gt; &lt;li&gt;cvss_score&lt;/li&gt; &lt;li&gt;cvss_severity&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;li&gt;cve_published_at&lt;/li&gt; &lt;li&gt;cve_modified_at&lt;/li&gt; &lt;/ul&gt; | [optional] 
 
 ### Return type
 
@@ -342,11 +344,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_vulnerabilities**
-> VulnerabilitiesListVulnerabilities200Response list_vulnerabilities(page=page, size=size, sort_by=sort_by, filter=filter)
+> object list_vulnerabilities(page=page, size=size, sort_by=sort_by, filter=filter)
 
 List Vulnerabilities
 
-This endpoint makes a request to retrieve a list of all vulnerabilities grouped by cve.
+Retrieve a list of all vulnerabilities grouped by cve.
 
 ### Example
 
@@ -354,7 +356,6 @@ This endpoint makes a request to retrieve a list of all vulnerabilities grouped 
 
 ```python
 import kandji
-from kandji.models.vulnerabilities_list_vulnerabilities200_response import VulnerabilitiesListVulnerabilities200Response
 from kandji.rest import ApiException
 from pprint import pprint
 
@@ -380,8 +381,8 @@ with kandji.ApiClient(configuration) as api_client:
     api_instance = kandji.VulnerabilitiesApi(api_client)
     page = '' # str | The page number of the response. (optional)
     size = '50' # str | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
-    sort_by = 'cve_id' # str | Field to sort by. Example: sort_by=cve_id. (optional)
-    filter = 'device_serial_number' # str | <p>Filterable columns:</p> <p>cve_id app_name severity first_detection_date latest_detection_date</p> (optional)
+    sort_by = 'cve_id' # str | <p>Field to sort by.</p> <ul> <li>cve_id</li> <li>software (the name of the software)</li> <li>cvss_severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul> (optional)
+    filter = 'device_serial_number' # str | <p>Filterable columns</p> <ul> <li>cve_id</li> <li>app_name</li> <li>severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul> (optional)
 
     try:
         # List Vulnerabilities
@@ -401,12 +402,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **str**| The page number of the response. | [optional] 
  **size** | **str**| A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | [optional] 
- **sort_by** | **str**| Field to sort by. Example: sort_by&#x3D;cve_id. | [optional] 
- **filter** | **str**| &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;p&gt;cve_id app_name severity first_detection_date latest_detection_date&lt;/p&gt; | [optional] 
+ **sort_by** | **str**| &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;software (the name of the software)&lt;/li&gt; &lt;li&gt;cvss_severity&lt;/li&gt; &lt;li&gt;first_detection_date&lt;/li&gt; &lt;li&gt;latest_detection_date&lt;/li&gt; &lt;/ul&gt; | [optional] 
+ **filter** | **str**| &lt;p&gt;Filterable columns&lt;/p&gt; &lt;ul&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;app_name&lt;/li&gt; &lt;li&gt;severity&lt;/li&gt; &lt;li&gt;first_detection_date&lt;/li&gt; &lt;li&gt;latest_detection_date&lt;/li&gt; &lt;/ul&gt; | [optional] 
 
 ### Return type
 
-[**VulnerabilitiesListVulnerabilities200Response**](VulnerabilitiesListVulnerabilities200Response.md)
+**object**
 
 ### Authorization
 

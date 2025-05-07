@@ -18,30 +18,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional, Union
+from pydantic import BaseModel, ConfigDict, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class VulnerabilitiesGetVulnerabilityDescription200Response(BaseModel):
+class VulnerabilitiesListAffectedApps200Response(BaseModel):
     """
-    VulnerabilitiesGetVulnerabilityDescription200Response
+    VulnerabilitiesListAffectedApps200Response
     """ # noqa: E501
-    cve_id: Optional[StrictStr] = None
-    cve_link: Optional[StrictStr] = None
-    cve_modified_at: Optional[StrictStr] = None
-    cve_published_at: Optional[StrictStr] = None
-    cvss_score: Optional[Union[StrictFloat, StrictInt]] = None
-    description: Optional[StrictStr] = None
-    device_count: Optional[StrictInt] = None
-    epss_score: Optional[Union[StrictFloat, StrictInt]] = None
-    first_detection_date: Optional[StrictStr] = None
-    kev_score: Optional[StrictInt] = None
-    latest_detection_date: Optional[StrictStr] = None
-    severity: Optional[StrictStr] = None
-    software_count: Optional[StrictInt] = None
+    page: Optional[StrictInt] = None
+    results: Optional[Any] = None
+    size: Optional[StrictInt] = None
+    total: Optional[StrictInt] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["cve_id", "cve_link", "cve_modified_at", "cve_published_at", "cvss_score", "description", "device_count", "epss_score", "first_detection_date", "kev_score", "latest_detection_date", "severity", "software_count"]
+    __properties: ClassVar[List[str]] = ["page", "results", "size", "total"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -61,7 +52,7 @@ class VulnerabilitiesGetVulnerabilityDescription200Response(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of VulnerabilitiesGetVulnerabilityDescription200Response from a JSON string"""
+        """Create an instance of VulnerabilitiesListAffectedApps200Response from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -89,11 +80,16 @@ class VulnerabilitiesGetVulnerabilityDescription200Response(BaseModel):
             for _key, _value in self.additional_properties.items():
                 _dict[_key] = _value
 
+        # set to None if results (nullable) is None
+        # and model_fields_set contains the field
+        if self.results is None and "results" in self.model_fields_set:
+            _dict['results'] = None
+
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of VulnerabilitiesGetVulnerabilityDescription200Response from a dict"""
+        """Create an instance of VulnerabilitiesListAffectedApps200Response from a dict"""
         if obj is None:
             return None
 
@@ -101,19 +97,10 @@ class VulnerabilitiesGetVulnerabilityDescription200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "cve_id": obj.get("cve_id"),
-            "cve_link": obj.get("cve_link"),
-            "cve_modified_at": obj.get("cve_modified_at"),
-            "cve_published_at": obj.get("cve_published_at"),
-            "cvss_score": obj.get("cvss_score"),
-            "description": obj.get("description"),
-            "device_count": obj.get("device_count"),
-            "epss_score": obj.get("epss_score"),
-            "first_detection_date": obj.get("first_detection_date"),
-            "kev_score": obj.get("kev_score"),
-            "latest_detection_date": obj.get("latest_detection_date"),
-            "severity": obj.get("severity"),
-            "software_count": obj.get("software_count")
+            "page": obj.get("page"),
+            "results": obj.get("results"),
+            "size": obj.get("size"),
+            "total": obj.get("total")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

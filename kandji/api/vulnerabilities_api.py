@@ -21,8 +21,8 @@ from pydantic import Field, StrictStr
 from typing import Any, Dict, Optional
 from typing_extensions import Annotated
 from kandji.models.vulnerabilities_get_vulnerability_description200_response import VulnerabilitiesGetVulnerabilityDescription200Response
+from kandji.models.vulnerabilities_list_affected_apps200_response import VulnerabilitiesListAffectedApps200Response
 from kandji.models.vulnerabilities_list_detections200_response import VulnerabilitiesListDetections200Response
-from kandji.models.vulnerabilities_list_vulnerabilities200_response import VulnerabilitiesListVulnerabilities200Response
 
 from kandji.api_client import ApiClient, RequestSerialized
 from kandji.api_response import ApiResponse
@@ -61,7 +61,7 @@ class VulnerabilitiesApi:
     ) -> VulnerabilitiesGetVulnerabilityDescription200Response:
         """Get Vulnerability Description
 
-        This endpoint makes a request to retrieve information about a cve and summary information about detections for a tenants fleet.
+        Retrieve information about a CVE.
 
         :param cve_id: (required)
         :type cve_id: str
@@ -128,7 +128,7 @@ class VulnerabilitiesApi:
     ) -> ApiResponse[VulnerabilitiesGetVulnerabilityDescription200Response]:
         """Get Vulnerability Description
 
-        This endpoint makes a request to retrieve information about a cve and summary information about detections for a tenants fleet.
+        Retrieve information about a CVE.
 
         :param cve_id: (required)
         :type cve_id: str
@@ -195,7 +195,7 @@ class VulnerabilitiesApi:
     ) -> RESTResponseType:
         """Get Vulnerability Description
 
-        This endpoint makes a request to retrieve information about a cve and summary information about detections for a tenants fleet.
+        Retrieve information about a CVE.
 
         :param cve_id: (required)
         :type cve_id: str
@@ -310,7 +310,7 @@ class VulnerabilitiesApi:
         page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
         size: Annotated[Optional[StrictStr], Field(description="A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Field to sort by. Example: sort_by=app_name.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Filterable columns: blueprint_id updated_at")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -323,7 +323,7 @@ class VulnerabilitiesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> VulnerabilitiesListAffectedApps200Response:
         """List Affected Apps
 
         This endpoint makes a request to retrieve a list of applications impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
@@ -336,7 +336,7 @@ class VulnerabilitiesApi:
         :type size: str
         :param sort_by: Field to sort by. Example: sort_by=app_name.
         :type sort_by: str
-        :param filter: Filterable columns: blueprint_id updated_at
+        :param filter: <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>
         :type filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -373,7 +373,7 @@ class VulnerabilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "VulnerabilitiesListAffectedApps200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -393,7 +393,7 @@ class VulnerabilitiesApi:
         page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
         size: Annotated[Optional[StrictStr], Field(description="A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Field to sort by. Example: sort_by=app_name.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Filterable columns: blueprint_id updated_at")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -406,7 +406,7 @@ class VulnerabilitiesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[VulnerabilitiesListAffectedApps200Response]:
         """List Affected Apps
 
         This endpoint makes a request to retrieve a list of applications impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
@@ -419,7 +419,7 @@ class VulnerabilitiesApi:
         :type size: str
         :param sort_by: Field to sort by. Example: sort_by=app_name.
         :type sort_by: str
-        :param filter: Filterable columns: blueprint_id updated_at
+        :param filter: <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>
         :type filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -456,7 +456,7 @@ class VulnerabilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "VulnerabilitiesListAffectedApps200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -476,7 +476,7 @@ class VulnerabilitiesApi:
         page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
         size: Annotated[Optional[StrictStr], Field(description="A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Field to sort by. Example: sort_by=app_name.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Filterable columns: blueprint_id updated_at")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -502,7 +502,7 @@ class VulnerabilitiesApi:
         :type size: str
         :param sort_by: Field to sort by. Example: sort_by=app_name.
         :type sort_by: str
-        :param filter: Filterable columns: blueprint_id updated_at
+        :param filter: <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>
         :type filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -539,7 +539,7 @@ class VulnerabilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "VulnerabilitiesListAffectedApps200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -639,7 +639,7 @@ class VulnerabilitiesApi:
         page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
         size: Annotated[Optional[StrictStr], Field(description="A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Field to sort by. Example: sort_by=app_name.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Filterable columns: blueprint_id updated_at")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -652,10 +652,10 @@ class VulnerabilitiesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> VulnerabilitiesListAffectedApps200Response:
         """List Affected Devices
 
-        This endpoint makes a request to retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
+        Retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
 
         :param cve_id: (required)
         :type cve_id: str
@@ -665,7 +665,7 @@ class VulnerabilitiesApi:
         :type size: str
         :param sort_by: Field to sort by. Example: sort_by=app_name.
         :type sort_by: str
-        :param filter: Filterable columns: blueprint_id updated_at
+        :param filter: <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>
         :type filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -702,7 +702,7 @@ class VulnerabilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "VulnerabilitiesListAffectedApps200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -722,7 +722,7 @@ class VulnerabilitiesApi:
         page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
         size: Annotated[Optional[StrictStr], Field(description="A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Field to sort by. Example: sort_by=app_name.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Filterable columns: blueprint_id updated_at")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -735,10 +735,10 @@ class VulnerabilitiesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[VulnerabilitiesListAffectedApps200Response]:
         """List Affected Devices
 
-        This endpoint makes a request to retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
+        Retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
 
         :param cve_id: (required)
         :type cve_id: str
@@ -748,7 +748,7 @@ class VulnerabilitiesApi:
         :type size: str
         :param sort_by: Field to sort by. Example: sort_by=app_name.
         :type sort_by: str
-        :param filter: Filterable columns: blueprint_id updated_at
+        :param filter: <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>
         :type filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -785,7 +785,7 @@ class VulnerabilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "VulnerabilitiesListAffectedApps200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -805,7 +805,7 @@ class VulnerabilitiesApi:
         page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
         size: Annotated[Optional[StrictStr], Field(description="A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Field to sort by. Example: sort_by=app_name.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Filterable columns: blueprint_id updated_at")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -821,7 +821,7 @@ class VulnerabilitiesApi:
     ) -> RESTResponseType:
         """List Affected Devices
 
-        This endpoint makes a request to retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
+        Retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
 
         :param cve_id: (required)
         :type cve_id: str
@@ -831,7 +831,7 @@ class VulnerabilitiesApi:
         :type size: str
         :param sort_by: Field to sort by. Example: sort_by=app_name.
         :type sort_by: str
-        :param filter: Filterable columns: blueprint_id updated_at
+        :param filter: <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>
         :type filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -868,7 +868,7 @@ class VulnerabilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "VulnerabilitiesListAffectedApps200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -966,7 +966,7 @@ class VulnerabilitiesApi:
         self,
         after: Annotated[Optional[StrictStr], Field(description="Cursor token.")] = None,
         size: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Can filter on any key attribute within the response.")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>Filter on any key attribute within the response.</p> <ul> <li>device_id</li> <li>device_name</li> <li>device_serial_number</li> <li>device_model</li> <li>device_os_version</li> <li>blueprint_id</li> <li>blueprint_name</li> <li>name</li> <li>path</li> <li>version</li> <li>bundle_id</li> <li>cve_id</li> <li>cve_description</li> <li>cve_link</li> <li>cvss_score</li> <li>cvss_severity</li> <li>detection_datetime</li> <li>cve_published_at</li> <li>cve_modified_at</li> </ul>")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -982,13 +982,13 @@ class VulnerabilitiesApi:
     ) -> VulnerabilitiesListDetections200Response:
         """List Detections
 
-        This endpoint makes a request to retrieve a list of all vulnerability detections across the device fleet.
+        Retrieve a list of all vulnerability detections across the device fleet.
 
         :param after: Cursor token.
         :type after: str
         :param size: A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.
         :type size: str
-        :param filter: Can filter on any key attribute within the response.
+        :param filter: <p>Filter on any key attribute within the response.</p> <ul> <li>device_id</li> <li>device_name</li> <li>device_serial_number</li> <li>device_model</li> <li>device_os_version</li> <li>blueprint_id</li> <li>blueprint_name</li> <li>name</li> <li>path</li> <li>version</li> <li>bundle_id</li> <li>cve_id</li> <li>cve_description</li> <li>cve_link</li> <li>cvss_score</li> <li>cvss_severity</li> <li>detection_datetime</li> <li>cve_published_at</li> <li>cve_modified_at</li> </ul>
         :type filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1041,7 +1041,7 @@ class VulnerabilitiesApi:
         self,
         after: Annotated[Optional[StrictStr], Field(description="Cursor token.")] = None,
         size: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Can filter on any key attribute within the response.")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>Filter on any key attribute within the response.</p> <ul> <li>device_id</li> <li>device_name</li> <li>device_serial_number</li> <li>device_model</li> <li>device_os_version</li> <li>blueprint_id</li> <li>blueprint_name</li> <li>name</li> <li>path</li> <li>version</li> <li>bundle_id</li> <li>cve_id</li> <li>cve_description</li> <li>cve_link</li> <li>cvss_score</li> <li>cvss_severity</li> <li>detection_datetime</li> <li>cve_published_at</li> <li>cve_modified_at</li> </ul>")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1057,13 +1057,13 @@ class VulnerabilitiesApi:
     ) -> ApiResponse[VulnerabilitiesListDetections200Response]:
         """List Detections
 
-        This endpoint makes a request to retrieve a list of all vulnerability detections across the device fleet.
+        Retrieve a list of all vulnerability detections across the device fleet.
 
         :param after: Cursor token.
         :type after: str
         :param size: A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.
         :type size: str
-        :param filter: Can filter on any key attribute within the response.
+        :param filter: <p>Filter on any key attribute within the response.</p> <ul> <li>device_id</li> <li>device_name</li> <li>device_serial_number</li> <li>device_model</li> <li>device_os_version</li> <li>blueprint_id</li> <li>blueprint_name</li> <li>name</li> <li>path</li> <li>version</li> <li>bundle_id</li> <li>cve_id</li> <li>cve_description</li> <li>cve_link</li> <li>cvss_score</li> <li>cvss_severity</li> <li>detection_datetime</li> <li>cve_published_at</li> <li>cve_modified_at</li> </ul>
         :type filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1116,7 +1116,7 @@ class VulnerabilitiesApi:
         self,
         after: Annotated[Optional[StrictStr], Field(description="Cursor token.")] = None,
         size: Annotated[Optional[StrictStr], Field(description="A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Can filter on any key attribute within the response.")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>Filter on any key attribute within the response.</p> <ul> <li>device_id</li> <li>device_name</li> <li>device_serial_number</li> <li>device_model</li> <li>device_os_version</li> <li>blueprint_id</li> <li>blueprint_name</li> <li>name</li> <li>path</li> <li>version</li> <li>bundle_id</li> <li>cve_id</li> <li>cve_description</li> <li>cve_link</li> <li>cvss_score</li> <li>cvss_severity</li> <li>detection_datetime</li> <li>cve_published_at</li> <li>cve_modified_at</li> </ul>")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1132,13 +1132,13 @@ class VulnerabilitiesApi:
     ) -> RESTResponseType:
         """List Detections
 
-        This endpoint makes a request to retrieve a list of all vulnerability detections across the device fleet.
+        Retrieve a list of all vulnerability detections across the device fleet.
 
         :param after: Cursor token.
         :type after: str
         :param size: A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.
         :type size: str
-        :param filter: Can filter on any key attribute within the response.
+        :param filter: <p>Filter on any key attribute within the response.</p> <ul> <li>device_id</li> <li>device_name</li> <li>device_serial_number</li> <li>device_model</li> <li>device_os_version</li> <li>blueprint_id</li> <li>blueprint_name</li> <li>name</li> <li>path</li> <li>version</li> <li>bundle_id</li> <li>cve_id</li> <li>cve_description</li> <li>cve_link</li> <li>cvss_score</li> <li>cvss_severity</li> <li>detection_datetime</li> <li>cve_published_at</li> <li>cve_modified_at</li> </ul>
         :type filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1263,8 +1263,8 @@ class VulnerabilitiesApi:
         self,
         page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
         size: Annotated[Optional[StrictStr], Field(description="A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Field to sort by. Example: sort_by=cve_id.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns:</p> <p>cve_id app_name severity first_detection_date latest_detection_date</p>")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Field to sort by.</p> <ul> <li>cve_id</li> <li>software (the name of the software)</li> <li>cvss_severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul>")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns</p> <ul> <li>cve_id</li> <li>app_name</li> <li>severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul>")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1277,18 +1277,18 @@ class VulnerabilitiesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> VulnerabilitiesListVulnerabilities200Response:
+    ) -> object:
         """List Vulnerabilities
 
-        This endpoint makes a request to retrieve a list of all vulnerabilities grouped by cve.
+        Retrieve a list of all vulnerabilities grouped by cve.
 
         :param page: The page number of the response.
         :type page: str
         :param size: A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.
         :type size: str
-        :param sort_by: Field to sort by. Example: sort_by=cve_id.
+        :param sort_by: <p>Field to sort by.</p> <ul> <li>cve_id</li> <li>software (the name of the software)</li> <li>cvss_severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul>
         :type sort_by: str
-        :param filter: <p>Filterable columns:</p> <p>cve_id app_name severity first_detection_date latest_detection_date</p>
+        :param filter: <p>Filterable columns</p> <ul> <li>cve_id</li> <li>app_name</li> <li>severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul>
         :type filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1324,7 +1324,7 @@ class VulnerabilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "VulnerabilitiesListVulnerabilities200Response",
+            '200': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1342,8 +1342,8 @@ class VulnerabilitiesApi:
         self,
         page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
         size: Annotated[Optional[StrictStr], Field(description="A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Field to sort by. Example: sort_by=cve_id.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns:</p> <p>cve_id app_name severity first_detection_date latest_detection_date</p>")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Field to sort by.</p> <ul> <li>cve_id</li> <li>software (the name of the software)</li> <li>cvss_severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul>")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns</p> <ul> <li>cve_id</li> <li>app_name</li> <li>severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul>")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1356,18 +1356,18 @@ class VulnerabilitiesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[VulnerabilitiesListVulnerabilities200Response]:
+    ) -> ApiResponse[object]:
         """List Vulnerabilities
 
-        This endpoint makes a request to retrieve a list of all vulnerabilities grouped by cve.
+        Retrieve a list of all vulnerabilities grouped by cve.
 
         :param page: The page number of the response.
         :type page: str
         :param size: A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.
         :type size: str
-        :param sort_by: Field to sort by. Example: sort_by=cve_id.
+        :param sort_by: <p>Field to sort by.</p> <ul> <li>cve_id</li> <li>software (the name of the software)</li> <li>cvss_severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul>
         :type sort_by: str
-        :param filter: <p>Filterable columns:</p> <p>cve_id app_name severity first_detection_date latest_detection_date</p>
+        :param filter: <p>Filterable columns</p> <ul> <li>cve_id</li> <li>app_name</li> <li>severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul>
         :type filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1403,7 +1403,7 @@ class VulnerabilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "VulnerabilitiesListVulnerabilities200Response",
+            '200': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1421,8 +1421,8 @@ class VulnerabilitiesApi:
         self,
         page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
         size: Annotated[Optional[StrictStr], Field(description="A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="Field to sort by. Example: sort_by=cve_id.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns:</p> <p>cve_id app_name severity first_detection_date latest_detection_date</p>")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Field to sort by.</p> <ul> <li>cve_id</li> <li>software (the name of the software)</li> <li>cvss_severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul>")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns</p> <ul> <li>cve_id</li> <li>app_name</li> <li>severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul>")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1438,15 +1438,15 @@ class VulnerabilitiesApi:
     ) -> RESTResponseType:
         """List Vulnerabilities
 
-        This endpoint makes a request to retrieve a list of all vulnerabilities grouped by cve.
+        Retrieve a list of all vulnerabilities grouped by cve.
 
         :param page: The page number of the response.
         :type page: str
         :param size: A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.
         :type size: str
-        :param sort_by: Field to sort by. Example: sort_by=cve_id.
+        :param sort_by: <p>Field to sort by.</p> <ul> <li>cve_id</li> <li>software (the name of the software)</li> <li>cvss_severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul>
         :type sort_by: str
-        :param filter: <p>Filterable columns:</p> <p>cve_id app_name severity first_detection_date latest_detection_date</p>
+        :param filter: <p>Filterable columns</p> <ul> <li>cve_id</li> <li>app_name</li> <li>severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul>
         :type filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1482,7 +1482,7 @@ class VulnerabilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "VulnerabilitiesListVulnerabilities200Response",
+            '200': "object",
         }
         response_data = self.api_client.call_api(
             *_param,

@@ -949,7 +949,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_devices**
-> object list_devices(limit, asset_tag=asset_tag, blueprint_id=blueprint_id, device_id=device_id, device_name=device_name, filevault_enabled=filevault_enabled, mac_address=mac_address, model=model, ordering=ordering, os_version=os_version, platform=platform, serial_number=serial_number, tag_name=tag_name, tag_name_in=tag_name_in, tag_id=tag_id, tag_id_in=tag_id_in, user=user, user_email=user_email, user_id=user_id, user_name=user_name, offset=offset)
+> object list_devices(limit, asset_tag=asset_tag, blueprint_id=blueprint_id, device_id=device_id, device_name=device_name, filevault_enabled=filevault_enabled, mac_address=mac_address, model=model, ordering=ordering, os_version=os_version, platform=platform, serial_number=serial_number, tag_name=tag_name, tag_name_in=tag_name_in, tag_id=tag_id, tag_id_in=tag_id_in, user=user, user_email=user_email, user_email_exact=user_email_exact, user_id=user_id, user_name=user_name, offset=offset)
 
 List Devices
 
@@ -1003,13 +1003,14 @@ with kandji.ApiClient(configuration) as api_client:
     tag_id_in = '' # str | Return results for given tag IDs separated by commas. Case sensitive. (optional)
     user = 'Art Vandelay' # str | Return results &quot;containing&quot; the user name (optional)
     user_email = 'someUser@Kandji.io' # str | Return results &quot;containing&quot; search on email address (optional)
+    user_email_exact = 'someUser@Kandji.io' # str | Return results &quot;matching&quot; the specified email address (optional)
     user_id = '5344c996-8823-4b37-8d6e-8515fc7c3a0a' # str | &quot;exact&quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
     user_name = 'Vandelay' # str | Return results &quot;containing&quot; the assigned user Display Name (optional)
     offset = '0' # str | Specify the starting record to return (optional)
 
     try:
         # List Devices
-        api_response = api_instance.list_devices(limit, asset_tag=asset_tag, blueprint_id=blueprint_id, device_id=device_id, device_name=device_name, filevault_enabled=filevault_enabled, mac_address=mac_address, model=model, ordering=ordering, os_version=os_version, platform=platform, serial_number=serial_number, tag_name=tag_name, tag_name_in=tag_name_in, tag_id=tag_id, tag_id_in=tag_id_in, user=user, user_email=user_email, user_id=user_id, user_name=user_name, offset=offset)
+        api_response = api_instance.list_devices(limit, asset_tag=asset_tag, blueprint_id=blueprint_id, device_id=device_id, device_name=device_name, filevault_enabled=filevault_enabled, mac_address=mac_address, model=model, ordering=ordering, os_version=os_version, platform=platform, serial_number=serial_number, tag_name=tag_name, tag_name_in=tag_name_in, tag_id=tag_id, tag_id_in=tag_id_in, user=user, user_email=user_email, user_email_exact=user_email_exact, user_id=user_id, user_name=user_name, offset=offset)
         print("The response of DeviceInformationApi->list_devices:\n")
         pprint(api_response)
     except Exception as e:
@@ -1041,6 +1042,7 @@ Name | Type | Description  | Notes
  **tag_id_in** | **str**| Return results for given tag IDs separated by commas. Case sensitive. | [optional] 
  **user** | **str**| Return results &amp;quot;containing&amp;quot; the user name | [optional] 
  **user_email** | **str**| Return results &amp;quot;containing&amp;quot; search on email address | [optional] 
+ **user_email_exact** | **str**| Return results &amp;quot;matching&amp;quot; the specified email address | [optional] 
  **user_id** | **str**| &amp;quot;exact&amp;quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) | [optional] 
  **user_name** | **str**| Return results &amp;quot;containing&amp;quot; the assigned user Display Name | [optional] 
  **offset** | **str**| Specify the starting record to return | [optional] 

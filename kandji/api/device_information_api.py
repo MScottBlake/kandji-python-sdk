@@ -2448,6 +2448,7 @@ class DeviceInformationApi:
         tag_id_in: Annotated[Optional[StrictStr], Field(description="Return results for given tag IDs separated by commas. Case sensitive.")] = None,
         user: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the user name")] = None,
         user_email: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; search on email address")] = None,
+        user_email_exact: Annotated[Optional[StrictStr], Field(description="Return results &quot;matching&quot; the specified email address")] = None,
         user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)")] = None,
         user_name: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the assigned user Display Name")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
@@ -2504,6 +2505,8 @@ class DeviceInformationApi:
         :type user: str
         :param user_email: Return results &quot;containing&quot; search on email address
         :type user_email: str
+        :param user_email_exact: Return results &quot;matching&quot; the specified email address
+        :type user_email_exact: str
         :param user_id: &quot;exact&quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)
         :type user_id: str
         :param user_name: Return results &quot;containing&quot; the assigned user Display Name
@@ -2551,6 +2554,7 @@ class DeviceInformationApi:
             tag_id_in=tag_id_in,
             user=user,
             user_email=user_email,
+            user_email_exact=user_email_exact,
             user_id=user_id,
             user_name=user_name,
             offset=offset,
@@ -2595,6 +2599,7 @@ class DeviceInformationApi:
         tag_id_in: Annotated[Optional[StrictStr], Field(description="Return results for given tag IDs separated by commas. Case sensitive.")] = None,
         user: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the user name")] = None,
         user_email: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; search on email address")] = None,
+        user_email_exact: Annotated[Optional[StrictStr], Field(description="Return results &quot;matching&quot; the specified email address")] = None,
         user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)")] = None,
         user_name: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the assigned user Display Name")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
@@ -2651,6 +2656,8 @@ class DeviceInformationApi:
         :type user: str
         :param user_email: Return results &quot;containing&quot; search on email address
         :type user_email: str
+        :param user_email_exact: Return results &quot;matching&quot; the specified email address
+        :type user_email_exact: str
         :param user_id: &quot;exact&quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)
         :type user_id: str
         :param user_name: Return results &quot;containing&quot; the assigned user Display Name
@@ -2698,6 +2705,7 @@ class DeviceInformationApi:
             tag_id_in=tag_id_in,
             user=user,
             user_email=user_email,
+            user_email_exact=user_email_exact,
             user_id=user_id,
             user_name=user_name,
             offset=offset,
@@ -2742,6 +2750,7 @@ class DeviceInformationApi:
         tag_id_in: Annotated[Optional[StrictStr], Field(description="Return results for given tag IDs separated by commas. Case sensitive.")] = None,
         user: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the user name")] = None,
         user_email: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; search on email address")] = None,
+        user_email_exact: Annotated[Optional[StrictStr], Field(description="Return results &quot;matching&quot; the specified email address")] = None,
         user_id: Annotated[Optional[StrictStr], Field(description="&quot;exact&quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)")] = None,
         user_name: Annotated[Optional[StrictStr], Field(description="Return results &quot;containing&quot; the assigned user Display Name")] = None,
         offset: Annotated[Optional[StrictStr], Field(description="Specify the starting record to return")] = None,
@@ -2798,6 +2807,8 @@ class DeviceInformationApi:
         :type user: str
         :param user_email: Return results &quot;containing&quot; search on email address
         :type user_email: str
+        :param user_email_exact: Return results &quot;matching&quot; the specified email address
+        :type user_email_exact: str
         :param user_id: &quot;exact&quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)
         :type user_id: str
         :param user_name: Return results &quot;containing&quot; the assigned user Display Name
@@ -2845,6 +2856,7 @@ class DeviceInformationApi:
             tag_id_in=tag_id_in,
             user=user,
             user_email=user_email,
+            user_email_exact=user_email_exact,
             user_id=user_id,
             user_name=user_name,
             offset=offset,
@@ -2884,6 +2896,7 @@ class DeviceInformationApi:
         tag_id_in,
         user,
         user_email,
+        user_email_exact,
         user_id,
         user_name,
         offset,
@@ -2976,6 +2989,10 @@ class DeviceInformationApi:
         if user_email is not None:
             
             _query_params.append(('user_email', user_email))
+            
+        if user_email_exact is not None:
+            
+            _query_params.append(('user_email_exact', user_email_exact))
             
         if user_id is not None:
             

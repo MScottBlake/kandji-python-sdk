@@ -130,7 +130,7 @@ with kandji.ApiClient(configuration) as api_client:
     page = '' # str | The page number of the response. (optional)
     size = '50' # str | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
     sort_by = 'cve_id' # str | Field to sort by. Example: sort_by=app_name. (optional)
-    filter = 'device_serial_number' # str | <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul> (optional)
+    filter = '{\"created_at\":{\"gte\":\"2025-05-23T17:11:31.816587Z\"}}' # str | <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>created_at</li> </ul> (optional)
 
     try:
         # List Affected Apps
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
  **page** | **str**| The page number of the response. | [optional] 
  **size** | **str**| A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | [optional] 
  **sort_by** | **str**| Field to sort by. Example: sort_by&#x3D;app_name. | [optional] 
- **filter** | **str**| &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;updated_at&lt;/li&gt; &lt;/ul&gt; | [optional] 
+ **filter** | **str**| &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;created_at&lt;/li&gt; &lt;/ul&gt; | [optional] 
 
 ### Return type
 
@@ -216,7 +216,7 @@ with kandji.ApiClient(configuration) as api_client:
     page = '' # str | The page number of the response. (optional)
     size = '50' # str | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
     sort_by = 'cve_id' # str | Field to sort by. Example: sort_by=app_name. (optional)
-    filter = 'device_serial_number' # str | <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul> (optional)
+    filter = '{\"detection_datetime\":{\"gte\":\"2025-05-23T17:11:31.816587Z\"}}' # str | <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul> (optional)
 
     try:
         # List Affected Devices
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
  **page** | **str**| The page number of the response. | [optional] 
  **size** | **str**| A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | [optional] 
  **sort_by** | **str**| Field to sort by. Example: sort_by&#x3D;app_name. | [optional] 
- **filter** | **str**| &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;updated_at&lt;/li&gt; &lt;/ul&gt; | [optional] 
+ **filter** | **str**| &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; | [optional] 
 
 ### Return type
 
@@ -300,7 +300,7 @@ with kandji.ApiClient(configuration) as api_client:
     api_instance = kandji.VulnerabilitiesApi(api_client)
     after = '' # str | Cursor token. (optional)
     size = '300' # str | A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
-    filter = 'device_serial_number' # str | <p>Filter on any key attribute within the response.</p> <ul> <li>device_id</li> <li>device_name</li> <li>device_serial_number</li> <li>device_model</li> <li>device_os_version</li> <li>blueprint_id</li> <li>blueprint_name</li> <li>name</li> <li>path</li> <li>version</li> <li>bundle_id</li> <li>cve_id</li> <li>cve_description</li> <li>cve_link</li> <li>cvss_score</li> <li>cvss_severity</li> <li>detection_datetime</li> <li>cve_published_at</li> <li>cve_modified_at</li> </ul> (optional)
+    filter = '{\"cve_id\":{\"in\":[\"CVE-2024-24795\"]}}' # str | <p>Filter on any key attribute within the response.</p> <ul> <li>device_id</li> <li>device_name</li> <li>device_serial_number</li> <li>device_model</li> <li>device_os_version</li> <li>blueprint_id</li> <li>blueprint_name</li> <li>name</li> <li>path</li> <li>version</li> <li>bundle_id</li> <li>cve_id</li> <li>cve_description</li> <li>cve_link</li> <li>cvss_score</li> <li>cvss_severity</li> <li>detection_datetime</li> <li>cve_published_at</li> <li>cve_modified_at</li> </ul> (optional)
 
     try:
         # List Detections
@@ -382,7 +382,7 @@ with kandji.ApiClient(configuration) as api_client:
     page = '' # str | The page number of the response. (optional)
     size = '50' # str | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
     sort_by = 'cve_id' # str | <p>Field to sort by.</p> <ul> <li>cve_id</li> <li>software (the name of the software)</li> <li>cvss_severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul> (optional)
-    filter = 'device_serial_number' # str | <p>Filterable columns</p> <ul> <li>cve_id</li> <li>app_name</li> <li>severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul> (optional)
+    filter = '{\"cve_id\":{\"in\":[\"CVE-2024-24795\"]}}' # str | <p>Filterable columns</p> <ul> <li>cve_id</li> <li>app_name</li> <li>severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul> (optional)
 
     try:
         # List Vulnerabilities

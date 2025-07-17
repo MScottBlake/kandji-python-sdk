@@ -310,7 +310,7 @@ class VulnerabilitiesApi:
         page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
         size: Annotated[Optional[StrictStr], Field(description="A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Field to sort by. Example: sort_by=app_name.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>created_at</li> </ul>")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -336,7 +336,7 @@ class VulnerabilitiesApi:
         :type size: str
         :param sort_by: Field to sort by. Example: sort_by=app_name.
         :type sort_by: str
-        :param filter: <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>
+        :param filter: <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>created_at</li> </ul>
         :type filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -393,7 +393,7 @@ class VulnerabilitiesApi:
         page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
         size: Annotated[Optional[StrictStr], Field(description="A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Field to sort by. Example: sort_by=app_name.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>created_at</li> </ul>")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -419,7 +419,7 @@ class VulnerabilitiesApi:
         :type size: str
         :param sort_by: Field to sort by. Example: sort_by=app_name.
         :type sort_by: str
-        :param filter: <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>
+        :param filter: <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>created_at</li> </ul>
         :type filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -476,7 +476,7 @@ class VulnerabilitiesApi:
         page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
         size: Annotated[Optional[StrictStr], Field(description="A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Field to sort by. Example: sort_by=app_name.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>created_at</li> </ul>")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -502,7 +502,7 @@ class VulnerabilitiesApi:
         :type size: str
         :param sort_by: Field to sort by. Example: sort_by=app_name.
         :type sort_by: str
-        :param filter: <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>
+        :param filter: <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>created_at</li> </ul>
         :type filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -639,7 +639,7 @@ class VulnerabilitiesApi:
         page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
         size: Annotated[Optional[StrictStr], Field(description="A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Field to sort by. Example: sort_by=app_name.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul>")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -665,7 +665,7 @@ class VulnerabilitiesApi:
         :type size: str
         :param sort_by: Field to sort by. Example: sort_by=app_name.
         :type sort_by: str
-        :param filter: <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>
+        :param filter: <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul>
         :type filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -722,7 +722,7 @@ class VulnerabilitiesApi:
         page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
         size: Annotated[Optional[StrictStr], Field(description="A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Field to sort by. Example: sort_by=app_name.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul>")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -748,7 +748,7 @@ class VulnerabilitiesApi:
         :type size: str
         :param sort_by: Field to sort by. Example: sort_by=app_name.
         :type sort_by: str
-        :param filter: <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>
+        :param filter: <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul>
         :type filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -805,7 +805,7 @@ class VulnerabilitiesApi:
         page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
         size: Annotated[Optional[StrictStr], Field(description="A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Field to sort by. Example: sort_by=app_name.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul>")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -831,7 +831,7 @@ class VulnerabilitiesApi:
         :type size: str
         :param sort_by: Field to sort by. Example: sort_by=app_name.
         :type sort_by: str
-        :param filter: <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul>
+        :param filter: <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul>
         :type filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

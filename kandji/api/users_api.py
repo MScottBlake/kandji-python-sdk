@@ -573,7 +573,7 @@ class UsersApi:
         id: Annotated[Optional[StrictStr], Field(description="Search for a user matching the provided UUID value.")] = None,
         integration_id: Annotated[Optional[StrictStr], Field(description="Search for a integration matching the provided UUID value.")] = None,
         archived: Annotated[Optional[StrictStr], Field(description="Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab.")] = None,
-        cursor: Annotated[Optional[StrictStr], Field(description="Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response.")] = None,
+        cursor: Annotated[Optional[StrictStr], Field(description="Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -599,7 +599,7 @@ class UsersApi:
         :type integration_id: str
         :param archived: Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab.
         :type archived: str
-        :param cursor: Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response.
+        :param cursor: Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response.
         :type cursor: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -656,7 +656,7 @@ class UsersApi:
         id: Annotated[Optional[StrictStr], Field(description="Search for a user matching the provided UUID value.")] = None,
         integration_id: Annotated[Optional[StrictStr], Field(description="Search for a integration matching the provided UUID value.")] = None,
         archived: Annotated[Optional[StrictStr], Field(description="Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab.")] = None,
-        cursor: Annotated[Optional[StrictStr], Field(description="Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response.")] = None,
+        cursor: Annotated[Optional[StrictStr], Field(description="Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -682,7 +682,7 @@ class UsersApi:
         :type integration_id: str
         :param archived: Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab.
         :type archived: str
-        :param cursor: Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response.
+        :param cursor: Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response.
         :type cursor: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -739,7 +739,7 @@ class UsersApi:
         id: Annotated[Optional[StrictStr], Field(description="Search for a user matching the provided UUID value.")] = None,
         integration_id: Annotated[Optional[StrictStr], Field(description="Search for a integration matching the provided UUID value.")] = None,
         archived: Annotated[Optional[StrictStr], Field(description="Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab.")] = None,
-        cursor: Annotated[Optional[StrictStr], Field(description="Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response.")] = None,
+        cursor: Annotated[Optional[StrictStr], Field(description="Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -765,7 +765,7 @@ class UsersApi:
         :type integration_id: str
         :param archived: Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab.
         :type archived: str
-        :param cursor: Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response.
+        :param cursor: Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response.
         :type cursor: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

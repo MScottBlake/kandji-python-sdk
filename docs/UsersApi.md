@@ -212,7 +212,7 @@ with kandji.ApiClient(configuration) as api_client:
     id = '69c009ca-1f78-4bdf-bb93-08d6d39041db' # str | Search for a user matching the provided UUID value. (optional)
     integration_id = 'f7461096-4ef9-43aa-88e9-ca1967ba0b38' # str | Search for a integration matching the provided UUID value. (optional)
     archived = 'false' # str | Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. (optional)
-    cursor = 'cursor_example' # str | Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response. (optional)
+    cursor = 'cursor_example' # str | Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response. (optional)
 
     try:
         # List Users
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
  **id** | **str**| Search for a user matching the provided UUID value. | [optional] 
  **integration_id** | **str**| Search for a integration matching the provided UUID value. | [optional] 
  **archived** | **str**| Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. | [optional] 
- **cursor** | **str**| Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response. | [optional] 
+ **cursor** | **str**| Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response. | [optional] 
 
 ### Return type
 

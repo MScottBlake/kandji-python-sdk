@@ -5,9 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**next** | **object** |  | [optional] 
-**previous** | **object** |  | [optional] 
 **results** | **object** |  | [optional] 
+**size** | **int** |  | [optional] 
 **total** | **int** |  | [optional] 
 
 ## Example

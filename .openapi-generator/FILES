@@ -81,6 +81,7 @@ docs/VulnerabilitiesApi.md
 docs/VulnerabilitiesGetVulnerabilityDescription200Response.md
 docs/VulnerabilitiesListAffectedApps200Response.md
 docs/VulnerabilitiesListDetections200Response.md
+docs/VulnerabilitiesListVulnerabilities200Response.md
 git_push.sh
 kandji/__init__.py
 kandji/api/__init__.py
@@ -167,6 +168,7 @@ kandji/models/users_get_user200_response_integration.py
 kandji/models/vulnerabilities_get_vulnerability_description200_response.py
 kandji/models/vulnerabilities_list_affected_apps200_response.py
 kandji/models/vulnerabilities_list_detections200_response.py
+kandji/models/vulnerabilities_list_vulnerabilities200_response.py
 kandji/py.typed
 kandji/rest.py
 pyproject.toml

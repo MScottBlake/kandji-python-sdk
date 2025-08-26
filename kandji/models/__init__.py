@@ -81,6 +81,7 @@ if __import__("typing").TYPE_CHECKING:
     from kandji.models.vulnerabilities_get_vulnerability_description200_response import VulnerabilitiesGetVulnerabilityDescription200Response
     from kandji.models.vulnerabilities_list_affected_apps200_response import VulnerabilitiesListAffectedApps200Response
     from kandji.models.vulnerabilities_list_detections200_response import VulnerabilitiesListDetections200Response
+    from kandji.models.vulnerabilities_list_vulnerabilities200_response import VulnerabilitiesListVulnerabilities200Response
     
 else:
     from lazy_imports import LazyModule, as_package, load
@@ -154,6 +155,7 @@ from kandji.models.users_get_user200_response_integration import UsersGetUser200
 from kandji.models.vulnerabilities_get_vulnerability_description200_response import VulnerabilitiesGetVulnerabilityDescription200Response
 from kandji.models.vulnerabilities_list_affected_apps200_response import VulnerabilitiesListAffectedApps200Response
 from kandji.models.vulnerabilities_list_detections200_response import VulnerabilitiesListDetections200Response
+from kandji.models.vulnerabilities_list_vulnerabilities200_response import VulnerabilitiesListVulnerabilities200Response
 
 """,
             name=__name__,

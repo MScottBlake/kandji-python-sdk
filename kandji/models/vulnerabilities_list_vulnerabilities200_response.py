@@ -27,12 +27,11 @@ class VulnerabilitiesListVulnerabilities200Response(BaseModel):
     """
     VulnerabilitiesListVulnerabilities200Response
     """ # noqa: E501
-    next: Optional[Any] = None
-    previous: Optional[Any] = None
     results: Optional[Any] = None
+    size: Optional[StrictInt] = None
     total: Optional[StrictInt] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["next", "previous", "results", "total"]
+    __properties: ClassVar[List[str]] = ["results", "size", "total"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -80,16 +79,6 @@ class VulnerabilitiesListVulnerabilities200Response(BaseModel):
             for _key, _value in self.additional_properties.items():
                 _dict[_key] = _value
 
-        # set to None if next (nullable) is None
-        # and model_fields_set contains the field
-        if self.next is None and "next" in self.model_fields_set:
-            _dict['next'] = None
-
-        # set to None if previous (nullable) is None
-        # and model_fields_set contains the field
-        if self.previous is None and "previous" in self.model_fields_set:
-            _dict['previous'] = None
-
         # set to None if results (nullable) is None
         # and model_fields_set contains the field
         if self.results is None and "results" in self.model_fields_set:
@@ -107,9 +96,8 @@ class VulnerabilitiesListVulnerabilities200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "next": obj.get("next"),
-            "previous": obj.get("previous"),
             "results": obj.get("results"),
+            "size": obj.get("size"),
             "total": obj.get("total")
         })
         # store additional fields in additional_properties

@@ -104,7 +104,7 @@ __all__ = [
     "UsersGetUser200Response",
     "UsersGetUser200ResponseIntegration",
     "VulnerabilitiesGetVulnerabilityDescription200Response",
-    "VulnerabilitiesListAffectedApps200Response",
+    "VulnerabilitiesListAffectedDevices200Response",
     "VulnerabilitiesListDetections200Response",
     "VulnerabilitiesListVulnerabilities200Response",
 ]
@@ -200,7 +200,7 @@ if __import__("typing").TYPE_CHECKING:
     from kandji.models.users_get_user200_response import UsersGetUser200Response as UsersGetUser200Response
     from kandji.models.users_get_user200_response_integration import UsersGetUser200ResponseIntegration as UsersGetUser200ResponseIntegration
     from kandji.models.vulnerabilities_get_vulnerability_description200_response import VulnerabilitiesGetVulnerabilityDescription200Response as VulnerabilitiesGetVulnerabilityDescription200Response
-    from kandji.models.vulnerabilities_list_affected_apps200_response import VulnerabilitiesListAffectedApps200Response as VulnerabilitiesListAffectedApps200Response
+    from kandji.models.vulnerabilities_list_affected_devices200_response import VulnerabilitiesListAffectedDevices200Response as VulnerabilitiesListAffectedDevices200Response
     from kandji.models.vulnerabilities_list_detections200_response import VulnerabilitiesListDetections200Response as VulnerabilitiesListDetections200Response
     from kandji.models.vulnerabilities_list_vulnerabilities200_response import VulnerabilitiesListVulnerabilities200Response as VulnerabilitiesListVulnerabilities200Response
     
@@ -302,7 +302,7 @@ from kandji.models.threats_get_threat_details200_response import ThreatsGetThrea
 from kandji.models.users_get_user200_response import UsersGetUser200Response as UsersGetUser200Response
 from kandji.models.users_get_user200_response_integration import UsersGetUser200ResponseIntegration as UsersGetUser200ResponseIntegration
 from kandji.models.vulnerabilities_get_vulnerability_description200_response import VulnerabilitiesGetVulnerabilityDescription200Response as VulnerabilitiesGetVulnerabilityDescription200Response
-from kandji.models.vulnerabilities_list_affected_apps200_response import VulnerabilitiesListAffectedApps200Response as VulnerabilitiesListAffectedApps200Response
+from kandji.models.vulnerabilities_list_affected_devices200_response import VulnerabilitiesListAffectedDevices200Response as VulnerabilitiesListAffectedDevices200Response
 from kandji.models.vulnerabilities_list_detections200_response import VulnerabilitiesListDetections200Response as VulnerabilitiesListDetections200Response
 from kandji.models.vulnerabilities_list_vulnerabilities200_response import VulnerabilitiesListVulnerabilities200Response as VulnerabilitiesListVulnerabilities200Response
 

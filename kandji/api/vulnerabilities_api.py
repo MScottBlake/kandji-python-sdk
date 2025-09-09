@@ -21,7 +21,7 @@ from pydantic import Field, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
 from kandji.models.vulnerabilities_get_vulnerability_description200_response import VulnerabilitiesGetVulnerabilityDescription200Response
-from kandji.models.vulnerabilities_list_affected_apps200_response import VulnerabilitiesListAffectedApps200Response
+from kandji.models.vulnerabilities_list_affected_devices200_response import VulnerabilitiesListAffectedDevices200Response
 from kandji.models.vulnerabilities_list_detections200_response import VulnerabilitiesListDetections200Response
 from kandji.models.vulnerabilities_list_vulnerabilities200_response import VulnerabilitiesListVulnerabilities200Response
 
@@ -305,335 +305,6 @@ class VulnerabilitiesApi:
 
 
     @validate_call
-    def list_affected_apps(
-        self,
-        cve_id: StrictStr,
-        page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
-        size: Annotated[Optional[StrictStr], Field(description="A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Field to sort by.</p> <ul> <li>software (software name)</li> <li>detection_datetime</li> </ul>")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="<p>Filter results. Similar to prism filters. Filterable columns</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul>")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> VulnerabilitiesListAffectedApps200Response:
-        """List Affected Apps
-
-        This endpoint makes a request to retrieve a list of applications impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
-
-        :param cve_id: (required)
-        :type cve_id: str
-        :param page: The page number of the response.
-        :type page: str
-        :param size: A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.
-        :type size: str
-        :param sort_by: <p>Field to sort by.</p> <ul> <li>software (software name)</li> <li>detection_datetime</li> </ul>
-        :type sort_by: str
-        :param filter: <p>Filter results. Similar to prism filters. Filterable columns</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul>
-        :type filter: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._list_affected_apps_serialize(
-            cve_id=cve_id,
-            page=page,
-            size=size,
-            sort_by=sort_by,
-            filter=filter,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "VulnerabilitiesListAffectedApps200Response",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def list_affected_apps_with_http_info(
-        self,
-        cve_id: StrictStr,
-        page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
-        size: Annotated[Optional[StrictStr], Field(description="A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Field to sort by.</p> <ul> <li>software (software name)</li> <li>detection_datetime</li> </ul>")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="<p>Filter results. Similar to prism filters. Filterable columns</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul>")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[VulnerabilitiesListAffectedApps200Response]:
-        """List Affected Apps
-
-        This endpoint makes a request to retrieve a list of applications impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
-
-        :param cve_id: (required)
-        :type cve_id: str
-        :param page: The page number of the response.
-        :type page: str
-        :param size: A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.
-        :type size: str
-        :param sort_by: <p>Field to sort by.</p> <ul> <li>software (software name)</li> <li>detection_datetime</li> </ul>
-        :type sort_by: str
-        :param filter: <p>Filter results. Similar to prism filters. Filterable columns</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul>
-        :type filter: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._list_affected_apps_serialize(
-            cve_id=cve_id,
-            page=page,
-            size=size,
-            sort_by=sort_by,
-            filter=filter,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "VulnerabilitiesListAffectedApps200Response",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def list_affected_apps_without_preload_content(
-        self,
-        cve_id: StrictStr,
-        page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
-        size: Annotated[Optional[StrictStr], Field(description="A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
-        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Field to sort by.</p> <ul> <li>software (software name)</li> <li>detection_datetime</li> </ul>")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="<p>Filter results. Similar to prism filters. Filterable columns</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul>")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """List Affected Apps
-
-        This endpoint makes a request to retrieve a list of applications impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
-
-        :param cve_id: (required)
-        :type cve_id: str
-        :param page: The page number of the response.
-        :type page: str
-        :param size: A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.
-        :type size: str
-        :param sort_by: <p>Field to sort by.</p> <ul> <li>software (software name)</li> <li>detection_datetime</li> </ul>
-        :type sort_by: str
-        :param filter: <p>Filter results. Similar to prism filters. Filterable columns</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul>
-        :type filter: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._list_affected_apps_serialize(
-            cve_id=cve_id,
-            page=page,
-            size=size,
-            sort_by=sort_by,
-            filter=filter,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "VulnerabilitiesListAffectedApps200Response",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _list_affected_apps_serialize(
-        self,
-        cve_id,
-        page,
-        size,
-        sort_by,
-        filter,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if cve_id is not None:
-            _path_params['cve_id'] = cve_id
-        # process the query parameters
-        if page is not None:
-            
-            _query_params.append(('page', page))
-            
-        if size is not None:
-            
-            _query_params.append(('size', size))
-            
-        if sort_by is not None:
-            
-            _query_params.append(('sort_by', sort_by))
-            
-        if filter is not None:
-            
-            _query_params.append(('filter', filter))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'bearer'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/api/v1/vulnerability-management/vulnerabilities/{cve_id}/applications',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
     def list_affected_devices(
         self,
         cve_id: StrictStr,
@@ -653,7 +324,7 @@ class VulnerabilitiesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> VulnerabilitiesListAffectedApps200Response:
+    ) -> VulnerabilitiesListAffectedDevices200Response:
         """List Affected Devices
 
         Retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
@@ -703,7 +374,7 @@ class VulnerabilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "VulnerabilitiesListAffectedApps200Response",
+            '200': "VulnerabilitiesListAffectedDevices200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -736,7 +407,7 @@ class VulnerabilitiesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[VulnerabilitiesListAffectedApps200Response]:
+    ) -> ApiResponse[VulnerabilitiesListAffectedDevices200Response]:
         """List Affected Devices
 
         Retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
@@ -786,7 +457,7 @@ class VulnerabilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "VulnerabilitiesListAffectedApps200Response",
+            '200': "VulnerabilitiesListAffectedDevices200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -869,7 +540,7 @@ class VulnerabilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "VulnerabilitiesListAffectedApps200Response",
+            '200': "VulnerabilitiesListAffectedDevices200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -947,6 +618,335 @@ class VulnerabilitiesApi:
         return self.api_client.param_serialize(
             method='GET',
             resource_path='/api/v1/vulnerability-management/vulnerabilities/{cve_id}/devices',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def list_affected_software(
+        self,
+        cve_id: StrictStr,
+        page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
+        size: Annotated[Optional[StrictStr], Field(description="A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Field to sort by.</p> <ul> <li>software (software name)</li> <li>detection_datetime</li> </ul>")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>Filter results. Similar to prism filters. Filterable columns</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul>")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> VulnerabilitiesListAffectedDevices200Response:
+        """List Affected Software
+
+        This endpoint makes a request to retrieve a list of software impacted by a specified <code>cve_id</code> vulnerability for a tenant's fleet.
+
+        :param cve_id: (required)
+        :type cve_id: str
+        :param page: The page number of the response.
+        :type page: str
+        :param size: A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.
+        :type size: str
+        :param sort_by: <p>Field to sort by.</p> <ul> <li>software (software name)</li> <li>detection_datetime</li> </ul>
+        :type sort_by: str
+        :param filter: <p>Filter results. Similar to prism filters. Filterable columns</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul>
+        :type filter: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_affected_software_serialize(
+            cve_id=cve_id,
+            page=page,
+            size=size,
+            sort_by=sort_by,
+            filter=filter,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "VulnerabilitiesListAffectedDevices200Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def list_affected_software_with_http_info(
+        self,
+        cve_id: StrictStr,
+        page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
+        size: Annotated[Optional[StrictStr], Field(description="A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Field to sort by.</p> <ul> <li>software (software name)</li> <li>detection_datetime</li> </ul>")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>Filter results. Similar to prism filters. Filterable columns</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul>")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[VulnerabilitiesListAffectedDevices200Response]:
+        """List Affected Software
+
+        This endpoint makes a request to retrieve a list of software impacted by a specified <code>cve_id</code> vulnerability for a tenant's fleet.
+
+        :param cve_id: (required)
+        :type cve_id: str
+        :param page: The page number of the response.
+        :type page: str
+        :param size: A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.
+        :type size: str
+        :param sort_by: <p>Field to sort by.</p> <ul> <li>software (software name)</li> <li>detection_datetime</li> </ul>
+        :type sort_by: str
+        :param filter: <p>Filter results. Similar to prism filters. Filterable columns</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul>
+        :type filter: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_affected_software_serialize(
+            cve_id=cve_id,
+            page=page,
+            size=size,
+            sort_by=sort_by,
+            filter=filter,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "VulnerabilitiesListAffectedDevices200Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def list_affected_software_without_preload_content(
+        self,
+        cve_id: StrictStr,
+        page: Annotated[Optional[StrictStr], Field(description="The page number of the response.")] = None,
+        size: Annotated[Optional[StrictStr], Field(description="A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="<p>Field to sort by.</p> <ul> <li>software (software name)</li> <li>detection_datetime</li> </ul>")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="<p>Filter results. Similar to prism filters. Filterable columns</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul>")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """List Affected Software
+
+        This endpoint makes a request to retrieve a list of software impacted by a specified <code>cve_id</code> vulnerability for a tenant's fleet.
+
+        :param cve_id: (required)
+        :type cve_id: str
+        :param page: The page number of the response.
+        :type page: str
+        :param size: A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.
+        :type size: str
+        :param sort_by: <p>Field to sort by.</p> <ul> <li>software (software name)</li> <li>detection_datetime</li> </ul>
+        :type sort_by: str
+        :param filter: <p>Filter results. Similar to prism filters. Filterable columns</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul>
+        :type filter: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_affected_software_serialize(
+            cve_id=cve_id,
+            page=page,
+            size=size,
+            sort_by=sort_by,
+            filter=filter,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "VulnerabilitiesListAffectedDevices200Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _list_affected_software_serialize(
+        self,
+        cve_id,
+        page,
+        size,
+        sort_by,
+        filter,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if cve_id is not None:
+            _path_params['cve_id'] = cve_id
+        # process the query parameters
+        if page is not None:
+            
+            _query_params.append(('page', page))
+            
+        if size is not None:
+            
+            _query_params.append(('size', size))
+            
+        if sort_by is not None:
+            
+            _query_params.append(('sort_by', sort_by))
+            
+        if filter is not None:
+            
+            _query_params.append(('filter', filter))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'bearer'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/api/v1/vulnerability-management/vulnerabilities/{cve_id}/software',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

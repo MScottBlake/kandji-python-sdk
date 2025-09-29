@@ -5,7 +5,7 @@ description = "Kandji API"
 authors = [
   {name = "Scott Blake",email = "mitchelsblake@gmail.com"},
 ]
-license = "MIT License"
+license = { text = "MIT License" }
 readme = "README.md"
 keywords = ["OpenAPI", "OpenAPI-Generator", "Kandji API"]
 requires-python = ">=3.9"
@@ -15,7 +15,6 @@ dependencies = [
   "python-dateutil (>=2.8.2)",
   "pydantic (>=2)",
   "typing-extensions (>=4.7.1)",
-  "lazy-imports (>=1,<2)"
 ]
 
 [project.urls]

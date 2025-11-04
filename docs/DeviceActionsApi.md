@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**erase_device**](DeviceActionsApi.md#erase_device) | **POST** /api/v1/devices/{device_id}/action/erase | Erase Device
 [**get_device_commands**](DeviceActionsApi.md#get_device_commands) | **GET** /api/v1/devices/{device_id}/commands | Get Device Commands
 [**lock_device**](DeviceActionsApi.md#lock_device) | **POST** /api/v1/devices/{device_id}/action/lock | Lock Device
+[**perform_daily_checkin**](DeviceActionsApi.md#perform_daily_checkin) | **POST** /api/v1/devices/{device_id}/action/dailycheckin | Perform Daily Check-in
 [**reinstall_agent**](DeviceActionsApi.md#reinstall_agent) | **POST** /api/v1/devices/{device_id}/action/reinstallagent | Reinstall Agent
 [**remote_desktop**](DeviceActionsApi.md#remote_desktop) | **POST** /api/v1/devices/{device_id}/action/remotedesktop | Remote Desktop
 [**renew_mdm_profile**](DeviceActionsApi.md#renew_mdm_profile) | **POST** /api/v1/devices/{device_id}/action/renewmdmprofile | Renew MDM Profile
@@ -101,7 +102,8 @@ void (empty response body)
 
 Delete Device
 
-This endpoint sends an MDM command to delete a device. This will remove the device record from Kandji and send a Remove Management command. For macOS devices, it will also send an uninstall command to the Kandji Agent at the next agent checkin.
+<p>This endpoint deletes a device, which will remove the device record and unenroll the device from MDM.</p>
+<p>For macOS and Windows devices, the agent will automatically uninstall on the next agent checkin.</p>
 
 ### Example
 
@@ -258,8 +260,7 @@ void (empty response body)
 
 Erase Device
 
-<p>This endpoint sends an MDM command to erase the device.</p>
-<p>iOS 4.0+, iPadOS 4.0+, macOS 10.7+, tvOS 10.2+</p>
+<p>This endpoint sends an MDM command to erase a device.</p>
 <p><strong>Request Body Parameters: application/json</strong></p>
 <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
 <thead>
@@ -299,6 +300,16 @@ Erase Device
 <td>- <code>ProfileId</code></td>
 <td><code>string</code></td>
 <td>Profile ID value associated with a Wi-Fi profile payload. This is required when the device doesn’t have ethernet access.</td>
+</tr>
+<tr>
+<td><code>erase_mode</code></td>
+<td><code>string</code></td>
+<td>For Windows devices, the following modes are supported:  <br />  <br /><code>WIPE</code> - Equivalent to running Reset this PC &gt; Remove everything from the Settings app, with Clean Data set to No and Delete Files set to Yes.  <br />  <br /><code>WIPE_CLOUD</code> - Perform a cloud-based remote wipe on the device.  <br />  <br /><code>WIPE_PROTECTED</code> - Performs a remote wipe on the device and fully cleans the internal drive. In some device configurations, this command may leave the device unable to boot. This is similar to WIPE but cannot be circumvented by power cycling the device.</td>
+</tr>
+<tr>
+<td><code>erase_flags</code></td>
+<td><code>string</code></td>
+<td>Optional erase options for Android devices, provided as a single comma separated list of the following strings:  <br />  <br /><code>WIPE_EXTERNAL_STORAGE</code> - Additionally wipe the device's external storage (such as SD cards).  <br />  <br /><code>WIPE_ESIMS</code> - For company-owned devices, this removes all eSIMs from the device when the device is wiped.  <br />  <br />Example value:  <br /><code>WIPE_EXTERNAL_STORAGE,WIPE_ESIMS</code></td>
 </tr>
 </tbody>
 </table>
@@ -380,14 +391,19 @@ void (empty response body)
 
 Get Device Commands
 
-<p>This endpoint sends a request to get information about the commands sent to a given device ID.</p>
+<p>This endpoint sends a request to get information about the commands sent to a given Apple device.</p>
 <h3 id=&quot;mdm-status-codes&quot;>MDM Status Codes</h3>
 <ul>
-<li>1 : Command is Pending</li>
-<li>2 : Command is running</li>
-<li>3 : Command completed</li>
-<li>4 : Command failed</li>
-<li>5 : Command received &quot;Not Now&quot; response</li>
+<li><p>1 : Command is Pending</p>
+</li>
+<li><p>2 : Command is running</p>
+</li>
+<li><p>3 : Command completed</p>
+</li>
+<li><p>4 : Command failed</p>
+</li>
+<li><p>5 : Command received &quot;Not Now&quot; response</p>
+</li>
 </ul>
 
 ### Example
@@ -422,7 +438,7 @@ with kandji.ApiClient(configuration) as api_client:
     api_instance = kandji.DeviceActionsApi(api_client)
     device_id = 'device_id_example' # str | 
     limit = '300' # str | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.
-    offset = 'offset_example' # str | Specify the starting record to return (optional)
+    offset = '' # str | Specify the starting record to return (optional)
 
     try:
         # Get Device Commands
@@ -470,12 +486,12 @@ Name | Type | Description  | Notes
 
 Lock Device
 
-<p>This endpoint sends an MDM command to remotely lock a device.</p>
+<p>This endpoint sends an MDM command to remotely lock an Apple or Android device.</p>
 <p>For macOS clients, an unlock PIN will be created, and returned in the response.</p>
 <blockquote>
-<p><strong>Caution !!!</strong><br /><em>For a Mac with Apple silicon running a version of macOS before 11.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.</em></p>
+<p><strong>Caution !!!</strong><br /><em>For a Mac with Apple silicon running a version of macOS before 11.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.</em> </p>
 </blockquote>
-<p>Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target device.</p>
+<p>Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target Mac.</p>
 <p><strong>Note:</strong> For macOS, although the lock message is displayed on all types of Mac computers, the phone number is displayed only on a Mac with Apple silicon.</p>
 <h4 id=&quot;response-properties&quot;>Response properties</h4>
 <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
@@ -570,12 +586,87 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **perform_daily_checkin**
+> perform_daily_checkin(device_id)
+
+Perform Daily Check-in
+
+This endpoint runs the daily MDM commands and MDM logic for Apple devices and initiates a full daily CSP sync for Windows devices.
+
+### Example
+
+* Bearer (API Token) Authentication (bearer):
+
+```python
+import kandji
+from kandji.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://<sub_domain>.api.kandji.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kandji.Configuration(
+    host = "https://<sub_domain>.api.kandji.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API Token): bearer
+configuration = kandji.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with kandji.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = kandji.DeviceActionsApi(api_client)
+    device_id = 'device_id_example' # str | 
+
+    try:
+        # Perform Daily Check-in
+        api_instance.perform_daily_checkin(device_id)
+    except Exception as e:
+        print("Exception when calling DeviceActionsApi->perform_daily_checkin: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **device_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * Allow -  <br>  * Connection -  <br>  * Content-Length -  <br>  * Content-Security-Policy -  <br>  * Date -  <br>  * Feature-Policy -  <br>  * Referrer-Policy -  <br>  * Server -  <br>  * Strict-Transport-Security -  <br>  * Vary -  <br>  * X-Content-Type-Options -  <br>  * X-Frame-Options -  <br>  * X-XSS-Protection -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **reinstall_agent**
 > reinstall_agent(device_id)
 
 Reinstall Agent
 
-This endpoint sends an MDM command reinstall the Kandji Agent. Available for macOS devices.
+This endpoint sends an MDM command reinstall the Kandji Agent on macOS devices.
 
 ### Example
 
@@ -730,7 +821,7 @@ void (empty response body)
 
 Renew MDM Profile
 
-This endpoint sends an MDM command to re-install the existing root MDM profile for a given device ID. This command will not impact any existing configurations, apps, or profiles.
+This endpoint sends an MDM command to re-install the existing root MDM profile for a given Apple device. This command will not impact any existing configurations, apps, or profiles.
 
 ### Example
 
@@ -805,7 +896,7 @@ void (empty response body)
 
 Restart Device
 
-<p>This endpoint sends an MDM command to remotely restart a device.</p>
+<p>This endpoint sends an MDM command to remotely restart an iPhone, iPad, Apple TV, or Mac.</p>
 <ul>
 <li><p><code>RebuildKernelCache</code> - If <code>true</code>, the system rebuilds the kernel cache during a device restart. If <code>BootstrapTokenAllowedForAuthentication</code> is <code>true</code> inSecurityInfoResponse.SecurityInfo, the device requests the bootstrap token from MDM before executing this command. This value is available in macOS 11 and later. Default: false</p>
 </li>
@@ -888,7 +979,7 @@ void (empty response body)
 
 Send Blankpush
 
-<p>This endpoint sends an MDM command to initiate a blank push.</p>
+<p>This endpoint sends an MDM command to initiate a blank push for an Apple device.</p>
 <p><a href=&quot;https://support.kandji.io/what-is-a-blank-push&quot;>Using the Blank Push command</a></p>
 
 ### Example
@@ -964,7 +1055,7 @@ void (empty response body)
 
 Set Name
 
-<p>This endpoint sends an MDM command to set the device name.</p>
+<p>This endpoint sends an MDM command to set the device name for an Apple device.</p>
 <p><strong>Request Body Parameters</strong>: application/json</p>
 <hr />
 <p><code>DeviceName</code> - <code>string</code></p>
@@ -1044,7 +1135,7 @@ void (empty response body)
 
 Shutdown
 
-This endpoint sends an MDM command to shutdown a device.
+This endpoint sends an MDM command to shutdown an iPhone, iPad, or Mac.
 
 ### Example
 
@@ -1119,7 +1210,7 @@ void (empty response body)
 
 Unlock Account
 
-<p>This endpoint sends an MDM command to unlock a user account that locked by the system because of too many failed password attempts. Available for macOS.</p>
+<p>This endpoint sends an MDM command to unlock a user account that locked by the system because of too many failed password attempts. Available for Mac.</p>
 <p><strong>Request Body Parameters</strong>: application/json</p>
 <hr />
 <p><code>UserName</code> - <code>string</code></p>
@@ -1199,7 +1290,8 @@ void (empty response body)
 
 Update Inventory
 
-This endpoint sends an MDM command to start a check-in for a device, initiating the daily MDM commands and MDM logic.
+<p>This endpoint runs the daily MDM commands and MDM logic for Apple devices.</p>
+<p><strong>Note:</strong> The newer <code>dailycheckin</code> endpoint can be used instead and also supports Windows devices.</p>
 
 ### Example
 

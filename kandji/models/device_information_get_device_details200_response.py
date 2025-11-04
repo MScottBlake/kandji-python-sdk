@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Kandji API
+    Iru Endpoint Management API
 
-    <html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome to the Kandji API Documentation</h1> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p> </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p> <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the Kandji API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th> </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td> <td>The <code>POST</code> method submits an entity to the specified resource.</td> </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr> <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr> <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td> </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr> <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr> <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td> </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td> </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Kandji tenant.</td> </tr> <tr> <td>415</td> <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr> <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table> </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4> <p>Code examples using the API can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
+    <html><head></head><body><h1 id=&quot;welcome-to-the-iru-endpoint-management-api-documentation&quot;>Welcome to the Iru Endpoint Management API Documentation</h1> <p><strong>Note:</strong> Kandji is now Iru, but many URLs and notes within this documentation will continue to reference Kandji for some time.</p> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p> </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p> <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Iru Endpoint Management API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th> </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td> <td>The <code>POST</code> method submits an entity to the specified resource.</td> </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr> <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr> <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td> </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr> <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr> <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td> </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td> </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Iru tenant.</td> </tr> <tr> <td>415</td> <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr> <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table> </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4> <p>Code examples using the API can be found in the Iru Endpoint Management support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
 
     The version of the OpenAPI document: 1.0.0
     Contact: mitchelsblake@gmail.com
@@ -20,19 +20,11 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from kandji.models.device_information_get_device_details200_response_activation_lock import DeviceInformationGetDeviceDetails200ResponseActivationLock
-from kandji.models.device_information_get_device_details200_response_apple_business_manager import DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager
-from kandji.models.device_information_get_device_details200_response_automated_device_enrollment import DeviceInformationGetDeviceDetails200ResponseAutomatedDeviceEnrollment
 from kandji.models.device_information_get_device_details200_response_cellular import DeviceInformationGetDeviceDetails200ResponseCellular
-from kandji.models.device_information_get_device_details200_response_filevault import DeviceInformationGetDeviceDetails200ResponseFilevault
 from kandji.models.device_information_get_device_details200_response_general import DeviceInformationGetDeviceDetails200ResponseGeneral
-from kandji.models.device_information_get_device_details200_response_hardware_overview import DeviceInformationGetDeviceDetails200ResponseHardwareOverview
-from kandji.models.device_information_get_device_details200_response_kandji_agent import DeviceInformationGetDeviceDetails200ResponseKandjiAgent
-from kandji.models.device_information_get_device_details200_response_lost_mode import DeviceInformationGetDeviceDetails200ResponseLostMode
-from kandji.models.device_information_get_device_details200_response_mdm import DeviceInformationGetDeviceDetails200ResponseMdm
-from kandji.models.device_information_get_device_details200_response_recovery_information import DeviceInformationGetDeviceDetails200ResponseRecoveryInformation
-from kandji.models.device_information_get_device_details200_response_security_information import DeviceInformationGetDeviceDetails200ResponseSecurityInformation
-from kandji.models.device_information_get_device_details200_response_users import DeviceInformationGetDeviceDetails200ResponseUsers
+from kandji.models.device_information_get_device_details200_response_hardware import DeviceInformationGetDeviceDetails200ResponseHardware
+from kandji.models.device_information_get_device_details200_response_management import DeviceInformationGetDeviceDetails200ResponseManagement
+from kandji.models.device_information_get_device_details200_response_security import DeviceInformationGetDeviceDetails200ResponseSecurity
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -40,25 +32,14 @@ class DeviceInformationGetDeviceDetails200Response(BaseModel):
     """
     DeviceInformationGetDeviceDetails200Response
     """ # noqa: E501
-    activation_lock: Optional[DeviceInformationGetDeviceDetails200ResponseActivationLock] = None
-    apple_business_manager: Optional[DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager] = None
-    automated_device_enrollment: Optional[DeviceInformationGetDeviceDetails200ResponseAutomatedDeviceEnrollment] = None
     cellular: Optional[DeviceInformationGetDeviceDetails200ResponseCellular] = None
-    filevault: Optional[DeviceInformationGetDeviceDetails200ResponseFilevault] = None
     general: Optional[DeviceInformationGetDeviceDetails200ResponseGeneral] = None
-    hardware_overview: Optional[DeviceInformationGetDeviceDetails200ResponseHardwareOverview] = None
-    installed_profiles: Optional[Any] = None
-    kandji_agent: Optional[DeviceInformationGetDeviceDetails200ResponseKandjiAgent] = None
-    lost_mode: Optional[DeviceInformationGetDeviceDetails200ResponseLostMode] = None
-    mdm: Optional[DeviceInformationGetDeviceDetails200ResponseMdm] = None
-    network: Optional[Dict[str, Any]] = None
-    recovery_information: Optional[DeviceInformationGetDeviceDetails200ResponseRecoveryInformation] = None
-    security_information: Optional[DeviceInformationGetDeviceDetails200ResponseSecurityInformation] = None
+    hardware: Optional[DeviceInformationGetDeviceDetails200ResponseHardware] = None
+    management: Optional[DeviceInformationGetDeviceDetails200ResponseManagement] = None
+    security: Optional[DeviceInformationGetDeviceDetails200ResponseSecurity] = None
     tags: Optional[Any] = None
-    users: Optional[DeviceInformationGetDeviceDetails200ResponseUsers] = None
-    volumes: Optional[Any] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["activation_lock", "apple_business_manager", "automated_device_enrollment", "cellular", "filevault", "general", "hardware_overview", "installed_profiles", "kandji_agent", "lost_mode", "mdm", "network", "recovery_information", "security_information", "tags", "users", "volumes"]
+    __properties: ClassVar[List[str]] = ["cellular", "general", "hardware", "management", "security", "tags"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -101,64 +82,30 @@ class DeviceInformationGetDeviceDetails200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of activation_lock
-        if self.activation_lock:
-            _dict['activation_lock'] = self.activation_lock.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of apple_business_manager
-        if self.apple_business_manager:
-            _dict['apple_business_manager'] = self.apple_business_manager.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of automated_device_enrollment
-        if self.automated_device_enrollment:
-            _dict['automated_device_enrollment'] = self.automated_device_enrollment.to_dict()
         # override the default output from pydantic by calling `to_dict()` of cellular
         if self.cellular:
             _dict['cellular'] = self.cellular.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of filevault
-        if self.filevault:
-            _dict['filevault'] = self.filevault.to_dict()
         # override the default output from pydantic by calling `to_dict()` of general
         if self.general:
             _dict['general'] = self.general.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of hardware_overview
-        if self.hardware_overview:
-            _dict['hardware_overview'] = self.hardware_overview.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of kandji_agent
-        if self.kandji_agent:
-            _dict['kandji_agent'] = self.kandji_agent.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of lost_mode
-        if self.lost_mode:
-            _dict['lost_mode'] = self.lost_mode.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of mdm
-        if self.mdm:
-            _dict['mdm'] = self.mdm.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of recovery_information
-        if self.recovery_information:
-            _dict['recovery_information'] = self.recovery_information.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of security_information
-        if self.security_information:
-            _dict['security_information'] = self.security_information.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of users
-        if self.users:
-            _dict['users'] = self.users.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of hardware
+        if self.hardware:
+            _dict['hardware'] = self.hardware.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of management
+        if self.management:
+            _dict['management'] = self.management.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of security
+        if self.security:
+            _dict['security'] = self.security.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
                 _dict[_key] = _value
 
-        # set to None if installed_profiles (nullable) is None
-        # and model_fields_set contains the field
-        if self.installed_profiles is None and "installed_profiles" in self.model_fields_set:
-            _dict['installed_profiles'] = None
-
         # set to None if tags (nullable) is None
         # and model_fields_set contains the field
         if self.tags is None and "tags" in self.model_fields_set:
             _dict['tags'] = None
-
-        # set to None if volumes (nullable) is None
-        # and model_fields_set contains the field
-        if self.volumes is None and "volumes" in self.model_fields_set:
-            _dict['volumes'] = None
 
         return _dict
 
@@ -172,23 +119,12 @@ class DeviceInformationGetDeviceDetails200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "activation_lock": DeviceInformationGetDeviceDetails200ResponseActivationLock.from_dict(obj["activation_lock"]) if obj.get("activation_lock") is not None else None,
-            "apple_business_manager": DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager.from_dict(obj["apple_business_manager"]) if obj.get("apple_business_manager") is not None else None,
-            "automated_device_enrollment": DeviceInformationGetDeviceDetails200ResponseAutomatedDeviceEnrollment.from_dict(obj["automated_device_enrollment"]) if obj.get("automated_device_enrollment") is not None else None,
             "cellular": DeviceInformationGetDeviceDetails200ResponseCellular.from_dict(obj["cellular"]) if obj.get("cellular") is not None else None,
-            "filevault": DeviceInformationGetDeviceDetails200ResponseFilevault.from_dict(obj["filevault"]) if obj.get("filevault") is not None else None,
             "general": DeviceInformationGetDeviceDetails200ResponseGeneral.from_dict(obj["general"]) if obj.get("general") is not None else None,
-            "hardware_overview": DeviceInformationGetDeviceDetails200ResponseHardwareOverview.from_dict(obj["hardware_overview"]) if obj.get("hardware_overview") is not None else None,
-            "installed_profiles": obj.get("installed_profiles"),
-            "kandji_agent": DeviceInformationGetDeviceDetails200ResponseKandjiAgent.from_dict(obj["kandji_agent"]) if obj.get("kandji_agent") is not None else None,
-            "lost_mode": DeviceInformationGetDeviceDetails200ResponseLostMode.from_dict(obj["lost_mode"]) if obj.get("lost_mode") is not None else None,
-            "mdm": DeviceInformationGetDeviceDetails200ResponseMdm.from_dict(obj["mdm"]) if obj.get("mdm") is not None else None,
-            "network": obj.get("network"),
-            "recovery_information": DeviceInformationGetDeviceDetails200ResponseRecoveryInformation.from_dict(obj["recovery_information"]) if obj.get("recovery_information") is not None else None,
-            "security_information": DeviceInformationGetDeviceDetails200ResponseSecurityInformation.from_dict(obj["security_information"]) if obj.get("security_information") is not None else None,
-            "tags": obj.get("tags"),
-            "users": DeviceInformationGetDeviceDetails200ResponseUsers.from_dict(obj["users"]) if obj.get("users") is not None else None,
-            "volumes": obj.get("volumes")
+            "hardware": DeviceInformationGetDeviceDetails200ResponseHardware.from_dict(obj["hardware"]) if obj.get("hardware") is not None else None,
+            "management": DeviceInformationGetDeviceDetails200ResponseManagement.from_dict(obj["management"]) if obj.get("management") is not None else None,
+            "security": DeviceInformationGetDeviceDetails200ResponseSecurity.from_dict(obj["security"]) if obj.get("security") is not None else None,
+            "tags": obj.get("tags")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

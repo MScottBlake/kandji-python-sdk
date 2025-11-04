@@ -5,23 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**activation_lock** | [**DeviceInformationGetDeviceDetails200ResponseActivationLock**](DeviceInformationGetDeviceDetails200ResponseActivationLock.md) |  | [optional] 
-**apple_business_manager** | [**DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager**](DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager.md) |  | [optional] 
-**automated_device_enrollment** | [**DeviceInformationGetDeviceDetails200ResponseAutomatedDeviceEnrollment**](DeviceInformationGetDeviceDetails200ResponseAutomatedDeviceEnrollment.md) |  | [optional] 
 **cellular** | [**DeviceInformationGetDeviceDetails200ResponseCellular**](DeviceInformationGetDeviceDetails200ResponseCellular.md) |  | [optional] 
-**filevault** | [**DeviceInformationGetDeviceDetails200ResponseFilevault**](DeviceInformationGetDeviceDetails200ResponseFilevault.md) |  | [optional] 
 **general** | [**DeviceInformationGetDeviceDetails200ResponseGeneral**](DeviceInformationGetDeviceDetails200ResponseGeneral.md) |  | [optional] 
-**hardware_overview** | [**DeviceInformationGetDeviceDetails200ResponseHardwareOverview**](DeviceInformationGetDeviceDetails200ResponseHardwareOverview.md) |  | [optional] 
-**installed_profiles** | **object** |  | [optional] 
-**kandji_agent** | [**DeviceInformationGetDeviceDetails200ResponseKandjiAgent**](DeviceInformationGetDeviceDetails200ResponseKandjiAgent.md) |  | [optional] 
-**lost_mode** | [**DeviceInformationGetDeviceDetails200ResponseLostMode**](DeviceInformationGetDeviceDetails200ResponseLostMode.md) |  | [optional] 
-**mdm** | [**DeviceInformationGetDeviceDetails200ResponseMdm**](DeviceInformationGetDeviceDetails200ResponseMdm.md) |  | [optional] 
-**network** | **object** |  | [optional] 
-**recovery_information** | [**DeviceInformationGetDeviceDetails200ResponseRecoveryInformation**](DeviceInformationGetDeviceDetails200ResponseRecoveryInformation.md) |  | [optional] 
-**security_information** | [**DeviceInformationGetDeviceDetails200ResponseSecurityInformation**](DeviceInformationGetDeviceDetails200ResponseSecurityInformation.md) |  | [optional] 
+**hardware** | [**DeviceInformationGetDeviceDetails200ResponseHardware**](DeviceInformationGetDeviceDetails200ResponseHardware.md) |  | [optional] 
+**management** | [**DeviceInformationGetDeviceDetails200ResponseManagement**](DeviceInformationGetDeviceDetails200ResponseManagement.md) |  | [optional] 
+**security** | [**DeviceInformationGetDeviceDetails200ResponseSecurity**](DeviceInformationGetDeviceDetails200ResponseSecurity.md) |  | [optional] 
 **tags** | **object** |  | [optional] 
-**users** | [**DeviceInformationGetDeviceDetails200ResponseUsers**](DeviceInformationGetDeviceDetails200ResponseUsers.md) |  | [optional] 
-**volumes** | **object** |  | [optional] 
 
 ## Example
 

@@ -97,7 +97,8 @@ void (empty response body)
 
 Get Device
 
-This request returns the high-level information for a specified Device ID.
+<p>This request returns the high-level information for a specified Device ID.</p>
+<p>This is a <strong>polymorphic</strong> endpoint. If Windows or Android management is turned on, additional fields will be returned in the response. All visible fields based on platform enablement status will be present for all device types, but values will be blank for non-applicable devices. For example, <code>lost_mode_status</code> only applies to iOS and iPadOS devices and will be blank for other platforms.</p>
 
 ### Example
 
@@ -175,7 +176,8 @@ Name | Type | Description  | Notes
 
 Get Device Activity
 
-This request returns the device activity for a specified Device ID.
+<p>This request returns the device activity for a specified Device ID.</p>
+<p>If Windows or Android management is turned on, additonal keys may be present in activity entries.</p>
 
 ### Example
 
@@ -259,6 +261,7 @@ Get Device Apps
 
 <p>This request returns a list of all installed apps for a specified Device ID.</p>
 <p>For iPhone and iPad, the preinstalled Apple apps are not reported.</p>
+<p>This is a <strong>polymorphic</strong> endpoint. If Windows or Android management is turned on, the response will be tailored to the specific device family.</p>
 
 ### Example
 
@@ -336,7 +339,8 @@ Name | Type | Description  | Notes
 
 Get Device Details
 
-This request returns the device details for a specified Device ID.
+<p>This request returns the device details for a specified Device ID.</p>
+<p>This is a <strong>polymorphic</strong> endpoint. If Windows or Android management is turned on, the response will be tailored to the specific device family.</p>
 
 ### Example
 
@@ -405,7 +409,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  * Content-Type -  <br>  |
+**200** | OK |  * Allow -  <br>  * Connection -  <br>  * Content-Length -  <br>  * Content-Security-Policy -  <br>  * Content-Type -  <br>  * Date -  <br>  * Feature-Policy -  <br>  * Referrer-Policy -  <br>  * Server -  <br>  * Strict-Transport-Security -  <br>  * Vary -  <br>  * X-Content-Type-Options -  <br>  * X-Frame-Options -  <br>  * X-XSS-Protection -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -650,8 +654,7 @@ Name | Type | Description  | Notes
 
 Get Device Parameters
 
-<p>This request returns the parameters and their statuses for a specified Device ID</p>
-<p>This endpoint is only applicable to macOS clients.</p>
+<p>This request returns the parameters and their statuses for a specified Device ID, and is only applicable to Mac.</p>
 <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p>
 <p><strong>Possible parameter status values</strong></p>
 <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
@@ -953,8 +956,9 @@ Name | Type | Description  | Notes
 
 List Devices
 
-<p>This request returns a list of devices in a Kandji tenant. Optionally. query parameters can be used to filter results.</p>
-<p>There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/code-examples&quot;>GitHub</a>.</p>
+<p>This request returns a list of devices in an Iru Endpoint Management tenant. Optionally, query parameters can be used to filter results.</p>
+<p>There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Iru support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/code-examples&quot;>GitHub</a>.</p>
+<p>This is a <strong>polymorphic</strong> endpoint. If Windows or Android management is turned on, additional fields will be returned in the response. All visible fields based on platform enablement status will be present for all device types, but values will be blank for non-applicable devices. For example, <code>lost_mode_status</code> only applies to iOS and iPadOS devices and will be blank for other platforms.</p>
 
 ### Example
 
@@ -995,7 +999,7 @@ with kandji.ApiClient(configuration) as api_client:
     model = 'MacBook Air (M1, 2020)' # str | Return model results &quot;containing&quot; the specified model string. (optional)
     ordering = 'device_id' # str | <p>The <code>ordering</code> parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p> <p><code>?ordering=-serial_number</code> will order the response by serial_number in descending order.</p> <p><strong>Possible values</strong></p> <ul> <li><code>asset_tag</code></li> <li><code>blueprint_id</code></li> <li><code>device_id</code></li> <li><code>device_name</code></li> <li><code>last_check_in</code> - agent checkin</li> <li><code>model</code></li> <li><code>platform</code></li> <li><code>os_version</code></li> <li><code>serial_number</code></li> <li><code>user</code></li> </ul> <p>Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.</p> <p><code>?ordering=serial_number,platform</code></p> (optional)
     os_version = '13.2.3' # str | Return all device records containing the specified OS version (optional)
-    platform = 'iPad' # str | Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code> (optional)
+    platform = 'iPad' # str | Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code>, <code>Android</code>, <code>Windows</code> (optional)
     serial_number = 'VMC5qeJ5pDkp' # str | Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned. (optional)
     tag_name = 'accuhive_01' # str | Return results for given tag name. Case sensitive. (optional)
     tag_name_in = 'accuhive_01, accuhive_02' # str | Return results for given tag names separate by commas. Case sensitive. (optional)
@@ -1004,7 +1008,7 @@ with kandji.ApiClient(configuration) as api_client:
     user = 'Art Vandelay' # str | Return results &quot;containing&quot; the user name (optional)
     user_email = 'someUser@Kandji.io' # str | Return results &quot;containing&quot; search on email address (optional)
     user_email_exact = 'someUser@Kandji.io' # str | Return results &quot;matching&quot; the specified email address (optional)
-    user_id = '5344c996-8823-4b37-8d6e-8515fc7c3a0a' # str | &quot;exact&quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
+    user_id = '5344c996-8823-4b37-8d6e-8515fc7c3a0a' # str | &quot;exact&quot; match on user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
     user_name = 'Vandelay' # str | Return results &quot;containing&quot; the assigned user Display Name (optional)
     offset = '0' # str | Specify the starting record to return (optional)
 
@@ -1034,7 +1038,7 @@ Name | Type | Description  | Notes
  **model** | **str**| Return model results &amp;quot;containing&amp;quot; the specified model string. | [optional] 
  **ordering** | **str**| &lt;p&gt;The &lt;code&gt;ordering&lt;/code&gt; parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.&lt;/p&gt; &lt;p&gt;&lt;code&gt;?ordering&#x3D;-serial_number&lt;/code&gt; will order the response by serial_number in descending order.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Possible values&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;asset_tag&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;blueprint_id&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;device_id&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;device_name&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;last_check_in&lt;/code&gt; - agent checkin&lt;/li&gt; &lt;li&gt;&lt;code&gt;model&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;platform&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;os_version&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;serial_number&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;user&lt;/code&gt;&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.&lt;/p&gt; &lt;p&gt;&lt;code&gt;?ordering&#x3D;serial_number,platform&lt;/code&gt;&lt;/p&gt; | [optional] 
  **os_version** | **str**| Return all device records containing the specified OS version | [optional] 
- **platform** | **str**| Return all records matching a specific platform. Possible values:&lt;code&gt;Mac&lt;/code&gt;, &lt;code&gt;iPad&lt;/code&gt;, &lt;code&gt;iPhone&lt;/code&gt;, &lt;code&gt;AppleTV&lt;/code&gt; | [optional] 
+ **platform** | **str**| Return all records matching a specific platform. Possible values:&lt;code&gt;Mac&lt;/code&gt;, &lt;code&gt;iPad&lt;/code&gt;, &lt;code&gt;iPhone&lt;/code&gt;, &lt;code&gt;AppleTV&lt;/code&gt;, &lt;code&gt;Android&lt;/code&gt;, &lt;code&gt;Windows&lt;/code&gt; | [optional] 
  **serial_number** | **str**| Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned. | [optional] 
  **tag_name** | **str**| Return results for given tag name. Case sensitive. | [optional] 
  **tag_name_in** | **str**| Return results for given tag names separate by commas. Case sensitive. | [optional] 
@@ -1043,7 +1047,7 @@ Name | Type | Description  | Notes
  **user** | **str**| Return results &amp;quot;containing&amp;quot; the user name | [optional] 
  **user_email** | **str**| Return results &amp;quot;containing&amp;quot; search on email address | [optional] 
  **user_email_exact** | **str**| Return results &amp;quot;matching&amp;quot; the specified email address | [optional] 
- **user_id** | **str**| &amp;quot;exact&amp;quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) | [optional] 
+ **user_id** | **str**| &amp;quot;exact&amp;quot; match on user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) | [optional] 
  **user_name** | **str**| Return results &amp;quot;containing&amp;quot; the assigned user Display Name | [optional] 
  **offset** | **str**| Specify the starting record to return | [optional] 
 

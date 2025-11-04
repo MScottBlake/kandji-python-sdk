@@ -16,7 +16,7 @@ Delete User
 
 <p>This endpoint makes a request to delete a specified user directory integration user by id (uuid).</p>
 <h3 id=&quot;user-still-assigned-to-device&quot;>User still assigned to device</h3>
-<p>You will see the following response (400 bad request), if a user is still assigned to one or more devices in Kandji. The user will need to be unassigned from the device either manually through the Kandji tenant or programatically using the Update device API endpoint.</p>
+<p>You will see the following response (400 bad request), if a user is still assigned to one or more devices. The user will need to be unassigned from the device either manually through the UI in the web app or programatically using the Update device API endpoint.</p>
 <pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{
     &quot;detail&quot;: &quot;User still assigned to one or more devices.&quot;
 }
@@ -211,8 +211,8 @@ with kandji.ApiClient(configuration) as api_client:
     email = 'test_user_01@accuhive.io' # str | Returns users with email addresses containing the provided string. (optional)
     id = '69c009ca-1f78-4bdf-bb93-08d6d39041db' # str | Search for a user matching the provided UUID value. (optional)
     integration_id = 'f7461096-4ef9-43aa-88e9-ca1967ba0b38' # str | Search for a integration matching the provided UUID value. (optional)
-    archived = 'false' # str | Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. (optional)
-    cursor = 'cursor_example' # str | Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response. (optional)
+    archived = 'false' # str | Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Users module under the Archived tab. (optional)
+    cursor = '' # str | Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response. (optional)
 
     try:
         # List Users
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
  **email** | **str**| Returns users with email addresses containing the provided string. | [optional] 
  **id** | **str**| Search for a user matching the provided UUID value. | [optional] 
  **integration_id** | **str**| Search for a integration matching the provided UUID value. | [optional] 
- **archived** | **str**| Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. | [optional] 
+ **archived** | **str**| Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Users module under the Archived tab. | [optional] 
  **cursor** | **str**| Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response. | [optional] 
 
 ### Return type

@@ -109,7 +109,7 @@ Delete ADE integration
 
 <h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1>
 <p>This is a HIGHLY destructive action.</p>
-<p>Deleting an ADE token will unassign the associated device records from Kandji. For currently enrolled devices that were assigned to Kandji via the delete ADE integration will not be impacted until they are wiped and reprovisioned. This action is essentially the same as removing an ADE token from MDM and then adding it back.</p>
+<p>Deleting an ADE token will unassign the associated device records. For currently enrolled devices that were assigned via the delete ADE integration will not be impacted until they are wiped and reprovisioned. This action is essentially the same as removing an ADE token from MDM and then adding it back.</p>
 <p>If applicable, be sure to reassign the device records in ABM.</p>
 
 ### Example
@@ -445,7 +445,7 @@ with kandji.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kandji.AutomatedDeviceEnrollmentIntegrationsApi(api_client)
     blueprint_id = 'fce0cc58-caa5-40d2-a0d7-a0b257127ec5' # str | Return results &quot;containing&quot; the specified blueprint id (optional)
-    user_id = '5344c996-8823-4b37-8d6e-8515fc7c3a0a' # str | &quot;exact&quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
+    user_id = '5344c996-8823-4b37-8d6e-8515fc7c3a0a' # str | &quot;exact&quot; match on user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
     dep_account = '' # str | The ADE token UUID (optional)
     device_family = '' # str | iPad, iPhone, iPod, Mac, AppleTV, or Vision (optional)
     model = 'MacBook Air' # str | Return model results &quot;containing&quot; the specified model string. - &quot;iPad (8th Generation)&quot;, &quot;MacBook Air&quot; (optional)
@@ -471,7 +471,7 @@ with kandji.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **blueprint_id** | **str**| Return results &amp;quot;containing&amp;quot; the specified blueprint id | [optional] 
- **user_id** | **str**| &amp;quot;exact&amp;quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) | [optional] 
+ **user_id** | **str**| &amp;quot;exact&amp;quot; match on user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) | [optional] 
  **dep_account** | **str**| The ADE token UUID | [optional] 
  **device_family** | **str**| iPad, iPhone, iPod, Mac, AppleTV, or Vision | [optional] 
  **model** | **str**| Return model results &amp;quot;containing&amp;quot; the specified model string. - &amp;quot;iPad (8th Generation)&amp;quot;, &amp;quot;MacBook Air&amp;quot; | [optional] 
@@ -579,7 +579,7 @@ void (empty response body)
 List devices associated to ADE token
 
 <p>This request returns a list of devices associated with a specified <code>ade_token_id</code> as well as their enrollment status.</p>
-<p>When the <code>mdm_device</code> key value is <code>null</code>, this can be taken as an indication that the device is awaiting enrollment into Kandji.</p>
+<p>When the <code>mdm_device</code> key value is <code>null</code>, this can be taken as an indication that the device is awaiting enrollment.</p>
 <p>When data is present within the mdm_device dictionary, you can reference the <code>device_id</code> as the ID of the enrolled device record.</p>
 
 ### Example

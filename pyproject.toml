@@ -1,13 +1,13 @@
 [project]
 name = "kandji"
 version = "1.0.0"
-description = "Kandji API"
+description = "Iru Endpoint Management API"
 authors = [
   {name = "Scott Blake",email = "mitchelsblake@gmail.com"},
 ]
 license = { text = "MIT License" }
 readme = "README.md"
-keywords = ["OpenAPI", "OpenAPI-Generator", "Kandji API"]
+keywords = ["OpenAPI", "OpenAPI-Generator", "Iru Endpoint Management API"]
 requires-python = ">=3.9"
 
 dependencies = [

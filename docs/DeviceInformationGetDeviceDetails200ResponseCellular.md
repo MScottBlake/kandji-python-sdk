@@ -5,10 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cellular_technology** | **int** |  | [optional] 
-**data_roaming** | **int** |  | [optional] 
-**subscriptions** | **object** |  | [optional] 
-**voice_roaming** | **int** |  | [optional] 
+**imei** | **str** |  | [optional] 
+**meid** | **str** |  | [optional] 
 
 ## Example
 

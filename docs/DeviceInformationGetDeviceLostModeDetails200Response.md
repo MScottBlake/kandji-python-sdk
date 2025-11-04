@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **device_id** | **str** |  | [optional] 
-**lost_mode** | [**DeviceInformationGetDeviceDetails200ResponseLostMode**](DeviceInformationGetDeviceDetails200ResponseLostMode.md) |  | [optional] 
+**lost_mode** | [**DeviceInformationGetDeviceLostModeDetails200ResponseLostMode**](DeviceInformationGetDeviceLostModeDetails200ResponseLostMode.md) |  | [optional] 
 
 ## Example
 
